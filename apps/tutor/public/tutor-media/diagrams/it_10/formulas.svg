@@ -1,0 +1,43 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .cell { fill: #1e293b; stroke: #475569; }
+    </style>
+  </defs>
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">SPREADSHEET FORMULAS</text>
+  
+  <!-- Formula Bar -->
+  <rect x="20" y="60" width="360" height="30" fill="#334155" rx="4" />
+  <text x="40" y="80" font-family="monospace" fill="#fbbf24">fx =SUM(B2:B5)</text>
+  
+  <!-- Grid -->
+  <g transform="translate(50, 110)">
+    <!-- Header -->
+    <rect x="0" y="0" width="50" height="30" class="cell" />
+    <text x="25" y="20" text-anchor="middle">A</text>
+    <rect x="50" y="0" width="50" height="30" class="cell" />
+    <text x="75" y="20" text-anchor="middle">B</text>
+    
+    <!-- Rows -->
+    <rect x="0" y="30" width="50" height="30" class="cell" /> <text x="25" y="50" text-anchor="middle">Item</text>
+    <rect x="50" y="30" width="50" height="30" class="cell" /> <text x="75" y="50" text-anchor="middle">Cost</text>
+
+    <rect x="0" y="60" width="50" height="30" class="cell" /> <text x="25" y="80" text-anchor="middle">Apple</text>
+    <rect x="50" y="60" width="50" height="30" class="cell" /> <text x="75" y="80" text-anchor="middle">10</text>
+    
+    <rect x="0" y="90" width="50" height="30" class="cell" /> <text x="25" y="110" text-anchor="middle">Banana</text>
+    <rect x="50" y="90" width="50" height="30" class="cell" /> <text x="75" y="110" text-anchor="middle">20</text>
+    
+    <!-- Total -->
+    <rect x="0" y="120" width="50" height="30" class="cell" stroke="#fbbf24" stroke-width="2" /> <text x="25" y="140" text-anchor="middle" fill="#fbbf24">Total</text>
+    <rect x="50" y="120" width="50" height="30" class="cell" stroke="#fbbf24" stroke-width="2" /> <text x="75" y="140" text-anchor="middle" fill="#fbbf24">30</text>
+  </g>
+  
+  <rect x="200" y="150" width="160" height="60" fill="#1e293b" rx="4" />
+  <text x="210" y="170" font-size="10" fill="#94a3b8">Syntax:</text>
+  <text x="210" y="190" font-size="12" fill="#fff">=FUNCTION(ARGS)</text>
+</svg>

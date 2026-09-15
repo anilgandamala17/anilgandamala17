@@ -1,0 +1,44 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 11px; font-weight: bold; }
+      .orbit { fill: none; stroke: rgba(148, 163, 184, 0.4); stroke-width: 1.5; stroke-dasharray: 4; }
+      .nucleus { fill: #f87171; stroke: #ef4444; stroke-width: 2; }
+      .electron { fill: #60a5fa; stroke: #2563eb; stroke-width: 1; }
+      .photon { stroke: #fbbf24; stroke-width: 1.5; fill: none; }
+      .energy-lvl { fill: #94a3b8; font-size: 10px; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Bohr Model & Energy Transitions</text>
+    
+    <!-- Orbitals -->
+    <circle cx="200" cy="130" r="25" class="orbit" />
+    <circle cx="200" cy="130" r="50" class="orbit" />
+    <circle cx="200" cy="130" r="75" class="orbit" />
+    <circle cx="200" cy="130" r="100" class="orbit" />
+
+    <!-- Nucleus -->
+    <circle cx="200" cy="130" r="12" class="nucleus" />
+    <text x="200" y="134" text-anchor="middle" fill="white" font-size="8" font-weight="bold">+</text>
+
+    <!-- Electrons -->
+    <circle cx="200" cy="80" r="5" class="electron" /> <!-- n=2 -->
+    <circle cx="275" cy="130" r="5" class="electron" /> <!-- n=3 -->
+
+    <!-- Transition: Emission -->
+    <path d="M 200 55 L 200 105" stroke="#4ade80" stroke-width="2" marker-end="url(#arrowhead)" />
+    <text x="185" y="80" fill="#4ade80" font-size="9" font-weight="bold">Emission</text>
+    
+    <!-- Photon Energy -->
+    <path d="M 120 40 Q 130 30 140 40 T 160 40 T 180 40" class="photon" />
+    <text x="150" y="32" fill="#fbbf24" font-size="9">E = hν</text>
+
+    <!-- Labels -->
+    <text x="200" y="150" class="energy-lvl">n=1 (K)</text>
+    <text x="200" y="190" class="energy-lvl">n=2 (L)</text>
+    <text x="200" y="220" class="energy-lvl">n=3 (M)</text>
+    <text x="200" y="245" class="energy-lvl">n=4 (N)</text>
+  </g>
+</svg>

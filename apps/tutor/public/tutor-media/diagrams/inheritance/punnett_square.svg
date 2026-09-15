@@ -1,0 +1,60 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .grid-line { stroke: #94a3b8; stroke-width: 2; }
+      .genotype { font-size: 24px; font-weight: bold; text-anchor: middle; }
+      .header { font-size: 18px; font-weight: bold; fill: #fbbf24; text-anchor: middle; }
+      .dom { fill: #ef4444; } /* Dominant */
+      .rec { fill: #3b82f6; } /* Recessive */
+    </style>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">MENDELIAN INHERITANCE: PUNNETT SQUARE</text>
+
+  <!-- Parents -->
+  <text x="200" y="60" fontSize="12" fill="#94a3b8" text-anchor="middle">Cross: Tt (Tall) x Tt (Tall)</text>
+
+  <g transform="translate(100, 100)">
+    <!-- Grid -->
+    <rect x="0" y="0" width="200" height="200" fill="none" class="grid-line" rx="4"/>
+    <line x1="100" y1="0" x2="100" y2="200" class="grid-line" />
+    <line x1="0" y1="100" x2="200" y2="100" class="grid-line" />
+    
+    <!-- Top Headers (Parent 1 Gametes) -->
+    <text x="50" y="-15" class="header">T</text>
+    <text x="150" y="-15" class="header">t</text>
+    
+    <!-- Left Headers (Parent 2 Gametes) -->
+    <text x="-20" y="60" class="header">T</text>
+    <text x="-20" y="160" class="header">t</text>
+    
+    <!-- Cell 1: TT -->
+    <text x="50" y="60" class="genotype">
+      <tspan class="dom">T</tspan><tspan class="dom">T</tspan>
+    </text>
+    <text x="50" y="80" fontSize="10" fill="#fff" text-anchor="middle">Tall (Homo)</text>
+
+    <!-- Cell 2: Tt -->
+    <text x="150" y="60" class="genotype">
+       <tspan class="dom">T</tspan><tspan class="rec">t</tspan>
+    </text>
+    <text x="150" y="80" fontSize="10" fill="#fff" text-anchor="middle">Tall (Hetero)</text>
+
+    <!-- Cell 3: Tt -->
+    <text x="50" y="160" class="genotype">
+       <tspan class="dom">T</tspan><tspan class="rec">t</tspan>
+    </text>
+    <text x="50" y="180" fontSize="10" fill="#fff" text-anchor="middle">Tall (Hetero)</text>
+
+    <!-- Cell 4: tt -->
+    <text x="150" y="160" class="genotype">
+       <tspan class="rec">t</tspan><tspan class="rec">t</tspan>
+    </text>
+    <text x="150" y="180" fontSize="10" fill="#fff" text-anchor="middle">Short (Homo)</text>
+
+  </g>
+</svg>

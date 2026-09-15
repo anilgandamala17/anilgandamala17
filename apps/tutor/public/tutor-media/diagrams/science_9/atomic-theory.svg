@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Atomic Theory — Dalton's Postulates</text>
+
+  <!-- Left: atomos picture + postulates -->
+  <rect x="15" y="55" width="395" height="435" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="212" y="78" text-anchor="middle" fill="#a3e635" font-size="14" font-family="Georgia,serif" font-weight="bold">Dalton's Atomic Theory (1808)</text>
+
+  <g transform="translate(25,88)">
+    <rect x="0" y="0" width="375" height="60" rx="8" fill="#0f2a1a" stroke="#86efac" stroke-width="1.5"/>
+    <text x="187" y="20" text-anchor="middle" fill="#86efac" font-size="11" font-family="Georgia,serif" font-weight="bold">1. Matter is made of tiny, indivisible particles called atoms</text>
+    <text x="187" y="40" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Atoms cannot be created, divided or destroyed</text>
+    <text x="187" y="56" text-anchor="middle" fill="#7dd3fc" font-size="10" font-family="Georgia,serif" font-style="italic">✗ Later shown: atoms ARE divisible into subatomic particles</text>
+
+    <rect x="0" y="68" width="375" height="50" rx="8" fill="#0f2a1a" stroke="#fde68a" stroke-width="1.5"/>
+    <text x="187" y="88" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia,serif" font-weight="bold">2. Atoms of same element are identical in mass and properties</text>
+    <text x="187" y="110" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">✗ Isotopes disproved this</text>
+
+    <rect x="0" y="126" width="375" height="50" rx="8" fill="#0f2a1a" stroke="#f472b6" stroke-width="1.5"/>
+    <text x="187" y="146" text-anchor="middle" fill="#f9a8d4" font-size="11" font-family="Georgia,serif" font-weight="bold">3. Atoms of different elements differ in mass and properties</text>
+    <text x="187" y="168" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">✓ Still accepted</text>
+
+    <rect x="0" y="184" width="375" height="50" rx="8" fill="#0f2a1a" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="187" y="204" text-anchor="middle" fill="#c4b5fd" font-size="11" font-family="Georgia,serif" font-weight="bold">4. Compounds: atoms combine in simple whole-number ratios</text>
+    <text x="187" y="224" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">✓ Basis of chemical formulas e.g. H₂O (2:1)</text>
+
+    <rect x="0" y="242" width="375" height="50" rx="8" fill="#0f2a1a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="187" y="262" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="Georgia,serif" font-weight="bold">5. Chemical reactions involve rearrangement of atoms</text>
+    <text x="187" y="282" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Atoms neither created nor destroyed in reactions</text>
+    <text x="187" y="297" text-anchor="middle" fill="#7dd3fc" font-size="10" font-family="Georgia,serif" font-style="italic">✓ Law of Conservation of Mass</text>
+
+    <!-- atom visual -->
+    <circle cx="187" cy="340" r="48" fill="#1a3a2a" stroke="#a3e635" stroke-width="2"/>
+    <circle cx="187" cy="340" r="28" fill="#86efac" fill-opacity="0.15" stroke="#86efac" stroke-width="1" stroke-dasharray="4,3"/>
+    <circle cx="187" cy="340" r="10" fill="#a3e635"/>
+    <text x="187" y="344" text-anchor="middle" fill="#0f2a1a" font-size="9" font-family="Georgia,serif" font-weight="bold">ATOM</text>
+    <!-- electron dots -->
+    <circle cx="187" cy="293" r="4" fill="#fde68a"/>
+    <circle cx="233" cy="362" r="4" fill="#fde68a"/>
+    <circle cx="140" cy="362" r="4" fill="#fde68a"/>
+  </g>
+
+  <!-- Right: Historical context + laws -->
+  <rect x="420" y="55" width="365" height="200" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="602" y="78" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">Laws that Support Dalton</text>
+  <rect x="430" y="88" width="344" height="50" rx="6" fill="#0f2a1a" stroke="#a3e635" stroke-width="1.5"/>
+  <text x="602" y="106" text-anchor="middle" fill="#a3e635" font-size="12" font-family="Georgia,serif" font-weight="bold">Law of Conservation of Mass</text>
+  <text x="602" y="124" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Mass of reactants = Mass of products (Lavoisier)</text>
+  <rect x="430" y="146" width="344" height="50" rx="6" fill="#0f2a1a" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="602" y="164" text-anchor="middle" fill="#7dd3fc" font-size="12" font-family="Georgia,serif" font-weight="bold">Law of Constant Proportions</text>
+  <text x="602" y="182" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Elements combine in fixed mass ratio (Proust)</text>
+  <text x="602" y="200" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">e.g. Water is always 8:1 O:H by mass</text>
+  <text x="602" y="238" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif" font-style="italic">"atomos" = Greek for indivisible</text>
+
+  <!-- Limitations -->
+  <rect x="420" y="265" width="365" height="225" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#ef4444" stroke-width="2"/>
+  <text x="602" y="288" text-anchor="middle" fill="#ef4444" font-size="14" font-family="Georgia,serif" font-weight="bold">Limitations of Dalton's Theory</text>
+  <g transform="translate(430,300)" font-size="11" font-family="Georgia,serif" fill="#d4d4d8">
+    <rect x="0" y="0" width="344" height="30" rx="4" fill="#3b0f0f" stroke="#ef4444" stroke-width="1"/>
+    <text x="172" y="20" text-anchor="middle">Atoms ARE divisible → e⁻, p⁺, n⁰ discovered</text>
+    <rect x="0" y="38" width="344" height="30" rx="4" fill="#3b0f0f" stroke="#f472b6" stroke-width="1"/>
+    <text x="172" y="58" text-anchor="middle">Isotopes: same element, different masses</text>
+    <rect x="0" y="76" width="344" height="30" rx="4" fill="#3b0f0f" stroke="#fbbf24" stroke-width="1"/>
+    <text x="172" y="96" text-anchor="middle">Isobars: diff. element, same mass</text>
+    <rect x="0" y="114" width="344" height="30" rx="4" fill="#3b0f0f" stroke="#a78bfa" stroke-width="1"/>
+    <text x="172" y="134" text-anchor="middle">Allotropes: atoms of same element, diff. properties</text>
+    <rect x="0" y="152" width="344" height="25" rx="4" fill="#134e4a" stroke="#a3e635" stroke-width="1.5"/>
+    <text x="172" y="170" text-anchor="middle" fill="#86efac" font-weight="bold">Despite limitations, theory is the foundation of chemistry</text>
+  </g>
+</svg>

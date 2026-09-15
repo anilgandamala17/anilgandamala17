@@ -1,0 +1,40 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- NO BACKGROUND RECT -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="28" fill="#fef08a" text-anchor="middle" font-weight="bold">Plant Kingdom: Algae</text>
+  <path d="M 300,60 L 500,60" stroke="#fef08a" stroke-width="1" opacity="0.3" />
+
+  <!-- Classification of Algae -->
+  <g transform="translate(100, 120)">
+    <!-- Chlorophyceae -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="180" height="240" rx="10" fill="none" stroke="#86efac" stroke-width="1.5" opacity="0.6" />
+      <text x="90" y="30" font-family="Georgia, serif" font-size="16" fill="#86efac" text-anchor="middle" font-weight="bold">Chlorophyceae</text>
+      <path d="M 40,80 Q 90,40 140,80" fill="none" stroke="#86efac" stroke-width="2" /> <!-- Green Algae shape -->
+      <text x="90" y="180" font-family="Arial" font-size="12" fill="#f8fafc" text-anchor="middle" font-weight="bold">Green Algae</text>
+      <text x="90" y="200" font-family="Arial" font-size="11" fill="#f8fafc" text-anchor="middle" opacity="0.7">Pigment: Chlorophyll a, b</text>
+      <text x="90" y="215" font-family="Arial" font-size="11" fill="#f8fafc" text-anchor="middle" opacity="0.7">Storage: Starch</text>
+    </g>
+
+    <!-- Phaeophyceae -->
+    <g transform="translate(210, 0)">
+      <rect x="0" y="0" width="180" height="240" rx="10" fill="none" stroke="#fcd34d" stroke-width="1.5" opacity="0.6" />
+      <text x="90" y="30" font-family="Georgia, serif" font-size="16" fill="#fcd34d" text-anchor="middle" font-weight="bold">Phaeophyceae</text>
+      <path d="M 70,60 L 110,140 M 90,60 L 90,140" stroke="#fcd34d" stroke-width="3" opacity="0.5" /> <!-- Brown Algae kelp-like -->
+      <text x="90" y="180" font-family="Arial" font-size="12" fill="#f8fafc" text-anchor="middle" font-weight="bold">Brown Algae</text>
+      <text x="90" y="200" font-family="Arial" font-size="11" fill="#f8fafc" text-anchor="middle" opacity="0.7">Pigment: Fucoxanthin</text>
+      <text x="90" y="215" font-family="Arial" font-size="11" fill="#f8fafc" text-anchor="middle" opacity="0.7">Storage: Mannitol</text>
+    </g>
+
+    <!-- Rhodophyceae -->
+    <g transform="translate(420, 0)">
+      <rect x="0" y="0" width="180" height="240" rx="10" fill="none" stroke="#fca5a5" stroke-width="1.5" opacity="0.6" />
+      <text x="90" y="30" font-family="Georgia, serif" font-size="16" fill="#fca5a5" text-anchor="middle" font-weight="bold">Rhodophyceae</text>
+      <path d="M 90,140 C 60,100 120,60 90,40" stroke="#fca5a5" stroke-width="2" fill="none" /> <!-- Red Algae branching -->
+      <text x="90" y="180" font-family="Arial" font-size="12" fill="#f8fafc" text-anchor="middle" font-weight="bold">Red Algae</text>
+      <text x="90" y="200" font-family="Arial" font-size="11" fill="#f8fafc" text-anchor="middle" opacity="0.7">Pigment: r-Phycoerythrin</text>
+      <text x="90" y="215" font-family="Arial" font-size="11" fill="#f8fafc" text-anchor="middle" opacity="0.7">Storage: Floridean Starch</text>
+    </g>
+  </g>
+
+  <text x="400" y="420" font-family="Arial" font-size="14" fill="#fef08a" text-anchor="middle" font-style="italic">Major classes based on photosynthetic pigments</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#1a2e1a"/>
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#86efac" font-weight="bold">Capital and Resources — Village Palampur</text>
+  <line x1="40" y1="48" x2="760" y2="48" stroke="#86efac" stroke-width="1" opacity="0.4"/>
+
+  <!-- Fixed Capital box -->
+  <rect x="55" y="70" width="330" height="180" rx="8" fill="rgba(249,115,22,0.08)" stroke="#f97316" stroke-width="1.8"/>
+  <text x="220" y="100" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#f97316" font-weight="bold">Fixed Capital</text>
+  <text x="220" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.55)">Assets used repeatedly over many years</text>
+  <line x1="70" y1="125" x2="370" y2="125" stroke="#f97316" stroke-width="0.5" opacity="0.4"/>
+  <!-- Items -->
+  <text x="80" y="148" font-family="Georgia, serif" font-size="11" fill="#f97316">▸</text>
+  <text x="100" y="148" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.8)">Tractors &amp; farm machinery</text>
+  <text x="80" y="168" font-family="Georgia, serif" font-size="11" fill="#f97316">▸</text>
+  <text x="100" y="168" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.8)">Tube wells (irrigation)</text>
+  <text x="80" y="188" font-family="Georgia, serif" font-size="11" fill="#f97316">▸</text>
+  <text x="100" y="188" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.8)">Threshers, ploughs</text>
+  <text x="80" y="208" font-family="Georgia, serif" font-size="11" fill="#f97316">▸</text>
+  <text x="100" y="208" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.8)">Storage buildings, sheds</text>
+  <text x="220" y="232" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="rgba(249,115,22,0.7)">Owned by medium/large farmers</text>
+
+  <!-- Working Capital box -->
+  <rect x="415" y="70" width="330" height="180" rx="8" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-width="1.8"/>
+  <text x="580" y="100" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#38bdf8" font-weight="bold">Working Capital</text>
+  <text x="580" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.55)">Assets used up in a single production</text>
+  <line x1="430" y1="125" x2="730" y2="125" stroke="#38bdf8" stroke-width="0.5" opacity="0.4"/>
+  <text x="440" y="148" font-family="Georgia, serif" font-size="11" fill="#38bdf8">▸</text>
+  <text x="460" y="148" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.8)">Seeds (HYV / traditional)</text>
+  <text x="440" y="168" font-family="Georgia, serif" font-size="11" fill="#38bdf8">▸</text>
+  <text x="460" y="168" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.8)">Fertilizers &amp; pesticides</text>
+  <text x="440" y="188" font-family="Georgia, serif" font-size="11" fill="#38bdf8">▸</text>
+  <text x="460" y="188" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.8)">Diesel, electricity costs</text>
+  <text x="440" y="208" font-family="Georgia, serif" font-size="11" fill="#38bdf8">▸</text>
+  <text x="460" y="208" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.8)">Wages paid to labourers</text>
+  <text x="580" y="232" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="rgba(56,189,248,0.7)">Replenished every season</text>
+
+  <!-- How is capital sourced -->
+  <rect x="55" y="270" width="690" height="55" rx="7" fill="rgba(250,204,21,0.07)" stroke="#facc15" stroke-width="1.2"/>
+  <text x="400" y="294" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#facc15" font-weight="bold">How Do Farmers Get Capital?</text>
+  <text x="200" y="314" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Own Savings</text>
+  <text x="400" y="314" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Money Lenders (High Interest)</text>
+  <text x="600" y="314" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Bank Loans / Cooperatives</text>
+
+  <!-- Ownership pyramid -->
+  <rect x="55" y="342" width="690" height="130" rx="7" fill="rgba(134,239,172,0.05)" stroke="#86efac" stroke-width="1"/>
+  <text x="400" y="366" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#86efac" font-weight="bold">Land Ownership in Palampur</text>
+  <!-- Pyramid bars -->
+  <rect x="170" y="380" width="460" height="22" rx="3" fill="rgba(239,68,68,0.20)" stroke="#ef4444" stroke-width="1"/>
+  <text x="400" y="396" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.8)">240 families — Very small land (less than 2 ha) — 150 families landless</text>
+  <rect x="250" y="408" width="300" height="22" rx="3" fill="rgba(250,204,21,0.15)" stroke="#facc15" stroke-width="1"/>
+  <text x="400" y="424" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.8)">Medium farms — 2 to 10 ha — ~50 families</text>
+  <rect x="330" y="435" width="140" height="22" rx="3" fill="rgba(134,239,172,0.20)" stroke="#86efac" stroke-width="1"/>
+  <text x="400" y="451" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.8)">Large farms — over 10 ha — Few</text>
+</svg>

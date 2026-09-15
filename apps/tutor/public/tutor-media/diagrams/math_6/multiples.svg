@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      .chalk { font-family: 'Segoe UI', sans-serif; }
+      .title { font-size: 26px; font-weight: bold; fill: #a5d6a7; }
+      .label { font-size: 17px; fill: #c8e6c9; }
+      .num { font-size: 20px; fill: #fff9c4; font-weight: bold; }
+      .muted { font-size: 14px; fill: #81c784; }
+      .highlight { fill: rgba(102,187,106,0.12); stroke: #66bb6a; stroke-width: 1.5; }
+      .orange { fill: rgba(255,183,77,0.12); stroke: #ffb74d; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <text x="400" y="44" text-anchor="middle" class="chalk title">Multiples – Playing with Numbers</text>
+  <line x1="60" y1="56" x2="740" y2="56" stroke="#66bb6a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <text x="400" y="86" text-anchor="middle" class="chalk label">Multiples = Number × 1, 2, 3, 4, 5... (never-ending!)</text>
+
+  <!-- Multiples visualization on number line -->
+  <g transform="translate(60,110)">
+    <!-- Multiples of 3 -->
+    <text x="0" y="0" class="chalk label" style="fill:#a5d6a7">Multiples of 3:</text>
+    <line x1="0" y1="20" x2="680" y2="20" stroke="#66bb6a" stroke-width="1.5"/>
+    <circle cx="0" cy="20" r="8" fill="rgba(102,187,106,0.4)" stroke="#66bb6a" stroke-width="1.5"/>
+    <circle cx="62" cy="20" r="8" fill="rgba(125,125,125,0.1)" stroke="#555" stroke-width="1"/>
+    <circle cx="124" cy="20" r="8" fill="rgba(125,125,125,0.1)" stroke="#555" stroke-width="1"/>
+    <circle cx="186" cy="20" r="12" fill="rgba(102,187,106,0.4)" stroke="#a5d6a7" stroke-width="2"/>
+    <circle cx="248" cy="20" r="8" fill="rgba(125,125,125,0.1)" stroke="#555" stroke-width="1"/>
+    <circle cx="310" cy="20" r="8" fill="rgba(125,125,125,0.1)" stroke="#555" stroke-width="1"/>
+    <circle cx="372" cy="20" r="12" fill="rgba(102,187,106,0.4)" stroke="#a5d6a7" stroke-width="2"/>
+    <circle cx="434" cy="20" r="8" fill="rgba(125,125,125,0.1)" stroke="#555" stroke-width="1"/>
+    <circle cx="496" cy="20" r="8" fill="rgba(125,125,125,0.1)" stroke="#555" stroke-width="1"/>
+    <circle cx="558" cy="20" r="12" fill="rgba(102,187,106,0.4)" stroke="#a5d6a7" stroke-width="2"/>
+    <circle cx="620" cy="20" r="8" fill="rgba(125,125,125,0.1)" stroke="#555" stroke-width="1"/>
+    <text x="0" y="48" text-anchor="middle" class="chalk num" style="font-size:14px">0</text>
+    <text x="186" y="48" text-anchor="middle" class="chalk num" style="font-size:14px">3</text>
+    <text x="372" y="48" text-anchor="middle" class="chalk num" style="font-size:14px">6</text>
+    <text x="558" y="48" text-anchor="middle" class="chalk num" style="font-size:14px">9</text>
+    <text x="680" y="28" class="chalk muted">...</text>
+
+    <!-- Multiples of 4 -->
+    <text x="0" y="84" class="chalk label" style="fill:#ffb74d">Multiples of 4:</text>
+    <line x1="0" y1="104" x2="680" y2="104" stroke="#66bb6a" stroke-width="1.5"/>
+    <circle cx="0" cy="104" r="8" fill="rgba(255,183,77,0.3)" stroke="#ffb74d" stroke-width="1.5"/>
+    <circle cx="248" cy="104" r="12" fill="rgba(255,183,77,0.3)" stroke="#ffb74d" stroke-width="2"/>
+    <circle cx="496" cy="104" r="12" fill="rgba(255,183,77,0.3)" stroke="#ffb74d" stroke-width="2"/>
+    <text x="0" y="130" text-anchor="middle" class="chalk num" style="font-size:14px;fill:#ffb74d">0</text>
+    <text x="248" y="130" text-anchor="middle" class="chalk num" style="font-size:14px;fill:#ffb74d">4</text>
+    <text x="496" y="130" text-anchor="middle" class="chalk num" style="font-size:14px;fill:#ffb74d">8</text>
+  </g>
+
+  <!-- LCM section -->
+  <g transform="translate(60,300)">
+    <rect x="0" y="0" width="340" height="170" class="orange" rx="10"/>
+    <text x="170" y="28" text-anchor="middle" class="chalk label">LCM — Lowest Common Multiple</text>
+    <text x="170" y="54" text-anchor="middle" class="chalk muted">Multiples of 4: 4, 8, 12, 16, 20, 24...</text>
+    <text x="170" y="76" text-anchor="middle" class="chalk muted">Multiples of 6: 6, 12, 18, 24...</text>
+    <text x="170" y="100" text-anchor="middle" class="chalk muted">Common: 12, 24, 36...</text>
+    <text x="170" y="128" text-anchor="middle" class="chalk num">LCM(4,6) = 12</text>
+    <text x="170" y="154" text-anchor="middle" class="chalk muted">Smallest common multiple</text>
+
+    <rect x="360" y="0" width="320" height="170" class="highlight" rx="10"/>
+    <text x="520" y="28" text-anchor="middle" class="chalk label">Properties of Multiples</text>
+    <text x="380" y="56" class="chalk muted">• Every multiple ≥ the number</text>
+    <text x="380" y="78" class="chalk muted">• Infinitely many multiples exist</text>
+    <text x="380" y="100" class="chalk muted">• 0 is a multiple of every number</text>
+    <text x="380" y="122" class="chalk muted">• Multiple of a, b → multiple of LCM</text>
+    <text x="380" y="148" class="chalk muted">• a is multiple of its factors</text>
+  </g>
+</svg>

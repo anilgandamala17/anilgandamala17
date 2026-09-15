@@ -1,0 +1,49 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Democracy and Equality</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<rect x="80" y="63" width="640" height="40" fill="none" stroke="#ffd54f" stroke-width="1.5" rx="6"/>
+<text x="400" y="88" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Democracy = Government of the people, by the people, for the people</text>
+
+<rect x="20" y="112" width="370" height="155" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="135" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">What is Democracy?</text>
+<text x="205" y="157" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Citizens choose their government</text>
+<text x="205" y="177" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Free and fair elections held regularly</text>
+<text x="205" y="197" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Everyone above 18 has the right to vote</text>
+<text x="205" y="217" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Rights of minorities protected</text>
+<text x="205" y="237" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Rule of law — everyone equal before law</text>
+<text x="205" y="257" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Types: Direct democracy | Representative democracy</text>
+
+<rect x="410" y="112" width="370" height="155" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="135" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Equality — Core Value</text>
+<text x="595" y="157" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">All citizens are equal before the law</text>
+<text x="595" y="177" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">No discrimination on basis of</text>
+<text x="595" y="197" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">religion, race, caste, sex, place of birth</text>
+<text x="595" y="217" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Equality of opportunity in govt jobs</text>
+<text x="595" y="237" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Article 14-18 guarantees equality</text>
+<text x="595" y="257" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Abolition of untouchability (Art 17)</text>
+
+<line x1="20" y1="280" x2="780" y2="280" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="304" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Universal Adult Franchise</text>
+
+<rect x="20" y="316" width="760" height="90" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="338" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Every citizen aged 18 and above has the right to VOTE — regardless of</text>
+<text x="400" y="358" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">education, income, gender, religion, caste or social status</text>
+<text x="400" y="378" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">One person = One vote = Equal value in democracy</text>
+<text x="400" y="398" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Voting age lowered from 21 to 18 in 1988 (61st Constitutional Amendment)</text>
+
+<text x="400" y="430" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Challenges to Democracy and Equality</text>
+
+<rect x="20" y="442" width="370" height="118" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="465" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle" font-weight="bold">Inequality Still Exists</text>
+<text x="205" y="487" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Poverty limits access to education</text>
+<text x="205" y="507" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Caste discrimination despite laws</text>
+<text x="205" y="527" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Gender inequality in many areas</text>
+<text x="205" y="547" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Constitution guarantees — reality still evolving</text>
+
+<rect x="410" y="442" width="370" height="118" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="465" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">What India Has Done</text>
+<text x="595" y="487" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Reservation for SC/ST/OBC</text>
+<text x="595" y="507" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Free and compulsory education (RTE)</text>
+<text x="595" y="527" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">MGNREGA: rural employment rights</text>
+<text x="595" y="547" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Women's reservation in panchayats (33%)</text>
+</svg>

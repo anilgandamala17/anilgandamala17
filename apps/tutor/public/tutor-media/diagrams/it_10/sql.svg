@@ -1,0 +1,32 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .keyword { fill: #f472b6; font-weight: bold; }
+    </style>
+  </defs>
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">SQL QUERIES</text>
+  
+  <rect x="40" y="60" width="320" height="150" fill="#1e293b" rx="4" stroke="#334155" />
+  
+  <text x="60" y="90" font-size="14">
+    <tspan class="keyword">SELECT</tspan> name, role
+  </text>
+  <text x="60" y="120" font-size="14">
+    <tspan class="keyword">FROM</tspan> users
+  </text>
+  <text x="60" y="150" font-size="14">
+    <tspan class="keyword">WHERE</tspan> role = 'Admin'
+  </text>
+  <text x="60" y="180" font-size="14">
+    <tspan class="keyword">ORDER BY</tspan> name;
+  </text>
+
+  <g transform="translate(60, 220)">
+    <circle cx="10" cy="10" r="10" fill="#34d399" />
+    <text x="30" y="15" font-size="12">Execute Query</text>
+  </g>
+</svg>

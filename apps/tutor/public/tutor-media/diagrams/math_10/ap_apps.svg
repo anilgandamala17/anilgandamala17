@@ -1,0 +1,61 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#0d2818}
+      .title{fill:#f0e68c;font-size:14px;font-weight:bold}
+      .sub{fill:#aad4ff;font-size:10px}
+      .label{fill:#e0ffe0;font-size:11px}
+      .hl{fill:#7fffd4;font-size:12px;font-weight:bold}
+      .box{fill:#1a3a20;stroke:#4ade80;stroke-width:1.2}
+      .icon{fill:#ff9f43;font-size:18px}
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="18" text-anchor="middle" class="title">AP Applications — Real World Problems</text>
+  <text x="210" y="30" text-anchor="middle" class="sub">Tₙ = a+(n−1)d   ·   Sₙ = n/2[2a+(n−1)d]</text>
+
+  <!-- Application 1: Savings -->
+  <rect x="8" y="40" width="195" height="108" rx="5" class="box"/>
+  <text x="105" y="56" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">💰 Savings Problem</text>
+  <text x="16" y="72" fill="#e0ffe0" font-size="10">Ramesh saves ₹500 in Jan,</text>
+  <text x="16" y="86" fill="#e0ffe0" font-size="10">₹550 in Feb, ₹600 in Mar...</text>
+  <text x="16" y="100" fill="#aad4ff" font-size="10">a = 500, d = 50</text>
+  <text x="16" y="114" fill="#ffd700" font-size="10">Savings in Dec (12th month):</text>
+  <text x="16" y="128" fill="#e0ffe0" font-size="10">T₁₂ = 500 + 11×50 = ₹1050</text>
+  <text x="16" y="142" fill="#7fffd4" font-size="10" font-weight="bold">Total year: S₁₂ = 12/2×(500+1050) = ₹9300</text>
+
+  <!-- Application 2: Stadium rows -->
+  <rect x="213" y="40" width="199" height="108" rx="5" class="box"/>
+  <text x="312" y="56" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">🏟️ Stadium Seating</text>
+  <text x="221" y="72" fill="#e0ffe0" font-size="10">Row 1: 20 seats, Row 2: 24 seats</text>
+  <text x="221" y="86" fill="#e0ffe0" font-size="10">Row 3: 28 seats... (30 rows total)</text>
+  <text x="221" y="100" fill="#aad4ff" font-size="10">a = 20, d = 4, n = 30</text>
+  <text x="221" y="114" fill="#ffd700" font-size="10">Row 30:</text>
+  <text x="221" y="128" fill="#e0ffe0" font-size="10">T₃₀ = 20 + 29×4 = 136 seats</text>
+  <text x="221" y="142" fill="#7fffd4" font-size="10" font-weight="bold">Total: S₃₀ = 30/2×(20+136) = 2340</text>
+
+  <!-- Application 3: Clock problem / staircase -->
+  <rect x="8" y="156" width="195" height="138" rx="5" class="box"/>
+  <text x="105" y="172" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">⏰ Clock Strikes</text>
+  <text x="16" y="188" fill="#e0ffe0" font-size="10">Clock strikes once at 1:00,</text>
+  <text x="16" y="202" fill="#e0ffe0" font-size="10">twice at 2:00, ..., 12 at 12:00</text>
+  <text x="16" y="216" fill="#aad4ff" font-size="10">AP: 1, 2, 3, ..., 12</text>
+  <text x="16" y="230" fill="#ffd700" font-size="10">Total strikes in 12 hours:</text>
+  <text x="16" y="244" fill="#e0ffe0" font-size="10">S = 12/2 × (1 + 12)</text>
+  <text x="16" y="258" fill="#7fffd4" font-size="12" font-weight="bold">= 78 strikes</text>
+  <text x="16" y="272" fill="#aad4ff" font-size="9">In 24 hours: 2 × 78 = 156 strikes</text>
+  <text x="16" y="286" fill="#ffd700" font-size="9">(Two 12-hr cycles)</text>
+
+  <!-- Application 4: Stone problem -->
+  <rect x="213" y="156" width="199" height="138" rx="5" class="box"/>
+  <text x="312" y="172" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">🪨 Stone Collection</text>
+  <text x="221" y="188" fill="#e0ffe0" font-size="10">Stones at 5m intervals: 1st at</text>
+  <text x="221" y="202" fill="#e0ffe0" font-size="10">5m, 2nd at 10m, 3rd at 15m...</text>
+  <text x="221" y="216" fill="#aad4ff" font-size="10">Distances walked (and back):</text>
+  <text x="221" y="230" fill="#e0ffe0" font-size="10">2×5, 2×10, 2×15, ...</text>
+  <text x="221" y="244" fill="#aad4ff" font-size="10">AP: 10, 20, 30, ... (n terms)</text>
+  <text x="221" y="258" fill="#ffd700" font-size="10">Total distance (n=10):</text>
+  <text x="221" y="272" fill="#e0ffe0" font-size="10">S₁₀ = 10/2 × (10+100)</text>
+  <text x="221" y="286" fill="#7fffd4" font-size="12" font-weight="bold">= 550 metres</text>
+  </g>
+</svg>

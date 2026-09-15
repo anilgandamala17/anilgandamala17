@@ -1,0 +1,69 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Data Handling: Graphs and Charts</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="78" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">Visual representation makes data easy to compare and understand</text>
+
+<!-- Bar Graph Demo -->
+<text x="205" y="100" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Bar Graph</text>
+<line x1="60" y1="105" x2="60" y2="220" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+<line x1="60" y1="220" x2="370" y2="220" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+<rect x="75" y="145" width="35" height="75" fill="#86efac" opacity="0.7"/>
+<rect x="135" y="130" width="35" height="90" fill="#86efac" opacity="0.7"/>
+<rect x="195" y="155" width="35" height="65" fill="#86efac" opacity="0.7"/>
+<rect x="255" y="120" width="35" height="100" fill="#86efac" opacity="0.7"/>
+<rect x="315" y="140" width="35" height="80" fill="#86efac" opacity="0.7"/>
+<text x="92" y="235" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Math</text>
+<text x="152" y="235" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Sci</text>
+<text x="212" y="235" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Eng</text>
+<text x="272" y="235" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">SST</text>
+<text x="332" y="235" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Hin</text>
+
+<!-- Pie Chart Demo -->
+<text x="595" y="100" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Pie / Circle Chart</text>
+<circle cx="595" cy="165" r="65" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<path d="M595,165 L595,100 A65,65 0 0,1 651,198 Z" fill="#86efac" opacity="0.7"/>
+<path d="M595,165 L651,198 A65,65 0 0,1 540,218 Z" fill="#ffd54f" opacity="0.7"/>
+<path d="M595,165 L540,218 A65,65 0 0,1 530,130 Z" fill="#f48fb1" opacity="0.6"/>
+<path d="M595,165 L530,130 A65,65 0 0,1 595,100 Z" fill="#80d8ff" opacity="0.6"/>
+<text x="630" y="148" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">30%</text>
+<text x="615" y="200" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">25%</text>
+<text x="535" y="210" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">25%</text>
+<text x="540" y="140" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">20%</text>
+
+<line x1="20" y1="255" x2="780" y2="255" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+
+<rect x="20" y="268" width="370" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="291" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Drawing a Bar Graph — Steps</text>
+<text x="205" y="312" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">1. Draw x-axis and y-axis (perpendicular)</text>
+<text x="205" y="332" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">2. Label axes with categories and values</text>
+<text x="205" y="352" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3. Choose uniform, equal scale on y-axis</text>
+<text x="205" y="372" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">4. Draw equal-width bars with equal gaps</text>
+<text x="205" y="390" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">5. Give a title to the bar graph</text>
+
+<rect x="410" y="268" width="370" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="291" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Pie Chart — Sector Angles</text>
+<text x="595" y="312" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Angle = (Value ÷ Total) × 360°</text>
+<text x="595" y="332" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Total = 40 students, Math = 10</text>
+<text x="595" y="352" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Angle = (10/40) × 360° = 90°</text>
+<text x="595" y="372" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Shows parts of a whole (100%)</text>
+<text x="595" y="390" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Use compass + protractor to draw</text>
+
+<line x1="20" y1="410" x2="780" y2="410" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="435" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Double Bar Graph</text>
+<text x="400" y="460" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Compares TWO sets of data side by side for the same categories</text>
+<text x="400" y="483" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Example: Boys vs Girls marks in each subject | Year-on-year comparison</text>
+<!-- Mini double bar -->
+<rect x="220" y="495" width="20" height="55" fill="#86efac" opacity="0.7"/>
+<rect x="245" y="510" width="20" height="40" fill="#ffd54f" opacity="0.7"/>
+<rect x="290" y="500" width="20" height="50" fill="#86efac" opacity="0.7"/>
+<rect x="315" y="515" width="20" height="35" fill="#ffd54f" opacity="0.7"/>
+<rect x="360" y="495" width="20" height="55" fill="#86efac" opacity="0.7"/>
+<rect x="385" y="505" width="20" height="45" fill="#ffd54f" opacity="0.7"/>
+<rect x="430" y="505" width="20" height="45" fill="#86efac" opacity="0.7"/>
+<rect x="455" y="520" width="20" height="30" fill="#ffd54f" opacity="0.7"/>
+<line x1="210" y1="550" x2="540" y2="550" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+<rect x="545" y="498" width="14" height="10" fill="#86efac" opacity="0.8"/>
+<text x="563" y="508" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Boys</text>
+<rect x="545" y="516" width="14" height="10" fill="#ffd54f" opacity="0.8"/>
+<text x="563" y="526" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Girls</text>
+</svg>

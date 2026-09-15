@@ -1,0 +1,46 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="background:#1a3a2a">
+  <defs>
+    <marker id="arrowW" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#ffffff"/>
+    </marker>
+    <marker id="arrowY" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#fbbf24"/>
+    </marker>
+  </defs>
+  <text x="200" y="22" font-size="13" fill="#86efac" text-anchor="middle" font-family="monospace" font-weight="bold">Rutherford's Nuclear Model (1911)</text>
+  <!-- Nucleus -->
+  <circle cx="200" cy="135" r="14" fill="#fca5a5" stroke="#ffffff" stroke-width="2"/>
+  <text x="200" y="130" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">+</text>
+  <text x="200" y="142" font-size="7" fill="#1a3a2a" text-anchor="middle" font-family="monospace">Nucleus</text>
+  <!-- Electron orbits (ellipses) -->
+  <ellipse cx="200" cy="135" rx="60" ry="25" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+  <ellipse cx="200" cy="135" rx="90" ry="40" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-dasharray="4,3" transform="rotate(45 200 135)"/>
+  <ellipse cx="200" cy="135" rx="90" ry="40" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-dasharray="4,3" transform="rotate(-45 200 135)"/>
+  <!-- Electrons -->
+  <circle cx="260" cy="135" r="6" fill="#93c5fd" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="260" y="139" font-size="7" fill="#1a3a2a" text-anchor="middle" font-family="monospace">e⁻</text>
+  <circle cx="200" cy="95" r="6" fill="#93c5fd" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="200" y="99" font-size="7" fill="#1a3a2a" text-anchor="middle" font-family="monospace">e⁻</text>
+  <circle cx="155" cy="108" r="6" fill="#93c5fd" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="155" y="112" font-size="7" fill="#1a3a2a" text-anchor="middle" font-family="monospace">e⁻</text>
+  <!-- Gold foil experiment inset -->
+  <rect x="18" y="185" width="140" height="80" rx="4" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="88" y="200" font-size="9" fill="#fbbf24" text-anchor="middle" font-family="monospace" font-weight="bold">Gold Foil Experiment</text>
+  <!-- Alpha particles -->
+  <line x1="30" y1="225" x2="70" y2="225" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrowY)"/>
+  <line x1="30" y1="235" x2="70" y2="235" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrowY)"/>
+  <line x1="30" y1="245" x2="70" y2="245" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrowY)"/>
+  <!-- Gold foil -->
+  <line x1="75" y1="210" x2="75" y2="258" stroke="#fbbf24" stroke-width="3"/>
+  <!-- Deflected -->
+  <line x1="75" y1="225" x2="145" y2="200" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowY)"/>
+  <!-- Passed through -->
+  <line x1="75" y1="235" x2="145" y2="235" stroke="#fbbf24" stroke-width="1" marker-end="url(#arrowY)"/>
+  <text x="88" y="262" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle" font-family="monospace">Most pass through</text>
+  <!-- Labels -->
+  <text x="310" y="100" font-size="9" fill="#93c5fd" text-anchor="middle" font-family="monospace">Electrons</text>
+  <text x="310" y="112" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">(orbit nucleus)</text>
+  <text x="310" y="145" font-size="9" fill="#fca5a5" text-anchor="middle" font-family="monospace">Dense nucleus</text>
+  <text x="310" y="157" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">(+ve charge)</text>
+  <text x="200" y="270" font-size="9" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">Mostly empty space — nucleus is tiny but massive</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Properties of Integers</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+
+<rect x="20" y="68" width="370" height="118" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="91" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Commutative Property</text>
+<text x="205" y="112" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Addition: a + b = b + a</text>
+<text x="205" y="131" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3 + (−5) = (−5) + 3 = −2 ✓</text>
+<text x="205" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Multiplication: a × b = b × a</text>
+<text x="205" y="169" font-family="'Segoe UI',sans-serif" font-size="12" fill="#f48fb1" text-anchor="middle">NOT for subtraction or division</text>
+
+<rect x="410" y="68" width="370" height="118" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="91" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Associative Property</text>
+<text x="595" y="112" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">(a + b) + c = a + (b + c)</text>
+<text x="595" y="131" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">(2 + 3) + 4 = 2 + (3 + 4) = 9 ✓</text>
+<text x="595" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Works for multiplication too</text>
+<text x="595" y="169" font-family="'Segoe UI',sans-serif" font-size="12" fill="#f48fb1" text-anchor="middle">NOT for subtraction or division</text>
+
+<rect x="20" y="200" width="370" height="118" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="223" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Distributive Property</text>
+<text x="205" y="244" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">a × (b + c) = a×b + a×c</text>
+<text x="205" y="263" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3 × (4 + 2) = 3×4 + 3×2 = 18 ✓</text>
+<text x="205" y="282" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Also: a × (b − c) = a×b − a×c</text>
+<text x="205" y="301" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Key for simplification and mental math</text>
+
+<rect x="410" y="200" width="370" height="118" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="223" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Identity Elements</text>
+<text x="595" y="244" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Additive identity: 0</text>
+<text x="595" y="263" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">a + 0 = a → 5 + 0 = 5</text>
+<text x="595" y="282" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Multiplicative identity: 1</text>
+<text x="595" y="301" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">a × 1 = a → (−7) × 1 = −7</text>
+
+<rect x="20" y="332" width="370" height="118" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="355" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Additive Inverse</text>
+<text x="205" y="376" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">a + (−a) = 0</text>
+<text x="205" y="395" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">7 + (−7) = 0 ✓</text>
+<text x="205" y="414" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Every integer has an inverse</text>
+<text x="205" y="433" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Inverse of −5 is +5</text>
+
+<rect x="410" y="332" width="370" height="118" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="355" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Closure Property</text>
+<text x="595" y="376" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Result is always an integer</text>
+<text x="595" y="395" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Closed: +, −, ×</text>
+<text x="595" y="414" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle">NOT closed: ÷ (7÷2 = 3.5)</text>
+<text x="595" y="433" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Division may give non-integer result</text>
+
+<line x1="20" y1="465" x2="780" y2="465" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="492" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">Property of Zero: a × 0 = 0 for any integer a</text>
+<text x="400" y="518" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">Multiplication by −1: (−1) × a = −a  |  (−1) × (−5) = 5</text>
+<text x="400" y="555" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">These properties hold for all integers — they are fundamental laws of arithmetic</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Harmful Microorganisms (Pathogens)</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#f48fb1" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle">Microbes that cause diseases in humans, plants, and animals</text>
+
+<rect x="25" y="85" width="370" height="220" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="210" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Disease Transmission</text>
+<text x="210" y="145" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle">Communicable Diseases</text>
+<text x="210" y="165" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Spread through Air, Water, Food, or Contact</text>
+<text x="210" y="195" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Carriers (Vectors)</text>
+<text x="210" y="215" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Housefly: carries germs to food</text>
+<text x="210" y="235" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Female Anopheles mosquito: Malaria</text>
+<text x="210" y="255" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Aedes mosquito: Dengue</text>
+<text x="210" y="285" font-family="'Segoe UI',sans-serif" font-size="11" fill="#86efac" text-anchor="middle">Prevention: Cover food, Use nets, No stagnant water</text>
+
+<rect x="405" y="85" width="370" height="220" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="590" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Common Human Diseases</text>
+<text x="430" y="140" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">Tuberculosis | Bacteria | Air</text>
+<text x="430" y="160" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">Cholera / Typhoid | Bacteria | Water/Food</text>
+<text x="430" y="180" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">Hepatitis A | Virus | Water</text>
+<text x="430" y="200" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">Malaria | Protozoa | Mosquito</text>
+<text x="430" y="230" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="start">Food Poisoning</text>
+<text x="430" y="250" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="start">Growth of microbes on food producing toxic substances</text>
+<text x="430" y="275" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="start">Food Preservation: Salting, Sugar, Oil, Heat/Cold</text>
+<text x="430" y="295" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="start">Pasteurization: Heat to 70°C for 15-30s then chill</text>
+
+<rect x="25" y="325" width="750" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="10"/>
+<text x="400" y="350" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Diseases in Plants &amp; Animals</text>
+
+<rect x="50" y="370" width="340" height="135" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" rx="8"/>
+<text x="220" y="390" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle" font-weight="bold">Animal Diseases</text>
+<text x="220" y="415" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Anthrax: Dangerous human/cattle disease</text>
+<text x="220" y="435" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">(Caused by bacterium Bacillus anthracis)</text>
+<text x="220" y="460" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Foot and Mouth Disease (Cattle)</text>
+<text x="220" y="480" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">(Caused by Virus)</text>
+
+<rect x="410" y="370" width="340" height="135" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" rx="8"/>
+<text x="580" y="390" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle" font-weight="bold">Plant Diseases</text>
+<text x="580" y="415" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Citrus Canker: Bacteria | Air</text>
+<text x="580" y="440" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Rust of Wheat: Fungi | Air / Seeds</text>
+<text x="580" y="465" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Yellow mosaic (Bhindi/Okra): Virus | Insect</text>
+<text x="580" y="490" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Reduces crop yield / quality</text>
+
+<text x="400" y="555" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Nitrogen Cycle: Rhizobium → Fixes N₂ in pulses roots leguminous plants</text>
+</svg>

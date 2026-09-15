@@ -1,0 +1,36 @@
+<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+<rect width="800" height="600" fill="#1a3a2a"/>
+
+<rect x="0" y="0" width="800" height="58" fill="#0d2418" opacity="0.9"/>
+<text x="400" y="39" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Indian Number System</text>
+<rect x="20" y="65" width="760" height="50" fill="#0d2418" rx="6" opacity="1"/>
+<text x="400" y="82" font-family="'Segoe UI',sans-serif" font-size="14" fill="#81c784" text-anchor="middle" font-weight="normal">Periods (Groups of digits, separated by commas)</text>
+<text x="400" y="102" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="normal">Crores | Ten Lakhs | Lakhs | Ten-Thous. | Thousands | Hundreds | Tens | Units</text>
+<rect x="20" y="122" width="370" height="138" fill="#1e4a30" rx="8"/>
+<text x="205" y="146" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Ones Period (Units, Tens, Hundreds)</text>
+<text x="205" y="166" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Rightmost 3 digits</text>
+<text x="205" y="184" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">e.g. in 7,56,23,451 → 451</text>
+<text x="205" y="202" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Hundreds = 4, Tens = 5, Units = 1</text>
+<rect x="410" y="122" width="370" height="138" fill="#1e4a30" rx="8"/>
+<text x="595" y="146" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Thousands Period (Thou. & Ten-Thou.)</text>
+<text x="595" y="166" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Next 2 digits to the left</text>
+<text x="595" y="184" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">e.g. in 7,56,23,451 → 23</text>
+<text x="595" y="202" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">23 Thousands = Twenty-three thousand</text>
+<rect x="20" y="268" width="370" height="138" fill="#1e4a30" rx="8"/>
+<text x="205" y="292" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Lakhs Period (Lakhs & Ten Lakhs)</text>
+<text x="205" y="312" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Next 2 digits</text>
+<text x="205" y="330" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">e.g. in 7,56,23,451 → 56</text>
+<text x="205" y="348" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">56 Lakhs = Fifty-six lakh</text>
+<rect x="410" y="268" width="370" height="138" fill="#1e4a30" rx="8"/>
+<text x="595" y="292" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Crores Period (Crores, Ten Crores)</text>
+<text x="595" y="312" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Leftmost digit(s)</text>
+<text x="595" y="330" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">e.g. in 7,56,23,451 → 7</text>
+<text x="595" y="348" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">7 Crores = Seven crore</text>
+<rect x="20" y="415" width="760" height="55" fill="#0d2418" rx="6" opacity="1"/>
+<text x="400" y="436" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Indian vs International</text>
+<text x="400" y="460" font-family="'Segoe UI',sans-serif" font-size="13" fill="#81c784" text-anchor="middle" font-weight="normal">1 Lakh = 100,000  |  10 Lakhs = 1 Million  |  1 Crore = 10 Million</text>
+<rect x="20" y="478" width="760" height="55" fill="#1e4a30" rx="6" opacity="1"/>
+<text x="400" y="499" font-family="'Segoe UI',sans-serif" font-size="18" fill="#ffd54f" text-anchor="middle" font-weight="bold">Example: 7,56,23,451</text>
+<text x="400" y="522" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e8f5e9" text-anchor="middle" font-weight="normal">Seven crore, fifty-six lakh, twenty-three thousand, four hundred and fifty-one</text>
+
+</svg>

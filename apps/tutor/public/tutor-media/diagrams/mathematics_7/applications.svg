@@ -1,0 +1,37 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Applications of Simple Equations</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="76" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">Word Problems → Define variable → Form equation → Solve → Verify</text>
+
+<rect x="20" y="86" width="760" height="95" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="108" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Age Problem</text>
+<text x="400" y="130" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Ravi is 3 years older than his sister. Sum of their ages = 25. Find their ages.</text>
+<text x="400" y="151" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Let sister's age = x → Ravi's age = x + 3</text>
+<text x="400" y="172" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Equation: x + (x+3) = 25 → 2x = 22 → x = 11 | Ravi = 14 years ✓</text>
+
+<rect x="20" y="193" width="760" height="95" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="215" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Consecutive Numbers Problem</text>
+<text x="400" y="237" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Sum of two consecutive integers is 47. Find the integers.</text>
+<text x="400" y="257" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Let n and n+1 be the integers</text>
+<text x="400" y="278" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Equation: n + (n+1) = 47 → 2n = 46 → n = 23 | Numbers: 23 and 24 ✓</text>
+
+<rect x="20" y="300" width="760" height="95" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="322" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Geometry Problem</text>
+<text x="400" y="344" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Perimeter of a rectangle = 48 cm. Length is 4 more than breadth. Find dimensions.</text>
+<text x="400" y="364" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Let breadth = x → length = x + 4 | P = 2(l + b) = 2(x+4+x) = 48</text>
+<text x="400" y="385" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">4x + 8 = 48 → 4x = 40 → x = 10 | Breadth = 10 cm, Length = 14 cm ✓</text>
+
+<rect x="20" y="408" width="370" height="115" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="430" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Money Problem</text>
+<text x="205" y="452" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Ticket cost ₹5 for child, ₹10 for adult.</text>
+<text x="205" y="472" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">30 people, total = ₹200. Find each.</text>
+<text x="205" y="492" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">5x + 10(30−x) = 200</text>
+<text x="205" y="512" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">x = 20 children, 10 adults</text>
+
+<rect x="410" y="408" width="370" height="115" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="430" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Steps to Solve Word Problems</text>
+<text x="595" y="452" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">1. Define variable (Let x = ?)</text>
+<text x="595" y="472" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">2. Frame the equation</text>
+<text x="595" y="492" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3. Solve the equation</text>
+<text x="595" y="512" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">4. Verify by substituting back</text>
+</svg>

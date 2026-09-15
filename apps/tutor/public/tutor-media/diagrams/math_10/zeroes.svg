@@ -1,0 +1,80 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#0d2818}
+      .title{fill:#f0e68c;font-size:14px;font-weight:bold}
+      .sub{fill:#aad4ff;font-size:10px}
+      .label{fill:#e0ffe0;font-size:11px}
+      .hl{fill:#7fffd4;font-size:12px;font-weight:bold}
+      .axis{stroke:#4ade80;stroke-width:1.5}
+      .curve{stroke:#ff9f43;stroke-width:2.5;fill:none}
+      .zero{fill:#ff6b6b}
+      .formula{fill:#ffd700;font-size:11px;font-weight:bold}
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="20" text-anchor="middle" class="title">Zeroes of a Polynomial</text>
+  <text x="210" y="33" text-anchor="middle" class="sub">Geometric meaning: x-intercepts of the graph y = p(x)</text>
+
+  <!-- Graph area -->
+  <!-- Axes -->
+  <line x1="30" y1="200" x2="260" y2="200" class="axis"/>
+  <line x1="145" y1="65" x2="145" y2="210" class="axis"/>
+  <text x="265" y="204" fill="#4ade80" font-size="12">x</text>
+  <text x="140" y="62" fill="#4ade80" font-size="12">y</text>
+
+  <!-- Parabola: y = (x-1)(x-3) centered around x=2, opens up -->
+  <!-- x: 30..260 maps to -5..5, center at 145(x=0), scale 23px/unit -->
+  <!-- Actually draw x=-2 to x=5 with scale: x_px = 145 + px_per_unit * x -->
+  <!-- px_per_unit = 25, y = (x-1)(x-3), y_px = 200 - 18*y -->
+  <path d="M 45,200 Q 95,100 145,185 Q 195,270 245,90" class="curve" fill="none"/>
+  <!-- Better accurate parabola y=(x-2)^2 - 1 zeros at 1 and 3 -->
+  <path d="M 47,245 C 70,180 100,140 120,152 C 145,170 160,195 170,195 C 185,195 200,160 220,117 C 235,85 248,65 258,50" class="curve"/>
+
+  <!-- Zero points at x=1 (145-25=120) and x=3 (145+25=220... visually) -->
+  <!-- Visual zeros -->
+  <circle cx="100" cy="200" r="6" class="zero"/>
+  <circle cx="200" cy="200" r="6" class="zero"/>
+  <text x="100" y="218" text-anchor="middle" fill="#ff6b6b" font-size="12" font-weight="bold">α</text>
+  <text x="200" y="218" text-anchor="middle" fill="#ff6b6b" font-size="12" font-weight="bold">β</text>
+  <text x="100" y="230" text-anchor="middle" fill="#aad4ff" font-size="9">x = 1</text>
+  <text x="200" y="230" text-anchor="middle" fill="#aad4ff" font-size="9">x = 3</text>
+
+  <!-- Vertex -->
+  <circle cx="150" cy="195" r="4" fill="#ffd700"/>
+  <text x="155" y="192" fill="#ffd700" font-size="9">Vertex</text>
+
+  <!-- Tick marks on x-axis -->
+  <line x1="100" y1="197" x2="100" y2="203" stroke="#4ade80"/>
+  <line x1="125" y1="197" x2="125" y2="203" stroke="#4ade80"/>
+  <line x1="150" y1="197" x2="150" y2="203" stroke="#4ade80"/>
+  <line x1="175" y1="197" x2="175" y2="203" stroke="#4ade80"/>
+  <line x1="200" y1="197" x2="200" y2="203" stroke="#4ade80"/>
+
+  <!-- Polynomial label -->
+  <text x="240" y="120" text-anchor="middle" fill="#ff9f43" font-size="11">p(x) =</text>
+  <text x="240" y="134" text-anchor="middle" fill="#ff9f43" font-size="11">x²-4x+3</text>
+
+  <!-- Right panel: Relationships -->
+  <rect x="270" y="48" width="140" height="240" rx="6" fill="#1a3a20" stroke="#4ade80" stroke-width="1.2"/>
+  <text x="340" y="66" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">Vieta's Formulas</text>
+  <text x="340" y="80" text-anchor="middle" fill="#aad4ff" font-size="9">For ax² + bx + c = 0</text>
+
+  <text x="280" y="100" fill="#ffd700" font-size="11" font-weight="bold">Sum of zeroes:</text>
+  <text x="280" y="114" fill="#7fffd4" font-size="12">α + β = −b/a</text>
+
+  <text x="280" y="135" fill="#ffd700" font-size="11" font-weight="bold">Product of zeroes:</text>
+  <text x="280" y="149" fill="#7fffd4" font-size="12">α × β = c/a</text>
+
+  <line x1="280" y1="158" x2="400" y2="158" stroke="#4ade80" stroke-width="0.8"/>
+  <text x="340" y="174" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">Cubic p(x)</text>
+  <text x="280" y="190" fill="#e0ffe0" font-size="10">α+β+γ = −b/a</text>
+  <text x="280" y="204" fill="#e0ffe0" font-size="10">αβ+βγ+γα = c/a</text>
+  <text x="280" y="218" fill="#e0ffe0" font-size="10">αβγ = −d/a</text>
+
+  <line x1="280" y1="226" x2="400" y2="226" stroke="#4ade80" stroke-width="0.8"/>
+  <text x="340" y="242" text-anchor="middle" fill="#aad4ff" font-size="10">Example: x²−4x+3</text>
+  <text x="340" y="256" text-anchor="middle" fill="#e0ffe0" font-size="10">α+β = 4, αβ = 3</text>
+  <text x="340" y="270" text-anchor="middle" fill="#7fffd4" font-size="10">∴ α=1, β=3 ✓</text>
+  </g>
+</svg>

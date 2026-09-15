@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto">
+      <path d="M0,0 L0,4 L8,2 z" fill="#86efac"/>
+    </marker>
+  </defs>
+
+  <g id="men-part-overview" data-mito-part="overview" class="mito-layer">
+    <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia, serif" font-weight="bold">Mendelism — Laws of Inheritance</text>
+  </g>
+
+  <g id="men-part-monohybrid" data-mito-part="monohybrid" class="mito-layer">
+  <!-- ── Law 1: Dominance / Monohybrid Cross ── -->
+  <rect x="15" y="55" width="370" height="420" rx="14" fill="#1a3a2a" fill-opacity="0.7" stroke="#86efac" stroke-width="2"/>
+  <text x="200" y="80" text-anchor="middle" fill="#86efac" font-size="15" font-family="Georgia, serif" font-weight="bold">Law 1 &amp; 2 — Monohybrid Cross</text>
+  <text x="200" y="98" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia, serif">Tall (TT) × Dwarf (tt)</text>
+
+  <!-- P generation -->
+  <text x="80" y="122" text-anchor="middle" fill="#fde68a" font-size="12" font-family="Georgia, serif" font-weight="bold">P</text>
+  <rect x="30" y="130" width="60" height="34" rx="8" fill="#a3e635" fill-opacity="0.3" stroke="#a3e635" stroke-width="2"/>
+  <text x="60" y="151" text-anchor="middle" fill="#d9f99d" font-size="15" font-family="Georgia, serif" font-weight="bold">TT</text>
+  <text x="104" y="151" text-anchor="middle" fill="#d4d4d8" font-size="16" font-family="Georgia, serif">×</text>
+  <rect x="118" y="130" width="60" height="34" rx="8" fill="#f472b6" fill-opacity="0.3" stroke="#f472b6" stroke-width="2"/>
+  <text x="148" y="151" text-anchor="middle" fill="#fce7f3" font-size="15" font-family="Georgia, serif" font-weight="bold">tt</text>
+
+  <line x1="95" y1="168" x2="95" y2="195" stroke="#86efac" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- F1 -->
+  <text x="80" y="215" text-anchor="middle" fill="#fde68a" font-size="12" font-family="Georgia, serif" font-weight="bold">F₁</text>
+  <rect x="30" y="222" width="120" height="34" rx="8" fill="#38bdf8" fill-opacity="0.2" stroke="#38bdf8" stroke-width="2"/>
+  <text x="90" y="244" text-anchor="middle" fill="#7dd3fc" font-size="15" font-family="Georgia, serif" font-weight="bold">Tt (Tall)</text>
+  <text x="200" y="244" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia, serif">all tall (dominant)</text>
+
+  <line x1="95" y1="260" x2="95" y2="290" stroke="#86efac" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="180" y="278" fill="#d4d4d8" font-size="10" font-family="Georgia, serif">self-cross</text>
+
+  <!-- Punnett square F2 -->
+  <text x="80" y="312" text-anchor="middle" fill="#fde68a" font-size="12" font-family="Georgia, serif" font-weight="bold">F₂ Punnett Square</text>
+  <!-- Grid -->
+  <rect x="28" y="318" width="148" height="148" rx="4" fill="#0f2a1a" stroke="#86efac" stroke-width="1.5"/>
+  <!-- Headers -->
+  <text x="77" y="338" text-anchor="middle" fill="#86efac" font-size="13" font-family="Georgia, serif" font-weight="bold">T</text>
+  <text x="127" y="338" text-anchor="middle" fill="#86efac" font-size="13" font-family="Georgia, serif" font-weight="bold">t</text>
+  <text x="44" y="373" text-anchor="middle" fill="#86efac" font-size="13" font-family="Georgia, serif" font-weight="bold">T</text>
+  <text x="44" y="423" text-anchor="middle" fill="#86efac" font-size="13" font-family="Georgia, serif" font-weight="bold">t</text>
+  <!-- Lines -->
+  <line x1="54" y1="318" x2="54" y2="466" stroke="#334155" stroke-width="1.5"/>
+  <line x1="28" y1="342" x2="176" y2="342" stroke="#334155" stroke-width="1.5"/>
+  <line x1="102" y1="342" x2="102" y2="466" stroke="#334155" stroke-width="1"/>
+  <line x1="28" y1="392" x2="176" y2="392" stroke="#334155" stroke-width="1"/>
+  <!-- Cells -->
+  <text x="78" y="372" text-anchor="middle" fill="#a3e635" font-size="13" font-family="Georgia, serif" font-weight="bold">TT</text>
+  <text x="138" y="372" text-anchor="middle" fill="#a3e635" font-size="13" font-family="Georgia, serif" font-weight="bold">Tt</text>
+  <text x="78" y="432" text-anchor="middle" fill="#a3e635" font-size="13" font-family="Georgia, serif" font-weight="bold">Tt</text>
+  <text x="138" y="432" text-anchor="middle" fill="#f472b6" font-size="13" font-family="Georgia, serif" font-weight="bold">tt</text>
+
+  <!-- Ratio -->
+  <text x="195" y="380" fill="#fde68a" font-size="12" font-family="Georgia, serif" font-weight="bold">3 : 1</text>
+  <text x="195" y="396" fill="#d9f99d" font-size="10" font-family="Georgia, serif">Tall : Dwarf</text>
+  <text x="195" y="412" fill="#d4d4d8" font-size="10" font-family="Georgia, serif">Genotypic:</text>
+  <text x="195" y="428" fill="#d4d4d8" font-size="10" font-family="Georgia, serif">1 TT : 2 Tt : 1 tt</text>
+  </g>
+
+  <g id="men-part-dihybrid" data-mito-part="dihybrid" class="mito-layer">
+  <!-- ── Law 3: Dihybrid Cross ── -->
+  <rect x="400" y="55" width="385" height="420" rx="14" fill="#1a3a2a" fill-opacity="0.7" stroke="#f472b6" stroke-width="2"/>
+  <text x="592" y="80" text-anchor="middle" fill="#f9a8d4" font-size="15" font-family="Georgia, serif" font-weight="bold">Law 3 — Dihybrid Cross</text>
+  <text x="592" y="98" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia, serif">Round Yellow (RRYY) × Wrinkled Green (rryy)</text>
+  <!-- F1 -->
+  <text x="420" y="122" fill="#fde68a" font-size="12" font-family="Georgia, serif" font-weight="bold">F₁:</text>
+  <rect x="440" y="110" width="100" height="28" rx="6" fill="#38bdf8" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="490" y="129" text-anchor="middle" fill="#7dd3fc" font-size="13" font-family="Georgia, serif" font-weight="bold">RrYy</text>
+  <text x="555" y="128" fill="#d4d4d8" font-size="10" font-family="Georgia, serif">(all round yellow)</text>
+
+  <!-- F2 4×4 Punnett grid -->
+  <text x="592" y="160" text-anchor="middle" fill="#f9a8d4" font-size="12" font-family="Georgia, serif" font-weight="bold">F₂ Punnett Square (16 combinations)</text>
+
+  <!-- Grid 4x4 -->
+  <g transform="translate(403, 165)">
+    <!-- outer border -->
+    <rect x="0" y="0" width="356" height="256" rx="4" fill="#0f2a1a" stroke="#f472b6" stroke-width="1.5"/>
+    <!-- column headers -->
+    <rect x="0" y="0" width="80" height="32" fill="#0f2a1a"/>
+    <text x="113" y="22" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia, serif">RY</text>
+    <text x="177" y="22" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia, serif">Ry</text>
+    <text x="241" y="22" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia, serif">rY</text>
+    <text x="305" y="22" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia, serif">ry</text>
+    <!-- row headers -->
+    <text x="40" y="66" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia, serif">RY</text>
+    <text x="40" y="130" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia, serif">Ry</text>
+    <text x="40" y="194" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia, serif">rY</text>
+    <text x="40" y="242" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia, serif">ry</text>
+    <!-- grid lines -->
+    <line x1="80" y1="0" x2="80" y2="256" stroke="#334155" stroke-width="1.5"/>
+    <line x1="0" y1="32" x2="356" y2="32" stroke="#334155" stroke-width="1.5"/>
+    <line x1="144" y1="32" x2="144" y2="256" stroke="#334155" stroke-width="1"/>
+    <line x1="208" y1="32" x2="208" y2="256" stroke="#334155" stroke-width="1"/>
+    <line x1="272" y1="32" x2="272" y2="256" stroke="#334155" stroke-width="1"/>
+    <line x1="0" y1="96" x2="356" y2="96" stroke="#334155" stroke-width="1"/>
+    <line x1="0" y1="160" x2="356" y2="160" stroke="#334155" stroke-width="1"/>
+    <line x1="0" y1="224" x2="356" y2="224" stroke="#334155" stroke-width="1"/>
+
+    <!-- ─── Phenotype colour coding ─── -->
+    <!-- 9 Round Yellow = green -->
+    <rect x="81" y="33" width="62" height="62" fill="#a3e635" fill-opacity="0.2"/>
+    <text x="112" y="60" text-anchor="middle" fill="#d9f99d" font-size="9" font-family="Georgia, serif">RRYY</text>
+    <rect x="145" y="33" width="62" height="62" fill="#a3e635" fill-opacity="0.2"/>
+    <text x="176" y="60" text-anchor="middle" fill="#d9f99d" font-size="9" font-family="Georgia, serif">RRYy</text>
+    <rect x="81" y="97" width="62" height="62" fill="#a3e635" fill-opacity="0.2"/>
+    <text x="112" y="124" text-anchor="middle" fill="#d9f99d" font-size="9" font-family="Georgia, serif">RrYY</text>
+    <rect x="145" y="97" width="62" height="62" fill="#a3e635" fill-opacity="0.2"/>
+    <text x="176" y="124" text-anchor="middle" fill="#d9f99d" font-size="9" font-family="Georgia, serif">RrYy</text>
+    <rect x="209" y="33" width="62" height="62" fill="#a3e635" fill-opacity="0.2"/>
+    <text x="240" y="60" text-anchor="middle" fill="#d9f99d" font-size="9" font-family="Georgia, serif">RrYY</text>
+    <rect x="209" y="97" width="62" height="62" fill="#a3e635" fill-opacity="0.2"/>
+    <text x="240" y="124" text-anchor="middle" fill="#d9f99d" font-size="9" font-family="Georgia, serif">RrYy</text>
+    <!-- 3 Round Green = blue -->
+    <rect x="273" y="33" width="62" height="62" fill="#38bdf8" fill-opacity="0.2"/>
+    <text x="304" y="60" text-anchor="middle" fill="#7dd3fc" font-size="9" font-family="Georgia, serif">RRyy</text>
+    <rect x="273" y="97" width="62" height="62" fill="#38bdf8" fill-opacity="0.2"/>
+    <text x="304" y="124" text-anchor="middle" fill="#7dd3fc" font-size="9" font-family="Georgia, serif">Rryy</text>
+    <rect x="273" y="161" width="62" height="62" fill="#38bdf8" fill-opacity="0.2"/>
+    <text x="304" y="192" text-anchor="middle" fill="#7dd3fc" font-size="9" font-family="Georgia, serif">Rryy</text>
+    <!-- 3 Wrinkled Yellow = orange -->
+    <rect x="81" y="161" width="62" height="62" fill="#f97316" fill-opacity="0.2"/>
+    <text x="112" y="192" text-anchor="middle" fill="#fed7aa" font-size="9" font-family="Georgia, serif">rrYY</text>
+    <rect x="145" y="161" width="62" height="62" fill="#f97316" fill-opacity="0.2"/>
+    <text x="176" y="192" text-anchor="middle" fill="#fed7aa" font-size="9" font-family="Georgia, serif">rrYy</text>
+    <rect x="209" y="161" width="62" height="62" fill="#f97316" fill-opacity="0.2"/>
+    <text x="240" y="192" text-anchor="middle" fill="#fed7aa" font-size="9" font-family="Georgia, serif">rrYy</text>
+    <!-- 1 Wrinkled Green = pink -->
+    <rect x="273" y="225" width="62" height="30" fill="#f472b6" fill-opacity="0.25"/>
+    <text x="304" y="246" text-anchor="middle" fill="#fce7f3" font-size="9" font-family="Georgia, serif">rryy</text>
+    <!-- remaining rrYY -->
+    <rect x="81" y="225" width="62" height="30" fill="#f97316" fill-opacity="0.2"/>
+    <text x="112" y="246" text-anchor="middle" fill="#fed7aa" font-size="9" font-family="Georgia, serif">rrYY</text>
+    <rect x="145" y="225" width="62" height="30" fill="#f97316" fill-opacity="0.2"/>
+    <text x="176" y="246" text-anchor="middle" fill="#fed7aa" font-size="9" font-family="Georgia, serif">rrYy</text>
+    <rect x="209" y="225" width="62" height="30" fill="#f97316" fill-opacity="0.2"/>
+    <text x="240" y="246" text-anchor="middle" fill="#fed7aa" font-size="9" font-family="Georgia, serif">rrYy</text>
+  </g>
+
+  <!-- Ratio legend -->
+  <text x="592" y="440" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia, serif" font-weight="bold">9 : 3 : 3 : 1</text>
+  <text x="592" y="460" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia, serif">Round Yellow : Round Green : Wrinkled Yellow : Wrinkled Green</text>
+  </g>
+</svg>

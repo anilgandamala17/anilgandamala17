@@ -1,0 +1,21 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="600" fill="#fff1f2"/>
+<text x="400" y="50" font-family="Georgia" font-size="32" text-anchor="middle" font-weight="bold" fill="#9f1239">The Proposal (Play)</text>
+<g transform="translate(200, 150)">
+    <!-- Curtains -->
+    <path d="M 0 0 L 0 400 L 100 400 Q 50 200 100 0 Z" fill="#b91c1c"/>
+    <path d="M 400 0 L 400 400 L 300 400 Q 350 200 300 0 Z" fill="#b91c1c"/>
+    
+    <!-- Stage -->
+    <rect x="0" y="350" width="400" height="50" fill="#78350f"/>
+    
+    <!-- Speech Bubbles (Arguments) -->
+    <ellipse cx="120" cy="150" rx="60" ry="40" fill="white" stroke="#334155"/>
+    <text x="120" y="150" text-anchor="middle" font-family="Arial" font-size="12">Oxen Meadows!</text>
+    
+    <ellipse cx="280" cy="150" rx="60" ry="40" fill="white" stroke="#334155"/>
+    <text x="280" y="150" text-anchor="middle" font-family="Arial" font-size="12">My Dog Guess!</text>
+    
+    <text x="200" y="300" text-anchor="middle" font-family="Georgia" font-size="20">A Farce by Chekhov</text>
+</g>
+</svg>

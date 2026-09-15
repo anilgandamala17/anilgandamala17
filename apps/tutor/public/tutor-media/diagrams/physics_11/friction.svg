@@ -1,0 +1,41 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .surface { stroke: #ffffff; stroke-width: 2; }
+      .block { fill: #1a3a20; stroke: #4ade80; stroke-width: 1.5; }
+      .force { stroke: #fca5a5; stroke-width: 2; marker-end: url(#arr); }
+      .label { fill: #ffffff; font-size: 10px; }
+      .formula { fill: #93c5fd; font-size: 11px; }
+    </style>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#fca5a5"/></marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Friction &amp; Inclined Plane</text>
+    
+    <!-- Inclined Plane -->
+    <path d="M 50 200 L 300 200 L 300 100 Z" fill="#1e293b" class="surface" />
+    <text x="80" y="195" class="label">θ</text>
+    
+    <!-- Block on Incline -->
+    <g transform="rotate(-21.8, 175, 150) translate(150, 130)">
+      <rect x="0" y="0" width="50" height="30" class="block" />
+      
+      <!-- Forces -->
+      <line x1="25" y1="15" x2="25" y2="-35" class="force" /> <!-- Normal Force -->
+      <text x="30" y="-30" class="label">N</text>
+      
+      <line x1="25" y1="15" x2="-25" y2="15" class="force" /> <!-- Friction -->
+      <text x="-35" y="10" class="label">f</text>
+    </g>
+    
+    <!-- Gravitational Force (Vertical) -->
+    <line x1="175" y1="150" x2="175" y2="210" class="force" />
+    <text x="180" y="210" class="label">mg</text>
+    
+    <g transform="translate(230, 60)">
+      <text x="0" y="0" class="formula">f_static ≤ μ_s N</text>
+      <text x="0" y="20" class="formula">f_kinetic = μ_k N</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="background:#1a3a2a">
+  <text x="200" y="18" font-size="13" fill="#86efac" text-anchor="middle" font-family="monospace" font-weight="bold">Spinal Cord Cross-Section</text>
+  <!-- Outer white matter -->
+  <ellipse cx="200" cy="145" rx="120" ry="100" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="2"/>
+  <!-- Inner grey matter (butterfly/H shape) -->
+  <path d="M200 90 C175 90 155 105 150 125 C145 140 155 150 160 155 C155 160 145 170 150 185 C155 205 175 220 200 220 C225 220 245 205 250 185 C255 170 245 160 240 155 C245 150 255 140 250 125 C245 105 225 90 200 90Z" fill="rgba(147,197,253,0.15)" stroke="#93c5fd" stroke-width="2"/>
+  <!-- Central canal -->
+  <circle cx="200" cy="155" r="6" fill="rgba(251,191,36,0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="200" y="159" font-size="7" fill="#fbbf24" text-anchor="middle" font-family="monospace">CC</text>
+  <!-- Dorsal horn labels -->
+  <text x="200" y="82" font-size="9" fill="#93c5fd" text-anchor="middle" font-family="monospace">Dorsal Horn</text>
+  <text x="200" y="72" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">(sensory input)</text>
+  <!-- Ventral horn labels -->
+  <text x="200" y="238" font-size="9" fill="#fca5a5" text-anchor="middle" font-family="monospace">Ventral Horn</text>
+  <text x="200" y="250" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">(motor output)</text>
+  <!-- White matter label -->
+  <text x="90" y="145" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="monospace">White</text>
+  <text x="90" y="157" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="monospace">Matter</text>
+  <text x="90" y="169" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">(myelinated</text>
+  <text x="90" y="180" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">axons)</text>
+  <!-- Grey matter label -->
+  <text x="310" y="145" font-size="9" fill="#93c5fd" text-anchor="middle" font-family="monospace">Grey</text>
+  <text x="310" y="157" font-size="9" fill="#93c5fd" text-anchor="middle" font-family="monospace">Matter</text>
+  <text x="310" y="169" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">(cell bodies,</text>
+  <text x="310" y="180" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">synapses)</text>
+  <!-- Dorsal root -->
+  <line x1="200" y1="45" x2="200" y2="88" stroke="#93c5fd" stroke-width="2"/>
+  <circle cx="200" cy="40" r="8" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="200" y="44" font-size="7" fill="#93c5fd" text-anchor="middle" font-family="monospace">DRG</text>
+  <text x="230" y="38" font-size="8" fill="#93c5fd" font-family="monospace">Dorsal Root</text>
+  <text x="230" y="48" font-size="7" fill="rgba(255,255,255,0.4)" font-family="monospace">Ganglion</text>
+  <!-- Ventral root -->
+  <line x1="200" y1="222" x2="200" y2="258" stroke="#fca5a5" stroke-width="2"/>
+  <text x="230" y="248" font-size="8" fill="#fca5a5" font-family="monospace">Ventral Root</text>
+  <text x="230" y="258" font-size="7" fill="rgba(255,255,255,0.4)" font-family="monospace">(motor neurons)</text>
+  <!-- Reflex arc note -->
+  <text x="200" y="272" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle" font-family="monospace">Reflex arc: Receptor → Dorsal → Interneuron → Ventral → Effector</text>
+</svg>

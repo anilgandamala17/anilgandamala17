@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Applications of Linear Equations in 2 Variables</text>
+
+  <!-- Cards -->
+  <!-- Card 1: Age Problem -->
+  <rect x="15" y="55" width="370" height="125" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="200" y="78" text-anchor="middle" fill="#a3e635" font-size="13" font-family="Georgia,serif" font-weight="bold">① Age Problem</text>
+  <text x="25" y="98" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Sum of ages of A and B is 36 yrs. A is 4 yrs older.</text>
+  <text x="25" y="116" fill="#fde68a" font-size="12" font-family="Georgia,serif" font-weight="bold">Let A = x, B = y</text>
+  <text x="25" y="134" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">x + y = 36  …(1)   and   x − y = 4  …(2)</text>
+  <text x="25" y="152" fill="#fde68a" font-size="12" font-family="Georgia,serif" font-weight="bold">⟹ x = 20, y = 16</text>
+  <text x="25" y="170" fill="#7dd3fc" font-size="10" font-family="Georgia,serif" font-style="italic">Add equations: 2x = 40 → x = 20</text>
+
+  <!-- Card 2: Cost Problem -->
+  <rect x="15" y="190" width="370" height="125" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#38bdf8" stroke-width="2"/>
+  <text x="200" y="213" text-anchor="middle" fill="#7dd3fc" font-size="13" font-family="Georgia,serif" font-weight="bold">② Cost / Money Problem</text>
+  <text x="25" y="234" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">5 pens + 3 notebooks = ₹60. 2 pens + 4 notebooks = ₹42.</text>
+  <text x="25" y="255" fill="#fde68a" font-size="12" font-family="Georgia,serif" font-weight="bold">5x + 3y = 60  and  2x + 4y = 42</text>
+  <text x="25" y="278" fill="#fde68a" font-size="12" font-family="Georgia,serif" font-weight="bold">⟹ x = ₹9, y = ₹5</text>
+  <text x="25" y="300" fill="#7dd3fc" font-size="10" font-family="Georgia,serif" font-style="italic">Solve by elimination/substitution</text>
+
+  <!-- Card 3: Speed/Distance -->
+  <rect x="15" y="325" width="370" height="155" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#f472b6" stroke-width="2"/>
+  <text x="200" y="348" text-anchor="middle" fill="#f9a8d4" font-size="13" font-family="Georgia,serif" font-weight="bold">③ Speed / Distance Problem</text>
+  <text x="25" y="368" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">A boat upstream: 60 km in 4 h. Downstream: 60 km in 3 h.</text>
+  <text x="25" y="390" fill="#fde68a" font-size="12" font-family="Georgia,serif" font-weight="bold">Let boat speed = x, stream = y km/h</text>
+  <text x="25" y="412" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">x − y = 15  (upstream) …(1)</text>
+  <text x="25" y="432" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">x + y = 20  (downstream) …(2)</text>
+  <text x="25" y="454" fill="#fde68a" font-size="13" font-family="Georgia,serif" font-weight="bold">⟹ x = 17.5 km/h, y = 2.5 km/h</text>
+  <text x="25" y="470" fill="#7dd3fc" font-size="10" font-family="Georgia,serif" font-style="italic">Speed = Distance ÷ Time</text>
+
+  <!-- Right: Process flowchart -->
+  <rect x="398" y="55" width="385" height="425" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="590" y="78" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">Problem-Solving Steps</text>
+
+  <g transform="translate(415,92)">
+    <rect x="0" y="0" width="355" height="50" rx="8" fill="#0f2a1a" stroke="#86efac" stroke-width="1.5"/>
+    <text x="177" y="22" text-anchor="middle" fill="#86efac" font-size="12" font-family="Georgia,serif" font-weight="bold">① Read &amp; Identify Unknowns</text>
+    <text x="177" y="42" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Assign variables (x, y) to unknowns</text>
+    <!-- Arrow -->
+    <polygon points="177,58 170,68 184,68" fill="#86efac"/>
+
+    <rect x="0" y="72" width="355" height="50" rx="8" fill="#0f2a1a" stroke="#fde68a" stroke-width="1.5"/>
+    <text x="177" y="94" text-anchor="middle" fill="#fde68a" font-size="12" font-family="Georgia,serif" font-weight="bold">② Formulate Equations</text>
+    <text x="177" y="114" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Translate conditions into ax+by=c</text>
+    <polygon points="177,130 170,140 184,140" fill="#fde68a"/>
+
+    <rect x="0" y="144" width="355" height="50" rx="8" fill="#0f2a1a" stroke="#a3e635" stroke-width="1.5"/>
+    <text x="177" y="166" text-anchor="middle" fill="#a3e635" font-size="12" font-family="Georgia,serif" font-weight="bold">③ Solve the System</text>
+    <text x="177" y="186" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Substitution / Elimination / Graph</text>
+    <polygon points="177,202 170,212 184,212" fill="#a3e635"/>
+
+    <rect x="0" y="216" width="355" height="50" rx="8" fill="#0f2a1a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="177" y="238" text-anchor="middle" fill="#7dd3fc" font-size="12" font-family="Georgia,serif" font-weight="bold">④ Verify Solution</text>
+    <text x="177" y="258" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Substitute back into both equations</text>
+    <polygon points="177,274 170,284 184,284" fill="#38bdf8"/>
+
+    <rect x="0" y="288" width="355" height="50" rx="8" fill="#134e4a" stroke="#86efac" stroke-width="2"/>
+    <text x="177" y="310" text-anchor="middle" fill="#86efac" font-size="12" font-family="Georgia,serif" font-weight="bold">⑤ State the Answer</text>
+    <text x="177" y="330" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">In context of the original problem</text>
+
+    <rect x="0" y="352" width="355" height="42" rx="8" fill="#0f2a1a" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="177" y="372" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia,serif" font-weight="bold">Key: Each condition → 1 equation</text>
+    <text x="177" y="388" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">2 unknowns need 2 independent equations</text>
+  </g>
+</svg>

@@ -1,0 +1,98 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#1a5c2a}
+      .title{fill:#fff9c4;font-size:14px;font-weight:bold}
+      .sub{fill:#b2f5ea;font-size:10px}
+    </style>
+    <marker id="ca" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#ffd600"/>
+    </marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="18" text-anchor="middle" class="title">Belgium Model of Power Sharing</text>
+  <text x="210" y="30" text-anchor="middle" class="sub">A remarkable solution to ethnic diversity through Accommodation</text>
+
+  <!-- Belgium geography context -->
+  <rect x="8" y="38" width="180" height="80" fill="#0d3b20" stroke="#ffd600" stroke-width="1.4" rx="5"/>
+  <text x="98" y="54" text-anchor="middle" fill="#ffd600" font-size="10" font-weight="bold">Belgium Demographics</text>
+  <!-- Bar chart population -->
+  <text x="16" y="68" fill="#ffffff" font-size="9">Population Composition:</text>
+  <!-- Dutch 59% -->
+  <rect x="16" y="72" width="95" height="10" fill="#80cbc4" rx="2"/>
+  <text x="116" y="82" fill="#80cbc4" font-size="9"> Dutch 59%</text>
+  <!-- French 40% -->
+  <rect x="16" y="87" width="64" height="10" fill="#f06292" rx="2"/>
+  <text x="85" y="97" fill="#f06292" font-size="9"> French 40% (Wallonia)</text>
+  <!-- German 1% -->
+  <rect x="16" y="102" width="5" height="10" fill="#ffd600" rx="2"/>
+  <text x="25" y="112" fill="#ffd600" font-size="9"> German 1% (East)</text>
+
+  <!-- Problem → Solution -->
+  <rect x="196" y="38" width="130" height="80" fill="#1a0d00" stroke="#f06292" stroke-width="1.4" rx="5"/>
+  <text x="261" y="54" text-anchor="middle" fill="#f06292" font-size="10" font-weight="bold">The Problem</text>
+  <text x="204" y="68" fill="#ffffff" font-size="9">• Dutch majority dominated</text>
+  <text x="204" y="80" fill="#ffffff" font-size="9">• French minority in Brussels</text>
+  <text x="204" y="92" fill="#ffffff" font-size="9">• Growing tensions, risk</text>
+  <text x="204" y="104" fill="#ff8a65" font-size="9">  of civil conflict</text>
+  <text x="204" y="116" fill="#f06292" font-size="9">  → like Sri Lanka!</text>
+
+  <rect x="334" y="38" width="78" height="80" fill="#0d3b00" stroke="#aed581" stroke-width="1.4" rx="5"/>
+  <text x="373" y="55" text-anchor="middle" fill="#aed581" font-size="10" font-weight="bold">Belgium's</text>
+  <text x="373" y="67" text-anchor="middle" fill="#aed581" font-size="10" font-weight="bold">Solution</text>
+  <text x="373" y="82" text-anchor="middle" fill="#ffd600" font-size="12" font-weight="bold">ACCOM-</text>
+  <text x="373" y="95" text-anchor="middle" fill="#ffd600" font-size="12" font-weight="bold">MODA-</text>
+  <text x="373" y="108" text-anchor="middle" fill="#ffd600" font-size="12" font-weight="bold">TION</text>
+
+  <!-- 4 Key elements of Belgium model -->
+  <rect x="8" y="126" width="404" height="22" fill="#155724" stroke="#ffd600" stroke-width="1" rx="4"/>
+  <text x="210" y="141" text-anchor="middle" fill="#fff9c4" font-size="11" font-weight="bold">Belgium Model — 4 Key Elements</text>
+
+  <rect x="8" y="154" width="94" height="138" fill="#0d3b20" stroke="#ffd600" stroke-width="1.2" rx="4"/>
+  <text x="55" y="168" text-anchor="middle" fill="#ffd600" font-size="9" font-weight="bold">① Equal</text>
+  <text x="55" y="179" text-anchor="middle" fill="#ffd600" font-size="9" font-weight="bold">Ministers</text>
+  <text x="12" y="194" fill="#ffffff" font-size="9">Central cabinet</text>
+  <text x="12" y="207" fill="#ffffff" font-size="9">has equal Dutch</text>
+  <text x="12" y="220" fill="#ffffff" font-size="9">and French</text>
+  <text x="12" y="233" fill="#ffffff" font-size="9">speaking</text>
+  <text x="12" y="246" fill="#b2f5ea" font-size="8">ministers even if</text>
+  <text x="12" y="259" fill="#b2f5ea" font-size="8">populations</text>
+  <text x="12" y="272" fill="#b2f5ea" font-size="8">unequal</text>
+
+  <rect x="110" y="154" width="94" height="138" fill="#0d3b20" stroke="#80cbc4" stroke-width="1.2" rx="4"/>
+  <text x="157" y="168" text-anchor="middle" fill="#80cbc4" font-size="9" font-weight="bold">② Separate</text>
+  <text x="157" y="179" text-anchor="middle" fill="#80cbc4" font-size="9" font-weight="bold">Govts</text>
+  <text x="114" y="194" fill="#ffffff" font-size="9">State govts for</text>
+  <text x="114" y="207" fill="#ffffff" font-size="9">each region:</text>
+  <text x="114" y="220" fill="#80cbc4" font-size="9">• Flanders (Dutch)</text>
+  <text x="114" y="233" fill="#f06292" font-size="9">• Wallonia (French)</text>
+  <text x="114" y="246" fill="#aed581" font-size="9">• Brussels (both)</text>
+  <text x="114" y="259" fill="#b2f5ea" font-size="8">Independent</text>
+  <text x="114" y="272" fill="#b2f5ea" font-size="8">powers on</text>
+  <text x="114" y="284" fill="#b2f5ea" font-size="8">cultural matters</text>
+
+  <rect x="212" y="154" width="94" height="138" fill="#0d3b20" stroke="#aed581" stroke-width="1.2" rx="4"/>
+  <text x="259" y="168" text-anchor="middle" fill="#aed581" font-size="9" font-weight="bold">③ Brussels</text>
+  <text x="259" y="179" text-anchor="middle" fill="#aed581" font-size="9" font-weight="bold">Special</text>
+  <text x="216" y="194" fill="#ffffff" font-size="9">Brussels capital:</text>
+  <text x="216" y="207" fill="#ffffff" font-size="9">separate govt</text>
+  <text x="216" y="220" fill="#aed581" font-size="9">Both French &amp;</text>
+  <text x="216" y="233" fill="#aed581" font-size="9">Dutch equal</text>
+  <text x="216" y="248" fill="#b2f5ea" font-size="8">Minority Dutch</text>
+  <text x="216" y="261" fill="#b2f5ea" font-size="8">gets equal say</text>
+  <text x="216" y="276" fill="#ffd600" font-size="8">even though</text>
+  <text x="216" y="288" fill="#ffd600" font-size="8">smaller in Brussels</text>
+
+  <rect x="314" y="154" width="98" height="138" fill="#0d3b20" stroke="#f06292" stroke-width="1.2" rx="4"/>
+  <text x="363" y="168" text-anchor="middle" fill="#f06292" font-size="9" font-weight="bold">④ Community</text>
+  <text x="363" y="179" text-anchor="middle" fill="#f06292" font-size="9" font-weight="bold">Govt</text>
+  <text x="318" y="194" fill="#ffffff" font-size="9">Elected by each</text>
+  <text x="318" y="207" fill="#ffffff" font-size="9">language group</text>
+  <text x="318" y="222" fill="#f06292" font-size="9">Controls:</text>
+  <text x="318" y="236" fill="#b2f5ea" font-size="9">• Education</text>
+  <text x="318" y="249" fill="#b2f5ea" font-size="9">• Culture</text>
+  <text x="318" y="262" fill="#b2f5ea" font-size="9">• Language</text>
+  <text x="318" y="278" fill="#ffd600" font-size="8">Not territory-</text>
+  <text x="318" y="290" fill="#ffd600" font-size="8">based power</text>
+  </g>
+</svg>

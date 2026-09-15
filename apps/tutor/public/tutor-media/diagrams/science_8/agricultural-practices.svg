@@ -1,0 +1,75 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Agricultural Practices</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Steps in crop production: from soil preparation to storage</text>
+
+<!-- Flowchart -->
+<rect x="150" y="90" width="200" height="40" rx="20" fill="none" stroke="#ffd54f" stroke-width="2"/>
+<text x="250" y="115" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle">1. Preparation of Soil</text>
+
+<line x1="250" y1="130" x2="250" y2="150" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="150" y="150" width="200" height="40" rx="20" fill="none" stroke="#86efac" stroke-width="2"/>
+<text x="250" y="175" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle">2. Sowing</text>
+
+<line x1="250" y1="190" x2="250" y2="210" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+
+<rect x="150" y="210" width="200" height="40" rx="20" fill="none" stroke="#f48fb1" stroke-width="2"/>
+<text x="250" y="235" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle">3. Adding Manure/Fertilizer</text>
+
+<line x1="250" y1="250" x2="250" y2="270" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+
+<rect x="150" y="270" width="200" height="40" rx="20" fill="none" stroke="#c084fc" stroke-width="2"/>
+<text x="250" y="295" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle">4. Irrigation</text>
+
+<line x1="450" y1="130" x2="450" y2="150" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-start="url(#dot)"/>
+
+<rect x="450" y="90" width="200" height="40" rx="20" fill="none" stroke="#fb923c" stroke-width="2"/>
+<text x="550" y="115" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle">5. Protecting from Weeds</text>
+
+<line x1="550" y1="130" x2="550" y2="150" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+
+<rect x="450" y="150" width="200" height="40" rx="20" fill="none" stroke="#22d3ee" stroke-width="2"/>
+<text x="550" y="175" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle">6. Harvesting</text>
+
+<line x1="550" y1="190" x2="550" y2="210" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+
+<rect x="450" y="210" width="200" height="40" rx="20" fill="none" stroke="#a78bfa" stroke-width="2"/>
+<text x="550" y="235" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle">7. Storage</text>
+
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+    <path d="M0,0 L10,5 L0,10 Z" fill="rgba(255,255,255,0.3)" />
+  </marker>
+</defs>
+
+<line x1="20" y1="335" x2="780" y2="335" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="358" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Key Tools &amp; Methods</text>
+
+<rect x="20" y="375" width="240" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="140" y="398" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Soil Preparation</text>
+<text x="140" y="420" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Tilling / Ploughing</text>
+<text x="140" y="438" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Loosens soil for roots</text>
+<text x="140" y="456" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Leveling</text>
+<text x="140" y="474" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Prevents soil erosion</text>
+<text x="140" y="505" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Tools: Plough, Hoe, Cultivator</text>
+
+<rect x="275" y="375" width="250" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="398" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Sowing &amp; Nutrients</text>
+<text x="400" y="420" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Seed Selection (High yield)</text>
+<text x="400" y="440" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Manure (Organic)</text>
+<text x="400" y="458" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Improves soil texture</text>
+<text x="400" y="476" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Fertilizers (Chemical)</text>
+<text x="400" y="494" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Rich in N, P, K</text>
+<text x="400" y="515" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Tools: Traditional, Seed Drill</text>
+
+<rect x="540" y="375" width="240" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="660" y="398" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Harvest &amp; Storage</text>
+<text x="660" y="420" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Threshing &amp; Winnowing</text>
+<text x="660" y="438" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Separates grain from chaff</text>
+<text x="660" y="460" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Storage in Silos / Granaries</text>
+<text x="660" y="478" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Protects from pests</text>
+<text x="660" y="510" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Tools: Sickle, Harvester, Combine</text>
+
+<text x="400" y="555" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" text-anchor="middle">Kharif Crops (Monsoon) vs Rabi Crops (Winter)</text>
+</svg>

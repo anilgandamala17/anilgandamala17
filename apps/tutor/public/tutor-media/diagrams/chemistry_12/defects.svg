@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Crystal Defects (Imperfections)</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Schottky Defect (Missing pairs) -->
+  <g transform="translate(150, 150)">
+    <text x="100" y="-20" fill="#86efac" font-size="20" font-weight="bold" text-anchor="middle">Schottky Defect</text>
+    <g transform="translate(20, 20)">
+      ${Array.from({length: 4}).map((_, i) => 
+        Array.from({length: 4}).map((_, j) => {
+          if ((i === 1 && j === 1) || (i === 2 && j === 2)) {
+             return `<circle cx="${i*40}" cy="${j*40}" r="15" fill="none" stroke="#fef08a" stroke-width="1" stroke-dasharray="2,2" opacity="0.4"/>`;
+          }
+          const isCation = (i + j) % 2 === 0;
+          return `<circle cx="${i*40}" cy="${j*40}" r="${isCation ? 12 : 16}" fill="${isCation ? '#86efac' : '#60a5fa'}" opacity="0.8"/>`;
+        }).join('')
+      ).join('')}
+    </g>
+    <text x="100" y="200" fill="#f8fafc" text-anchor="middle" font-size="14">Equal number of missing ions</text>
+  </g>
+
+  <!-- Frenkel Defect (Displacement) -->
+  <g transform="translate(450, 150)">
+    <text x="100" y="-20" fill="#86efac" font-size="20" font-weight="bold" text-anchor="middle">Frenkel Defect</text>
+    <g transform="translate(20, 20)">
+      ${Array.from({length: 4}).map((_, i) => 
+        Array.from({length: 4}).map((_, j) => {
+          if (i === 1 && j === 1) {
+             return `
+               <circle cx="${i*40}" cy="${j*40}" r="12" fill="none" stroke="#fef08a" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/>
+               <circle cx="${i*40 + 20}" cy="${j*40 + 20}" r="10" fill="#86efac" opacity="1">
+                 <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
+               </circle>
+             `;
+          }
+          const isCation = (i + j) % 2 === 0;
+          return `<circle cx="${i*40}" cy="${j*40}" r="${isCation ? 12 : 16}" fill="${isCation ? '#86efac' : '#60a5fa'}" opacity="0.8"/>`;
+        }).join('')
+      ).join('')}
+    </g>
+    <text x="100" y="200" fill="#f8fafc" text-anchor="middle" font-size="14">Ion moves to interstitial space</text>
+  </g>
+
+  <rect x="200" y="450" width="400" height="80" rx="10" fill="rgba(255,255,255,0.03)" stroke="#fef08a" stroke-width="1.5"/>
+  <text x="400" y="485" fill="#fef08a" text-anchor="middle" font-size="18">Schottky: Decreases Density</text>
+  <text x="400" y="515" fill="#fef08a" text-anchor="middle" font-size="18">Frenkel: Density Unchanged</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Chemistry Grade 12</text>
+</svg>

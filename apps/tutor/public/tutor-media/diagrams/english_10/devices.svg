@@ -1,0 +1,29 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+  </defs>
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">LITERARY DEVICES</text>
+  
+  <!-- Metaphor -->
+  <g transform="translate(50, 70)">
+    <circle cx="40" cy="40" r="30" fill="none" stroke="#60a5fa" />
+    <text x="40" y="45" text-anchor="middle" font-size="10">New Coins</text>
+    <text x="100" y="45" text-anchor="middle">=</text>
+    <circle cx="160" cy="40" r="30" fill="none" stroke="#60a5fa" />
+    <text x="160" y="45" text-anchor="middle" font-size="10">Raindrops</text>
+    <text x="100" y="90" text-anchor="middle" fill="#fbbf24">Metaphor</text>
+  </g>
+
+  <!-- Simile -->
+  <g transform="translate(50, 160)">
+    <text x="40" y="45" text-anchor="middle" font-size="10">Ox of a man</text>
+    <text x="100" y="45" text-anchor="middle">LIKE</text>
+    <text x="160" y="45" text-anchor="middle" font-size="10">Strong / Hardworking</text>
+    <text x="100" y="80" text-anchor="middle" fill="#fbbf24">Simile</text>
+  </g>
+</svg>

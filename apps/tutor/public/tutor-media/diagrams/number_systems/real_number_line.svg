@@ -1,0 +1,56 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .axis { stroke: #e2e8f0; stroke-width: 2; marker-end: url(#arrowhead); marker-start: url(#arrowtail); }
+      .tick { stroke: #94a3b8; stroke-width: 2; }
+      .point-rational { fill: #3b82f6; stroke: #fff; }
+      .point-irrational { fill: #ef4444; stroke: #fff; }
+    </style>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#e2e8f0" />
+    </marker>
+     <marker id="arrowtail" markerWidth="6" markerHeight="4" refX="1" refY="2" orient="auto">
+      <polygon points="6 0, 0 2, 6 4" fill="#e2e8f0" />
+    </marker>
+  </defs>
+  
+  <rect width="400" height="200" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">REAL NUMBER LINE</text>
+
+  <g transform="translate(200, 100)">
+    <line x1="-180" y1="0" x2="180" y2="0" class="axis" />
+    
+    <!-- Ticks -->
+    <g>
+        <line x1="0" y1="-5" x2="0" y2="5" class="tick" /> <text x="0" y="20" text-anchor="middle" fontSize="10">0</text>
+        <line x1="50" y1="-5" x2="50" y2="5" class="tick" /> <text x="50" y="20" text-anchor="middle" fontSize="10">1</text>
+        <line x1="100" y1="-5" x2="100" y2="5" class="tick" /> <text x="100" y="20" text-anchor="middle" fontSize="10">2</text>
+        <line x1="150" y1="-5" x2="150" y2="5" class="tick" /> <text x="150" y="20" text-anchor="middle" fontSize="10">3</text>
+        
+        <line x1="-50" y1="-5" x2="-50" y2="5" class="tick" /> <text x="-50" y="20" text-anchor="middle" fontSize="10">-1</text>
+        <line x1="-100" y1="-5" x2="-100" y2="5" class="tick" /> <text x="-100" y="20" text-anchor="middle" fontSize="10">-2</text>
+    </g>
+
+    <!-- Specific Points -->
+    <!-- 1.5 (3/2) - Rational -->
+    <circle cx="75" cy="0" r="4" class="point-rational" />
+    <text x="75" y="-15" text-anchor="middle" fontSize="10" fill="#3b82f6">3/2 (1.5)</text>
+
+    <!-- sqrt(2) approx 1.414 - Irrational -->
+    <circle cx="70.7" cy="0" r="3" class="point-irrational" />
+    <text x="70.7" y="35" text-anchor="middle" fontSize="10" fill="#ef4444">√2</text>
+
+    <!-- Pi approx 3.14 -->
+    <circle cx="157" cy="0" r="3" class="point-irrational" />
+    <text x="157" y="-15" text-anchor="middle" fontSize="10" fill="#ef4444">π</text>
+
+    <!-- Legend -->
+    <g transform="translate(-180, 70)">
+        <circle cx="0" cy="0" r="4" class="point-rational" /> <text x="10" y="4" fontSize="10" fill="#3b82f6">Rational (Q)</text>
+        <circle cx="80" cy="0" r="4" class="point-irrational" /> <text x="90" y="4" fontSize="10" fill="#ef4444">Irrational (P)</text>
+    </g>
+  </g>
+</svg>

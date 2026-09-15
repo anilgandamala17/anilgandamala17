@@ -1,0 +1,25 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="600" fill="#f8fafc"/>
+<text x="400" y="50" font-family="Arial" font-size="32" text-anchor="middle" font-weight="bold" fill="#1e293b">Trigonometric Graphs</text>
+<g transform="translate(100, 100)">
+    <!-- Sin Wave -->
+    <text x="-50" y="50" font-family="Arial" font-size="20" fill="#dc2626">y = sin x</text>
+    <line x1="0" y1="50" x2="600" y2="50" stroke="#cbd5e1" stroke-width="2"/>
+    <path d="M 0 50 Q 75 -50 150 50 T 300 50 T 450 50 T 600 50" fill="none" stroke="#dc2626" stroke-width="3"/>
+    
+    <!-- Cos Wave -->
+    <g transform="translate(0, 200)">
+        <text x="-50" y="50" font-family="Arial" font-size="20" fill="#2563eb">y = cos x</text>
+        <line x1="0" y1="50" x2="600" y2="50" stroke="#cbd5e1" stroke-width="2"/>
+        <path d="M 0 0 Q 75 50 150 100 T 300 0 T 450 100 T 600 0" fill="none" stroke="#2563eb" stroke-width="3"/>
+    </g>
+    
+    <!-- Tan Wave (simplified) -->
+   <g transform="translate(0, 400)">
+        <text x="-50" y="50" font-family="Arial" font-size="20" fill="#16a34a">y = tan x</text>
+        <line x1="0" y1="50" x2="600" y2="50" stroke="#cbd5e1" stroke-width="2"/>
+        <path d="M 50 100 Q 75 50 100 0" fill="none" stroke="#16a34a" stroke-width="3"/> 
+        <path d="M 125 100 Q 150 50 175 0" fill="none" stroke="#16a34a" stroke-width="3"/>
+   </g>
+</g>
+</svg>

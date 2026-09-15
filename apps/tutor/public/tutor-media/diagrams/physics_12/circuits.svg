@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">DC Circuit Components</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <g transform="translate(100, 120)">
+    <!-- Resistor -->
+    <g transform="translate(0, 0)">
+      <path d="M 0 50 L 50 50 L 60 30 L 80 70 L 100 30 L 120 70 L 140 30 L 150 50 L 200 50" fill="none" stroke="#86efac" stroke-width="3"/>
+      <text x="100" y="100" fill="#f8fafc" text-anchor="middle" font-size="18">Resistor (R)</text>
+    </g>
+    
+    <!-- Capacitor -->
+    <g transform="translate(350, 0)">
+      <line x1="0" y1="50" x2="85" y2="50" stroke="#fef08a" stroke-width="3"/>
+      <line x1="85" y1="20" x2="85" y2="80" stroke="#fef08a" stroke-width="4"/>
+      <line x1="115" y1="20" x2="115" y2="80" stroke="#fef08a" stroke-width="4"/>
+      <line x1="115" y1="50" x2="200" y2="50" stroke="#fef08a" stroke-width="3"/>
+      <text x="100" y="100" fill="#f8fafc" text-anchor="middle" font-size="18">Capacitor (C)</text>
+    </g>
+    
+    <!-- Inductor -->
+    <g transform="translate(0, 250)">
+      <path d="M 0 50 L 50 50 C 50 10 90 10 90 50 C 90 10 130 10 130 50 C 130 10 170 10 170 50 L 200 50" fill="none" stroke="#f8fafc" stroke-width="3"/>
+      <text x="100" y="100" fill="#f8fafc" text-anchor="middle" font-size="18">Inductor (L)</text>
+    </g>
+    
+    <!-- Battery -->
+    <g transform="translate(350, 250)">
+      <line x1="0" y1="50" x2="80" y2="50" stroke="#86efac" stroke-width="3"/>
+      <line x1="80" y1="35" x2="80" y2="65" stroke="#86efac" stroke-width="5"/>
+      <line x1="100" y1="20" x2="100" y2="80" stroke="#86efac" stroke-width="2"/>
+      <line x1="100" y1="50" x2="180" y2="50" stroke="#86efac" stroke-width="3"/>
+      <text x="90" y="105" fill="#f8fafc" text-anchor="middle" font-size="18">Cell / Battery (V)</text>
+    </g>
+  </g>
+  
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Physics Grade 12</text>
+</svg>

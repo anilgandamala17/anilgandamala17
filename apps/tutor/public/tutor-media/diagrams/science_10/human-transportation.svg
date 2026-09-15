@@ -1,0 +1,38 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+  </defs>
+  <!-- Bg Removed -->
+  <text x="20" y="30" class="title">HUMAN HEART (TRANSPORTATION)</text>
+  
+  <g transform="translate(140, 60)">
+    <!-- Heart Shape Simplified -->
+    <path d="M 60 20 Q 10 0 10 50 Q 10 100 60 140 Q 110 100 110 50 Q 110 0 60 20" fill="#ef4444" opacity="0.8" />
+    
+    <!-- Chambers -->
+    <line x1="60" y1="20" x2="60" y2="140" stroke="#7f1d1d" stroke-width="2" />
+    <line x1="10" y1="60" x2="110" y2="60" stroke="#7f1d1d" stroke-width="2" />
+    
+    <text x="35" y="45" text-anchor="middle" font-size="10" fill="#fff">RA</text>
+    <text x="85" y="45" text-anchor="middle" font-size="10" fill="#fff">LA</text>
+    <text x="35" y="100" text-anchor="middle" font-size="10" fill="#fff">RV</text>
+    <text x="85" y="100" text-anchor="middle" font-size="10" fill="#fff">LV</text>
+  </g>
+  
+  <g transform="translate(10, 100)">
+    <rect x="0" y="0" width="80" height="40" fill="#3b82f6" opacity="0.5" rx="4" />
+    <text x="40" y="25" text-anchor="middle" fill="#fff">Deoxygenated</text>
+    <line x1="80" y1="20" x2="140" y2="20" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow)" />
+  </g>
+
+  <g transform="translate(310, 100)">
+    <rect x="0" y="0" width="80" height="40" fill="#ef4444" opacity="0.5" rx="4" />
+    <text x="40" y="25" text-anchor="middle" fill="#fff">Oxygenated</text>
+    <line x1="-50" y1="20" x2="0" y2="20" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow)" />
+  </g>
+
+  <text x="200" y="240" text-anchor="middle" font-size="12">Double Circulation System</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#1a2e1a"/>
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#86efac" font-weight="bold">Why Democracy? — Advantages</text>
+  <line x1="40" y1="48" x2="760" y2="48" stroke="#86efac" stroke-width="1" opacity="0.4"/>
+
+  <!-- Central question -->
+  <ellipse cx="400" cy="245" rx="95" ry="55" fill="rgba(134,239,172,0.15)" stroke="#86efac" stroke-width="2"/>
+  <text x="400" y="237" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#86efac" font-weight="bold">Why is</text>
+  <text x="400" y="254" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#86efac" font-weight="bold">Democracy</text>
+  <text x="400" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#86efac" font-weight="bold">Better?</text>
+
+  <!-- Reason 1: Accountability – top left -->
+  <line x1="313" y1="216" x2="192" y2="155" stroke="rgba(250,204,21,0.6)" stroke-width="1.5"/>
+  <rect x="60" y="68" width="175" height="88" rx="6" fill="rgba(250,204,21,0.10)" stroke="#facc15" stroke-width="1.5"/>
+  <text x="148" y="92" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#facc15" font-weight="bold">Accountability</text>
+  <text x="148" y="110" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Leaders answer to</text>
+  <text x="148" y="125" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">the public regularly</text>
+  <text x="148" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#facc15">Elections remove bad leaders</text>
+
+  <!-- Reason 2: Decision Making – top right -->
+  <line x1="487" y1="216" x2="608" y2="155" stroke="rgba(56,189,248,0.6)" stroke-width="1.5"/>
+  <rect x="565" y="68" width="175" height="88" rx="6" fill="rgba(56,189,248,0.10)" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="653" y="92" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#38bdf8" font-weight="bold">Better Decisions</text>
+  <text x="653" y="110" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Deliberation &amp; debate</text>
+  <text x="653" y="125" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">lead to wiser policy</text>
+  <text x="653" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#38bdf8">Fewer disasters</text>
+
+  <!-- Reason 3: Dignity – left -->
+  <line x1="305" y1="245" x2="192" y2="245" stroke="rgba(167,139,250,0.6)" stroke-width="1.5"/>
+  <rect x="48" y="205" width="175" height="80" rx="6" fill="rgba(167,139,250,0.10)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="136" y="229" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#a78bfa" font-weight="bold">Human Dignity</text>
+  <text x="136" y="247" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Treats citizens as</text>
+  <text x="136" y="262" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">equals with rights</text>
+  <text x="136" y="275" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#a78bfa">Dignity &amp; freedom</text>
+
+  <!-- Reason 4: Conflict Resolution – right -->
+  <line x1="495" y1="245" x2="608" y2="245" stroke="rgba(249,115,22,0.6)" stroke-width="1.5"/>
+  <rect x="577" y="205" width="175" height="80" rx="6" fill="rgba(249,115,22,0.10)" stroke="#f97316" stroke-width="1.5"/>
+  <text x="665" y="229" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#f97316" font-weight="bold">Conflict Resolution</text>
+  <text x="665" y="247" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Peaceful handling of</text>
+  <text x="665" y="262" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">political disagreements</text>
+  <text x="665" y="275" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#f97316">Avoids civil wars</text>
+
+  <!-- Reason 5: Correcting Mistakes – bottom left -->
+  <line x1="330" y1="294" x2="208" y2="358" stroke="rgba(74,222,128,0.6)" stroke-width="1.5"/>
+  <rect x="60" y="345" width="175" height="88" rx="6" fill="rgba(74,222,128,0.10)" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="148" y="368" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#4ade80" font-weight="bold">Self-Correction</text>
+  <text x="148" y="386" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Citizens can remove</text>
+  <text x="148" y="401" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">govt making mistakes</text>
+  <text x="148" y="418" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#4ade80">Right to vote back out</text>
+
+  <!-- Reason 6: Participation – bottom right -->
+  <line x1="470" y1="294" x2="592" y2="358" stroke="rgba(239,68,68,0.6)" stroke-width="1.5"/>
+  <rect x="565" y="345" width="175" height="88" rx="6" fill="rgba(239,68,68,0.10)" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="653" y="368" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#ef4444" font-weight="bold">Active Participation</text>
+  <text x="653" y="386" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Citizens engage in</text>
+  <text x="653" y="401" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">governance actively</text>
+  <text x="653" y="418" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#ef4444">Informed civic life</text>
+</svg>

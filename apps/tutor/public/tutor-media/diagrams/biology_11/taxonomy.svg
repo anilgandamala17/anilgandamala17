@@ -1,0 +1,58 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- NO BACKGROUND RECT -->
+  
+  
+    <linearGradient id="pyrGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef08a;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#fef08a;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="28" fill="#fef08a" text-anchor="middle" font-weight="bold">Taxonomic Hierarchy</text>
+  <path d="M 280,60 L 520,60" stroke="#fef08a" stroke-width="1.5" stroke-dasharray="4,4" />
+
+  <!-- Pyramid -->
+  <g transform="translate(100, 100)">
+    <!-- Kingdom -->
+    <path d="M 300,0 L 330,40 L 270,40 Z" fill="url(#pyrGrad)" stroke="#fef08a" stroke-width="1.5" />
+    <text x="300" y="32" font-family="Georgia, serif" font-size="12" fill="#fef08a" text-anchor="middle" font-weight="bold">Kingdom</text>
+
+    <!-- Phylum -->
+    <path d="M 270,40 L 360,80 L 240,80 Z" fill="none" stroke="#f8fafc" stroke-width="1" opacity="0.6" />
+    <text x="300" y="70" font-family="Georgia, serif" font-size="14" fill="#f8fafc" text-anchor="middle" opacity="0.9">Phylum / Division</text>
+
+    <!-- Class -->
+    <path d="M 240,80 L 390,120 L 210,120 Z" fill="none" stroke="#f8fafc" stroke-width="1" opacity="0.6" />
+    <text x="300" y="110" font-family="Georgia, serif" font-size="16" fill="#f8fafc" text-anchor="middle" opacity="0.9">Class</text>
+
+    <!-- Order -->
+    <path d="M 210,120 L 420,160 L 180,160 Z" fill="none" stroke="#f8fafc" stroke-width="1" opacity="0.6" />
+    <text x="300" y="150" font-family="Georgia, serif" font-size="18" fill="#f8fafc" text-anchor="middle" opacity="0.9">Order</text>
+
+    <!-- Family -->
+    <path d="M 180,160 L 450,200 L 150,200 Z" fill="none" stroke="#f8fafc" stroke-width="1" opacity="0.6" />
+    <text x="300" y="190" font-family="Georgia, serif" font-size="20" fill="#f8fafc" text-anchor="middle" opacity="0.9">Family</text>
+
+    <!-- Genus -->
+    <path d="M 150,200 L 480,240 L 120,240 Z" fill="none" stroke="#f8fafc" stroke-width="1" opacity="0.6" />
+    <text x="300" y="230" font-family="Georgia, serif" font-size="22" fill="#fef08a" text-anchor="middle" font-weight="bold">Genus</text>
+
+    <!-- Species -->
+    <path d="M 120,240 L 550,300 L 50,300 Z" fill="url(#pyrGrad)" stroke="#fef08a" stroke-width="2" />
+    <text x="300" y="285" font-family="Georgia, serif" font-size="24" fill="#fef08a" text-anchor="middle" font-weight="bold">SPECIES</text>
+  </g>
+
+  <!-- Side Labels -->
+  <g transform="translate(680, 150)">
+    <text x="0" y="0" font-family="Arial" font-size="14" fill="#f8fafc" font-weight="bold">General</text>
+    <path d="M 30,10 L 30,220" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow)" opacity="0.5" />
+    <text x="0" y="240" font-family="Arial" font-size="14" fill="#fef08a" font-weight="bold">Specific</text>
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M 0,0 L 10,5 L 0,10 Z" fill="#f8fafc" opacity="0.5" />
+    </marker>
+  </defs>
+</svg>

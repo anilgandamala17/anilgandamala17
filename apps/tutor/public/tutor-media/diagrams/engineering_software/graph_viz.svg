@@ -1,0 +1,40 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowG" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="rgba(255,255,255,0.90)" />
+    </marker>
+  </defs>
+
+  <!-- Edges -->
+  <line x1="200" y1="80" x2="100" y2="160" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" />
+  <line x1="200" y1="80" x2="300" y2="160" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" />
+  <line x1="100" y1="160" x2="200" y2="220" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" />
+  <line x1="300" y1="160" x2="200" y2="220" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" />
+  <line x1="100" y1="160" x2="300" y2="160" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" stroke-dasharray="4,3" />
+
+  <!-- Edge weight labels -->
+  <text x="140" y="115" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">w=3</text>
+  <text x="260" y="115" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">w=5</text>
+  <text x="145" y="200" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">w=2</text>
+  <text x="255" y="200" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">w=4</text>
+  <text x="200" y="155" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">w=6</text>
+
+  <!-- Nodes -->
+  <circle cx="200" cy="80" r="22" fill="none" stroke="#93c5fd" stroke-width="2" />
+  <text x="200" y="85" font-size="11" fill="#93c5fd" text-anchor="middle" font-weight="bold">A</text>
+
+  <circle cx="100" cy="160" r="22" fill="none" stroke="#86efac" stroke-width="2" />
+  <text x="100" y="165" font-size="11" fill="#86efac" text-anchor="middle" font-weight="bold">B</text>
+
+  <circle cx="300" cy="160" r="22" fill="none" stroke="#fef08a" stroke-width="2" />
+  <text x="300" y="165" font-size="11" fill="#fef08a" text-anchor="middle" font-weight="bold">C</text>
+
+  <circle cx="200" cy="220" r="22" fill="none" stroke="#fca5a5" stroke-width="2" />
+  <text x="200" y="225" font-size="11" fill="#fca5a5" text-anchor="middle" font-weight="bold">D</text>
+
+  <!-- Legend -->
+  <text x="20" y="265" font-size="8" fill="rgba(255,255,255,0.30)">○ = Node (vertex)</text>
+  <text x="160" y="265" font-size="8" fill="rgba(255,255,255,0.30)">— = Edge (w = weight)</text>
+
+  <text x="200" y="20" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">Weighted Graph</text>
+</svg>

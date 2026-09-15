@@ -1,0 +1,81 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#1a5c2a}
+      .title{fill:#fff9c4;font-size:14px;font-weight:bold}
+      .sub{fill:#b2f5ea;font-size:10px}
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="18" text-anchor="middle" class="title">Soil Types of India</text>
+  <text x="210" y="30" text-anchor="middle" class="sub">Six major soil types — distribution, characteristics, crops</text>
+
+  <!-- Grid of 6 soil types -->
+  <!-- Alluvial -->
+  <rect x="8" y="38" width="124" height="86" fill="#0d3b20" stroke="#ffd600" stroke-width="1.5" rx="5"/>
+  <circle cx="70" cy="55" r="8" fill="#ffd600" opacity="0.7"/>
+  <text x="70" y="57" text-anchor="middle" fill="#1a1a00" font-size="7" font-weight="bold">ALU</text>
+  <text x="70" y="70" text-anchor="middle" fill="#ffd600" font-size="10" font-weight="bold">Alluvial Soil</text>
+  <text x="16" y="84" fill="#ffffff" font-size="9">• Deposited by rivers</text>
+  <text x="16" y="96" fill="#ffffff" font-size="9">• Very fertile, N-P-K rich</text>
+  <text x="16" y="108" fill="#b2f5ea" font-size="8">Crops: wheat, rice, sugarcane</text>
+  <text x="16" y="118" fill="#ffd600" font-size="8">Location: Indo-Gangetic Plain</text>
+
+  <!-- Black -->
+  <rect x="148" y="38" width="124" height="86" fill="#0d3b20" stroke="#80cbc4" stroke-width="1.5" rx="5"/>
+  <circle cx="210" cy="55" r="8" fill="#424242" opacity="0.9"/>
+  <text x="210" y="57" text-anchor="middle" fill="#fff9c4" font-size="7" font-weight="bold">BLK</text>
+  <text x="210" y="70" text-anchor="middle" fill="#80cbc4" font-size="10" font-weight="bold">Black Soil</text>
+  <text x="156" y="84" fill="#ffffff" font-size="9">• Regur / Cotton soil</text>
+  <text x="156" y="96" fill="#ffffff" font-size="9">• Retains moisture well</text>
+  <text x="156" y="108" fill="#b2f5ea" font-size="8">Crops: cotton, jowar, linseed</text>
+  <text x="156" y="118" fill="#80cbc4" font-size="8">Location: Deccan Plateau</text>
+
+  <!-- Red -->
+  <rect x="288" y="38" width="124" height="86" fill="#0d3b20" stroke="#f06292" stroke-width="1.5" rx="5"/>
+  <circle cx="350" cy="55" r="8" fill="#c62828" opacity="0.8"/>
+  <text x="350" y="57" text-anchor="middle" fill="#fff9c4" font-size="7" font-weight="bold">RED</text>
+  <text x="350" y="70" text-anchor="middle" fill="#f06292" font-size="10" font-weight="bold">Red Soil</text>
+  <text x="296" y="84" fill="#ffffff" font-size="9">• Iron-rich, red color</text>
+  <text x="296" y="96" fill="#ffffff" font-size="9">• Porous, less fertile</text>
+  <text x="296" y="108" fill="#b2f5ea" font-size="8">Crops: groundnut, pulses</text>
+  <text x="296" y="118" fill="#f06292" font-size="8">Location: Tamil Nadu, Odisha</text>
+
+  <!-- Laterite -->
+  <rect x="8" y="134" width="124" height="86" fill="#0d3b20" stroke="#ff8a65" stroke-width="1.5" rx="5"/>
+  <circle cx="70" cy="151" r="8" fill="#e65100" opacity="0.8"/>
+  <text x="70" y="153" text-anchor="middle" fill="#fff9c4" font-size="7" font-weight="bold">LAT</text>
+  <text x="70" y="166" text-anchor="middle" fill="#ff8a65" font-size="10" font-weight="bold">Laterite Soil</text>
+  <text x="16" y="180" fill="#ffffff" font-size="9">• Forms in wet-dry climate</text>
+  <text x="16" y="192" fill="#ffffff" font-size="9">• Low fertility, acidic</text>
+  <text x="16" y="204" fill="#b2f5ea" font-size="8">Crops: cashew, tea, coffee</text>
+  <text x="16" y="214" fill="#ff8a65" font-size="8">Location: Western Ghats</text>
+
+  <!-- Arid/Desert -->
+  <rect x="148" y="134" width="124" height="86" fill="#0d3b20" stroke="#aed581" stroke-width="1.5" rx="5"/>
+  <circle cx="210" cy="151" r="8" fill="#f9a825" opacity="0.8"/>
+  <text x="210" y="153" text-anchor="middle" fill="#1a1a00" font-size="7" font-weight="bold">ARI</text>
+  <text x="210" y="166" text-anchor="middle" fill="#aed581" font-size="10" font-weight="bold">Arid/Desert Soil</text>
+  <text x="156" y="180" fill="#ffffff" font-size="9">• Sandy, lacks humus</text>
+  <text x="156" y="192" fill="#ffffff" font-size="9">• Saline, poor drainage</text>
+  <text x="156" y="204" fill="#b2f5ea" font-size="8">Crops: bajra, drought resistant</text>
+  <text x="156" y="214" fill="#aed581" font-size="8">Location: Rajasthan</text>
+
+  <!-- Forest -->
+  <rect x="288" y="134" width="124" height="86" fill="#0d3b20" stroke="#ce93d8" stroke-width="1.5" rx="5"/>
+  <circle cx="350" cy="151" r="8" fill="#6a1b9a" opacity="0.8"/>
+  <text x="350" y="153" text-anchor="middle" fill="#fff9c4" font-size="7" font-weight="bold">FOR</text>
+  <text x="350" y="166" text-anchor="middle" fill="#ce93d8" font-size="10" font-weight="bold">Forest Soil</text>
+  <text x="296" y="180" fill="#ffffff" font-size="9">• Humus-rich, loamy</text>
+  <text x="296" y="192" fill="#ffffff" font-size="9">• Varies by altitude</text>
+  <text x="296" y="204" fill="#b2f5ea" font-size="8">Crops: tea, spices, fruits</text>
+  <text x="296" y="214" fill="#ce93d8" font-size="8">Location: Hilly regions</text>
+
+  <!-- Soil Conservation box -->
+  <rect x="8" y="230" width="404" height="64" fill="#155724" stroke="#ffd600" stroke-width="1" rx="5"/>
+  <text x="210" y="246" text-anchor="middle" fill="#fff9c4" font-size="11" font-weight="bold">Soil Erosion &amp; Conservation</text>
+  <text x="16" y="260" fill="#f06292" font-size="10">Causes: Wind / Water / Deforestation / Overgrazing</text>
+  <text x="16" y="274" fill="#aed581" font-size="10">Methods: Contour ploughing · Terrace farming · Shelter belts · Cover crops</text>
+  <text x="16" y="288" fill="#b2f5ea" font-size="9">Why: Topsoil takes 1000 yrs to form — irreplaceable resource</text>
+  </g>
+</svg>

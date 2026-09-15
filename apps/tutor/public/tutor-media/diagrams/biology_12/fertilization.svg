@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto">
+      <path d="M0,0 L0,4 L8,2 z" fill="#86efac"/>
+    </marker>
+    <radialGradient id="eggGrad" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0.05"/>
+    </radialGradient>
+  </defs>
+
+  <g id="fert-part-overview" data-mito-part="overview" class="mito-layer">
+    <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia, serif" font-weight="bold">Fertilization</text>
+  </g>
+
+  <g id="fert-part-approach" data-mito-part="approach" class="mito-layer">
+    <text x="140" y="74" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia, serif" font-weight="bold">① Approach</text>
+    <circle cx="140" cy="155" r="60" fill="url(#eggGrad)" stroke="#f472b6" stroke-width="2.5"/>
+    <text x="140" y="152" text-anchor="middle" fill="#f9a8d4" font-size="14" font-family="Georgia, serif" font-weight="bold">Egg Cell</text>
+    <text x="140" y="168" text-anchor="middle" fill="#f9a8d4" font-size="12" font-family="Georgia, serif">(n)</text>
+    <circle cx="140" cy="155" r="74" fill="none" stroke="#f9a8d4" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <text x="216" y="122" fill="#d4d4d8" font-size="10" font-family="Georgia, serif">Zona</text>
+    <text x="216" y="134" fill="#d4d4d8" font-size="10" font-family="Georgia, serif">Pellucida</text>
+    <g transform="translate(70,92)">
+      <ellipse cx="0" cy="0" rx="14" ry="8" fill="#7dd3fc" fill-opacity="0.5" stroke="#38bdf8" stroke-width="1.5"/>
+      <path d="M-14,0 Q-36,10 -54,0" stroke="#38bdf8" stroke-width="2" fill="none"/>
+      <text dx="-46" dy="-8" fill="#d4d4d8" font-size="10" font-family="Georgia, serif">Sperm</text>
+    </g>
+    <g transform="translate(62,190)">
+      <ellipse cx="0" cy="0" rx="14" ry="8" fill="#7dd3fc" fill-opacity="0.5" stroke="#38bdf8" stroke-width="1.5"/>
+      <path d="M-14,0 Q-36,-8 -52,0" stroke="#38bdf8" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <line x1="220" y1="155" x2="278" y2="155" stroke="#86efac" stroke-width="2" marker-end="url(#arr)"/>
+
+  <g id="fert-part-acrosome" data-mito-part="acrosome" class="mito-layer">
+    <text x="365" y="74" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia, serif" font-weight="bold">② Acrosome Reaction</text>
+    <circle cx="365" cy="155" r="60" fill="url(#eggGrad)" stroke="#f472b6" stroke-width="2.5"/>
+    <text x="365" y="160" text-anchor="middle" fill="#f9a8d4" font-size="12" font-family="Georgia, serif" font-weight="bold">Egg</text>
+    <g transform="translate(303,116)">
+      <ellipse cx="0" cy="0" rx="14" ry="8" fill="#38bdf8" fill-opacity="0.8" stroke="#0ea5e9" stroke-width="1.5"/>
+      <path d="M-14,0 Q-34,-12 -52,-4" stroke="#38bdf8" stroke-width="2" fill="none"/>
+    </g>
+    <line x1="303" y1="118" x2="320" y2="130" stroke="#fde68a" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <line x1="303" y1="112" x2="316" y2="122" stroke="#fde68a" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <text x="270" y="104" fill="#fde68a" font-size="10" font-family="Georgia, serif">Enzymes</text>
+    <text x="280" y="86" fill="#d4d4d8" font-size="10" font-family="Georgia, serif">(digest zona)</text>
+  </g>
+
+  <line x1="438" y1="155" x2="494" y2="155" stroke="#86efac" stroke-width="2" marker-end="url(#arr)"/>
+
+  <g id="fert-part-fusion" data-mito-part="fusion" class="mito-layer">
+    <text x="590" y="74" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia, serif" font-weight="bold">③ Nuclear Fusion</text>
+    <circle cx="590" cy="155" r="60" fill="url(#eggGrad)" stroke="#f472b6" stroke-width="2.5"/>
+    <circle cx="575" cy="152" r="22" fill="#f472b6" fill-opacity="0.4" stroke="#f9a8d4" stroke-width="1.5"/>
+    <text x="575" y="149" text-anchor="middle" fill="#fce7f3" font-size="10" font-family="Georgia, serif">♀ nuc</text>
+    <text x="575" y="162" text-anchor="middle" fill="#fce7f3" font-size="10" font-family="Georgia, serif">(n)</text>
+    <circle cx="611" cy="152" r="18" fill="#38bdf8" fill-opacity="0.4" stroke="#7dd3fc" stroke-width="1.5"/>
+    <text x="611" y="149" text-anchor="middle" fill="#e0f2fe" font-size="10" font-family="Georgia, serif">♂ nuc</text>
+    <text x="611" y="162" text-anchor="middle" fill="#e0f2fe" font-size="10" font-family="Georgia, serif">(n)</text>
+    <line x1="593" y1="140" x2="600" y2="130" stroke="#86efac" stroke-width="1.5"/>
+    <line x1="596" y1="143" x2="608" y2="136" stroke="#86efac" stroke-width="1.5"/>
+    <line x1="592" y1="165" x2="600" y2="173" stroke="#86efac" stroke-width="1.5"/>
+  </g>
+
+  <line x1="590" y1="219" x2="590" y2="262" stroke="#86efac" stroke-width="2" marker-end="url(#arr)"/>
+
+  <g id="fert-part-zygote" data-mito-part="zygote" class="mito-layer">
+    <rect x="250" y="280" width="530" height="190" rx="18" fill="#1a3a2a" fill-opacity="0.7" stroke="#86efac" stroke-width="2"/>
+    <text x="515" y="308" text-anchor="middle" fill="#86efac" font-size="17" font-family="Georgia, serif" font-weight="bold">Zygote Formation (2n)</text>
+    <circle cx="390" cy="375" r="65" fill="#a3e635" fill-opacity="0.12" stroke="#a3e635" stroke-width="2.5"/>
+    <text x="390" y="368" text-anchor="middle" fill="#d9f99d" font-size="15" font-family="Georgia, serif" font-weight="bold">Zygote</text>
+    <text x="390" y="385" text-anchor="middle" fill="#d9f99d" font-size="13" font-family="Georgia, serif">n + n = 2n</text>
+    <circle cx="390" cy="375" r="24" fill="#a3e635" fill-opacity="0.3" stroke="#d9f99d" stroke-width="1.5"/>
+    <text x="390" y="379" text-anchor="middle" fill="#f0fdf4" font-size="11" font-family="Georgia, serif">Nucleus</text>
+    <text x="550" y="340" text-anchor="middle" fill="#fde68a" font-size="13" font-family="Georgia, serif" font-weight="bold">Cleavage →</text>
+    <circle cx="548" cy="363" r="20" fill="#fbbf24" fill-opacity="0.2" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="548" y="368" text-anchor="middle" fill="#fde68a" font-size="10" font-family="Georgia, serif">2-cell</text>
+    <circle cx="552" cy="397" r="23" fill="#fbbf24" fill-opacity="0.15" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="552" y="402" text-anchor="middle" fill="#fde68a" font-size="10" font-family="Georgia, serif">4-cell</text>
+    <text x="620" y="375" text-anchor="middle" fill="#7dd3fc" font-size="13" font-family="Georgia, serif" font-weight="bold">→ Blastocyst</text>
+    <circle cx="680" cy="375" r="30" fill="#38bdf8" fill-opacity="0.15" stroke="#7dd3fc" stroke-width="1.5"/>
+    <text x="680" y="371" text-anchor="middle" fill="#e0f2fe" font-size="10" font-family="Georgia, serif">Inner</text>
+    <text x="680" y="383" text-anchor="middle" fill="#e0f2fe" font-size="10" font-family="Georgia, serif">Cell Mass</text>
+    <text x="515" y="452" text-anchor="middle" fill="#a3e635" font-size="13" font-family="Georgia, serif" font-style="italic">→ Implantation in Uterus</text>
+  </g>
+</svg>

@@ -1,0 +1,61 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 12px; font-weight: bold; }
+      .energy-axis { stroke: #94a3b8; stroke-width: 2; }
+      .level { stroke: #ffffff; stroke-width: 2; }
+      .ao-level { stroke: #60a5fa; stroke-dasharray: 4; }
+      .electron-up { stroke: #f87171; stroke-width: 2; }
+      .electron-down { stroke: #60a5fa; stroke-width: 2; }
+      .desc { fill: #94a3b8; font-size: 10px; font-style: italic; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Molecular Orbital Energy Diagram (H₂)</text>
+    
+    <!-- Energy Axis -->
+    <line x1="40" y1="220" x2="40" y2="50" class="energy-axis" marker-end="url(#arrowhead)" />
+    <text x="30" y="45" fill="#94a3b8" font-size="10" transform="rotate(-90, 30, 45)">Energy</text>
+
+    <!-- Atomic Orbitals (AO) -->
+    <g transform="translate(80, 150)">
+      <line x1="-15" y1="0" x2="15" y2="0" class="level" />
+      <text x="0" y="20" class="label" text-anchor="middle">1s</text>
+      <text x="0" y="35" class="desc" text-anchor="middle">Atom A</text>
+      <line x1="0" y1="-10" x2="0" y2="10" class="electron-up" />
+    </g>
+
+    <g transform="translate(320, 150)">
+      <line x1="-15" y1="0" x2="15" y2="0" class="level" />
+      <text x="0" y="20" class="label" text-anchor="middle">1s</text>
+      <text x="0" y="35" class="desc" text-anchor="middle">Atom B</text>
+      <line x1="0" y1="-10" x2="0" y2="10" class="electron-up" />
+    </g>
+
+    <!-- Molecular Orbitals (MO) -->
+    <!-- Bonding MO (BMO) -->
+    <g transform="translate(200, 200)">
+      <line x1="-20" y1="0" x2="20" y2="0" class="level" stroke="#4ade80" />
+      <text x="40" y="5" class="label" fill="#4ade80">σ₁ₛ</text>
+      <text x="0" y="20" class="desc" text-anchor="middle">Bonding MO</text>
+      <line x1="-5" y1="-10" x2="-5" y2="10" class="electron-up" />
+      <line x1="5" y1="10" x2="5" y2="-10" class="electron-down" />
+    </g>
+
+    <!-- Antibonding MO (ABMO) -->
+    <g transform="translate(200, 100)">
+      <line x1="-20" y1="0" x2="20" y2="0" class="level" stroke="#f87171" />
+      <text x="40" y="5" class="label" fill="#f87171">σ*₁ₛ</text>
+      <text x="0" y="-10" class="desc" text-anchor="middle">Antibonding MO</text>
+    </g>
+
+    <!-- Connection lines -->
+    <line x1="95" y1="150" x2="180" y2="200" class="ao-level" />
+    <line x1="95" y1="150" x2="180" y2="100" class="ao-level" />
+    <line x1="305" y1="150" x2="220" y2="200" class="ao-level" />
+    <line x1="305" y1="150" x2="220" y2="100" class="ao-level" />
+
+    <text x="200" y="250" text-anchor="middle" fill="#fcd34d" font-size="11">Bond Order = (BMO e⁻ – ABMO e⁻) / 2</text>
+  </g>
+</svg>

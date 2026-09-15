@@ -1,0 +1,42 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- NO BACKGROUND RECT -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="28" fill="#fef08a" text-anchor="middle" font-weight="bold">Animal Tissues: Overview</text>
+  <path d="M 300,60 L 500,60" stroke="#fef08a" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.3" />
+
+  <!-- Four Main Types -->
+  <g transform="translate(150, 120)">
+    <!-- Epithelial -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="220" height="120" rx="10" fill="none" stroke="#fca5a5" stroke-width="2" />
+      <text x="110" y="30" font-family="Georgia, serif" font-size="18" fill="#fca5a5" text-anchor="middle" font-weight="bold">Epithelial Tissue</text>
+      <text x="20" y="60" font-family="Arial" font-size="12" fill="#f8fafc" opacity="0.8">• Coverings & Linings</text>
+      <text x="20" y="80" font-family="Arial" font-size="12" fill="#f8fafc" opacity="0.8">• Squamous, Columnar, Cuboidal</text>
+    </g>
+
+    <!-- Connective -->
+    <g transform="translate(280, 0)">
+      <rect x="0" y="0" width="220" height="120" rx="10" fill="none" stroke="#93c5fd" stroke-width="2" />
+      <text x="110" y="30" font-family="Georgia, serif" font-size="18" fill="#93c5fd" text-anchor="middle" font-weight="bold">Connective Tissue</text>
+      <text x="20" y="60" font-family="Arial" font-size="12" fill="#f8fafc" opacity="0.8">• Binding & Support</text>
+      <text x="20" y="80" font-family="Arial" font-size="12" fill="#f8fafc" opacity="0.8">• Blood, Bone, Cartilage, Areolar</text>
+    </g>
+
+    <!-- Muscular -->
+    <g transform="translate(0, 160)">
+      <rect x="0" y="0" width="220" height="120" rx="10" fill="none" stroke="#fca5a5" stroke-width="2" opacity="0.6" />
+      <text x="110" y="30" font-family="Georgia, serif" font-size="18" fill="#fca5a5" text-anchor="middle" font-weight="bold">Muscular Tissue</text>
+      <text x="20" y="60" font-family="Arial" font-size="12" fill="#f8fafc" opacity="0.8">• Movement & Locomotion</text>
+      <text x="20" y="80" font-family="Arial" font-size="12" fill="#f8fafc" opacity="0.8">• Skeletal, Smooth, Cardiac</text>
+    </g>
+
+    <!-- Neural -->
+    <g transform="translate(280, 160)">
+      <rect x="0" y="0" width="220" height="120" rx="10" fill="none" stroke="#fef08a" stroke-width="2" />
+      <text x="110" y="30" font-family="Georgia, serif" font-size="18" fill="#fef08a" text-anchor="middle" font-weight="bold">Neural Tissue</text>
+      <text x="20" y="60" font-family="Arial" font-size="12" fill="#f8fafc" opacity="0.8">• Control & Coordination</text>
+      <text x="20" y="80" font-family="Arial" font-size="12" fill="#f8fafc" opacity="0.8">• Neurons & Neuroglial cells</text>
+    </g>
+  </g>
+
+  <text x="400" y="420" font-family="Arial" font-size="14" fill="#fef08a" text-anchor="middle" font-style="italic">Tissue: Group of cells with common origin and function</text>
+</svg>

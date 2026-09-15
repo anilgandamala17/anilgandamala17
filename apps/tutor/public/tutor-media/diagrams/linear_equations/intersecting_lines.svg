@@ -1,0 +1,54 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .axis { stroke: #94a3b8; stroke-width: 1; }
+      .line1 { fill: none; stroke: #ef4444; stroke-width: 2; }
+      .line2 { fill: none; stroke: #3b82f6; stroke-width: 2; }
+      .point { fill: #fbbf24; stroke: #fff; }
+      .grid { stroke: #334155; stroke-width: 0.5; stroke-dasharray: 2,2; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">LINEAR PAIR: UNIQUE SOLUTION</text>
+
+  <!-- Grid -->
+  <g transform="translate(200, 150)">
+    <!-- Grid Lines -->
+    <path d="M -150 -100 L 150 -100 M -150 -50 L 150 -50 M -150 50 L 150 50 M -150 100 L 150 100" class="grid" />
+    <path d="M -100 -120 L -100 120 M -50 -120 L -50 120 M 50 -120 L 50 120 M 100 -120 L 100 120" class="grid" />
+
+    <!-- Axes -->
+    <line x1="-180" y1="0" x2="180" y2="0" class="axis" marker-end="url(#arrowhead)" />
+    <line x1="0" y1="120" x2="0" y2="-120" class="axis" marker-end="url(#arrowhead)" />
+    
+    <text x="170" y="15" fontSize="10">x</text>
+    <text x="5" y="-110" fontSize="10">y</text>
+    
+    <!-- Line 1: y = x + 10 (scaled visual) -->
+    <!-- Point (-50, -40) to (50, 60) -->
+    <line x1="-100" y1="100" x2="100" y2="-100" class="line1" />
+    <text x="110" y="-90" fontSize="10" fill="#ef4444">L1</text>
+    
+    <!-- Line 2: y = -x + 10 -->
+    <!-- Point (-50, 60) to (50, -40) -->
+    <line x1="-100" y1="-100" x2="100" y2="100" class="line2" />
+    <text x="110" y="90" fontSize="10" fill="#3b82f6">L2</text>
+    
+    <!-- Intefersection (0,0) scaled/shifted for visual clarity -->
+    <circle cx="0" cy="0" r="4" class="point" />
+    <text x="10" y="0" fontSize="10" fill="#fbbf24">Solution (x,y)</text>
+
+  </g>
+  
+  <text x="260" y="280" class="label" fill="#fbbf24">Intersecting = 1 Solution</text>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#94a3b8" />
+    </marker>
+  </defs>
+</svg>

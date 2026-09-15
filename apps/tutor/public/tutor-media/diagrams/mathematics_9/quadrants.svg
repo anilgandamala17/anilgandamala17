@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Quadrants of the Cartesian Plane</text>
+  <!-- Axes -->
+  <line x1="80" y1="260" x2="720" y2="260" stroke="#86efac" stroke-width="3"/>
+  <line x1="400" y1="55" x2="400" y2="465" stroke="#86efac" stroke-width="3"/>
+  <polygon points="722,256 732,260 722,264" fill="#86efac"/>
+  <polygon points="400,50 396,60 404,60" fill="#86efac"/>
+  <text x="738" y="264" fill="#86efac" font-size="16" font-family="Georgia,serif" font-weight="bold">x</text>
+  <text x="404" y="46" fill="#86efac" font-size="16" font-family="Georgia,serif" font-weight="bold">y</text>
+
+  <!-- Quadrant backgrounds -->
+  <rect x="401" y="61" width="318" height="198" fill="#134e4a" fill-opacity="0.4"/>
+  <rect x="81" y="61" width="318" height="198" fill="#1e3a00" fill-opacity="0.4"/>
+  <rect x="81" y="261" width="318" height="198" fill="#3b1e00" fill-opacity="0.4"/>
+  <rect x="401" y="261" width="318" height="198" fill="#1e003b" fill-opacity="0.4"/>
+
+  <!-- Quadrant labels large -->
+  <text x="560" y="150" text-anchor="middle" fill="#a3e635" font-size="32" font-family="Georgia,serif" font-weight="bold">I</text>
+  <text x="560" y="185" text-anchor="middle" fill="#a3e635" font-size="15" font-family="Georgia,serif">(+, +)</text>
+  <text x="560" y="205" text-anchor="middle" fill="#a3e635" font-size="12" font-family="Georgia,serif">x &gt; 0, y &gt; 0</text>
+
+  <text x="240" y="150" text-anchor="middle" fill="#fde68a" font-size="32" font-family="Georgia,serif" font-weight="bold">II</text>
+  <text x="240" y="185" text-anchor="middle" fill="#fde68a" font-size="15" font-family="Georgia,serif">(−, +)</text>
+  <text x="240" y="205" text-anchor="middle" fill="#fde68a" font-size="12" font-family="Georgia,serif">x &lt; 0, y &gt; 0</text>
+
+  <text x="240" y="360" text-anchor="middle" fill="#f9a8d4" font-size="32" font-family="Georgia,serif" font-weight="bold">III</text>
+  <text x="240" y="395" text-anchor="middle" fill="#f9a8d4" font-size="15" font-family="Georgia,serif">(−, −)</text>
+  <text x="240" y="415" text-anchor="middle" fill="#f9a8d4" font-size="12" font-family="Georgia,serif">x &lt; 0, y &lt; 0</text>
+
+  <text x="560" y="360" text-anchor="middle" fill="#7dd3fc" font-size="32" font-family="Georgia,serif" font-weight="bold">IV</text>
+  <text x="560" y="395" text-anchor="middle" fill="#7dd3fc" font-size="15" font-family="Georgia,serif">(+, −)</text>
+  <text x="560" y="415" text-anchor="middle" fill="#7dd3fc" font-size="12" font-family="Georgia,serif">x &gt; 0, y &lt; 0</text>
+
+  <!-- Origin -->
+  <circle cx="400" cy="260" r="6" fill="#ffffff"/>
+  <text x="408" y="278" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">O(0,0)</text>
+
+  <!-- Positive / Negative axis labels -->
+  <text x="690" y="250" fill="#86efac" font-size="12" font-family="Georgia,serif">+x</text>
+  <text x="82" y="250" fill="#86efac" font-size="12" font-family="Georgia,serif">−x</text>
+  <text x="414" y="74" fill="#86efac" font-size="12" font-family="Georgia,serif">+y</text>
+  <text x="414" y="458" fill="#86efac" font-size="12" font-family="Georgia,serif">−y</text>
+
+  <!-- Sample points -->
+  <circle cx="560" cy="160" r="6" fill="#a3e635"/>
+  <text x="574" y="156" fill="#a3e635" font-size="12" font-family="Georgia,serif">(3,2)</text>
+  <circle cx="240" cy="160" r="6" fill="#fde68a"/>
+  <text x="210" y="156" fill="#fde68a" font-size="12" font-family="Georgia,serif">(−3,2)</text>
+  <circle cx="240" cy="380" r="6" fill="#f9a8d4"/>
+  <text x="195" y="376" fill="#f9a8d4" font-size="12" font-family="Georgia,serif">(−3,−2)</text>
+  <circle cx="560" cy="380" r="6" fill="#7dd3fc"/>
+  <text x="574" y="376" fill="#7dd3fc" font-size="12" font-family="Georgia,serif">(3,−2)</text>
+
+  <!-- Anti-clockwise rotation arrow hint -->
+  <text x="400" y="490" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Quadrants are numbered anti-clockwise starting from Q-I (positive x, positive y)</text>
+</svg>

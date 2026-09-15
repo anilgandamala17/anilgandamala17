@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Medieval India — Delhi Sultanate</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="76" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">Delhi Sultanate: 1206–1526 | Five dynasties ruled from Delhi</text>
+
+<rect x="20" y="86" width="155" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="97" y="108" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Slave / Mamluk</text>
+<text x="97" y="125" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">1206–1290</text>
+<text x="97" y="143" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Qutb-ud-din Aibak</text>
+<text x="97" y="161" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Iltutmish</text>
+<text x="97" y="179" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Razia Sultan</text>
+<text x="97" y="197" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Balban</text>
+<text x="97" y="218" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Qutb Minar</text>
+<text x="97" y="236" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle">1st Islamic dynasty</text>
+<text x="97" y="252" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle">in North India</text>
+<text x="97" y="278" font-family="'Segoe UI',sans-serif" font-size="10" fill="#ffd54f" text-anchor="middle">Razia: 1st woman</text>
+
+<rect x="185" y="86" width="155" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="262" y="108" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Khilji Dynasty</text>
+<text x="262" y="125" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">1290–1320</text>
+<text x="262" y="143" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Jalal-ud-din Khilji</text>
+<text x="262" y="161" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Alauddin Khilji</text>
+<text x="262" y="179" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Market reforms</text>
+<text x="262" y="197" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Repelled Mongols</text>
+<text x="262" y="218" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Alai Darwaza</text>
+<text x="262" y="238" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Price control system</text>
+<text x="262" y="278" font-family="'Segoe UI',sans-serif" font-size="10" fill="#ffd54f" text-anchor="middle">Deccan campaigns</text>
+
+<rect x="350" y="86" width="155" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="427" y="108" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Tughlaq Dynasty</text>
+<text x="427" y="125" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">1320–1414</text>
+<text x="427" y="143" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Ghiyasuddin Tughlaq</text>
+<text x="427" y="161" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Muhammad bin Tughlaq</text>
+<text x="427" y="179" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Capital shifted to Daulatabad</text>
+<text x="427" y="197" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Token currency experiment</text>
+<text x="427" y="218" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Firoz Shah Tughlaq</text>
+<text x="427" y="238" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">IBN Battuta visited</text>
+<text x="427" y="278" font-family="'Segoe UI',sans-serif" font-size="10" fill="#ffd54f" text-anchor="middle">Timur's invasion 1398</text>
+
+<rect x="515" y="86" width="265" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="647" y="108" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Sayyid (1414-51) &amp; Lodi (1451-1526)</text>
+<text x="647" y="130" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Sayyids: weak rulers, brief period</text>
+<text x="647" y="150" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Lodis: Afghan dynasty ruled till 1526</text>
+<text x="647" y="170" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Ibrahim Lodi: last Sultan</text>
+<text x="647" y="190" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">First Battle of Panipat: 1526</text>
+<text x="647" y="210" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Babur defeated Ibrahim Lodi</text>
+<text x="647" y="230" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Founded the Mughal Empire</text>
+<text x="647" y="250" font-family="'Segoe UI',sans-serif" font-size="11" fill="#f48fb1" text-anchor="middle">End of Delhi Sultanate → Mughals</text>
+<text x="647" y="270" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle">Sikandar Lodi founded Agra city</text>
+
+<line x1="20" y1="300" x2="780" y2="300" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="324" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Government and Society under the Sultanate</text>
+
+<rect x="20" y="336" width="370" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="358" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Administration</text>
+<text x="205" y="379" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Sultan = absolute ruler (Caliph's representative)</text>
+<text x="205" y="399" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Iqta system: revenue assignments to nobles</text>
+<text x="205" y="419" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Wazir: chief minister | Diwan: revenue dept</text>
+<text x="205" y="439" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Shariah: Islamic law guided governance</text>
+<text x="205" y="458" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Ulema: Islamic scholars influenced policy</text>
+
+<rect x="410" y="336" width="370" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="358" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Cultural Contributions</text>
+<text x="595" y="379" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Architecture: Qutb Minar, Alai Darwaza</text>
+<text x="595" y="399" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Indo-Islamic architecture style developed</text>
+<text x="595" y="419" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Persian language flourished in courts</text>
+<text x="595" y="439" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Urdu language began to develop</text>
+<text x="595" y="458" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Sufi and Bhakti movements flourished</text>
+
+<text x="400" y="502" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Jizya = tax on non-Muslims | Kharaj = land tax | Zakat = religious tax on Muslims</text>
+<text x="400" y="532" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Delhi Sultanate integrated Perso-Islamic culture with Indian tradition, influencing art, architecture, food and language</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .label { font-size: 10px; fill: #94a3b8; }
+    </style>
+    <linearGradient id="phGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" /> <!-- Acidic (Red) -->
+      <stop offset="50%" stop-color="#22c55e" /> <!-- Neutral (Green) -->
+      <stop offset="100%" stop-color="#3b82f6" /> <!-- Basic (Blue) -->
+    </linearGradient>
+  </defs>
+  
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">THE pH SCALE</text>
+
+  <!-- Scale Bar -->
+  <rect x="20" y="100" width="360" height="30" fill="url(#phGradient)" rx="4" />
+  
+  <!-- Numbers -->
+  <g transform="translate(20, 150)">
+    <text x="0" y="0" fontSize="10">0</text>
+    <text x="180" y="0" fontSize="10" text-anchor="middle">7</text>
+    <text x="360" y="0" fontSize="10" text-anchor="end">14</text>
+  </g>
+
+  <!-- Labels -->
+  <text x="20" y="80" class="label" fill="#ef4444">ACIDIC (H+)</text>
+  <text x="200" y="80" class="label" text-anchor="middle" fill="#22c55e">NEUTRAL</text>
+  <text x="380" y="80" class="label" text-anchor="end" fill="#3b82f6">ALKALINE (OH-)</text>
+
+  <!-- Examples -->
+  <g transform="translate(20, 180)">
+    <path d="M 30 0 L 30 -20" stroke="#fff" stroke-dasharray="2,2" />
+    <text x="30" y="15" fontSize="10" text-anchor="middle">Lemon (2)</text>
+    
+    <path d="M 180 0 L 180 -20" stroke="#fff" stroke-dasharray="2,2" />
+    <text x="180" y="15" fontSize="10" text-anchor="middle">Water (7)</text>
+    
+    <path d="M 330 0 L 330 -20" stroke="#fff" stroke-dasharray="2,2" />
+    <text x="330" y="15" fontSize="10" text-anchor="middle">Bleach (13)</text>
+  </g>
+</svg>

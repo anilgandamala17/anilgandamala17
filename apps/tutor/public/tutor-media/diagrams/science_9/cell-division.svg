@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Cell Division — Mitosis and Meiosis</text>
+
+  <!-- Left: Mitosis -->
+  <rect x="10" y="55" width="385" height="435" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="202" y="78" text-anchor="middle" fill="#a3e635" font-size="15" font-family="Georgia,serif" font-weight="bold">MITOSIS (Somatic)</text>
+  <text x="202" y="97" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">1 cell → 2 identical daughter cells. Diploid (2n) → 2 × Diploid (2n)</text>
+
+  <!-- Phases in sequence with mini diagrams -->
+  <g transform="translate(20,108)">
+    <!-- Interphase -->
+    <rect x="0" y="0" width="355" height="42" rx="6" fill="#0f2a1a" stroke="#86efac" stroke-width="1.5"/>
+    <ellipse cx="30" cy="21" rx="25" ry="18" fill="#166534" stroke="#a3e635" stroke-width="1.5"/>
+    <text x="30" y="25" text-anchor="middle" fill="#fff" font-size="8">2n</text>
+    <text x="70" y="18" fill="#86efac" font-size="11" font-weight="bold">Interphase</text>
+    <text x="70" y="33" fill="#d4d4d8" font-size="10">DNA replication — cell prepares (S, G1, G2)</text>
+    <!-- Prophase -->
+    <rect x="0" y="48" width="355" height="42" rx="6" fill="#0f2a1a" stroke="#fde68a" stroke-width="1.5"/>
+    <!-- chromosomes condensing -->
+    <ellipse cx="30" cy="69" rx="25" ry="18" fill="#4a3a10" stroke="#fde68a" stroke-width="1.5"/>
+    <line x1="20" y1="62" x2="25" y2="78" stroke="#fde68a" stroke-width="2"/>
+    <line x1="35" y1="63" x2="38" y2="77" stroke="#fde68a" stroke-width="2"/>
+    <text x="70" y="65" fill="#fde68a" font-size="11" font-weight="bold">Prophase</text>
+    <text x="70" y="82" fill="#d4d4d8" font-size="10">Chromosomes condense, nuclear membrane dissolves</text>
+    <!-- Metaphase -->
+    <rect x="0" y="96" width="355" height="42" rx="6" fill="#0f2a1a" stroke="#f472b6" stroke-width="1.5"/>
+    <ellipse cx="30" cy="117" rx="25" ry="18" fill="#3b0f1a" stroke="#f472b6" stroke-width="1.5"/>
+    <line x1="15" y1="117" x2="45" y2="117" stroke="#f472b6" stroke-width="1.5"/> <!-- spindle -->
+    <line x1="30" y1="108" x2="30" y2="126" stroke="#fde68a" stroke-width="2"/>
+    <text x="70" y="113" fill="#f9a8d4" font-size="11" font-weight="bold">Metaphase</text>
+    <text x="70" y="130" fill="#d4d4d8" font-size="10">Chromosomes align at equatorial plate</text>
+    <!-- Anaphase -->
+    <rect x="0" y="144" width="355" height="42" rx="6" fill="#0f2a1a" stroke="#7dd3fc" stroke-width="1.5"/>
+    <ellipse cx="30" cy="165" rx="25" ry="18" fill="#1a3a6a" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="20" y1="158" x2="18" y2="145" stroke="#fde68a" stroke-width="2"/>
+    <line x1="18" y1="172" x2="16" y2="183" stroke="#fde68a" stroke-width="2"/>
+    <line x1="40" y1="158" x2="42" y2="145" stroke="#fde68a" stroke-width="2"/>
+    <line x1="42" y1="172" x2="44" y2="183" stroke="#fde68a" stroke-width="2"/>
+    <text x="70" y="161" fill="#7dd3fc" font-size="11" font-weight="bold">Anaphase</text>
+    <text x="70" y="178" fill="#d4d4d8" font-size="10">Chromatids pulled apart to opposite poles</text>
+    <!-- Telophase + Cytokinesis -->
+    <rect x="0" y="192" width="355" height="52" rx="6" fill="#134e4a" stroke="#86efac" stroke-width="2"/>
+    <!-- two small cells forming -->
+    <ellipse cx="18" cy="218" rx="14" ry="18" fill="#166534" stroke="#a3e635" stroke-width="1.5"/>
+    <ellipse cx="44" cy="218" rx="14" ry="18" fill="#166534" stroke="#a3e635" stroke-width="1.5"/>
+    <text x="70" y="212" fill="#86efac" font-size="11" font-weight="bold">Telophase + Cytokinesis</text>
+    <text x="70" y="228" fill="#d4d4d8" font-size="10">Nuclear membranes reform, cytoplasm divides</text>
+    <text x="70" y="241" fill="#a3e635" font-size="10" font-weight="bold">Result: 2 identical 2n daughter cells</text>
+    <!-- importance -->
+    <rect x="0" y="252" width="355" height="55" rx="6" fill="#0f2a1a" stroke="#fde68a" stroke-width="1.5"/>
+    <text x="177" y="272" text-anchor="middle" fill="#fde68a" font-size="11" font-weight="bold">Significance of Mitosis</text>
+    <text x="177" y="290" text-anchor="middle" fill="#d4d4d8" font-size="10">Growth of multicellular organisms</text>
+    <text x="177" y="306" text-anchor="middle" fill="#d4d4d8" font-size="10">Repair of damaged tissues | Asexual reproduction</text>
+  </g>
+
+  <!-- Right: Meiosis -->
+  <rect x="408" y="55" width="382" height="435" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="599" y="78" text-anchor="middle" fill="#fde68a" font-size="15" font-family="Georgia,serif" font-weight="bold">MEIOSIS (Reproductive)</text>
+  <text x="599" y="97" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">1 cell → 4 genetically unique haploid cells (n)</text>
+
+  <g transform="translate(418,108)">
+    <rect x="0" y="0" width="354" height="170" rx="6" fill="#0f2a1a" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="177" y="22" text-anchor="middle" fill="#fdffa0" font-size="12" font-weight="bold" font-family="Georgia,serif">Meiosis I — Reductional division</text>
+    <!-- 2n cell -->
+    <ellipse cx="40" cy="80" rx="30" ry="22" fill="#4a3a10" stroke="#fde68a" stroke-width="2"/>
+    <text x="40" y="84" text-anchor="middle" fill="#fde68a" font-size="9">2n</text>
+    <!-- arrow -->
+    <line x1="75" y1="80" x2="110" y2="80" stroke="#fde68a" stroke-width="1.5"/>
+    <polygon points="106,76 116,80 106,84" fill="#fde68a"/>
+    <!-- 2 haploid emerging -->
+    <ellipse cx="140" cy="68" rx="20" ry="14" fill="#3b1e00" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="140" y="72" text-anchor="middle" fill="#fbbf24" font-size="8">n</text>
+    <ellipse cx="140" cy="94" rx="20" ry="14" fill="#3b1e00" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="140" y="98" text-anchor="middle" fill="#fbbf24" font-size="8">n</text>
+    <text x="260" y="65" fill="#d4d4d8" font-size="10">Homologous pairs separate</text>
+    <text x="260" y="82" fill="#d4d4d8" font-size="10">Chromosome number halved</text>
+    <text x="260" y="99" fill="#fde68a" font-size="10">Crossing-over occurs</text>
+    <text x="260" y="116" fill="#d4d4d8" font-size="10">(genetic variation)</text>
+    <text x="177" y="148" text-anchor="middle" fill="#a3e635" font-size="10">Prophase I has crossing-over → genetic diversity</text>
+    <text x="177" y="164" text-anchor="middle" fill="#d4d4d8" font-size="10">Result of Meiosis I: 2 haploid cells</text>
+
+    <rect x="0" y="178" width="354" height="130" rx="6" fill="#0f2a1a" stroke="#f472b6" stroke-width="1.5"/>
+    <text x="177" y="198" text-anchor="middle" fill="#f9a8d4" font-size="12" font-weight="bold" font-family="Georgia,serif">Meiosis II — Equational division</text>
+    <text x="177" y="218" text-anchor="middle" fill="#d4d4d8" font-size="10">Similar to mitosis on each haploid cell</text>
+    <!-- 2 cells → 4 cells diagram -->
+    <ellipse cx="40" cy="260" rx="18" ry="14" fill="#3b1e00" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="40" y="264" text-anchor="middle" fill="#fbbf24" font-size="8">n</text>
+    <ellipse cx="40" cy="284" rx="18" ry="14" fill="#3b1e00" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="40" y="288" text-anchor="middle" fill="#fbbf24" font-size="8">n</text>
+    <line x1="62" y1="272" x2="100" y2="260" stroke="#f472b6" stroke-width="1.5"/>
+    <line x1="62" y1="272" x2="100" y2="284" stroke="#f472b6" stroke-width="1.5"/>
+    <ellipse cx="120" cy="248" rx="14" ry="10" fill="#3b0f1a" stroke="#f472b6" stroke-width="1.5"/>
+    <text x="120" y="252" text-anchor="middle" fill="#f9a8d4" font-size="7">n</text>
+    <ellipse cx="120" cy="264" rx="14" ry="10" fill="#3b0f1a" stroke="#f472b6" stroke-width="1.5"/>
+    <text x="120" y="268" text-anchor="middle" fill="#f9a8d4" font-size="7">n</text>
+    <ellipse cx="120" cy="280" rx="14" ry="10" fill="#3b0f1a" stroke="#f472b6" stroke-width="1.5"/>
+    <text x="120" y="284" text-anchor="middle" fill="#f9a8d4" font-size="7">n</text>
+    <ellipse cx="120" cy="296" rx="14" ry="10" fill="#3b0f1a" stroke="#f472b6" stroke-width="1.5"/>
+    <text x="120" y="300" text-anchor="middle" fill="#f9a8d4" font-size="7">n</text>
+    <text x="250" y="254" text-anchor="middle" fill="#a3e635" font-size="11" font-weight="bold">4 haploid cells</text>
+    <text x="250" y="272" text-anchor="middle" fill="#d4d4d8" font-size="10">Genetically unique</text>
+    <text x="250" y="290" text-anchor="middle" fill="#d4d4d8" font-size="10">Gametes (sperm/egg)</text>
+    <text x="250" y="306" text-anchor="middle" fill="#fde68a" font-size="10">Fertilisation restores 2n</text>
+
+    <rect x="0" y="318" width="354" height="58" rx="6" fill="#134e4a" stroke="#86efac" stroke-width="2"/>
+    <text x="177" y="338" text-anchor="middle" fill="#86efac" font-size="11" font-weight="bold">Significance of Meiosis</text>
+    <text x="177" y="356" text-anchor="middle" fill="#d4d4d8" font-size="10">Maintains chromosome number across generations</text>
+    <text x="177" y="372" text-anchor="middle" fill="#d4d4d8" font-size="10">Crossing-over → genetic variation → evolution</text>
+  </g>
+</svg>

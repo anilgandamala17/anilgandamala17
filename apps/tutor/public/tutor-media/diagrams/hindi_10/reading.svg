@@ -1,0 +1,29 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .label { font-size: 10px; fill: #94a3b8; }
+    </style>
+  </defs>
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">READING SKILLS (PTHAN)</text>
+  
+  <g transform="translate(100, 80)">
+    <rect x="0" y="0" width="200" height="140" fill="#334155" rx="8" />
+    <line x1="20" y1="20" x2="180" y2="20" stroke="#94a3b8" stroke-width="2" />
+    <line x1="20" y1="40" x2="180" y2="40" stroke="#94a3b8" stroke-width="2" />
+    <line x1="20" y1="60" x2="160" y2="60" stroke="#94a3b8" stroke-width="2" />
+    <line x1="20" y1="80" x2="180" y2="80" stroke="#94a3b8" stroke-width="2" />
+    <line x1="20" y1="100" x2="100" y2="100" stroke="#94a3b8" stroke-width="2" />
+    
+    <!-- Magnifying glass / Focus -->
+    <circle cx="150" cy="70" r="30" stroke="#fbbf24" stroke-width="3" fill="none" opacity="0.6" />
+    <line x1="172" y1="92" x2="190" y2="110" stroke="#fbbf24" stroke-width="3" opacity="0.6" />
+  </g>
+
+  <text x="60" y="250" class="label">Comprehension</text>
+  <text x="180" y="250" class="label">Vocabulary</text>
+  <text x="280" y="250" class="label">Context</text>
+</svg>

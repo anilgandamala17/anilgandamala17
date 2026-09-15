@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#1a2e1a"/>
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#86efac" font-weight="bold">Non-Farming Activities in Palampur</text>
+  <line x1="40" y1="48" x2="760" y2="48" stroke="#86efac" stroke-width="1" opacity="0.4"/>
+
+  <!-- Intro bar -->
+  <rect x="60" y="60" width="680" height="35" rx="5" fill="rgba(134,239,172,0.08)" stroke="#86efac" stroke-width="0.8"/>
+  <text x="400" y="82" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.75)">Not everyone in Palampur is a farmer. Many families earn through non-farming occupations.</text>
+
+  <!-- Activity 1: Dairy -->
+  <rect x="55" y="110" width="220" height="160" rx="7" fill="rgba(250,204,21,0.08)" stroke="#facc15" stroke-width="1.5"/>
+  <text x="165" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#facc15" font-weight="bold">🥛 Dairy</text>
+  <line x1="70" y1="148" x2="260" y2="148" stroke="#facc15" stroke-width="0.5" opacity="0.5"/>
+  <text x="165" y="168" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Families rear buffaloes</text>
+  <text x="165" y="185" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Sell milk to dealers</text>
+  <text x="165" y="202" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">from Raiganj town</text>
+  <text x="165" y="222" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.6)">Provides steady income</text>
+  <text x="165" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#facc15">No land required</text>
+  <text x="165" y="257" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">eg: Hawa Singh's family</text>
+
+  <!-- Activity 2: Small Scale Manufacturing -->
+  <rect x="290" y="110" width="220" height="160" rx="7" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="400" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#38bdf8" font-weight="bold">🔧 Manufacturing</text>
+  <line x1="305" y1="148" x2="495" y2="148" stroke="#38bdf8" stroke-width="0.5" opacity="0.5"/>
+  <text x="400" y="168" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Jaggery making</text>
+  <text x="400" y="185" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Basket weaving</text>
+  <text x="400" y="202" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Pottery, Brickmaking</text>
+  <text x="400" y="222" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.6)">Done at home or village</text>
+  <text x="400" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#38bdf8">Simple tools used</text>
+  <text x="400" y="257" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">Low capital, low output</text>
+
+  <!-- Activity 3: Shopkeeping -->
+  <rect x="525" y="110" width="220" height="160" rx="7" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="635" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#a78bfa" font-weight="bold">🏪 Shopkeeping</text>
+  <line x1="540" y1="148" x2="730" y2="148" stroke="#a78bfa" stroke-width="0.5" opacity="0.5"/>
+  <text x="635" y="168" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Small general stores</text>
+  <text x="635" y="185" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Kirana and provision</text>
+  <text x="635" y="202" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">shops in village</text>
+  <text x="635" y="222" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.6)">Services whole village</text>
+  <text x="635" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#a78bfa">No farming land needed</text>
+  <text x="635" y="257" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">eg: Ram Kali's shop</text>
+
+  <!-- Activity 4: Transport -->
+  <rect x="55" y="290" width="220" height="160" rx="7" fill="rgba(249,115,22,0.08)" stroke="#f97316" stroke-width="1.5"/>
+  <text x="165" y="318" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#f97316" font-weight="bold">🚛 Transport</text>
+  <line x1="70" y1="328" x2="260" y2="328" stroke="#f97316" stroke-width="0.5" opacity="0.5"/>
+  <text x="165" y="348" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Rickshaws, tongas</text>
+  <text x="165" y="365" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Motor transport</text>
+  <text x="165" y="382" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Connect village to town</text>
+  <text x="165" y="402" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#f97316">Rising with prosperity</text>
+  <text x="165" y="418" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">Requires capital for vehicles</text>
+
+  <!-- Key insight box -->
+  <rect x="290" y="290" width="455" height="160" rx="7" fill="rgba(134,239,172,0.06)" stroke="#86efac" stroke-width="1"/>
+  <text x="518" y="318" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#86efac" font-weight="bold">Key Insights</text>
+  <line x1="305" y1="328" x2="730" y2="328" stroke="#86efac" stroke-width="0.5" opacity="0.3"/>
+  <text x="310" y="350" font-family="Georgia, serif" font-size="11" fill="rgba(134,239,172,0.8)">▸</text>
+  <text x="328" y="350" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.75)">Non-farming provides supplemental income</text>
+  <text x="310" y="372" font-family="Georgia, serif" font-size="11" fill="rgba(134,239,172,0.8)">▸</text>
+  <text x="328" y="372" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.75)">Often done alongside seasonal farm work</text>
+  <text x="310" y="394" font-family="Georgia, serif" font-size="11" fill="rgba(134,239,172,0.8)">▸</text>
+  <text x="328" y="394" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.75)">Landless labourers rely on non-farming more</text>
+  <text x="310" y="416" font-family="Georgia, serif" font-size="11" fill="rgba(134,239,172,0.8)">▸</text>
+  <text x="328" y="416" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.75)">Economic diversification reduces poverty</text>
+  <text x="310" y="438" font-family="Georgia, serif" font-size="11" fill="rgba(134,239,172,0.8)">▸</text>
+  <text x="328" y="438" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.75)">Transport links village to market economy</text>
+</svg>

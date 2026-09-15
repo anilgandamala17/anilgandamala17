@@ -1,0 +1,75 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#1a5c2a}
+      .title{fill:#fff9c4;font-size:14px;font-weight:bold}
+      .sub{fill:#b2f5ea;font-size:10px}
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="18" text-anchor="middle" class="title">Power Sharing in India</text>
+  <text x="210" y="30" text-anchor="middle" class="sub">Federal structure — Union, State &amp; Local with Constitutional guarantees</text>
+
+  <!-- Pyramid: 3 tiers -->
+  <rect x="8" y="38" width="200" height="254" fill="#0d3b20" stroke="#ffd600" stroke-width="1.4" rx="5"/>
+  <text x="108" y="54" text-anchor="middle" fill="#ffd600" font-size="11" font-weight="bold">3-Tier Federal Structure</text>
+
+  <!-- Level 1 - Union -->
+  <rect x="16" y="60" width="184" height="58" fill="#3b3000" stroke="#ffd600" stroke-width="1.2" rx="4"/>
+  <text x="108" y="75" text-anchor="middle" fill="#ffd600" font-size="11" font-weight="bold">Union Government</text>
+  <text x="108" y="89" text-anchor="middle" fill="#ffffff" font-size="9">Parliament: Lok Sabha + Rajya Sabha</text>
+  <text x="108" y="101" text-anchor="middle" fill="#b2f5ea" font-size="8">Defence, Foreign Affairs, Railways, Currency</text>
+  <text x="108" y="112" text-anchor="middle" fill="#aed581" font-size="8">Union List (97 subjects)</text>
+
+  <!-- Arrow -->
+  <line x1="108" y1="118" x2="108" y2="126" stroke="#ffd600" stroke-width="1.5"/>
+
+  <!-- Level 2 - State -->
+  <rect x="16" y="126" width="184" height="58" fill="#0d3b3b" stroke="#80cbc4" stroke-width="1.2" rx="4"/>
+  <text x="108" y="141" text-anchor="middle" fill="#80cbc4" font-size="11" font-weight="bold">State Governments</text>
+  <text x="108" y="155" text-anchor="middle" fill="#ffffff" font-size="9">Vidhan Sabha / Sabhas in each state</text>
+  <text x="108" y="167" text-anchor="middle" fill="#b2f5ea" font-size="8">Police, Trade, Agriculture, Irrigation</text>
+  <text x="108" y="178" text-anchor="middle" fill="#aed581" font-size="8">State List (66 subjects)</text>
+
+  <!-- Arrow -->
+  <line x1="108" y1="184" x2="108" y2="192" stroke="#ffd600" stroke-width="1.5"/>
+
+  <!-- Level 3 - Local -->
+  <rect x="16" y="192" width="184" height="58" fill="#1a3b00" stroke="#aed581" stroke-width="1.2" rx="4"/>
+  <text x="108" y="207" text-anchor="middle" fill="#aed581" font-size="11" font-weight="bold">Local Bodies</text>
+  <text x="108" y="221" text-anchor="middle" fill="#ffffff" font-size="9">Panchayati Raj / Municipal Councils</text>
+  <text x="108" y="233" text-anchor="middle" fill="#b2f5ea" font-size="8">Local roads, water, sanitation</text>
+  <text x="108" y="244" text-anchor="middle" fill="#aed581" font-size="8">73rd &amp; 74th Amendment (1992)</text>
+
+  <!-- Concurrent List -->
+  <rect x="16" y="256" width="184" height="30" fill="#3b0d3b" stroke="#ce93d8" stroke-width="1" rx="3"/>
+  <text x="108" y="269" text-anchor="middle" fill="#ce93d8" font-size="9" font-weight="bold">Concurrent List (52 subjects)</text>
+  <text x="108" y="281" text-anchor="middle" fill="#ffffff" font-size="8">Both Union &amp; States: Education, Marriage</text>
+
+  <!-- Right: Key Safeguards -->
+  <rect x="218" y="38" width="194" height="254" fill="#0d3b20" stroke="#80cbc4" stroke-width="1.4" rx="5"/>
+  <text x="315" y="54" text-anchor="middle" fill="#80cbc4" font-size="11" font-weight="bold">Key Safeguards</text>
+
+  <rect x="226" y="62" width="178" height="56" fill="#155724" stroke="#ffd600" stroke-width="1" rx="4"/>
+  <text x="315" y="77" text-anchor="middle" fill="#ffd600" font-size="10" font-weight="bold">⚖ Constitutional Provisions</text>
+  <text x="234" y="92" fill="#ffffff" font-size="9">• Written Constitution (rigid)</text>
+  <text x="234" y="105" fill="#ffffff" font-size="9">• Supremacy of Constitution</text>
+  <text x="234" y="116" fill="#b2f5ea" font-size="8">• Judiciary protects rights</text>
+
+  <rect x="226" y="126" width="178" height="56" fill="#155724" stroke="#f06292" stroke-width="1" rx="4"/>
+  <text x="315" y="141" text-anchor="middle" fill="#f06292" font-size="10" font-weight="bold">🗳 Electoral Safeguards</text>
+  <text x="234" y="156" fill="#ffffff" font-size="9">• Universal Adult Franchise</text>
+  <text x="234" y="169" fill="#ffffff" font-size="9">• Reserved constituencies</text>
+  <text x="234" y="180" fill="#b2f5ea" font-size="8">• Multi-party elections</text>
+
+  <rect x="226" y="190" width="178" height="56" fill="#155724" stroke="#aed581" stroke-width="1" rx="4"/>
+  <text x="315" y="205" text-anchor="middle" fill="#aed581" font-size="10" font-weight="bold">🚨 Emergency &amp; President's Rule</text>
+  <text x="234" y="220" fill="#ffffff" font-size="9">• Art 356: President's Rule</text>
+  <text x="234" y="233" fill="#ffffff" font-size="9">• Art 352/360: Emergencies</text>
+  <text x="234" y="244" fill="#b2f5ea" font-size="8">• Reviewed every 6 months</text>
+
+  <rect x="226" y="254" width="178" height="30" fill="#0d3b3b" stroke="#ce93d8" stroke-width="1" rx="3"/>
+  <text x="315" y="268" text-anchor="middle" fill="#ce93d8" font-size="9" font-weight="bold">India: 28 States + 8 UTs</text>
+  <text x="315" y="281" text-anchor="middle" fill="#ffffff" font-size="8">Largest democracy in the world</text>
+  </g>
+</svg>

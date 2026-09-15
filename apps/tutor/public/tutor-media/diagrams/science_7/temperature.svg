@@ -1,0 +1,55 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Temperature and Its Measurement</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="76" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle">Temperature = Degree of hotness or coldness of a body | Measured by a thermometer</text>
+
+<rect x="20" y="86" width="370" height="125" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="109" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Clinical Thermometer</text>
+<text x="205" y="131" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Range: 35°C to 42°C (human body)</text>
+<text x="205" y="151" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Normal body temp: 37°C (98.6°F)</text>
+<text x="205" y="171" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Has a KINK (constriction) near bulb</text>
+<text x="205" y="191" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Kink prevents mercury from falling back</text>
+<text x="205" y="203" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Must be jerked/shaken to reset mercury</text>
+
+<rect x="410" y="86" width="370" height="125" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="109" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Laboratory Thermometer</text>
+<text x="595" y="131" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Range: −10°C to 110°C (wider)</text>
+<text x="595" y="151" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Used in science experiments</text>
+<text x="595" y="171" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">No kink — mercury can go up or down</text>
+<text x="595" y="191" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Keep upright while reading</text>
+<text x="595" y="203" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Mercury expands as temperature rises</text>
+
+<line x1="20" y1="225" x2="780" y2="225" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="248" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Temperature Scales</text>
+
+<rect x="20" y="260" width="235" height="145" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="137" y="282" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Celsius (°C)</text>
+<text x="137" y="303" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Water freezes: 0°C</text>
+<text x="137" y="323" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Water boils: 100°C</text>
+<text x="137" y="343" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Body temp: 37°C</text>
+<text x="137" y="363" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Used in everyday life</text>
+<text x="137" y="396" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Most common scale</text>
+
+<rect x="283" y="260" width="234" height="145" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="282" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Fahrenheit (°F)</text>
+<text x="400" y="303" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Water freezes: 32°F</text>
+<text x="400" y="323" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Water boils: 212°F</text>
+<text x="400" y="343" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Body temp: 98.6°F</text>
+<text x="400" y="363" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Used in USA</text>
+<text x="400" y="396" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">°F = (°C × 9/5) + 32</text>
+
+<rect x="545" y="260" width="235" height="145" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="662" y="282" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Kelvin (K)</text>
+<text x="662" y="303" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Water freezes: 273 K</text>
+<text x="662" y="323" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Water boils: 373 K</text>
+<text x="662" y="343" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Absolute zero: 0 K = −273°C</text>
+<text x="662" y="363" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Used in science (SI unit)</text>
+<text x="662" y="396" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">K = °C + 273</text>
+
+<line x1="20" y1="420" x2="780" y2="420" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="444" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Rules for Using a Thermometer</text>
+<text x="400" y="468" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">1. Never hold by the bulb — grip the stem | 2. Keep bulb in armpit or under tongue</text>
+<text x="400" y="492" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3. Wait 1–2 minutes before reading | 4. Read at eye level (avoid parallax error)</text>
+<text x="400" y="516" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">5. Wash and sterilize after use | 6. Don't use near fire or leave in sunlight</text>
+<text x="400" y="554" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Mercury is toxic — use digital thermometers when possible | Alcohol thermometers safer for lower temperatures</text>
+</svg>

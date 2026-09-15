@@ -1,0 +1,60 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Types of Microorganisms</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Tiny living organisms invisible to the naked eye | Found in all environments</text>
+
+<!-- 4 main groups -->
+<rect x="25" y="85" width="175" height="230" fill="none" stroke="#ffd54f" stroke-width="2" rx="10"/>
+<text x="112" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">1. Bacteria</text>
+<circle cx="112" cy="165" r="40" fill="rgba(255,213,79,0.1)" stroke="#ffd54f" stroke-width="1" stroke-dasharray="4,2"/>
+<path d="M90,150 Q112,130 134,150 Q156,170 112,190 Q68,170 90,150" fill="none" stroke="#ffd54f" stroke-width="1.5"/>
+<circle cx="100" cy="160" r="2" fill="#ffd54f"/>
+<circle cx="124" cy="170" r="2" fill="#ffd54f"/>
+<text x="112" y="235" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Single-celled</text>
+<text x="112" y="255" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Spiral, Rod-shaped</text>
+<text x="112" y="275" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Ex: Lactobacillus</text>
+
+<rect x="215" y="85" width="175" height="230" fill="none" stroke="#86efac" stroke-width="2" rx="10"/>
+<text x="302" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">2. Fungi</text>
+<path d="M272,210 Q272,140 302,140 Q332,140 332,210" fill="rgba(134,239,172,0.1)" stroke="#86efac" stroke-width="1.5"/>
+<line x1="302" y1="140" x2="302" y2="210" stroke="#86efac" stroke-width="1"/>
+<path d="M285,160 Q302,150 315,165" fill="none" stroke="#86efac" stroke-width="1"/>
+<text x="302" y="235" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Saprophytic / Multicellular</text>
+<text x="302" y="255" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Bread Mould, Yeast</text>
+<text x="302" y="275" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Ex: Penicillium</text>
+
+<rect x="405" y="85" width="175" height="230" fill="none" stroke="#f48fb1" stroke-width="2" rx="10"/>
+<text x="492" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#f48fb1" text-anchor="middle" font-weight="bold">3. Protozoa</text>
+<path d="M462,165 Q462,135 492,135 Q522,135 522,165 Q522,195 492,195 Q462,195 462,165" fill="rgba(244,143,177,0.1)" stroke="#f48fb1" stroke-width="1.5">
+  <animate attributeName="d" dur="5s" repeatCount="indefinite" values="M462,165 Q462,135 492,135 Q522,135 522,165 Q522,195 492,195 Q462,195 462,165; M462,165 Q472,125 502,135 Q512,145 532,165 Q512,205 482,195 Q452,185 462,165; M462,165 Q462,135 492,135 Q522,135 522,165 Q522,195 492,195 Q462,195 462,165"/>
+</path>
+<circle cx="485" cy="160" r="4" fill="#f48fb1"/>
+<text x="492" y="235" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Unicellular animal-like</text>
+<text x="492" y="255" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Amoeba, Paramecium</text>
+<text x="492" y="275" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Found in water/soil</text>
+
+<rect x="595" y="85" width="180" height="230" fill="none" stroke="#c084fc" stroke-width="2" rx="10"/>
+<text x="685" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#c084fc" text-anchor="middle" font-weight="bold">4. Algae</text>
+<path d="M660,140 Q685,130 710,145 Q700,170 685,200 Q670,170 660,140" fill="rgba(192,132,252,0.1)" stroke="#c084fc" stroke-width="1.5"/>
+<line x1="685" y1="140" x2="685" y2="210" stroke="#c084fc" stroke-width="0.5"/>
+<text x="685" y="235" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Photosynthetic</text>
+<text x="685" y="255" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Chlamydomonas, Spirogyra</text>
+<text x="685" y="275" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Aquatic organisms</text>
+
+<line x1="20" y1="335" x2="780" y2="335" stroke="#86efac" stroke-width="1"/>
+
+<rect x="25" y="350" width="750" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="10"/>
+<text x="400" y="375" font-family="'Segoe UI',sans-serif" font-size="16" fill="#fb923c" text-anchor="middle" font-weight="bold">Viruses — The Exception</text>
+<text x="400" y="400" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Viruses reproduction ONLY inside host cells (plants, animals, or bacteria)</text>
+<text x="400" y="420" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Considered borderline between living and non-living</text>
+
+<circle cx="200" cy="440" r="30" fill="rgba(251,146,60,0.1)" stroke="#fb923c" stroke-width="1.5"/>
+<line x1="170" y1="440" x2="230" y2="440" stroke="#fb923c" stroke-width="1"/>
+<line x1="200" y1="410" x2="200" y2="470" stroke="#fb923c" stroke-width="1"/>
+<text x="200" y="485" font-family="'Segoe UI',sans-serif" font-size="11" fill="#fff" text-anchor="middle">Virus Structure</text>
+
+<text x="500" y="445" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="start">Diseases: Flu, Cold, Polio, Chicken Pox</text>
+<text x="500" y="470" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" text-anchor="start">Study of Microbes: Microbiology</text>
+
+<text x="400" y="540" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" text-anchor="middle">Habitats: Ice cold climate to hot springs; deserts to marshy lands; inside bodies too!</text>
+</svg>

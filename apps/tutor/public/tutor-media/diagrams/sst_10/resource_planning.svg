@@ -1,0 +1,83 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#1a5c2a}
+      .title{fill:#fff9c4;font-size:14px;font-weight:bold}
+      .sub{fill:#b2f5ea;font-size:10px}
+    </style>
+    <marker id="barr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#ffd600"/>
+    </marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="18" text-anchor="middle" class="title">Resource Planning in India</text>
+  <text x="210" y="30" text-anchor="middle" class="sub">Identifying, inventorying and evolving a plan at national, state &amp; local level</text>
+
+  <!-- Resource Classification -->
+  <rect x="8" y="38" width="200" height="130" fill="#0d3b20" stroke="#ffd600" stroke-width="1.4" rx="5"/>
+  <text x="108" y="54" text-anchor="middle" fill="#ffd600" font-size="11" font-weight="bold">Types of Resources</text>
+  <!-- Natural -->
+  <rect x="16" y="60" width="86" height="98" fill="#155724" stroke="#80cbc4" stroke-width="1" rx="4"/>
+  <text x="59" y="74" text-anchor="middle" fill="#80cbc4" font-size="10" font-weight="bold">Natural</text>
+  <text x="22" y="88" fill="#ffffff" font-size="9">Renewable:</text>
+  <text x="22" y="99" fill="#aed581" font-size="9">Solar, Wind, Water</text>
+  <text x="22" y="113" fill="#ffffff" font-size="9">Non-Renewable:</text>
+  <text x="22" y="124" fill="#f06292" font-size="9">Oil, Coal, Gas</text>
+  <text x="22" y="138" fill="#b2f5ea" font-size="8">Abiotic: rocks,</text>
+  <text x="22" y="148" fill="#b2f5ea" font-size="8">soils, minerals</text>
+  <!-- Human-made -->
+  <rect x="110" y="60" width="90" height="98" fill="#155724" stroke="#ff8a65" stroke-width="1" rx="4"/>
+  <text x="155" y="74" text-anchor="middle" fill="#ff8a65" font-size="10" font-weight="bold">Human-made</text>
+  <text x="116" y="88" fill="#ffffff" font-size="9">Technology</text>
+  <text x="116" y="100" fill="#ffffff" font-size="9">Infrastructure</text>
+  <text x="116" y="112" fill="#ffffff" font-size="9">Industries</text>
+  <text x="116" y="124" fill="#b2f5ea" font-size="9">Human Resource:</text>
+  <text x="116" y="136" fill="#aed581" font-size="9">Skills, Knowledge</text>
+  <text x="116" y="148" fill="#b2f5ea" font-size="8">Health, Education</text>
+
+  <!-- 3-stage planning process -->
+  <rect x="218" y="38" width="194" height="130" fill="#0d3b20" stroke="#80cbc4" stroke-width="1.4" rx="5"/>
+  <text x="315" y="54" text-anchor="middle" fill="#80cbc4" font-size="11" font-weight="bold">Planning Process</text>
+  <!-- Stage 1 -->
+  <rect x="226" y="60" width="178" height="28" fill="#1a3b00" stroke="#aed581" stroke-width="1" rx="3"/>
+  <text x="226" y="70" fill="#aed581" font-size="9" font-weight="bold"> Stage 1: Identification &amp; Inventory</text>
+  <text x="226" y="82" fill="#ffffff" font-size="8"> Survey, map, measure resources</text>
+  <!-- Arrow -->
+  <line x1="315" y1="88" x2="315" y2="96" stroke="#ffd600" stroke-width="1.5" marker-end="url(#barr)"/>
+  <!-- Stage 2 -->
+  <rect x="226" y="98" width="178" height="28" fill="#1a3b00" stroke="#ffd600" stroke-width="1" rx="3"/>
+  <text x="226" y="108" fill="#ffd600" font-size="9" font-weight="bold"> Stage 2: Evolve Planning Structure</text>
+  <text x="226" y="120" fill="#ffffff" font-size="8"> Policies at national + state level</text>
+  <!-- Arrow -->
+  <line x1="315" y1="126" x2="315" y2="134" stroke="#ffd600" stroke-width="1.5" marker-end="url(#barr)"/>
+  <!-- Stage 3 -->
+  <rect x="226" y="136" width="178" height="28" fill="#1a3b00" stroke="#ff8a65" stroke-width="1" rx="3"/>
+  <text x="226" y="146" fill="#ff8a65" font-size="9" font-weight="bold"> Stage 3: Implementation</text>
+  <text x="226" y="158" fill="#ffffff" font-size="8"> Integrate plans → sustainable use</text>
+
+  <!-- Sustainable Development model -->
+  <rect x="8" y="178" width="404" height="115" fill="#0d3b20" stroke="#ce93d8" stroke-width="1.4" rx="5"/>
+  <text x="210" y="194" text-anchor="middle" fill="#fff9c4" font-size="11" font-weight="bold">Sustainable Development Model</text>
+  <!-- 3 pillars -->
+  <rect x="16" y="202" width="118" height="82" fill="#1a3b00" stroke="#aed581" stroke-width="1" rx="4"/>
+  <text x="75" y="216" text-anchor="middle" fill="#aed581" font-size="10" font-weight="bold">Economic</text>
+  <text x="75" y="230" text-anchor="middle" fill="#ffffff" font-size="9">Growth &amp; Development</text>
+  <text x="75" y="243" text-anchor="middle" fill="#b2f5ea" font-size="8">Employment, GDP</text>
+  <text x="75" y="258" text-anchor="middle" fill="#b2f5ea" font-size="8">Trade, Industry</text>
+  <text x="75" y="278" text-anchor="middle" fill="#ffd600" font-size="8">without depletion</text>
+
+  <rect x="152" y="202" width="116" height="82" fill="#1a3b00" stroke="#80cbc4" stroke-width="1" rx="4"/>
+  <text x="210" y="216" text-anchor="middle" fill="#80cbc4" font-size="10" font-weight="bold">Social</text>
+  <text x="210" y="230" text-anchor="middle" fill="#ffffff" font-size="9">Equity &amp; Welfare</text>
+  <text x="210" y="243" text-anchor="middle" fill="#b2f5ea" font-size="8">Education, Health</text>
+  <text x="210" y="258" text-anchor="middle" fill="#b2f5ea" font-size="8">Equal Access</text>
+  <text x="210" y="278" text-anchor="middle" fill="#ffd600" font-size="8">for all people</text>
+
+  <rect x="286" y="202" width="118" height="82" fill="#1a3b00" stroke="#f06292" stroke-width="1" rx="4"/>
+  <text x="345" y="216" text-anchor="middle" fill="#f06292" font-size="10" font-weight="bold">Environmental</text>
+  <text x="345" y="230" text-anchor="middle" fill="#ffffff" font-size="9">Ecological Balance</text>
+  <text x="345" y="243" text-anchor="middle" fill="#b2f5ea" font-size="8">Biodiversity, Air</text>
+  <text x="345" y="258" text-anchor="middle" fill="#b2f5ea" font-size="8">Water, Soil health</text>
+  <text x="345" y="278" text-anchor="middle" fill="#ffd600" font-size="8">for future gen.</text>
+  </g>
+</svg>

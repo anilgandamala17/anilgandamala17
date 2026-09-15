@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      .chalk { font-family: 'Segoe UI', sans-serif; }
+      .title { font-size: 26px; font-weight: bold; fill: #a5d6a7; }
+      .label { font-size: 17px; fill: #c8e6c9; }
+      .num { font-size: 20px; fill: #fff9c4; font-weight: bold; }
+      .muted { font-size: 14px; fill: #81c784; }
+      .highlight { fill: rgba(102,187,106,0.12); stroke: #66bb6a; stroke-width: 1.5; }
+      .yellow { fill: rgba(255,245,157,0.12); stroke: #fff176; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <text x="400" y="44" text-anchor="middle" class="chalk title">Divisibility Rules</text>
+  <line x1="60" y1="56" x2="740" y2="56" stroke="#66bb6a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Divisibility rules grid -->
+  <g transform="translate(60,70)">
+    <!-- Headers -->
+    <rect x="0" y="0" width="100" height="34" class="yellow" rx="6"/>
+    <rect x="108" y="0" width="250" height="34" class="yellow" rx="6"/>
+    <rect x="366" y="0" width="200" height="34" class="yellow" rx="6"/>
+    <text x="50" y="23" text-anchor="middle" class="chalk label">Divisor</text>
+    <text x="233" y="23" text-anchor="middle" class="chalk label">Rule</text>
+    <text x="466" y="23" text-anchor="middle" class="chalk label">Example</text>
+
+    <!-- Row 2 -->
+    <rect x="0" y="40" width="100" height="40" class="highlight" rx="4"/>
+    <rect x="108" y="40" width="250" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <rect x="366" y="40" width="200" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <text x="50" y="66" text-anchor="middle" class="chalk num">2</text>
+    <text x="233" y="61" text-anchor="middle" class="chalk muted">Last digit is 0, 2, 4, 6 or 8</text>
+    <text x="466" y="66" text-anchor="middle" class="chalk muted">248 ✓, 135 ✗</text>
+
+    <rect x="0" y="86" width="100" height="40" class="highlight" rx="4"/>
+    <rect x="108" y="86" width="250" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <rect x="366" y="86" width="200" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <text x="50" y="112" text-anchor="middle" class="chalk num">3</text>
+    <text x="233" y="102" text-anchor="middle" class="chalk muted">Sum of digits divisible by 3</text>
+    <text x="233" y="118" text-anchor="middle" class="chalk muted">(repeatedly)</text>
+    <text x="466" y="112" text-anchor="middle" class="chalk muted">123→1+2+3=6 ✓</text>
+
+    <rect x="0" y="132" width="100" height="40" class="highlight" rx="4"/>
+    <rect x="108" y="132" width="250" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <rect x="366" y="132" width="200" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <text x="50" y="158" text-anchor="middle" class="chalk num">4</text>
+    <text x="233" y="153" text-anchor="middle" class="chalk muted">Last 2 digits divisible by 4</text>
+    <text x="466" y="158" text-anchor="middle" class="chalk muted">316 → 16÷4=4 ✓</text>
+
+    <rect x="0" y="178" width="100" height="40" class="highlight" rx="4"/>
+    <rect x="108" y="178" width="250" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <rect x="366" y="178" width="200" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <text x="50" y="204" text-anchor="middle" class="chalk num">5</text>
+    <text x="233" y="204" text-anchor="middle" class="chalk muted">Last digit is 0 or 5</text>
+    <text x="466" y="204" text-anchor="middle" class="chalk muted">305 ✓, 427 ✗</text>
+
+    <rect x="0" y="224" width="100" height="40" class="highlight" rx="4"/>
+    <rect x="108" y="224" width="250" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <rect x="366" y="224" width="200" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <text x="50" y="250" text-anchor="middle" class="chalk num">6</text>
+    <text x="233" y="245" text-anchor="middle" class="chalk muted">Divisible by both 2 and 3</text>
+    <text x="466" y="250" text-anchor="middle" class="chalk muted">324 ✓ (even, 3+2+4=9)</text>
+
+    <rect x="0" y="270" width="100" height="40" class="highlight" rx="4"/>
+    <rect x="108" y="270" width="250" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <rect x="366" y="270" width="200" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <text x="50" y="296" text-anchor="middle" class="chalk num">9</text>
+    <text x="233" y="286" text-anchor="middle" class="chalk muted">Sum of digits divisible by 9</text>
+    <text x="466" y="296" text-anchor="middle" class="chalk muted">729→7+2+9=18 ✓</text>
+
+    <rect x="0" y="316" width="100" height="40" class="highlight" rx="4"/>
+    <rect x="108" y="316" width="250" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <rect x="366" y="316" width="200" height="40" fill="rgba(102,187,106,0.07)" stroke="#66bb6a" stroke-width="0.8" rx="4"/>
+    <text x="50" y="342" text-anchor="middle" class="chalk num">10</text>
+    <text x="233" y="342" text-anchor="middle" class="chalk muted">Last digit is 0</text>
+    <text x="466" y="342" text-anchor="middle" class="chalk muted">1000 ✓, 345 ✗</text>
+  </g>
+
+  <!-- HCF -->
+  <g transform="translate(60,440)">
+    <text x="340" y="0" text-anchor="middle" class="chalk num" style="font-size:16px">HCF = Highest Common Factor | LCM × HCF = Product of two numbers</text>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .axis { stroke: #ffffff; stroke-width: 1.5; marker-end: url(#arrow); }
+      .curve { stroke: #4ade80; stroke-width: 2; fill: none; }
+      .label { fill: #ffffff; font-size: 10px; }
+      .caption { fill: #93c5fd; font-size: 9px; text-anchor: middle; }
+    </style>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#ffffff"/>
+    </marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Kinematic Graphs</text>
+    
+    <!-- Graph 1: x-t (Uniform Velocity) -->
+    <g transform="translate(30, 60)">
+      <line x1="0" y1="80" x2="100" y2="80" class="axis" />
+      <line x1="0" y1="80" x2="0" y2="0" class="axis" />
+      <line x1="0" y1="80" x2="80" y2="20" class="curve" />
+      <text x="105" y="85" class="label">t</text>
+      <text x="-5" y="-5" class="label">x</text>
+      <text x="50" y="100" class="caption">Uniform Velocity</text>
+    </g>
+
+    <!-- Graph 2: v-t (Uniform Acceleration) -->
+    <g transform="translate(160, 60)">
+      <line x1="0" y1="80" x2="100" y2="80" class="axis" />
+      <line x1="0" y1="80" x2="0" y2="0" class="axis" />
+      <line x1="0" y1="80" x2="80" y2="20" class="curve" />
+      <text x="105" y="85" class="label">t</text>
+      <text x="-5" y="-5" class="label">v</text>
+      <text x="50" y="100" class="caption">Uniform Accel.</text>
+    </g>
+
+    <!-- Graph 3: x-t (Rest) -->
+    <g transform="translate(290, 60)">
+      <line x1="0" y1="80" x2="100" y2="80" class="axis" />
+      <line x1="0" y1="80" x2="0" y2="0" class="axis" />
+      <line x1="0" y1="40" x2="80" y2="40" class="curve" />
+      <text x="105" y="85" class="label">t</text>
+      <text x="-5" y="-5" class="label">x</text>
+      <text x="50" y="100" class="caption">At Rest</text>
+    </g>
+
+    <text x="200" y="220" text-anchor="middle" fill="#fca5a5" font-size="10">Slope of x-t = Velocity | Slope of v-t = Acceleration</text>
+  </g>
+</svg>

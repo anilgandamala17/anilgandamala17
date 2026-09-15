@@ -1,0 +1,46 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowF" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#86efac" />
+    </marker>
+    <marker id="arrowA" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#fca5a5" />
+    </marker>
+    <marker id="arrowW" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#93c5fd" />
+    </marker>
+  </defs>
+
+  <!-- Mass block -->
+  <rect x="160" y="100" width="80" height="60" rx="4" fill="none"
+    stroke="rgba(255,255,255,0.90)" stroke-width="2" />
+  <text x="200" y="135" font-size="11" fill="rgba(255,255,255,0.90)" text-anchor="middle" font-weight="bold">m (kg)</text>
+
+  <!-- Applied Force → -->
+  <line x1="80" y1="130" x2="158" y2="130"
+    stroke="#86efac" stroke-width="3" marker-end="url(#arrowF)" />
+  <text x="100" y="118" font-size="10" fill="#86efac" font-weight="bold">F (N)</text>
+
+  <!-- Acceleration → -->
+  <line x1="242" y1="130" x2="320" y2="130"
+    stroke="#fca5a5" stroke-width="3" marker-end="url(#arrowA)" />
+  <text x="300" y="118" font-size="10" fill="#fca5a5" font-weight="bold">a (m/s²)</text>
+
+  <!-- Weight ↓ -->
+  <line x1="200" y1="162" x2="200" y2="210"
+    stroke="#93c5fd" stroke-width="2" marker-end="url(#arrowW)" />
+  <text x="215" y="195" font-size="9" fill="#93c5fd">W = mg</text>
+
+  <!-- Normal force ↑ -->
+  <line x1="200" y1="98" x2="200" y2="60"
+    stroke="#86efac" stroke-width="2" marker-end="url(#arrowF)" />
+  <text x="215" y="75" font-size="9" fill="#fef08a">N (Normal)</text>
+
+  <!-- Ground -->
+  <line x1="50" y1="162" x2="350" y2="162" stroke="rgba(255,255,255,0.30)" stroke-width="1" />
+
+  <!-- Equation -->
+  <text x="200" y="235" font-size="18" fill="#fef08a" text-anchor="middle" font-weight="bold">F = m × a</text>
+
+  <text x="200" y="268" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">Newton's Second Law — Free Body Diagram</text>
+</svg>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fef08a" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">PCR (Polymerase Chain Reaction)</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- PCR Stages -->
+  <g transform="translate(100, 120)">
+    <!-- Denaturation -->
+    <g transform="translate(0, 0)">
+      <text x="100" y="20" fill="#f87171" font-weight="bold" text-anchor="middle">1. Denaturation (94°C)</text>
+      <path d="M 50 60 L 150 60" fill="none" stroke="#60a5fa" stroke-width="4"/>
+      <path d="M 50 100 L 150 100" fill="none" stroke="#60a5fa" stroke-width="4"/>
+      <text x="100" y="90" fill="#f87171" text-anchor="middle" font-size="12">Strand Separation</text>
+    </g>
+
+    <line x1="180" y1="80" x2="220" y2="80" stroke="#fef08a" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+    <!-- Annealing -->
+    <g transform="translate(230, 0)">
+      <text x="100" y="20" fill="#86efac" font-weight="bold" text-anchor="middle">2. Annealing (50-60°C)</text>
+      <path d="M 30 60 L 170 60" fill="none" stroke="#60a5fa" stroke-width="4" opacity="0.5"/>
+      <path d="M 30 100 L 170 100" fill="none" stroke="#60a5fa" stroke-width="4" opacity="0.5"/>
+      <!-- Primers -->
+      <path d="M 50 75 L 80 75" fill="none" stroke="#fef08a" stroke-width="4" marker-end="url(#arrowhead)"/>
+      <path d="M 150 85 L 120 85" fill="none" stroke="#fef08a" stroke-width="4" marker-end="url(#arrowhead)"/>
+      <text x="100" y="130" fill="#fef08a" text-anchor="middle" font-size="12">Primers Attach</text>
+    </g>
+
+    <line x1="410" y1="80" x2="450" y2="80" stroke="#fef08a" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+    <!-- Extension -->
+    <g transform="translate(460, 0)">
+      <text x="100" y="20" fill="#60a5fa" font-weight="bold" text-anchor="middle">3. Extension (72°C)</text>
+      <path d="M 30 60 L 170 60" fill="none" stroke="#60a5fa" stroke-width="4"/>
+      <path d="M 30 100 L 170 100" fill="none" stroke="#60a5fa" stroke-width="4"/>
+      <!-- Growing chain -->
+      <path d="M 50 63 L 150 63" fill="none" stroke="#86efac" stroke-width="2" opacity="0.6"/>
+      <text x="100" y="130" fill="#60a5fa" text-anchor="middle" font-size="12">Taq Polymerase</text>
+    </g>
+  </g>
+
+  <!-- Summary -->
+  <rect x="150" y="450" width="500" height="90" rx="15" fill="rgba(255,255,255,0.03)" stroke="#86efac" stroke-width="1.5"/>
+  <text x="400" y="490" fill="#fef08a" text-anchor="middle" font-weight="bold" font-size="18">Objective: DNA Amplification</text>
+  <text x="400" y="520" fill="#f8fafc" text-anchor="middle">Billion-fold increase in DNA copies within 30 cycles.</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Biology Grade 12</text>
+</svg>

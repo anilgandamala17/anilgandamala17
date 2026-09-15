@@ -1,0 +1,41 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- NO BACKGROUND RECT -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="28" fill="#fef08a" text-anchor="middle" font-weight="bold">Angiosperms: Flowering Plants</text>
+  <path d="M 280,60 L 520,60" stroke="#fef08a" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.3" />
+
+  <!-- Diagram: Flower Structure -->
+  <g transform="translate(400, 240)">
+    <!-- Receptacle -->
+    <path d="M -30,20 Q 0,40 30,20 L 5,80 L -5,80 Z" fill="none" stroke="#86efac" stroke-width="2" />
+    
+    <!-- Ovary (Gynoecium) -->
+    <path d="M -15,20 C -25,-20 25,-20 15,20 Z" fill="none" stroke="#fca5a5" stroke-width="2" />
+    <line x1="0" y1="-10" x2="0" y2="-80" stroke="#fca5a5" stroke-width="2" /> <!-- Style -->
+    <circle cx="0" cy="-85" r="5" fill="none" stroke="#fca5a5" stroke-width="2" /> <!-- Stigma -->
+    <text x="40" y="-60" font-family="Georgia, serif" font-size="14" fill="#fca5a5" font-weight="bold">Pistil/Carpel</text>
+
+    <!-- Anther (Androecium) -->
+    <line x1="-30" y1="0" x2="-50" y2="-60" stroke="#fef08a" stroke-width="1.5" />
+    <path d="M -60,-65 L -40,-65 L -45,-75 L -55,-75 Z" fill="none" stroke="#fef08a" stroke-width="1.5" />
+    <text x="-90" y="-60" font-family="Georgia, serif" font-size="14" fill="#fef08a" font-weight="bold" text-anchor="end">Stamen</text>
+
+    <!-- Petals -->
+    <path d="M -25,10 C -60,-40 -10,-80 0,-10 C 10,-80 60,-40 25,10" fill="none" stroke="#f8fafc" stroke-width="1.5" opacity="0.4" />
+    <text x="0" y="110" font-family="Arial" font-size="14" fill="#f8fafc" text-anchor="middle" font-weight="bold">Highly Developed Reproduction</text>
+  </g>
+
+  <!-- Classification -->
+  <g transform="translate(50, 320)">
+    <rect x="0" y="0" width="220" height="100" rx="10" fill="none" stroke="#f8fafc" stroke-width="1" stroke-dasharray="4,2" opacity="0.3" />
+    <text x="110" y="25" font-family="Georgia, serif" font-size="18" fill="#fef08a" text-anchor="middle" font-weight="bold">Two Classes</text>
+    <text x="20" y="55" font-family="Arial" font-size="14" fill="#f8fafc">1. Dicotyledons (2 cotyledons)</text>
+    <text x="20" y="80" font-family="Arial" font-size="14" fill="#f8fafc">2. Monocotyledons (1 cotyledon)</text>
+  </g>
+
+  <!-- Features -->
+  <g transform="translate(530, 320)">
+    <text x="0" y="0" font-family="Georgia, serif" font-size="16" fill="#fef08a" font-weight="bold">Unique Feature:</text>
+    <text x="0" y="25" font-family="Arial" font-size="16" fill="#f8fafc" font-weight="bold">Double Fertilization</text>
+    <text x="0" y="45" font-family="Arial" font-size="12" fill="#f8fafc" opacity="0.7">Seeds enclosed in Fruits</text>
+  </g>
+</svg>

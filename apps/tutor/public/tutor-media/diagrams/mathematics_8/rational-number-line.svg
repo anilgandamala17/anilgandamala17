@@ -1,0 +1,79 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="25" fill="#ffd54f" text-anchor="middle" font-weight="bold">Rational Numbers on Number Line</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+
+<!-- Number line -->
+<line x1="30" y1="150" x2="770" y2="150" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+<polygon points="770,145 780,150 770,155" fill="rgba(255,255,255,0.85)"/>
+<polygon points="30,145 20,150 30,155" fill="rgba(255,255,255,0.85)"/>
+
+<!-- Tick marks at -3 to 3 (each unit = 100px, center at 400) -->
+<line x1="100" y1="143" x2="100" y2="157" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+<text x="100" y="175" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">−3</text>
+<line x1="200" y1="143" x2="200" y2="157" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+<text x="200" y="175" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">−2</text>
+<line x1="300" y1="143" x2="300" y2="157" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+<text x="300" y="175" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">−1</text>
+<line x1="400" y1="138" x2="400" y2="162" stroke="rgba(255,255,255,0.9)" stroke-width="3"/>
+<text x="400" y="178" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">0</text>
+<line x1="500" y1="143" x2="500" y2="157" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+<text x="500" y="175" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">1</text>
+<line x1="600" y1="143" x2="600" y2="157" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+<text x="600" y="175" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">2</text>
+<line x1="700" y1="143" x2="700" y2="157" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+<text x="700" y="175" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">3</text>
+
+<!-- Half marks -->
+<line x1="450" y1="146" x2="450" y2="154" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+<line x1="350" y1="146" x2="350" y2="154" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+<line x1="550" y1="146" x2="550" y2="154" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+<line x1="250" y1="146" x2="250" y2="154" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+
+<!-- Marked points -->
+<circle cx="450" cy="150" r="6" fill="#ffd54f" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+<text x="450" y="126" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">1/2</text>
+<line x1="450" y1="130" x2="450" y2="144" stroke="#ffd54f" stroke-width="1" stroke-dasharray="3,2"/>
+
+<circle cx="333" cy="150" r="6" fill="#f48fb1" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+<text x="333" y="126" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle" font-weight="bold">−2/3</text>
+<line x1="333" y1="130" x2="333" y2="144" stroke="#f48fb1" stroke-width="1" stroke-dasharray="3,2"/>
+
+<circle cx="575" cy="150" r="6" fill="#86efac" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+<text x="575" y="126" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">3/4</text>
+<line x1="575" y1="130" x2="575" y2="144" stroke="#86efac" stroke-width="1" stroke-dasharray="3,2"/>
+
+<circle cx="267" cy="150" r="6" fill="#c084fc" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+<text x="267" y="195" font-family="'Segoe UI',sans-serif" font-size="13" fill="#c084fc" text-anchor="middle" font-weight="bold">−4/3</text>
+<line x1="267" y1="157" x2="267" y2="188" stroke="#c084fc" stroke-width="1" stroke-dasharray="3,2"/>
+
+<circle cx="633" cy="150" r="6" fill="#fb923c" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+<text x="633" y="195" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fb923c" text-anchor="middle" font-weight="bold">7/5</text>
+<line x1="633" y1="157" x2="633" y2="188" stroke="#fb923c" stroke-width="1" stroke-dasharray="3,2"/>
+
+<!-- How to represent on number line -->
+<line x1="20" y1="215" x2="780" y2="215" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="238" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">How to Plot Rational Numbers</text>
+
+<rect x="20" y="250" width="370" height="165" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="273" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Method: Equal Division</text>
+<text x="205" y="296" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">To plot 3/5 on number line:</text>
+<text x="205" y="318" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Step 1: Identify unit interval (0 to 1)</text>
+<text x="205" y="338" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Step 2: Divide into 5 equal parts</text>
+<text x="205" y="358" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Step 3: Count 3 parts from 0</text>
+<text x="205" y="390" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Negative rationals: same but LEFT of 0</text>
+<text x="205" y="408" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">−3/5 is 3 parts left of zero</text>
+
+<rect x="410" y="250" width="370" height="165" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="273" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Comparison of Rationals</text>
+<text x="595" y="296" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Rule 1: Positive &gt; Negative</text>
+<text x="595" y="318" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3/5 &gt; −7/9 (always)</text>
+<text x="595" y="342" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Rule 2: Same denominator</text>
+<text x="595" y="362" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Compare numerators: 5/8 &gt; 3/8</text>
+<text x="595" y="386" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Rule 3: Convert to same denominator</text>
+<text x="595" y="406" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">3/4 vs 5/7: 21/28 vs 20/28 → 3/4 &gt; 5/7</text>
+
+<text x="400" y="450" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Rational numbers are DENSE: between any two, infinitely many rationals exist</text>
+<text x="400" y="473" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Rational numbers EXTEND the number line in both directions (positive and negative)</text>
+<text x="400" y="510" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Number line order: …−2 &lt; −3/2 &lt; −1 &lt; −1/2 &lt; 0 &lt; 1/2 &lt; 1 &lt; 3/2 &lt; 2…</text>
+<text x="400" y="540" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Right side = greater value | Left side = smaller value (always)</text>
+</svg>

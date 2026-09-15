@@ -1,0 +1,46 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 13px; font-weight: bold; }
+      .eq { fill: #fcd34d; font-size: 16px; font-family: 'Courier New', monospace; font-weight: bold; }
+      .box { fill: rgba(30, 58, 138, 0.8); stroke: #60a5fa; stroke-width: 1.5; rx: 6; }
+      .ratio { fill: #fca5a5; font-size: 12px; font-weight: bold; }
+      .arrow { stroke: #94a3b8; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Stoichiometric Calculations</text>
+    
+    <!-- Balanced Equation -->
+    <text x="200" y="65" text-anchor="middle" class="eq">N₂ (g) + 3H₂ (g) → 2NH₃ (g)</text>
+    <line x1="50" y1="75" x2="350" y2="75" stroke="#4ade80" stroke-width="1.5" />
+
+    <!-- Mole Ratio Table -->
+    <rect x="30" y="90" width="340" height="150" class="box" />
+    
+    <!-- Headers -->
+    <text x="50" y="115" class="label">Reactant/Product</text>
+    <text x="180" y="115" class="label">Coefficients</text>
+    <text x="300" y="115" class="label">Mole Ratio</text>
+    <line x1="30" y1="125" x2="370" y2="125" stroke="#60a5fa" stroke-width="0.5" />
+
+    <!-- Row 1 -->
+    <text x="50" y="150" fill="#ffffff" font-size="12">Nitrogen (N₂)</text>
+    <text x="210" y="150" fill="#fcd34d">1</text>
+    <text x="315" y="150" class="ratio">1 mol</text>
+
+    <!-- Row 2 -->
+    <text x="50" y="180" fill="#ffffff" font-size="12">Hydrogen (H₂)</text>
+    <text x="210" y="180" fill="#fcd34d">3</text>
+    <text x="315" y="180" class="ratio">3 mol</text>
+
+    <!-- Row 3 -->
+    <text x="50" y="210" fill="#ffffff" font-size="12">Ammonia (NH₃)</text>
+    <text x="210" y="210" fill="#fcd34d">2</text>
+    <text x="315" y="210" class="ratio">2 mol</text>
+
+    <!-- Key Concept Note -->
+    <text x="200" y="260" text-anchor="middle" fill="#93c5fd" font-size="10" font-style="italic">Ratio: 1 N₂ consumes 3 H₂ to yield 2 NH₃</text>
+  </g>
+</svg>

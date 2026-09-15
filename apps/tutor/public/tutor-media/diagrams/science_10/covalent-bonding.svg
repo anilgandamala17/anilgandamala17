@@ -1,0 +1,43 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+  </defs>
+  <!-- Bg Removed -->
+  <text x="20" y="30" class="title">COVALENT BONDING</text>
+  
+  <!-- Hydrogen H2 -->
+  <g transform="translate(80, 100)">
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#fff" stroke-dasharray="2" />
+    <circle cx="40" cy="0" r="30" fill="none" stroke="#fff" stroke-dasharray="2" />
+    
+    <text x="0" y="-40" text-anchor="middle">H</text>
+    <text x="40" y="-40" text-anchor="middle">H</text>
+    
+    <circle cx="15" cy="0" r="3" fill="#fbbf24" /> <!-- Shared Pair -->
+    <circle cx="25" cy="0" r="3" fill="#fbbf24" />
+    
+    <text x="20" y="50" text-anchor="middle">H — H</text>
+    <text x="20" y="65" text-anchor="middle" font-size="10">Single Bond</text>
+  </g>
+
+  <!-- Oxygen O2 -->
+  <g transform="translate(250, 100)">
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#fff" stroke-dasharray="2" />
+    <circle cx="50" cy="0" r="35" fill="none" stroke="#fff" stroke-dasharray="2" />
+    
+    <text x="0" y="-45" text-anchor="middle">O</text>
+    <text x="50" y="-45" text-anchor="middle">O</text>
+
+    <!-- Shared 4 e- -->
+    <circle cx="20" cy="-5" r="3" fill="#fbbf24" />
+    <circle cx="20" cy="5" r="3" fill="#fbbf24" />
+    <circle cx="30" cy="-5" r="3" fill="#fbbf24" />
+    <circle cx="30" cy="5" r="3" fill="#fbbf24" />
+    
+    <text x="25" y="60" text-anchor="middle">O = O</text>
+    <text x="25" y="75" text-anchor="middle" font-size="10">Double Bond</text>
+  </g>
+</svg>

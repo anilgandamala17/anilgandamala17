@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      .chalk { font-family: 'Segoe UI', sans-serif; }
+      .title { font-size: 26px; font-weight: bold; fill: #a5d6a7; }
+      .label { font-size: 17px; fill: #c8e6c9; }
+      .num { font-size: 20px; fill: #fff9c4; font-weight: bold; }
+      .muted { font-size: 14px; fill: #81c784; }
+      .highlight { fill: rgba(102,187,106,0.12); stroke: #66bb6a; stroke-width: 1.5; }
+      .yellow { fill: rgba(255,245,157,0.12); stroke: #fff176; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <!-- Title -->
+  <text x="400" y="44" text-anchor="middle" class="chalk title">Indian Number System – Periods & Commas</text>
+  <line x1="60" y1="56" x2="740" y2="56" stroke="#66bb6a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Periods diagram -->
+  <g transform="translate(60,74)">
+    <!-- Period boxes -->
+    <rect x="0" y="0" width="200" height="80" class="highlight" rx="10"/>
+    <text x="100" y="22" text-anchor="middle" class="chalk label">Ones Period</text>
+    <text x="100" y="46" text-anchor="middle" class="chalk muted">Hundreds · Tens · Ones</text>
+    <text x="100" y="68" text-anchor="middle" class="chalk num">_ _ _</text>
+
+    <rect x="220" y="0" width="200" height="80" class="highlight" rx="10"/>
+    <text x="320" y="22" text-anchor="middle" class="chalk label">Thousands Period</text>
+    <text x="320" y="46" text-anchor="middle" class="chalk muted">Ten-Th · Thousands</text>
+    <text x="320" y="68" text-anchor="middle" class="chalk num">_ _ ,</text>
+
+    <rect x="440" y="0" width="200" height="80" class="highlight" rx="10"/>
+    <text x="540" y="22" text-anchor="middle" class="chalk label">Lakhs Period</text>
+    <text x="540" y="46" text-anchor="middle" class="chalk muted">Ten-Lakhs · Lakhs</text>
+    <text x="540" y="68" text-anchor="middle" class="chalk num">_ _ ,</text>
+
+    <!-- Crores box smaller -->
+    <rect x="0" y="98" width="128" height="60" class="yellow" rx="10"/>
+    <text x="64" y="118" text-anchor="middle" class="chalk label">Crores</text>
+    <text x="64" y="140" text-anchor="middle" class="chalk muted">Ten-Cr · Crores</text>
+  </g>
+
+  <!-- Full example -->
+  <text x="400" y="270" text-anchor="middle" class="chalk label">Example: 7,32,54,891</text>
+  
+  <!-- Breakdown boxes -->
+  <g transform="translate(60,285)">
+    <rect x="0" y="0" width="130" height="50" class="yellow" rx="8"/>
+    <text x="65" y="20" text-anchor="middle" class="chalk muted">7 Crores</text>
+    <text x="65" y="40" text-anchor="middle" class="chalk num">7</text>
+
+    <rect x="148" y="0" width="130" height="50" class="highlight" rx="8"/>
+    <text x="213" y="20" text-anchor="middle" class="chalk muted">32 Lakhs</text>
+    <text x="213" y="40" text-anchor="middle" class="chalk num">32</text>
+
+    <rect x="296" y="0" width="130" height="50" class="highlight" rx="8"/>
+    <text x="361" y="20" text-anchor="middle" class="chalk muted">54 Thousands</text>
+    <text x="361" y="40" text-anchor="middle" class="chalk num">54</text>
+
+    <rect x="444" y="0" width="130" height="50" class="highlight" rx="8"/>
+    <text x="509" y="20" text-anchor="middle" class="chalk muted">891 Ones</text>
+    <text x="509" y="40" text-anchor="middle" class="chalk num">891</text>
+  </g>
+
+  <!-- Word form -->
+  <text x="400" y="370" text-anchor="middle" class="chalk label">Seven crore, thirty-two lakh, fifty-four thousand, eight hundred ninety-one</text>
+
+  <!-- Rules -->
+  <g transform="translate(60,395)">
+    <rect x="0" y="0" width="680" height="80" class="highlight" rx="10"/>
+    <text x="340" y="22" text-anchor="middle" class="chalk label">Comma Rules (Indian System)</text>
+    <text x="20" y="44" class="chalk muted">• First comma after 3 digits from right (Ones period)</text>
+    <text x="20" y="62" class="chalk muted">• Then every 2 digits: Thousands → Lakhs → Crores</text>
+  </g>
+</svg>

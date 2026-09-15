@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      .chalk { font-family: 'Segoe UI', sans-serif; }
+      .title { font-size: 26px; font-weight: bold; fill: #a5d6a7; }
+      .label { font-size: 17px; fill: #c8e6c9; }
+      .num { font-size: 20px; fill: #fff9c4; font-weight: bold; }
+      .muted { font-size: 14px; fill: #81c784; }
+      .highlight { fill: rgba(102,187,106,0.12); stroke: #66bb6a; stroke-width: 1.5; }
+      .yellow { fill: rgba(255,245,157,0.12); stroke: #fff176; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <text x="400" y="44" text-anchor="middle" class="chalk title">Factors – Playing with Numbers</text>
+  <line x1="60" y1="56" x2="740" y2="56" stroke="#66bb6a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Definition -->
+  <text x="400" y="86" text-anchor="middle" class="chalk label">A factor of a number divides it exactly (no remainder)</text>
+
+  <!-- Factor tree for 36 -->
+  <g transform="translate(60,100)">
+    <text x="200" y="0" text-anchor="middle" class="chalk label">Factor Tree of 36</text>
+    <!-- Tree -->
+    <circle cx="200" cy="30" r="22" class="yellow" fill="rgba(255,245,157,0.15)" stroke="#fff176" stroke-width="1.5"/>
+    <text x="200" y="37" text-anchor="middle" class="chalk num">36</text>
+    <line x1="182" y1="50" x2="144" y2="82" stroke="#fff176" stroke-width="1.5"/>
+    <line x1="218" y1="50" x2="256" y2="82" stroke="#fff176" stroke-width="1.5"/>
+    <circle cx="136" cy="96" r="20" class="highlight"/>
+    <text x="136" y="103" text-anchor="middle" class="chalk num" style="font-size:17px">4</text>
+    <circle cx="264" cy="96" r="20" class="highlight"/>
+    <text x="264" y="103" text-anchor="middle" class="chalk num" style="font-size:17px">9</text>
+    <line x1="120" y1="114" x2="90" y2="148" stroke="#66bb6a" stroke-width="1.5"/>
+    <line x1="152" y1="114" x2="178" y2="148" stroke="#66bb6a" stroke-width="1.5"/>
+    <line x1="250" y1="114" x2="224" y2="148" stroke="#66bb6a" stroke-width="1.5"/>
+    <line x1="278" y1="114" x2="302" y2="148" stroke="#66bb6a" stroke-width="1.5"/>
+    <circle cx="82" cy="160" r="18" fill="rgba(102,187,106,0.3)" stroke="#66bb6a" stroke-width="1.5"/>
+    <text x="82" y="167" text-anchor="middle" class="chalk num" style="font-size:15px">2</text>
+    <circle cx="186" cy="160" r="18" fill="rgba(102,187,106,0.3)" stroke="#66bb6a" stroke-width="1.5"/>
+    <text x="186" y="167" text-anchor="middle" class="chalk num" style="font-size:15px">2</text>
+    <circle cx="218" cy="160" r="18" fill="rgba(102,187,106,0.3)" stroke="#66bb6a" stroke-width="1.5"/>
+    <text x="218" y="167" text-anchor="middle" class="chalk num" style="font-size:15px">3</text>
+    <circle cx="310" cy="160" r="18" fill="rgba(102,187,106,0.3)" stroke="#66bb6a" stroke-width="1.5"/>
+    <text x="310" y="167" text-anchor="middle" class="chalk num" style="font-size:15px">3</text>
+    <text x="200" y="205" text-anchor="middle" class="chalk muted">Prime Factorisation: 36 = 2² × 3²</text>
+  </g>
+
+  <!-- Factors of 12 list -->
+  <g transform="translate(430,100)">
+    <rect x="0" y="0" width="310" height="220" class="highlight" rx="10"/>
+    <text x="155" y="28" text-anchor="middle" class="chalk label">All Factors of 12</text>
+    <text x="155" y="55" text-anchor="middle" class="chalk muted">12 ÷ 1 = 12 ✓ → Factor: 1</text>
+    <text x="155" y="78" text-anchor="middle" class="chalk muted">12 ÷ 2 = 6  ✓ → Factor: 2</text>
+    <text x="155" y="101" text-anchor="middle" class="chalk muted">12 ÷ 3 = 4  ✓ → Factor: 3</text>
+    <text x="155" y="124" text-anchor="middle" class="chalk muted">12 ÷ 4 = 3  ✓ → Factor: 4</text>
+    <text x="155" y="147" text-anchor="middle" class="chalk muted">12 ÷ 5 = 2.4 ✗</text>
+    <text x="155" y="170" text-anchor="middle" class="chalk muted">12 ÷ 6 = 2  ✓ → Factor: 6</text>
+    <text x="155" y="193" text-anchor="middle" class="chalk muted">12 ÷ 12 = 1 ✓ → Factor: 12</text>
+    <text x="155" y="215" text-anchor="middle" class="chalk num" style="font-size:16px">Factors: 1,2,3,4,6,12</text>
+  </g>
+
+  <!-- Properties -->
+  <g transform="translate(60,340)">
+    <rect x="0" y="0" width="680" height="130" class="highlight" rx="10"/>
+    <text x="340" y="28" text-anchor="middle" class="chalk label">Properties of Factors</text>
+    <line x1="20" y1="38" x2="660" y2="38" stroke="#66bb6a" stroke-width="0.8"/>
+    <text x="20" y="62" class="chalk muted">• 1 is a factor of every number</text>
+    <text x="20" y="84" class="chalk muted">• Every number is a factor of itself</text>
+    <text x="20" y="106" class="chalk muted">• Factors of a number are always ≤ the number</text>
+    <text x="20" y="126" class="chalk muted">• A number with exactly 2 factors (1 and itself) is PRIME</text>
+  </g>
+</svg>

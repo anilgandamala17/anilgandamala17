@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      .chalk { font-family: 'Segoe UI', sans-serif; }
+      .title { font-size: 26px; font-weight: bold; fill: #a5d6a7; }
+      .label { font-size: 17px; fill: #c8e6c9; }
+      .num { font-size: 18px; fill: #fff9c4; font-weight: bold; }
+      .muted { font-size: 14px; fill: #81c784; }
+      .highlight { fill: rgba(102,187,106,0.12); stroke: #66bb6a; stroke-width: 1.5; }
+      .yellow { fill: rgba(255,245,157,0.12); stroke: #fff176; stroke-width: 1.5; }
+      .orange { fill: rgba(255,183,77,0.12); stroke: #ffb74d; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <text x="400" y="44" text-anchor="middle" class="chalk title">Curves – Basic Geometrical Ideas</text>
+  <line x1="60" y1="56" x2="740" y2="56" stroke="#66bb6a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Definition -->
+  <text x="400" y="82" text-anchor="middle" class="chalk label">A Curve is any figure drawn without lifting the pencil (including straight lines!)</text>
+
+  <!-- Types of curves -->
+  <!-- Open curve -->
+  <g transform="translate(60,100)">
+    <rect x="0" y="0" width="200" height="160" class="highlight" rx="10"/>
+    <text x="100" y="22" text-anchor="middle" class="chalk label">Open Curve</text>
+    <path d="M 30 130 Q 60 40 100 80 Q 140 120 170 60" fill="none" stroke="#a5d6a7" stroke-width="2.5"/>
+    <circle cx="30" cy="130" r="5" fill="#a5d6a7"/>
+    <circle cx="170" cy="60" r="5" fill="#a5d6a7"/>
+    <text x="100" y="152" text-anchor="middle" class="chalk muted">Endpoints don't meet</text>
+  </g>
+
+  <!-- Closed curve -->
+  <g transform="translate(280,100)">
+    <rect x="0" y="0" width="200" height="160" class="yellow" rx="10"/>
+    <text x="100" y="22" text-anchor="middle" class="chalk label">Closed Curve</text>
+    <ellipse cx="100" cy="95" rx="70" ry="50" fill="none" stroke="#fff176" stroke-width="2.5"/>
+    <text x="100" y="152" text-anchor="middle" class="chalk muted">Start = End point</text>
+  </g>
+
+  <!-- Simple closed curve -->
+  <g transform="translate(500,100)">
+    <rect x="0" y="0" width="240" height="160" class="orange" rx="10"/>
+    <text x="120" y="22" text-anchor="middle" class="chalk label" style="fill:#ffe0b2">Simple Closed Curve</text>
+    <path d="M 60 110 C 40 40 120 20 160 60 C 200 100 180 150 120 145 C 80 142 70 140 60 110 Z" fill="none" stroke="#ffb74d" stroke-width="2.5"/>
+    <text x="120" y="148" text-anchor="middle" class="chalk muted">Does NOT cross itself</text>
+  </g>
+
+  <!-- Interior / Exterior / Boundary -->
+  <g transform="translate(60,280)">
+    <rect x="0" y="0" width="680" height="190" class="highlight" rx="10"/>
+    <text x="340" y="26" text-anchor="middle" class="chalk label">Interior, Exterior, Boundary of a Closed Curve</text>
+
+    <!-- Circle for regions -->
+    <ellipse cx="280" cy="110" rx="100" ry="60" fill="rgba(102,187,106,0.15)" stroke="#a5d6a7" stroke-width="2"/>
+    <text x="280" y="114" text-anchor="middle" class="chalk muted" style="fill:#fff176">Interior</text>
+    <circle cx="280" cy="110" r="4" fill="#fff176"/>
+    <text x="280" y="128" text-anchor="middle" class="chalk muted" style="fill:#fff176; font-size:12px">Point P (inside)</text>
+
+    <text x="430" y="80" class="chalk muted" style="fill:#ffb74d">Boundary</text>
+    <line x1="390" y1="78" x2="360" y2="72" stroke="#ffb74d" stroke-width="1" stroke-dasharray="3,2"/>
+    <circle cx="358" cy="70" r="4" fill="#ffb74d"/>
+
+    <text x="460" y="135" class="chalk muted" style="fill:#ef9a9a">Exterior</text>
+    <circle cx="490" cy="120" r="4" fill="#ef9a9a"/>
+    <text x="490" y="142" text-anchor="middle" class="chalk muted" style="fill:#ef9a9a; font-size:12px">Point Q (outside)</text>
+
+    <!-- Labels -->
+    <text x="630" y="60" class="chalk muted" style="font-size:12px">Interior: inside</text>
+    <text x="630" y="80" class="chalk muted" style="font-size:12px">Boundary: on curve</text>
+    <text x="630" y="100" class="chalk muted" style="font-size:12px">Exterior: outside</text>
+    <text x="340" y="178" text-anchor="middle" class="chalk muted">Jordan Curve Theorem: every simple closed curve divides plane into 2 regions</text>
+  </g>
+</svg>

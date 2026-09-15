@@ -1,0 +1,54 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .year { font-size: 12px; font-weight: bold; fill: #3b82f6; }
+      .event { font-size: 10px; fill: #94a3b8; }
+      .timeline-line { stroke: #fbbf24; stroke-width: 2; }
+      .marker { fill: #ef4444; stroke: #fff; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">NATIONALISM IN EUROPE: TIMELINE</text>
+
+  <g transform="translate(50, 60)">
+    <!-- Vertical Line -->
+    <line x1="20" y1="0" x2="20" y2="220" class="timeline-line" />
+    
+    <!-- 1789 -->
+    <g transform="translate(0, 20)">
+      <circle cx="20" cy="0" r="4" class="marker" />
+      <text x="40" y="4" class="year">1789</text>
+      <text x="40" y="16" class="event">French Revolution</text>
+    </g>
+
+    <!-- 1815 -->
+    <g transform="translate(0, 70)">
+      <circle cx="20" cy="0" r="4" class="marker" />
+      <text x="40" y="4" class="year">1815</text>
+      <text x="40" y="16" class="event">Treaty of Vienna (Napoleon Defeated)</text>
+    </g>
+
+    <!-- 1848 -->
+    <g transform="translate(0, 120)">
+      <circle cx="20" cy="0" r="4" class="marker" />
+      <text x="40" y="4" class="year">1848</text>
+      <text x="40" y="16" class="event">revolutions of 1848 (Liberals)</text>
+    </g>
+
+    <!-- 1871 -->
+    <g transform="translate(0, 170)">
+      <circle cx="20" cy="0" r="4" class="marker" />
+      <text x="40" y="4" class="year">1871</text>
+      <text x="40" y="16" class="event">Unification of Germany / Italy</text>
+    </g>
+  </g>
+  
+  <!-- Map Hint -->
+  <rect x="250" y="200" width="120" height="80" fill="#334155" opacity="0.5" rx="4"/>
+  <text x="310" y="240" text-anchor="middle" fontSize="10" fill="#fbbf24">Concept Map:</text>
+  <text x="310" y="255" text-anchor="middle" fontSize="10" fill="#fff">Idea of Nation-State</text>
+</svg>

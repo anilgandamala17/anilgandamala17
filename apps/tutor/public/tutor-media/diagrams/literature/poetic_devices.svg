@@ -1,0 +1,62 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .card { fill: #334155; rx: 8; stroke: #475569; stroke-width: 1; }
+      .term { font-size: 12px; font-weight: bold; fill: #fbbf24; }
+      .def { font-size: 10px; fill: #cbd5e1; }
+      .example { font-size: 9px; fill: #94a3b8; font-style: italic; }
+      .icon { fill: #3b82f6; opacity: 0.8; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">COMMON POETIC DEVICES</text>
+
+  <!-- Simile -->
+  <g transform="translate(20, 60)">
+    <rect width="170" height="80" class="card" />
+    <text x="10" y="20" class="term">1. SIMILE</text>
+    <text x="10" y="35" class="def">Comparison using 'like'</text>
+    <text x="10" y="47" class="def">or 'as'.</text>
+    <text x="10" y="65" class="example">"Brave AS a lion"</text>
+    <circle cx="150" cy="40" r="15" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <text x="150" y="44" text-anchor="middle" fontSize="16">=</text>
+  </g>
+
+  <!-- Metaphor -->
+  <g transform="translate(210, 60)">
+    <rect width="170" height="80" class="card" />
+    <text x="10" y="20" class="term">2. METAPHOR</text>
+    <text x="10" y="35" class="def">Direct comparison.</text>
+    <text x="10" y="47" class="def">Is the thing itself.</text>
+    <text x="10" y="65" class="example">"Time IS money"</text>
+    <rect x="135" y="25" width="25" height="25" fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="147.5" y="42" text-anchor="middle" fontSize="16">≠</text> <!-- Using strict equality symbol metaphorically -->
+  </g>
+
+  <!-- Personification -->
+  <g transform="translate(20, 160)">
+    <rect width="170" height="80" class="card" />
+    <text x="10" y="20" class="term">3. PERSONIFICATION</text>
+    <text x="10" y="35" class="def">Human traits to</text>
+    <text x="10" y="47" class="def">non-human things.</text>
+    <text x="10" y="65" class="example">"The wind WHISTLED"</text>
+    <path d="M 140 40 Q 150 20 160 40" stroke="#fff" fill="none" /> <!-- Smile -->
+    <circle cx="145" cy="35" r="2" fill="#fff"/>
+    <circle cx="155" cy="35" r="2" fill="#fff"/>
+  </g>
+
+  <!-- Alliteration -->
+  <g transform="translate(210, 160)">
+    <rect width="170" height="80" class="card" />
+    <text x="10" y="20" class="term">4. ALLITERATION</text>
+    <text x="10" y="35" class="def">Repetition of</text>
+    <text x="10" y="47" class="def">initial sounds.</text>
+    <text x="10" y="65" class="example">"Sally Sells Seashells"</text>
+    <text x="150" y="45" fontSize="16" fill="#86efac" fontWeight="bold">S..S..</text>
+  </g>
+
+</svg>

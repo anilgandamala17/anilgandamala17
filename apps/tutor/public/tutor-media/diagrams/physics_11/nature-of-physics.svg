@@ -1,0 +1,35 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 11px; font-weight: bold; }
+      .desc { fill: #93c5fd; font-size: 9px; font-style: italic; }
+      .box { fill: #1a3a20; stroke: #4ade80; stroke-width: 1.2; rx: 6; }
+      .force-line { stroke: #fca5a5; stroke-width: 1.5; stroke-dasharray: 4; }
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Fundamental Forces of Nature</text>
+    
+    <rect x="20" y="45" width="170" height="60" class="box" />
+    <text x="35" y="65" class="label">1. Gravitational Force</text>
+    <text x="35" y="85" class="desc">Weakest, Infinite range, Attractive</text>
+
+    <rect x="210" y="45" width="170" height="60" class="box" />
+    <text x="225" y="65" class="label">2. Electromagnetic Force</text>
+    <text x="225" y="85" class="desc">Infinite range, Attractive/Repulsive</text>
+
+    <rect x="20" y="125" width="170" height="60" class="box" />
+    <text x="35" y="145" class="label">3. Strong Nuclear Force</text>
+    <text x="35" y="165" class="desc">Strongest, Short range (10⁻¹⁵m)</text>
+
+    <rect x="210" y="125" width="170" height="60" class="box" />
+    <text x="225" y="145" class="label">4. Weak Nuclear Force</text>
+    <text x="225" y="165" class="desc">Short range, Appears in β-decay</text>
+
+    <line x1="105" y1="105" x2="105" y2="125" class="force-line" />
+    <line x1="295" y1="105" x2="295" y2="125" class="force-line" />
+    <line x1="190" y1="75" x2="210" y2="75" class="force-line" />
+    <line x1="190" y1="155" x2="210" y2="155" class="force-line" />
+  </g>
+</svg>

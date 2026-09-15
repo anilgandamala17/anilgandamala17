@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Translation (Protein Synthesis)</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Ribosome and tRNA -->
+  <g transform="translate(100, 150)">
+    <!-- Messenger RNA (mRNA) -->
+    <rect x="0" y="300" width="600" height="30" rx="5" fill="#f472b6" opacity="0.3"/>
+    <text x="10" y="320" fill="#f472b6" font-weight="bold">mRNA (5' → 3')</text>
+    
+    <!-- Ribosome Subunits -->
+    <path d="M 150 250 Q 300 50 450 250 Z" fill="rgba(96,165,250,0.1)" stroke="#60a5fa" stroke-width="3"/>
+    <text x="300" y="100" fill="#60a5fa" text-anchor="middle">Large Subunit (60S/50S)</text>
+    
+    <rect x="150" y="250" width="300" height="60" rx="10" fill="rgba(96,165,250,0.2)" stroke="#60a5fa" stroke-width="2"/>
+    <text x="300" y="285" fill="#60a5fa" text-anchor="middle">Small Subunit (40S/30S)</text>
+    
+    <!-- tRNA with Amino Acid -->
+    <g transform="translate(260, 150)">
+      <path d="M 10 100 L 10 50 Q 10 30 40 30 Q 70 30 70 50 L 70 100" fill="none" stroke="#fef08a" stroke-width="4"/>
+      <circle cx="40" cy="10" r="15" fill="#86efac"/>
+      <text x="40" y="15" fill="#0d2b1a" text-anchor="middle" font-size="10" font-weight="bold">Met</text>
+      <text x="40" y="120" fill="#fef08a" font-weight="bold" text-anchor="middle">tRNA</text>
+    </g>
+    
+    <!-- Peptide Chain -->
+    <circle cx="300" cy="60" r="10" fill="#86efac"/>
+    <circle cx="320" cy="40" r="10" fill="#86efac"/>
+    <circle cx="340" cy="60" r="10" fill="#86efac"/>
+    <text x="360" y="50" fill="#86efac">Polypeptide</text>
+  </g>
+
+  <rect x="150" y="520" width="500" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="#86efac" stroke-width="1"/>
+  <text x="400" y="550" fill="#f8fafc" text-anchor="middle">Codon (mRNA) pairing with Anticodon (tRNA).</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Biology Grade 12</text>
+</svg>

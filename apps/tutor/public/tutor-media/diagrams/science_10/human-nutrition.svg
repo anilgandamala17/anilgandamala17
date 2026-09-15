@@ -1,0 +1,27 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+  </defs>
+  <!-- Bg Removed -->
+  <text x="20" y="30" class="title">HUMAN NUTRITION</text>
+  
+  <rect x="150" y="60" width="100" height="180" rx="30" fill="none" stroke="#fff" /> <!-- Body Outline -->
+  
+  <!-- Oesophagus -->
+  <path d="M 200 60 L 200 100" stroke="#f472b6" stroke-width="4" />
+  
+  <!-- Stomach -->
+  <path d="M 200 100 Q 180 110 190 130 Q 220 130 210 100" fill="#f472b6" />
+  
+  <!-- Intestines -->
+  <path d="M 190 130 Q 180 150 200 160 Q 220 150 210 130" stroke="#60a5fa" stroke-width="4" fill="none" />
+  
+  <text x="120" y="80" text-anchor="end" font-size="10">Oesophagus</text> <line x1="125" y1="75" x2="195" y2="80" stroke="#94a3b8" />
+  <text x="120" y="115" text-anchor="end" font-size="10">Stomach</text> <line x1="125" y1="110" x2="190" y2="115" stroke="#94a3b8" />
+  <text x="280" y="145" text-anchor="start" font-size="10">Small Intestine</text> <line x1="275" y1="140" x2="210" y2="145" stroke="#94a3b8" />
+  
+  <text x="200" y="260" text-anchor="middle" font-size="12">Ingestion → Digestion → Absorption → Egestion</text>
+</svg>

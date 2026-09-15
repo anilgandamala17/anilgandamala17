@@ -1,0 +1,57 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function userRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+
+    function isAdmin() {
+      return signedIn() && userRole() == 'admin';
+    }
+
+    function validWeeklyExam() {
+      return request.resource.data.keys().hasAll([
+          'id', 'weekKey', 'day', 'title', 'examId', 'mode',
+          'startsAt', 'endsAt', 'status', 'createdBy', 'updatedAt'
+        ])
+        && request.resource.data.day in ['saturday', 'sunday']
+        && request.resource.data.mode in ['mock', 'pyq']
+        && request.resource.data.status in ['draft', 'published', 'archived']
+        && request.resource.data.title is string
+        && request.resource.data.examId is string
+        && request.resource.data.weekKey is string
+        && request.resource.data.startsAt is string
+        && request.resource.data.endsAt is string;
+    }
+
+    // Shared with the tutor client so demo admins can publish to production.
+    function weeklyBridgeOk() {
+      return request.resource.data.bridgeSecret == 'aira_weekly_bridge_v1';
+    }
+
+    match /users/{userId} {
+      allow read: if signedIn() && (request.auth.uid == userId || isAdmin());
+      allow write: if signedIn() && request.auth.uid == userId;
+
+      // Per-student curriculum dashboard: progress, sessions, likes
+      match /learning/{docId} {
+        allow read: if signedIn() && (request.auth.uid == userId || isAdmin());
+        allow write: if signedIn() && request.auth.uid == userId
+          && docId == 'state';
+      }
+    }
+
+    // Weekly Sat/Sun exam schedules
+    // - Published sessions are readable by everyone (students on any device)
+    // - Writes: real admins OR validated bridge payload (demo admin publish path)
+    match /weeklyExamSchedules/{sessionId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow create, update: if isAdmin() || (validWeeklyExam() && weeklyBridgeOk());
+      allow delete: if isAdmin();
+    }
+  }
+}

@@ -1,0 +1,51 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .tri { fill: none; stroke: #3b82f6; stroke-width: 2; }
+      .mark { stroke: #ef4444; stroke-width: 2; }
+      .angle { fill: none; stroke: #fbbf24; stroke-width: 2; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">TRIANGLE CONGRUENCE CRITERIA</text>
+
+  <!-- SAS (Side-Angle-Side) -->
+  <g transform="translate(60, 80) scale(0.6)">
+    <text x="30" y="-20" fontSize="18" fill="#fff" text-anchor="middle">SAS</text>
+    <path d="M 0 100 L 60 0 L 120 100 Z" class="tri" />
+    <text x="60" y="140" fontSize="16" fill="#94a3b8" text-anchor="middle">Side-Angle-Side</text>
+    
+    <!-- Marks -->
+    <line x1="20" y1="50" x2="40" y2="50" class="mark" transform="rotate(-60 30 50)"/> <!-- Side 1 -->
+    <line x1="80" y1="50" x2="100" y2="50" class="mark" transform="rotate(60 90 50)"/> <!-- Side 2 -->
+    <path d="M 50 20 Q 60 30 70 20" class="angle" /> <!-- Included Angle -->
+  </g>
+
+  <!-- ASA (Angle-Side-Angle) -->
+  <g transform="translate(200, 80) scale(0.6)">
+    <text x="60" y="-20" fontSize="18" fill="#fff" text-anchor="middle">ASA</text>
+    <path d="M 0 100 L 60 0 L 120 100 Z" class="tri" />
+    <text x="60" y="140" fontSize="16" fill="#94a3b8" text-anchor="middle">Angle-Side-Angle</text>
+    
+    <!-- Marks -->
+    <path d="M 10 90 Q 20 80 30 95" class="angle" /> <!-- Angle 1 -->
+    <path d="M 90 95 Q 100 80 110 90" class="angle" /> <!-- Angle 2 -->
+    <line x1="40" y1="105" x2="80" y2="105" class="mark" /> <!-- Included Side -->
+  </g>
+
+  <!-- SSS (Side-Side-Side) -->
+  <g transform="translate(130, 200) scale(0.6)">
+    <text x="60" y="-20" fontSize="18" fill="#fff" text-anchor="middle">SSS</text>
+    <path d="M 0 100 L 60 0 L 120 100 Z" class="tri" />
+    <text x="60" y="140" fontSize="16" fill="#94a3b8" text-anchor="middle">Side-Side-Side</text>
+    
+    <!-- Marks -->
+    <text x="20" y="50" fontSize="20" fill="#ef4444">|</text>
+    <text x="90" y="50" fontSize="20" fill="#ef4444">||</text>
+    <text x="50" y="110" fontSize="20" fill="#ef4444">|||</text>
+  </g>
+</svg>

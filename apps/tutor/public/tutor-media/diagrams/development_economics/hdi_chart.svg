@@ -1,0 +1,51 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .bar { rx: 4; }
+      .icon { font-size: 24px; text-anchor: middle; }
+      .label { font-size: 12px; text-anchor: middle; font-weight: bold; }
+      .desc { font-size: 10px; fill: #94a3b8; text-anchor: middle; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">HUMAN DEVELOPMENT INDEX (HDI)</text>
+
+  <g transform="translate(50, 80)">
+    
+    <!-- 1. Health -->
+    <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="80" height="150" fill="#3b82f6" class="bar" opacity="0.2" />
+        <rect x="10" y="30" width="60" height="120" fill="#3b82f6" class="bar" />
+        <text x="40" y="-10" class="icon">🏥</text>
+        <text x="40" y="170" class="label">HEALTH</text>
+        <text x="40" y="185" class="desc">Life Expectancy</text>
+    </g>
+
+    <!-- 2. Education -->
+    <g transform="translate(110, 0)">
+        <rect x="0" y="0" width="80" height="150" fill="#f59e0b" class="bar" opacity="0.2" />
+        <rect x="10" y="50" width="60" height="100" fill="#f59e0b" class="bar" />
+        <text x="40" y="-10" class="icon">🎓</text>
+        <text x="40" y="170" class="label">EDUCATION</text>
+        <text x="40" y="185" class="desc">Mean Years of Schooling</text>
+    </g>
+
+    <!-- 3. Standard of Living -->
+    <g transform="translate(220, 0)">
+        <rect x="0" y="0" width="80" height="150" fill="#10b981" class="bar" opacity="0.2" />
+        <rect x="10" y="70" width="60" height="80" fill="#10b981" class="bar" />
+        <text x="40" y="-10" class="icon">💰</text>
+        <text x="40" y="170" class="label">INCOME</text>
+        <text x="40" y="185" class="desc">GNI per Capita</text>
+    </g>
+
+    <!-- Formula -->
+    <text x="150" y="210" fontSize="16" fill="#fff" fontWeight="bold" text-anchor="middle">+</text>
+    <text x="260" y="210" fontSize="16" fill="#fff" fontWeight="bold" text-anchor="middle">+</text>
+
+  </g>
+</svg>

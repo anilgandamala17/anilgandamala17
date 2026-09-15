@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Solutions, Colloids and Suspensions</text>
+
+  <!-- Three columns -->
+  <!-- Solution -->
+  <rect x="10" y="55" width="250" height="430" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="135" y="78" text-anchor="middle" fill="#a3e635" font-size="14" font-family="Georgia,serif" font-weight="bold">True Solution</text>
+  <!-- particle visualisation: tiny uniform dots -->
+  <rect x="18" y="88" width="234" height="80" rx="6" fill="#0f2a1a" stroke="#a3e635" stroke-width="1"/>
+  <g fill="#a3e635" opacity="0.8">
+    <circle cx="40" cy="115" r="3"/><circle cx="65" cy="108" r="3"/><circle cx="90" cy="120" r="3"/><circle cx="115" cy="110" r="3"/><circle cx="140" cy="118" r="3"/>
+    <circle cx="165" cy="108" r="3"/><circle cx="190" cy="119" r="3"/><circle cx="215" cy="112" r="3"/><circle cx="235" cy="118" r="3"/>
+    <circle cx="50" cy="138" r="3"/><circle cx="78" cy="144" r="3"/><circle cx="105" cy="135" r="3"/><circle cx="130" cy="142" r="3"/>
+    <circle cx="155" cy="132" r="3"/><circle cx="180" cy="140" r="3"/><circle cx="205" cy="133" r="3"/><circle cx="228" cy="140" r="3"/>
+  </g>
+  <text x="135" y="182" text-anchor="middle" fill="#d4d4d8" font-size="9" font-family="Georgia,serif">Particle size &lt; 1 nm</text>
+  <g transform="translate(18,195)" font-size="10" font-family="Georgia,serif">
+    <rect x="0" y="0" width="234" height="24" rx="4" fill="#1a4030" stroke="#a3e635" stroke-width="1"/>
+    <text x="117" y="17" text-anchor="middle" fill="#a3e635">Transparent (Tyndall −ve)</text>
+    <rect x="0" y="30" width="234" height="24" rx="4" fill="#1a4030" stroke="#a3e635" stroke-width="1"/>
+    <text x="117" y="47" text-anchor="middle" fill="#d4d4d8">Settles: NEVER</text>
+    <rect x="0" y="60" width="234" height="24" rx="4" fill="#1a4030" stroke="#a3e635" stroke-width="1"/>
+    <text x="117" y="77" text-anchor="middle" fill="#d4d4d8">Filterable: Cannot filter</text>
+    <rect x="0" y="90" width="234" height="24" rx="4" fill="#1a4030" stroke="#a3e635" stroke-width="1"/>
+    <text x="117" y="107" text-anchor="middle" fill="#d4d4d8">1-phase system</text>
+    <rect x="0" y="120" width="234" height="24" rx="4" fill="#1a4030" stroke="#a3e635" stroke-width="1"/>
+    <text x="117" y="137" text-anchor="middle" fill="#d4d4d8">Solute + Solvent</text>
+    <rect x="0" y="174" width="234" height="50" rx="4" fill="#134e4a" stroke="#86efac" stroke-width="1.5"/>
+    <text x="117" y="196" text-anchor="middle" fill="#86efac" font-weight="bold">Examples</text>
+    <text x="117" y="214" text-anchor="middle" fill="#d4d4d8">Salt water, sugar water,</text>
+  </g>
+  <text x="135" y="450" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">lemonade, vinegar</text>
+  <text x="135" y="470" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="Georgia,serif" font-weight="bold">Concentration = Solute/Solution</text>
+
+  <!-- Colloid -->
+  <rect x="275" y="55" width="250" height="430" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="400" y="78" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">Colloid</text>
+  <rect x="283" y="88" width="234" height="80" rx="6" fill="#0f2a1a" stroke="#fde68a" stroke-width="1"/>
+  <g fill="#fbbf24">
+    <circle cx="310" cy="112" r="6"/><circle cx="348" cy="105" r="6"/><circle cx="386" cy="120" r="6"/><circle cx="424" cy="108" r="6"/><circle cx="462" cy="118" r="6"/>
+    <circle cx="320" cy="142" r="6"/><circle cx="360" cy="148" r="6"/><circle cx="400" cy="138" r="6"/><circle cx="440" cy="145" r="6"/>
+  </g>
+  <text x="400" y="182" text-anchor="middle" fill="#d4d4d8" font-size="9" font-family="Georgia,serif">Particle size 1–1000 nm</text>
+  <g transform="translate(283,195)" font-size="10" font-family="Georgia,serif">
+    <rect x="0" y="0" width="234" height="24" rx="4" fill="#4a3a10" stroke="#fde68a" stroke-width="1"/>
+    <text x="117" y="17" text-anchor="middle" fill="#fde68a">Scatters light (Tyndall +ve)</text>
+    <rect x="0" y="30" width="234" height="24" rx="4" fill="#4a3a10" stroke="#fde68a" stroke-width="1"/>
+    <text x="117" y="47" text-anchor="middle" fill="#d4d4d8">Settles: Very slowly</text>
+    <rect x="0" y="60" width="234" height="24" rx="4" fill="#4a3a10" stroke="#fde68a" stroke-width="1"/>
+    <text x="117" y="77" text-anchor="middle" fill="#d4d4d8">Filterable: No/partially</text>
+    <rect x="0" y="90" width="234" height="24" rx="4" fill="#4a3a10" stroke="#fde68a" stroke-width="1"/>
+    <text x="117" y="107" text-anchor="middle" fill="#d4d4d8">2-phase (may appear 1)</text>
+    <rect x="0" y="120" width="234" height="24" rx="4" fill="#4a3a10" stroke="#fde68a" stroke-width="1"/>
+    <text x="117" y="137" text-anchor="middle" fill="#d4d4d8">Dispersed phase + medium</text>
+    <rect x="0" y="174" width="234" height="50" rx="4" fill="#4a3a10" stroke="#fde68a" stroke-width="1.5"/>
+    <text x="117" y="196" text-anchor="middle" fill="#fde68a" font-weight="bold">Examples</text>
+    <text x="117" y="214" text-anchor="middle" fill="#d4d4d8">Milk, Blood, Fog, Smoke,</text>
+  </g>
+  <text x="400" y="450" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Soap solution, Starch soln</text>
+  <text x="400" y="470" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="Georgia,serif" font-weight="bold">Shows Tyndall Effect</text>
+
+  <!-- Suspension -->
+  <rect x="540" y="55" width="245" height="430" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#f472b6" stroke-width="2"/>
+  <text x="662" y="78" text-anchor="middle" fill="#f9a8d4" font-size="14" font-family="Georgia,serif" font-weight="bold">Suspension</text>
+  <rect x="548" y="88" width="229" height="80" rx="6" fill="#0f2a1a" stroke="#f472b6" stroke-width="1"/>
+  <g fill="#f472b6">
+    <circle cx="570" cy="112" r="10"/><circle cx="615" cy="100" r="10"/><circle cx="660" cy="128" r="10"/>
+    <circle cx="705" cy="108" r="10"/><circle cx="750" cy="120" r="10"/>
+    <circle cx="585" cy="148" r="10"/><circle cx="640" cy="158" r="10"/><circle cx="690" cy="143" r="10"/>
+  </g>
+  <text x="662" y="182" text-anchor="middle" fill="#d4d4d8" font-size="9" font-family="Georgia,serif">Particle size &gt; 1000 nm</text>
+  <g transform="translate(548,195)" font-size="10" font-family="Georgia,serif">
+    <rect x="0" y="0" width="229" height="24" rx="4" fill="#3b0f1a" stroke="#f472b6" stroke-width="1"/>
+    <text x="114" y="17" text-anchor="middle" fill="#f9a8d4">Scatters light (Tyndall+)</text>
+    <rect x="0" y="30" width="229" height="24" rx="4" fill="#3b0f1a" stroke="#f472b6" stroke-width="1"/>
+    <text x="114" y="47" text-anchor="middle" fill="#d4d4d8">Settles: On standing</text>
+    <rect x="0" y="60" width="229" height="24" rx="4" fill="#3b0f1a" stroke="#f472b6" stroke-width="1"/>
+    <text x="114" y="77" text-anchor="middle" fill="#d4d4d8">Filterable: YES</text>
+    <rect x="0" y="90" width="229" height="24" rx="4" fill="#3b0f1a" stroke="#f472b6" stroke-width="1"/>
+    <text x="114" y="107" text-anchor="middle" fill="#d4d4d8">Heterogeneous (2 phases)</text>
+    <rect x="0" y="120" width="229" height="24" rx="4" fill="#3b0f1a" stroke="#f472b6" stroke-width="1"/>
+    <text x="114" y="137" text-anchor="middle" fill="#d4d4d8">Visible particles</text>
+    <rect x="0" y="174" width="229" height="50" rx="4" fill="#3b0f1a" stroke="#f9a8d4" stroke-width="1.5"/>
+    <text x="114" y="196" text-anchor="middle" fill="#f9a8d4" font-weight="bold">Examples</text>
+    <text x="114" y="214" text-anchor="middle" fill="#d4d4d8">Chalk in water, muddy water</text>
+  </g>
+  <text x="662" y="450" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Flour in water, sand in water</text>
+  <text x="662" y="470" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="Georgia,serif" font-weight="bold">Can be filtered. Settles.</text>
+</svg>

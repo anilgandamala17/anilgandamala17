@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+<rect width="800" height="600" fill="#1a3a2a"/>
+
+<rect x="0" y="0" width="800" height="58" fill="#0d2418" opacity="0.9"/>
+<text x="400" y="39" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Deficiency Diseases</text>
+<rect x="14" y="65" width="242" height="126" fill="#1e4a30" rx="8"/>
+<text x="135" y="89" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Vitamin A</text>
+<text x="135" y="109" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Night blindness</text>
+<text x="135" y="127" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Xerophthalmia (dry eyes)</text>
+<text x="135" y="145" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Eat: Carrots, Liver, Dairy</text>
+<rect x="272" y="65" width="242" height="126" fill="#1e4a30" rx="8"/>
+<text x="393" y="89" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Vitamin C</text>
+<text x="393" y="109" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Scurvy</text>
+<text x="393" y="127" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Bleeding gums & weakness</text>
+<text x="393" y="145" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Eat: Citrus fruits</text>
+<rect x="530" y="65" width="242" height="126" fill="#1e4a30" rx="8"/>
+<text x="651" y="89" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Vitamin D</text>
+<text x="651" y="109" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Rickets (bent bones)</text>
+<text x="651" y="127" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Weak bones in children</text>
+<text x="651" y="145" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Source: Sunlight, Fish Oil</text>
+<rect x="14" y="199" width="242" height="126" fill="#1e4a30" rx="8"/>
+<text x="135" y="223" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Iron</text>
+<text x="135" y="243" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Anaemia</text>
+<text x="135" y="261" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Fatigue, pale skin</text>
+<text x="135" y="279" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Eat: Spinach, Meat, Jaggery</text>
+<rect x="272" y="199" width="242" height="126" fill="#1e4a30" rx="8"/>
+<text x="393" y="223" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Iodine</text>
+<text x="393" y="243" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Goitre (swollen neck)</text>
+<text x="393" y="261" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Thyroid enlargement</text>
+<text x="393" y="279" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Use: Iodised salt daily</text>
+<rect x="530" y="199" width="242" height="126" fill="#1e4a30" rx="8"/>
+<text x="651" y="223" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Protein</text>
+<text x="651" y="243" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Kwashiorkor (fat belly)</text>
+<text x="651" y="261" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Marasmus (severe wasting)</text>
+<text x="651" y="279" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Eat: Dal, Eggs, Soybean</text>
+<rect x="20" y="333" width="760" height="50" fill="#0d2418" rx="6" opacity="1"/>
+<text x="400" y="353" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Prevention</text>
+<text x="400" y="375" font-family="'Segoe UI',sans-serif" font-size="14" fill="#81c784" text-anchor="middle" font-weight="normal">Eat a BALANCED DIET with all nutrients to prevent deficiency diseases</text>
+<rect x="20" y="391" width="370" height="100" fill="#1e4a30" rx="8"/>
+<text x="205" y="415" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Carbohydrates & Proteins</text>
+<text x="205" y="435" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Energy + Body building</text>
+<text x="205" y="453" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Rice, Dal, Eggs daily</text>
+<rect x="410" y="391" width="370" height="100" fill="#1e4a30" rx="8"/>
+<text x="595" y="415" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Vitamins & Minerals</text>
+<text x="595" y="435" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Protective foods</text>
+<text x="595" y="453" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Fruits & Vegetables every day</text>
+<text x="400" y="517" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle" font-weight="normal">Regular medical checkups help detect and treat deficiencies early</text>
+<text x="400" y="543" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle" font-weight="normal">Fortified foods (milk + Vitamin D) help prevent widespread deficiency</text>
+
+</svg>

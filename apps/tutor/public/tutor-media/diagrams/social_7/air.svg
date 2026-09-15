@@ -1,0 +1,51 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Air — Composition and Properties</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="76" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">Air = mixture of gases surrounding Earth | Essential for life on Earth</text>
+
+<rect x="20" y="87" width="370" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="109" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Composition of Air</text>
+<text x="205" y="131" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Nitrogen (N₂): 78% — most abundant</text>
+<text x="205" y="151" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Oxygen (O₂): 21% — for breathing</text>
+<text x="205" y="171" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Argon (Ar): 0.9%</text>
+<text x="205" y="191" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">CO₂: 0.04% — essential for photosynthesis</text>
+<text x="205" y="211" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Water vapour, dust: variable amounts</text>
+<text x="205" y="230" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Rare gases: Ne, He, Kr, Xe (trace amounts)</text>
+
+<rect x="410" y="87" width="370" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="109" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Layers of Atmosphere</text>
+<text x="595" y="131" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Troposphere (0-12 km): weather occurs here</text>
+<text x="595" y="151" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Stratosphere (12-50 km): ozone layer here</text>
+<text x="595" y="171" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Mesosphere (50-80 km): meteors burn</text>
+<text x="595" y="191" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Thermosphere (80-700 km): satellites here</text>
+<text x="595" y="211" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Ozone layer: absorbs harmful UV radiation</text>
+<text x="595" y="230" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Exosphere: outermost | merges into space</text>
+
+<line x1="20" y1="250" x2="780" y2="250" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="274" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Air Pressure and Wind</text>
+
+<rect x="20" y="286" width="370" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="308" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Air Pressure</text>
+<text x="205" y="330" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Weight of air on Earth's surface</text>
+<text x="205" y="350" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Decreases with increasing altitude</text>
+<text x="205" y="370" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Measured by: Barometer</text>
+<text x="205" y="390" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Unit: Pascal (Pa) or millibar (mb)</text>
+<text x="205" y="410" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Standard sea level pressure: 1013 mb</text>
+<text x="205" y="428" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">High altitude: less air → lower pressure</text>
+
+<rect x="410" y="286" width="370" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="308" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Wind</text>
+<text x="595" y="330" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Air flows from HIGH → LOW pressure</text>
+<text x="595" y="350" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Caused by uneven heating of Earth</text>
+<text x="595" y="370" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Wind speed: measured by anemometer</text>
+<text x="595" y="390" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Direction: measured by wind vane</text>
+<text x="595" y="410" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Trade winds, westerlies, polar winds</text>
+<text x="595" y="428" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Local: land breeze, sea breeze (convection)</text>
+
+<line x1="20" y1="450" x2="780" y2="450" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="474" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Air Pollution</text>
+<text x="400" y="497" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Pollutants: CO, SO₂, NO₂, particulate matter, ozone (ground level)</text>
+<text x="400" y="518" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Sources: vehicles, factories, burning, construction dust</text>
+<text x="400" y="539" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Effects: respiratory diseases, acid rain, global warming, ozone depletion</text>
+<text x="400" y="568" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Greenhouse effect: CO₂, CH₄, N₂O trap heat → global warming → climate change | CFC destroys ozone layer</text>
+</svg>

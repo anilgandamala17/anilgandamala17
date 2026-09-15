@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Electronic Configuration</text>
+
+  <!-- Left: rules + Aufbau -->
+  <rect x="15" y="55" width="350" height="435" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="190" y="78" text-anchor="middle" fill="#a3e635" font-size="14" font-family="Georgia,serif" font-weight="bold">Shell Filling Rules (Bohr-Bury)</text>
+
+  <g transform="translate(25,88)" font-size="11" font-family="Georgia,serif">
+    <rect x="0" y="0" width="330" height="44" rx="6" fill="#0f2a1a" stroke="#86efac" stroke-width="1.5"/>
+    <text x="165" y="18" text-anchor="middle" fill="#86efac" font-weight="bold">Rule 1: Max e⁻ in nth shell = 2n²</text>
+    <text x="165" y="36" text-anchor="middle" fill="#d4d4d8">K: 2×1²=2  |  L: 2×2²=8  |  M: 2×3²=18</text>
+
+    <rect x="0" y="52" width="330" height="44" rx="6" fill="#0f2a1a" stroke="#fde68a" stroke-width="1.5"/>
+    <text x="165" y="70" text-anchor="middle" fill="#fde68a" font-weight="bold">Rule 2: Outermost shell ≤ 8 electrons</text>
+    <text x="165" y="88" text-anchor="middle" fill="#d4d4d8">(Octet rule — valence electrons)</text>
+
+    <rect x="0" y="104" width="330" height="44" rx="6" fill="#0f2a1a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="165" y="122" text-anchor="middle" fill="#7dd3fc" font-weight="bold">Rule 3: Fill inner shells before outer</text>
+    <text x="165" y="140" text-anchor="middle" fill="#d4d4d8">Electrons fill K → L → M → …</text>
+
+    <rect x="0" y="156" width="330" height="44" rx="6" fill="#0f2a1a" stroke="#f472b6" stroke-width="1.5"/>
+    <text x="165" y="174" text-anchor="middle" fill="#f9a8d4" font-weight="bold">Rule 4: Second-last shell ≤ 18</text>
+    <text x="165" y="192" text-anchor="middle" fill="#d4d4d8">Never exceed max for that shell</text>
+
+    <!-- Elements table -->
+    <text x="165" y="225" text-anchor="middle" fill="#fde68a" font-size="13" font-weight="bold">Electronic Configurations</text>
+    <rect x="0" y="232" width="330" height="246" rx="6" fill="#0f2a1a" stroke="#a3e635" stroke-width="1"/>
+    <g text-anchor="middle">
+      <text x="40" y="254" fill="#fde68a" font-weight="bold">Element</text>
+      <text x="130" y="254" fill="#fde68a" font-weight="bold">Z</text>
+      <text x="200" y="254" fill="#fde68a" font-weight="bold">Config</text>
+      <text x="300" y="254" fill="#fde68a" font-weight="bold">Valence e⁻</text>
+      <line x1="0" y1="260" x2="330" y2="260" stroke="#334155"/>
+      <line x1="80" y1="232" x2="80" y2="478" stroke="#334155"/>
+      <line x1="160" y1="232" x2="160" y2="478" stroke="#334155"/>
+      <line x1="240" y1="232" x2="240" y2="478" stroke="#334155"/>
+      <g fill="#d4d4d8" font-size="10">
+        <text x="40" y="276">Hydrogen</text><text x="130" y="276">1</text><text x="200" y="276">1</text><text x="300" y="276" fill="#a3e635">1</text>
+        <text x="40" y="292">Helium</text><text x="130" y="292">2</text><text x="200" y="292">2</text><text x="300" y="292" fill="#a3e635">2</text>
+        <text x="40" y="308">Lithium</text><text x="130" y="308">3</text><text x="200" y="308">2,1</text><text x="300" y="308" fill="#a3e635">1</text>
+        <text x="40" y="324">Carbon</text><text x="130" y="324">6</text><text x="200" y="324">2,4</text><text x="300" y="324" fill="#a3e635">4</text>
+        <text x="40" y="340">Nitrogen</text><text x="130" y="340">7</text><text x="200" y="340">2,5</text><text x="300" y="340" fill="#a3e635">5</text>
+        <text x="40" y="356">Oxygen</text><text x="130" y="356">8</text><text x="200" y="356">2,6</text><text x="300" y="356" fill="#a3e635">6</text>
+        <text x="40" y="372">Neon</text><text x="130" y="372">10</text><text x="200" y="372">2,8</text><text x="300" y="372" fill="#a3e635">8</text>
+        <text x="40" y="388">Sodium</text><text x="130" y="388">11</text><text x="200" y="388">2,8,1</text><text x="300" y="388" fill="#a3e635">1</text>
+        <text x="40" y="404">Chlorine</text><text x="130" y="404">17</text><text x="200" y="404">2,8,7</text><text x="300" y="404" fill="#a3e635">7</text>
+        <text x="40" y="420">Argon</text><text x="130" y="420">18</text><text x="200" y="420">2,8,8</text><text x="300" y="420" fill="#a3e635">8</text>
+        <text x="40" y="436">Calcium</text><text x="130" y="436">20</text><text x="200" y="436">2,8,8,2</text><text x="300" y="436" fill="#a3e635">2</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right: Bohr diagram for Sodium -->
+  <rect x="380" y="55" width="405" height="435" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="582" y="78" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">Bohr Diagram: Sodium (Na, Z=11)</text>
+  <text x="582" y="98" text-anchor="middle" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">Configuration: 2, 8, 1 → Valence e⁻ = 1</text>
+  <!-- Nucleus -->
+  <circle cx="582" cy="260" r="42" fill="#4a1a10" stroke="#ef4444" stroke-width="3"/>
+  <text x="582" y="255" text-anchor="middle" fill="#fde68a" font-size="13" font-weight="bold" font-family="Georgia,serif">11p⁺</text>
+  <text x="582" y="272" text-anchor="middle" fill="#94a3b8" font-size="13" font-weight="bold" font-family="Georgia,serif">12n⁰</text>
+  <!-- Shell K (2e⁻) -->
+  <circle cx="582" cy="260" r="72" fill="none" stroke="#38bdf8" stroke-width="2"/>
+  <circle cx="582" cy="188" r="9" fill="#fde68a"/><text x="582" y="192" text-anchor="middle" fill="#0f2a1a" font-size="7">e⁻</text>
+  <circle cx="582" cy="332" r="9" fill="#fde68a"/><text x="582" y="336" text-anchor="middle" fill="#0f2a1a" font-size="7">e⁻</text>
+  <text x="660" y="198" fill="#38bdf8" font-size="12" font-family="Georgia,serif" font-weight="bold">K (2 e⁻)</text>
+  <!-- Shell L (8e⁻) -->
+  <circle cx="582" cy="260" r="120" fill="none" stroke="#a3e635" stroke-width="2"/>
+  <circle cx="582" cy="140" r="9" fill="#fde68a"/><circle cx="686" cy="197" r="9" fill="#fde68a"/>
+  <circle cx="686" cy="323" r="9" fill="#fde68a"/><circle cx="582" cy="380" r="9" fill="#fde68a"/>
+  <circle cx="478" cy="323" r="9" fill="#fde68a"/><circle cx="478" cy="197" r="9" fill="#fde68a"/>
+  <circle cx="648" cy="152" r="9" fill="#fde68a"/><circle cx="516" cy="152" r="9" fill="#fde68a"/>
+  <text x="718" y="270" fill="#a3e635" font-size="12" font-family="Georgia,serif" font-weight="bold">L (8 e⁻)</text>
+  <!-- Shell M (1e⁻) -->
+  <circle cx="582" cy="260" r="158" fill="none" stroke="#fde68a" stroke-width="2" stroke-dasharray="8,4"/>
+  <circle cx="582" cy="102" r="11" fill="#f472b6" stroke="#f9a8d4" stroke-width="2"/>
+  <text x="582" y="106" text-anchor="middle" fill="#0f2a1a" font-size="7">e⁻</text>
+  <text x="750" y="270" fill="#fde68a" font-size="12" font-family="Georgia,serif" font-weight="bold">M (1 e⁻)</text>
+  <text x="582" y="462" text-anchor="middle" fill="#f9a8d4" font-size="12" font-family="Georgia,serif" font-weight="bold">← valence electron (pink) — easily lost → Na⁺</text>
+</svg>

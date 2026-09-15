@@ -1,0 +1,44 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .block { fill: #1a3a20; stroke: #4ade80; stroke-width: 1.5; }
+      .rope { stroke: #ffffff; stroke-width: 1.5; fill: none; }
+      .pulley { fill: #1e293b; stroke: #94a3b8; stroke-width: 2; }
+      .arrow { stroke: #fca5a5; stroke-width: 1.5; marker-end: url(#arr); }
+      .label { fill: #ffffff; font-size: 10px; }
+    </style>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#fca5a5"/></marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Dynamics: Pulley System</text>
+    
+    <!-- Support -->
+    <line x1="150" y1="40" x2="250" y2="40" stroke="#ffffff" stroke-width="3" />
+    <line x1="200" y1="40" x2="200" y2="60" class="rope" />
+    
+    <!-- Pulley -->
+    <circle cx="200" y="80" r="20" class="pulley" />
+    
+    <!-- Rope over pulley -->
+    <path d="M 180 80 L 180 150" class="rope" />
+    <path d="M 220 80 L 220 180" class="rope" />
+    
+    <!-- Blocks -->
+    <rect x="160" y="150" width="40" height="30" class="block" />
+    <text x="180" y="170" text-anchor="middle" class="label">m₁</text>
+    
+    <rect x="200" y="180" width="40" height="40" class="block" />
+    <text x="220" y="205" text-anchor="middle" class="label">m₂</text>
+    
+    <!-- Force labels -->
+    <line x1="180" y1="140" x2="180" y2="110" class="arrow" />
+    <text x="170" y="125" class="label" text-anchor="end">T</text>
+    
+    <line x1="220" y1="170" x2="220" y2="140" class="arrow" />
+    <text x="230" y="155" class="label">T</text>
+    
+    <text x="300" y="120" fill="#93c5fd" font-size="10">a = (m₂-m₁)g / (m₁+m₂)</text>
+    <text x="300" y="140" fill="#93c5fd" font-size="10">T = 2m₁m₂g / (m₁+m₂)</text>
+  </g>
+</svg>

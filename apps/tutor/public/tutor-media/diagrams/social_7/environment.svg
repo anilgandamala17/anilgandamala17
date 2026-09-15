@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Environment — Our Surroundings</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="76" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">Environment = Everything that surrounds and affects a living organism</text>
+
+<rect x="20" y="87" width="370" height="148" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="109" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Components of Environment</text>
+<text x="205" y="132" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Natural Environment</text>
+<text x="205" y="152" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Land, water, air, plants, animals</text>
+<text x="205" y="172" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Created by nature without human help</text>
+<text x="205" y="196" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Human-made Environment</text>
+<text x="205" y="216" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Buildings, roads, bridges, dams</text>
+<text x="205" y="227" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">Technologies, industries created by humans</text>
+
+<rect x="410" y="87" width="370" height="148" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="109" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Lithosphere, Hydrosphere &amp; Atmosphere</text>
+<text x="595" y="130" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Lithosphere: solid land (crust, rocks, soil)</text>
+<text x="595" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Hydrosphere: all water bodies (70% Earth)</text>
+<text x="595" y="170" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Atmosphere: gaseous envelope around Earth</text>
+<text x="595" y="190" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Biosphere: all living organisms on Earth</text>
+<text x="595" y="215" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Biosphere = zone of life on Earth</text>
+<text x="595" y="227" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">All interact to support life</text>
+
+<line x1="20" y1="248" x2="780" y2="248" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="270" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Natural Ecosystems</text>
+
+<rect x="20" y="282" width="370" height="168" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="304" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Biodiversity</text>
+<text x="205" y="326" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Variety of life forms on Earth</text>
+<text x="205" y="346" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Forests: richest biodiversity zones</text>
+<text x="205" y="366" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3 levels: genetic, species, ecosystem</text>
+<text x="205" y="386" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Threatened by: deforestation, pollution</text>
+<text x="205" y="406" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Extinction — permanent loss of species</text>
+<text x="205" y="422" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Conservation: protected areas, biosphere reserves</text>
+<text x="205" y="442" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">India: 18 Biosphere Reserves, National Parks</text>
+
+<rect x="410" y="282" width="370" height="168" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="304" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Ecosystem</text>
+<text x="595" y="326" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Community of organisms + their environment</text>
+<text x="595" y="346" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Biotic (living) + Abiotic (non-living)</text>
+<text x="595" y="366" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Food chain: Producer→Herbivore→Carnivore</text>
+<text x="595" y="386" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Types: Forest, Grassland, Desert, Aquatic</text>
+<text x="595" y="406" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Energy flows: Sun → Plants → Animals</text>
+<text x="595" y="422" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Decomposers breakdown dead organisms</text>
+<text x="595" y="442" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Nutrients recycled back to soil</text>
+
+<line x1="20" y1="464" x2="780" y2="464" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="488" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Environmental Issues and Solutions</text>
+<text x="400" y="512" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Deforestation → Soil erosion, floods, climate change | Solution: Afforestation, social forestry</text>
+<text x="400" y="534" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Pollution: air, water, soil, noise | Solution: reduce, reuse, recycle (3R principle)</text>
+<text x="400" y="565" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Sustainable development: meeting present needs without compromising future generations' needs (Brundtland, 1987)</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 11px; font-weight: bold; }
+      .path { stroke: #93c5fd; stroke-width: 2; fill: none; stroke-dasharray: 4; }
+      .disp { stroke: #86efac; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .point { fill: #fca5a5; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#86efac"/>
+    </marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Distance vs Displacement</text>
+    
+    <circle cx="50" y="150" r="4" class="point" />
+    <text x="40" y="170" class="label">Start (A)</text>
+    
+    <circle cx="300" y="100" r="4" class="point" />
+    <text x="290" y="120" class="label">End (B)</text>
+    
+    <!-- Distance Path -->
+    <path d="M 50 150 C 100 200, 200 50, 300 100" class="path" />
+    <text x="150" y="180" text-anchor="middle" fill="#93c5fd" font-size="10">Distance (Actual Path Length)</text>
+    
+    <!-- Displacement -->
+    <line x1="50" y1="150" x2="295" y2="102" class="disp" />
+    <text x="180" y="110" text-anchor="middle" fill="#86efac" font-size="10" transform="rotate(-11, 180, 110)">Displacement (Shortest Path)</text>
+    
+    <text x="50" y="220" fill="#fca5a5" font-size="10">Displacement is a VECTOR quantity.</text>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="background:#1a3a2a">
+  <text x="200" y="22" font-size="13" fill="#86efac" text-anchor="middle" font-family="monospace" font-weight="bold">Bohr's Atomic Model (1913)</text>
+  <!-- Nucleus -->
+  <circle cx="200" cy="140" r="22" fill="#fca5a5" stroke="#ffffff" stroke-width="2"/>
+  <text x="200" y="136" font-size="9" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">p⁺ n⁰</text>
+  <text x="200" y="148" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace">Nucleus</text>
+  <!-- Shell 1 (K) -->
+  <circle cx="200" cy="140" r="48" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <circle cx="248" cy="140" r="7" fill="#93c5fd" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="248" y="144" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace">e⁻</text>
+  <text x="200" y="86" font-size="9" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-family="monospace">K (n=1)</text>
+  <!-- Shell 2 (L) -->
+  <circle cx="200" cy="140" r="78" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <circle cx="278" cy="140" r="7" fill="#86efac" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="278" y="144" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace">e⁻</text>
+  <circle cx="200" cy="62" r="7" fill="#86efac" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="200" y="66" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace">e⁻</text>
+  <circle cx="122" cy="140" r="7" fill="#86efac" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="122" y="144" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace">e⁻</text>
+  <circle cx="200" cy="218" r="7" fill="#86efac" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="200" y="222" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace">e⁻</text>
+  <text x="340" y="100" font-size="9" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-family="monospace">L (n=2)</text>
+  <!-- Energy level labels -->
+  <text x="30" y="140" font-size="9" fill="#fbbf24" text-anchor="middle" font-family="monospace">E₁</text>
+  <text x="30" y="155" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">lowest</text>
+  <text x="370" y="140" font-size="9" fill="#fbbf24" text-anchor="middle" font-family="monospace">E₂</text>
+  <!-- Key rule -->
+  <rect x="100" y="248" width="200" height="22" rx="3" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="200" y="263" font-size="9" fill="#fbbf24" text-anchor="middle" font-family="monospace">Electrons occupy fixed energy levels</text>
+  <!-- Legend -->
+  <circle cx="22" cy="220" r="6" fill="#93c5fd" stroke="#ffffff" stroke-width="1"/>
+  <text x="35" y="224" font-size="9" fill="#93c5fd" font-family="monospace">Shell 1 (2e⁻ max)</text>
+  <circle cx="22" cy="238" r="6" fill="#86efac" stroke="#ffffff" stroke-width="1"/>
+  <text x="35" y="242" font-size="9" fill="#86efac" font-family="monospace">Shell 2 (8e⁻ max)</text>
+</svg>

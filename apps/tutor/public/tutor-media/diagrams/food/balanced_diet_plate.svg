@@ -1,0 +1,38 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #1e293b; font-weight: bold; }
+      .title { font-size: 16px; fill: #fbbf24; text-anchor: middle; }
+      .plate { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 4; }
+      .slice-label { font-size: 12px; text-anchor: middle; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="400" fill="#1a3a2a" />
+  <text x="200" y="30" class="title">BALANCED DIET PLATE</text>
+
+  <g transform="translate(200, 200)">
+    <!-- Plate Circle -->
+    <circle cx="0" cy="0" r="140" class="plate" />
+
+    <!-- 1. Fruits & Veggies (Green) - 40% -->
+    <path d="M 0 0 L 133 -43 A 140 140 0 0 1 82 113 Z" fill="#4ade80" stroke="#fff" />
+    <text x="80" y="40" class="slice-label">Fruits &</text>
+    <text x="80" y="55" class="slice-label">Veg (40%)</text>
+
+    <!-- 2. Grains/Carbs (Yellow) - 25% -->
+    <path d="M 0 0 L -140 0 A 140 140 0 0 1 0 -140 Z" fill="#fde047" stroke="#fff" />
+    <text x="-70" y="-70" class="slice-label">Grains /</text>
+    <text x="-70" y="-55" class="slice-label">Carbs (25%)</text>
+
+    <!-- 3. Proteins (Red) - 25% -->
+    <path d="M 0 0 L 0 -140 A 140 140 0 0 1 133 -43 Z" fill="#fca5a5" stroke="#fff" />
+    <text x="60" y="-80" class="slice-label">Protein</text>
+    <text x="60" y="-65" class="slice-label">(25%)</text>
+
+     <!-- 4. Fats (Blue) - 10% -->
+    <path d="M 0 0 L 82 113 A 140 140 0 0 1 -140 0 Z" fill="#93c5fd" stroke="#fff" />
+    <text x="-50" y="80" class="slice-label">Fats</text>
+  </g>
+</svg>

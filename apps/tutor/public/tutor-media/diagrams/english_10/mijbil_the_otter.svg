@@ -1,0 +1,14 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="600" fill="#f0f9ff"/>
+<text x="400" y="50" font-family="Georgia" font-size="32" text-anchor="middle" font-weight="bold" fill="#0c4a6e">Mijbil the Otter</text>
+<g transform="translate(200, 150)">
+    <!-- Map pointing to Iraq/Tigris -->
+    <path d="M 50 50 Q 150 20 250 50 T 400 100" fill="none" stroke="#38bdf8" stroke-width="5"/>
+    <text x="100" y="40" font-family="Arial" font-size="14" fill="#0284c7">Tigris Marshes</text>
+    
+    <!-- Otter Silhouette -->
+    <path d="M 100 200 Q 150 150 200 200 T 300 200 Q 350 250 300 300 T 200 300 Q 100 300 100 200" fill="#78350f"/>
+    <circle cx="120" cy="220" r="5" fill="white"/>
+    <text x="200" y="350" text-anchor="middle" font-family="Georgia" font-size="24" fill="#451a03">Mijbil</text>
+</g>
+</svg>

@@ -1,0 +1,42 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <g id="chl-part-overview" data-mito-part="overview" class="mito-layer">
+    <text x="400" y="50" font-family="Georgia, serif" font-size="28" fill="#fef08a" text-anchor="middle" font-weight="bold">Chloroplast: Site of Photosynthesis</text>
+    <path d="M 230,60 L 570,60" stroke="#fef08a" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.3" />
+    <text x="400" y="415" font-family="Arial" font-size="16" fill="#fef08a" text-anchor="middle" font-weight="bold">Contains Chlorophyll a &amp; b</text>
+  </g>
+
+  <g transform="translate(400, 230)">
+    <g id="chl-part-envelope" data-mito-part="envelope" class="mito-layer">
+      <ellipse cx="0" cy="0" rx="240" ry="130" fill="none" stroke="#86efac" stroke-width="2" opacity="0.4" />
+      <ellipse cx="0" cy="0" rx="230" ry="120" fill="none" stroke="#86efac" stroke-width="3" />
+      <text x="180" y="-140" font-family="Georgia, serif" font-size="14" fill="#86efac" font-weight="bold">Double Membrane</text>
+    </g>
+
+    <defs>
+      <g id="grana">
+        <rect x="-20" y="0" width="40" height="10" rx="3" fill="none" stroke="#86efac" stroke-width="2" />
+        <rect x="-20" y="-12" width="40" height="10" rx="3" fill="none" stroke="#86efac" stroke-width="2" />
+        <rect x="-20" y="-24" width="40" height="10" rx="3" fill="none" stroke="#86efac" stroke-width="2" />
+      </g>
+    </defs>
+
+    <g id="chl-part-grana" data-mito-part="grana" class="mito-layer">
+      <use href="#grana" x="-120" y="40" />
+      <use href="#grana" x="0" y="60" />
+      <use href="#grana" x="120" y="40" />
+      <use href="#grana" x="-60" y="-40" />
+      <use href="#grana" x="80" y="-20" />
+      <text x="-120" y="80" font-family="Georgia, serif" font-size="16" fill="#86efac" font-weight="bold" text-anchor="middle">Grana (Thylakoids)</text>
+      <text x="-120" y="95" font-family="Arial" font-size="11" fill="#f8fafc" text-anchor="middle" opacity="0.7">Light Reaction Site</text>
+    </g>
+
+    <g id="chl-part-lamellae" data-mito-part="lamellae" class="mito-layer">
+      <path d="M -100,30 L -20,50 M 20,50 L 100,30" stroke="#f8fafc" stroke-width="1.5" opacity="0.4" />
+    </g>
+
+    <g id="chl-part-stroma" data-mito-part="stroma" class="mito-layer">
+      <text x="0" y="0" font-family="Georgia, serif" font-size="20" fill="#f8fafc" text-anchor="middle" font-weight="bold" opacity="0.2">STROMA</text>
+      <text x="0" y="15" font-family="Arial" font-size="11" fill="#f8fafc" text-anchor="middle" opacity="0.4">(Dark Reaction Site)</text>
+    </g>
+  </g>
+</svg>

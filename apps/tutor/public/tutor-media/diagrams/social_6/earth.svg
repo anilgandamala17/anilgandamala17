@@ -1,0 +1,49 @@
+<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+<rect width="800" height="600" fill="#1a3a2a"/>
+
+<rect x="0" y="0" width="800" height="58" fill="#0d2418" opacity="0.9"/>
+<text x="400" y="39" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">The Earth: Our Home Planet</text>
+<rect x="20" y="68" width="370" height="115" fill="#1e4a30" rx="8"/>
+<text x="205" y="92" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">🌍 Shape of Earth</text>
+<text x="205" y="112" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Geoid — oblate spheroid</text>
+<text x="205" y="130" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Slightly flattened at poles</text>
+<text x="205" y="148" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Bulges at the Equator</text>
+<text x="205" y="166" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Not a perfect sphere</text>
+<rect x="410" y="68" width="370" height="115" fill="#1e4a30" rx="8"/>
+<text x="595" y="92" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">📊 Key Facts</text>
+<text x="595" y="112" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Diameter: ~12,756 km</text>
+<text x="595" y="130" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Area: 510 million km²</text>
+<text x="595" y="148" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">71% water | 29% land</text>
+<text x="595" y="166" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Only known planet with life</text>
+<rect x="20" y="191" width="370" height="115" fill="#1e4a30" rx="8"/>
+<text x="205" y="215" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">🌀 Rotation (Daily Motion)</text>
+<text x="205" y="235" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Spins on its own axis</text>
+<text x="205" y="253" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Takes 23h 56m (≈24 h)</text>
+<text x="205" y="271" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">West to East direction</text>
+<text x="205" y="289" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Causes Day and Night</text>
+<rect x="410" y="191" width="370" height="115" fill="#1e4a30" rx="8"/>
+<text x="595" y="215" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">🔄 Revolution (Yearly Motion)</text>
+<text x="595" y="235" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Orbits the Sun in ellipse</text>
+<text x="595" y="253" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Takes 365 days 6 hours</text>
+<text x="595" y="271" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Causes Seasons</text>
+<text x="595" y="289" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Extra day every 4 years = Leap Year</text>
+<rect x="20" y="314" width="370" height="115" fill="#1e4a30" rx="8"/>
+<text x="205" y="338" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">🧭 Latitudes</text>
+<text x="205" y="358" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Equator: 0° (longest latitude)</text>
+<text x="205" y="376" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Tropic of Cancer: 23.5°N</text>
+<text x="205" y="394" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Tropic of Capricorn: 23.5°S</text>
+<text x="205" y="412" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Polar circles: 66.5°</text>
+<rect x="410" y="314" width="370" height="115" fill="#1e4a30" rx="8"/>
+<text x="595" y="338" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">🗺️ Longitudes</text>
+<text x="595" y="358" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Prime Meridian: 0° (Greenwich)</text>
+<text x="595" y="376" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">IST: 82.5°E (India)</text>
+<text x="595" y="394" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">International Date Line: 180°</text>
+<text x="595" y="412" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Total: 360 longitudes</text>
+<rect x="20" y="437" width="760" height="50" fill="#0d2418" rx="6" opacity="1"/>
+<text x="400" y="457" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Axis of Earth</text>
+<text x="400" y="480" font-family="'Segoe UI',sans-serif" font-size="14" fill="#81c784" text-anchor="middle" font-weight="normal">Earth's axis is tilted at 23.5° — this tilt causes seasons on Earth</text>
+<rect x="20" y="494" width="760" height="55" fill="#1e4a30" rx="6" opacity="1"/>
+<text x="400" y="515" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle" font-weight="normal">Summer → Earth tilted toward Sun  |  Winter → Earth tilted away from Sun</text>
+<text x="400" y="538" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle" font-weight="normal">Day & Night: Hemisphere facing Sun = Day  |  Away from Sun = Night</text>
+
+</svg>

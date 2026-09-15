@@ -1,0 +1,45 @@
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 16px; font-weight: bold; fill: #fbbf24; }
+      .line { fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .label { font-size: 12px; font-weight: bold; fill: #94a3b8; text-anchor: middle; }
+      .point { fill: #3b82f6; stroke: #fff; stroke-width: 2; }
+    </style>
+  </defs>
+  
+  <rect width="500" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">PLOT STRUCTURE: FREYTAG'S PYRAMID</text>
+
+  <g transform="translate(0, 20)">
+    <!-- Pyramid Line -->
+    <path d="M 50 250 L 150 150 L 250 50 L 350 150 L 450 250" class="line" />
+    
+    <!-- 1. Exposition -->
+    <circle cx="50" cy="250" r="6" class="point" />
+    <text x="50" y="275" class="label">Exposition</text>
+    <text x="50" y="290" fontSize="10" fill="#94a3b8" text-anchor="middle">Intro</text>
+
+    <!-- 2. Rising Action -->
+    <circle cx="150" cy="150" r="6" class="point" />
+    <text x="120" y="140" class="label" text-anchor="end">Rising Action</text>
+    <text x="120" y="155" fontSize="10" fill="#94a3b8" text-anchor="end">Conflict</text>
+
+    <!-- 3. Climax -->
+    <circle cx="250" cy="50" r="8" fill="#ef4444" stroke="#fff" stroke-width="2" />
+    <text x="250" y="30" class="label" fill="#ef4444">CLIMAX</text>
+    <text x="250" y="45" fontSize="10" fill="#ef4444" text-anchor="middle">Turning Point</text>
+
+    <!-- 4. Falling Action -->
+    <circle cx="350" cy="150" r="6" class="point" />
+    <text x="380" y="140" class="label" text-anchor="start">Falling Action</text>
+    <text x="380" y="155" fontSize="10" fill="#94a3b8" text-anchor="start">Resolution Begins</text>
+
+    <!-- 5. Resolution -->
+    <circle cx="450" cy="250" r="6" class="point" />
+    <text x="450" y="275" class="label">Resolution</text>
+    <text x="450" y="290" fontSize="10" fill="#94a3b8" text-anchor="middle">Conclusion</text>
+  </g>
+</svg>

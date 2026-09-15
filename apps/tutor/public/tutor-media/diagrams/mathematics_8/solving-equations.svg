@@ -1,0 +1,51 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Solving Linear Equations in One Variable</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Linear equation: an equation with highest power of variable = 1 | ax + b = c</text>
+
+<rect x="20" y="80" width="370" height="170" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="103" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Golden Rules of Solving</text>
+<text x="205" y="126" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Rule 1: Add same value to both sides</text>
+<text x="205" y="146" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Rule 2: Subtract same value from both sides</text>
+<text x="205" y="166" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Rule 3: Multiply both sides by same value</text>
+<text x="205" y="186" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Rule 4: Divide both sides by same ≠ 0</text>
+<text x="205" y="210" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Transpose: move term from one side,</text>
+<text x="205" y="228" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">sign changes (+→−, ×→÷)</text>
+<text x="205" y="242" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">LHS = RHS (balance must always be maintained)</text>
+
+<rect x="410" y="80" width="370" height="170" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="103" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Types of Equations</text>
+<text x="595" y="126" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Simple: 2x + 3 = 7</text>
+<text x="595" y="146" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Variable on one side</text>
+<text x="595" y="170" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Variables on both sides: 5x − 3 = 2x + 9</text>
+<text x="595" y="190" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Collect variable terms onto one side</text>
+<text x="595" y="214" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">With fractions: 2x/3 + 1 = 5</text>
+<text x="595" y="234" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Multiply by LCM to clear fractions</text>
+<text x="595" y="248" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Cross-multiplication for equations with fractions</text>
+
+<line x1="20" y1="262" x2="780" y2="262" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="282" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Step-by-Step Example</text>
+
+<rect x="20" y="294" width="370" height="185" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="316" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Solve: 3(x − 2) = 2(x + 5)</text>
+<text x="205" y="340" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3x − 6 = 2x + 10    [expand brackets]</text>
+<text x="205" y="362" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3x − 2x = 10 + 6    [transpose]</text>
+<text x="205" y="384" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">x = 16</text>
+<text x="205" y="410" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Verify:</text>
+<text x="205" y="430" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">LHS: 3(16−2) = 3×14 = 42</text>
+<text x="205" y="450" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">RHS: 2(16+5) = 2×21 = 42 ✓</text>
+<text x="205" y="471" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" text-anchor="middle">Always check answer by substituting back</text>
+
+<rect x="410" y="294" width="370" height="185" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="316" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Solve: (x+1)/3 = (x−1)/4</text>
+<text x="595" y="340" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Cross multiply: 4(x+1) = 3(x−1)</text>
+<text x="595" y="362" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">4x + 4 = 3x − 3</text>
+<text x="595" y="384" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">4x − 3x = −3 − 4</text>
+<text x="595" y="406" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">x = −7</text>
+<text x="595" y="430" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Verify:</text>
+<text x="595" y="448" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">LHS: (−7+1)/3 = −6/3 = −2</text>
+<text x="595" y="468" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">RHS: (−7−1)/4 = −8/4 = −2 ✓</text>
+
+<text x="400" y="520" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Key: An equation has exactly ONE solution (for a linear equation in one variable)</text>
+<text x="400" y="548" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Balance method = like a weighing scale: same operation on both sides keeps balance</text>
+</svg>

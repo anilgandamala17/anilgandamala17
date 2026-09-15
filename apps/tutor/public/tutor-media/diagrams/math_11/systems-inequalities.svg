@@ -1,0 +1,44 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 12px; font-weight: bold; }
+      .axis { stroke: #94a3b8; stroke-width: 1.5; opacity: 0.6; }
+      .region-a { fill: rgba(96, 165, 250, 0.2); }
+      .region-b { fill: rgba(248, 113, 113, 0.2); }
+      .feasible-region { fill: #fcd34d; opacity: 0.6; stroke: #fbbf24; stroke-width: 1; }
+      .border { stroke: #ffffff; stroke-width: 1.5; }
+      .sub-label { fill: #fcd34d; font-size: 11px; font-weight: bold; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Systems of Linear Inequalities</text>
+    
+    <g transform="translate(200, 140)">
+      <!-- Coordinate Axes -->
+      <line x1="-120" y1="0" x2="120" y2="0" class="axis" marker-end="url(#arrowhead)" />
+      <line x1="0" y1="100" x2="0" y2="-100" class="axis" marker-end="url(#arrowhead)" />
+
+      <!-- Inequality 1: x + y ≤ 4 (Approximated) -->
+      <!-- x-intercept (80,0), y-intercept (0,-80) in SVG coords -->
+      <line x1="-40" y1="-100" x2="110" y2="50" class="border" stroke="#60a5fa" />
+      
+      <!-- Inequality 2: x - y ≤ 2 (Approximated) -->
+      <!-- x-intercept (40,0), y-intercept (0,40) in SVG coords -->
+      <line x1="-40" y1="80" x2="110" y2="-70" class="border" stroke="#f87171" />
+
+      <!-- Feasible Region (Intersection) -->
+      <path d="M 0,0 L 40,40 L 80,0 L 40,-40 Z" class="feasible-region" transform="translate(-20, 0)" />
+      
+      <text x="20" y="5" text-anchor="middle" class="sub-label">Feasible Region</text>
+      
+      <text x="80" y="-60" fill="#60a5fa" font-size="10">Line 1</text>
+      <text x="80" y="60" fill="#f87171" font-size="10">Line 2</text>
+      
+      <text x="125" y="15" class="label" font-size="9">X</text>
+      <text x="5" y="-105" class="label" font-size="9">Y</text>
+    </g>
+
+    <text x="200" y="260" text-anchor="middle" fill="#93c5fd" font-size="10">The solution is the common region shaded by both inequalities.</text>
+  </g>
+</svg>

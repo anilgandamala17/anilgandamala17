@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Separation Techniques</text>
+
+  <!-- 6 technique cards in 2×3 grid -->
+  <!-- Row 1 -->
+  <rect x="12" y="55" width="245" height="130" rx="10" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="135" y="76" text-anchor="middle" fill="#a3e635" font-size="13" font-family="Georgia,serif" font-weight="bold">① Filtration</text>
+  <text x="135" y="96" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Separates insoluble solid from liquid</text>
+  <text x="135" y="114" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia,serif">Principle: Particle size difference</text>
+  <text x="135" y="132" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Apparatus: Filter paper + funnel</text>
+  <text x="135" y="150" text-anchor="middle" fill="#7dd3fc" font-size="10" font-family="Georgia,serif" font-style="italic">e.g. Sand from water, Tea leaves</text>
+  <text x="135" y="170" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Suspension → filtrate + residue</text>
+
+  <rect x="278" y="55" width="245" height="130" rx="10" fill="#1a3a2a" fill-opacity="0.7" stroke="#38bdf8" stroke-width="2"/>
+  <text x="400" y="76" text-anchor="middle" fill="#7dd3fc" font-size="13" font-family="Georgia,serif" font-weight="bold">② Evaporation</text>
+  <text x="400" y="96" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Separates soluble solid from liquid</text>
+  <text x="400" y="114" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia,serif">Principle: Different boiling points</text>
+  <text x="400" y="132" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Heat applied → liquid evaporates</text>
+  <text x="400" y="150" text-anchor="middle" fill="#7dd3fc" font-size="10" font-family="Georgia,serif" font-style="italic">e.g. Salt from sea water</text>
+  <text x="400" y="170" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Solid left behind in dish</text>
+
+  <rect x="545" y="55" width="245" height="130" rx="10" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="668" y="76" text-anchor="middle" fill="#fde68a" font-size="13" font-family="Georgia,serif" font-weight="bold">③ Distillation</text>
+  <text x="668" y="96" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Separates miscible liquids</text>
+  <text x="668" y="114" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia,serif">Principle: Different boiling points</text>
+  <text x="668" y="132" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Vapour → condenser → liquid</text>
+  <text x="668" y="150" text-anchor="middle" fill="#7dd3fc" font-size="10" font-family="Georgia,serif" font-style="italic">e.g. Alcohol from water</text>
+  <text x="668" y="170" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Also: Crude oil fractionation</text>
+
+  <!-- Row 2 -->
+  <rect x="12" y="200" width="245" height="130" rx="10" fill="#1a3a2a" fill-opacity="0.7" stroke="#f472b6" stroke-width="2"/>
+  <text x="135" y="221" text-anchor="middle" fill="#f9a8d4" font-size="13" font-family="Georgia,serif" font-weight="bold">④ Centrifugation</text>
+  <text x="135" y="241" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Separates particles by density</text>
+  <text x="135" y="259" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia,serif">Principle: Centrifugal force</text>
+  <text x="135" y="277" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Denser particles settle faster</text>
+  <text x="135" y="295" text-anchor="middle" fill="#7dd3fc" font-size="10" font-family="Georgia,serif" font-style="italic">e.g. Cream from milk, Blood cells</text>
+  <text x="135" y="315" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Used in pathology labs</text>
+
+  <rect x="278" y="200" width="245" height="130" rx="10" fill="#1a3a2a" fill-opacity="0.7" stroke="#a78bfa" stroke-width="2"/>
+  <text x="400" y="221" text-anchor="middle" fill="#c4b5fd" font-size="13" font-family="Georgia,serif" font-weight="bold">⑤ Chromatography</text>
+  <text x="400" y="241" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Separates dissolved solutes</text>
+  <text x="400" y="259" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia,serif">Principle: Different rates on medium</text>
+  <text x="400" y="277" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Mobile phase moves solutes on stationary</text>
+  <text x="400" y="295" text-anchor="middle" fill="#7dd3fc" font-size="10" font-family="Georgia,serif" font-style="italic">e.g. Dyes from ink, Food colouring</text>
+  <text x="400" y="315" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Paper / column / TLC</text>
+
+  <rect x="545" y="200" width="245" height="130" rx="10" fill="#1a3a2a" fill-opacity="0.7" stroke="#86efac" stroke-width="2"/>
+  <text x="668" y="221" text-anchor="middle" fill="#86efac" font-size="13" font-family="Georgia,serif" font-weight="bold">⑥ Magnetic Separation</text>
+  <text x="668" y="241" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Separates magnetic from non-magnetic</text>
+  <text x="668" y="259" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia,serif">Principle: Magnetic property</text>
+  <text x="668" y="277" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Magnet attracts one component</text>
+  <text x="668" y="295" text-anchor="middle" fill="#7dd3fc" font-size="10" font-family="Georgia,serif" font-style="italic">e.g. Iron filings from sand</text>
+  <text x="668" y="315" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Used in scrap metal recycling</text>
+
+  <!-- Bottom: choice guide -->
+  <rect x="12" y="346" width="776" height="140" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#86efac" stroke-width="2"/>
+  <text x="400" y="369" text-anchor="middle" fill="#86efac" font-size="14" font-family="Georgia,serif" font-weight="bold">Which Method to Use?</text>
+  <g font-size="11" font-family="Georgia,serif" fill="#d4d4d8">
+    <text x="25" y="393">Insoluble solid in liquid → Filtration or Sedimentation + Decantation</text>
+    <text x="25" y="413">Soluble solid in liquid → Evaporation (to get solid) or Distillation (to get liquid)</text>
+    <text x="25" y="433">Two miscible liquids → Simple Distillation / Fractional Distillation</text>
+    <text x="25" y="453">Two immiscible liquids → Separating Funnel (density difference)</text>
+    <text x="25" y="473">Dyes / Colours → Chromatography</text>
+  </g>
+</svg>

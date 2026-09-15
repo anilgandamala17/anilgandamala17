@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 12px; font-weight: bold; }
+      .axis { stroke: #94a3b8; stroke-width: 1.5; }
+      .shaded { fill: rgba(96, 165, 250, 0.3); }
+      .border-solid { stroke: #60a5fa; stroke-width: 2.5; }
+      .border-dashed { stroke: #60a5fa; stroke-width: 2.5; stroke-dasharray: 5; }
+      .tick { stroke: #ffffff; stroke-width: 1; }
+      .sub-label { fill: #fcd34d; font-size: 10px; text-anchor: middle; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Graphing Linear Inequalities</text>
+    
+    <!-- 1D Number Line -->
+    <g transform="translate(50, 80)">
+      <text x="150" y="-15" text-anchor="middle" class="label">1D: x > 2 (Open Circle)</text>
+      <line x1="0" y1="0" x2="300" y2="0" class="axis" marker-end="url(#arrowhead)" marker-start="url(#arrowhead)" />
+      
+      <line x1="150" y1="-5" x2="150" y2="5" class="tick" />
+      <text x="150" y="20" text-anchor="middle" class="label" font-size="10">2</text>
+      
+      <!-- Highlighted part -->
+      <line x1="150" y1="0" x2="280" y2="0" stroke="#fcd34d" stroke-width="4" />
+      <circle cx="150" cy="0" r="5" fill="#1e1b4b" stroke="#fcd34d" stroke-width="2" /> <!-- Open circle -->
+    </g>
+
+    <!-- 2D Shaded Region -->
+    <g transform="translate(200, 180)">
+      <text x="0" y="-45" text-anchor="middle" class="label">2D: y ≤ x + 1 (Shaded Half-Plane)</text>
+      
+      <!-- Coordinate System -->
+      <line x1="-60" y1="0" x2="60" y2="0" class="axis" />
+      <line x1="0" y1="50" x2="0" y2="-50" class="axis" />
+      
+      <!-- Shaded Region -->
+      <path d="M -60,10 L 40,-90 L 100,-90 L 100,60 L -60,60 Z" class="shaded" transform="translate(0, 0)" clip-path="url(#plane-clip)" />
+      
+      <!-- Boundary line: y = x + 1 -->
+      <line x1="-60" y1="50" x2="45" y2="-55" class="border-solid" stroke="#4ade80" />
+      
+      <text x="40" y="-30" class="sub-label" fill="#4ade80">y = x + 1</text>
+      <text x="30" y="20" class="sub-label" fill="#93c5fd">y ≤ x + 1</text>
+    </g>
+
+    <text x="200" y="260" text-anchor="middle" fill="#94a3b8" font-size="10">Solid line for ≤ or ≥ | Dashed line for < or ></text>
+  </g>
+</svg>

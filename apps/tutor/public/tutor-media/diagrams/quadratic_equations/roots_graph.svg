@@ -1,0 +1,55 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .axis { stroke: #94a3b8; stroke-width: 1; }
+      .graph { fill: none; stroke-width: 2; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">NATURE OF ROOTS (D = b² - 4ac)</text>
+
+  <!-- Case 1: D > 0 (Two Real Roots) -->
+  <g transform="translate(60, 100)">
+    <line x1="-50" y1="50" x2="50" y2="50" class="axis" />
+    <path d="M -30 20 Q 0 100 30 20" class="graph" stroke="#22c55e" />
+    <text x="0" y="120" text-anchor="middle" fontSize="10" fill="#22c55e">D > 0</text>
+    <text x="0" y="135" text-anchor="middle" fontSize="9">2 Real Roots</text>
+  </g>
+  
+  <!-- Case 2: D = 0 (One Real Root) -->
+  <g transform="translate(200, 100)">
+    <line x1="-50" y1="50" x2="50" y2="50" class="axis" />
+    <path d="M -30 20 Q 0 80 30 20" class="graph" stroke="#fbbf24" />
+    <!-- Vertex touches axis -->
+    <path d="M -30 -10 Q 0 110 30 -10" fill="none" class="graph" stroke="#fbbf24"/>
+     <!-- Let's redraw simpler: vertex just touches axis y=50 -->
+     <path d="M -30 10 Q 0 90 30 10" fill="#1a3a2a" stroke="none"/> <!-- Mask? No -->
+     <!-- Redraw correct curve touching axis -->
+     <rect x="-40" y="0" width="80" height="100" fill="#1a3a2a" stroke="none"/>
+     <line x1="-50" y1="50" x2="50" y2="50" class="axis" />
+     <path d="M -30 10 Q 0 90 30 10" class="graph" stroke="#fbbf24" fill="none"/>
+     
+    <text x="0" y="120" text-anchor="middle" fontSize="10" fill="#fbbf24">D = 0</text>
+    <text x="0" y="135" text-anchor="middle" fontSize="9">1 Real Root</text>
+  </g>
+
+  <!-- Case 3: D < 0 (No Real Roots) -->
+  <g transform="translate(340, 100)">
+    <line x1="-50" y1="50" x2="50" y2="50" class="axis" />
+    <path d="M -30 30 Q 0 90 30 30" class="graph" stroke="#ef4444" fill="none"/>
+    <!-- Move up to not touch -->
+    <rect x="-40" y="0" width="80" height="100" fill="#1a3a2a" stroke="none"/>
+    <line x1="-50" y1="50" x2="50" y2="50" class="axis" />
+    <path d="M -30 20 Q 0 60 30 20" class="graph" stroke="#ef4444" fill="none"/>
+
+    <text x="0" y="120" text-anchor="middle" fontSize="10" fill="#ef4444">D < 0</text>
+    <text x="0" y="135" text-anchor="middle" fontSize="9">No Real Roots</text>
+  </g>
+  
+  <rect x="20" y="240" width="360" height="40" fill="#334155" rx="4"/>
+  <text x="200" y="265" text-anchor="middle" fontSize="12" fill="#fff">Discriminant determines graph position vs X-axis</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Inside Our Earth — Interior and Rocks</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+
+<!-- Earth cross section circles -->
+<circle cx="165" cy="290" r="145" fill="none" stroke="rgba(100,100,200,0.5)" stroke-width="1.5"/>
+<circle cx="165" cy="290" r="110" fill="none" stroke="rgba(200,120,50,0.5)" stroke-width="1.5"/>
+<circle cx="165" cy="290" r="70" fill="none" stroke="rgba(200,60,60,0.5)" stroke-width="1.5"/>
+<circle cx="165" cy="290" r="35" fill="rgba(255,165,0,0.3)" stroke="#ffd54f" stroke-width="1.5"/>
+<!-- Labels for Earth layers -->
+<text x="165" y="288" font-family="'Segoe UI',sans-serif" font-size="10" fill="#ffd54f" text-anchor="middle" font-weight="bold">Inner</text>
+<text x="165" y="300" font-family="'Segoe UI',sans-serif" font-size="10" fill="#ffd54f" text-anchor="middle" font-weight="bold">Core</text>
+<text x="240" y="260" font-family="'Segoe UI',sans-serif" font-size="10" fill="#f48fb1" text-anchor="start">Outer Core</text>
+<text x="265" y="230" font-family="'Segoe UI',sans-serif" font-size="10" fill="#86efac" text-anchor="start">Mantle</text>
+<text x="288" y="205" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="start">Crust</text>
+
+<!-- Right content panels -->
+<rect x="340" y="65" width="440" height="105" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="560" y="87" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Layers of Earth</text>
+<text x="560" y="108" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Crust: outermost thin layer (8-70 km) — where we live</text>
+<text x="560" y="128" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Mantle: semi-solid rock, 30–2900 km depth, magma here</text>
+<text x="560" y="148" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Outer Core: liquid iron + nickel | Inner Core: solid iron</text>
+<text x="560" y="162" font-family="'Segoe UI',sans-serif" font-size="11" fill="#ffd54f" text-anchor="middle">Centre temperature: 6000°C | Total radius: ~6371 km</text>
+
+<rect x="340" y="180" width="440" height="120" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="560" y="202" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Rocks and the Rock Cycle</text>
+<text x="560" y="223" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Igneous:</text>
+<text x="560" y="239" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Formed by cooling of magma/lava | Extrusive: basalt | Intrusive: granite</text>
+<text x="560" y="257" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Sedimentary:</text>
+<text x="560" y="272" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Layers of sediment compressed | Sandstone, limestone, coal | Fossils found here</text>
+<text x="560" y="293" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Metamorphic:</text>
+<text x="560" y="294" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Changed by heat and pressure | Marble (from limestone) | Slate (from shale)</text>
+
+<rect x="20" y="445" width="760" height="115" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="466" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Rock Cycle</text>
+<text x="400" y="487" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Igneous → weathered/eroded → sediments → compressed → Sedimentary → heat + pressure → Metamorphic</text>
+<text x="400" y="507" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Any rock → melted into magma → cooled → Igneous again (cycle continues)</text>
+<text x="400" y="527" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Minerals are naturally occurring inorganic substances found in rocks</text>
+<text x="400" y="547" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Ore = rock containing economically useful mineral | Mining = extraction of minerals from Earth</text>
+
+<text x="165" y="456" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Oceanic crust: thinner, denser</text>
+<text x="165" y="475" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Continental crust: thicker, granite</text>
+<text x="165" y="495" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Lithosphere = crust + upper mantle</text>
+</svg>

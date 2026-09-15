@@ -1,0 +1,44 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="background:#1a3a2a">
+  <defs>
+    <marker id="arrowR" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#fca5a5"/></marker>
+    <marker id="arrowB" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#93c5fd"/></marker>
+  </defs>
+  <text x="200" y="18" font-size="13" fill="#86efac" text-anchor="middle" font-family="monospace" font-weight="bold">Heart — 4 Chamber Cross-Section</text>
+  <!-- Heart outline -->
+  <path d="M200 240 C130 200 95 145 110 100 C125 60 165 55 185 80 C190 88 195 95 200 105 C205 95 210 88 215 80 C235 55 275 60 290 100 C305 145 270 200 200 240Z" fill="rgba(252,165,165,0.08)" stroke="#fca5a5" stroke-width="2"/>
+  <!-- Septum -->
+  <line x1="200" y1="105" x2="200" y2="220" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- AV valve line -->
+  <line x1="130" y1="155" x2="270" y2="155" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-dasharray="3,3"/>
+  <!-- Chamber labels -->
+  <text x="158" y="135" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace" font-weight="bold">Right</text>
+  <text x="158" y="148" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace" font-weight="bold">Atrium</text>
+  <text x="242" y="135" font-size="10" fill="#fca5a5" text-anchor="middle" font-family="monospace" font-weight="bold">Left</text>
+  <text x="242" y="148" font-size="10" fill="#fca5a5" text-anchor="middle" font-family="monospace" font-weight="bold">Atrium</text>
+  <text x="158" y="192" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace" font-weight="bold">Right</text>
+  <text x="158" y="205" font-size="9" fill="#93c5fd" text-anchor="middle" font-family="monospace">Ventricle</text>
+  <text x="242" y="192" font-size="10" fill="#fca5a5" text-anchor="middle" font-family="monospace" font-weight="bold">Left</text>
+  <text x="242" y="205" font-size="9" fill="#fca5a5" text-anchor="middle" font-family="monospace">Ventricle</text>
+  <!-- Vessels top -->
+  <rect x="130" y="55" width="28" height="35" rx="14" fill="none" stroke="#93c5fd" stroke-width="2"/>
+  <text x="144" y="48" font-size="8" fill="#93c5fd" text-anchor="middle" font-family="monospace">Pulmonary</text>
+  <text x="144" y="38" font-size="8" fill="#93c5fd" text-anchor="middle" font-family="monospace">Artery</text>
+  <rect x="242" y="55" width="28" height="35" rx="14" fill="none" stroke="#fca5a5" stroke-width="2"/>
+  <text x="256" y="48" font-size="8" fill="#fca5a5" text-anchor="middle" font-family="monospace">Aorta</text>
+  <!-- Vena cava -->
+  <rect x="75" y="100" width="22" height="60" rx="11" fill="none" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="64" y="125" font-size="8" fill="#93c5fd" text-anchor="middle" font-family="monospace">Vena</text>
+  <text x="64" y="136" font-size="8" fill="#93c5fd" text-anchor="middle" font-family="monospace">Cava</text>
+  <!-- Pulmonary veins -->
+  <rect x="303" y="100" width="22" height="60" rx="11" fill="none" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="340" y="125" font-size="8" fill="#fca5a5" text-anchor="middle" font-family="monospace">Pulm.</text>
+  <text x="340" y="136" font-size="8" fill="#fca5a5" text-anchor="middle" font-family="monospace">Veins</text>
+  <!-- Flow arrows -->
+  <path d="M97 130 L110 130" stroke="#93c5fd" stroke-width="1.5" marker-end="url(#arrowB)"/>
+  <path d="M290 130 L303 130" stroke="#fca5a5" stroke-width="1.5" marker-end="url(#arrowR)"/>
+  <!-- Legend -->
+  <line x1="20" y1="258" x2="40" y2="258" stroke="#93c5fd" stroke-width="2"/>
+  <text x="45" y="262" font-size="9" fill="#93c5fd" font-family="monospace">Deoxygenated</text>
+  <line x1="160" y1="258" x2="180" y2="258" stroke="#fca5a5" stroke-width="2"/>
+  <text x="185" y="262" font-size="9" fill="#fca5a5" font-family="monospace">Oxygenated</text>
+</svg>

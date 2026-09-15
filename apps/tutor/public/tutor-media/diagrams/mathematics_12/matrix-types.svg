@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Types of Matrices</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Grid of Matrix Types -->
+  <g transform="translate(80, 120)">
+    <!-- Identity Matrix I -->
+    <g transform="translate(0, 0)">
+      <text x="75" y="-15" fill="#86efac" font-weight="bold" text-anchor="middle">Identity (I)</text>
+      <path d="M 10 0 L 0 0 L 0 100 L 10 100 M 140 0 L 150 0 L 150 100 L 140 100" fill="none" stroke="#f8fafc" stroke-width="2"/>
+      <g fill="#fef08a" font-size="24" text-anchor="middle">
+        <text x="40" y="40" font-weight="bold">1</text> <text x="110" y="40">0</text>
+        <text x="40" y="90">0</text> <text x="110" y="90" font-weight="bold">1</text>
+      </g>
+      <text x="75" y="130" fill="#f8fafc" text-anchor="middle" font-size="14">Diagonal elements = 1</text>
+    </g>
+
+    <!-- Diagonal/Scalar -->
+    <g transform="translate(250, 0)">
+      <text x="75" y="-15" fill="#86efac" font-weight="bold" text-anchor="middle">Scalar</text>
+      <path d="M 10 0 L 0 0 L 0 100 L 10 100 M 140 0 L 150 0 L 150 100 L 140 100" fill="none" stroke="#f8fafc" stroke-width="2"/>
+      <g fill="#fef08a" font-size="24" text-anchor="middle">
+        <text x="40" y="40" font-weight="bold">k</text> <text x="110" y="40">0</text>
+        <text x="40" y="90">0</text> <text x="110" y="90" font-weight="bold">k</text>
+      </g>
+      <text x="75" y="130" fill="#f8fafc" text-anchor="middle" font-size="14">All diagonal same</text>
+    </g>
+
+    <!-- Symmetric -->
+    <g transform="translate(500, 0)">
+      <text x="75" y="-15" fill="#86efac" font-weight="bold" text-anchor="middle">Symmetric</text>
+      <path d="M 10 0 L 0 0 L 0 100 L 10 100 M 140 0 L 150 0 L 150 100 L 140 100" fill="none" stroke="#f8fafc" stroke-width="2"/>
+      <g fill="#fef08a" font-size="24" text-anchor="middle">
+        <text x="40" y="40">a</text> <text x="110" y="40" fill="#60a5fa">h</text>
+        <text x="40" y="90" fill="#60a5fa">h</text> <text x="110" y="90">b</text>
+      </g>
+      <text x="75" y="130" fill="#f8fafc" text-anchor="middle" font-size="14">A = Aᵀ</text>
+    </g>
+
+    <!-- Triangular -->
+    <g transform="translate(0, 220)">
+      <text x="150" y="-15" fill="#fef08a" font-weight="bold" text-anchor="middle">Triangular Matrices</text>
+      <rect x="0" y="0" width="300" height="150" rx="10" fill="rgba(255,255,255,0.03)" stroke="#86efac" stroke-width="1.5"/>
+      <g transform="translate(50, 40)" fill="#f8fafc" font-size="22">
+        <text x="0" y="0">Upper: a_ij = 0 if i &gt; j</text>
+        <text x="0" y="40">Lower: a_ij = 0 if i &lt; j</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Math Grade 12</text>
+</svg>

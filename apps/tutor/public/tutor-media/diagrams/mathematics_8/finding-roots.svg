@@ -1,0 +1,40 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Methods to Find Square Roots</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+
+<rect x="20" y="70" width="370" height="230" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="95" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">1. Prime Factorization</text>
+<text x="205" y="120" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Example: √1764</text>
+<text x="205" y="145" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">1764 = 2 × 882</text>
+<text x="205" y="165" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">= 2 × 2 × 441</text>
+<text x="205" y="185" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">= 2 × 2 × 3 × 147</text>
+<text x="205" y="205" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">= 2 × 2 × 3 × 3 × 49</text>
+<text x="205" y="225" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">= 2 × 2 × 3 × 3 × 7 × 7</text>
+<text x="205" y="255" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">√1764 = 21 × 2 = 42</text>
+<text x="205" y="280" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">Pair same factors: √ (2² × 3² × 7²) = 2×3×7 = 42</text>
+
+<rect x="410" y="70" width="370" height="230" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="95" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">2. Repeated Subtraction</text>
+<text x="595" y="120" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Find √25 using odd numbers</text>
+<text x="595" y="145" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="start" x="430">1) 25 − 1 = 24</text>
+<text x="595" y="165" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="start" x="430">2) 24 − 3 = 21</text>
+<text x="595" y="185" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="start" x="430">3) 21 − 5 = 16</text>
+<text x="595" y="205" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="start" x="430">4) 16 − 7 = 9</text>
+<text x="595" y="225" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="start" x="430">5) 9 − 9 = 0</text>
+<text x="595" y="260" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Reached 0 in 5 steps → √25 = 5</text>
+<text x="595" y="285" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">Only practical for small numbers</text>
+
+<rect x="20" y="320" width="760" height="240" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="345" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">3. Division Method for Large Numbers</text>
+<text x="400" y="370" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Detailed √4096 calculation</text>
+<text x="400" y="395" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">      6  4</text>
+<text x="400" y="410" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">     -------</text>
+<text x="400" y="425" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">  6 | 40  96</text>
+<text x="400" y="440" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">    | 36</text>
+<text x="400" y="455" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">    | ------</text>
+<text x="400" y="470" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">124 |  4  96</text>
+<text x="400" y="485" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">    |  4  96</text>
+<text x="400" y="500" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">    | ------</text>
+<text x="400" y="515" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">    |    0</text>
+<text x="400" y="545" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">√4096 = 64</text>
+</svg>

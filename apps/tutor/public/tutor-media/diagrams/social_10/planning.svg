@@ -1,0 +1,37 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+  </defs>
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">RESOURCE PLANNING STEPS</text>
+  
+  <g transform="translate(50, 80)">
+    <!-- Step 1 -->
+    <rect x="0" y="0" width="80" height="80" fill="#1e293b" rx="4" stroke="#60a5fa" />
+    <text x="40" y="30" text-anchor="middle" fill="#60a5fa" font-weight="bold">1</text>
+    <text x="40" y="55" text-anchor="middle" font-size="10">Identification</text>
+    <text x="40" y="70" text-anchor="middle" font-size="10">&amp; Inventory</text>
+    
+    <path d="M 85 40 L 105 40" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
+
+    <!-- Step 2 -->
+    <rect x="110" y="0" width="80" height="80" fill="#1e293b" rx="4" stroke="#f472b6" />
+    <text x="150" y="30" text-anchor="middle" fill="#f472b6" font-weight="bold">2</text>
+    <text x="150" y="55" text-anchor="middle" font-size="10">Evolving</text>
+    <text x="150" y="70" text-anchor="middle" font-size="10">Structure</text>
+
+    <path d="M 195 40 L 215 40" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
+
+    <!-- Step 3 -->
+    <rect x="220" y="0" width="80" height="80" fill="#1e293b" rx="4" stroke="#fbbf24" />
+    <text x="260" y="30" text-anchor="middle" fill="#fbbf24" font-weight="bold">3</text>
+    <text x="260" y="55" text-anchor="middle" font-size="10">Matching</text>
+    <text x="260" y="70" text-anchor="middle" font-size="10">Plans</text>
+  </g>
+  
+  <text x="200" y="220" text-anchor="middle" font-size="12">Essential for Sustainable Development</text>
+</svg>

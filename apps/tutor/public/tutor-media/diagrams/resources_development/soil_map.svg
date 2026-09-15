@@ -1,0 +1,42 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 16px; font-weight: bold; fill: #fbbf24; }
+      .legend-box { stroke: #fff; stroke-width: 1; }
+      .label { font-size: 10px; fill: #fff; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="500" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">MAJOR SOIL TYPES (INDIA)</text>
+
+  <!-- Simplified India Map Outline (abstract representation) -->
+  <path d="M 150 50 L 250 50 L 300 150 L 350 200 L 250 450 L 150 450 L 50 250 L 100 150 Z" fill="#334155" stroke="#94a3b8" stroke-width="2" />
+
+  <!-- Soil Regions (Abstract) -->
+  <!-- Northern Plains (Alluvial) -->
+  <path d="M 120 150 L 280 150 L 260 220 L 140 220 Z" fill="#fde047" opacity="0.8" />
+  
+  <!-- Deccan Trap (Black Soil) -->
+  <path d="M 140 220 L 260 220 L 240 320 L 160 320 Z" fill="#475569" opacity="0.9" />
+
+  <!-- Southern/Eastern (Red Soil) -->
+  <path d="M 160 320 L 240 320 L 220 420 L 180 420 Z" fill="#ef4444" opacity="0.6" />
+
+  <!-- Legend -->
+  <g transform="translate(280, 350)">
+    <rect width="100" height="120" fill="#1e293b" stroke="#64748b" rx="4" />
+    <text x="10" y="20" class="label" fontWeight="bold">LEGEND</text>
+    
+    <rect x="10" y="35" width="15" height="15" fill="#fde047" class="legend-box" />
+    <text x="35" y="47" class="label">Alluvial</text>
+
+    <rect x="10" y="60" width="15" height="15" fill="#475569" class="legend-box" />
+    <text x="35" y="72" class="label">Black Soil</text>
+
+    <rect x="10" y="85" width="15" height="15" fill="#ef4444" class="legend-box" />
+    <text x="35" y="97" class="label">Red Soil</text>
+  </g>
+</svg>

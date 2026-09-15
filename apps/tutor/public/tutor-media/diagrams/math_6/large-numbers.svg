@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      .chalk { font-family: 'Segoe UI', sans-serif; fill: #e8f5e9; }
+      .title { font-size: 28px; font-weight: bold; fill: #a5d6a7; }
+      .label { font-size: 17px; fill: #c8e6c9; }
+      .num { font-size: 22px; fill: #fff9c4; font-weight: bold; }
+      .muted { font-size: 14px; fill: #81c784; }
+      .box { fill: none; stroke: #66bb6a; stroke-width: 1.5; rx: 8; }
+      .highlight { fill: rgba(102,187,106,0.12); stroke: #66bb6a; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="46" text-anchor="middle" class="chalk title">Large Numbers — Indian Place Value System</text>
+  <line x1="60" y1="58" x2="740" y2="58" stroke="#66bb6a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Place value table header -->
+  <g transform="translate(60,75)">
+    <!-- Column headers -->
+    <rect x="0" y="0" width="100" height="36" class="highlight" rx="6"/>
+    <rect x="102" y="0" width="100" height="36" class="highlight" rx="6"/>
+    <rect x="204" y="0" width="100" height="36" class="highlight" rx="6"/>
+    <rect x="306" y="0" width="100" height="36" class="highlight" rx="6"/>
+    <rect x="408" y="0" width="100" height="36" class="highlight" rx="6"/>
+    <rect x="510" y="0" width="100" height="36" class="highlight" rx="6"/>
+    <rect x="612" y="0" width="100" height="36" class="highlight" rx="6"/>
+
+    <text x="50" y="24" text-anchor="middle" class="chalk muted">Crores</text>
+    <text x="152" y="17" text-anchor="middle" class="chalk muted">Ten</text>
+    <text x="152" y="31" text-anchor="middle" class="chalk muted">Lakhs</text>
+    <text x="254" y="24" text-anchor="middle" class="chalk muted">Lakhs</text>
+    <text x="356" y="17" text-anchor="middle" class="chalk muted">Ten</text>
+    <text x="356" y="31" text-anchor="middle" class="chalk muted">Thousands</text>
+    <text x="458" y="24" text-anchor="middle" class="chalk muted">Thousands</text>
+    <text x="560" y="24" text-anchor="middle" class="chalk muted">Hundreds</text>
+    <text x="662" y="24" text-anchor="middle" class="chalk muted">Tens/Ones</text>
+
+    <!-- Example number: 5,43,21,098 -->
+    <rect x="0" y="42" width="100" height="44" fill="rgba(255,245,157,0.1)" stroke="#fff176" stroke-width="1.2" rx="4"/>
+    <rect x="102" y="42" width="100" height="44" fill="rgba(255,245,157,0.1)" stroke="#fff176" stroke-width="1.2" rx="4"/>
+    <rect x="204" y="42" width="100" height="44" fill="rgba(255,245,157,0.1)" stroke="#fff176" stroke-width="1.2" rx="4"/>
+    <rect x="306" y="42" width="100" height="44" fill="rgba(255,245,157,0.1)" stroke="#fff176" stroke-width="1.2" rx="4"/>
+    <rect x="408" y="42" width="100" height="44" fill="rgba(255,245,157,0.1)" stroke="#fff176" stroke-width="1.2" rx="4"/>
+    <rect x="510" y="42" width="100" height="44" fill="rgba(255,245,157,0.1)" stroke="#fff176" stroke-width="1.2" rx="4"/>
+    <rect x="612" y="42" width="100" height="44" fill="rgba(255,245,157,0.1)" stroke="#fff176" stroke-width="1.2" rx="4"/>
+
+    <text x="50" y="69" text-anchor="middle" class="chalk num">5</text>
+    <text x="152" y="69" text-anchor="middle" class="chalk num">4</text>
+    <text x="254" y="69" text-anchor="middle" class="chalk num">3</text>
+    <text x="356" y="69" text-anchor="middle" class="chalk num">2</text>
+    <text x="458" y="69" text-anchor="middle" class="chalk num">1</text>
+    <text x="560" y="69" text-anchor="middle" class="chalk num">0</text>
+    <text x="662" y="69" text-anchor="middle" class="chalk num">98</text>
+  </g>
+
+  <!-- Written form -->
+  <text x="400" y="210" text-anchor="middle" class="chalk label">Five crore, forty-three lakh, twenty-one thousand, ninety-eight</text>
+  <text x="400" y="234" text-anchor="middle" class="chalk muted">In digits: 5,43,21,098</text>
+
+  <!-- Key facts boxes -->
+  <g transform="translate(60,260)">
+    <rect x="0" y="0" width="200" height="90" class="highlight" rx="10"/>
+    <text x="100" y="22" text-anchor="middle" class="chalk label">Place Values</text>
+    <text x="14" y="45" class="chalk muted">1 Lakh = 1,00,000</text>
+    <text x="14" y="63" class="chalk muted">1 Crore = 1,00,00,000</text>
+    <text x="14" y="81" class="chalk muted">10 Crore = 10,00,00,000</text>
+
+    <rect x="220" y="0" width="200" height="90" class="highlight" rx="10"/>
+    <text x="320" y="22" text-anchor="middle" class="chalk label">Comparison</text>
+    <text x="234" y="45" class="chalk muted">100 thousand = 1 Lakh</text>
+    <text x="234" y="63" class="chalk muted">10 Lakh = 1 Million (Int'l)</text>
+    <text x="234" y="81" class="chalk muted">1 Crore = 10 Million</text>
+
+    <rect x="440" y="0" width="220" height="90" class="highlight" rx="10"/>
+    <text x="550" y="22" text-anchor="middle" class="chalk label">Rounding Rules</text>
+    <text x="454" y="45" class="chalk muted">Round to nearest 10, 100...</text>
+    <text x="454" y="63" class="chalk muted">≥5 → round up</text>
+    <text x="454" y="81" class="chalk muted">&lt;5 → round down</text>
+  </g>
+
+  <!-- Number line -->
+  <g transform="translate(60,380)">
+    <text x="0" y="0" class="chalk label">Number Line Estimation:</text>
+    <line x1="0" y1="30" x2="680" y2="30" stroke="#66bb6a" stroke-width="2"/>
+    <line x1="0" y1="22" x2="0" y2="38" stroke="#66bb6a" stroke-width="2"/>
+    <line x1="340" y1="22" x2="340" y2="38" stroke="#66bb6a" stroke-width="2"/>
+    <line x1="680" y1="22" x2="680" y2="38" stroke="#66bb6a" stroke-width="2"/>
+    <text x="0" y="54" text-anchor="middle" class="chalk muted">0</text>
+    <text x="340" y="54" text-anchor="middle" class="chalk muted">50,00,000</text>
+    <text x="680" y="54" text-anchor="middle" class="chalk muted">1,00,00,000</text>
+    <!-- marker -->
+    <circle cx="370" cy="30" r="6" fill="#fff176"/>
+    <text x="370" y="20" text-anchor="middle" class="chalk muted" style="fill:#fff176">5,43,21,098 ≈ 5.4 Cr</text>
+  </g>
+</svg>

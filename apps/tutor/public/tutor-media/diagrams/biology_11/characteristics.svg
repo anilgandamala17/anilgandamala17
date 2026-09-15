@@ -1,0 +1,51 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chalkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef08a;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#fef08a;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+
+  <!-- Title (Chalk Drawn) -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="28" fill="#fef08a" text-anchor="middle" font-weight="bold" style="text-shadow: 0 0 10px rgba(254, 240, 138, 0.3);">Characteristics of Living Beings</text>
+  <path d="M 220,60 L 580,60" stroke="#fef08a" stroke-width="2" stroke-dasharray="5,3" opacity="0.6" />
+
+  <!-- Central Concept -->
+  <circle cx="400" cy="240" r="55" fill="#f8fafc" opacity="0.1" stroke="#f8fafc" stroke-width="1" stroke-dasharray="4,4" />
+  <text x="400" y="247" font-family="Georgia, serif" font-size="22" fill="#fef08a" text-anchor="middle" font-weight="bold">LIFE</text>
+
+  <!-- Nodes -->
+  <g transform="translate(180, 160)">
+    <circle cx="0" cy="0" r="45" fill="url(#chalkGrad)" stroke="#f8fafc" stroke-width="1.5"/>
+    <text x="0" y="5" font-family="Georgia, serif" font-size="16" fill="#fef08a" text-anchor="middle" font-weight="bold">Growth</text>
+    <path d="M -8,-12 L 0,-25 L 8,-12 Z" fill="#f8fafc" opacity="0.8" />
+    <text x="0" y="65" font-family="Arial" font-size="12" fill="#f8fafc" text-anchor="middle" opacity="0.7">Intrinsic increase in mass</text>
+  </g>
+
+  <g transform="translate(620, 160)">
+    <circle cx="0" cy="0" r="45" fill="url(#chalkGrad)" stroke="#f8fafc" stroke-width="1.5"/>
+    <text x="0" y="5" font-family="Georgia, serif" font-size="16" fill="#fef08a" text-anchor="middle" font-weight="bold">Reproduction</text>
+    <circle cx="-10" cy="-10" r="6" stroke="#f8fafc" fill="none" />
+    <circle cx="10" cy="-10" r="6" stroke="#f8fafc" fill="none" />
+    <text x="0" y="65" font-family="Arial" font-size="12" fill="#f8fafc" text-anchor="middle" opacity="0.7">Continuity of species</text>
+  </g>
+
+  <g transform="translate(180, 320)">
+    <circle cx="0" cy="0" r="45" fill="url(#chalkGrad)" stroke="#f8fafc" stroke-width="1.5"/>
+    <text x="0" y="5" font-family="Georgia, serif" font-size="16" fill="#fef08a" text-anchor="middle" font-weight="bold">Metabolism</text>
+    <path d="M -15,-15 L 15,15 M 15,-15 L -15,15" stroke="#f8fafc" stroke-width="1.5" opacity="0.6" />
+    <text x="0" y="65" font-family="Arial" font-size="12" fill="#f8fafc" text-anchor="middle" opacity="0.7">Sum of chemical reactions</text>
+  </g>
+
+  <g transform="translate(620, 320)">
+    <circle cx="0" cy="0" r="45" fill="url(#chalkGrad)" stroke="#f8fafc" stroke-width="1.5"/>
+    <text x="0" y="5" font-family="Georgia, serif" font-size="16" fill="#fef08a" text-anchor="middle" font-weight="bold">Consciousness</text>
+    <path d="M 0,-15 L 0,-25 M -15,-5 L -25,-5 M 15,-5 L 25,-5" stroke="#fef08a" stroke-width="1.5" />
+    <text x="0" y="65" font-family="Arial" font-size="12" fill="#f8fafc" text-anchor="middle" opacity="0.7">Response to stimuli</text>
+  </g>
+
+  <line x1="225" y1="185" x2="355" y2="230" stroke="#f8fafc" stroke-width="1" stroke-dasharray="4,2" opacity="0.3" />
+  <line x1="575" y1="185" x2="445" y2="230" stroke="#f8fafc" stroke-width="1" stroke-dasharray="4,2" opacity="0.3" />
+  <line x1="225" y1="295" x2="355" y2="250" stroke="#f8fafc" stroke-width="1" stroke-dasharray="4,2" opacity="0.3" />
+  <line x1="575" y1="295" x2="445" y2="250" stroke="#f8fafc" stroke-width="1" stroke-dasharray="4,2" opacity="0.3" />
+</svg>

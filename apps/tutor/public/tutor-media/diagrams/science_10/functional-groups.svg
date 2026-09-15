@@ -1,0 +1,25 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+  </defs>
+  <!-- Bg Removed -->
+  <text x="20" y="30" class="title">FUNCTIONAL GROUPS</text>
+  
+  <g transform="translate(40, 60)">
+    <text x="0" y="20" fill="#60a5fa">Alcohol</text> <text x="120" y="20">-OH</text>
+    <text x="0" y="50" fill="#60a5fa">Aldehyde</text> <text x="120" y="50">-CHO</text>
+    <text x="0" y="80" fill="#60a5fa">Ketone</text> <text x="120" y="80">-CO-</text>
+    <text x="0" y="110" fill="#60a5fa">Carboxylic Acid</text> <text x="120" y="110">-COOH</text>
+    <text x="0" y="140" fill="#60a5fa">Halogen</text> <text x="120" y="140">-Cl, -Br</text>
+  </g>
+  
+  <g transform="translate(250, 60)">
+    <rect x="0" y="0" width="100" height="40" fill="#334155" rx="4" />
+    <text x="50" y="25" text-anchor="middle" fill="#fbbf24">Homologous</text>
+    <text x="50" y="55" text-anchor="middle" font-size="10">Difference: CH₂</text>
+    <text x="50" y="70" text-anchor="middle" font-size="10">Mass: 14u</text>
+  </g>
+</svg>

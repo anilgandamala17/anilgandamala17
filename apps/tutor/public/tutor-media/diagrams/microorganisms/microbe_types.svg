@@ -1,0 +1,63 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .microbe-box { fill: #334155; rx: 8; }
+      .label { font-size: 10px; text-anchor: middle; fill: #fff; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">TYPES OF MICROORGANISMS</text>
+
+  <!-- Bacteria -->
+  <g transform="translate(40, 60)">
+    <rect width="140" height="100" class="microbe-box" />
+    <text x="70" y="90" class="label">BACTERIA (Lactobacillus)</text>
+    <!-- Rod shapes -->
+    <g transform="translate(70, 45)">
+        <rect x="-20" y="-10" width="20" height="8" rx="4" fill="#a5f3fc" />
+        <rect x="5" y="-5" width="20" height="8" rx="4" fill="#a5f3fc" />
+        <rect x="-10" y="10" width="20" height="8" rx="4" fill="#a5f3fc" />
+    </g>
+  </g>
+
+  <!-- Virus -->
+  <g transform="translate(220, 60)">
+    <rect width="140" height="100" class="microbe-box" />
+    <text x="70" y="90" class="label">VIRUS (Bacteriophage)</text>
+    <!-- Hexagon head + tail -->
+    <g transform="translate(70, 45)">
+        <polygon points="0,-20 15,-10 15,10 0,20 -15,10 -15,-10" fill="#fca5a5" stroke="#ef4444" />
+        <line x1="0" y1="20" x2="0" y2="35" stroke="#ef4444" stroke-width="2" />
+        <line x1="-10" y1="35" x2="10" y2="35" stroke="#ef4444" stroke-width="2" /> <!-- Legs -->
+    </g>
+  </g>
+
+  <!-- Fungi -->
+  <g transform="translate(40, 180)">
+    <rect width="140" height="100" class="microbe-box" />
+    <text x="70" y="90" class="label">FUNGI (Bread Mould)</text>
+    <!-- Stems and Spores -->
+    <g transform="translate(70, 60)">
+        <line x1="-15" y1="0" x2="-15" y2="-30" stroke="#fde047" stroke-width="2"/>
+        <line x1="15" y1="0" x2="15" y2="-30" stroke="#fde047" stroke-width="2"/>
+        <circle cx="-15" cy="-35" r="8" fill="#fde047" />
+        <circle cx="15" cy="-35" r="8" fill="#fde047" />
+    </g>
+  </g>
+
+  <!-- Protozoa -->
+  <g transform="translate(220, 180)">
+    <rect width="140" height="100" class="microbe-box" />
+    <text x="70" y="90" class="label">PROTOZOA (Amoeba)</text>
+    <!-- Blob shape -->
+     <g transform="translate(70, 45)">
+        <path d="M -20 -10 Q 0 -30 20 -10 Q 30 0 20 20 Q 0 30 -20 20 Q -30 0 -20 -10" fill="#86efac" stroke="#22c55e" />
+        <circle cx="0" cy="0" r="3" fill="#1a3a2a" /> <!-- Nucleus -->
+    </g>
+  </g>
+
+</svg>

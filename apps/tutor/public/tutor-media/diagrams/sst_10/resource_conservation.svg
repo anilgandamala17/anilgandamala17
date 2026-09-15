@@ -1,0 +1,55 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#1a5c2a}
+      .title{fill:#fff9c4;font-size:14px;font-weight:bold}
+      .sub{fill:#b2f5ea;font-size:10px}
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="18" text-anchor="middle" class="title">Resource Conservation Methods</text>
+  <text x="210" y="30" text-anchor="middle" class="sub">Multiple strategies for protecting land, forest, water and biodiversity</text>
+
+  <!-- Land Conservation -->
+  <rect x="8" y="38" width="196" height="122" fill="#0d3b20" stroke="#ffd600" stroke-width="1.4" rx="5"/>
+  <text x="106" y="54" text-anchor="middle" fill="#ffd600" font-size="11" font-weight="bold">🌱 Land Conservation</text>
+  <text x="16" y="70" fill="#aed581" font-size="9">✅ Contour ploughing (across slope)</text>
+  <text x="16" y="84" fill="#aed581" font-size="9">✅ Terrace farming (hill slopes)</text>
+  <text x="16" y="98" fill="#aed581" font-size="9">✅ Strip cropping (alternating crops)</text>
+  <text x="16" y="112" fill="#aed581" font-size="9">✅ Shelter belts (rows of trees)</text>
+  <text x="16" y="126" fill="#f06292" font-size="9">❌ Avoid: overgrazing, singlecrop</text>
+  <text x="16" y="142" fill="#b2f5ea" font-size="8">Afforestation · Grazing regulation</text>
+
+  <!-- Water Conservation -->
+  <rect x="216" y="38" width="196" height="122" fill="#0d3b20" stroke="#80cbc4" stroke-width="1.4" rx="5"/>
+  <text x="314" y="54" text-anchor="middle" fill="#80cbc4" font-size="11" font-weight="bold">💧 Water Conservation</text>
+  <text x="224" y="70" fill="#80cbc4" font-size="9">✅ Rainwater harvesting</text>
+  <text x="224" y="84" fill="#80cbc4" font-size="9">✅ Check dams &amp; percolation</text>
+  <text x="224" y="98" fill="#80cbc4" font-size="9">✅ Watershed management</text>
+  <text x="224" y="112" fill="#80cbc4" font-size="9">✅ Drip irrigation (reduce waste)</text>
+  <text x="224" y="126" fill="#f06292" font-size="9">❌ Avoid: river pollution, overuse</text>
+  <text x="224" y="142" fill="#b2f5ea" font-size="8">Water table replenishment · Ponds</text>
+
+  <!-- Forest Conservation -->
+  <rect x="8" y="168" width="196" height="122" fill="#0d3b20" stroke="#aed581" stroke-width="1.4" rx="5"/>
+  <text x="106" y="184" text-anchor="middle" fill="#aed581" font-size="11" font-weight="bold">🌲 Forest Conservation</text>
+  <text x="16" y="200" fill="#aed581" font-size="9">✅ Protected areas (National Parks)</text>
+  <text x="16" y="214" fill="#aed581" font-size="9">✅ Community forestry programs</text>
+  <text x="16" y="228" fill="#aed581" font-size="9">✅ Social forestry on wastelands</text>
+  <text x="16" y="242" fill="#aed581" font-size="9">✅ Agroforestry combinations</text>
+  <text x="16" y="256" fill="#f06292" font-size="9">❌ Avoid: deforestation, mining</text>
+  <text x="16" y="270" fill="#b2f5ea" font-size="8">Chipko Movement · Bishnoi tradition</text>
+  <text x="16" y="282" fill="#ffd600" font-size="8">→ Amrita Devi Bishnoi: saved trees!</text>
+
+  <!-- Biodiversity -->
+  <rect x="216" y="168" width="196" height="122" fill="#0d3b20" stroke="#f06292" stroke-width="1.4" rx="5"/>
+  <text x="314" y="184" text-anchor="middle" fill="#f06292" font-size="11" font-weight="bold">🦁 Biodiversity</text>
+  <text x="224" y="200" fill="#f06292" font-size="9">✅ Wildlife sanctuaries</text>
+  <text x="224" y="214" fill="#f06292" font-size="9">✅ Project Tiger (1973)</text>
+  <text x="224" y="228" fill="#f06292" font-size="9">✅ Sustainable fishing limits</text>
+  <text x="224" y="242" fill="#f06292" font-size="9">✅ Seed banks &amp; gene pools</text>
+  <text x="224" y="256" fill="#ff8a65" font-size="9">❌ Avoid: habitat destruction</text>
+  <text x="224" y="270" fill="#b2f5ea" font-size="8">IUCN Red List · CITES treaty</text>
+  <text x="224" y="282" fill="#ffd600" font-size="8">India: 7% of global biodiversity</text>
+  </g>
+</svg>

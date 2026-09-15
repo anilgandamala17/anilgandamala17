@@ -1,0 +1,45 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Understanding Secularism</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Separation of religion from the state | Essential for democratic functioning</text>
+
+<rect x="25" y="90" width="370" height="230" fill="none" stroke="#ffd54f" stroke-width="2" rx="10"/>
+<text x="210" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Why Separation is Needed?</text>
+<text x="50" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="start">1. Protects Freedom of Individuals</text>
+<text x="60" y="170" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="start">Freedom to exit religion or interpret differently</text>
+<text x="50" y="200" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="start">2. Prevents Tyranny of Majority</text>
+<text x="60" y="220" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="start">No single religion dominates or oppresses others</text>
+<text x="50" y="250" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="start">3. Democratic Functioning</text>
+<text x="60" y="270" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="start">Neutrality in laws and public services</text>
+<text x="210" y="305" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">State = Neutral Ground</text>
+
+<rect x="405" y="90" width="370" height="230" fill="none" stroke="#86efac" stroke-width="2" rx="10"/>
+<text x="590" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Indian Secularism (Balanced)</text>
+<text x="430" y="145" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="start">Strategy 1: Distance from Religion</text>
+<text x="440" y="165" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="start">Govt. spaces don't celebrate festivals</text>
+<text x="430" y="195" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="start">Strategy 2: Non-interference</text>
+<text x="440" y="215" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="start">Respects religious sentiments (Sikh turbans)</text>
+<text x="430" y="245" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="start">Strategy 3: Intervention</text>
+<text x="440" y="265" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="start">Ban on Untouchability (Right to Equality)</text>
+<text x="590" y="305" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">Principled Intervention</text>
+
+<line x1="20" y1="340" x2="780" y2="340" stroke="#fb923c" stroke-width="1"/>
+
+<rect x="25" y="360" width="750" height="180" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="10"/>
+<text x="400" y="385" font-family="'Segoe UI',sans-serif" font-size="16" fill="#fb923c" text-anchor="middle" font-weight="bold">Secularism: India vs USA</text>
+
+<rect x="50" y="410" width="340" height="110" fill="rgba(134,239,172,0.1)" stroke="#86efac" stroke-width="1" rx="8"/>
+<text x="220" y="435" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">USA (Strict Separation)</text>
+<text x="220" y="460" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Neither State nor Religion can</text>
+<text x="220" y="480" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">interfere in each other's affairs.</text>
+<text x="220" y="505" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">(Rigid binary wall)</text>
+
+<rect x="410" y="410" width="340" height="110" fill="rgba(255,213,79,0.1)" stroke="#ffd54f" stroke-width="1" rx="8"/>
+<text x="580" y="435" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">INDIA (Flexible Neutrality)</text>
+<text x="580" y="460" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">State can intervene based on</text>
+<text x="580" y="480" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Constitutional fundamental rights.</text>
+<text x="580" y="505" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">(Principled distance)</text>
+
+<text x="400" y="565" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Objective: No community dominates another | Members don't dominate members</text>
+<text x="400" y="585" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">Ensures peace and religious harmony in a diverse society.</text>
+</svg>

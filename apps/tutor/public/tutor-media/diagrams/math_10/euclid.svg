@@ -1,0 +1,67 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#0d2818}
+      .title{fill:#f0e68c;font-size:14px;font-weight:bold}
+      .sub{fill:#aad4ff;font-size:10px}
+      .label{fill:#e0ffe0;font-size:11px}
+      .hl{fill:#7fffd4;font-size:12px;font-weight:bold}
+      .box{fill:#1a3a20;stroke:#4ade80;stroke-width:1.2}
+      .arrow{stroke:#ff9f43;stroke-width:2;fill:none;marker-end:url(#arr)}
+      .step{fill:#ffd700;font-size:11px;font-weight:bold}
+    </style>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ff9f43"/>
+    </marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="22" text-anchor="middle" class="title">Euclid's Division Algorithm</text>
+  <text x="210" y="36" text-anchor="middle" class="sub">a = bq + r,  where 0 ≤ r &lt; b</text>
+
+  <!-- Formula highlight -->
+  <rect x="80" y="42" width="260" height="24" rx="6" fill="#1a4030" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="210" y="58" text-anchor="middle" fill="#7fffd4" font-size="14" font-weight="bold">a = b × q + r</text>
+
+  <!-- Flowchart -->
+  <!-- Start -->
+  <rect x="155" y="74" width="110" height="26" rx="13" fill="#ff9f43" opacity="0.8"/>
+  <text x="210" y="91" text-anchor="middle" fill="#0d2818" font-size="11" font-weight="bold">START: a, b</text>
+
+  <line x1="210" y1="100" x2="210" y2="116" class="arrow"/>
+
+  <!-- Step 1 -->
+  <rect x="100" y="116" width="220" height="28" rx="5" class="box"/>
+  <text x="210" y="134" text-anchor="middle" class="step">Divide a by b: find q and r</text>
+
+  <line x1="210" y1="144" x2="210" y2="160" class="arrow"/>
+
+  <!-- Decision -->
+  <polygon points="210,160 280,182 210,204 140,182" fill="#1a2a3a" stroke="#4ade80" stroke-width="1.2"/>
+  <text x="210" y="179" text-anchor="middle" fill="#ffd700" font-size="11" font-weight="bold">r = 0?</text>
+  <text x="210" y="191" text-anchor="middle" fill="#aad4ff" font-size="9">a = bq + r</text>
+
+  <!-- Yes branch -->
+  <line x1="140" y1="182" x2="65" y2="182" class="arrow"/>
+  <text x="100" y="176" text-anchor="middle" fill="#4ade80" font-size="10">YES</text>
+  <rect x="10" y="169" width="55" height="24" rx="12" fill="#4ade80" opacity="0.8"/>
+  <text x="37" y="185" text-anchor="middle" fill="#0d2818" font-size="10" font-weight="bold">HCF = b</text>
+
+  <!-- No branch -->
+  <line x1="210" y1="204" x2="210" y2="220" class="arrow"/>
+  <text x="225" y="216" fill="#ff6b6b" font-size="10">NO</text>
+  <rect x="120" y="220" width="180" height="26" rx="5" class="box"/>
+  <text x="210" y="237" text-anchor="middle" fill="#e0ffe0" font-size="11">Replace: a ← b, b ← r</text>
+  <path d="M300,233 Q370,233 370,182 Q370,144 290,144" class="arrow" stroke="#ff9f43" stroke-width="1.5" fill="none"/>
+
+  <!-- Example -->
+  <rect x="10" y="248" width="200" height="44" rx="5" fill="#1a2a3a" stroke="#aad4ff" stroke-width="1"/>
+  <text x="110" y="262" text-anchor="middle" fill="#ffd700" font-size="11" font-weight="bold">Example: HCF(135, 225)</text>
+  <text x="110" y="276" text-anchor="middle" fill="#e0ffe0" font-size="10">225 = 135×1 + 90</text>
+  <text x="110" y="288" text-anchor="middle" fill="#e0ffe0" font-size="10">135 = 90×1 + 45 → 90 = 45×2 + 0 → HCF=45</text>
+
+  <rect x="220" y="248" width="190" height="44" rx="5" fill="#1a3a20" stroke="#4ade80" stroke-width="1"/>
+  <text x="315" y="262" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">Lemma: a = bq + r</text>
+  <text x="315" y="276" text-anchor="middle" fill="#aad4ff" font-size="10">Used to find HCF of two</text>
+  <text x="315" y="288" text-anchor="middle" fill="#aad4ff" font-size="10">positive integers efficiently</text>
+  </g>
+</svg>

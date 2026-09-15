@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Zeroes of a Polynomial</text>
+
+  <!-- Left: definition -->
+  <rect x="15" y="55" width="360" height="200" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="195" y="78" text-anchor="middle" fill="#a3e635" font-size="14" font-family="Georgia,serif" font-weight="bold">What are Zeroes?</text>
+  <text x="195" y="100" text-anchor="middle" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">A value 'a' such that p(a) = 0</text>
+  <text x="195" y="124" text-anchor="middle" fill="#fde68a" font-size="13" font-family="Georgia,serif" font-weight="bold">p(x) = 0 ⟹ x is a zero (root)</text>
+  <text x="195" y="150" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">A linear polynomial has exactly 1 zero</text>
+  <text x="195" y="168" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">A quadratic polynomial has ≤ 2 zeroes</text>
+  <text x="195" y="186" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">An nth degree polynomial has ≤ n zeroes</text>
+  <text x="195" y="210" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Geometrically: where graph crosses/touches x-axis</text>
+  <text x="195" y="232" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="Georgia,serif" font-style="italic">Zeroes = x-intercepts of the curve</text>
+
+  <!-- Worked example linear -->
+  <rect x="15" y="265" width="360" height="100" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#38bdf8" stroke-width="2"/>
+  <text x="195" y="288" text-anchor="middle" fill="#7dd3fc" font-size="13" font-family="Georgia,serif" font-weight="bold">Linear: p(x) = 2x − 6</text>
+  <text x="195" y="314" text-anchor="middle" fill="#fde68a" font-size="13" font-family="Georgia,serif">2x − 6 = 0  →  x = 3</text>
+  <text x="195" y="340" text-anchor="middle" fill="#a3e635" font-size="12" font-family="Georgia,serif">Check: p(3) = 2(3) − 6 = 0 ✓</text>
+  <text x="195" y="358" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Zero is  x = 3</text>
+
+  <!-- Worked example quadratic -->
+  <rect x="15" y="375" width="360" height="105" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#f472b6" stroke-width="2"/>
+  <text x="195" y="398" text-anchor="middle" fill="#f9a8d4" font-size="13" font-family="Georgia,serif" font-weight="bold">Quadratic: p(x) = x² − 5x + 6</text>
+  <text x="195" y="422" text-anchor="middle" fill="#fde68a" font-size="12" font-family="Georgia,serif">Factorise: (x−2)(x−3) = 0</text>
+  <text x="195" y="446" text-anchor="middle" fill="#a3e635" font-size="13" font-family="Georgia,serif">Zeroes: x = 2 and x = 3</text>
+  <text x="195" y="468" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="Georgia,serif" font-style="italic">Sum = 5 = −(−5)/1  |  Product = 6 = 6/1</text>
+
+  <!-- Right: graph -->
+  <rect x="390" y="55" width="395" height="425" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="587" y="78" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">Graph: p(x) = x²−5x+6</text>
+  <!-- Axes -->
+  <line x1="410" y1="380" x2="778" y2="380" stroke="#86efac" stroke-width="2"/>
+  <line x1="590" y1="88" x2="590" y2="460" stroke="#86efac" stroke-width="2"/>
+  <text x="782" y="384" fill="#86efac" font-size="11">x</text>
+  <text x="592" y="84" fill="#86efac" font-size="11">y</text>
+  <!-- Curve x²-5x+6, roots at x=2,3, vertex at (2.5, -0.25), opening up -->
+  <!-- Map: x-axis center at x_svg=590 for math x=2.5, scale ~50px per unit -->
+  <!-- x=−1 → 412, x=0→ 462, x=1→ 512, x=2→ 562, x=2.5→587, x=3→612, x=4→662, x=5→712, x=6→762 -->
+  <!-- y=0 → 380, upward scale 80px/unit: y=2→ 380-160=220, y=6→ 380-480 (off screen, clip) -->
+  <!-- y for x=-1: 1+5+6=12 → 380-12*28=380-336=44; x=0→6→380-168=212; x=1→2→380-56=324; x=2→0→380; x=2.5→-0.25→383; x=3→0→380; x=4→2→324; x=5→6→212; x=6→12→skip -->
+  <polyline points="412,44 462,212 512,324 562,380 587,381 612,380 662,324 712,212 762,44" fill="none" stroke="#f472b6" stroke-width="2.5"/>
+  <!-- Roots -->
+  <circle cx="562" cy="380" r="6" fill="#fde68a"/><text x="562" y="398" text-anchor="middle" fill="#fde68a" font-size="12">2</text>
+  <circle cx="612" cy="380" r="6" fill="#fde68a"/><text x="612" y="398" text-anchor="middle" fill="#fde68a" font-size="12">3</text>
+  <!-- Vertex -->
+  <circle cx="587" cy="381" r="6" fill="#a3e635"/>
+  <text x="587" y="420" text-anchor="middle" fill="#a3e635" font-size="11">Vertex (2.5, 0)</text>
+  <!-- axis of symmetry -->
+  <line x1="587" y1="90" x2="587" y2="445" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="587" y="450" text-anchor="middle" fill="#a78bfa" font-size="10">x = 2.5</text>
+  <!-- y-intercept -->
+  <circle cx="462" cy="212" r="5" fill="#38bdf8"/>
+  <text x="470" y="206" fill="#38bdf8" font-size="10">(0,6)</text>
+  <!-- origin tick -->
+  <line x1="462" y1="376" x2="462" y2="386" stroke="#86efac" stroke-width="1.5"/><text x="462" y="396" text-anchor="middle" fill="#86efac" font-size="11">0</text>
+  <line x1="462" y1="380" x2="462" y2="380"/>
+</svg>

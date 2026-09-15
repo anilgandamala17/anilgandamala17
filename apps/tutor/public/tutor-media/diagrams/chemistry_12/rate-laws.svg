@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f8fafc" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Chemical Rate Laws</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Concentration-Time Graph -->
+  <g transform="translate(150, 120)">
+    <!-- Axes -->
+    <line x1="50" y1="300" x2="450" y2="300" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="460" y="310" fill="#f8fafc" font-size="16">Time (t)</text>
+    <line x1="50" y1="300" x2="50" y2="20" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="0" y="15" fill="#f8fafc" font-size="16">Conc. [A]</text>
+    
+    <!-- Reactant Decay -->
+    <path d="M 50 50 Q 150 280 400 295" fill="none" stroke="#f87171" stroke-width="3"/>
+    <text x="250" y="150" fill="#f87171" font-weight="bold">Reactant [A]</text>
+    
+    <!-- Product Growth -->
+    <path d="M 50 300 Q 150 70 400 55" fill="none" stroke="#86efac" stroke-width="3" opacity="0.8"/>
+    <text x="250" y="100" fill="#86efac" font-weight="bold">Product [P]</text>
+  </g>
+
+  <!-- Rate Equation -->
+  <rect x="200" y="470" width="400" height="100" rx="15" fill="rgba(255,255,255,0.03)" stroke="#86efac" stroke-width="1.5"/>
+  <text x="400" y="520" fill="#fef08a" text-anchor="middle" font-family="'Times New Roman', serif" font-size="36" font-style="italic">
+    Rate = k · [A]ˣ [B]ʸ
+  </text>
+  <text x="400" y="550" fill="#f8fafc" text-anchor="middle" font-size="14">x, y: Orders; k: Rate Constant</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Chemistry Grade 12</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="background:#1a3a2a">
+  <text x="200" y="18" font-size="13" fill="#86efac" text-anchor="middle" font-family="monospace" font-weight="bold">Bubble Sort — Step by Step</text>
+  <!-- Array: [64, 34, 25, 12, 22, 11, 90] -->
+  <!-- Pass 0: Original -->
+  <text x="30" y="45" font-size="9" fill="rgba(255,255,255,0.5)" font-family="monospace">Original:</text>
+  <rect x="80" y="32" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="95" y="48" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">64</text>
+  <rect x="112" y="32" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="127" y="48" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">34</text>
+  <rect x="144" y="32" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="159" y="48" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">25</text>
+  <rect x="176" y="32" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="191" y="48" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">12</text>
+  <rect x="208" y="32" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="223" y="48" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">22</text>
+  <rect x="240" y="32" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="255" y="48" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">11</text>
+  <rect x="272" y="32" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="287" y="48" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">90</text>
+  <!-- Pass 1: 64 and 34 compared/swapped -->
+  <text x="30" y="85" font-size="9" fill="rgba(255,255,255,0.5)" font-family="monospace">Pass 1:</text>
+  <rect x="80" y="72" width="30" height="22" rx="2" fill="rgba(252,165,165,0.3)" stroke="#fca5a5" stroke-width="2"/>
+  <text x="95" y="88" font-size="10" fill="#fca5a5" text-anchor="middle" font-family="monospace">34</text>
+  <rect x="112" y="72" width="30" height="22" rx="2" fill="rgba(252,165,165,0.3)" stroke="#fca5a5" stroke-width="2"/>
+  <text x="127" y="88" font-size="10" fill="#fca5a5" text-anchor="middle" font-family="monospace">25</text>
+  <rect x="144" y="72" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="159" y="88" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">12</text>
+  <rect x="176" y="72" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="191" y="88" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">22</text>
+  <rect x="208" y="72" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="223" y="88" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">11</text>
+  <rect x="240" y="72" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="255" y="88" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">64</text>
+  <rect x="272" y="72" width="30" height="22" rx="2" fill="rgba(134,239,172,0.3)" stroke="#86efac" stroke-width="2"/>
+  <text x="287" y="88" font-size="10" fill="#86efac" text-anchor="middle" font-family="monospace">90</text>
+  <text x="330" y="88" font-size="8" fill="#86efac" font-family="monospace">✓ sorted</text>
+  <!-- Swap arrows -->
+  <path d="M88 70 Q95 60 102 70" fill="none" stroke="#fca5a5" stroke-width="1.5"/>
+  <path d="M120 70 Q127 60 134 70" fill="none" stroke="#fca5a5" stroke-width="1.5"/>
+  <!-- Pass 2 -->
+  <text x="30" y="125" font-size="9" fill="rgba(255,255,255,0.5)" font-family="monospace">Pass 2:</text>
+  <rect x="80" y="112" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="95" y="128" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">25</text>
+  <rect x="112" y="112" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="127" y="128" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">12</text>
+  <rect x="144" y="112" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="159" y="128" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">22</text>
+  <rect x="176" y="112" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="191" y="128" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">11</text>
+  <rect x="208" y="112" width="30" height="22" rx="2" fill="rgba(147,197,253,0.2)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="223" y="128" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">34</text>
+  <rect x="240" y="112" width="30" height="22" rx="2" fill="rgba(134,239,172,0.3)" stroke="#86efac" stroke-width="2"/>
+  <text x="255" y="128" font-size="10" fill="#86efac" text-anchor="middle" font-family="monospace">64</text>
+  <rect x="272" y="112" width="30" height="22" rx="2" fill="rgba(134,239,172,0.3)" stroke="#86efac" stroke-width="2"/>
+  <text x="287" y="128" font-size="10" fill="#86efac" text-anchor="middle" font-family="monospace">90</text>
+  <!-- Final sorted -->
+  <text x="30" y="165" font-size="9" fill="rgba(255,255,255,0.5)" font-family="monospace">Sorted:</text>
+  <rect x="80" y="152" width="30" height="22" rx="2" fill="rgba(134,239,172,0.3)" stroke="#86efac" stroke-width="2"/>
+  <text x="95" y="168" font-size="10" fill="#86efac" text-anchor="middle" font-family="monospace">11</text>
+  <rect x="112" y="152" width="30" height="22" rx="2" fill="rgba(134,239,172,0.3)" stroke="#86efac" stroke-width="2"/>
+  <text x="127" y="168" font-size="10" fill="#86efac" text-anchor="middle" font-family="monospace">12</text>
+  <rect x="144" y="152" width="30" height="22" rx="2" fill="rgba(134,239,172,0.3)" stroke="#86efac" stroke-width="2"/>
+  <text x="159" y="168" font-size="10" fill="#86efac" text-anchor="middle" font-family="monospace">22</text>
+  <rect x="176" y="152" width="30" height="22" rx="2" fill="rgba(134,239,172,0.3)" stroke="#86efac" stroke-width="2"/>
+  <text x="191" y="168" font-size="10" fill="#86efac" text-anchor="middle" font-family="monospace">25</text>
+  <rect x="208" y="152" width="30" height="22" rx="2" fill="rgba(134,239,172,0.3)" stroke="#86efac" stroke-width="2"/>
+  <text x="223" y="168" font-size="10" fill="#86efac" text-anchor="middle" font-family="monospace">34</text>
+  <rect x="240" y="152" width="30" height="22" rx="2" fill="rgba(134,239,172,0.3)" stroke="#86efac" stroke-width="2"/>
+  <text x="255" y="168" font-size="10" fill="#86efac" text-anchor="middle" font-family="monospace">64</text>
+  <rect x="272" y="152" width="30" height="22" rx="2" fill="rgba(134,239,172,0.3)" stroke="#86efac" stroke-width="2"/>
+  <text x="287" y="168" font-size="10" fill="#86efac" text-anchor="middle" font-family="monospace">90</text>
+  <!-- Algorithm info -->
+  <rect x="20" y="195" width="360" height="75" rx="5" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="200" y="212" font-size="10" fill="#fbbf24" text-anchor="middle" font-family="monospace" font-weight="bold">Bubble Sort Algorithm</text>
+  <text x="30" y="228" font-size="9" fill="rgba(255,255,255,0.7)" font-family="monospace">• Compare adjacent elements</text>
+  <text x="30" y="242" font-size="9" fill="rgba(255,255,255,0.7)" font-family="monospace">• Swap if left &gt; right</text>
+  <text x="30" y="256" font-size="9" fill="rgba(255,255,255,0.7)" font-family="monospace">• Repeat n-1 passes</text>
+  <text x="220" y="228" font-size="9" fill="#fca5a5" font-family="monospace">Time: O(n²)</text>
+  <text x="220" y="242" font-size="9" fill="#93c5fd" font-family="monospace">Space: O(1)</text>
+  <text x="220" y="256" font-size="9" fill="#86efac" font-family="monospace">Stable: Yes</text>
+</svg>

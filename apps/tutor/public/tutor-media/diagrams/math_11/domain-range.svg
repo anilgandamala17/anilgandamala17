@@ -1,0 +1,47 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 13px; font-weight: bold; }
+      .set-oval { fill: rgba(30, 58, 138, 0.4); stroke: #60a5fa; stroke-width: 1.5; }
+      .mapping { stroke: #4ade80; stroke-width: 1.5; marker-end: url(#arrowhead); }
+      .element { fill: #ffffff; font-size: 12px; font-weight: bold; }
+      .desc { fill: #93c5fd; font-size: 10px; font-style: italic; }
+      .highlight { fill: #fcd34d; font-size: 14px; font-weight: bold; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Domain, Codomain, and Range</text>
+    
+    <!-- Set A (Domain) -->
+    <ellipse cx="80" cy="130" rx="40" ry="80" class="set-oval" />
+    <text x="80" y="40" text-anchor="middle" class="highlight">Domain (X)</text>
+    
+    <text x="80" y="80" text-anchor="middle" class="element">1</text>
+    <text x="80" y="115" text-anchor="middle" class="element">2</text>
+    <text x="80" y="150" text-anchor="middle" class="element">3</text>
+    <text x="80" y="185" text-anchor="middle" class="element">4</text>
+
+    <!-- Set B (Codomain) -->
+    <ellipse cx="300" cy="130" rx="40" ry="80" class="set-oval" stroke="#f87171" fill="rgba(69, 10, 10, 0.4)" />
+    <text x="300" y="40" text-anchor="middle" class="highlight" fill="#f87171">Codomain (Y)</text>
+    
+    <text x="300" y="80" text-anchor="middle" class="element">a</text>
+    <text x="300" y="115" text-anchor="middle" class="element">b</text>
+    <text x="300" y="150" text-anchor="middle" class="element">c</text>
+    <text x="300" y="185" text-anchor="middle" class="element" opacity="0.4">d</text> <!-- Not in range -->
+
+    <!-- Range highlight -->
+    <ellipse cx="300" cy="115" rx="30" ry="60" fill="none" stroke="#fcd34d" stroke-width="1.5" stroke-dasharray="3" />
+    <text x="350" y="115" class="desc" fill="#fcd34d">Range</text>
+
+    <!-- Mappings -->
+    <line x1="100" y1="80" x2="280" y2="80" class="mapping" />
+    <line x1="100" y1="115" x2="280" y2="115" class="mapping" />
+    <line x1="100" y1="150" x2="280" y2="150" class="mapping" />
+    <line x1="100" y1="185" x2="280" y2="115" class="mapping" /> <!-- Many to one -->
+
+    <text x="200" y="240" text-anchor="middle" fill="#94a3b8" font-size="10">Range ⊆ Codomain</text>
+    <text x="200" y="255" text-anchor="middle" fill="#94a3b8" font-size="10">Every input has exactly one output.</text>
+  </g>
+</svg>

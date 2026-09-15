@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fef08a" />
+    </marker>
+  </defs>
+  
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Lenz's Law</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <g transform="translate(200, 200)">
+    <!-- Coil -->
+    <ellipse cx="300" cy="100" rx="40" ry="120" fill="none" stroke="#86efac" stroke-width="8"/>
+    
+    <!-- Moving Magnet (Approach) -->
+    <rect x="-100" y="60" width="150" height="80" fill="#f87171" stroke="#f8fafc"/>
+    <text x="-25" y="110" fill="#f8fafc" text-anchor="middle" font-weight="bold">NORTH</text>
+    
+    <!-- Motion Arrow -->
+    <line x1="80" y1="100" x2="180" y2="100" stroke="#fef08a" stroke-width="4" marker-end="url(#arrowhead)"/>
+    
+    <!-- Opposing field lines (The Lenz effect) -->
+    <g stroke="#fef08a" stroke-width="2" marker-end="url(#arrowhead)">
+       <line x1="250" y1="100" x2="150" y2="100" />
+       <line x1="260" y1="60" x2="160" y2="60" />
+       <line x1="260" y1="140" x2="160" y2="140" />
+    </g>
+    <text x="210" y="40" fill="#fef08a" text-anchor="middle" font-size="14" font-weight="bold">Opposing B_{ind}</text>
+    
+    <!-- Induced current -->
+    <path d="M 335 50 Q 370 50 370 80" fill="none" stroke="#86efac" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="380" y="70" fill="#86efac" font-size="16">I_{induced}</text>
+  </g>
+
+  <!-- Concept Statement -->
+  <rect x="100" y="480" width="600" height="80" rx="15" fill="rgba(255,255,255,0.03)" stroke="#fef08a" stroke-width="1"/>
+  <text x="400" y="525" fill="#fef08a" text-anchor="middle" font-family="'Times New Roman', serif" font-size="24" font-style="italic">
+    "The induced EMF always opposes the change in magnetic flux."
+  </text>
+  
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Physics Grade 12</text>
+</svg>

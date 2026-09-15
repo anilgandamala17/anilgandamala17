@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      .chalk { font-family: 'Segoe UI', sans-serif; }
+      .title { font-size: 26px; font-weight: bold; fill: #a5d6a7; }
+      .label { font-size: 17px; fill: #c8e6c9; }
+      .num { font-size: 18px; fill: #fff9c4; font-weight: bold; }
+      .muted { font-size: 13px; fill: #81c784; }
+      .highlight { fill: rgba(102,187,106,0.12); stroke: #66bb6a; stroke-width: 1.5; }
+      .yellow { fill: rgba(255,245,157,0.12); stroke: #fff176; stroke-width: 1.5; }
+      .orange { fill: rgba(255,183,77,0.12); stroke: #ffb74d; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <text x="400" y="44" text-anchor="middle" class="chalk title">Polygons – Basic Geometrical Ideas</text>
+  <line x1="60" y1="56" x2="740" y2="56" stroke="#66bb6a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <text x="400" y="80" text-anchor="middle" class="chalk label">A polygon is a simple closed figure made of only line segments (sides).</text>
+
+  <!-- Polygon examples -->
+  <!-- Triangle -->
+  <g transform="translate(60,100)">
+    <rect x="0" y="0" width="140" height="150" class="highlight" rx="8"/>
+    <text x="70" y="20" text-anchor="middle" class="chalk label">Triangle</text>
+    <polygon points="70,35 20,130 120,130" fill="none" stroke="#a5d6a7" stroke-width="2.5"/>
+    <text x="70" y="148" text-anchor="middle" class="chalk muted">3 sides, 3 angles</text>
+  </g>
+
+  <!-- Quadrilateral -->
+  <g transform="translate(218,100)">
+    <rect x="0" y="0" width="140" height="150" class="yellow" rx="8"/>
+    <text x="70" y="20" text-anchor="middle" class="chalk label">Quadrilateral</text>
+    <polygon points="20,40 120,35 130,125 15,130" fill="none" stroke="#fff176" stroke-width="2.5"/>
+    <text x="70" y="148" text-anchor="middle" class="chalk muted">4 sides, 4 angles</text>
+  </g>
+
+  <!-- Pentagon -->
+  <g transform="translate(376,100)">
+    <rect x="0" y="0" width="140" height="150" class="orange" rx="8"/>
+    <text x="70" y="20" text-anchor="middle" class="chalk label" style="fill:#ffe0b2">Pentagon</text>
+    <polygon points="70,32 122,68 102,125 38,125 18,68" fill="none" stroke="#ffb74d" stroke-width="2.5"/>
+    <text x="70" y="148" text-anchor="middle" class="chalk muted">5 sides, 5 angles</text>
+  </g>
+
+  <!-- Hexagon -->
+  <g transform="translate(534,100)">
+    <rect x="0" y="0" width="140" height="150" class="highlight" rx="8"/>
+    <text x="70" y="20" text-anchor="middle" class="chalk label">Hexagon</text>
+    <polygon points="70,32 112,50 112,100 70,118 28,100 28,50" fill="none" stroke="#a5d6a7" stroke-width="2.5"/>
+    <text x="70" y="148" text-anchor="middle" class="chalk muted">6 sides, 6 angles</text>
+  </g>
+
+  <!-- Parts table -->
+  <g transform="translate(60,270)">
+    <rect x="0" y="0" width="680" height="80" class="highlight" rx="10"/>
+    <text x="340" y="22" text-anchor="middle" class="chalk label">Parts of a Polygon</text>
+    <line x1="10" y1="30" x2="670" y2="30" stroke="#66bb6a" stroke-width="0.8"/>
+    <text x="80" y="52" text-anchor="middle" class="chalk num" style="font-size:14px">Vertices (corners)</text>
+    <text x="240" y="52" text-anchor="middle" class="chalk num" style="font-size:14px">Sides (edges)</text>
+    <text x="420" y="52" text-anchor="middle" class="chalk num" style="font-size:14px">Diagonals</text>
+    <text x="580" y="52" text-anchor="middle" class="chalk num" style="font-size:14px">Interior Angles</text>
+    <text x="80" y="72" text-anchor="middle" class="chalk muted">Points where sides meet</text>
+    <text x="240" y="72" text-anchor="middle" class="chalk muted">Line segments forming polygon</text>
+    <text x="420" y="72" text-anchor="middle" class="chalk muted">Line joining non-adjacent vertices</text>
+    <text x="580" y="72" text-anchor="middle" class="chalk muted">Angles inside polygon</text>
+  </g>
+
+  <!-- Regular polygon -->
+  <g transform="translate(60,370)">
+    <rect x="0" y="0" width="680" height="100" class="yellow" rx="10"/>
+    <text x="340" y="24" text-anchor="middle" class="chalk label">Regular vs Irregular Polygons</text>
+    <text x="170" y="52" text-anchor="middle" class="chalk num" style="font-size:15px">Regular</text>
+    <text x="170" y="74" text-anchor="middle" class="chalk muted">All sides equal + all angles equal</text>
+    <text x="170" y="92" text-anchor="middle" class="chalk muted">(Square, Equilateral Triangle...)</text>
+    <line x1="340" y1="34" x2="340" y2="96" stroke="#fff176" stroke-width="0.8"/>
+    <text x="510" y="52" text-anchor="middle" class="chalk num" style="font-size:15px">Irregular</text>
+    <text x="510" y="74" text-anchor="middle" class="chalk muted">Sides/angles may differ</text>
+    <text x="510" y="92" text-anchor="middle" class="chalk muted">(Scalene triangle, Rectangle...)</text>
+  </g>
+</svg>

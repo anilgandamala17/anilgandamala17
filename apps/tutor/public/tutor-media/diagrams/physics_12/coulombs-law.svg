@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fef08a" />
+    </marker>
+  </defs>
+  
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Coulomb's Law</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Diagram -->
+  <g transform="translate(0, 50)">
+    <!-- Charges -->
+    <circle cx="250" cy="250" r="20" fill="#86efac" opacity="0.8"/>
+    <text x="250" y="257" fill="#0d2b1a" text-anchor="middle" font-weight="bold" font-size="20">+</text>
+    <text x="250" y="220" fill="#f8fafc" text-anchor="middle" font-size="22">q₁</text>
+    
+    <circle cx="550" cy="250" r="20" fill="#86efac" opacity="0.8"/>
+    <text x="550" y="257" fill="#0d2b1a" text-anchor="middle" font-weight="bold" font-size="20">+</text>
+    <text x="550" y="220" fill="#f8fafc" text-anchor="middle" font-size="22">q₂</text>
+    
+    <!-- Distance -->
+    <line x1="270" y1="250" x2="530" y2="250" stroke="rgba(248, 250, 252, 0.3)" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="400" y="280" fill="rgba(248, 250, 252, 0.6)" text-anchor="middle" font-family="'Times New Roman', serif" font-size="20" font-style="italic">r</text>
+    
+    <!-- Force Vectors (Repulsion) -->
+    <line x1="230" y1="250" x2="130" y2="250" stroke="#fef08a" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="180" y="240" fill="#fef08a" text-anchor="middle" font-size="18" font-style="italic">F₂₁</text>
+    
+    <line x1="570" y1="250" x2="670" y2="250" stroke="#fef08a" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="620" y="240" fill="#fef08a" text-anchor="middle" font-size="18" font-style="italic">F₁₂</text>
+  </g>
+
+  <!-- Equation Section -->
+  <rect x="200" y="420" width="400" height="120" rx="15" fill="rgba(255,255,255,0.03)" stroke="#86efac" stroke-width="1.5"/>
+  <text x="400" y="470" fill="#fef08a" text-anchor="middle" font-family="'Times New Roman', serif" font-size="42" font-style="italic">
+    F = k · <tspan dy="-10">q₁q₂</tspan><tspan x="400" dy="25">————</tspan><tspan x="400" dy="30">r²</tspan>
+  </text>
+  
+  <!-- Labels -->
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Physics Grade 12</text>
+</svg>

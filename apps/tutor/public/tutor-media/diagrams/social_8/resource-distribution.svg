@@ -1,0 +1,42 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Resource Distribution and Utilisation</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Resources: Anything that satisfies a need | Based on utility, value and technology</text>
+
+<rect x="25" y="85" width="370" height="230" fill="none" stroke="#ffd54f" stroke-width="2" rx="10"/>
+<text x="210" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Classification by Origin</text>
+<text x="210" y="150" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Natural Resources</text>
+<text x="50" y="180" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="start">1. Renewable (Eg: Solar, Wind, Water)</text>
+<text x="50" y="200" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="start">Replenish quickly; infinite supply</text>
+<text x="50" y="230" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="start">2. Non-renewable (Eg: Coal, Petroleum)</text>
+<text x="50" y="250" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="start">Fixed stock; thousands of years to form</text>
+<text x="210" y="295" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Distribution depends on Terrain, Climate, Altitude</text>
+
+<rect x="405" y="85" width="370" height="230" fill="none" stroke="#86efac" stroke-width="2" rx="10"/>
+<text x="590" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Level of Development</text>
+<text x="590" y="150" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">Actual Resources</text>
+<text x="430" y="180" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="start">Quantity known; being used (Eg: Coal in Ruhr)</text>
+
+<text x="590" y="215" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">Potential Resources</text>
+<text x="430" y="245" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="start">Could be used in future (Eg: Uranium in Ladakh)</text>
+<text x="430" y="270" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="start">Current tech not advanced enough to use fully</text>
+<text x="590" y="300" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Human Made: Buildings, Bridges (using tech)</text>
+
+<line x1="20" y1="335" x2="780" y2="335" stroke="#fb923c" stroke-width="1"/>
+
+<rect x="25" y="350" width="750" height="180" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="10"/>
+<text x="400" y="375" font-family="'Segoe UI',sans-serif" font-size="16" fill="#fb923c" text-anchor="middle" font-weight="bold">Human Resources &amp; Conservation</text>
+<text x="400" y="405" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle">Humans are the ULTIMATE resource (knowledge and skill)</text>
+
+<rect x="50" y="430" width="340" height="85" fill="none" stroke="rgba(134,239,172,0.2)" stroke-width="1" rx="8"/>
+<text x="220" y="455" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Sustainable Development</text>
+<text x="220" y="480" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Using resources without depleting them</text>
+<text x="220" y="500" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">Balancing needs of future generations</text>
+
+<rect x="410" y="430" width="340" height="85" fill="none" stroke="rgba(244,143,177,0.2)" stroke-width="1" rx="8"/>
+<text x="580" y="455" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle" font-weight="bold">Human Resource Development</text>
+<text x="580" y="480" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Improving quality of people's skills</text>
+<text x="580" y="500" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">Creation of more resources (Health &amp; Education)</text>
+
+<text x="400" y="565" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" text-anchor="middle">Principles: Respect life | Conserve diversity | Change attitude toward nature</text>
+</svg>

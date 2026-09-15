@@ -1,0 +1,35 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+  </defs>
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">FORMATTING TOOLS</text>
+  
+  <g transform="translate(100, 80)">
+    <!-- Bold -->
+    <rect x="0" y="0" width="50" height="50" fill="#334155" rx="4" />
+    <text x="25" y="35" text-anchor="middle" font-weight="bold" font-size="24">B</text>
+    
+    <!-- Italic -->
+    <rect x="70" y="0" width="50" height="50" fill="#334155" rx="4" />
+    <text x="95" y="35" text-anchor="middle" font-style="italic" font-size="24">I</text>
+
+    <!-- Underline -->
+    <rect x="140" y="0" width="50" height="50" fill="#334155" rx="4" />
+    <text x="165" y="35" text-anchor="middle" text-decoration="underline" font-size="24">U</text>
+  </g>
+
+  <g transform="translate(100, 150)">
+    <text x="0" y="20" fill="#94a3b8">Alignment:</text>
+    <rect x="80" y="5" width="20" height="20" fill="#475569" /> <!-- Left -->
+    <rect x="110" y="5" width="20" height="20" fill="#fbbf24" /> <!-- Center -->
+    <rect x="140" y="5" width="20" height="20" fill="#475569" /> <!-- Right -->
+  </g>
+  
+  <rect x="80" y="200" width="240" height="40" fill="#1e293b" />
+  <text x="200" y="225" text-anchor="middle" font-family="serif">Times New Roman | 12pt</text>
+</svg>

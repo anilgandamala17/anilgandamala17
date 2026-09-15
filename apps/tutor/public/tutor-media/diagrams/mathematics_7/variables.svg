@@ -1,0 +1,54 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Variables and Algebraic Expressions</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="78" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle">A variable is a symbol (letter) representing an unknown quantity</text>
+<rect x="100" y="86" width="600" height="42" fill="none" stroke="#ffd54f" stroke-width="1.5" rx="6"/>
+<text x="400" y="112" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Variable: x, y, n   |   Expression: 2x+3   |   Equation: 2x+3=9</text>
+
+<rect x="20" y="142" width="370" height="120" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="165" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">What is a Variable?</text>
+<text x="205" y="187" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Stands for an unknown number</text>
+<text x="205" y="207" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">"Let x = number of apples"</text>
+<text x="205" y="227" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">"n = number of students"</text>
+<text x="205" y="247" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Can take different values → hence "variable"</text>
+
+<rect x="410" y="142" width="370" height="120" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="165" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Algebraic Expression</text>
+<text x="595" y="187" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Combines variables and constants</text>
+<text x="595" y="207" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3x + 2  |  4y − 7  |  2a + 3b</text>
+<text x="595" y="227" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Has NO equals sign</text>
+<text x="595" y="247" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Coefficient: the number before a variable (3 in 3x)</text>
+
+<line x1="20" y1="275" x2="780" y2="275" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="300" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Types of Algebraic Expressions</text>
+
+<rect x="20" y="312" width="235" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="137" y="334" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Monomial</text>
+<text x="137" y="355" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Single term</text>
+<text x="137" y="375" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">5x  |  3y²  |  7ab</text>
+<text x="137" y="395" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">No + or − between terms</text>
+<text x="137" y="415" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">mono = one</text>
+<text x="137" y="433" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">e.g. area = 4πr²</text>
+
+<rect x="283" y="312" width="234" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="334" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Binomial</text>
+<text x="400" y="355" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Two terms</text>
+<text x="400" y="375" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">2x + 3  |  x² − y</text>
+<text x="400" y="395" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">One + or − between terms</text>
+<text x="400" y="415" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">bi = two</text>
+<text x="400" y="433" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">e.g. perimeter = 2l + 2b</text>
+
+<rect x="545" y="312" width="235" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="662" y="334" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Trinomial</text>
+<text x="662" y="355" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Three terms</text>
+<text x="662" y="375" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">x² + 2x + 1</text>
+<text x="662" y="395" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Two + or − between terms</text>
+<text x="662" y="415" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">tri = three</text>
+<text x="662" y="433" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">e.g. ax² + bx + c</text>
+
+<line x1="20" y1="457" x2="780" y2="457" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="482" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">From Words to Expressions</text>
+<text x="400" y="508" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">"5 more than n" → n + 5  |  "3 times x" → 3x  |  "x decreased by 7" → x − 7</text>
+<text x="400" y="533" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">"Half of y" → y/2  |  "Product of a and b" → ab  |  "Square of n" → n²</text>
+<text x="400" y="560" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Like terms: same variable and power (3x and 7x) — can be combined | Unlike terms cannot be combined</text>
+</svg>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#86efac" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Types of Functions</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Mapping Diagrams -->
+  <g transform="translate(100, 150)">
+    <!-- One-to-One (Injective) -->
+    <g transform="translate(0, 0)">
+      <text x="50" y="-20" fill="#86efac" font-weight="bold" text-anchor="middle">One-to-One (Injective)</text>
+      <!-- Domain Set A -->
+      <ellipse cx="0" cy="100" rx="30" ry="80" fill="rgba(255,255,255,0.05)" stroke="#f8fafc" stroke-width="2"/>
+      <text x="0" y="200" fill="#f8fafc" text-anchor="middle">Set A</text>
+      <circle cx="0" cy="50" r="4" fill="#fef08a"/>
+      <circle cx="0" cy="100" r="4" fill="#fef08a"/>
+      <circle cx="0" cy="150" r="4" fill="#fef08a"/>
+      
+      <!-- Co-domain Set B -->
+      <ellipse cx="120" cy="100" rx="30" ry="80" fill="rgba(255,255,255,0.05)" stroke="#f8fafc" stroke-width="2"/>
+      <text x="120" y="200" fill="#f8fafc" text-anchor="middle">Set B</text>
+      <circle cx="120" cy="50" r="4" fill="#86efac"/>
+      <circle cx="120" cy="80" r="4" fill="#86efac"/>
+      <circle cx="120" cy="120" r="4" fill="#86efac"/>
+      <circle cx="120" cy="150" r="4" fill="#86efac"/>
+      
+      <!-- Mappings -->
+      <line x1="5" y1="50" x2="110" y2="50" stroke="#86efac" stroke-width="2" marker-end="url(#arrowhead)"/>
+      <line x1="5" y1="100" x2="110" y2="80" stroke="#86efac" stroke-width="2" marker-end="url(#arrowhead)"/>
+      <line x1="5" y1="150" x2="110" y2="120" stroke="#86efac" stroke-width="2" marker-end="url(#arrowhead)"/>
+    </g>
+
+    <!-- Onto (Surjective) -->
+    <g transform="translate(300, 0)">
+      <text x="50" y="-20" fill="#86efac" font-weight="bold" text-anchor="middle">Onto (Surjective)</text>
+      <ellipse cx="0" cy="100" rx="30" ry="80" fill="rgba(255,255,255,0.05)" stroke="#f8fafc" stroke-width="2"/>
+      <ellipse cx="120" cy="100" rx="30" ry="80" fill="rgba(255,255,255,0.05)" stroke="#f8fafc" stroke-width="2"/>
+      
+      <circle cx="0" cy="50" r="4" fill="#fef08a"/>
+      <circle cx="0" cy="80" r="4" fill="#fef08a"/>
+      <circle cx="0" cy="120" r="4" fill="#fef08a"/>
+      <circle cx="0" cy="150" r="4" fill="#fef08a"/>
+      
+      <circle cx="120" cy="65" r="4" fill="#86efac"/>
+      <circle cx="120" cy="100" r="4" fill="#86efac"/>
+      <circle cx="120" cy="135" r="4" fill="#86efac"/>
+      
+      <line x1="5" y1="50" x2="110" y2="65" stroke="#86efac" stroke-width="2" marker-end="url(#arrowhead)"/>
+      <line x1="5" y1="80" x2="110" y2="65" stroke="#86efac" stroke-width="2" marker-end="url(#arrowhead)"/>
+      <line x1="5" y1="120" x2="110" y2="100" stroke="#86efac" stroke-width="2" marker-end="url(#arrowhead)"/>
+      <line x1="5" y1="150" x2="110" y2="135" stroke="#86efac" stroke-width="2" marker-end="url(#arrowhead)"/>
+      <text x="60" y="240" fill="#f8fafc" text-anchor="middle" font-size="14">Range = Co-domain</text>
+    </g>
+  </g>
+
+  <!-- Key Concept -->
+  <rect x="150" y="450" width="500" height="80" rx="15" fill="rgba(255,255,255,0.03)" stroke="#fef08a" stroke-width="1.5"/>
+  <text x="400" y="495" fill="#fef08a" text-anchor="middle" font-size="22" font-weight="bold">Bijective = Injective + Surjective</text>
+  <text x="400" y="520" fill="#f8fafc" text-anchor="middle" font-size="14">(Required for Inverse functions)</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Math Grade 12</text>
+</svg>

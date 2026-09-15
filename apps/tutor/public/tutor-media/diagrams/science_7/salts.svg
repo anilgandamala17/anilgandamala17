@@ -1,0 +1,54 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Salts</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<rect x="100" y="62" width="600" height="42" fill="none" stroke="#ffd54f" stroke-width="1.5" rx="6"/>
+<text x="400" y="82" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Salt = Formed when acid reacts with base (neutralisation)</text>
+<text x="400" y="100" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle">Acid + Base → Salt + Water</text>
+
+<rect x="20" y="112" width="370" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="135" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Common Salts and Their Uses</text>
+<text x="205" y="157" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">NaCl (Common salt): cooking, preservation</text>
+<text x="205" y="177" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">NaHCO₃ (Baking soda): baking, antacid</text>
+<text x="205" y="197" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">CuSO₄ (Blue vitriol): fungicide in farming</text>
+<text x="205" y="217" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">CaCO₃ (Calcium carbonate): chalk, cement</text>
+<text x="205" y="234" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">FeSO₄ (Ferrous sulphate): iron supplements</text>
+
+<rect x="410" y="112" width="370" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="135" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Salt Formation Examples</text>
+<text x="595" y="157" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">HCl + NaOH → NaCl + H₂O</text>
+<text x="595" y="177" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O</text>
+<text x="595" y="197" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">HNO₃ + NaOH → NaNO₃ + H₂O</text>
+<text x="595" y="217" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">H₂SO₄ + Mg → MgSO₄ + H₂</text>
+<text x="595" y="234" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Acid + metal → Salt + hydrogen gas</text>
+
+<line x1="20" y1="256" x2="780" y2="256" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="280" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">pH of Salt Solutions</text>
+
+<rect x="20" y="292" width="235" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="137" y="314" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Neutral Salt (pH=7)</text>
+<text x="137" y="336" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Strong acid + Strong base</text>
+<text x="137" y="356" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">NaCl: HCl + NaOH</text>
+<text x="137" y="376" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">KNO₃, KCl</text>
+<text x="137" y="412" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">pH exactly 7</text>
+
+<rect x="283" y="292" width="234" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="314" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle" font-weight="bold">Acidic Salt (pH&lt;7)</text>
+<text x="400" y="336" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Strong acid + Weak base</text>
+<text x="400" y="356" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">NH₄Cl, NH₄NO₃</text>
+<text x="400" y="376" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">HCl + NH₄OH → NH₄Cl + H₂O</text>
+<text x="400" y="412" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Solution has pH below 7</text>
+
+<rect x="545" y="292" width="235" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="662" y="314" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Basic Salt (pH&gt;7)</text>
+<text x="662" y="336" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Weak acid + Strong base</text>
+<text x="662" y="356" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Na₂CO₃, CH₃COONa</text>
+<text x="662" y="376" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">NaOH + CH₃COOH → salt</text>
+<text x="662" y="412" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Solution has pH above 7</text>
+
+<line x1="20" y1="436" x2="780" y2="436" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="460" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Everyday Applications of Salts</text>
+<text x="400" y="485" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Toothpaste: NaF (fluoride) prevents tooth decay | Antacid: Mg(OH)₂ neutralises stomach acid</text>
+<text x="400" y="508" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Acid soil: treated with quicklime CaO | Wasp sting (base): apply vinegar (acid)</text>
+<text x="400" y="531" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Bee sting (acid): apply baking soda (base) | Fertilizers: ammonium nitrate, urea</text>
+<text x="400" y="563" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Crystallisation: process of obtaining salt crystals from its solution by slow evaporation</text>
+</svg>

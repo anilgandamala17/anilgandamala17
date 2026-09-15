@@ -1,0 +1,54 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Digestion in Animals</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<rect x="60" y="63" width="680" height="42" fill="none" stroke="#ffd54f" stroke-width="1.5" rx="6"/>
+<text x="400" y="80" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">Digestion = Breaking down complex food into simple, absorbable molecules</text>
+<text x="400" y="100" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle">Complex food → Simple molecules → Absorbed into blood → Used by body cells</text>
+
+<rect x="20" y="112" width="370" height="128" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="135" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Mechanical Digestion</text>
+<text x="205" y="157" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Physical breaking of food into pieces</text>
+<text x="205" y="177" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Biting and chewing (teeth)</text>
+<text x="205" y="197" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Churning in stomach muscles</text>
+<text x="205" y="217" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">No chemical change in food</text>
+<text x="205" y="233" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Increases surface area for enzyme action</text>
+
+<rect x="410" y="112" width="370" height="128" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="135" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Chemical Digestion</text>
+<text x="595" y="157" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Enzymes break molecules chemically</text>
+<text x="595" y="177" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Starch → Glucose (by amylase)</text>
+<text x="595" y="197" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Proteins → Amino acids (by pepsin)</text>
+<text x="595" y="217" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Fats → Fatty acids + Glycerol (lipase)</text>
+<text x="595" y="233" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Enzymes are biological catalysts</text>
+
+<line x1="20" y1="253" x2="780" y2="253" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="277" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Key Digestive Enzymes</text>
+
+<rect x="20" y="290" width="235" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="137" y="312" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Salivary Amylase</text>
+<text x="137" y="333" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Location: Mouth (saliva)</text>
+<text x="137" y="353" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Breaks: starch → sugars</text>
+<text x="137" y="373" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">pH: neutral/slightly alkaline</text>
+<text x="137" y="393" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">1st enzyme to act on food</text>
+<text x="137" y="432" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Try: chew bread 30s → tastes sweet</text>
+
+<rect x="283" y="290" width="234" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="312" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Pepsin</text>
+<text x="400" y="333" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Location: Stomach</text>
+<text x="400" y="353" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Breaks: proteins → peptides</text>
+<text x="400" y="373" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">pH: acidic (stomach acid = HCl)</text>
+<text x="400" y="393" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">HCl creates acidic environment</text>
+<text x="400" y="432" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Kills harmful bacteria in food too</text>
+
+<rect x="545" y="290" width="235" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="662" y="312" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Lipase</text>
+<text x="662" y="333" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Location: Pancreas / small intestine</text>
+<text x="662" y="353" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Breaks: fats → fatty acids + glycerol</text>
+<text x="662" y="373" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Bile emulsifies fat first</text>
+<text x="662" y="393" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">pH: alkaline (small intestine)</text>
+<text x="662" y="432" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Emulsified = broken into small droplets</text>
+
+<text x="400" y="476" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Absorption: villi in small intestine absorb nutrients into bloodstream</text>
+<text x="400" y="500" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Assimilation: cells use absorbed nutrients for energy, growth, repair</text>
+<text x="400" y="538" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Water and minerals are absorbed directly without digestion | Vitamins absorbed as-is</text>
+</svg>

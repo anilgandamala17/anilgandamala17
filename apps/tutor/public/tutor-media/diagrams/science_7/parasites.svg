@@ -1,0 +1,56 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Parasitic Plants</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<rect x="100" y="62" width="600" height="42" fill="none" stroke="#ffd54f" stroke-width="1.5" rx="6"/>
+<text x="400" y="88" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Parasite = organism that lives on/in a host and harms it while benefiting itself</text>
+
+<rect x="20" y="115" width="370" height="128" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="138" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Cuscuta (Amarbel)</text>
+<text x="205" y="160" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Yellow thread-like climbing plant</text>
+<text x="205" y="180" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">No chlorophyll (cannot photosynthesise)</text>
+<text x="205" y="200" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Wraps around host plant stem</text>
+<text x="205" y="220" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Haustoria penetrate host stem</text>
+<text x="205" y="237" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Absorbs: water, minerals, sugars from host</text>
+
+<rect x="410" y="115" width="370" height="128" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="138" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Haustoria — Attachment Organ</text>
+<text x="595" y="160" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Special root-like structures</text>
+<text x="595" y="180" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Penetrate host bark/cortex</text>
+<text x="595" y="200" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Connect to vascular tissue (xylem)</text>
+<text x="595" y="220" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Suck water and nutrients</text>
+<text x="595" y="237" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Without haustoria — parasite cannot feed</text>
+
+<line x1="20" y1="256" x2="780" y2="256" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="280" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Examples of Parasitic Plants and Animals</text>
+
+<rect x="20" y="292" width="370" height="128" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="315" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Plant Parasites</text>
+<text x="205" y="337" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Cuscuta: affects legumes, wheat</text>
+<text x="205" y="357" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Orobanche: attacks tomato/tobacco</text>
+<text x="205" y="377" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Striga (Witchweed): destroys crops</text>
+<text x="205" y="397" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Rafflesia: largest flower, full parasite</text>
+<text x="205" y="413" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">All cause significant crop yield loss</text>
+
+<rect x="410" y="292" width="370" height="128" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="315" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Animal Parasites (comparison)</text>
+<text x="595" y="337" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Tapeworm: endoparasite in intestine</text>
+<text x="595" y="357" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Head lice: ectoparasite on hair</text>
+<text x="595" y="377" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Mosquito: blood-sucking insect</text>
+<text x="595" y="397" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Leech: ectoparasite on skin</text>
+<text x="595" y="413" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Ecto = outside | Endo = inside host</text>
+
+<line x1="20" y1="434" x2="780" y2="434" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="458" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Control of Plant Parasites</text>
+
+<rect x="20" y="470" width="370" height="100" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="492" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Prevention Methods</text>
+<text x="205" y="513" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Remove parasite manually (weeding)</text>
+<text x="205" y="533" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Crop rotation to break parasite cycle</text>
+<text x="205" y="553" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Selective herbicides for some parasites</text>
+
+<rect x="410" y="470" width="370" height="100" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="492" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Effect on Agriculture</text>
+<text x="595" y="513" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Reduces crop yield significantly</text>
+<text x="595" y="533" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Weakens and can kill host plant</text>
+<text x="595" y="553" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Can destroy entire agricultural fields</text>
+</svg>

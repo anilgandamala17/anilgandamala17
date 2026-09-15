@@ -1,0 +1,35 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Irrigation Systems</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">The supply of water to crops at regular intervals</text>
+
+<rect x="20" y="90" width="370" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Traditional Methods</text>
+<text x="205" y="140" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">• Moat (Pulley system)</text>
+<text x="205" y="165" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">• Chain pump</text>
+<text x="205" y="190" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">• Dhekli</text>
+<text x="205" y="215" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">• Rahat (Lever system)</text>
+<text x="205" y="250" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Cheaper, but less efficient</text>
+<text x="205" y="270" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Uses cattle or human labor</text>
+
+<rect x="410" y="90" width="370" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Modern Methods</text>
+<text x="595" y="140" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">1. Sprinkler System</text>
+<text x="595" y="160" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Water rotating through nozzles like rain</text>
+<text x="595" y="175" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Best for sandy soil or uneven land</text>
+<text x="595" y="205" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">2. Drip System</text>
+<text x="595" y="225" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Water falls drop by drop at the roots</text>
+<text x="595" y="240" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Zero water wastage! Ideal for scarcity</text>
+<text x="595" y="275" font-family="'Segoe UI',sans-serif" font-size="11" fill="#ffd54f" text-anchor="middle">Saves water &amp; nutrients</text>
+
+<line x1="20" y1="310" x2="780" y2="310" stroke="#86efac" stroke-width="1"/>
+
+<rect x="20" y="330" width="760" height="220" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="355" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Importance of Irrigation</text>
+<text x="60" y="390" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="start">1. Germination of seeds cannot happen in dry conditions</text>
+<text x="60" y="420" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="start">2. Nutrients dissolved in water are transported to plant parts</text>
+<text x="60" y="450" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="start">3. Protects crops from frost and hot air currents</text>
+<text x="60" y="480" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="start">4. Maintains soil moisture for healthy crop growth</text>
+
+<text x="400" y="530" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Irrigation frequency depends on: Type of crop, Type of soil, and Season</text>
+</svg>

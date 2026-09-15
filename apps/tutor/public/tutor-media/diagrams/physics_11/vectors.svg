@@ -1,0 +1,48 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 11px; font-weight: bold; }
+      .vec-a { stroke: #4ade80; stroke-width: 2.5; marker-end: url(#arr-a); }
+      .vec-b { stroke: #93c5fd; stroke-width: 2.5; marker-end: url(#arr-b); }
+      .res { stroke: #fca5a5; stroke-width: 3; marker-end: url(#arr-res); }
+      .dashed { stroke: #94a3b8; stroke-width: 1; stroke-dasharray: 4; }
+    </style>
+    <marker id="arr-a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4ade80"/></marker>
+    <marker id="arr-b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#93c5fd"/></marker>
+    <marker id="arr-res" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#fca5a5"/></marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Vector Addition &amp; Resolution</text>
+    
+    <!-- Triangle Law -->
+    <g transform="translate(20, 60)">
+      <text x="0" y="-10" class="label" fill="#86efac">Triangle Law</text>
+      <line x1="0" y1="100" x2="80" y2="100" class="vec-a" />
+      <text x="40" y="115" class="label" font-size="9">A</text>
+      <line x1="80" y1="100" x2="130" y2="40" class="vec-b" />
+      <text x="115" y="65" class="label" font-size="9">B</text>
+      <line x1="0" y1="100" x2="125" y2="44" class="res" />
+      <text x="50" y="60" class="label" font-size="10" fill="#fca5a5">R = A + B</text>
+    </g>
+
+    <!-- Vector Resolution -->
+    <g transform="translate(220, 60)">
+      <text x="0" y="-10" class="label" fill="#86efac">Vector Resolution</text>
+      <line x1="0" y1="100" x2="120" y2="100" class="dashed" />
+      <line x1="0" y1="100" x2="0" y2="0" class="dashed" />
+      <line x1="0" y1="100" x2="100" y2="20" class="vec-a" />
+      <text x="110" y="25" class="label" font-size="10">A</text>
+      
+      <!-- Components -->
+      <line x1="0" y1="100" x2="100" y2="100" class="vec-b" stroke="#4ade80" />
+      <text x="50" y="115" class="label" font-size="9" fill="#4ade80">Ax = A cosθ</text>
+      
+      <line x1="0" y1="100" x2="0" y2="20" class="vec-b" stroke="#93c5fd" />
+      <text x="-45" y="60" class="label" font-size="9" fill="#93c5fd">Ay = A sinθ</text>
+      
+      <path d="M 30 100 A 30 30 0 0 0 25 80" fill="none" stroke="#ffffff" stroke-width="1" />
+      <text x="35" y="90" fill="#ffffff" font-size="8">θ</text>
+    </g>
+  </g>
+</svg>

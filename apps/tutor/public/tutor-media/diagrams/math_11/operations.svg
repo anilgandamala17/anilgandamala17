@@ -1,0 +1,46 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 14px; font-weight: bold; }
+      .formula { fill: #fcd34d; font-size: 16px; font-family: 'Courier New', monospace; font-weight: bold; }
+      .box { fill: rgba(30, 58, 138, 0.6); stroke: #60a5fa; stroke-width: 1.5; rx: 6; }
+      .op-box { fill: rgba(15, 23, 42, 0.8); stroke: #4ade80; stroke-width: 1.5; rx: 10; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Fundamental Set Operations</text>
+    
+    <!-- Union -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="170" height="80" class="op-box" />
+      <text x="85" y="30" text-anchor="middle" class="label" fill="#4ade80">UNION (∪)</text>
+      <text x="85" y="60" text-anchor="middle" class="formula">A ∪ B</text>
+      <text x="85" y="75" text-anchor="middle" fill="#94a3b8" font-size="9">All elements in either A or B</text>
+    </g>
+
+    <!-- Intersection -->
+    <g transform="translate(210, 50)">
+      <rect x="0" y="0" width="170" height="80" class="op-box" />
+      <text x="85" y="30" text-anchor="middle" class="label" fill="#60a5fa">INTERSECTION (∩)</text>
+      <text x="85" y="60" text-anchor="middle" class="formula">A ∩ B</text>
+      <text x="85" y="75" text-anchor="middle" fill="#94a3b8" font-size="9">Common elements in both</text>
+    </g>
+
+    <!-- Difference -->
+    <g transform="translate(20, 150)">
+      <rect x="0" y="0" width="170" height="80" class="op-box" />
+      <text x="85" y="30" text-anchor="middle" class="label" fill="#f87171">DIFFERENCE (−)</text>
+      <text x="85" y="60" text-anchor="middle" class="formula">A − B</text>
+      <text x="85" y="75" text-anchor="middle" fill="#94a3b8" font-size="9">Elements in A but not in B</text>
+    </g>
+
+    <!-- Complement -->
+    <g transform="translate(210, 150)">
+      <rect x="0" y="0" width="170" height="80" class="op-box" />
+      <text x="85" y="30" text-anchor="middle" class="label" fill="#fcd34d">COMPLEMENT (A′)</text>
+      <text x="85" y="60" text-anchor="middle" class="formula">U − A</text>
+      <text x="85" y="75" text-anchor="middle" fill="#94a3b8" font-size="9">Elements in Universal set not in A</text>
+    </g>
+  </g>
+</svg>

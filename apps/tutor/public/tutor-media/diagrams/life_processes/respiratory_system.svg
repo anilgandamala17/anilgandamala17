@@ -1,0 +1,52 @@
+<svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .label { font-size: 10px; fill: #94a3b8; }
+      .lung { fill: #fca5a5; stroke: #fff; opacity: 0.8; }
+      .trachea { fill: none; stroke: #cbd5e1; stroke-width: 10; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="320" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">RESPIRATORY SYSTEM</text>
+
+  <g transform="translate(200, 50)">
+    <!-- Trachea -->
+    <line x1="0" y1="0" x2="0" y2="60" class="trachea" />
+    <g>
+      <line x1="-5" y1="10" x2="5" y2="10" stroke="#94a3b8" />
+      <line x1="-5" y1="20" x2="5" y2="20" stroke="#94a3b8" />
+      <line x1="-5" y1="30" x2="5" y2="30" stroke="#94a3b8" />
+      <line x1="-5" y1="40" x2="5" y2="40" stroke="#94a3b8" />
+    </g>
+    <text x="15" y="30" class="label">Trachea</text>
+
+    <!-- Lungs -->
+    <g transform="translate(0, 60)">
+      <!-- Left Lung (Right side of viewer) -->
+      <path d="M 10 10 Q 50 10 60 60 Q 50 120 10 110 Z" class="lung" />
+      <!-- Right Lung (Left side of viewer) -->
+      <path d="M -10 10 Q -50 10 -60 60 Q -50 120 -10 110 Z" class="lung" />
+      
+      <!-- Bronchi -->
+      <path d="M 0 0 L 20 30" stroke="#cbd5e1" stroke-width="4" fill="none" />
+      <path d="M 0 0 L -20 30" stroke="#cbd5e1" stroke-width="4" fill="none" />
+      
+      <!-- Diaphragm -->
+      <path d="M -70 120 Q 0 100 70 120" stroke="#fbbf24" stroke-width="4" fill="none" />
+      <text x="0" y="140" class="label" text-anchor="middle">Diaphragm</text>
+    </g>
+  </g>
+  
+  <!-- Inset: Alveoli -->
+  <g transform="translate(40, 180)">
+    <circle cx="40" cy="40" r="35" fill="none" stroke="#fbbf24" stroke-dasharray="2,2"/>
+    <text x="40" y="90" class="label" text-anchor="middle">Alveoli (Zoom)</text>
+    <circle cx="30" cy="30" r="8" fill="#fca5a5" />
+    <circle cx="50" cy="30" r="8" fill="#fca5a5" />
+    <circle cx="40" cy="50" r="8" fill="#fca5a5" />
+  </g>
+</svg>

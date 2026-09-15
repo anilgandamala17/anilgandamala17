@@ -1,0 +1,27 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="600" fill="#fff7ed"/>
+<text x="400" y="50" font-family="Georgia" font-size="32" text-anchor="middle" font-weight="bold" fill="#9a3412">Glimpses of India</text>
+<g transform="translate(100, 150)">
+    <!-- Baker from Goa -->
+    <rect x="0" y="0" width="180" height="250" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="2"/>
+    <text x="90" y="30" text-anchor="middle" font-family="Georgia" font-size="20" fill="#9a3412">Goa</text>
+    <path d="M 40 100 Q 90 60 140 100 Q 140 150 90 150 Q 40 150 40 100" fill="#fbbf24" stroke="#d97706" stroke-width="2"/> <!-- Loaf -->
+    <text x="90" y="200" text-anchor="middle" font-family="Georgia" font-size="16">Traditional Baker</text>
+</g>
+<g transform="translate(310, 150)">
+    <!-- Coorg -->
+    <rect x="0" y="0" width="180" height="250" rx="10" fill="#ecfccb" stroke="#3f6212" stroke-width="2"/>
+    <text x="90" y="30" text-anchor="middle" font-family="Georgia" font-size="20" fill="#365314">Coorg</text>
+    <path d="M 90 80 L 130 150 L 50 150 Z" fill="#4d7c0f"/> <!-- Coffee Plant -->
+    <circle cx="70" cy="110" r="5" fill="#be123c"/> <circle cx="110" cy="120" r="5" fill="#be123c"/>
+    <text x="90" y="200" text-anchor="middle" font-family="Georgia" font-size="16">Coffee & Rainforests</text>
+</g>
+<g transform="translate(520, 150)">
+    <!-- Assam -->
+    <rect x="0" y="0" width="180" height="250" rx="10" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="90" y="30" text-anchor="middle" font-family="Georgia" font-size="20" fill="#1e3a8a">Assam</text>
+    <path d="M 60 120 Q 90 100 120 120 Q 120 140 90 140 Q 60 140 60 120" fill="#15803d"/> <!-- Tea Leaf -->
+    <path d="M 90 140 L 90 180" stroke="#3f6212" stroke-width="2"/>
+    <text x="90" y="200" text-anchor="middle" font-family="Georgia" font-size="16">Tea Gardens</text>
+</g>
+</svg>

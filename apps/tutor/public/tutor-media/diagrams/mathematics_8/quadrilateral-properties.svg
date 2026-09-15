@@ -1,0 +1,91 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Properties of Quadrilaterals</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Key: Sides, Angles, Diagonals — compare parallelogram, rectangle, rhombus, square</text>
+
+<!-- Comparison table -->
+<rect x="20" y="82" width="760" height="280" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<!-- Header row -->
+<rect x="20" y="82" width="760" height="30" fill="rgba(134,239,172,0.18)" rx="8"/>
+<text x="95" y="102" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Property</text>
+<text x="250" y="102" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Parallelogram</text>
+<text x="393" y="102" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Rectangle</text>
+<text x="530" y="102" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Rhombus</text>
+<text x="680" y="102" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Square</text>
+
+<line x1="20" y1="112" x2="780" y2="112" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<line x1="170" y1="82" x2="170" y2="362" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+<line x1="330" y1="82" x2="330" y2="362" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+<line x1="460" y1="82" x2="460" y2="362" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+<line x1="600" y1="82" x2="600" y2="362" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+
+<text x="95" y="131" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.85)" text-anchor="middle">Opp sides equal</text>
+<text x="250" y="131" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+<text x="393" y="131" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+<text x="530" y="131" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+<text x="680" y="131" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+
+<line x1="20" y1="142" x2="780" y2="142" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+<text x="95" y="160" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.85)" text-anchor="middle">All sides equal</text>
+<text x="250" y="160" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle">✗</text>
+<text x="393" y="160" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle">✗</text>
+<text x="530" y="160" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+<text x="680" y="160" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+
+<line x1="20" y1="172" x2="780" y2="172" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+<text x="95" y="190" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.85)" text-anchor="middle">All 90° angles</text>
+<text x="250" y="190" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle">✗</text>
+<text x="393" y="190" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+<text x="530" y="190" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle">✗</text>
+<text x="680" y="190" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+
+<line x1="20" y1="202" x2="780" y2="202" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+<text x="95" y="220" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.85)" text-anchor="middle">Diag bisect each</text>
+<text x="250" y="220" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+<text x="393" y="220" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+<text x="530" y="220" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+<text x="680" y="220" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+
+<line x1="20" y1="232" x2="780" y2="232" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+<text x="95" y="250" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.85)" text-anchor="middle">Diag equal length</text>
+<text x="250" y="250" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle">✗</text>
+<text x="393" y="250" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+<text x="530" y="250" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle">✗</text>
+<text x="680" y="250" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+
+<line x1="20" y1="262" x2="780" y2="262" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+<text x="95" y="280" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.85)" text-anchor="middle">Diag ⊥ each other</text>
+<text x="250" y="280" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle">✗</text>
+<text x="393" y="280" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle">✗</text>
+<text x="530" y="280" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+<text x="680" y="280" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+
+<line x1="20" y1="292" x2="780" y2="292" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+<text x="95" y="310" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.85)" text-anchor="middle">Diag bisect angles</text>
+<text x="250" y="310" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle">✗</text>
+<text x="393" y="310" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle">✗</text>
+<text x="530" y="310" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+<text x="680" y="310" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">✓</text>
+
+<line x1="20" y1="322" x2="780" y2="322" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+<text x="95" y="340" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.85)" text-anchor="middle">Line of symmetry</text>
+<text x="250" y="340" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle">0</text>
+<text x="393" y="340" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle">2</text>
+<text x="530" y="340" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle">2</text>
+<text x="680" y="340" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle">4</text>
+
+<text x="400" y="394" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">Angle Sum: ∠A + ∠B + ∠C + ∠D = 360° (for ALL quadrilaterals)</text>
+<text x="400" y="416" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Adjacent angles of parallelogram: supplementary (sum = 180°)</text>
+
+<rect x="20" y="432" width="760" height="80" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1" rx="8"/>
+<text x="205" y="454" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Isosceles Trapezium</text>
+<text x="205" y="474" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Non-parallel sides equal</text>
+<text x="205" y="492" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Base angles equal</text>
+<text x="205" y="506" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">Diagonals equal</text>
+<text x="595" y="454" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Kite</text>
+<text x="595" y="474" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">2 pairs of adjacent equal sides</text>
+<text x="595" y="492" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">One diagonal ⊥ bisects the other</text>
+<text x="595" y="506" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">One pair of opposite angles equal</text>
+
+<text x="400" y="558" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Every square is a rectangle and rhombus | Every rectangle &amp; rhombus is a parallelogram</text>
+</svg>

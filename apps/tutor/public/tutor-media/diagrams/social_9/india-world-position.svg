@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#1a2e1a"/>
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#86efac" font-weight="bold">India and the World — Strategic Location</text>
+  <line x1="40" y1="48" x2="760" y2="48" stroke="#86efac" stroke-width="1" opacity="0.4"/>
+
+  <!-- Simplified world map outline boxes to represent continents -->
+  <!-- Indian Ocean schematic map -->
+  <rect x="45" y="58" width="450" height="340" rx="8" fill="rgba(56,189,248,0.06)" stroke="#38bdf8" stroke-width="1"/>
+
+  <!-- Continental blocks (labeled regions) -->
+  <!-- Europe top-left -->
+  <rect x="60" y="70" width="95" height="60" rx="4" fill="rgba(250,204,21,0.10)" stroke="#facc15" stroke-width="1"/>
+  <text x="108" y="98" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#facc15" font-weight="bold">EUROPE</text>
+  <text x="108" y="114" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">West</text>
+
+  <!-- Africa top-left-center -->
+  <rect x="60" y="145" width="95" height="140" rx="4" fill="rgba(249,115,22,0.10)" stroke="#f97316" stroke-width="1"/>
+  <text x="108" y="218" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#f97316" font-weight="bold">AFRICA</text>
+
+  <!-- Middle East / West Asia -->
+  <rect x="172" y="90" width="80" height="65" rx="4" fill="rgba(167,139,250,0.10)" stroke="#a78bfa" stroke-width="1"/>
+  <text x="212" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#a78bfa" font-weight="bold">W. ASIA</text>
+  <text x="212" y="132" text-anchor="middle" font-family="Georgia, serif" font-size="8" fill="rgba(255,255,255,0.5)">Middle East</text>
+
+  <!-- INDIA central, highlighted -->
+  <polygon points="260,130 302,120 328,145 330,185 315,215 285,235 260,225 242,205 238,175 248,155" 
+           fill="rgba(134,239,172,0.3)" stroke="#86efac" stroke-width="2.5"/>
+  <text x="285" y="184" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#86efac" font-weight="bold">INDIA</text>
+  <text x="285" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="rgba(134,239,172,0.7)">★ Central</text>
+
+  <!-- Indian Ocean label -->
+  <text x="230" y="295" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="rgba(56,189,248,0.7)" font-style="italic">Indian Ocean</text>
+
+  <!-- East Asia -->
+  <rect x="345" y="80" width="90" height="100" rx="4" fill="rgba(239,68,68,0.10)" stroke="#ef4444" stroke-width="1"/>
+  <text x="390" y="125" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#ef4444" font-weight="bold">E. ASIA</text>
+  <text x="390" y="141" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">China, Japan</text>
+
+  <!-- SE Asia / Australia placeholder -->
+  <rect x="345" y="200" width="90" height="80" rx="4" fill="rgba(74,222,128,0.10)" stroke="#4ade80" stroke-width="1"/>
+  <text x="390" y="237" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#4ade80" font-weight="bold">SE ASIA</text>
+  <text x="390" y="253" text-anchor="middle" font-family="Georgia, serif" font-size="8" fill="rgba(255,255,255,0.4)">Australia</text>
+
+  <!-- Trade route arrows -->
+  <!-- India → Europe (west) -->
+  <line x1="248" y1="175" x2="155" y2="155" stroke="rgba(250,204,21,0.8)" stroke-width="2" stroke-dasharray="8,4"/>
+  <polygon points="155,149 148,156 162,162" fill="#facc15"/>
+  <text x="200" y="147" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#facc15">Trade Route</text>
+
+  <!-- India → E.Asia (east) -->
+  <line x1="330" y1="170" x2="345" y2="145" stroke="rgba(239,68,68,0.8)" stroke-width="2" stroke-dasharray="8,4"/>
+  <polygon points="345,139 338,146 352,152" fill="#ef4444"/>
+
+  <!-- India → SE Asia (south east) -->
+  <line x1="308" y1="230" x2="358" y2="218" stroke="rgba(74,222,128,0.8)" stroke-width="2" stroke-dasharray="8,4"/>
+  <polygon points="358,212 351,219 365,224" fill="#4ade80"/>
+
+  <!-- India → Africa (south west) -->
+  <line x1="255" y1="218" x2="158" y2="253" stroke="rgba(249,115,22,0.8)" stroke-width="2" stroke-dasharray="8,4"/>
+  <polygon points="158,247 151,255 165,260" fill="#f97316"/>
+
+  <!-- Info panel right -->
+  <rect x="510" y="58" width="268" height="340" rx="8" fill="rgba(134,239,172,0.05)" stroke="#86efac" stroke-width="1"/>
+  <text x="644" y="86" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#86efac" font-weight="bold">India's Strategic Importance</text>
+  <line x1="525" y1="94" x2="764" y2="94" stroke="#86efac" stroke-width="0.5" opacity="0.3"/>
+
+  <text x="525" y="116" font-family="Georgia, serif" font-size="11" fill="#facc15" font-weight="bold">Central Position:</text>
+  <text x="525" y="133" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Links Europe &amp; West Asia to</text>
+  <text x="525" y="149" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">East &amp; South-East Asia</text>
+
+  <text x="525" y="173" font-family="Georgia, serif" font-size="11" fill="#38bdf8" font-weight="bold">Indian Ocean Routes:</text>
+  <text x="525" y="190" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">India controls major sea lanes</text>
+  <text x="525" y="206" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">between Europe &amp; Pacific</text>
+  <text x="525" y="222" font-family="Georgia, serif" font-size="9" fill="#38bdf8">Indian Ocean ≠ any other ocean (named after India)</text>
+
+  <text x="525" y="246" font-family="Georgia, serif" font-size="11" fill="#a78bfa" font-weight="bold">Cultural Spread:</text>
+  <text x="525" y="263" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Ancient trade brought</text>
+  <text x="525" y="279" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">spices, silk, ideas globally</text>
+
+  <text x="525" y="303" font-family="Georgia, serif" font-size="11" fill="#f97316" font-weight="bold">Peninsular Shape:</text>
+  <text x="525" y="320" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">3 seas: Arabian Sea (W),</text>
+  <text x="525" y="336" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.75)">Bay of Bengal (E), Indian Ocean (S)</text>
+  <text x="525" y="352" font-family="Georgia, serif" font-size="9" fill="#f97316">Coastline = 7,516 km → natural trade access</text>
+
+  <!-- Bottom fact band -->
+  <rect x="45" y="415" width="730" height="50" rx="6" fill="rgba(134,239,172,0.07)" stroke="#86efac" stroke-width="0.8"/>
+  <text x="400" y="437" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.8)">The Indian Ocean is the only ocean named after a country — underlining India's historical maritime centrality</text>
+  <text x="400" y="455" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#86efac">Ancient name: "Indica" (Greek) → India's influence shaped early globalization through sea trade</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Environmental Impact of Plastics</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#f48fb1" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle">Plastics are non-biodegradable and persist in the environment for centuries</text>
+
+<rect x="25" y="85" width="750" height="200" fill="none" stroke="rgba(244,143,177,0.3)" stroke-width="2" rx="10"/>
+<text x="400" y="110" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Major Problems</text>
+<text x="100" y="145" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="start">1. Accumulation in landfills takes up space forever</text>
+<text x="100" y="170" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="start">2. Choking of drainage systems leads to flooding</text>
+<text x="100" y="195" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="start">3. Animals (like cows) choke on plastic bags in garbage</text>
+<text x="100" y="220" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="start">4. Burning releases toxic fumes and greenhouse gases</text>
+<text x="100" y="245" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="start">5. Microplastics enter the food chain via oceans</text>
+
+<line x1="20" y1="310" x2="780" y2="310" stroke="#86efac" stroke-width="1"/>
+
+<rect x="25" y="325" width="370" height="230" fill="none" stroke="rgba(134,239,172,0.3)" stroke-width="1.5" rx="8"/>
+<text x="210" y="350" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Biodegradability (Comparison)</text>
+<text x="50" y="385" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">Paper (2-4 weeks)</text>
+<rect x="180" y="375" width="20" height="12" fill="#86efac"/>
+<text x="50" y="410" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">Cotton cloth (2-5 months)</text>
+<rect x="180" y="400" width="40" height="12" fill="#86efac"/>
+<text x="50" y="435" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">Wood (10-15 years)</text>
+<rect x="180" y="425" width="80" height="12" fill="#86efac"/>
+<text x="50" y="460" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">Woolen clothes (1 year)</text>
+<rect x="180" y="450" width="50" height="12" fill="#86efac"/>
+<text x="50" y="485" font-family="'Segoe UI',sans-serif" font-size="12" fill="#f48fb1" text-anchor="start">Aluminium cans (200-500 yrs)</text>
+<rect x="180" y="475" width="140" height="12" fill="#f48fb1"/>
+<text x="50" y="510" font-family="'Segoe UI',sans-serif" font-size="12" fill="#f48fb1" text-anchor="start">Plastic bags (Millions of yrs)</text>
+<rect x="180" y="500" width="180" height="12" fill="#f48fb1"/>
+<text x="210" y="540" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">Non-biodegradable materials persist indefinitely</text>
+
+<rect x="405" y="325" width="370" height="230" fill="none" stroke="rgba(134,239,172,0.3)" stroke-width="1.5" rx="8"/>
+<text x="590" y="350" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Action for Environment</text>
+<text x="430" y="380" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="start">Reduce: Say no to single-use plastics</text>
+<text x="430" y="405" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="start">Reuse: Carry bags / steel bottles</text>
+<text x="430" y="430" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="start">Recycle: Segregate dry waste</text>
+<text x="430" y="455" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="start">Recover: Waste-to-energy conversion</text>
+<text x="590" y="495" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Sustainable Living</text>
+<text x="590" y="520" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Minimize the use of synthetic materials</text>
+<text x="590" y="535" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">wherever possible.</text>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      .chalk { font-family: 'Segoe UI', sans-serif; }
+      .title { font-size: 26px; font-weight: bold; fill: #a5d6a7; }
+      .label { font-size: 17px; fill: #c8e6c9; }
+      .num { font-size: 20px; fill: #fff9c4; font-weight: bold; }
+      .muted { font-size: 14px; fill: #81c784; }
+      .highlight { fill: rgba(102,187,106,0.12); stroke: #66bb6a; stroke-width: 1.5; }
+      .orange { fill: rgba(255,183,77,0.12); stroke: #ffb74d; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <text x="400" y="44" text-anchor="middle" class="chalk title">Whole Number Operations</text>
+  <line x1="60" y1="56" x2="740" y2="56" stroke="#66bb6a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Four operations -->
+  <g transform="translate(60,70)">
+    <!-- Addition -->
+    <rect x="0" y="0" width="155" height="130" class="highlight" rx="10"/>
+    <text x="77" y="26" text-anchor="middle" class="chalk label">Addition (+)</text>
+    <line x1="10" y1="34" x2="145" y2="34" stroke="#66bb6a" stroke-width="0.8"/>
+    <text x="77" y="58" text-anchor="middle" class="chalk num">348</text>
+    <text x="77" y="78" text-anchor="middle" class="chalk num">+ 215</text>
+    <line x1="20" y1="88" x2="134" y2="88" stroke="#a5d6a7" stroke-width="1.5"/>
+    <text x="77" y="112" text-anchor="middle" class="chalk num">563</text>
+
+    <!-- Subtraction -->
+    <rect x="175" y="0" width="155" height="130" class="highlight" rx="10"/>
+    <text x="252" y="26" text-anchor="middle" class="chalk label">Subtraction (−)</text>
+    <line x1="185" y1="34" x2="320" y2="34" stroke="#66bb6a" stroke-width="0.8"/>
+    <text x="252" y="58" text-anchor="middle" class="chalk num">563</text>
+    <text x="252" y="78" text-anchor="middle" class="chalk num">− 215</text>
+    <line x1="195" y1="88" x2="309" y2="88" stroke="#a5d6a7" stroke-width="1.5"/>
+    <text x="252" y="112" text-anchor="middle" class="chalk num">348</text>
+
+    <!-- Multiplication -->
+    <rect x="350" y="0" width="155" height="130" class="orange" rx="10"/>
+    <text x="427" y="26" text-anchor="middle" class="chalk label" style="fill:#ffe0b2">Multiplication (×)</text>
+    <line x1="360" y1="34" x2="495" y2="34" stroke="#ffb74d" stroke-width="0.8"/>
+    <text x="427" y="58" text-anchor="middle" class="chalk num">46</text>
+    <text x="427" y="78" text-anchor="middle" class="chalk num">× 7</text>
+    <line x1="370" y1="88" x2="484" y2="88" stroke="#ffb74d" stroke-width="1.5"/>
+    <text x="427" y="112" text-anchor="middle" class="chalk num">322</text>
+
+    <!-- Division -->
+    <rect x="525" y="0" width="155" height="130" class="orange" rx="10"/>
+    <text x="602" y="26" text-anchor="middle" class="chalk label" style="fill:#ffe0b2">Division (÷)</text>
+    <line x1="535" y1="34" x2="670" y2="34" stroke="#ffb74d" stroke-width="0.8"/>
+    <text x="602" y="64" text-anchor="middle" class="chalk num">322 ÷ 7</text>
+    <line x1="545" y1="78" x2="659" y2="78" stroke="#ffb74d" stroke-width="1.5"/>
+    <text x="602" y="102" text-anchor="middle" class="chalk num">= 46</text>
+    <text x="602" y="122" text-anchor="middle" class="chalk muted">Remainder = 0</text>
+  </g>
+
+  <!-- Division algorithm box -->
+  <g transform="translate(60,225)">
+    <rect x="0" y="0" width="680" height="80" class="orange" rx="10"/>
+    <text x="340" y="24" text-anchor="middle" class="chalk label">Division Algorithm</text>
+    <text x="340" y="52" text-anchor="middle" class="chalk num">Dividend = Divisor × Quotient + Remainder</text>
+    <text x="340" y="72" text-anchor="middle" class="chalk muted">25 = 6 × 4 + 1    i.e., 25 ÷ 6 = 4 remainder 1</text>
+  </g>
+
+  <!-- Number line hops -->
+  <g transform="translate(60,328)">
+    <text x="0" y="0" class="chalk label">Addition/Subtraction on Number Line:</text>
+    <line x1="0" y1="30" x2="680" y2="30" stroke="#66bb6a" stroke-width="2"/>
+    <!-- ticks -->
+    <line x1="0" y1="24" x2="0" y2="36" stroke="#66bb6a" stroke-width="1.5"/>
+    <text x="0" y="50" text-anchor="middle" class="chalk muted">0</text>
+    <line x1="136" y1="24" x2="136" y2="36" stroke="#66bb6a" stroke-width="1.5"/>
+    <text x="136" y="50" text-anchor="middle" class="chalk muted">2</text>
+    <line x1="272" y1="24" x2="272" y2="36" stroke="#66bb6a" stroke-width="1.5"/>
+    <text x="272" y="50" text-anchor="middle" class="chalk muted">4</text>
+    <line x1="408" y1="24" x2="408" y2="36" stroke="#66bb6a" stroke-width="1.5"/>
+    <text x="408" y="50" text-anchor="middle" class="chalk muted">6</text>
+    <line x1="544" y1="24" x2="544" y2="36" stroke="#66bb6a" stroke-width="1.5"/>
+    <text x="544" y="50" text-anchor="middle" class="chalk muted">8</text>
+    <line x1="680" y1="24" x2="680" y2="36" stroke="#66bb6a" stroke-width="1.5"/>
+    <text x="680" y="50" text-anchor="middle" class="chalk muted">10</text>
+    <!-- arc for 3+4=7 -->
+    <path d="M 204 30 Q 272 5 340 30" fill="none" stroke="#fff176" stroke-width="2"/>
+    <text x="272" y="6" text-anchor="middle" class="chalk num" style="font-size:14px;fill:#fff176">+4</text>
+    <line x1="204" y1="22" x2="204" y2="38" stroke="#fff176" stroke-width="1.5"/>
+    <line x1="340" y1="22" x2="340" y2="38" stroke="#fff176" stroke-width="1.5"/>
+    <text x="204" y="70" text-anchor="middle" class="chalk muted" style="fill:#fff176">3</text>
+    <text x="340" y="70" text-anchor="middle" class="chalk muted" style="fill:#fff176">7</text>
+  </g>
+
+  <text x="400" y="470" text-anchor="middle" class="chalk muted">Remember: Division by 0 is undefined!</text>
+</svg>

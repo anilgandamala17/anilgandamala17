@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Batteries &amp; Fuel Cells</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Battery Cross-Section (Dry Cell) -->
+  <g transform="translate(150, 120)">
+    <text x="125" y="-20" fill="#86efac" font-weight="bold" text-anchor="middle">Dry Cell (Leclanche)</text>
+    
+    <!-- Outer Zinc Case -->
+    <rect x="50" y="0" width="150" height="300" rx="5" fill="rgba(148, 163, 184, 0.1)" stroke="#94a3b8" stroke-width="4"/>
+    <text x="35" y="150" fill="#94a3b8" transform="rotate(-90 35 150)" text-anchor="middle" font-size="14">Zinc Anode (-)</text>
+    
+    <!-- Electrolyte Paste -->
+    <rect x="70" y="20" width="110" height="260" fill="rgba(86, 239, 172, 0.2)"/>
+    <text x="125" y="150" fill="#86efac" text-anchor="middle" font-size="12">NH₄Cl + ZnCl₂ Paste</text>
+    
+    <!-- Carbon Rod (Cathode) -->
+    <rect x="115" y="10" width="20" height="250" fill="#1e293b" stroke="#f8fafc" stroke-width="1"/>
+    <path d="M 115 10 L 135 10 L 125 0 Z" fill="#f8fafc"/>
+    <text x="155" y="50" fill="#f8fafc" font-size="14">Carbon Rod (+)</text>
+    
+    <!-- MnO2 Paste -->
+    <rect x="100" y="40" width="50" height="220" fill="rgba(248, 250, 252, 0.1)" stroke="white" stroke-dasharray="2,2"/>
+    <text x="125" y="200" fill="#f8fafc" text-anchor="middle" font-size="10">MnO₂ + Carbon</text>
+  </g>
+
+  <!-- Fuel Cell Concept -->
+  <g transform="translate(450, 120)">
+    <text x="150" y="-20" fill="#60a5fa" font-weight="bold" text-anchor="middle">H₂-O₂ Fuel Cell</text>
+    <rect x="50" y="0" width="200" height="250" rx="10" fill="rgba(255,255,255,0.03)" stroke="#60a5fa" stroke-width="2"/>
+    
+    <!-- Inlets -->
+    <line x1="20" y1="50" x2="50" y2="50" stroke="#fef08a" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="10" y="45" fill="#fef08a" font-size="14">H₂ (Fuel)</text>
+    
+    <line x1="280" y1="50" x2="250" y2="50" stroke="#fef08a" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="260" y="45" fill="#fef08a" font-size="14">O₂ (Oxidant)</text>
+    
+    <!-- Water byproduct -->
+    <line x1="150" y1="250" x2="150" y2="280" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="150" y="300" fill="#38bdf8" text-anchor="middle">H₂O Byproduct</text>
+  </g>
+
+  <rect x="150" y="450" width="500" height="80" rx="10" fill="rgba(134, 239, 172, 0.05)" stroke="#86efac" stroke-width="1"/>
+  <text x="400" y="495" fill="#f8fafc" text-anchor="middle" font-size="20">Primary (Non-rechargeable) vs Secondary (Rechargeable)</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Chemistry Grade 12</text>
+</svg>

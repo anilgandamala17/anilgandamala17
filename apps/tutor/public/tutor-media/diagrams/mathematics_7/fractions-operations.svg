@@ -1,0 +1,54 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Fractions and Decimal Operations</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+
+<text x="400" y="80" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle">Adding/Subtracting Fractions — Denominators must be EQUAL</text>
+
+<rect x="20" y="92" width="370" height="115" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Same Denominator</text>
+<text x="205" y="137" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3/7 + 2/7 = (3+2)/7 = 5/7</text>
+<text x="205" y="157" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Just add/subtract numerators</text>
+<text x="205" y="177" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Denominator stays the same</text>
+<text x="205" y="197" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">9/11 − 4/11 = 5/11</text>
+
+<rect x="410" y="92" width="370" height="115" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Different Denominator</text>
+<text x="595" y="137" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">1/3 + 1/4 → LCM(3,4) = 12</text>
+<text x="595" y="157" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">= 4/12 + 3/12 = 7/12</text>
+<text x="595" y="177" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Convert to equivalent fractions</text>
+<text x="595" y="197" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Find LCM of denominators first</text>
+
+<line x1="20" y1="220" x2="780" y2="220" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="244" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Multiplication and Division</text>
+
+<rect x="20" y="255" width="370" height="115" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="278" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Multiplication</text>
+<text x="205" y="300" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">a/b × c/d = (a×c)/(b×d)</text>
+<text x="205" y="320" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">2/3 × 3/4 = 6/12 = 1/2</text>
+<text x="205" y="340" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Multiply top×top, bottom×bottom</text>
+<text x="205" y="360" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Simplify before or after multiplying</text>
+
+<rect x="410" y="255" width="370" height="115" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="278" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Division (Keep-Change-Flip)</text>
+<text x="595" y="300" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">a/b ÷ c/d = a/b × d/c</text>
+<text x="595" y="320" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6</text>
+<text x="595" y="340" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Reciprocal of divisor fraction</text>
+<text x="595" y="360" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">3 ÷ 1/2 = 3 × 2/1 = 6</text>
+
+<line x1="20" y1="385" x2="780" y2="385" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="408" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Decimal Operations</text>
+
+<rect x="20" y="420" width="370" height="100" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="443" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Add / Subtract</text>
+<text x="205" y="464" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Align the decimal points</text>
+<text x="205" y="483" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3.45 + 1.2 = 3.45 + 1.20 = 4.65</text>
+<text x="205" y="502" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Add zeros to equalize decimal places</text>
+
+<rect x="410" y="420" width="370" height="100" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="443" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Multiply / Divide</text>
+<text x="595" y="464" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">2.5 × 1.4: count decimal places (2)</text>
+<text x="595" y="483" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">25 × 14 = 350 → result: 3.50</text>
+<text x="595" y="502" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">14.4 ÷ 0.4 = 144 ÷ 4 = 36</text>
+
+<text x="400" y="555" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Mixed number: 2¾ = 2 + 3/4 = 11/4 (improper fraction) — always convert before operating</text>
+</svg>

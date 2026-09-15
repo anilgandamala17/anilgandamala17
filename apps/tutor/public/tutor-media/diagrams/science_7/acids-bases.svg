@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Acids and Bases</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+
+<rect x="20" y="65" width="370" height="155" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="88" font-family="'Segoe UI',sans-serif" font-size="15" fill="#f48fb1" text-anchor="middle" font-weight="bold">Acids</text>
+<text x="205" y="110" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Sour taste | Turn blue litmus RED</text>
+<text x="205" y="130" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">pH &lt; 7 | Produce H⁺ ions in water</text>
+<text x="205" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Examples:</text>
+<text x="205" y="170" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Lemon: Citric acid | Vinegar: Acetic acid</text>
+<text x="205" y="190" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Stomach: HCl | Batteries: H₂SO₄</text>
+<text x="205" y="210" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Natural: tamarind, curd, ant sting (formic acid)</text>
+
+<rect x="410" y="65" width="370" height="155" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="88" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Bases</text>
+<text x="595" y="110" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Bitter taste, soapy feel | Turn red litmus BLUE</text>
+<text x="595" y="130" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">pH &gt; 7 | Produce OH⁻ ions in water</text>
+<text x="595" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Examples:</text>
+<text x="595" y="170" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Baking soda (NaHCO₃) | Lime Ca(OH)₂</text>
+<text x="595" y="190" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Soap (NaOH) | Ammonia (NH₃)</text>
+<text x="595" y="210" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Alkali = base that dissolves in water</text>
+
+<line x1="20" y1="234" x2="780" y2="234" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="258" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">pH Scale</text>
+
+<!-- pH scale bar -->
+<defs>
+<linearGradient id="pHGrad" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#f44336"/>
+<stop offset="50%" stop-color="#4CAF50"/>
+<stop offset="100%" stop-color="#2196F3"/>
+</linearGradient>
+</defs>
+<rect x="60" y="263" width="680" height="30" fill="url(#pHGrad)" rx="5" opacity="0.6"/>
+<text x="60" y="310" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">0</text>
+<text x="122" y="310" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">1-2</text>
+<text x="194" y="310" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">3-4</text>
+<text x="266" y="310" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">5-6</text>
+<text x="400" y="310" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">7</text>
+<text x="536" y="310" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">8-9</text>
+<text x="614" y="310" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">10-12</text>
+<text x="740" y="310" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">14</text>
+<text x="200" y="330" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle">← Acidic</text>
+<text x="400" y="330" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Neutral</text>
+<text x="600" y="330" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Basic (Alkaline) →</text>
+
+<rect x="20" y="345" width="370" height="115" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="367" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Indicators</text>
+<text x="205" y="389" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Litmus: Red in acid | Blue in base</text>
+<text x="205" y="409" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Turmeric (haldi): Yellow→Red in base</text>
+<text x="205" y="429" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">China Rose: Colour change in acid/base</text>
+<text x="205" y="449" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Universal indicator: exact pH number</text>
+
+<rect x="410" y="345" width="370" height="115" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="367" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Neutralisation</text>
+<text x="595" y="389" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Acid + Base → Salt + Water</text>
+<text x="595" y="409" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">HCl + NaOH → NaCl + H₂O</text>
+<text x="595" y="429" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Product: neutral (pH = 7)</text>
+<text x="595" y="449" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Used in antacid tablets for acidity</text>
+
+<text x="400" y="490" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Strong Acids: HCl, H₂SO₄, HNO₃ | Weak Acids: Acetic, Citric, Oxalic</text>
+<text x="400" y="515" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Strong Bases: NaOH, KOH, Ca(OH)₂ | Weak Bases: NH₄OH, Mg(OH)₂</text>
+<text x="400" y="552" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Applications: treatment of acidic soil with lime, wasp sting (base) treated with acid — vinegar</text>
+</svg>

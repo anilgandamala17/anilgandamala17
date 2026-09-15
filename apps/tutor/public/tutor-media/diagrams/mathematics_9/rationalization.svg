@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Rationalization of Surds</text>
+  <text x="400" y="58" text-anchor="middle" fill="#d4d4d8" font-size="13" font-family="Georgia,serif">Making the denominator rational by multiplying by the conjugate</text>
+
+  <!-- Rule boxes -->
+  <rect x="15" y="70" width="370" height="180" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#86efac" stroke-width="2"/>
+  <text x="200" y="94" text-anchor="middle" fill="#86efac" font-size="14" font-family="Georgia,serif" font-weight="bold">Key Identity Used</text>
+  <text x="200" y="120" text-anchor="middle" fill="#fde68a" font-size="18" font-family="Georgia,serif" font-weight="bold">(a+b)(a−b) = a² − b²</text>
+  <text x="200" y="148" text-anchor="middle" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">If b = √n, then b² = n (rational!)</text>
+  <text x="200" y="174" text-anchor="middle" fill="#a3e635" font-size="13" font-family="Georgia,serif" font-weight="bold">Conjugate of (a+√b) is (a−√b)</text>
+  <text x="200" y="198" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Their product = a² − b  (purely rational)</text>
+  <text x="200" y="230" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Multiply numerator AND denominator by conjugate</text>
+
+  <!-- Example 1 -->
+  <rect x="15" y="260" width="370" height="110" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="200" y="284" text-anchor="middle" fill="#a3e635" font-size="14" font-family="Georgia,serif" font-weight="bold">Example 1:  1 / √2</text>
+  <text x="200" y="310" text-anchor="middle" fill="#fde68a" font-size="16" font-family="Georgia,serif">= 1×√2 / (√2×√2)</text>
+  <text x="200" y="340" text-anchor="middle" fill="#fde68a" font-size="16" font-family="Georgia,serif">= √2 / 2</text>
+  <text x="200" y="360" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="Georgia,serif" font-style="italic">Multiply by √2/√2  (= 1, doesn't change value)</text>
+
+  <!-- Example 2 -->
+  <rect x="15" y="380" width="370" height="100" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="200" y="404" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">Example 2:  3 / (2+√3)</text>
+  <text x="200" y="428" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif">= 3(2−√3) / (2+√3)(2−√3)</text>
+  <text x="200" y="452" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif">= 3(2−√3) / (4−3)  =  3(2−√3)</text>
+  <text x="200" y="472" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="Georgia,serif" font-style="italic">= 6 − 3√3</text>
+
+  <!-- Right: Step ladder -->
+  <rect x="400" y="70" width="385" height="410" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#f472b6" stroke-width="2"/>
+  <text x="592" y="94" text-anchor="middle" fill="#f9a8d4" font-size="14" font-family="Georgia,serif" font-weight="bold">Step-by-Step Process</text>
+
+  <g transform="translate(415,110)">
+    <rect x="0" y="0" width="355" height="52" rx="8" fill="#0f2a1a" stroke="#86efac" stroke-width="1.5"/>
+    <text x="177" y="22" text-anchor="middle" fill="#86efac" font-size="12" font-weight="bold" font-family="Georgia,serif">① Identify the Surd Denominator</text>
+    <text x="177" y="42" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">e.g.  a + √b  or just  √b</text>
+
+    <rect x="0" y="62" width="355" height="62" rx="8" fill="#0f2a1a" stroke="#fde68a" stroke-width="1.5"/>
+    <text x="177" y="84" text-anchor="middle" fill="#fde68a" font-size="12" font-weight="bold" font-family="Georgia,serif">② Write the Conjugate</text>
+    <text x="177" y="104" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Conjugate of (a+√b) = (a−√b)</text>
+    <text x="177" y="118" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Conjugate of √b = √b</text>
+
+    <rect x="0" y="134" width="355" height="52" rx="8" fill="#0f2a1a" stroke="#a3e635" stroke-width="1.5"/>
+    <text x="177" y="156" text-anchor="middle" fill="#a3e635" font-size="12" font-weight="bold" font-family="Georgia,serif">③ Multiply Num &amp; Denom</text>
+    <text x="177" y="176" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">× conjugate/conjugate  (× 1)</text>
+
+    <rect x="0" y="196" width="355" height="62" rx="8" fill="#0f2a1a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="177" y="218" text-anchor="middle" fill="#7dd3fc" font-size="12" font-weight="bold" font-family="Georgia,serif">④ Expand Denominator</text>
+    <text x="177" y="238" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">(a+√b)(a−√b) = a² − b</text>
+    <text x="177" y="254" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Surd disappears! ✓</text>
+
+    <rect x="0" y="268" width="355" height="52" rx="8" fill="#0f2a1a" stroke="#f472b6" stroke-width="1.5"/>
+    <text x="177" y="290" text-anchor="middle" fill="#f9a8d4" font-size="12" font-weight="bold" font-family="Georgia,serif">⑤ Simplify</text>
+    <text x="177" y="310" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Cancel common factors in num/denom</text>
+
+    <rect x="0" y="330" width="355" height="42" rx="8" fill="#134e4a" stroke="#86efac" stroke-width="2"/>
+    <text x="177" y="357" text-anchor="middle" fill="#86efac" font-size="13" font-weight="bold" font-family="Georgia,serif">⑥ Result: Rational Denominator ✓</text>
+  </g>
+</svg>
