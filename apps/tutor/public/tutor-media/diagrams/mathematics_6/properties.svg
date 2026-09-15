@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      .chalk { font-family: 'Segoe UI', sans-serif; }
+      .title { font-size: 26px; font-weight: bold; fill: #a5d6a7; }
+      .label { font-size: 17px; fill: #c8e6c9; }
+      .num { font-size: 22px; fill: #fff9c4; font-weight: bold; }
+      .muted { font-size: 14px; fill: #81c784; }
+      .highlight { fill: rgba(102,187,106,0.12); stroke: #66bb6a; stroke-width: 1.5; }
+      .yellow { fill: rgba(255,245,157,0.12); stroke: #fff176; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <text x="400" y="44" text-anchor="middle" class="chalk title">Whole Numbers – Properties</text>
+  <line x1="60" y1="56" x2="740" y2="56" stroke="#66bb6a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Four property boxes -->
+  <!-- Closure -->
+  <rect x="60" y="70" width="310" height="110" class="highlight" rx="12"/>
+  <text x="215" y="96" text-anchor="middle" class="chalk label">Closure Property</text>
+  <text x="215" y="120" text-anchor="middle" class="chalk muted">a + b = Whole Number</text>
+  <text x="215" y="142" text-anchor="middle" class="chalk num">3 + 5 = 8 ✓</text>
+  <text x="215" y="165" text-anchor="middle" class="chalk muted">(whole numbers closed under + and ×)</text>
+
+  <!-- Commutative -->
+  <rect x="390" y="70" width="350" height="110" class="highlight" rx="12"/>
+  <text x="565" y="96" text-anchor="middle" class="chalk label">Commutative Property</text>
+  <text x="565" y="120" text-anchor="middle" class="chalk muted">a + b = b + a  &amp;  a × b = b × a</text>
+  <text x="565" y="142" text-anchor="middle" class="chalk num">4 + 7 = 7 + 4 = 11</text>
+  <text x="565" y="165" text-anchor="middle" class="chalk muted">Order does NOT matter</text>
+
+  <!-- Associative -->
+  <rect x="60" y="200" width="310" height="110" class="yellow" rx="12"/>
+  <text x="215" y="226" text-anchor="middle" class="chalk label">Associative Property</text>
+  <text x="215" y="250" text-anchor="middle" class="chalk muted">(a + b) + c = a + (b + c)</text>
+  <text x="215" y="272" text-anchor="middle" class="chalk num">(2+3)+4 = 2+(3+4)</text>
+  <text x="215" y="295" text-anchor="middle" class="chalk muted">Grouping does NOT matter</text>
+
+  <!-- Distributive -->
+  <rect x="390" y="200" width="350" height="110" class="yellow" rx="12"/>
+  <text x="565" y="226" text-anchor="middle" class="chalk label">Distributive Property</text>
+  <text x="565" y="250" text-anchor="middle" class="chalk muted">a × (b + c) = a×b + a×c</text>
+  <text x="565" y="272" text-anchor="middle" class="chalk num">3×(4+5) = 3×4 + 3×5</text>
+  <text x="565" y="295" text-anchor="middle" class="chalk muted">= 12 + 15 = 27</text>
+
+  <!-- Identity elements -->
+  <g transform="translate(60,330)">
+    <rect x="0" y="0" width="680" height="100" class="highlight" rx="10"/>
+    <text x="340" y="26" text-anchor="middle" class="chalk label">Identity Elements</text>
+    <line x1="10" y1="36" x2="670" y2="36" stroke="#66bb6a" stroke-width="0.8"/>
+    <text x="170" y="62" text-anchor="middle" class="chalk num">a + 0 = a</text>
+    <text x="170" y="84" text-anchor="middle" class="chalk muted">Additive Identity = 0</text>
+    <line x1="340" y1="40" x2="340" y2="96" stroke="#66bb6a" stroke-width="0.8"/>
+    <text x="510" y="62" text-anchor="middle" class="chalk num">a × 1 = a</text>
+    <text x="510" y="84" text-anchor="middle" class="chalk muted">Multiplicative Identity = 1</text>
+  </g>
+
+  <!-- Natural vs Whole -->
+  <text x="400" y="458" text-anchor="middle" class="chalk muted">Natural Numbers: 1, 2, 3, ... | Whole Numbers: 0, 1, 2, 3, ... (includes 0!)</text>
+</svg>

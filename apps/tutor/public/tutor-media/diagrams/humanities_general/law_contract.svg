@@ -1,0 +1,35 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8fafc"/>
+  
+  <!-- Contract Document -->
+  <rect x="250" y="100" width="300" height="400" rx="4" fill="white" stroke="#334155" stroke-width="2"/>
+  <path d="M280 150H520M280 190H520M280 230H400" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Pillars of Contract -->
+  <g transform="translate(100, 200)">
+    <circle cx="0" cy="0" r="40" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="0" y="5" text-anchor="middle" fill="#1e40af" font-family="Arial" font-size="12" font-weight="bold">OFFER</text>
+  </g>
+  
+  <g transform="translate(700, 200)">
+    <circle cx="0" cy="0" r="40" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <text x="0" y="5" text-anchor="middle" fill="#166534" font-family="Arial" font-size="12" font-weight="bold">ACCEPTANCE</text>
+  </g>
+  
+  <g transform="translate(100, 400)">
+    <circle cx="0" cy="0" r="40" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+    <text x="0" y="5" text-anchor="middle" fill="#9a3412" font-family="Arial" font-size="12" font-weight="bold">CAPACITY</text>
+  </g>
+  
+  <g transform="translate(700, 400)">
+    <circle cx="0" cy="0" r="40" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
+    <text x="0" y="5" text-anchor="middle" fill="#6b21a8" font-family="Arial" font-size="12" font-weight="bold">LEGALITY</text>
+  </g>
+  
+  <!-- Connecting Lines -->
+  <path d="M140 200H250M550 200H660M140 400H250M550 400H660" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="24" font-weight="bold">Contract Formation Logic</text>
+</svg>

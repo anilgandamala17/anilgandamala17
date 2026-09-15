@@ -1,0 +1,67 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Indian Constitution — Key Features</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<rect x="80" y="63" width="640" height="42" fill="none" stroke="#ffd54f" stroke-width="1.5" rx="6"/>
+<text x="400" y="82" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">Constitution = Supreme Law of the Land (Adopted 26 Nov 1949 | Effective 26 Jan 1950)</text>
+<text x="400" y="100" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Drafted by Constituent Assembly | Dr. B.R. Ambedkar — Chairman of Drafting Committee</text>
+
+<rect x="20" y="112" width="370" height="165" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="134" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Key Features</text>
+<text x="205" y="155" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Longest written constitution in world</text>
+<text x="205" y="175" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Federal system with strong centre</text>
+<text x="205" y="195" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Parliamentary form of government</text>
+<text x="205" y="215" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Fundamental Rights (Part III)</text>
+<text x="205" y="235" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Directive Principles (Part IV)</text>
+<text x="205" y="255" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Universal Adult Franchise (18+ vote)</text>
+<text x="205" y="270" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Originally 395 articles, 8 schedules</text>
+
+<rect x="410" y="112" width="370" height="165" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="134" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Preamble — Goals of India</text>
+<text x="595" y="155" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">SOVEREIGN: independent nation</text>
+<text x="595" y="175" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">SOCIALIST: equal wealth distribution</text>
+<text x="595" y="195" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">SECULAR: no state religion</text>
+<text x="595" y="215" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">DEMOCRATIC: power from people</text>
+<text x="595" y="235" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">REPUBLIC: elected head of state</text>
+<text x="595" y="255" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Socialist, Secular added in 1976 (42nd Amendment)</text>
+
+<line x1="20" y1="290" x2="780" y2="290" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="313" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Fundamental Rights (6 Rights)</text>
+
+<rect x="20" y="325" width="235" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="137" y="347" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Right to Equality (Art 14-18)</text>
+<text x="137" y="366" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Equal before law | No discrimination</text>
+<text x="137" y="385" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Right to Freedom (Art 19-22)</text>
+<text x="137" y="404" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Speech, movement, occupation</text>
+<text x="137" y="423" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Right against Exploitation (23-24)</text>
+<text x="137" y="442" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">No child labour, no forced labour</text>
+<text x="137" y="461" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Freedom of Religion (Art 25-28)</text>
+<text x="137" y="480" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Profess, practice, propagate any religion</text>
+<text x="137" y="499" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">State cannot have official religion</text>
+<text x="137" y="518" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Secularism in practice</text>
+
+<rect x="283" y="325" width="234" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="347" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Cultural/Educational Rights (29-30)</text>
+<text x="400" y="366" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Minorities can preserve their culture</text>
+<text x="400" y="385" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Set up educational institutions</text>
+<text x="400" y="410" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Right to Constitutional Remedies (32)</text>
+<text x="400" y="429" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Move courts if rights violated</text>
+<text x="400" y="448" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">Writs: Habeas Corpus, Mandamus</text>
+<text x="400" y="468" font-family="'Segoe UI',sans-serif" font-size="11" fill="#86efac" text-anchor="middle">Called "Heart of Constitution"</text>
+<text x="400" y="488" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">by Dr. Ambedkar</text>
+<text x="400" y="508" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Can only be suspended during</text>
+<text x="400" y="518" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">National Emergency</text>
+
+<rect x="545" y="325" width="235" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="662" y="347" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Constitution Structure</text>
+<text x="662" y="369" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Preamble (Introduction)</text>
+<text x="662" y="389" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">448 Articles (now, after amendments)</text>
+<text x="662" y="409" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">12 Schedules</text>
+<text x="662" y="429" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">105 Amendments so far</text>
+<text x="662" y="449" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3 Lists: Union, State, Concurrent</text>
+<text x="662" y="469" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">3 Organs: Legislature, Executive,</text>
+<text x="662" y="483" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Judiciary (Separation of powers)</text>
+<text x="662" y="502" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Single citizenship for all Indians</text>
+<text x="662" y="518" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Independent judiciary guaranteed</text>
+
+<text x="400" y="558" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Fundamental Duties added in 1976 (Art 51A) — 11 duties of every Indian citizen | Right to Education (Art 21A): free education 6-14 years</text>
+</svg>

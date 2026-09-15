@@ -1,0 +1,46 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 14px; font-weight: bold; }
+      .formula { fill: #fcd34d; font-size: 15px; font-family: 'Courier New', monospace; font-weight: bold; }
+      .box { fill: rgba(30, 58, 138, 0.6); stroke: #60a5fa; stroke-width: 1.5; rx: 8; }
+      .category { fill: #4ade80; font-size: 12px; font-weight: bold; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Fundamental Trig Identities</text>
+    
+    <!-- Pythagorean -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="170" height="85" class="box" />
+      <text x="10" y="20" class="category">Pythagorean</text>
+      <text x="10" y="45" class="formula">sin²θ + cos²θ = 1</text>
+      <text x="10" y="70" class="formula">1 + tan²θ = sec²θ</text>
+    </g>
+
+    <!-- Compounds -->
+    <g transform="translate(210, 50)">
+      <rect x="0" y="0" width="170" height="85" class="box" />
+      <text x="10" y="20" class="category">Sum / Difference</text>
+      <text x="10" y="45" class="formula" font-size="12">sin(A±B)=sinAcosB±cosAsinB</text>
+      <text x="10" y="70" class="formula" font-size="12">cos(A±B)=cosAcosB∓sinAsinB</text>
+    </g>
+
+    <!-- Double Angles -->
+    <g transform="translate(20, 150)">
+      <rect x="0" y="0" width="170" height="85" class="box" />
+      <text x="10" y="20" class="category">Double Angle</text>
+      <text x="10" y="45" class="formula">sin(2θ) = 2sinθcosθ</text>
+      <text x="10" y="70" class="formula">cos(2θ) = cos²θ − sin²θ</text>
+    </g>
+
+    <!-- Periodic -->
+    <g transform="translate(210, 150)">
+      <rect x="0" y="0" width="170" height="85" class="box" />
+      <text x="10" y="20" class="category">Reciprocal</text>
+      <text x="10" y="45" class="formula">cosec θ = 1 / sin θ</text>
+      <text x="10" y="70" class="formula">sec θ = 1 / cos θ</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+    <linearGradient id="phGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444" /> <!-- Acid Red -->
+      <stop offset="50%" stop-color="#22c55e" /> <!-- Neutral Green -->
+      <stop offset="100%" stop-color="#3b82f6" /> <!-- Basic Blue -->
+    </linearGradient>
+  </defs>
+  <!-- Bg Removed -->
+  <text x="20" y="30" class="title">pH SCALE</text>
+  
+  <rect x="20" y="100" width="360" height="40" fill="url(#phGradient)" rx="4" />
+  
+  <line x1="200" y1="100" x2="200" y2="150" stroke="#fff" stroke-width="2" />
+  <text x="200" y="165" text-anchor="middle" font-weight="bold">7 (Neutral)</text>
+  
+  <text x="20" y="90" fill="#ef4444">0 (Acidic)</text>
+  <text x="380" y="90" text-anchor="end" fill="#3b82f6">14 (Basic)</text>
+  
+  <text x="80" y="180" text-anchor="middle" font-size="10">Lemon Juice</text>
+  <text x="320" y="180" text-anchor="middle" font-size="10">Bleach</text>
+  
+  <text x="200" y="230" text-anchor="middle" fill="#94a3b8">Power of Hydrogen (H+)</text>
+</svg>

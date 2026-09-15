@@ -1,0 +1,39 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .region { stroke: #fff; stroke-width: 1; }
+      .label { font-size: 10px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+      .legend-text { font-size: 10px; fill: #fff; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">BELGIUM: LINGUISTIC COMMUNITIES</text>
+
+  <!-- Map Container -->
+  <g transform="translate(50, 50)">
+      
+    <!-- Flemish Region (North) - Dutch -->
+    <path d="M 0 50 L 150 20 L 300 50 L 300 120 L 0 120 Z" fill="#fde047" class="region" />
+    <text x="150" y="90" class="label">FLEMISH (Dutch) ~59%</text>
+
+    <!-- Walloon Region (South) - French -->
+    <path d="M 0 120 L 300 120 L 250 220 L 50 220 Z" fill="#ef4444" class="region" />
+    <text x="150" y="170" class="label" fill="#fff">WALLOON (French) ~40%</text>
+
+    <!-- German Speaking (East Slice) -->
+    <path d="M 280 120 L 300 120 L 290 180 Z" fill="#1e293b" stroke="#fff" />
+    <line x1="290" y1="150" x2="340" y2="150" stroke="#fff" stroke-width="1" />
+    <text x="345" y="153" class="legend-text">German (&lt;1%)</text>
+
+    <!-- Brussels (Capital) - Bilingual -->
+    <circle cx="150" cy="110" r="15" fill="#f97316" stroke="#fff" stroke-width="2" />
+    <line x1="150" y1="110" x2="100" y2="30" stroke="#fff" stroke-width="1" />
+    <text x="100" y="20" class="legend-text" text-anchor="middle">Brussels (Capital)</text>
+    <text x="100" y="32" fontSize="8" fill="#cbd5e1" text-anchor="middle">80% French, 20% Dutch</text>
+
+  </g>
+</svg>

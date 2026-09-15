@@ -1,0 +1,36 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 11px; font-weight: bold; }
+      .target { fill: #1e293b; stroke: #4ade80; stroke-width: 1; opacity: 0.5; }
+      .dot { fill: #fca5a5; }
+      .hit { fill: #86efac; }
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Accuracy vs Precision</text>
+    
+    <!-- Target 1: Precise but Not Accurate -->
+    <circle cx="100" y="100" r="40" class="target" />
+    <circle cx="100" y="100" r="25" class="target" />
+    <circle cx="100" y="100" r="10" class="target" />
+    
+    <circle cx="125" y="85" r="2" class="dot" />
+    <circle cx="127" y="87" r="2" class="dot" />
+    <circle cx="123" y="83" r="2" class="dot" />
+    <text x="100" y="160" text-anchor="middle" class="label">Precise, Not Accurate</text>
+
+    <!-- Target 2: Accurate and Precise -->
+    <circle cx="300" y="100" r="40" class="target" />
+    <circle cx="300" y="100" r="25" class="target" />
+    <circle cx="300" y="100" r="10" class="target" />
+    
+    <circle cx="300" y="100" r="2" class="hit" />
+    <circle cx="302" y="102" r="2" class="hit" />
+    <circle cx="298" y="98" r="2" class="hit" />
+    <text x="300" y="160" text-anchor="middle" class="label">Accurate &amp; Precise</text>
+    
+    <text x="200" y="200" text-anchor="middle" fill="#93c5fd" font-size="10">Errors = Measured Value - True Value</text>
+  </g>
+</svg>

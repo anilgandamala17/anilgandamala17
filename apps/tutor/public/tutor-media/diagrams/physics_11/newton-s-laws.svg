@@ -1,0 +1,38 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .box { fill: #1a3a20; stroke: #4ade80; stroke-width: 1.5; rx: 6; }
+      .label { fill: #ffffff; font-size: 11px; font-weight: bold; }
+      .formula { fill: #86efac; font-size: 14px; font-weight: bold; font-family: 'Times New Roman', serif; }
+      .desc { fill: #93c5fd; font-size: 9px; font-style: italic; }
+      .arrow { stroke: #fca5a5; stroke-width: 2; marker-end: url(#arr); }
+    </style>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#fca5a5"/></marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Newton's Laws of Motion</text>
+    
+    <!-- 1st Law -->
+    <rect x="20" y="45" width="170" height="70" class="box" />
+    <text x="35" y="65" class="label">1st Law (Inertia)</text>
+    <text x="35" y="85" class="desc">Object at rest remains at rest</text>
+    <text x="35" y="100" class="desc">unless acted upon by force.</text>
+
+    <!-- 2nd Law -->
+    <rect x="210" y="45" width="170" height="70" class="box" />
+    <text x="225" y="65" class="label">2nd Law (Force)</text>
+    <text x="295" y="90" text-anchor="middle" class="formula">F = ma</text>
+    <text x="225" y="105" class="desc">Rate of change of momentum</text>
+
+    <!-- 3rd Law -->
+    <rect x="20" y="125" width="360" height="70" class="box" />
+    <text x="200" y="145" text-anchor="middle" class="label">3rd Law (Action-Reaction)</text>
+    <line x1="100" y1="170" x2="160" y2="170" class="arrow" />
+    <text x="130" y="185" text-anchor="middle" class="desc">Action</text>
+    <line x1="300" y1="170" x2="240" y2="170" class="arrow" />
+    <text x="270" y="185" text-anchor="middle" class="desc">Reaction</text>
+    
+    <text x="130" y="215" fill="#fca5a5" font-size="10" font-weight="bold">FAB = -FBA</text>
+  </g>
+</svg>

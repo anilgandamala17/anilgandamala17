@@ -1,0 +1,48 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Median</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="78" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle">Median = Middle value when observations are arranged in order</text>
+<rect x="100" y="86" width="600" height="40" fill="none" stroke="#ffd54f" stroke-width="1.5" rx="6"/>
+<text x="400" y="111" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">ALWAYS arrange data in ascending/descending order first!</text>
+
+<text x="400" y="146" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Odd Number of Observations (n is odd)</text>
+<rect x="20" y="158" width="370" height="128" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="180" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Example: n = 5</text>
+<text x="205" y="202" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Data: 4, 7, 2, 9, 5</text>
+<text x="205" y="222" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Arranged: 2, 4, [5], 7, 9</text>
+<text x="205" y="242" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">Median = 5 (3rd value)</text>
+<text x="205" y="262" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Position = (n+1)/2 = (5+1)/2 = 3rd</text>
+<text x="205" y="278" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">2 values on each side</text>
+
+<rect x="410" y="158" width="370" height="128" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="180" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Formula (Odd n)</text>
+<text x="595" y="202" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Position = (n + 1) ÷ 2</text>
+<text x="595" y="222" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">n=7: Position = (7+1)/2 = 4th</text>
+<text x="595" y="242" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">4th value in ordered set = Median</text>
+<text x="595" y="262" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">n=9: 5th value is median</text>
+<text x="595" y="278" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Equal values on both sides</text>
+
+<line x1="20" y1="300" x2="780" y2="300" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="324" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Even Number of Observations (n is even)</text>
+
+<rect x="20" y="336" width="370" height="128" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="358" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Example: n = 6</text>
+<text x="205" y="380" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Data: 3, 1, 8, 5, 2, 7</text>
+<text x="205" y="400" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Arranged: 1, 2, [3, 5], 7, 8</text>
+<text x="205" y="420" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Median = (3 + 5) ÷ 2 = 4</text>
+<text x="205" y="440" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">Median = 4</text>
+<text x="205" y="458" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Average of 3rd and 4th values</text>
+
+<rect x="410" y="336" width="370" height="128" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="358" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Formula (Even n)</text>
+<text x="595" y="380" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Take values at positions n/2 and n/2+1</text>
+<text x="595" y="400" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Median = average of those 2 values</text>
+<text x="595" y="420" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">n=8: average of 4th and 5th values</text>
+<text x="595" y="440" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Median may not be in dataset</text>
+<text x="595" y="458" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">e.g. Median = 4 (not in dataset)</text>
+
+<line x1="20" y1="477" x2="780" y2="477" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="503" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Median vs Mean</text>
+<text x="400" y="528" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Median is NOT affected by extreme values (outliers)</text>
+<text x="400" y="553" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Use median for income, house prices, or any skewed/uneven distribution</text>
+</svg>

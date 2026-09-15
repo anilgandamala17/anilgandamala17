@@ -1,0 +1,81 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#1a5c2a}
+      .title{fill:#fff9c4;font-size:14px;font-weight:bold}
+      .sub{fill:#b2f5ea;font-size:10px}
+    </style>
+    <marker id="a2" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#ffd600"/>
+    </marker>
+    <marker id="a3" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#80cbc4"/>
+    </marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="18" text-anchor="middle" class="title">Unification of Germany &amp; Italy</text>
+  <text x="210" y="30" text-anchor="middle" class="sub">Two major 19th-century unifications that reshaped Europe</text>
+
+  <!-- Germany Section -->
+  <rect x="8" y="38" width="196" height="242" fill="#0d3b20" stroke="#ffd600" stroke-width="1.5" rx="6"/>
+  <text x="106" y="56" text-anchor="middle" fill="#ffd600" font-size="12" font-weight="bold">🇩🇪 Germany</text>
+  <text x="106" y="68" text-anchor="middle" fill="#b2f5ea" font-size="9">Bismarck's "Blood and Iron" policy</text>
+  <!-- Timeline - Germany -->
+  <line x1="106" y1="78" x2="106" y2="268" stroke="#ffd600" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <!-- Events -->
+  <circle cx="106" cy="88" r="5" fill="#ffd600"/>
+  <text x="116" y="92" fill="#fff9c4" font-size="9" font-weight="bold">1834</text>
+  <text x="116" y="103" fill="#ffffff" font-size="9">Zollverein — trading</text>
+  <text x="116" y="113" fill="#b2f5ea" font-size="8">union of German states</text>
+
+  <circle cx="106" cy="130" r="5" fill="#ff8a65"/>
+  <text x="116" y="134" fill="#ff8a65" font-size="9" font-weight="bold">1848</text>
+  <text x="116" y="145" fill="#ffffff" font-size="9">Frankfurt Parl. failed</text>
+  <text x="116" y="155" fill="#b2f5ea" font-size="8">Liberal nationalism rejected</text>
+
+  <circle cx="106" cy="175" r="5" fill="#f06292"/>
+  <text x="116" y="179" fill="#f06292" font-size="9" font-weight="bold">1866</text>
+  <text x="116" y="190" fill="#ffffff" font-size="9">Austro-Prussian War</text>
+  <text x="116" y="200" fill="#b2f5ea" font-size="8">Prussia defeats Austria</text>
+
+  <circle cx="106" cy="218" r="5" fill="#aed581"/>
+  <text x="116" y="222" fill="#aed581" font-size="9" font-weight="bold">1870</text>
+  <text x="116" y="233" fill="#ffffff" font-size="9">Franco-Prussian War</text>
+
+  <circle cx="106" cy="255" r="6" fill="#ffd600" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="116" y="259" fill="#ffd600" font-size="10" font-weight="bold">1871</text>
+  <text x="116" y="270" fill="#ffffff" font-size="9" font-weight="bold">Germany Unified!</text>
+  <text x="16" y="270" fill="#b2f5ea" font-size="8">Kaiser Wilhelm I</text>
+
+  <!-- Italy Section -->
+  <rect x="216" y="38" width="196" height="242" fill="#0d3b20" stroke="#80cbc4" stroke-width="1.5" rx="6"/>
+  <text x="314" y="56" text-anchor="middle" fill="#80cbc4" font-size="12" font-weight="bold">🇮🇹 Italy</text>
+  <text x="314" y="68" text-anchor="middle" fill="#b2f5ea" font-size="9">Mazzini, Cavour &amp; Garibaldi</text>
+  <!-- Timeline - Italy -->
+  <line x1="314" y1="78" x2="314" y2="268" stroke="#80cbc4" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+  <circle cx="314" cy="88" r="5" fill="#80cbc4"/>
+  <text x="324" y="92" fill="#b2f5ea" font-size="9" font-weight="bold">1831</text>
+  <text x="324" y="103" fill="#ffffff" font-size="9">Mazzini's Young Italy</text>
+  <text x="324" y="113" fill="#b2f5ea" font-size="8">republican nationalist mvmt</text>
+
+  <circle cx="314" cy="130" r="5" fill="#ff8a65"/>
+  <text x="324" y="134" fill="#ff8a65" font-size="9" font-weight="bold">1848</text>
+  <text x="324" y="145" fill="#ffffff" font-size="9">Revolutions in Italy</text>
+  <text x="324" y="155" fill="#b2f5ea" font-size="8">Failed — Austrian power</text>
+
+  <circle cx="314" cy="175" r="5" fill="#f06292"/>
+  <text x="324" y="179" fill="#f06292" font-size="9" font-weight="bold">1859</text>
+  <text x="324" y="190" fill="#ffffff" font-size="9">Cavour + France alliance</text>
+  <text x="324" y="200" fill="#b2f5ea" font-size="8">Piedmont leads unification</text>
+
+  <circle cx="314" cy="218" r="5" fill="#aed581"/>
+  <text x="324" y="222" fill="#aed581" font-size="9" font-weight="bold">1860</text>
+  <text x="324" y="233" fill="#ffffff" font-size="9">Garibaldi's Red Shirts</text>
+
+  <circle cx="314" cy="255" r="6" fill="#80cbc4" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="324" y="259" fill="#80cbc4" font-size="10" font-weight="bold">1871</text>
+  <text x="324" y="270" fill="#ffffff" font-size="9" font-weight="bold">Italy Unified!</text>
+  <text x="224" y="270" fill="#b2f5ea" font-size="8">Rome = capital</text>
+  </g>
+</svg>

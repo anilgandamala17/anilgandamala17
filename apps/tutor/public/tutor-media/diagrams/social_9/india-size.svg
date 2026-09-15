@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#1a2e1a"/>
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#86efac" font-weight="bold">India: Size — Area, Extent &amp; World Rank</text>
+  <line x1="40" y1="48" x2="760" y2="48" stroke="#86efac" stroke-width="1" opacity="0.4"/>
+
+  <!-- Big statistic highlight -->
+  <rect x="55" y="68" width="350" height="100" rx="8" fill="rgba(134,239,172,0.12)" stroke="#86efac" stroke-width="2"/>
+  <text x="230" y="105" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#86efac" font-weight="bold">3.28 Million km²</text>
+  <text x="230" y="130" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="rgba(255,255,255,0.7)">Total Area of India</text>
+  <text x="230" y="150" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#facc15" font-weight="bold">7th Largest Country in the World</text>
+
+  <!-- Extent: N-S and E-W -->
+  <rect x="55" y="185" width="165" height="110" rx="7" fill="rgba(250,204,21,0.08)" stroke="#facc15" stroke-width="1.5"/>
+  <text x="138" y="208" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#facc15" font-weight="bold">N-S Extent</text>
+  <text x="138" y="230" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#facc15" font-weight="bold">3,214 km</text>
+  <text x="138" y="252" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">J&amp;K → Kanyakumari</text>
+  <text x="138" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.55)">Lat: 8°4'N to 37°6'N</text>
+  <text x="138" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#facc15">≈ 29° span</text>
+
+  <rect x="235" y="185" width="165" height="110" rx="7" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="318" y="208" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#38bdf8" font-weight="bold">E-W Extent</text>
+  <text x="318" y="230" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#38bdf8" font-weight="bold">2,933 km</text>
+  <text x="318" y="252" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">Kutch → Arunachal Pradesh</text>
+  <text x="318" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.55)">Long: 68°7'E to 97°25'E</text>
+  <text x="318" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#38bdf8">≈ 29° span</text>
+
+  <!-- Coastline and Land border -->
+  <rect x="55" y="308" width="165" height="90" rx="7" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="138" y="330" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#a78bfa" font-weight="bold">Coastline</text>
+  <text x="138" y="352" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#a78bfa" font-weight="bold">7,516 km</text>
+  <text x="138" y="372" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">Mainland + Islands</text>
+  <text x="138" y="388" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#a78bfa">Bay of Bengal + Arabian Sea</text>
+
+  <rect x="235" y="308" width="165" height="90" rx="7" fill="rgba(249,115,22,0.08)" stroke="#f97316" stroke-width="1.5"/>
+  <text x="318" y="330" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#f97316" font-weight="bold">Land Boundary</text>
+  <text x="318" y="352" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#f97316" font-weight="bold">15,200 km</text>
+  <text x="318" y="372" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">Shared with 7 neighbours</text>
+  <text x="318" y="388" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#f97316">Longest: Bangladesh 4,096 km</text>
+
+  <!-- World rank comparison bar chart -->
+  <rect x="430" y="68" width="335" height="330" rx="8" fill="rgba(134,239,172,0.05)" stroke="#86efac" stroke-width="1"/>
+  <text x="598" y="96" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#86efac" font-weight="bold">World's Largest Countries by Area</text>
+  <line x1="445" y1="104" x2="751" y2="104" stroke="#86efac" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Bar chart items -->
+  <!-- Russia -->
+  <text x="455" y="128" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.6)">1. Russia</text>
+  <rect x="530" y="117" width="200" height="14" rx="2" fill="rgba(239,68,68,0.4)" stroke="#ef4444" stroke-width="0.5"/>
+  <text x="733" y="128" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">17.1M</text>
+  <!-- Canada -->
+  <text x="455" y="152" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.6)">2. Canada</text>
+  <rect x="530" y="141" width="117" height="14" rx="2" fill="rgba(239,68,68,0.3)" stroke="#ef4444" stroke-width="0.5"/>
+  <text x="650" y="152" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">10.0M</text>
+  <!-- USA -->
+  <text x="455" y="176" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.6)">3. USA</text>
+  <rect x="530" y="165" width="114" height="14" rx="2" fill="rgba(239,68,68,0.3)" stroke="#ef4444" stroke-width="0.5"/>
+  <text x="647" y="176" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">9.8M</text>
+  <!-- China -->
+  <text x="455" y="200" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.6)">4. China</text>
+  <rect x="530" y="189" width="111" height="14" rx="2" fill="rgba(239,68,68,0.3)" stroke="#ef4444" stroke-width="0.5"/>
+  <text x="644" y="200" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">9.6M</text>
+  <!-- Brazil -->
+  <text x="455" y="224" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.6)">5. Brazil</text>
+  <rect x="530" y="213" width="101" height="14" rx="2" fill="rgba(239,68,68,0.25)" stroke="#ef4444" stroke-width="0.5"/>
+  <text x="634" y="224" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">8.5M</text>
+  <!-- Australia -->
+  <text x="455" y="248" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.6)">6. Australia</text>
+  <rect x="530" y="237" width="92" height="14" rx="2" fill="rgba(56,189,248,0.25)" stroke="#38bdf8" stroke-width="0.5"/>
+  <text x="625" y="248" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.5)">7.7M</text>
+  <!-- India HIGHLIGHTED -->
+  <text x="455" y="272" font-family="Georgia, serif" font-size="11" fill="#86efac" font-weight="bold">7. INDIA ★</text>
+  <rect x="530" y="261" width="39" height="16" rx="2" fill="rgba(134,239,172,0.5)" stroke="#86efac" stroke-width="1.5"/>
+  <text x="572" y="273" font-family="Georgia, serif" font-size="10" fill="#86efac" font-weight="bold">3.28M km²</text>
+
+  <!-- States count -->
+  <rect x="445" y="295" width="298" height="60" rx="6" fill="rgba(250,204,21,0.08)" stroke="#facc15" stroke-width="1"/>
+  <text x="595" y="318" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#facc15" font-weight="bold">Administrative Units</text>
+  <text x="595" y="338" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.75)">28 States + 8 Union Territories = 36 total</text>
+  <text x="595" y="352" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#facc15">Federal structure with constitutional provisions</text>
+
+  <!-- Bottom note -->
+  <rect x="55" y="418" width="690" height="45" rx="5" fill="rgba(134,239,172,0.06)" stroke="#86efac" stroke-width="0.7"/>
+  <text x="400" y="438" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.75)">India occupies 2.4% of the world's total land area, but supports 17.5% of the world's population</text>
+  <text x="400" y="456" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#86efac">One of the 12 mega-biodiversity countries in the world</text>
+</svg>

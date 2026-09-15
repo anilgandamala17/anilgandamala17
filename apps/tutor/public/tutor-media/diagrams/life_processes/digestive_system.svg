@@ -1,0 +1,50 @@
+<svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .label { font-size: 10px; fill: #94a3b8; }
+      .organ { stroke: #fff; stroke-width: 1.5; opacity: 0.9; }
+      .path { fill: none; stroke: #fbbf24; stroke-width: 2; stroke-dasharray: 4,4; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="320" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">HUMAN DIGESTIVE SYSTEM</text>
+
+  <g transform="translate(200, 60) scale(0.8)">
+    <!-- Esophagus -->
+    <path d="M 0 0 L 0 60" fill="none" stroke="#fca5a5" stroke-width="12" class="organ" />
+    <text x="20" y="30" class="label">Esophagus</text>
+    
+    <!-- Stomach -->
+    <path d="M -10 60 Q -30 60 -40 90 Q -50 130 0 130 Q 30 130 20 90 Q 10 60 -10 60" fill="#ef4444" class="organ" />
+    <text x="-70" y="100" class="label">Stomach</text>
+    
+    <!-- Liver -->
+    <path d="M 20 60 Q 60 50 80 80 Q 90 110 50 110 Q 30 110 20 60" fill="#7f1d1d" class="organ" />
+    <text x="90" y="80" class="label">Liver</text>
+    
+    <!-- Intestines -->
+    <g transform="translate(0, 140)">
+       <!-- Large Intestine -->
+       <path d="M -40 0 L -40 -40 L 40 -40 L 40 60 L -40 60 L -40 40" fill="none" stroke="#d97706" stroke-width="15" stroke-linecap="round" class="organ"/>
+       <text x="60" y="0" class="label">Large Intestine</text>
+       
+       <!-- Small Intestine -->
+       <path d="M -20 0 Q 0 10 20 0 Q 30 20 -10 30 Q -30 20 -20 0" fill="#fcd34d" class="organ" />
+       <text x="-15" y="15" fontSize="8" fill="black">Small Intestine</text>
+    </g>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <path d="M 200 60 L 200 110" class="path" marker-end="url(#arrowhead)"/>
+  <path d="M 190 140 L 200 160" class="path" marker-end="url(#arrowhead)"/>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24" />
+    </marker>
+  </defs>
+</svg>

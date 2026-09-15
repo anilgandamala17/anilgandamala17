@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Understanding Quadrilaterals</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Quadrilateral = closed figure with 4 sides, 4 angles, 4 vertices | Sum of angles = 360°</text>
+
+<!-- Square -->
+<rect x="35" y="85" width="80" height="80" fill="none" stroke="#ffd54f" stroke-width="2"/>
+<text x="75" y="182" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold">Square</text>
+<text x="75" y="197" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">All sides equal</text>
+<text x="75" y="210" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">All 90° angles</text>
+
+<!-- Rectangle -->
+<rect x="150" y="95" width="110" height="70" fill="none" stroke="#86efac" stroke-width="2"/>
+<text x="205" y="182" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">Rectangle</text>
+<text x="205" y="197" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Opp sides equal</text>
+<text x="205" y="210" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">All 90° angles</text>
+
+<!-- Parallelogram -->
+<polygon points="300,165 340,85 430,85 390,165" fill="none" stroke="#f48fb1" stroke-width="2"/>
+<text x="365" y="182" font-family="'Segoe UI',sans-serif" font-size="12" fill="#f48fb1" text-anchor="middle" font-weight="bold">Parallelogram</text>
+<text x="365" y="197" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Opp sides ||</text>
+<text x="365" y="210" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Opp angles equal</text>
+
+<!-- Rhombus -->
+<polygon points="490,85 535,125 490,165 445,125" fill="none" stroke="#c084fc" stroke-width="2"/>
+<text x="490" y="182" font-family="'Segoe UI',sans-serif" font-size="12" fill="#c084fc" text-anchor="middle" font-weight="bold">Rhombus</text>
+<text x="490" y="197" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">All sides equal</text>
+<text x="490" y="210" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Diag ⊥ bisect</text>
+
+<!-- Trapezium -->
+<polygon points="560,160 590,90 670,90 720,160" fill="none" stroke="#fb923c" stroke-width="2"/>
+<text x="636" y="182" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fb923c" text-anchor="middle" font-weight="bold">Trapezium</text>
+<text x="636" y="197" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">One pair || sides</text>
+<text x="636" y="210" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Kite: 2 pair adj sides</text>
+
+<line x1="20" y1="222" x2="780" y2="222" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="244" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Properties of Special Quadrilaterals</text>
+
+<rect x="20" y="256" width="370" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="278" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Parallelogram Properties</text>
+<text x="205" y="300" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">• Opposite sides are parallel and equal</text>
+<text x="205" y="320" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">• Opposite angles are equal</text>
+<text x="205" y="340" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">• Adjacent angles are supplementary (180°)</text>
+<text x="205" y="360" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">• Diagonals bisect each other</text>
+<text x="205" y="384" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Rectangle: parallelogram + all 90° angles</text>
+<text x="205" y="404" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Rhombus: parallelogram + all sides equal</text>
+<text x="205" y="424" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Square: rectangle + rhombus (all properties)</text>
+<text x="205" y="447" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">Diagonals of rectangle are equal in length</text>
+
+<rect x="410" y="256" width="370" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="278" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Angle Sum Property</text>
+<text x="595" y="300" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Sum of all angles = 360°</text>
+<text x="595" y="320" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">∠A + ∠B + ∠C + ∠D = 360°</text>
+<text x="595" y="344" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Proof (by diagonal):</text>
+<text x="595" y="364" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Diagonal divides into 2 triangles</text>
+<text x="595" y="384" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Each triangle = 180°</text>
+<text x="595" y="404" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Total = 2 × 180° = 360°</text>
+<text x="595" y="428" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Exterior angle: each = 360°/n for regular polygon</text>
+<text x="595" y="448" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">Quadrilateral: exterior angles sum = 360°</text>
+
+<text x="400" y="500" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Hierarchy: Square ⊂ Rectangle ⊂ Parallelogram ⊂ Quadrilateral</text>
+<text x="400" y="525" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Hierarchy: Square ⊂ Rhombus ⊂ Parallelogram ⊂ Quadrilateral</text>
+<text x="400" y="558" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Convex quad: all diagonals inside | Concave quad: one diagonal outside | Regular quad = square</text>
+</svg>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      .chalk { font-family: 'Segoe UI', sans-serif; }
+      .title { font-size: 26px; font-weight: bold; fill: #a5d6a7; }
+      .label { font-size: 17px; fill: #c8e6c9; }
+      .num { font-size: 18px; fill: #fff9c4; font-weight: bold; }
+      .muted { font-size: 14px; fill: #81c784; }
+      .highlight { fill: rgba(102,187,106,0.12); stroke: #66bb6a; stroke-width: 1.5; }
+      .yellow { fill: rgba(255,245,157,0.12); stroke: #fff176; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <text x="400" y="44" text-anchor="middle" class="chalk title">Types of Lines – Basic Geometrical Ideas</text>
+  <line x1="60" y1="56" x2="740" y2="56" stroke="#66bb6a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Line -->
+  <g transform="translate(60,80)">
+    <rect x="0" y="0" width="680" height="70" class="highlight" rx="10"/>
+    <text x="30" y="22" class="chalk label">Line (AB)</text>
+    <polygon points="680,35 670,30 670,40" fill="#a5d6a7"/>
+    <polygon points="0,35 10,30 10,40" fill="#a5d6a7"/>
+    <line x1="10" y1="35" x2="670" y2="35" stroke="#a5d6a7" stroke-width="2.5"/>
+    <circle cx="220" cy="35" r="5" fill="#fff176"/>
+    <text x="220" y="56" text-anchor="middle" class="chalk muted" style="fill:#fff176">A</text>
+    <circle cx="480" cy="35" r="5" fill="#fff176"/>
+    <text x="480" y="56" text-anchor="middle" class="chalk muted" style="fill:#fff176">B</text>
+    <text x="580" y="22" class="chalk muted">Extends infinitely both ways</text>
+    <text x="580" y="42" class="chalk muted">Notation: ↔AB</text>
+  </g>
+
+  <!-- Ray -->
+  <g transform="translate(60,170)">
+    <rect x="0" y="0" width="680" height="70" class="yellow" rx="10"/>
+    <text x="30" y="22" class="chalk label" style="fill:#fff9c4">Ray (OA)</text>
+    <polygon points="630,35 620,30 620,40" fill="#fff176"/>
+    <line x1="60" y1="35" x2="620" y2="35" stroke="#fff176" stroke-width="2.5"/>
+    <circle cx="60" cy="35" r="5" fill="#fff176"/>
+    <text x="60" y="56" text-anchor="middle" class="chalk muted" style="fill:#fff176">O (start)</text>
+    <circle cx="300" cy="35" r="5" fill="#fff176"/>
+    <text x="300" y="56" text-anchor="middle" class="chalk muted" style="fill:#fff176">A</text>
+    <text x="550" y="22" class="chalk muted">One fixed endpoint,</text>
+    <text x="550" y="42" class="chalk muted">extends one way → ∞</text>
+  </g>
+
+  <!-- Line Segment -->
+  <g transform="translate(60,260)">
+    <rect x="0" y="0" width="680" height="70" class="highlight" rx="10"/>
+    <text x="30" y="22" class="chalk label">Line Segment (PQ)</text>
+    <line x1="120" y1="35" x2="480" y2="35" stroke="#80deea" stroke-width="2.5"/>
+    <line x1="120" y1="26" x2="120" y2="44" stroke="#80deea" stroke-width="2"/>
+    <line x1="480" y1="26" x2="480" y2="44" stroke="#80deea" stroke-width="2"/>
+    <circle cx="120" cy="35" r="5" fill="#80deea"/>
+    <text x="120" y="56" text-anchor="middle" class="chalk muted" style="fill:#80deea">P</text>
+    <circle cx="480" cy="35" r="5" fill="#80deea"/>
+    <text x="480" y="56" text-anchor="middle" class="chalk muted" style="fill:#80deea">Q</text>
+    <text x="570" y="22" class="chalk muted">Two endpoints,</text>
+    <text x="570" y="42" class="chalk muted">measurable length</text>
+  </g>
+
+  <!-- Angles and Intersections -->
+  <g transform="translate(60,350)">
+    <rect x="0" y="0" width="320" height="120" class="highlight" rx="10"/>
+    <text x="160" y="22" text-anchor="middle" class="chalk label">Parallel Lines</text>
+    <line x1="20" y1="55" x2="300" y2="55" stroke="#a5d6a7" stroke-width="2" stroke-dasharray="5,3"/>
+    <line x1="20" y1="85" x2="300" y2="85" stroke="#a5d6a7" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="160" y="108" text-anchor="middle" class="chalk muted">Never meet | ||</text>
+
+    <rect x="360" y="0" width="320" height="120" class="yellow" rx="10"/>
+    <text x="520" y="22" text-anchor="middle" class="chalk label">Perpendicular Lines</text>
+    <line x1="520" y1="40" x2="520" y2="110" stroke="#fff176" stroke-width="2"/>
+    <line x1="440" y1="75" x2="600" y2="75" stroke="#fff176" stroke-width="2"/>
+    <text x="530" y="52" class="chalk muted" style="fill:#fff176">90°</text>
+    <rect x="520" y="75" width="10" height="10" fill="none" stroke="#fff176" stroke-width="1.5"/>
+    <text x="520" y="118" text-anchor="middle" class="chalk muted">Meet at 90° (⊥)</text>
+  </g>
+</svg>

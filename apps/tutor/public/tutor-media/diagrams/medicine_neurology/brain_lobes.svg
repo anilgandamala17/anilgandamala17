@@ -1,0 +1,27 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Brain outline -->
+  <path d="M200 50 C100 50 60 120 80 180 C90 220 140 250 200 250 C260 250 310 220 320 180 C340 120 300 50 200 50"
+    fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="1.5" />
+  <!-- Cerebellum -->
+  <ellipse cx="200" cy="248" rx="40" ry="14" fill="none" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" />
+  <text x="200" y="252" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">Cerebellum</text>
+
+  <!-- Lobe boundaries -->
+  <path d="M200 80 L200 200" stroke="rgba(255,255,255,0.30)" stroke-width="1" stroke-dasharray="3,3" />
+  <path d="M140 120 L260 120" stroke="rgba(255,255,255,0.30)" stroke-width="1" stroke-dasharray="3,3" />
+
+  <!-- Frontal Lobe -->
+  <text x="130" y="100" font-size="10" fill="#93c5fd" font-weight="bold" text-anchor="middle">FRONTAL</text>
+  <text x="130" y="112" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">Motor control</text>
+  <!-- Parietal Lobe -->
+  <text x="270" y="100" font-size="10" fill="#86efac" font-weight="bold" text-anchor="middle">PARIETAL</text>
+  <text x="270" y="112" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">Sensation</text>
+  <!-- Temporal Lobe -->
+  <text x="110" y="185" font-size="10" fill="#fef08a" font-weight="bold" text-anchor="middle">TEMPORAL</text>
+  <text x="110" y="197" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">Hearing/Memory</text>
+  <!-- Occipital Lobe -->
+  <text x="290" y="185" font-size="10" fill="#fca5a5" font-weight="bold" text-anchor="middle">OCCIPITAL</text>
+  <text x="290" y="197" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">Vision</text>
+
+  <text x="200" y="268" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">Cerebral Cortex — Lobes</text>
+</svg>

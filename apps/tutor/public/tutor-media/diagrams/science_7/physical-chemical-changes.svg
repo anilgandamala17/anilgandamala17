@@ -1,0 +1,61 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Physical and Chemical Changes</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+
+<rect x="20" y="65" width="370" height="195" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="88" font-family="'Segoe UI',sans-serif" font-size="16" fill="#86efac" text-anchor="middle" font-weight="bold">Physical Change</text>
+<text x="205" y="110" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Only physical properties change</text>
+<text x="205" y="130" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">NO new substance is formed</text>
+<text x="205" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Usually REVERSIBLE</text>
+<text x="205" y="170" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Chemical composition unchanged</text>
+<line x1="30" y1="178" x2="380" y2="178" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+<text x="205" y="198" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Examples:</text>
+<text x="205" y="218" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Melting ice, tearing paper, dissolving</text>
+<text x="205" y="238" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">salt in water, cutting vegetables</text>
+<text x="205" y="250" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Changing shape of clay, bending metal</text>
+
+<rect x="410" y="65" width="370" height="195" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="88" font-family="'Segoe UI',sans-serif" font-size="16" fill="#f48fb1" text-anchor="middle" font-weight="bold">Chemical Change</text>
+<text x="595" y="110" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Chemical composition changes</text>
+<text x="595" y="130" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">NEW substance(s) formed</text>
+<text x="595" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Usually IRREVERSIBLE</text>
+<text x="595" y="170" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Energy is absorbed or released</text>
+<line x1="420" y1="178" x2="770" y2="178" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+<text x="595" y="198" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Examples:</text>
+<text x="595" y="218" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Burning wood, rusting iron, cooking</text>
+<text x="595" y="238" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">food, souring of milk, explosions</text>
+<text x="595" y="250" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Photosynthesis, digestion, neutralisation</text>
+
+<line x1="20" y1="273" x2="780" y2="273" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="296" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Signs of Chemical Change</text>
+
+<rect x="20" y="308" width="235" height="110" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="137" y="330" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle" font-weight="bold">Change of colour</text>
+<text x="137" y="352" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Iron turns reddish-brown (rust)</text>
+<text x="137" y="372" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Litmus change in acid/base</text>
+<text x="137" y="392" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Silver tarnishes black</text>
+<text x="137" y="410" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Ripening of fruit changes colour</text>
+
+<rect x="283" y="308" width="234" height="110" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="330" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle" font-weight="bold">Gas produced</text>
+<text x="400" y="352" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Acid + metal → H₂ gas</text>
+<text x="400" y="372" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">CO₂ from baking powder</text>
+<text x="400" y="392" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Fermentation produces CO₂</text>
+<text x="400" y="410" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Often seen as bubbles</text>
+
+<rect x="545" y="308" width="235" height="110" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="662" y="330" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle" font-weight="bold">Heat/light produced or absorbed</text>
+<text x="662" y="352" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Burning candle gives heat + light</text>
+<text x="662" y="372" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Exothermic: releases energy</text>
+<text x="662" y="392" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Endothermic: absorbs energy</text>
+<text x="662" y="410" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Photosynthesis is endothermic</text>
+
+<line x1="20" y1="432" x2="780" y2="432" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="456" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Is it reversible? How to decide</text>
+
+<rect x="20" y="468" width="760" height="85" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="490" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Physical change: Original substance can be recovered | Example: Ice → Water → Ice again</text>
+<text x="400" y="512" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Chemical change: cannot easily recover original | Example: Burnt paper cannot become paper again</text>
+<text x="400" y="534" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Some chemical changes ARE reversible (electroplating, photosynthesis/respiration cycle)</text>
+<text x="400" y="570" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Precipitation: forming insoluble solid from two solutions mixing — always chemical change</text>
+</svg>

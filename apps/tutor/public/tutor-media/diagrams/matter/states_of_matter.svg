@@ -1,0 +1,57 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .label { font-size: 12px; font-weight: bold; fill: #94a3b8; text-anchor: middle; }
+      .particle { fill: #3b82f6; stroke: #fff; opacity: 0.9; }
+      .container { fill: none; stroke: #cbd5e1; stroke-width: 2; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">STATES OF MATTER: PARTICLE VIEW</text>
+
+  <!-- SOLID -->
+  <g transform="translate(40, 80)">
+    <rect x="0" y="0" width="80" height="120" class="container" />
+    <text x="40" y="140" class="label">SOLID</text>
+    <!-- Packed particles -->
+    <g transform="translate(10, 80)">
+      <circle cx="10" cy="10" r="8" class="particle" /> <circle cx="30" cy="10" r="8" class="particle" /> <circle cx="50" cy="10" r="8" class="particle" />
+      <circle cx="10" cy="30" r="8" class="particle" /> <circle cx="30" cy="30" r="8" class="particle" /> <circle cx="50" cy="30" r="8" class="particle" />
+    </g>
+    <text x="40" y="160" fontSize="8" fill="#94a3b8" text-anchor="middle">Fixed Shape/Vol</text>
+  </g>
+
+  <!-- LIQUID -->
+  <g transform="translate(160, 80)">
+    <rect x="0" y="0" width="80" height="120" class="container" />
+    <text x="40" y="140" class="label">LIQUID</text>
+     <!-- Looser particles at bottom -->
+    <g transform="translate(5, 75)">
+      <circle cx="15" cy="10" r="8" class="particle" /> <circle cx="45" cy="12" r="8" class="particle" /> <circle cx="65" cy="8" r="8" class="particle" />
+      <circle cx="25" cy="32" r="8" class="particle" /> <circle cx="55" cy="30" r="8" class="particle" />
+    </g>
+    <text x="40" y="160" fontSize="8" fill="#94a3b8" text-anchor="middle">Fixed Vol, No Shape</text>
+  </g>
+
+  <!-- GAS -->
+  <g transform="translate(280, 80)">
+    <rect x="0" y="0" width="80" height="120" class="container" />
+    <!-- Lid implies closed container for gas -->
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="40" y="140" class="label">GAS</text>
+     <!-- Scattered particles -->
+    <g>
+      <circle cx="20" cy="30" r="8" class="particle" /> 
+      <circle cx="60" cy="50" r="8" class="particle" /> 
+      <circle cx="30" cy="90" r="8" class="particle" />
+      <circle cx="70" cy="20" r="8" class="particle" />
+      <circle cx="15" cy="100" r="8" class="particle" />
+    </g>
+    <text x="40" y="160" fontSize="8" fill="#94a3b8" text-anchor="middle">No Fixed Shape/Vol</text>
+  </g>
+
+</svg>

@@ -1,0 +1,49 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 12px; font-weight: bold; }
+      .set-box { fill: rgba(30, 58, 138, 0.4); stroke: #60a5fa; stroke-width: 1.5; rx: 8; }
+      .element { fill: #fcd34d; font-size: 14px; font-weight: bold; }
+      .subset { stroke: #fbbf24; stroke-width: 2; fill: none; }
+      .desc { fill: #93c5fd; font-size: 10px; font-style: italic; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Types of Sets</text>
+    
+    <!-- Empty Set -->
+    <g transform="translate(10, 50)">
+      <rect x="0" y="0" width="80" height="70" class="set-box" />
+      <text x="40" y="40" text-anchor="middle" class="element" font-size="24">∅</text>
+      <text x="40" y="85" text-anchor="middle" class="label">Empty Set</text>
+      <text x="40" y="98" text-anchor="middle" class="desc">No elements</text>
+    </g>
+
+    <!-- Finite Set -->
+    <g transform="translate(145, 50)">
+      <rect x="0" y="0" width="110" height="70" class="set-box" />
+      <text x="25" y="40" class="element">1, 2, 3</text>
+      <text x="55" y="85" text-anchor="middle" class="label">Finite Set</text>
+      <text x="55" y="98" text-anchor="middle" class="desc">Countable items</text>
+    </g>
+
+    <!-- Infinite Set -->
+    <g transform="translate(265, 50)">
+      <rect x="0" y="0" width="110" height="70" class="set-box" />
+      <text x="20" y="40" class="element">1, 2, 3, ...</text>
+      <text x="55" y="85" text-anchor="middle" class="label">Infinite Set</text>
+      <text x="55" y="98" text-anchor="middle" class="desc">Pattern continues</text>
+    </g>
+
+    <!-- Subset Relationship -->
+    <g transform="translate(100, 160)">
+      <text x="100" y="0" text-anchor="middle" class="label">Subset Representation (A ⊂ B)</text>
+      <circle cx="100" cy="50" r="40" stroke="#60a5fa" fill="rgba(30, 58, 138, 0.4)" stroke-width="1.5" />
+      <circle cx="100" cy="50" r="20" stroke="#fcd34d" fill="rgba(252, 211, 77, 0.2)" stroke-width="1.5" />
+      <text x="100" y="55" text-anchor="middle" fill="#fcd34d" font-size="12" font-weight="bold">A</text>
+      <text x="130" y="30" fill="#60a5fa" font-size="12" font-weight="bold">B</text>
+      <text x="100" y="105" text-anchor="middle" class="desc">Every element of A is also in B</text>
+    </g>
+  </g>
+</svg>

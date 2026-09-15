@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      Icons live under /tutor-media/* so they still resolve when the tutor SPA is
+      proxied through the landing app (bare /favicon.* belongs to Next there).
+      Transparent brand marks only — never opaque white-plate logos.
+      Cache buster busts stale localhost favicon caches.
+    -->
+    <link rel="icon" href="/tutor-media/icons/favicon.ico?v=aira-brand-transparent-1" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/tutor-media/icons/favicon-16x16.png?v=aira-brand-transparent-1" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/tutor-media/icons/favicon-32x32.png?v=aira-brand-transparent-1" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/tutor-media/icons/icon-192.png?v=aira-brand-transparent-1" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/tutor-media/icons/icon-512.png?v=aira-brand-transparent-1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/tutor-media/icons/apple-icon.png?v=aira-brand-transparent-1" />
+    <link rel="manifest" href="/tutor-media/manifest.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Aɪra — Your Intelligent Learning Companion. Interactive AI-powered teaching platform with personalized learning, real-time doubt resolution, and automated resource generation." />
+    <meta name="theme-color" content="#2F6BFF" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <!-- Plain script from /public avoids Vite import-analysis bugs with inline HTML + spaced paths -->
+    <script src="/theme-boot.js"></script>
+    <title>Aɪra — Your Intelligent Learning Companion</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+  </defs>
+  <!-- Bg Removed -->
+  <text x="20" y="30" class="title">EXCRETORY SYSTEM</text>
+  
+  <g transform="translate(120, 60)">
+    <!-- Kidneys -->
+    <ellipse cx="40" cy="50" rx="30" ry="40" fill="#7f1d1d" opacity="0.8" /> <!-- Left -->
+    <ellipse cx="120" cy="50" rx="30" ry="40" fill="#7f1d1d" opacity="0.8" /> <!-- Right -->
+    
+    <!-- Ureters -->
+    <path d="M 40 90 L 70 160" stroke="#fbbf24" stroke-width="4" fill="none" />
+    <path d="M 120 90 L 90 160" stroke="#fbbf24" stroke-width="4" fill="none" />
+    
+    <!-- Bladder -->
+    <path d="M 50 160 Q 80 200 110 160" fill="#fbbf24" opacity="0.6" />
+    
+    <text x="40" y="50" text-anchor="middle" fill="#fff" font-size="10">Kidney</text>
+    <text x="120" y="50" text-anchor="middle" fill="#fff" font-size="10">Kidney</text>
+    <text x="80" y="180" text-anchor="middle" fill="#fff" font-size="10">Bladder</text>
+  </g>
+  
+  <g transform="translate(280, 80)">
+    <circle cx="40" cy="40" r="30" fill="#1e293b" stroke="#fff" />
+    <text x="40" y="35" text-anchor="middle" font-size="8">Nephron</text>
+    <text x="40" y="50" text-anchor="middle" font-size="8">(Unit)</text>
+    <line x1="10" y1="40" x2="-80" y2="40" stroke="#94a3b8" stroke-dasharray="2" />
+  </g>
+  
+  <text x="200" y="240" text-anchor="middle" font-size="12">Filtration of Blood → Urine Formation</text>
+</svg>

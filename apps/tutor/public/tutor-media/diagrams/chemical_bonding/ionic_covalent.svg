@@ -1,0 +1,57 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="background:#1a3a2a">
+  <text x="200" y="18" font-size="13" fill="#86efac" text-anchor="middle" font-family="monospace" font-weight="bold">Ionic vs Covalent Bonding</text>
+  <!-- Ionic bonding section -->
+  <rect x="15" y="30" width="175" height="220" rx="5" fill="rgba(252,165,165,0.05)" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="102" y="48" font-size="10" fill="#fca5a5" text-anchor="middle" font-family="monospace" font-weight="bold">Ionic Bond</text>
+  <text x="102" y="60" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">(electron transfer)</text>
+  <!-- Na atom -->
+  <circle cx="60" cy="110" r="28" fill="rgba(252,165,165,0.15)" stroke="#fca5a5" stroke-width="2"/>
+  <text x="60" y="105" font-size="11" fill="#fca5a5" text-anchor="middle" font-family="monospace" font-weight="bold">Na</text>
+  <text x="60" y="120" font-size="9" fill="#fca5a5" text-anchor="middle" font-family="monospace">2,8,1</text>
+  <!-- Electron transfer arrow -->
+  <path d="M88 100 Q102 80 116 100" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <polygon points="114,96 120,104 108,104" fill="#fbbf24"/>
+  <text x="102" y="78" font-size="9" fill="#fbbf24" text-anchor="middle" font-family="monospace">e⁻</text>
+  <!-- Cl atom -->
+  <circle cx="145" cy="110" r="28" fill="rgba(147,197,253,0.15)" stroke="#93c5fd" stroke-width="2"/>
+  <text x="145" y="105" font-size="11" fill="#93c5fd" text-anchor="middle" font-family="monospace" font-weight="bold">Cl</text>
+  <text x="145" y="120" font-size="9" fill="#93c5fd" text-anchor="middle" font-family="monospace">2,8,7</text>
+  <!-- Ions formed -->
+  <text x="60" y="155" font-size="11" fill="#fca5a5" text-anchor="middle" font-family="monospace">Na⁺</text>
+  <text x="60" y="168" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">loses e⁻</text>
+  <text x="145" y="155" font-size="11" fill="#93c5fd" text-anchor="middle" font-family="monospace">Cl⁻</text>
+  <text x="145" y="168" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">gains e⁻</text>
+  <!-- Electrostatic attraction -->
+  <line x1="75" y1="152" x2="130" y2="152" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="102" y="185" font-size="8" fill="#fbbf24" text-anchor="middle" font-family="monospace">Electrostatic</text>
+  <text x="102" y="196" font-size="8" fill="#fbbf24" text-anchor="middle" font-family="monospace">attraction</text>
+  <!-- NaCl crystal -->
+  <text x="102" y="215" font-size="10" fill="#ffffff" text-anchor="middle" font-family="monospace">NaCl</text>
+  <text x="102" y="228" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">ionic crystal</text>
+  <text x="102" y="240" font-size="7" fill="rgba(255,255,255,0.3)" text-anchor="middle" font-family="monospace">high MP, conducts when dissolved</text>
+  <!-- Covalent bonding section -->
+  <rect x="210" y="30" width="175" height="220" rx="5" fill="rgba(134,239,172,0.05)" stroke="#86efac" stroke-width="1.5"/>
+  <text x="297" y="48" font-size="10" fill="#86efac" text-anchor="middle" font-family="monospace" font-weight="bold">Covalent Bond</text>
+  <text x="297" y="60" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">(electron sharing)</text>
+  <!-- H2O molecule -->
+  <circle cx="297" cy="105" r="22" fill="rgba(252,165,165,0.15)" stroke="#fca5a5" stroke-width="2"/>
+  <text x="297" y="100" font-size="11" fill="#fca5a5" text-anchor="middle" font-family="monospace" font-weight="bold">O</text>
+  <text x="297" y="114" font-size="8" fill="#fca5a5" text-anchor="middle" font-family="monospace">2,6</text>
+  <!-- H atoms -->
+  <circle cx="255" cy="140" r="14" fill="rgba(147,197,253,0.15)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="255" y="145" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">H</text>
+  <circle cx="339" cy="140" r="14" fill="rgba(147,197,253,0.15)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="339" y="145" font-size="10" fill="#93c5fd" text-anchor="middle" font-family="monospace">H</text>
+  <!-- Bonds (shared electron pairs) -->
+  <line x1="278" y1="120" x2="265" y2="130" stroke="#fbbf24" stroke-width="3"/>
+  <line x1="316" y1="120" x2="329" y2="130" stroke="#fbbf24" stroke-width="3"/>
+  <!-- Shared electrons -->
+  <circle cx="272" cy="125" r="4" fill="#fbbf24"/>
+  <circle cx="322" cy="125" r="4" fill="#fbbf24"/>
+  <text x="297" y="170" font-size="9" fill="#fbbf24" text-anchor="middle" font-family="monospace">Shared pairs</text>
+  <!-- Lewis structure -->
+  <text x="297" y="195" font-size="11" fill="#ffffff" text-anchor="middle" font-family="monospace">H—O—H</text>
+  <text x="297" y="210" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">104.5° bond angle</text>
+  <text x="297" y="228" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">polar covalent</text>
+  <text x="297" y="240" font-size="7" fill="rgba(255,255,255,0.3)" text-anchor="middle" font-family="monospace">low MP, poor conductor</text>
+</svg>

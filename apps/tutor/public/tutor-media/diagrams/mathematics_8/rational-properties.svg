@@ -1,0 +1,48 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Properties of Rational Numbers</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="76" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">Rational Number = p/q where p, q are integers and q ≠ 0</text>
+
+<rect x="20" y="87" width="370" height="185" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Closure Property</text>
+<text x="205" y="133" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">✓ Addition: p/q + r/s is rational</text>
+<text x="205" y="153" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">✓ Subtraction: p/q − r/s is rational</text>
+<text x="205" y="173" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">✓ Multiplication: p/q × r/s is rational</text>
+<text x="205" y="193" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">✗ Division: NOT closed (÷ 0 undefined)</text>
+<text x="205" y="216" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Commutativity</text>
+<text x="205" y="236" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">a + b = b + a | a × b = b × a</text>
+<text x="205" y="256" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">Subtraction and Division NOT commutative</text>
+
+<rect x="410" y="87" width="370" height="185" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Associativity</text>
+<text x="595" y="133" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">(a + b) + c = a + (b + c)</text>
+<text x="595" y="153" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">(a × b) × c = a × (b × c)</text>
+<text x="595" y="176" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Identity Elements</text>
+<text x="595" y="198" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Additive identity: 0 (a + 0 = a)</text>
+<text x="595" y="218" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Multiplicative identity: 1 (a × 1 = a)</text>
+<text x="595" y="240" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Inverse</text>
+<text x="595" y="261" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Additive inverse: a + (−a) = 0</text>
+
+<line x1="20" y1="286" x2="780" y2="286" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="310" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Distributive Property</text>
+<text x="400" y="334" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">a × (b + c) = a × b + a × c</text>
+
+<rect x="20" y="350" width="370" height="155" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="373" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Example: Distributive</text>
+<text x="205" y="395" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">½ × (⅓ + ¼)</text>
+<text x="205" y="415" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">= ½ × 7/12</text>
+<text x="205" y="435" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">= 7/24</text>
+<text x="205" y="458" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">= ½×⅓ + ½×¼ = 1/6 + 1/8 = 7/24 ✓</text>
+<text x="205" y="490" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Both methods give same answer!</text>
+
+<rect x="410" y="350" width="370" height="155" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="373" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Multiplicative Inverse (Reciprocal)</text>
+<text x="595" y="395" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">For every p/q (≠0): inverse = q/p</text>
+<text x="595" y="415" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">p/q × q/p = 1</text>
+<text x="595" y="440" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Density Property</text>
+<text x="595" y="460" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Between any two rationals</text>
+<text x="595" y="480" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">there are infinitely many rationals</text>
+<text x="595" y="495" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Mean = (a+b)/2 gives the middle rational</text>
+
+<text x="400" y="555" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Types: Proper (p&lt;q), Improper (p&gt;q), Mixed Number, Equivalent rationals, Standard form (HCF=1)</text>
+</svg>

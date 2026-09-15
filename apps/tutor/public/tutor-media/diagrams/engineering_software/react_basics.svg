@@ -1,0 +1,41 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowCS" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="rgba(255,255,255,0.90)" />
+    </marker>
+  </defs>
+
+  <!-- App (root) -->
+  <rect x="150" y="20" width="100" height="30" rx="4" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="1.5" />
+  <text x="200" y="40" font-size="11" fill="rgba(255,255,255,0.90)" text-anchor="middle" font-weight="bold">App</text>
+
+  <!-- Lines down -->
+  <line x1="175" y1="50" x2="120" y2="90" stroke="rgba(255,255,255,0.30)" stroke-width="1" marker-end="url(#arrowCS)" />
+  <line x1="200" y1="50" x2="200" y2="90" stroke="rgba(255,255,255,0.30)" stroke-width="1" marker-end="url(#arrowCS)" />
+  <line x1="225" y1="50" x2="280" y2="90" stroke="rgba(255,255,255,0.30)" stroke-width="1" marker-end="url(#arrowCS)" />
+
+  <!-- Child components -->
+  <rect x="70" y="90" width="100" height="28" rx="4" fill="none" stroke="#93c5fd" stroke-width="1.5" />
+  <text x="120" y="109" font-size="10" fill="#93c5fd" text-anchor="middle">Header</text>
+
+  <rect x="150" y="90" width="100" height="28" rx="4" fill="none" stroke="#86efac" stroke-width="1.5" />
+  <text x="200" y="109" font-size="10" fill="#86efac" text-anchor="middle">Main</text>
+
+  <rect x="230" y="90" width="100" height="28" rx="4" fill="none" stroke="#fef08a" stroke-width="1.5" />
+  <text x="280" y="109" font-size="10" fill="#fef08a" text-anchor="middle">Footer</text>
+
+  <!-- Props arrow -->
+  <line x1="200" y1="118" x2="200" y2="155" stroke="rgba(255,255,255,0.30)" stroke-width="1" marker-end="url(#arrowCS)" />
+
+  <!-- State box -->
+  <rect x="150" y="155" width="100" height="28" rx="4" fill="none" stroke="#fca5a5" stroke-width="1.5" stroke-dasharray="4,3" />
+  <text x="200" y="174" font-size="10" fill="#fca5a5" text-anchor="middle">State / Props</text>
+
+  <!-- Labels -->
+  <text x="60" y="82" font-size="8" fill="rgba(255,255,255,0.30)">Components</text>
+  <text x="60" y="92" font-size="7" fill="rgba(255,255,255,0.30)">(reusable)</text>
+  <text x="310" y="174" font-size="8" fill="rgba(255,255,255,0.30)">Data flow</text>
+  <text x="310" y="184" font-size="7" fill="rgba(255,255,255,0.30)">(one-way)</text>
+
+  <text x="200" y="268" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">React Component Architecture</text>
+</svg>

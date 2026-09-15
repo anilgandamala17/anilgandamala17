@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Osmosis &amp; Osmotic Pressure</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- U-Tube Setup -->
+  <g transform="translate(250, 150)">
+    <!-- Tube Outline -->
+    <path d="M 0 0 L 0 200 Q 0 250 50 250 L 250 250 Q 300 250 300 200 L 300 0" fill="none" stroke="#f8fafc" stroke-width="4"/>
+    
+    <!-- Semi-Permeable Membrane (SPM) -->
+    <line x1="150" y1="150" x2="150" y2="250" stroke="#fef08a" stroke-width="6" stroke-dasharray="4,2"/>
+    <text x="150" y="280" fill="#fef08a" text-anchor="middle" font-weight="bold">SPM</text>
+    
+    <!-- Solvent (Left) -->
+    <path d="M 0 100 L 0 200 Q 0 250 50 250 L 150 250 L 150 100 Z" fill="rgba(56, 189, 248, 0.4)" stroke="none"/>
+    <text x="75" y="160" fill="#f8fafc" text-anchor="middle">Pure Solvent</text>
+    
+    <!-- Solution (Right) -->
+    <path d="M 150 60 L 150 250 L 250 250 Q 300 250 300 200 L 300 60 Z" fill="rgba(134, 239, 172, 0.4)" stroke="none"/>
+    <text x="225" y="160" fill="#f8fafc" text-anchor="middle">Solution</text>
+    
+    <!-- Osmotic Pressure arrow -->
+    <line x1="150" y1="100" x2="250" y2="100" stroke="#fef08a" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="100" y="80" fill="#fef08a" font-weight="bold" font-size="14">Net Flow →</text>
+    
+    <!-- Piston (Applying Osmotic Pressure) -->
+    <rect x="230" y="50" width="140" height="20" rx="5" fill="#f8fafc" transform="translate(35, 0)"/>
+    <line x1="300" y1="50" x2="300" y2="0" stroke="#f8fafc" stroke-width="4"/>
+    <text x="360" y="-10" fill="#fef08a" font-weight="bold">Pressure (π)</text>
+  </g>
+
+  <!-- Formula -->
+  <rect x="250" y="480" width="300" height="80" rx="15" fill="rgba(255,255,255,0.03)" stroke="#86efac" stroke-width="1.5"/>
+  <text x="400" y="535" fill="#fef08a" text-anchor="middle" font-family="'Times New Roman', serif" font-size="42" font-style="italic">π = C · R · T</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Chemistry Grade 12</text>
+</svg>

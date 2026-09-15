@@ -1,0 +1,65 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Modes of Nutrition in Plants</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+
+<rect x="20" y="65" width="370" height="125" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="88" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Autotrophic Nutrition</text>
+<text x="205" y="110" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Make food by photosynthesis</text>
+<text x="205" y="130" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Use sunlight + CO₂ + H₂O</text>
+<text x="205" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">All green plants</text>
+<text x="205" y="170" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">auto = self | trophic = feeding</text>
+<text x="205" y="183" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Producer level in food chain</text>
+
+<rect x="410" y="65" width="370" height="125" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="88" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Heterotrophic Nutrition</text>
+<text x="595" y="110" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Cannot make own food</text>
+<text x="595" y="130" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Depend on other organisms</text>
+<text x="595" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Parasites, Saprophytes, Insectivores</text>
+<text x="595" y="170" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">hetero = other | trophic = feeding</text>
+<text x="595" y="183" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Consumer level in food chain</text>
+
+<line x1="20" y1="203" x2="780" y2="203" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="226" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Types of Heterotrophic Nutrition</text>
+
+<rect x="20" y="238" width="235" height="148" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="137" y="260" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Parasitic</text>
+<text x="137" y="281" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Take food from host</text>
+<text x="137" y="301" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Cuscuta (Amarbel)</text>
+<text x="137" y="321" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Attaches with Haustoria</text>
+<text x="137" y="341" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">No chlorophyll (yellow)</text>
+<text x="137" y="361" font-family="'Segoe UI',sans-serif" font-size="12" fill="#f48fb1" text-anchor="middle">Host is harmed</text>
+<text x="137" y="378" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Also: Orobanche, Striga</text>
+
+<rect x="283" y="238" width="234" height="148" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="260" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Saprophytic</text>
+<text x="400" y="281" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Feed on dead matter</text>
+<text x="400" y="301" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Fungi, some bacteria</text>
+<text x="400" y="321" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Release digestive enzymes</text>
+<text x="400" y="341" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Decomposers in ecosystem</text>
+<text x="400" y="361" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Recycle nutrients in soil</text>
+<text x="400" y="378" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Also: mushroom, bread mold</text>
+
+<rect x="545" y="238" width="235" height="148" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="662" y="260" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Insectivorous</text>
+<text x="662" y="281" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Trap and digest insects</text>
+<text x="662" y="301" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Venus Flytrap</text>
+<text x="662" y="321" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Pitcher Plant (Nepenthes)</text>
+<text x="662" y="341" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Grow in N-poor soil</text>
+<text x="662" y="361" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Partly autotrophic also</text>
+<text x="662" y="378" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Also: Sundew (Drosera)</text>
+
+<line x1="20" y1="400" x2="780" y2="400" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="425" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Symbiotic Nutrition — Both organisms BENEFIT</text>
+
+<rect x="20" y="438" width="370" height="95" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="460" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Lichen (Algae + Fungi)</text>
+<text x="205" y="481" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Algae: photosynthesis → food</text>
+<text x="205" y="501" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Fungi: water, minerals, shelter</text>
+<text x="205" y="521" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">→ mutualism (both benefit)</text>
+
+<rect x="410" y="438" width="370" height="95" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="460" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Legumes + Rhizobium</text>
+<text x="595" y="481" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Bacteria fix atmospheric N₂</text>
+<text x="595" y="501" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Plant provides shelter + food</text>
+<text x="595" y="521" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Root nodules on pea/bean plants</text>
+</svg>

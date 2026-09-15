@@ -1,0 +1,54 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Useful Microorganisms</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Friendly microbes used in food, medicine, and environment</text>
+
+<rect x="25" y="85" width="235" height="230" fill="none" stroke="#ffd54f" stroke-width="2" rx="10"/>
+<text x="142" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Food Industry</text>
+<text x="142" y="140" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Curd Making</text>
+<text x="142" y="160" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Lactobacillus bacteria</text>
+<text x="142" y="195" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Baking (Bread/Cake)</text>
+<text x="142" y="215" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Yeast (produces CO₂)</text>
+<text x="142" y="245" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Fermentation</text>
+<text x="142" y="265" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Sugar to Alcohol</text>
+<text x="142" y="295" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Used in idli, dosa, cheese</text>
+
+<rect x="282" y="85" width="235" height="230" fill="none" stroke="#86efac" stroke-width="2" rx="10"/>
+<text x="400" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Medical Benefits</text>
+<text x="400" y="140" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Antibiotics</text>
+<text x="400" y="160" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Kill/stop disease growth</text>
+<text x="400" y="175" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Ex: Streptomycin, Penicillin</text>
+<text x="400" y="205" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Vaccines</text>
+<text x="400" y="225" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Dead/weak microbes</text>
+<text x="400" y="240" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Train body to fight future infection</text>
+<text x="400" y="270" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Antibodies</text>
+<text x="400" y="290" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Produced by body to fight germs</text>
+
+<rect x="540" y="85" width="235" height="230" fill="none" stroke="#f48fb1" stroke-width="2" rx="10"/>
+<text x="657" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#f48fb1" text-anchor="middle" font-weight="bold">Soil &amp; Environment</text>
+<text x="657" y="140" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Nitrogen Fixation</text>
+<text x="657" y="160" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Rhizobium bacteria</text>
+<text x="657" y="180" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Converts atmospheric N₂ for plants</text>
+<text x="657" y="215" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Decomposition</text>
+<text x="657" y="235" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Clean up organic waste</text>
+<text x="657" y="255" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Turns waste into Manure</text>
+<text x="657" y="285" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Keeps ecosystem balanced</text>
+
+<line x1="20" y1="335" x2="780" y2="335" stroke="#86efac" stroke-width="1"/>
+
+<rect x="25" y="350" width="750" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="10"/>
+<text x="400" y="375" font-family="'Segoe UI',sans-serif" font-size="16" fill="#fb923c" text-anchor="middle" font-weight="bold">Discovery Timeline</text>
+<circle cx="150" cy="430" r="40" fill="rgba(251,146,60,0.1)" stroke="#fb923c" stroke-width="1"/>
+<text x="150" y="425" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Louis Pasteur</text>
+<text x="150" y="445" font-family="'Segoe UI',sans-serif" font-size="11" fill="#86efac" text-anchor="middle">Fermentation (1857)</text>
+
+<circle cx="400" cy="430" r="40" fill="rgba(251,146,60,0.1)" stroke="#fb923c" stroke-width="1"/>
+<text x="400" y="425" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Edward Jenner</text>
+<text x="400" y="445" font-family="'Segoe UI',sans-serif" font-size="11" fill="#86efac" text-anchor="middle">Smallpox Vaccine (1798)</text>
+
+<circle cx="650" cy="430" r="40" fill="rgba(251,146,60,0.1)" stroke="#fb923c" stroke-width="1"/>
+<text x="650" y="425" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="middle">Alexander Fleming</text>
+<text x="650" y="445" font-family="'Segoe UI',sans-serif" font-size="11" fill="#86efac" text-anchor="middle">Penicillin (1929)</text>
+
+<text x="400" y="540" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" text-anchor="middle">Commercial use in production of vinegar, alcohol, and wine</text>
+</svg>

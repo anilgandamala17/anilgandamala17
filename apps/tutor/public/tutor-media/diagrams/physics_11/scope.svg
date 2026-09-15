@@ -1,0 +1,32 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 11px; font-weight: bold; }
+      .axis { stroke: #86efac; stroke-width: 2; marker-end: url(#arrow); }
+      .domain-box { fill: #1a3a20; stroke: #4ade80; stroke-dasharray: 4; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#86efac"/>
+    </marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Scope of Physics: Scales</text>
+    
+    <line x1="50" y1="180" x2="350" y2="180" class="axis" />
+    <text x="200" y="210" text-anchor="middle" class="label">Length Scale (L)</text>
+    
+    <rect x="60" y="80" width="100" height="80" class="domain-box" />
+    <text x="110" y="100" text-anchor="middle" class="label">Microscopic</text>
+    <text x="110" y="120" text-anchor="middle" font-size="8" fill="#93c5fd">Atoms, Nuclei</text>
+    <text x="110" y="140" text-anchor="middle" font-size="8" fill="#93c5fd">10⁻¹⁴ m</text>
+
+    <rect x="240" y="80" width="100" height="80" class="domain-box" />
+    <text x="290" y="100" text-anchor="middle" class="label">Macroscopic</text>
+    <text x="290" y="120" text-anchor="middle" font-size="8" fill="#93c5fd">Stars, Galaxies</text>
+    <text x="290" y="140" text-anchor="middle" font-size="8" fill="#93c5fd">10²⁶ m</text>
+    
+    <text x="50" y="170" text-anchor="middle" font-size="8" fill="#fca5a5">10⁻¹⁴ m</text>
+    <text x="350" y="170" text-anchor="middle" font-size="8" fill="#fca5a5">10²⁶ m</text>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Food Security in India</text>
+
+  <!-- Definition -->
+  <rect x="15" y="55" width="770" height="65" rx="10" fill="#1a3a2a" fill-opacity="0.7" stroke="#86efac" stroke-width="2"/>
+  <text x="400" y="78" text-anchor="middle" fill="#86efac" font-size="14" font-family="Georgia,serif" font-weight="bold">Food Security = Availability + Access + Affordability of food</text>
+  <text x="400" y="103" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">All people, at all times, have physical, social and economic access to sufficient, safe and nutritious food</text>
+
+  <!-- Three dimensions -->
+  <rect x="15" y="130" width="245" height="130" rx="10" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="137" y="152" text-anchor="middle" fill="#a3e635" font-size="12" font-family="Georgia,serif" font-weight="bold">🌾 Availability</text>
+  <text x="137" y="172" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Food production + import</text>
+  <text x="137" y="190" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Buffer stock in godowns</text>
+  <text x="137" y="208" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia,serif">Green Revolution increased yield</text>
+  <text x="137" y="226" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">FCI manages national reserves</text>
+  <text x="137" y="248" text-anchor="middle" fill="#7dd3fc" font-size="10" font-family="Georgia,serif">India 3rd largest food producer</text>
+
+  <rect x="278" y="130" width="245" height="130" rx="10" fill="#1a3a2a" fill-opacity="0.7" stroke="#fde68a" stroke-width="2"/>
+  <text x="400" y="152" text-anchor="middle" fill="#fde68a" font-size="12" font-family="Georgia,serif" font-weight="bold">🏪 Access</text>
+  <text x="400" y="172" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Physical access to markets</text>
+  <text x="400" y="190" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Ration shops (PDS system)</text>
+  <text x="400" y="208" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia,serif">Rural vs Urban: distribution gap</text>
+  <text x="400" y="226" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Transportation infrastructure</text>
+  <text x="400" y="248" text-anchor="middle" fill="#7dd3fc" font-size="10" font-family="Georgia,serif">Mid-day Meal Scheme in schools</text>
+
+  <rect x="541" y="130" width="244" height="130" rx="10" fill="#1a3a2a" fill-opacity="0.7" stroke="#ef4444" stroke-width="2"/>
+  <text x="663" y="152" text-anchor="middle" fill="#ef4444" font-size="12" font-family="Georgia,serif" font-weight="bold">💰 Affordability</text>
+  <text x="663" y="172" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Economic ability to buy food</text>
+  <text x="663" y="190" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">MSP (Min. Support Price)</text>
+  <text x="663" y="208" text-anchor="middle" fill="#fde68a" font-size="11" font-family="Georgia,serif">BPL: subsidised food (₹1-2/kg)</text>
+  <text x="663" y="226" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Issue Price vs Market Price gap</text>
+  <text x="663" y="248" text-anchor="middle" fill="#7dd3fc" font-size="10" font-family="Georgia,serif">National Food Security Act 2013</text>
+
+  <!-- Insecure groups + famine -->
+  <rect x="15" y="272" width="375" height="218" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#f472b6" stroke-width="2"/>
+  <text x="202" y="295" text-anchor="middle" fill="#f9a8d4" font-size="14" font-family="Georgia,serif" font-weight="bold">Food Insecure Groups</text>
+  <g transform="translate(25,305)" font-size="11" font-family="Georgia,serif">
+    <rect x="0" y="0" width="355" height="28" rx="4" fill="#3b0f1a" stroke="#f472b6" stroke-width="1"/>
+    <text x="177" y="19" text-anchor="middle" fill="#f9a8d4">Landless agricultural labourers</text>
+    <rect x="0" y="34" width="355" height="28" rx="4" fill="#3b0f1a" stroke="#fde68a" stroke-width="1"/>
+    <text x="177" y="53" text-anchor="middle" fill="#fde68a">Daily-wage urban workers</text>
+    <rect x="0" y="68" width="355" height="28" rx="4" fill="#3b0f1a" stroke="#a78bfa" stroke-width="1"/>
+    <text x="177" y="87" text-anchor="middle" fill="#c4b5fd">SC, ST and OBC communities</text>
+    <rect x="0" y="102" width="355" height="28" rx="4" fill="#3b0f1a" stroke="#a3e635" stroke-width="1"/>
+    <text x="177" y="121" text-anchor="middle" fill="#a3e635">Pregnant women and children (anaemia risk)</text>
+    <rect x="0" y="136" width="355" height="28" rx="4" fill="#3b0f1a" stroke="#38bdf8" stroke-width="1"/>
+    <text x="177" y="155" text-anchor="middle" fill="#7dd3fc">Natural disaster victims (flood, drought)</text>
+    <rect x="0" y="170" width="355" height="30" rx="4" fill="#134e4a" stroke="#86efac" stroke-width="1.5"/>
+    <text x="177" y="190" text-anchor="middle" fill="#86efac" font-weight="bold">Hunger / Famine = Extreme food insecurity</text>
+  </g>
+
+  <!-- PDS system -->
+  <rect x="405" y="272" width="380" height="218" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="595" y="295" text-anchor="middle" fill="#a3e635" font-size="14" font-family="Georgia,serif" font-weight="bold">Government Measures</text>
+  <g transform="translate(415, 305)" font-size="11" font-family="Georgia,serif">
+    <rect x="0" y="0" width="360" height="30" rx="4" fill="#0f2a1a" stroke="#a3e635" stroke-width="1.5"/>
+    <text x="180" y="20" text-anchor="middle" fill="#a3e635" font-weight="bold">PDS — Public Distribution System</text>
+    <text x="0" y="50" fill="#d4d4d8">FCI → State Governments → Ration Shops → People</text>
+    <rect x="0" y="62" width="360" height="28" rx="4" fill="#0f2a1a" stroke="#fde68a" stroke-width="1.5"/>
+    <text x="180" y="81" text-anchor="middle" fill="#fde68a">ICDS (Integrated Child Development Services)</text>
+    <rect x="0" y="98" width="360" height="28" rx="4" fill="#0f2a1a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="180" y="117" text-anchor="middle" fill="#7dd3fc">Mid-Day Meal Scheme (school children)</text>
+    <rect x="0" y="134" width="360" height="28" rx="4" fill="#0f2a1a" stroke="#f472b6" stroke-width="1.5"/>
+    <text x="180" y="153" text-anchor="middle" fill="#f9a8d4">Antyodaya Anna Yojana — poorest of poor</text>
+    <rect x="0" y="170" width="360" height="28" rx="4" fill="#134e4a" stroke="#86efac" stroke-width="2"/>
+    <text x="180" y="189" text-anchor="middle" fill="#86efac" font-weight="bold">NFSA 2013: 5 kg subsidised grain/person</text>
+  </g>
+</svg>

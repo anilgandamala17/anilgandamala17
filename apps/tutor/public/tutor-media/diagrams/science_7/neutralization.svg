@@ -1,0 +1,8 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Placeholder</title>
+  <!-- Transparent background, white 'chalk' text -->
+  <text xml:space="preserve" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="36" font-style="italic" id="svg_1" y="300" x="400" stroke-width="0" stroke="#000" fill="#ffffff">Diagram Coming Soon</text>
+  <rect x="200" y="320" width="400" height="2" fill="#ffffff" opacity="0.5"/>
+ </g>
+</svg>

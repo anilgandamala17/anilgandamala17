@@ -1,0 +1,60 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .source { stroke: #fff; stroke-width: 1.5; fill: #1e293b; }
+      .arrow { stroke: #fbbf24; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#fbbf24" />
+    </marker>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">SOURCES OF FOOD: PLANTS & ANIMALS</text>
+
+  <!-- Plants Side -->
+  <g transform="translate(60, 80)">
+    <circle cx="40" cy="40" r="35" class="source" stroke="#22c55e" />
+    <text x="40" y="45" text-anchor="middle" fontSize="12" fill="#22c55e">PLANTS</text>
+    
+    <!-- Plant Parts -->
+    <g transform="translate(-20, 90)">
+      <rect x="0" y="0" width="120" height="20" fill="#334155" rx="4"/>
+      <text x="60" y="14" text-anchor="middle" fontSize="10">Roots (Carrot)</text>
+      
+      <rect x="0" y="30" width="120" height="20" fill="#334155" rx="4"/>
+      <text x="60" y="44" text-anchor="middle" fontSize="10">Stems (Potato)</text>
+      
+      <rect x="0" y="60" width="120" height="20" fill="#334155" rx="4"/>
+      <text x="60" y="74" text-anchor="middle" fontSize="10">Leaves (Spinach)</text>
+    </g>
+  </g>
+  
+  <!-- Animals Side -->
+  <g transform="translate(260, 80)">
+    <circle cx="40" cy="40" r="35" class="source" stroke="#ef4444" />
+    <text x="40" y="45" text-anchor="middle" fontSize="12" fill="#ef4444">ANIMALS</text>
+    
+    <!-- Animal Products -->
+    <g transform="translate(-20, 90)">
+      <rect x="0" y="0" width="120" height="20" fill="#334155" rx="4"/>
+      <text x="60" y="14" text-anchor="middle" fontSize="10">Milk (Cow)</text>
+      
+      <rect x="0" y="30" width="120" height="20" fill="#334155" rx="4"/>
+      <text x="60" y="44" text-anchor="middle" fontSize="10">Eggs (Hen)</text>
+      
+      <rect x="0" y="60" width="120" height="20" fill="#334155" rx="4"/>
+      <text x="60" y="74" text-anchor="middle" fontSize="10">Meat (Goat)</text>
+    </g>
+  </g>
+
+  <!-- Central Plate -->
+  <g transform="translate(180, 260)">
+     <text x="20" y="0" text-anchor="middle" fontSize="12" fill="#fbbf24">OUR FOOD</text>
+     <path d="M -80 -100 Q 20 0 120 -100" fill="none" class="arrow" />
+     <path d="M 120 -100 Q 20 0 -80 -100" fill="none" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/> <!-- Wait, just arrows pointing to center -->
+  </g>
+</svg>

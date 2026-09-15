@@ -1,0 +1,49 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .label { font-size: 10px; fill: #94a3b8; }
+      .tubule { fill: none; stroke: #fcd34d; stroke-width: 6; stroke-linecap: round; }
+      .capsule { fill: none; stroke: #fcd34d; stroke-width: 6; }
+      .arteriole { fill: none; stroke: #ef4444; stroke-width: 4; }
+      .vein { fill: none; stroke: #3b82f6; stroke-width: 4; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">NEPHRON STRUCTURE (Excretion)</text>
+
+  <g transform="translate(50, 60)">
+    <!-- Bowman's Capsule -->
+    <path d="M 20 40 C 0 40 0 80 20 80" class="capsule" />
+    <text x="0" y="30" class="label">Bowman's Capsule</text>
+
+    <!-- Glomerulus -->
+    <circle cx="20" cy="60" r="10" fill="#ef4444" opacity="0.6" />
+    <text x="20" y="95" class="label" text-anchor="middle">Glomerulus</text>
+
+    <!-- PCT -->
+    <path d="M 20 80 Q 60 100 80 60" class="tubule" />
+    
+    <!-- Loop of Henle -->
+    <path d="M 80 60 L 80 180 Q 90 200 100 180 L 100 60" class="tubule" />
+    <text x="90" y="215" class="label" text-anchor="middle">Loop of Henle</text>
+
+    <!-- DCT -->
+    <path d="M 100 60 Q 140 20 160 60" class="tubule" />
+    
+    <!-- Collecting Duct -->
+    <path d="M 160 60 L 160 200" class="tubule" stroke="#fbbf24" />
+    <text x="170" y="210" class="label">Collecting Duct</text>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <path d="M 140 100 L 140 120" stroke="#fff" stroke-width="2" marker-end="url(#arrowhead)"/>
+   <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#fff" />
+    </marker>
+  </defs>
+</svg>

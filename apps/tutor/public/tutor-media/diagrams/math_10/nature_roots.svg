@@ -1,0 +1,78 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#0d2818}
+      .title{fill:#f0e68c;font-size:14px;font-weight:bold}
+      .sub{fill:#aad4ff;font-size:10px}
+      .label{fill:#e0ffe0;font-size:11px}
+      .axis{stroke:#4ade80;stroke-width:1.5;fill:none}
+      .curve{stroke-width:2;fill:none}
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="18" text-anchor="middle" class="title">Nature of Roots — Discriminant</text>
+  <text x="210" y="30" text-anchor="middle" class="sub">D = b² − 4ac determines the number and type of roots</text>
+
+  <!-- Case D > 0: two roots -->
+  <rect x="8" y="38" width="128" height="142" rx="5" fill="#1a3a20" stroke="#4ade80" stroke-width="1.2"/>
+  <text x="72" y="54" text-anchor="middle" fill="#4ade80" font-size="11" font-weight="bold">D &gt; 0</text>
+  <text x="72" y="66" text-anchor="middle" fill="#ffd700" font-size="9">Two distinct real roots</text>
+  <!-- Parabola cutting x-axis at 2 points -->
+  <line x1="14" y1="125" x2="130" y2="125" class="axis"/>
+  <path d="M 16,115 Q 44,65 72,105 Q 100,65 128,115" stroke="#ff9f43" class="curve"/>
+  <circle cx="44" cy="125" r="4" fill="#ff6b6b"/>
+  <circle cx="100" cy="125" r="4" fill="#ff6b6b"/>
+  <text x="44" y="140" text-anchor="middle" fill="#ff6b6b" font-size="10">α</text>
+  <text x="100" y="140" text-anchor="middle" fill="#ff6b6b" font-size="10">β</text>
+  <text x="72" y="158" text-anchor="middle" fill="#e0ffe0" font-size="9">α ≠ β, both real</text>
+  <text x="72" y="170" text-anchor="middle" fill="#aad4ff" font-size="9">rational if D=perfect sq</text>
+
+  <!-- Case D = 0: one root -->
+  <rect x="146" y="38" width="128" height="142" rx="5" fill="#1a2a3a" stroke="#ffd700" stroke-width="1.2"/>
+  <text x="210" y="54" text-anchor="middle" fill="#ffd700" font-size="11" font-weight="bold">D = 0</text>
+  <text x="210" y="66" text-anchor="middle" fill="#ffd700" font-size="9">Two equal real roots</text>
+  <!-- Parabola tangent to x-axis -->
+  <line x1="152" y1="125" x2="268" y2="125" class="axis"/>
+  <path d="M 155,80 Q 210,152 265,80" stroke="#ffd700" class="curve"/>
+  <circle cx="210" cy="125" r="4" fill="#ffd700"/>
+  <text x="210" y="140" text-anchor="middle" fill="#ffd700" font-size="10">α = β</text>
+  <text x="210" y="158" text-anchor="middle" fill="#e0ffe0" font-size="9">x = −b/2a</text>
+  <text x="210" y="170" text-anchor="middle" fill="#aad4ff" font-size="9">(Parabola touches axis)</text>
+
+  <!-- Case D < 0: no real root -->
+  <rect x="284" y="38" width="128" height="142" rx="5" fill="#3a1a1a" stroke="#ff6b6b" stroke-width="1.2"/>
+  <text x="348" y="54" text-anchor="middle" fill="#ff6b6b" font-size="11" font-weight="bold">D &lt; 0</text>
+  <text x="348" y="66" text-anchor="middle" fill="#ff6b6b" font-size="9">No real roots</text>
+  <!-- Parabola above x-axis -->
+  <line x1="290" y1="140" x2="406" y2="140" class="axis"/>
+  <path d="M 292,135 Q 348,68 404,135" stroke="#ff6b6b" class="curve"/>
+  <text x="348" y="158" text-anchor="middle" fill="#e0ffe0" font-size="9">No x-intercepts</text>
+  <text x="348" y="170" text-anchor="middle" fill="#aad4ff" font-size="9">(Complex / imaginary)</text>
+
+  <!-- Summary table -->
+  <rect x="8" y="188" width="404" height="105" rx="5" fill="#1a2a3a" stroke="#aad4ff" stroke-width="1"/>
+  <text x="210" y="204" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">Complete Discriminant Table</text>
+  <!-- Table headers -->
+  <text x="80" y="218" text-anchor="middle" fill="#ffd700" font-size="10">Condition</text>
+  <text x="200" y="218" text-anchor="middle" fill="#ffd700" font-size="10">Nature of Roots</text>
+  <text x="340" y="218" text-anchor="middle" fill="#ffd700" font-size="10">Example</text>
+  <line x1="8" y1="222" x2="412" y2="222" stroke="#4ade80" stroke-width="0.5"/>
+  <!-- Row 1 -->
+  <text x="80" y="236" text-anchor="middle" fill="#4ade80" font-size="10">D &gt; 0, perfect sq</text>
+  <text x="200" y="236" text-anchor="middle" fill="#e0ffe0" font-size="10">2 rational distinct</text>
+  <text x="340" y="236" text-anchor="middle" fill="#7fffd4" font-size="9">x²−5x+6=0 → 2,3</text>
+  <!-- Row 2 -->
+  <text x="80" y="250" text-anchor="middle" fill="#4ade80" font-size="10">D &gt; 0, not perfect sq</text>
+  <text x="200" y="250" text-anchor="middle" fill="#e0ffe0" font-size="10">2 irrational distinct</text>
+  <text x="340" y="250" text-anchor="middle" fill="#7fffd4" font-size="9">x²−3x+1=0 → (3±√5)/2</text>
+  <!-- Row 3 -->
+  <text x="80" y="264" text-anchor="middle" fill="#ffd700" font-size="10">D = 0</text>
+  <text x="200" y="264" text-anchor="middle" fill="#e0ffe0" font-size="10">2 equal real roots</text>
+  <text x="340" y="264" text-anchor="middle" fill="#7fffd4" font-size="9">x²−4x+4=0 → 2,2</text>
+  <!-- Row 4 -->
+  <text x="80" y="278" text-anchor="middle" fill="#ff6b6b" font-size="10">D &lt; 0</text>
+  <text x="200" y="278" text-anchor="middle" fill="#e0ffe0" font-size="10">No real roots</text>
+  <text x="340" y="278" text-anchor="middle" fill="#7fffd4" font-size="9">x²+x+1=0 → none</text>
+  <text x="210" y="292" text-anchor="middle" fill="#ff9f43" font-size="10">For real roots: D ≥ 0  (necessary condition)</text>
+  </g>
+</svg>

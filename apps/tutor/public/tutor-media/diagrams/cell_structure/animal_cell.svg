@@ -1,0 +1,45 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="background:#1a3a2a">
+  <text x="200" y="18" font-size="13" fill="#86efac" text-anchor="middle" font-family="monospace" font-weight="bold">Animal Cell Structure</text>
+  <!-- Cell membrane (outer) -->
+  <ellipse cx="200" cy="148" rx="170" ry="118" fill="rgba(134,239,172,0.05)" stroke="#86efac" stroke-width="2"/>
+  <text x="200" y="272" font-size="9" fill="#86efac" text-anchor="middle" font-family="monospace">Cell Membrane</text>
+  <!-- Nucleus -->
+  <ellipse cx="185" cy="140" rx="45" ry="38" fill="rgba(251,191,36,0.12)" stroke="#fbbf24" stroke-width="2"/>
+  <!-- Nuclear envelope double line -->
+  <ellipse cx="185" cy="140" rx="42" ry="35" fill="none" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- Nucleolus -->
+  <circle cx="185" cy="138" r="12" fill="rgba(251,191,36,0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="185" y="142" font-size="8" fill="#fbbf24" text-anchor="middle" font-family="monospace">Nu</text>
+  <text x="185" y="188" font-size="9" fill="#fbbf24" text-anchor="middle" font-family="monospace">Nucleus</text>
+  <!-- Mitochondria -->
+  <ellipse cx="310" cy="120" rx="28" ry="16" fill="rgba(252,165,165,0.15)" stroke="#fca5a5" stroke-width="1.5"/>
+  <path d="M290 120 Q300 112 310 120 Q320 128 330 120" fill="none" stroke="#fca5a5" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="310" y="148" font-size="8" fill="#fca5a5" text-anchor="middle" font-family="monospace">Mitochondria</text>
+  <text x="310" y="158" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">(powerhouse)</text>
+  <!-- Rough ER -->
+  <path d="M240 155 Q255 145 270 155 Q285 165 300 155" fill="none" stroke="#93c5fd" stroke-width="1.5"/>
+  <path d="M240 165 Q255 155 270 165 Q285 175 300 165" fill="none" stroke="#93c5fd" stroke-width="1.5"/>
+  <!-- Ribosomes on ER -->
+  <circle cx="248" cy="155" r="3" fill="#93c5fd"/>
+  <circle cx="262" cy="148" r="3" fill="#93c5fd"/>
+  <circle cx="276" cy="155" r="3" fill="#93c5fd"/>
+  <circle cx="290" cy="148" r="3" fill="#93c5fd"/>
+  <text x="270" y="185" font-size="8" fill="#93c5fd" text-anchor="middle" font-family="monospace">Rough ER</text>
+  <!-- Golgi apparatus -->
+  <path d="M90 175 Q115 168 140 175" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <path d="M88 183 Q115 176 142 183" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <path d="M90 191 Q115 184 140 191" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <path d="M92 199 Q115 192 138 199" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <text x="115" y="218" font-size="8" fill="#fbbf24" text-anchor="middle" font-family="monospace">Golgi Apparatus</text>
+  <!-- Vacuole -->
+  <circle cx="310" cy="175" r="18" fill="rgba(147,197,253,0.1)" stroke="#93c5fd" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="310" y="179" font-size="8" fill="#93c5fd" text-anchor="middle" font-family="monospace">Vacuole</text>
+  <!-- Lysosome -->
+  <circle cx="130" cy="105" r="12" fill="rgba(252,165,165,0.2)" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="130" y="109" font-size="7" fill="#fca5a5" text-anchor="middle" font-family="monospace">Lyso</text>
+  <text x="130" y="88" font-size="8" fill="#fca5a5" text-anchor="middle" font-family="monospace">Lysosome</text>
+  <!-- Centriole -->
+  <rect x="240" y="95" width="20" height="8" rx="2" fill="rgba(134,239,172,0.2)" stroke="#86efac" stroke-width="1"/>
+  <rect x="240" y="107" width="20" height="8" rx="2" fill="rgba(134,239,172,0.2)" stroke="#86efac" stroke-width="1" transform="rotate(90 250 111)"/>
+  <text x="250" y="85" font-size="8" fill="#86efac" text-anchor="middle" font-family="monospace">Centriole</text>
+</svg>

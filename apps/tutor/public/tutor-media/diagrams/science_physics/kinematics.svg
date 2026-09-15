@@ -1,0 +1,31 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Axes -->
+  <line x1="50" y1="210" x2="380" y2="210" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" />
+  <line x1="50" y1="210" x2="50" y2="40" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" />
+  <text x="385" y="215" font-size="10" fill="#86efac">t</text>
+  <text x="40" y="35" font-size="10" fill="#86efac">v</text>
+
+  <!-- v-t curve (static polyline) -->
+  <polyline
+    points="50,190 130,190 190,110 290,110 350,165"
+    fill="none" stroke="#93c5fd" stroke-width="2"
+  />
+
+  <!-- Shaded area = displacement -->
+  <polygon
+    points="50,190 130,190 190,110 290,110 350,165 350,210 50,210"
+    fill="none" stroke="rgba(255,255,255,0.30)" stroke-width="1" stroke-dasharray="3,2"
+  />
+  <text x="200" y="200" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">Area = displacement (m)</text>
+
+  <!-- Phase labels -->
+  <text x="90" y="185" font-size="9" fill="#fef08a" text-anchor="middle">Const. v</text>
+  <text x="162" y="145" font-size="9" fill="#fef08a" text-anchor="middle">Accel.</text>
+  <text x="240" y="105" font-size="9" fill="#fef08a" text-anchor="middle">Max v</text>
+  <text x="325" y="140" font-size="9" fill="#fef08a" text-anchor="middle">Decel.</text>
+
+  <!-- Kinematic equations -->
+  <text x="200" y="240" font-size="9" fill="rgba(255,255,255,0.90)" text-anchor="middle">v = u + at  |  s = ut + ½ at²  |  v² = u² + 2as</text>
+
+  <text x="200" y="268" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">Kinematics — Velocity-Time Graph</text>
+</svg>

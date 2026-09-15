@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fef08a" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Natural Selection (Darwinian Evolution)</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Selection Process Flow -->
+  <g transform="translate(50, 150)">
+    <!-- Stage 1: Variation -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="180" height="150" rx="10" fill="rgba(255,255,255,0.03)" stroke="#86efac" stroke-width="1.5"/>
+      <text x="90" y="30" fill="#86efac" font-weight="bold" text-anchor="middle">1. Variation</text>
+      <circle cx="60" cy="80" r="10" fill="#fef08a"/> <circle cx="120" cy="80" r="10" fill="#fef08a"/>
+      <circle cx="90" cy="110" r="10" fill="#f87171"/> <!-- Mutant/Variant -->
+      <text x="90" y="140" fill="#f8fafc" text-anchor="middle" font-size="12">Different Traits</text>
+    </g>
+    
+    <line x1="185" y1="75" x2="225" y2="75" stroke="#fef08a" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+    <!-- Stage 2: Selection -->
+    <g transform="translate(230, 0)">
+      <rect x="0" y="0" width="180" height="150" rx="10" fill="rgba(255,255,255,0.03)" stroke="#f87171" stroke-width="1.5"/>
+      <text x="90" y="30" fill="#f87171" font-weight="bold" text-anchor="middle">2. Selection</text>
+      <line x1="50" y1="70" x2="70" y2="90" stroke="#f87171" stroke-width="2"/> <line x1="70" y1="70" x2="50" y2="90" stroke="#f87171" stroke-width="2"/>
+      <line x1="110" y1="70" x2="130" y2="90" stroke="#f87171" stroke-width="2"/> <line x1="130" y1="70" x2="110" y2="90" stroke="#f87171" stroke-width="2"/>
+      <circle cx="90" cy="110" r="12" fill="#f87171"/>
+      <text x="90" y="140" fill="#f8fafc" text-anchor="middle" font-size="12">Survival of Fittest</text>
+    </g>
+
+    <line x1="415" y1="75" x2="455" y2="75" stroke="#fef08a" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+    <!-- Stage 3: Inheritance -->
+    <g transform="translate(460, 0)">
+      <rect x="0" y="0" width="180" height="150" rx="10" fill="rgba(134,239,172,0.1)" stroke="#86efac" stroke-width="1.5"/>
+      <text x="90" y="30" fill="#86efac" font-weight="bold" text-anchor="middle">3. Inheritance</text>
+      <circle cx="60" cy="80" r="10" fill="#f87171"/> <circle cx="120" cy="80" r="10" fill="#f87171"/>
+      <circle cx="90" cy="110" r="10" fill="#f87171"/>
+      <text x="90" y="140" fill="#f8fafc" text-anchor="middle" font-size="12">Trait becomes common</text>
+    </g>
+  </g>
+
+  <rect x="150" y="450" width="500" height="100" rx="15" fill="rgba(255,255,255,0.03)" stroke="#fef08a" stroke-width="1"/>
+  <text x="400" y="490" fill="#fef08a" text-anchor="middle" font-weight="bold" font-size="20">Components of Darwin's Theory:</text>
+  <text x="400" y="520" fill="#f8fafc" text-anchor="middle">Overproduction, struggle for existence, variation, and survival of the fittest.</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Biology Grade 12</text>
+</svg>

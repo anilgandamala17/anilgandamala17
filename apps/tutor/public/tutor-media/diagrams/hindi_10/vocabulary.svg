@@ -1,0 +1,25 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+  </defs>
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">VOCABULARY (SHABD BHANDAR)</text>
+  
+  <text x="200" y="140" text-anchor="middle" font-size="24" fill="#fbbf24" font-weight="bold">शब्द (Word)</text>
+  
+  <text x="100" y="80" text-anchor="middle" font-size="14" fill="#60a5fa">Vilom (Antonym)</text>
+  <line x1="130" y1="90" x2="170" y2="120" stroke="#94a3b8" stroke-dasharray="4" />
+  
+  <text x="300" y="80" text-anchor="middle" font-size="14" fill="#60a5fa">Paryay (Synonym)</text>
+  <line x1="270" y1="90" x2="230" y2="120" stroke="#94a3b8" stroke-dasharray="4" />
+
+  <text x="100" y="200" text-anchor="middle" font-size="14" fill="#a3e635">Arth (Meaning)</text>
+  <line x1="130" y1="190" x2="170" y2="160" stroke="#94a3b8" stroke-dasharray="4" />
+
+  <text x="300" y="200" text-anchor="middle" font-size="14" fill="#f472b6">Vakya (Usage)</text>
+  <line x1="270" y1="190" x2="230" y2="160" stroke="#94a3b8" stroke-dasharray="4" />
+</svg>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Determinants (|A|)</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- 2x2 Determinant -->
+  <g transform="translate(100, 150)">
+    <text x="75" y="-20" fill="#86efac" font-weight="bold" text-anchor="middle">Order 2 × 2</text>
+    <line x1="0" y1="0" x2="0" y2="120" stroke="#f8fafc" stroke-width="3"/>
+    <line x1="150" y1="0" x2="150" y2="120" stroke="#f8fafc" stroke-width="3"/>
+    
+    <g font-family="'Times New Roman', serif" font-size="32" font-style="italic" fill="#fef08a" text-anchor="middle">
+      <text x="40" y="50">a</text> <text x="110" y="50">b</text>
+      <text x="40" y="100">c</text> <text x="110" y="100">d</text>
+    </g>
+    
+    <!-- Cross arrows -->
+    <path d="M 30 30 L 120 110" stroke="#86efac" stroke-width="2" opacity="0.6" marker-end="url(#arrowhead)"/>
+    <path d="M 120 30 L 30 110" stroke="#f87171" stroke-width="2" opacity="0.6" marker-end="url(#arrowhead)"/>
+    
+    <text x="75" y="180" fill="#fef08a" text-anchor="middle" font-size="28">= ad - bc</text>
+  </g>
+
+  <!-- 3x3 Expansion Rule -->
+  <g transform="translate(400, 150)">
+    <text x="150" y="-20" fill="#fef08a" font-weight="bold" text-anchor="middle">Order 3 × 3 (Expansion)</text>
+    <rect x="0" y="0" width="300" height="250" rx="10" fill="rgba(255,255,255,0.03)" stroke="#86efac" stroke-width="1.5"/>
+    
+    <g transform="translate(20, 40)" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="18">
+      <text x="0" y="0">Sign Pattern:</text>
+      <text x="40" y="40" fill="#86efac" font-weight="bold">+  -  +</text>
+      <text x="40" y="70" fill="#86efac" font-weight="bold">-  +  -</text>
+      <text x="40" y="100" fill="#86efac" font-weight="bold">+  -  +</text>
+      
+      <text x="0" y="160" fill="#fef08a">|A| = a₁₁·C₁₁ + a₁₂·C₁₂ + a₁₃·C₁₃</text>
+      <text x="0" y="200" font-size="14" fill="#86efac">C_ij: Cofactor = (-1)^{i+j} · Minor_ij</text>
+    </g>
+  </g>
+
+  <rect x="150" y="460" width="500" height="80" rx="15" fill="rgba(248, 113, 113, 0.05)" stroke="#f87171" stroke-width="1"/>
+  <text x="400" y="495" fill="#f87171" text-anchor="middle" font-size="20" font-weight="bold">Singular Matrix:</text>
+  <text x="400" y="525" fill="#fef08a" text-anchor="middle" font-weight="bold" font-size="24">|A| = 0</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Math Grade 12</text>
+</svg>

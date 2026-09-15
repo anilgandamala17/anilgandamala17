@@ -1,0 +1,40 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+  </defs>
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">DOCUMENT TEMPLATES</text>
+  
+  <!-- Resume -->
+  <g transform="translate(60, 80)">
+    <rect width="80" height="110" fill="#fff" rx="2" opacity="0.9" />
+    <rect x="10" y="10" width="60" height="10" fill="#1e293b" />
+    <rect x="10" y="30" width="20" height="60" fill="#cbd5e1" />
+    <rect x="35" y="30" width="35" height="10" fill="#94a3b8" />
+    <rect x="35" y="50" width="35" height="40" fill="#94a3b8" />
+    <text x="40" y="130" text-anchor="middle" fill="#fbbf24" font-size="10">Resume</text>
+  </g>
+
+  <!-- Letter -->
+  <g transform="translate(160, 80)">
+    <rect width="80" height="110" fill="#fff" rx="2" opacity="0.9" />
+    <rect x="10" y="10" width="20" height="10" fill="#1e293b" />
+    <rect x="10" y="30" width="60" height="5" fill="#94a3b8" />
+    <rect x="10" y="40" width="60" height="5" fill="#94a3b8" />
+    <rect x="10" y="50" width="60" height="5" fill="#94a3b8" />
+    <rect x="10" y="80" width="30" height="5" fill="#1e293b" />
+    <text x="40" y="130" text-anchor="middle" fill="#fbbf24" font-size="10">Letter</text>
+  </g>
+
+  <!-- Report -->
+  <g transform="translate(260, 80)">
+    <rect width="80" height="110" fill="#fff" rx="2" opacity="0.9" />
+    <rect x="10" y="10" width="60" height="30" fill="#cbd5e1" />
+    <rect x="10" y="50" width="60" height="40" fill="#94a3b8" />
+    <text x="40" y="130" text-anchor="middle" fill="#fbbf24" font-size="10">Report</text>
+  </g>
+</svg>

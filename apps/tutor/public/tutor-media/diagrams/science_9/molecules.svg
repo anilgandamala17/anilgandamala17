@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Molecules, Atoms and Chemical Formulae</text>
+
+  <!-- Left: Atoms vs Molecules -->
+  <rect x="15" y="55" width="370" height="215" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#86efac" stroke-width="2"/>
+  <text x="200" y="78" text-anchor="middle" fill="#86efac" font-size="14" font-family="Georgia,serif" font-weight="bold">Atom vs Molecule</text>
+  <!-- Atom visual -->
+  <circle cx="90" cy="155" r="36" fill="#134e4a" stroke="#a3e635" stroke-width="2.5"/>
+  <circle cx="90" cy="155" r="14" fill="#a3e635"/>
+  <text x="90" y="159" text-anchor="middle" fill="#0f2a1a" font-size="9" font-weight="bold">H</text>
+  <circle cx="90" cy="118" r="5" fill="#fde68a"/>
+  <ellipse cx="90" cy="155" rx="30" ry="10" fill="none" stroke="#86efac" stroke-width="1.5" transform="rotate(-40,90,155)"/>
+  <text x="90" y="206" text-anchor="middle" fill="#a3e635" font-size="11" font-family="Georgia,serif" font-weight="bold">Atom</text>
+  <text x="90" y="222" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Smallest particle</text>
+  <text x="90" y="238" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">of element</text>
+  <text x="90" y="254" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">May/may not exist freely</text>
+  <!-- Molecule visual -->
+  <circle cx="290" cy="143" r="22" fill="#38bdf8" fill-opacity="0.6"/>
+  <circle cx="330" cy="145" r="22" fill="#38bdf8" fill-opacity="0.6"/>
+  <text x="310" y="155" text-anchor="middle" fill="#f0fdf4" font-size="11" font-weight="bold">H₂</text>
+  <text x="310" y="206" text-anchor="middle" fill="#38bdf8" font-size="11" font-family="Georgia,serif" font-weight="bold">Molecule</text>
+  <text x="310" y="222" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Smallest particle</text>
+  <text x="310" y="238" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">of substance</text>
+  <text x="310" y="254" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Can exist independently</text>
+
+  <!-- Molecular formulae table -->
+  <rect x="15" y="278" width="370" height="210" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="200" y="300" text-anchor="middle" fill="#a3e635" font-size="14" font-family="Georgia,serif" font-weight="bold">Common Molecular Formulae</text>
+  <g transform="translate(25,310)">
+    <rect x="0" y="0" width="350" height="26" rx="3" fill="#0f2a1a"/>
+    <text x="70" y="19" text-anchor="middle" fill="#fde68a" font-size="11" font-weight="bold">Compound</text>
+    <text x="185" y="19" text-anchor="middle" fill="#fde68a" font-size="11" font-weight="bold">Formula</text>
+    <text x="295" y="19" text-anchor="middle" fill="#fde68a" font-size="11" font-weight="bold">Ratio</text>
+    <line x1="0" y1="26" x2="350" y2="26" stroke="#334155"/><line x1="130" y1="0" x2="130" y2="178" stroke="#334155"/><line x1="240" y1="0" x2="240" y2="178" stroke="#334155"/>
+    <g fill="#d4d4d8" font-size="11" font-family="Georgia,serif" text-anchor="middle">
+      <text x="70" y="46">Water</text><text x="185" y="46" fill="#7dd3fc">H₂O</text><text x="295" y="46">2H : 1O</text>
+      <text x="70" y="66">Carbon dioxide</text><text x="185" y="66" fill="#a3e635">CO₂</text><text x="295" y="66">1C : 2O</text>
+      <text x="70" y="86">Ammonia</text><text x="185" y="86" fill="#fde68a">NH₃</text><text x="295" y="86">1N : 3H</text>
+      <text x="70" y="106">Methane</text><text x="185" y="106" fill="#f9a8d4">CH₄</text><text x="295" y="106">1C : 4H</text>
+      <text x="70" y="126">Sulphuric acid</text><text x="185" y="126" fill="#a78bfa">H₂SO₄</text><text x="295" y="126">2H:1S:4O</text>
+      <text x="70" y="146">Glucose</text><text x="185" y="146" fill="#fbbf24">C₆H₁₂O₆</text><text x="295" y="146">6:12:6</text>
+      <text x="70" y="166">Sodium chloride</text><text x="185" y="166" fill="#86efac">NaCl</text><text x="295" y="166">1Na:1Cl</text>
+    </g>
+  </g>
+
+  <!-- Right: valency and formula rules -->
+  <rect x="398" y="55" width="387" height="435" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="591" y="78" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">Writing Chemical Formulae</text>
+  <text x="591" y="98" text-anchor="middle" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">Use Valency (Criss-Cross Method)</text>
+
+  <rect x="408" y="108" width="367" height="80" rx="6" fill="#0f2a1a" stroke="#a3e635" stroke-width="1.5"/>
+  <text x="591" y="128" text-anchor="middle" fill="#a3e635" font-size="13" font-family="Georgia,serif" font-weight="bold">Example: Magnesium Oxide</text>
+  <text x="591" y="148" text-anchor="middle" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">Mg (valency 2) + O (valency 2)</text>
+  <text x="591" y="168" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">MgO (2 criss-crosses to 2 = MgO)</text>
+  <text x="591" y="184" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">Simplify ratio: Mg₂O₂ → MgO</text>
+
+  <rect x="408" y="196" width="367" height="80" rx="6" fill="#0f2a1a" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="591" y="216" text-anchor="middle" fill="#7dd3fc" font-size="13" font-family="Georgia,serif" font-weight="bold">Example: Aluminium Oxide</text>
+  <text x="591" y="236" text-anchor="middle" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">Al (val 3) + O (val 2) → Al₂O₃</text>
+  <text x="591" y="256" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">Al₂O₃</text>
+  <text x="591" y="272" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">3 from Al criss-crosses to O, 2 from O to Al</text>
+
+  <!-- Valency table -->
+  <text x="591" y="300" text-anchor="middle" fill="#86efac" font-size="13" font-family="Georgia,serif" font-weight="bold">Common Valencies</text>
+  <rect x="408" y="308" width="367" height="168" rx="6" fill="#0f2a1a" stroke="#86efac" stroke-width="1"/>
+  <g font-size="10" font-family="Georgia,serif" text-anchor="middle">
+    <text x="480" y="328" fill="#fde68a" font-weight="bold">Element</text><text x="590" y="328" fill="#fde68a" font-weight="bold">Symbol</text><text x="718" y="328" fill="#fde68a" font-weight="bold">Valency</text>
+    <line x1="408" y1="334" x2="775" y2="334" stroke="#334155"/>
+    <text x="480" y="350" fill="#d4d4d8">Hydrogen</text><text x="590" y="350" fill="#86efac">H</text><text x="718" y="350" fill="#d4d4d8">1</text>
+    <text x="480" y="366" fill="#d4d4d8">Oxygen</text><text x="590" y="366" fill="#38bdf8">O</text><text x="718" y="366" fill="#d4d4d8">2</text>
+    <text x="480" y="382" fill="#d4d4d8">Carbon</text><text x="590" y="382" fill="#a3e635">C</text><text x="718" y="382" fill="#d4d4d8">4</text>
+    <text x="480" y="398" fill="#d4d4d8">Nitrogen</text><text x="590" y="398" fill="#c4b5fd">N</text><text x="718" y="398" fill="#d4d4d8">3</text>
+    <text x="480" y="414" fill="#d4d4d8">Sodium</text><text x="590" y="414" fill="#fde68a">Na</text><text x="718" y="414" fill="#d4d4d8">1</text>
+    <text x="480" y="430" fill="#d4d4d8">Calcium</text><text x="590" y="430" fill="#fbbf24">Ca</text><text x="718" y="430" fill="#d4d4d8">2</text>
+    <text x="480" y="446" fill="#d4d4d8">Aluminium</text><text x="590" y="446" fill="#f9a8d4">Al</text><text x="718" y="446" fill="#d4d4d8">3</text>
+    <text x="480" y="462" fill="#d4d4d8">Iron</text><text x="590" y="462" fill="#86efac">Fe</text><text x="718" y="462" fill="#d4d4d8">2 or 3</text>
+  </g>
+</svg>

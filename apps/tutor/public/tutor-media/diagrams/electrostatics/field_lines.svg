@@ -1,0 +1,55 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .charge-pos { fill: #ef4444; stroke: #fff; stroke-width: 2; }
+      .charge-neg { fill: #3b82f6; stroke: #fff; stroke-width: 2; }
+      .field-line { fill: none; stroke: #94a3b8; stroke-width: 1.5; marker-end: url(#arrowhead); opacity: 0.6; }
+      .label { font-size: 12px; font-weight: bold; fill: #fff; text-anchor: middle; }
+    </style>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#94a3b8" />
+    </marker>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">ELECTRIC FIELD LINES</text>
+
+  <!-- Dipole: Positive Left, Negative Right -->
+  <g transform="translate(100, 150)">
+    <!-- Positive Charge -->
+    <circle cx="0" cy="0" r="20" class="charge-pos" />
+    <text x="0" y="5" class="label">+</text>
+    
+    <!-- Negative Charge -->
+    <circle cx="200" cy="0" r="20" class="charge-neg" />
+    <text x="200" y="5" class="label">-</text>
+    
+    <!-- Field Lines -->
+    <!-- Direct line -->
+    <line x1="25" y1="0" x2="175" y2="0" class="field-line" />
+    
+    <!-- Curved lines (Dipole pattern) -->
+    <path d="M 14 -14 Q 100 -80 186 -14" class="field-line" />
+    <path d="M 14 14 Q 100 80 186 14" class="field-line" />
+    
+    <path d="M 7 -19 Q 100 -120 193 -19" class="field-line" />
+    <path d="M 7 19 Q 100 120 193 19" class="field-line" />
+    
+    <path d="M 0 -22 Q 100 -160 200 -22" class="field-line" />
+    <path d="M 0 22 Q 100 160 200 22" class="field-line" />
+
+    <!-- Outward lines from + -->
+    <line x1="-20" y1="0" x2="-50" y2="0" class="field-line" />
+    <line x1="-14" y1="-14" x2="-35" y2="-35" class="field-line" />
+    <line x1="-14" y1="14" x2="-35" y2="35" class="field-line" />
+    
+    <!-- Inward lines to - -->
+    <line x1="250" y1="0" x2="225" y2="0" class="field-line" /> <!-- Arrow logic reversed due to marker -->
+    
+  </g>
+  
+  <text x="200" y="280" fontSize="10" fill="#94a3b8" text-anchor="middle">Lines originate from + and terminate at -</text>
+</svg>

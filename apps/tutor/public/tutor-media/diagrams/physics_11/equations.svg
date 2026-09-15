@@ -1,0 +1,28 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .eq { fill: #ffffff; font-size: 18px; font-family: 'Times New Roman', serif; font-style: italic; }
+      .sub { font-size: 12px; baseline-shift: sub; }
+      .box { fill: #1a3a20; stroke: #4ade80; stroke-width: 1.5; rx: 8; }
+      .label { fill: #86efac; font-size: 10px; font-weight: bold; }
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Equations of Uniform Acceleration</text>
+    
+    <rect x="50" y="50" width="300" height="40" class="box" />
+    <text x="200" y="77" text-anchor="middle" class="eq">v = u + at</text>
+    <text x="60" y="45" class="label">1. Velocity-Time Relation</text>
+
+    <rect x="50" y="110" width="300" height="40" class="box" />
+    <text x="200" y="137" text-anchor="middle" class="eq">s = ut + ½at²</text>
+    <text x="60" y="105" class="label">2. Position-Time Relation</text>
+
+    <rect x="50" y="170" width="300" height="40" class="box" />
+    <text x="200" y="197" text-anchor="middle" class="eq">v² = u² + 2as</text>
+    <text x="60" y="165" class="label">3. Velocity-Position Relation</text>
+    
+    <text x="200" y="235" text-anchor="middle" fill="#93c5fd" font-size="9">u=initial vel, v=final vel, a=acceleration, t=time, s=displacement</text>
+  </g>
+</svg>

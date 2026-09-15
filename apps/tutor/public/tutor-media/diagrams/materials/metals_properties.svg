@@ -1,0 +1,61 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .label { font-size: 12px; font-weight: bold; fill: #fff; text-anchor: middle; }
+      .metal { fill: #94a3b8; stroke: #fff; stroke-width: 1; }
+      .wire { fill: none; stroke: #fbbf24; stroke-width: 2; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">PROPERTIES OF METALS</text>
+
+  <!-- Malleability -->
+  <g transform="translate(50, 60)">
+      <text x="75" y="0" class="label">1. MALLEABILITY</text>
+      <text x="75" y="15" fontSize="10" fill="#cbd5e1" text-anchor="middle">(Beaten into Sheets)</text>
+      
+      <!-- Block -->
+      <rect x="50" y="40" width="50" height="40" class="metal" />
+      
+      <!-- Hammer -->
+      <g transform="translate(110, 30) rotate(-45)">
+          <rect x="0" y="0" width="10" height="40" fill="#a16207" />
+          <rect x="-10" y="0" width="30" height="15" fill="#475569" />
+      </g>
+      
+      <!-- Sheet -->
+      <path d="M 20 100 L 130 100 L 110 120 L 0 120 Z" fill="#94a3b8" opacity="0.8" />
+      <text x="65" y="115" fontSize="8" fill="#1e293b">Metal Sheet (Foil)</text>
+  </g>
+
+  <!-- Ductility -->
+  <g transform="translate(220, 60)">
+      <text x="75" y="0" class="label">2. DUCTILITY</text>
+      <text x="75" y="15" fontSize="10" fill="#cbd5e1" text-anchor="middle">(Drawn into Wires)</text>
+      
+      <!-- Die block -->
+      <rect x="50" y="40" width="20" height="60" fill="#334155" stroke="#fff" />
+      
+      <!-- Incoming Thick Metal -->
+      <rect x="0" y="60" width="50" height="20" class="metal" />
+      
+      <!-- Outgoing Thin Wire -->
+      <line x1="70" y1="70" x2="140" y2="70" class="wire" />
+      
+      <!-- Pulling Force Arrow -->
+      <line x1="140" y1="70" x2="160" y2="70" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowhead)" />
+      
+      <text x="100" y="60" fontSize="8" fill="#fbbf24">Thin Wire</text>
+  </g>
+  
+  <defs>
+      <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+          <polygon points="0 0, 6 2, 0 4" fill="#ef4444" />
+      </marker>
+  </defs>
+
+</svg>

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "wes_sat_2026w32_jee",
+    "weekKey": "2026-W32",
+    "day": "saturday",
+    "title": "Saturday Weekly Exam (JEE Main)",
+    "examId": "jee-main",
+    "subjectId": "math",
+    "mode": "mock",
+    "startsAt": "2026-08-07T18:30:00.000Z",
+    "endsAt": "2026-08-08T18:29:59.000Z",
+    "status": "published",
+    "createdBy": "admin-seed",
+    "updatedAt": "2026-08-04T12:30:00.000Z"
+  },
+  {
+    "id": "wes_sun_2026w32_neet",
+    "weekKey": "2026-W32",
+    "day": "sunday",
+    "title": "Sunday Weekly Exam (NEET)",
+    "examId": "neet",
+    "subjectId": "bot",
+    "mode": "pyq",
+    "startsAt": "2026-08-08T18:30:00.000Z",
+    "endsAt": "2026-08-09T18:29:59.000Z",
+    "status": "published",
+    "createdBy": "admin-seed",
+    "updatedAt": "2026-08-04T12:30:00.000Z"
+  }
+]

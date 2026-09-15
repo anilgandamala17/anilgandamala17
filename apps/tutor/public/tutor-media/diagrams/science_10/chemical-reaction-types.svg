@@ -1,0 +1,59 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 11px; font-weight: bold; }
+      .formula { fill: #86efac; font-size: 12px; font-family: monospace; font-weight: bold; }
+      .example { fill: #93c5fd; font-size: 10px; font-style: italic; }
+      .box { fill: #1a3a20; stroke: #4ade80; stroke-width: 1.2; rx: 6; }
+      .arrow { stroke: #fca5a5; stroke-width: 1.5; fill: none; marker-end: url(#arr); }
+      .icon-bg { fill: #0d2b1a; stroke: #86efac; stroke-width: 1; opacity: 0.6; }
+    </style>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#fca5a5"/>
+    </marker>
+  </defs>
+
+  <g transform="translate(75, -5) scale(1.55)">
+    <!-- Main Title -->
+    <text x="210" y="25" text-anchor="middle" class="title">Types of Chemical Reactions</text>
+    
+    <!-- 1. Combination -->
+    <rect x="10" y="45" width="190" height="70" class="box" />
+    <text x="25" y="65" class="label">1. Combination</text>
+    <text x="25" y="85" class="formula">A + B → AB</text>
+    <text x="25" y="105" class="example">C + O₂ → CO₂</text>
+
+    <!-- 2. Decomposition -->
+    <rect x="210" y="45" width="190" height="70" class="box" />
+    <text x="225" y="65" class="label">2. Decomposition</text>
+    <text x="225" y="85" class="formula">AB → A + B</text>
+    <text x="225" y="105" class="example">2H₂O → 2H₂ + O₂</text>
+
+    <!-- 3. Displacement -->
+    <rect x="10" y="125" width="190" height="70" class="box" />
+    <text x="25" y="145" class="label">3. Displacement</text>
+    <text x="25" y="165" class="formula">A + BC → AC + B</text>
+    <text x="25" y="185" class="example">Zn + CuSO₄ → ZnSO₄ + Cu</text>
+
+    <!-- 4. Double Displacement -->
+    <rect x="210" y="125" width="190" height="70" class="box" />
+    <text x="225" y="145" class="label">4. Double Displacement</text>
+    <text x="225" y="165" class="formula">AB + CD → AD + CB</text>
+    <text x="225" y="185" class="example">Na₂SO₄ + BaCl₂ → BaSO₄ + 2NaCl</text>
+
+    <!-- 5. Redox (Oxidation & Reduction) -->
+    <rect x="10" y="205" width="390" height="75" class="box" style="stroke: #fca5a5" />
+    <text x="205" y="225" text-anchor="middle" class="label" style="fill: #fca5a5">5. Redox Reactions</text>
+    
+    <text x="35" y="245" class="formula">Oxidation: Loss of e⁻ / Gain of O</text>
+    <text x="35" y="265" class="formula">Reduction: Gain of e⁻ / Loss of O</text>
+    
+    <!-- Visual cue for Redox -->
+    <path d="M 330 235 Q 360 220 390 235" stroke="#86efac" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+    <text x="360" y="215" text-anchor="middle" font-size="8" fill="#86efac">Oxidation</text>
+    
+    <path d="M 390 255 Q 360 270 330 255" stroke="#93c5fd" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+    <text x="360" y="282" text-anchor="middle" font-size="8" fill="#93c5fd">Reduction</text>
+  </g>
+</svg>

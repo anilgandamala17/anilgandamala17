@@ -1,0 +1,37 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 14px; font-weight: bold; }
+      .formula { fill: #fcd34d; font-size: 16px; font-family: 'Courier New', monospace; font-weight: bold; }
+      .box { fill: rgba(30, 58, 138, 0.4); stroke: #60a5fa; stroke-width: 1.5; rx: 10; }
+      .warning-box { fill: rgba(153, 27, 27, 0.5); stroke: #f87171; stroke-width: 1.5; rx: 10; }
+      .desc { fill: #93c5fd; font-size: 11px; font-style: italic; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Rules for Solving Inequalities</text>
+    
+    <!-- Addition/Subtraction Rule -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="360" height="60" class="box" />
+      <text x="10" y="20" class="label" font-size="12">Same number added/subtracted:</text>
+      <text x="180" y="45" text-anchor="middle" class="formula">a < b  ⇒  a ± c < b ± c</text>
+      <text x="180" y="55" text-anchor="middle" class="desc">Inequality sign stays the same</text>
+    </g>
+
+    <!-- Multiplication/Division Warning -->
+    <g transform="translate(20, 130)">
+      <rect x="0" y="0" width="360" height="90" class="warning-box" />
+      <text x="10" y="20" class="label" font-size="12" fill="#fca5a5">Multiplication by negative number:</text>
+      <text x="180" y="45" text-anchor="middle" class="formula">a < b  and  k < 0</text>
+      <text x="180" y="75" text-anchor="middle" class="formula" fill="#4ade80">ak > bk</text>
+      
+      <!-- Reverse Arrow icon -->
+      <path d="M 230,65 Q 260,65 260,75 L 255,70 M 260,75 L 265,70" fill="none" stroke="#f87171" stroke-width="2" />
+      <text x="270" y="75" fill="#fca5a5" font-size="11" font-weight="bold">SIGN REVERSES!</text>
+    </g>
+
+    <text x="200" y="245" text-anchor="middle" fill="#94a3b8" font-size="10">Example: -2x < 4  ⇒  x > -2</text>
+  </g>
+</svg>

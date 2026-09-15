@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <g id="dna-part-overview" data-mito-part="overview" class="mito-layer">
+    <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">DNA Structure (Double Helix)</text>
+    <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+  </g>
+
+  <g id="dna-part-helix" data-mito-part="helix" class="mito-layer">
+    <g transform="translate(400, 300)">
+      <path d="M -50 -200 Q 50 -100 -50 0 Q 50 100 -50 200" fill="none" stroke="#60a5fa" stroke-width="8" opacity="0.8"/>
+      <path d="M 50 -200 Q -50 -100 50 0 Q -50 100 50 200" fill="none" stroke="#f472b6" stroke-width="8" opacity="0.8"/>
+    </g>
+  </g>
+
+  <g id="dna-part-pairing" data-mito-part="pairing" class="mito-layer">
+    <g transform="translate(400, 300)">
+      <line x1="-30" y1="-150" x2="30" y2="-150" stroke="#fef08a" stroke-width="4"/>
+      <line x1="-20" y1="-100" x2="20" y2="-100" stroke="#86efac" stroke-width="4"/>
+      <line x1="-30" y1="-50" x2="30" y2="-50" stroke="#60a5fa" stroke-width="4"/>
+      <line x1="-45" y1="0" x2="45" y2="0" stroke="#f472b6" stroke-width="4"/>
+      <line x1="-30" y1="50" x2="30" y2="50" stroke="#fef08a" stroke-width="4"/>
+      <line x1="-20" y1="100" x2="20" y2="100" stroke="#86efac" stroke-width="4"/>
+      <line x1="-30" y1="150" x2="30" y2="150" stroke="#60a5fa" stroke-width="4"/>
+    </g>
+  </g>
+
+  <g id="dna-part-legend" data-mito-part="legend" class="mito-layer">
+    <g transform="translate(100, 450)" font-family="Arial, sans-serif" font-size="16" fill="#f8fafc">
+      <text x="0" y="0">■ Adenine (A) - Thymine (T)</text>
+      <text x="0" y="30">■ Guanine (G) - Cytosine (C)</text>
+      <text x="300" y="0">■ Sugar-Phosphate Backbone</text>
+      <text x="300" y="30">■ Hydrogen Bonds (2/3)</text>
+    </g>
+  </g>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Biology Grade 12</text>
+</svg>

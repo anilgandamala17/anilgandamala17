@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Mixtures</text>
+
+  <!-- Top: definition -->
+  <rect x="15" y="55" width="770" height="60" rx="10" fill="#1a3a2a" fill-opacity="0.7" stroke="#86efac" stroke-width="2"/>
+  <text x="400" y="79" text-anchor="middle" fill="#86efac" font-size="14" font-family="Georgia,serif" font-weight="bold">A mixture consists of two or more substances physically combined, retaining their individual properties</text>
+  <text x="400" y="103" text-anchor="middle" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">No chemical reaction. Components can be separated by physical methods.</text>
+
+  <!-- Two columns: Homogeneous vs Heterogeneous -->
+  <rect x="15" y="124" width="380" height="360" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="205" y="147" text-anchor="middle" fill="#a3e635" font-size="15" font-family="Georgia,serif" font-weight="bold">Homogeneous Mixture</text>
+  <text x="205" y="165" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Uniform composition throughout — "Solution"</text>
+  <!-- examples -->
+  <g transform="translate(25,175)">
+    <rect x="0" y="0" width="360" height="38" rx="6" fill="#0f2a1a" stroke="#a3e635" stroke-width="1"/>
+    <text x="180" y="24" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">🧂 Salt dissolved in water</text>
+    <rect x="0" y="44" width="360" height="38" rx="6" fill="#0f2a1a" stroke="#a3e635" stroke-width="1"/>
+    <text x="180" y="68" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">🍹 Lemonade (sugar + water)</text>
+    <rect x="0" y="88" width="360" height="38" rx="6" fill="#0f2a1a" stroke="#a3e635" stroke-width="1"/>
+    <text x="180" y="112" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">🥃 Vinegar (acetic acid + water)</text>
+    <rect x="0" y="132" width="360" height="38" rx="6" fill="#0f2a1a" stroke="#a3e635" stroke-width="1"/>
+    <text x="180" y="156" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">🌬 Air (nitrogen + oxygen + other gases)</text>
+    <rect x="0" y="176" width="360" height="38" rx="6" fill="#0f2a1a" stroke="#a3e635" stroke-width="1"/>
+    <text x="180" y="200" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">⚙ Alloys — bronze, brass, stainless steel</text>
+
+    <rect x="0" y="226" width="360" height="86" rx="6" fill="#134e4a" stroke="#86efac" stroke-width="1.5"/>
+    <text x="180" y="250" text-anchor="middle" fill="#86efac" font-size="12" font-family="Georgia,serif" font-weight="bold">Properties</text>
+    <text x="180" y="270" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Single phase only</text>
+    <text x="180" y="288" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Cannot see individual components</text>
+    <text x="180" y="306" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">e.g. salt water looks like pure water</text>
+  </g>
+
+  <rect x="405" y="124" width="380" height="360" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="595" y="147" text-anchor="middle" fill="#fde68a" font-size="15" font-family="Georgia,serif" font-weight="bold">Heterogeneous Mixture</text>
+  <text x="595" y="165" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Non-uniform — different components visible</text>
+  <g transform="translate(415,175)">
+    <rect x="0" y="0" width="360" height="38" rx="6" fill="#0f2a1a" stroke="#fde68a" stroke-width="1"/>
+    <text x="180" y="24" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">🪨 Sand and stones</text>
+    <rect x="0" y="44" width="360" height="38" rx="6" fill="#0f2a1a" stroke="#fde68a" stroke-width="1"/>
+    <text x="180" y="68" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">🍲 Soil (sand + clay + organic matter)</text>
+    <rect x="0" y="88" width="360" height="38" rx="6" fill="#0f2a1a" stroke="#fde68a" stroke-width="1"/>
+    <text x="180" y="112" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">🥗 Vegetable salad</text>
+    <rect x="0" y="132" width="360" height="38" rx="6" fill="#0f2a1a" stroke="#fde68a" stroke-width="1"/>
+    <text x="180" y="156" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">🥛 Milk (suspension of fat in water)</text>
+    <rect x="0" y="176" width="360" height="38" rx="6" fill="#0f2a1a" stroke="#fde68a" stroke-width="1"/>
+    <text x="180" y="200" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">🌊 Muddy water (can settle)</text>
+
+    <rect x="0" y="226" width="360" height="86" rx="6" fill="#4a3a10" stroke="#fde68a" stroke-width="1.5"/>
+    <text x="180" y="250" text-anchor="middle" fill="#fde68a" font-size="12" font-family="Georgia,serif" font-weight="bold">Properties</text>
+    <text x="180" y="270" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">May have 2+ phases</text>
+    <text x="180" y="288" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Individual components visible / separable</text>
+    <text x="180" y="306" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Composition varies</text>
+  </g>
+</svg>

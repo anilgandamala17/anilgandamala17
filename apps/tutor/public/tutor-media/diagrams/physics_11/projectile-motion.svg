@@ -1,0 +1,39 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .axis { stroke: #ffffff; stroke-width: 1; marker-end: url(#arrow); }
+      .traj { stroke: #4ade80; stroke-width: 2.5; fill: none; stroke-dasharray: 4; }
+      .label { fill: #ffffff; font-size: 10px; }
+      .dim { stroke: #fca5a5; stroke-width: 1; marker-start: url(#dot); marker-end: url(#dot); }
+      .formula { fill: #93c5fd; font-size: 9px; font-family: monospace; }
+    </style>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#ffffff"/></marker>
+    <marker id="dot" markerWidth="4" markerHeight="4" refX="2" refY="2"><circle cx="2" cy="2" r="2" fill="#fca5a5"/></marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Projectile Motion Trajectory</text>
+    
+    <line x1="40" y1="200" x2="360" y2="200" class="axis" />
+    <line x1="40" y1="200" x2="40" y2="40" class="axis" />
+    
+    <!-- Path -->
+    <path d="M 40 200 Q 200 10, 360 200" class="traj" />
+    
+    <!-- Dimensions -->
+    <line x1="40" y1="215" x2="360" y2="215" class="dim" />
+    <text x="200" y="230" text-anchor="middle" class="label">Range (R)</text>
+    
+    <line x1="200" y1="105" x2="200" y2="200" class="dim" />
+    <text x="210" y="150" class="label">Max Height (H)</text>
+    
+    <!-- Formulas -->
+    <text x="240" y="60" class="formula">T = (2u sinθ)/g</text>
+    <text x="240" y="75" class="formula">H = (u² sin²θ)/2g</text>
+    <text x="240" y="90" class="formula">R = (u² sin2θ)/g</text>
+    
+    <!-- Velocity components -->
+    <line x1="40" y1="200" x2="100" y2="150" stroke="#fca5a5" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="105" y="145" class="label" fill="#fca5a5">Initial Vel (u)</text>
+  </g>
+</svg>

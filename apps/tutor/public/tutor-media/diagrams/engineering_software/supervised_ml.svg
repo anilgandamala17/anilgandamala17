@@ -1,0 +1,24 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Data points -->
+  <circle cx="100" cy="80" r="5" fill="#fca5a5" />
+  <circle cx="120" cy="110" r="5" fill="#fca5a5" />
+  <circle cx="80" cy="130" r="5" fill="#fca5a5" />
+  <circle cx="280" cy="180" r="5" fill="#93c5fd" />
+  <circle cx="310" cy="210" r="5" fill="#93c5fd" />
+  <circle cx="340" cy="170" r="5" fill="#93c5fd" />
+
+  <!-- Decision Boundary -->
+  <line x1="50" y1="230" x2="350" y2="50" stroke="#fef08a" stroke-width="2" stroke-dasharray="5,3" />
+  <text x="210" y="130" font-size="9" fill="#fef08a" transform="rotate(-30, 210, 130)">Decision Boundary</text>
+
+  <!-- Labels -->
+  <text x="60" y="50" font-size="10" fill="#fca5a5" font-weight="bold">Class A (Apples)</text>
+  <text x="320" y="240" font-size="10" fill="#93c5fd" font-weight="bold">Class B (Oranges)</text>
+
+  <!-- Training Flow -->
+  <rect x="150" y="20" width="100" height="40" rx="4" fill="none" stroke="rgba(255,255,255,0.3)" />
+  <text x="200" y="45" font-size="9" fill="rgba(255,255,255,0.8)" text-anchor="middle">ML Model</text>
+  <path d="M 200 65 L 200 90" stroke="white" stroke-width="1" marker-end="url(#arrow)" />
+
+  <text x="200" y="268" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">Supervised Learning — Classification</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#1a5c2a}
+      .title{fill:#fff9c4;font-size:14px;font-weight:bold}
+      .sub{fill:#b2f5ea;font-size:10px}
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="18" text-anchor="middle" class="title">National Income &amp; Development</text>
+  <text x="210" y="30" text-anchor="middle" class="sub">GDP, GNP, Per Capita Income — measuring a country's development</text>
+
+  <!-- Income Concepts Grid -->
+  <rect x="8" y="38" width="126" height="90" fill="#0d3b20" stroke="#ffd600" stroke-width="1.4" rx="5"/>
+  <text x="71" y="53" text-anchor="middle" fill="#ffd600" font-size="10" font-weight="bold">GDP</text>
+  <text x="16" y="67" fill="#b2f5ea" font-size="8">Gross Domestic Product</text>
+  <text x="16" y="79" fill="#ffffff" font-size="9">Total goods &amp; services</text>
+  <text x="16" y="91" fill="#ffffff" font-size="9">produced WITHIN a</text>
+  <text x="16" y="103" fill="#ffffff" font-size="9">country in one year</text>
+  <text x="16" y="118" fill="#ffd600" font-size="8">↑ GDP = bigger economy</text>
+
+  <rect x="148" y="38" width="126" height="90" fill="#0d3b20" stroke="#80cbc4" stroke-width="1.4" rx="5"/>
+  <text x="211" y="53" text-anchor="middle" fill="#80cbc4" font-size="10" font-weight="bold">GNP</text>
+  <text x="156" y="67" fill="#b2f5ea" font-size="8">Gross National Product</text>
+  <text x="156" y="79" fill="#ffffff" font-size="9">GDP + output of citizens</text>
+  <text x="156" y="91" fill="#ffffff" font-size="9">abroad − output of</text>
+  <text x="156" y="103" fill="#ffffff" font-size="9">foreigners in country</text>
+  <text x="156" y="118" fill="#80cbc4" font-size="8">National output measure</text>
+
+  <rect x="288" y="38" width="124" height="90" fill="#0d3b20" stroke="#aed581" stroke-width="1.4" rx="5"/>
+  <text x="350" y="53" text-anchor="middle" fill="#aed581" font-size="10" font-weight="bold">Per Capita</text>
+  <text x="296" y="67" fill="#b2f5ea" font-size="8">Income per Person/yr</text>
+  <text x="296" y="79" fill="#ffffff" font-size="9">GDP ÷ Population</text>
+  <text x="296" y="93" fill="#ffd600" font-size="10" font-weight="bold">PCI = GDP / N</text>
+  <text x="296" y="107" fill="#ffffff" font-size="9">Used to compare</text>
+  <text x="296" y="119" fill="#b2f5ea" font-size="8">standards of living</text>
+
+  <!-- Sector contribution bar chart -->
+  <rect x="8" y="138" width="200" height="155" fill="#0d3b20" stroke="#ffd600" stroke-width="1" rx="5"/>
+  <text x="108" y="154" text-anchor="middle" fill="#ffd600" font-size="11" font-weight="bold">India's GDP by Sector</text>
+  <text x="108" y="166" text-anchor="middle" fill="#b2f5ea" font-size="9">Approximate contribution %</text>
+  <!-- Primary -->
+  <text x="16" y="185" fill="#aed581" font-size="9">Primary (Agriculture)</text>
+  <rect x="140" y="175" width="34" height="13" fill="#aed581" rx="2"/>
+  <text x="178" y="185" fill="#aed581" font-size="9">17%</text>
+  <!-- Secondary -->
+  <text x="16" y="207" fill="#80cbc4" font-size="9">Secondary (Industry)</text>
+  <rect x="140" y="197" width="56" height="13" fill="#80cbc4" rx="2"/>
+  <text x="200" y="207" fill="#80cbc4" font-size="9">26%</text>
+  <!-- Tertiary -->
+  <text x="16" y="229" fill="#ffd600" font-size="9">Tertiary (Services)</text>
+  <rect x="140" y="219" width="96" height="13" fill="#ffd600" rx="2"/>
+  <text x="240" y="229" fill="#ffd600" font-size="9">57%</text>
+  <!-- GDP growth line -->
+  <text x="108" y="250" text-anchor="middle" fill="#fff9c4" font-size="9" font-weight="bold">India's GDP Growth Rate</text>
+  <polyline points="16,272 36,268 56,271 76,262 96,258 116,255 136,250 156,255 176,248 196,244" 
+            fill="none" stroke="#ffd600" stroke-width="2" stroke-linejoin="round"/>
+  <text x="16" y="286" fill="#b2f5ea" font-size="8">2000  2003  2006  2009  2012  2015  2018  2021  2024</text>
+
+  <!-- Limitations of GDP -->
+  <rect x="218" y="138" width="194" height="155" fill="#0d3b20" stroke="#f06292" stroke-width="1" rx="5"/>
+  <text x="315" y="154" text-anchor="middle" fill="#f06292" font-size="11" font-weight="bold">GDP Limitations</text>
+  <text x="226" y="170" fill="#ffffff" font-size="9">❌ Doesn't show inequality</text>
+  <text x="226" y="186" fill="#ffffff" font-size="9">❌ Ignores unpaid work</text>
+  <text x="226" y="202" fill="#ffffff" font-size="9">   (eg. homemakers)</text>
+  <text x="226" y="218" fill="#ffffff" font-size="9">❌ Excludes environmental</text>
+  <text x="226" y="232" fill="#ffffff" font-size="9">   degradation costs</text>
+  <text x="226" y="248" fill="#ffffff" font-size="9">❌ Ignores social welfare</text>
+  <text x="226" y="264" fill="#b2f5ea" font-size="9">→ Need HDI (next topic!)</text>
+  <rect x="226" y="272" width="178" height="16" fill="#3b3000" stroke="#ffd600" stroke-width="1" rx="3"/>
+  <text x="315" y="284" text-anchor="middle" fill="#fff9c4" font-size="9" font-weight="bold">Example: Kerala vs Punjab GDP</text>
+  </g>
+</svg>

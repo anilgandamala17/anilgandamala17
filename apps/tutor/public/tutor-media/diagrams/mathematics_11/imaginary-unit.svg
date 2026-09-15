@@ -1,0 +1,4 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+<defs><style>text{font-family:sans-serif;fill:#e2e8f0}.t{font-size:13px;font-weight:bold;fill:#fbbf24}.h{font-size:11px;fill:#22c55e}.s{font-size:10px;fill:#94a3b8}</style></defs>
+<text x="200" y="22" text-anchor="middle" class="t">Imaginary Unit</text><circle cx="200" cy="145" r="35" fill="none" stroke="#fbbf24" stroke-width="2"/><text x="200" y="149" text-anchor="middle"  font-size="11">Imaginary</text><line x1="200" y1="145" x2="200.0" y2="45.0" stroke="#94a3b8" stroke-dasharray="4"/><circle cx="200.0" cy="45.0" r="28" fill="none" stroke="#22c55e" stroke-opacity=".7"/><text x="200.0" y="49.0" text-anchor="middle"  font-size="10">Unit</text>
+</svg>

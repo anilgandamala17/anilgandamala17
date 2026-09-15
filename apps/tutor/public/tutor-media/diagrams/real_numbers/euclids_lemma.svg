@@ -1,0 +1,54 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .bar { fill: #3b82f6; stroke: #fff; opacity: 0.8; }
+      .remainder { fill: #ef4444; stroke: #fff; opacity: 0.8; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">EUCLID'S DIVISION LEMMA: a = bq + r</text>
+
+  <g transform="translate(50, 80)">
+    <!-- Dividend 'a' represented as total length -->
+    <text x="0" y="-10" fontSize="12">Dividend (a) = 23</text>
+    <rect x="0" y="0" width="230" height="40" fill="none" stroke="#fbbf24" stroke-dasharray="4,4" />
+    
+    <!-- Divisor 'b' chunks -->
+    <g transform="translate(0, 0)">
+      <rect width="50" height="40" class="bar" />
+      <text x="25" y="25" text-anchor="middle" fontSize="10" fill="white">b=5</text>
+    </g>
+    <g transform="translate(50, 0)">
+      <rect width="50" height="40" class="bar" />
+      <text x="25" y="25" text-anchor="middle" fontSize="10" fill="white">b=5</text>
+    </g>
+    <g transform="translate(100, 0)">
+      <rect width="50" height="40" class="bar" />
+      <text x="25" y="25" text-anchor="middle" fontSize="10" fill="white">b=5</text>
+    </g>
+    <g transform="translate(150, 0)">
+      <rect width="50" height="40" class="bar" />
+      <text x="25" y="25" text-anchor="middle" fontSize="10" fill="white">b=5</text>
+    </g>
+    
+    <!-- Remainder 'r' -->
+    <g transform="translate(200, 0)">
+      <rect width="30" height="40" class="remainder" />
+      <text x="15" y="25" text-anchor="middle" fontSize="10" fill="white">r=3</text>
+    </g>
+  </g>
+  
+  <!-- Equation Breakdown -->
+  <g transform="translate(50, 160)">
+    <text x="0" y="0" fontSize="14" fill="#fbbf24">23 = 5 × 4 + 3</text>
+    <text x="0" y="20" fontSize="12" fill="#94a3b8">a = b × q + r</text>
+    
+    <text x="150" y="0" fontSize="14">Condition:</text>
+    <text x="150" y="20" fontSize="14" fill="#ef4444">0 ≤ r < b</text>
+    <text x="150" y="40" fontSize="12" fill="#94a3b8">(0 ≤ 3 < 5)</text>
+  </g>
+</svg>

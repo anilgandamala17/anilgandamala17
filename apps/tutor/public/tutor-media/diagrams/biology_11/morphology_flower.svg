@@ -1,0 +1,42 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- NO BACKGROUND RECT -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="28" fill="#fef08a" text-anchor="middle" font-weight="bold">Morphology of a Flowering Plant</text>
+  <path d="M 230,60 L 570,60" stroke="#fef08a" stroke-width="1" stroke-dasharray="2,2" opacity="0.3" />
+
+  <!-- Diagram: Complete Plant -->
+  <g transform="translate(400, 240)">
+    <!-- Main Stem -->
+    <path d="M 0,100 L 0,-100" stroke="#86efac" stroke-width="4" stroke-linecap="round" />
+    
+    <!-- Flower -->
+    <g transform="translate(0, -110)">
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#fca5a5" stroke-width="2" />
+      <path d="M 0,-15 Q 15,-30 0,-45 Q -15,-30 0,-15" fill="none" stroke="#fca5a5" stroke-width="1.5" />
+      <text x="25" y="-10" font-family="Georgia, serif" font-size="16" fill="#fca5a5" font-weight="bold">Flower</text>
+      <text x="25" y="5" font-family="Arial" font-size="11" fill="#f8fafc" opacity="0.7">Reproductive system</text>
+    </g>
+
+    <!-- Leaf -->
+    <g transform="translate(0, -30)">
+      <path d="M 0,0 Q 40,-40 80,0 Q 40,40 0,0" fill="none" stroke="#86efac" stroke-width="2" />
+      <text x="90" y="5" font-family="Georgia, serif" font-size="16" fill="#86efac" font-weight="bold">Leaf</text>
+      <text x="90" y="20" font-family="Arial" font-size="11" fill="#f8fafc" opacity="0.7">Photosynthesis</text>
+    </g>
+
+    <!-- Stem Node -->
+    <text x="-25" y="20" font-family="Georgia, serif" font-size="14" fill="#fef08a" text-anchor="end">Stem</text>
+    <text x="-25" y="35" font-family="Arial" font-size="11" fill="#f8fafc" text-anchor="end" opacity="0.7">Support & Transport</text>
+
+    <!-- Root System -->
+    <g transform="translate(0, 100)">
+      <path d="M 0,0 L 0,80 M 0,20 L -30,50 M 0,50 L 30,80" stroke="#fef08a" stroke-width="3" opacity="0.5" />
+      <text x="40" y="50" font-family="Georgia, serif" font-size="18" fill="#fef08a" font-weight="bold">Root System</text>
+      <text x="40" y="70" font-family="Arial" font-size="12" fill="#f8fafc" opacity="0.8">Anchorage & Absorption</text>
+    </g>
+  </g>
+
+  <!-- Labels for shoot vs root -->
+  <line x1="100" y1="340" x2="350" y2="340" stroke="#f8fafc" stroke-width="1" stroke-dasharray="4,4" opacity="0.3" />
+  <text x="200" y="330" font-family="Georgia, serif" font-size="14" fill="#f8fafc" text-anchor="middle" opacity="0.6">Shoot System</text>
+  <text x="200" y="360" font-family="Georgia, serif" font-size="14" fill="#fef08a" text-anchor="middle" opacity="0.6">Root System</text>
+</svg>

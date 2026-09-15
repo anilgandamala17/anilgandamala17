@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Properties of Triangles</text>
+
+  <!-- Left column -->
+  <rect x="15" y="55" width="375" height="200" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="202" y="78" text-anchor="middle" fill="#a3e635" font-size="14" font-family="Georgia,serif" font-weight="bold">Angle Sum Property</text>
+  <text x="202" y="98" text-anchor="middle" fill="#fde68a" font-size="20" font-family="Georgia,serif" font-weight="bold">∠A + ∠B + ∠C = 180°</text>
+  <!-- Triangle diagram -->
+  <polygon points="80,210 200,100 320,210" fill="#134e4a" fill-opacity="0.5" stroke="#a3e635" stroke-width="2.5"/>
+  <text x="68" y="226" fill="#f9a8d4" font-size="14" font-family="Georgia,serif" font-weight="bold">A</text>
+  <text x="196" y="92" fill="#7dd3fc" font-size="14" font-family="Georgia,serif" font-weight="bold">B</text>
+  <text x="322" y="226" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">C</text>
+  <path d="M 93,210 A 18,18 0 0,1 100,196" fill="none" stroke="#f9a8d4" stroke-width="2"/>
+  <path d="M 200,117 A 18,18 0 0,1 207,104" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+  <path d="M 306,210 A 18,18 0 0,0 298,196" fill="none" stroke="#fde68a" stroke-width="2"/>
+
+  <rect x="15" y="265" width="375" height="125" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#38bdf8" stroke-width="2"/>
+  <text x="202" y="288" text-anchor="middle" fill="#7dd3fc" font-size="14" font-family="Georgia,serif" font-weight="bold">Exterior Angle Theorem</text>
+  <text x="202" y="312" text-anchor="middle" fill="#fde68a" font-size="15" font-family="Georgia,serif" font-weight="bold">Ext. ∠ = Sum of 2 non-adjacent interior ∠s</text>
+  <!-- exterior angle diagram -->
+  <polygon points="50,370 180,290 310,370" fill="none" stroke="#38bdf8" stroke-width="2"/>
+  <line x1="310" y1="370" x2="380" y2="370" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,3"/>
+  <path d="M 315,370 A 20,20 0 0,0 312,352" fill="none" stroke="#fde68a" stroke-width="2"/>
+  <text x="355" y="358" fill="#fde68a" font-size="13" font-family="Georgia,serif" font-weight="bold">ext</text>
+  <text x="202" y="380" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">∠ext = ∠A + ∠B</text>
+
+  <rect x="15" y="398" width="375" height="92" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="202" y="421" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">Triangle Inequality</text>
+  <text x="202" y="445" text-anchor="middle" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">Sum of any 2 sides &gt; the third side</text>
+  <text x="202" y="465" text-anchor="middle" fill="#a3e635" font-size="13" font-family="Georgia,serif" font-weight="bold">AB + BC &gt; AC</text>
+  <text x="202" y="482" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif" font-style="italic">Difference of any 2 sides &lt; third side</text>
+
+  <!-- Right column -->
+  <rect x="403" y="55" width="380" height="150" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#f472b6" stroke-width="2"/>
+  <text x="593" y="78" text-anchor="middle" fill="#f9a8d4" font-size="14" font-family="Georgia,serif" font-weight="bold">Isosceles Triangle Properties</text>
+  <text x="593" y="100" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">AB = AC  ⟹  ∠B = ∠C  (base angles equal)</text>
+  <!-- Isosceles -->
+  <polygon points="593,120 490,190 696,190" fill="none" stroke="#f472b6" stroke-width="2.5"/>
+  <text x="588" y="115" fill="#f9a8d4" font-size="11">A</text>
+  <text x="477" y="204" fill="#f9a8d4" font-size="11">B</text>
+  <text x="698" y="204" fill="#f9a8d4" font-size="11">C</text>
+  <text x="533" y="155" fill="#fde68a" font-size="11" font-weight="bold">|</text>
+  <text x="648" y="155" fill="#fde68a" font-size="11" font-weight="bold">|</text>
+  <path d="M 494,182 A 14,14 0 0,1 500,171" fill="none" stroke="#86efac" stroke-width="2"/>
+  <path d="M 690,182 A 14,14 0 0,0 684,171" fill="none" stroke="#86efac" stroke-width="2"/>
+
+  <rect x="403" y="218" width="380" height="155" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a78bfa" stroke-width="2"/>
+  <text x="593" y="241" text-anchor="middle" fill="#c4b5fd" font-size="14" font-family="Georgia,serif" font-weight="bold">Side vs. Angle Relationship</text>
+  <text x="593" y="263" text-anchor="middle" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">In a triangle, the larger angle is opposite</text>
+  <text x="593" y="281" text-anchor="middle" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">the longer side</text>
+  <text x="593" y="305" text-anchor="middle" fill="#fde68a" font-size="13" font-family="Georgia,serif" font-weight="bold">∠A &gt; ∠B  ⟺  BC &gt; AC</text>
+  <text x="593" y="330" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">The side opposite the largest angle is</text>
+  <text x="593" y="348" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">always the longest side (hypotenuse in right △)</text>
+  <text x="593" y="368" text-anchor="middle" fill="#a78bfa" font-size="11" font-family="Georgia,serif" font-weight="bold">In a right △: hypotenuse is always the longest</text>
+
+  <rect x="403" y="382" width="380" height="108" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="593" y="405" text-anchor="middle" fill="#fde68a" font-size="14" font-family="Georgia,serif" font-weight="bold">Equilateral Triangle</text>
+  <text x="593" y="427" text-anchor="middle" fill="#d4d4d8" font-size="12" font-family="Georgia,serif">All 3 sides equal, all 3 angles = 60°</text>
+  <text x="593" y="449" text-anchor="middle" fill="#a3e635" font-size="13" font-family="Georgia,serif" font-weight="bold">AB = BC = CA  ⟹  ∠A = ∠B = ∠C = 60°</text>
+  <text x="593" y="470" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Equilateral △ is a special isosceles △</text>
+  <text x="593" y="486" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="Georgia,serif" font-style="italic">Most symmetric triangle — 3 axes of symmetry</text>
+</svg>

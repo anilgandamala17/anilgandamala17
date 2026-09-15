@@ -1,0 +1,63 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="background:#1a3a2a">
+  <text x="200" y="18" font-size="13" fill="#86efac" text-anchor="middle" font-family="monospace" font-weight="bold">DNA Double Helix Structure</text>
+  <!-- Left backbone (sugar-phosphate) -->
+  <path d="M120 30 Q90 70 120 110 Q150 150 120 190 Q90 230 120 260" fill="none" stroke="#fca5a5" stroke-width="3"/>
+  <!-- Right backbone -->
+  <path d="M280 30 Q310 70 280 110 Q250 150 280 190 Q310 230 280 260" fill="none" stroke="#93c5fd" stroke-width="3"/>
+  <!-- Base pairs (rungs) -->
+  <!-- A-T pairs (yellow-green) -->
+  <line x1="120" y1="50" x2="280" y2="50" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <rect x="130" y="44" width="30" height="12" rx="3" fill="#fbbf24" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="145" y="54" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">A</text>
+  <rect x="240" y="44" width="30" height="12" rx="3" fill="#86efac" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="255" y="54" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">T</text>
+  <line x1="160" y1="50" x2="240" y2="50" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <!-- G-C pair -->
+  <line x1="120" y1="80" x2="280" y2="80" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <rect x="130" y="74" width="30" height="12" rx="3" fill="#86efac" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="145" y="84" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">G</text>
+  <rect x="240" y="74" width="30" height="12" rx="3" fill="#fca5a5" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="255" y="84" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">C</text>
+  <line x1="160" y1="80" x2="240" y2="80" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <!-- T-A pair -->
+  <line x1="120" y1="115" x2="280" y2="115" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <rect x="130" y="109" width="30" height="12" rx="3" fill="#86efac" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="145" y="119" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">T</text>
+  <rect x="240" y="109" width="30" height="12" rx="3" fill="#fbbf24" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="255" y="119" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">A</text>
+  <line x1="160" y1="115" x2="240" y2="115" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <!-- C-G pair -->
+  <line x1="120" y1="150" x2="280" y2="150" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <rect x="130" y="144" width="30" height="12" rx="3" fill="#fca5a5" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="145" y="154" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">C</text>
+  <rect x="240" y="144" width="30" height="12" rx="3" fill="#86efac" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="255" y="154" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">G</text>
+  <line x1="160" y1="150" x2="240" y2="150" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <!-- A-T pair -->
+  <line x1="120" y1="185" x2="280" y2="185" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <rect x="130" y="179" width="30" height="12" rx="3" fill="#fbbf24" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="145" y="189" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">A</text>
+  <rect x="240" y="179" width="30" height="12" rx="3" fill="#86efac" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="255" y="189" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">T</text>
+  <line x1="160" y1="185" x2="240" y2="185" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <!-- G-C pair -->
+  <line x1="120" y1="220" x2="280" y2="220" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <rect x="130" y="214" width="30" height="12" rx="3" fill="#86efac" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="145" y="224" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">G</text>
+  <rect x="240" y="214" width="30" height="12" rx="3" fill="#fca5a5" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="255" y="224" font-size="8" fill="#1a3a2a" text-anchor="middle" font-family="monospace" font-weight="bold">C</text>
+  <line x1="160" y1="220" x2="240" y2="220" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <!-- Backbone labels -->
+  <text x="75" y="145" font-size="9" fill="#fca5a5" text-anchor="middle" font-family="monospace">5'→3'</text>
+  <text x="75" y="157" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">Sugar-</text>
+  <text x="75" y="168" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="monospace">Phosphate</text>
+  <text x="325" y="145" font-size="9" fill="#93c5fd" text-anchor="middle" font-family="monospace">3'→5'</text>
+  <!-- Legend -->
+  <rect x="15" y="248" width="12" height="10" rx="2" fill="#fbbf24"/>
+  <text x="32" y="258" font-size="8" fill="#fbbf24" font-family="monospace">Adenine (A)</text>
+  <rect x="100" y="248" width="12" height="10" rx="2" fill="#86efac"/>
+  <text x="117" y="258" font-size="8" fill="#86efac" font-family="monospace">Thymine (T) / Guanine (G)</text>
+  <rect x="280" y="248" width="12" height="10" rx="2" fill="#fca5a5"/>
+  <text x="297" y="258" font-size="8" fill="#fca5a5" font-family="monospace">Cytosine (C)</text>
+  <text x="200" y="272" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle" font-family="monospace">A pairs with T (2 H-bonds) · G pairs with C (3 H-bonds)</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#1a2e1a"/>
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#86efac" font-weight="bold">The French Revolution — Key Events (1789–1799)</text>
+  <line x1="40" y1="48" x2="760" y2="48" stroke="#86efac" stroke-width="1" opacity="0.4"/>
+
+  <!-- Timeline axis -->
+  <line x1="60" y1="260" x2="740" y2="260" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <!-- Arrow -->
+  <polygon points="740,255 755,260 740,265" fill="rgba(255,255,255,0.5)"/>
+
+  <!-- Event 1: 1789 -->
+  <line x1="130" y1="200" x2="130" y2="260" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="130" cy="260" r="6" fill="#f97316"/>
+  <text x="130" y="195" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#f97316" font-weight="bold">1789</text>
+  <rect x="60" y="110" width="140" height="78" rx="5" fill="rgba(249,115,22,0.12)" stroke="#f97316" stroke-width="1.5"/>
+  <text x="130" y="131" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.9)" font-weight="bold">Estates-General</text>
+  <text x="130" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">May 5: Convoked by</text>
+  <text x="130" y="163" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">Louis XVI in crisis</text>
+  <text x="130" y="178" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#f97316">Bastille Stormed</text>
+
+  <!-- Event 2: 1791 -->
+  <line x1="290" y1="320" x2="290" y2="260" stroke="#facc15" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="290" cy="260" r="6" fill="#facc15"/>
+  <text x="290" y="340" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#facc15" font-weight="bold">1791</text>
+  <rect x="216" y="345" width="148" height="78" rx="5" fill="rgba(250,204,21,0.10)" stroke="#facc15" stroke-width="1.5"/>
+  <text x="290" y="366" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.9)" font-weight="bold">Constitution</text>
+  <text x="290" y="383" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">France becomes a</text>
+  <text x="290" y="398" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">constitutional monarchy</text>
+  <text x="290" y="413" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#facc15">Louis XVI accepts</text>
+
+  <!-- Event 3: 1793 -->
+  <line x1="460" y1="200" x2="460" y2="260" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="460" cy="260" r="6" fill="#ef4444"/>
+  <text x="460" y="195" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#ef4444" font-weight="bold">1793</text>
+  <rect x="386" y="110" width="148" height="78" rx="5" fill="rgba(239,68,68,0.12)" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="460" y="131" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.9)" font-weight="bold">The Reign of Terror</text>
+  <text x="460" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">Robespierre leads</text>
+  <text x="460" y="163" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">Committee of Safety</text>
+  <text x="460" y="178" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#ef4444">King executed</text>
+
+  <!-- Event 4: 1799 Napoleon -->
+  <line x1="630" y1="320" x2="630" y2="260" stroke="#86efac" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="630" cy="260" r="6" fill="#86efac"/>
+  <text x="630" y="340" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#86efac" font-weight="bold">1799</text>
+  <rect x="556" y="345" width="148" height="78" rx="5" fill="rgba(134,239,172,0.10)" stroke="#86efac" stroke-width="1.5"/>
+  <text x="630" y="366" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.9)" font-weight="bold">Napoleon's Rise</text>
+  <text x="630" y="383" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">18 Brumaire coup</text>
+  <text x="630" y="398" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.7)">Directory overthrown</text>
+  <text x="630" y="413" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#86efac">Revolution ends</text>
+
+  <!-- Year labels on axis -->
+  <text x="60" y="278" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.4)">1789</text>
+  <text x="720" y="278" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.4)">1799</text>
+</svg>

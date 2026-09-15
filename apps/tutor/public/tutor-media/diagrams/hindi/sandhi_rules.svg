@@ -1,0 +1,60 @@
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:wght@400;700&display=swap');
+      text { font-family: 'Tiro Devanagari Hindi', sans-serif; fill: #e2e8f0; }
+      .title { font-size: 18px; font-weight: bold; fill: #fbbf24; }
+      .box { fill: #334155; stroke: #475569; stroke-dasharray: 4; }
+      .example { font-size: 14px; fill: #fff; text-anchor: middle;}
+      .plus { font-size: 20px; fill: #fbbf24; font-weight: bold; text-anchor: middle; }
+      .arrow { fill: #94a3b8; }
+      .type { font-size: 12px; fill: #94a3b8; text-anchor: middle; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <rect width="500" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">HINDI SANDHI (संधि) EXAMPLES</text>
+
+  <!-- 1. Swar Sandhi -->
+  <g transform="translate(50, 60)">
+    <text x="100" y="0" class="type">1. SWAR SANDHI (स्वर संधि)</text>
+    <rect x="-20" y="10" width="240" height="80" class="box" />
+    
+    <text x="30" y="55" class="example">विद्या</text>
+    <text x="80" y="60" class="plus">+</text>
+    <text x="130" y="55" class="example">आलय</text>
+    <text x="170" y="60" class="plus">→</text>
+    <text x="230" y="55" class="example" fill="#86efac" fontWeight="bold">विद्यालय</text>
+    
+    <text x="100" y="80" fontSize="10" fill="#cbd5e1" text-anchor="middle">aa + aa = aa (Dirgha)</text>
+  </g>
+
+  <!-- 2. Vyanjan Sandhi -->
+  <g transform="translate(50, 160)">
+    <text x="100" y="0" class="type">2. VYANJAN SANDHI (व्यंजन संधि)</text>
+    <rect x="-20" y="10" width="240" height="80" class="box" />
+    
+    <text x="30" y="55" class="example">जगत</text>
+    <text x="80" y="60" class="plus">+</text>
+    <text x="130" y="55" class="example">ईश</text>
+    <text x="170" y="60" class="plus">→</text>
+    <text x="230" y="55" class="example" fill="#86efac" fontWeight="bold">जगदीश</text>
+    
+    <text x="100" y="80" fontSize="10" fill="#cbd5e1" text-anchor="middle">t + ee = d (3rd letter rule)</text>
+  </g>
+
+   <!-- 3. Visarga Sandhi -->
+  <g transform="translate(300, 110)">
+    <text x="80" y="0" class="type">3. VISARGA SANDHI (विसर्ग)</text>
+    <rect x="-20" y="10" width="200" height="80" class="box" />
+    
+    <text x="20" y="55" class="example">मनः</text>
+    <text x="60" y="60" class="plus">+</text>
+    <text x="100" y="55" class="example">हर</text>
+    <text x="130" y="60" class="plus">→</text>
+    <text x="170" y="55" class="example" fill="#86efac" fontWeight="bold">मनोहर</text>
+    
+    <text x="80" y="80" fontSize="10" fill="#cbd5e1" text-anchor="middle">ah + h = o</text>
+  </g>
+
+</svg>

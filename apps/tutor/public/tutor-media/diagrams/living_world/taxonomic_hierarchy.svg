@@ -1,0 +1,49 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #0f172a; font-weight: bold; }
+      .title { font-size: 16px; fill: #fbbf24; text-anchor: middle; }
+      .level { stroke: #fff; stroke-width: 1; }
+      .label { font-size: 12px; text-anchor: middle; display: block; }
+      .mnemonic { font-size: 10px; fill: #94a3b8; text-anchor: middle; font-style: italic; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="500" fill="#1a3a2a" />
+  <text x="200" y="30" class="title">TAXONOMIC HIERARCHY</text>
+
+  <g transform="translate(50, 50)">
+    
+    <!-- Kingdom -->
+    <polygon points="0,0 300,0 280,50 20,50" fill="#ef4444" class="level" />
+    <text x="150" y="30" class="label" fill="#fff">KINGDOM (Animalia)</text>
+
+    <!-- Phylum -->
+    <polygon points="20,50 280,50 260,100 40,100" fill="#f97316" class="level" />
+    <text x="150" y="80" class="label">PHYLUM (Chordata)</text>
+
+    <!-- Class -->
+    <polygon points="40,100 260,100 240,150 60,150" fill="#f59e0b" class="level" />
+    <text x="150" y="130" class="label">CLASS (Mammalia)</text>
+
+    <!-- Order -->
+    <polygon points="60,150 240,150 220,200 80,200" fill="#eab308" class="level" />
+    <text x="150" y="180" class="label">ORDER (Primates)</text>
+
+    <!-- Family -->
+    <polygon points="80,200 220,200 200,250 100,250" fill="#84cc16" class="level" />
+    <text x="150" y="230" class="label">FAMILY (Hominidae)</text>
+
+    <!-- Genus -->
+    <polygon points="100,250 200,250 180,300 120,300" fill="#22c55e" class="level" />
+    <text x="150" y="280" class="label">GENUS (Homo)</text>
+
+    <!-- Species -->
+    <polygon points="120,300 180,300 150,350" fill="#14b8a6" class="level" />
+    <text x="150" y="325" class="label">SPECIES (Sapiens)</text>
+
+  </g>
+  
+  <text x="200" y="450" class="mnemonic">"Keep Pond Clean Or Frog Gets Sick"</text>
+</svg>

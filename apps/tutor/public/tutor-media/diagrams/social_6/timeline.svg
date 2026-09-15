@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      .chalk { font-family: 'Segoe UI', sans-serif; }
+      .title { font-size: 26px; font-weight: bold; fill: #a5d6a7; }
+      .label { font-size: 17px; fill: #c8e6c9; }
+      .num { font-size: 18px; fill: #fff9c4; font-weight: bold; }
+      .muted { font-size: 14px; fill: #81c784; }
+      .highlight { fill: rgba(102,187,106,0.12); stroke: #66bb6a; stroke-width: 1.5; }
+      .yellow { fill: rgba(255,245,157,0.12); stroke: #fff176; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <text x="400" y="44" text-anchor="middle" class="chalk title">Historical Timeline – Ancient India</text>
+  <line x1="60" y1="56" x2="740" y2="56" stroke="#66bb6a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Timeline axis -->
+  <line x1="100" y1="250" x2="720" y2="250" stroke="#a5d6a7" stroke-width="3"/>
+  <!-- Arrow -->
+  <polygon points="720,250 706,244 706,256" fill="#a5d6a7"/>
+  <!-- Past label -->
+  <text x="100" y="270" text-anchor="middle" class="chalk muted">Past →</text>
+
+  <!-- BC arrow  -->
+  <polygon points="100,250 110,244 110,256" fill="#a5d6a7"/>
+
+  <!-- Timeline events (top and bottom alternating) -->
+  <!-- Harappan civilization ~2500 BCE -->
+  <line x1="160" y1="230" x2="160" y2="140" stroke="#fff176" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="160" cy="250" r="8" fill="#fff176" stroke="#ffee58" stroke-width="1.5"/>
+  <rect x="100" y="100" width="120" height="42" class="yellow" rx="6"/>
+  <text x="160" y="118" text-anchor="middle" class="chalk muted" style="fill:#fff176;font-size:12px">~2500 BCE</text>
+  <text x="160" y="134" text-anchor="middle" class="chalk muted" style="fill:#fff176;font-size:12px">Harappan Civ.</text>
+
+  <!-- Vedic Period ~1500 BCE -->
+  <line x1="260" y1="270" x2="260" y2="360" stroke="#a5d6a7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="260" cy="250" r="8" fill="#a5d6a7" stroke="#66bb6a" stroke-width="1.5"/>
+  <rect x="200" y="358" width="120" height="42" class="highlight" rx="6"/>
+  <text x="260" y="376" text-anchor="middle" class="chalk muted" style="font-size:12px">~1500 BCE</text>
+  <text x="260" y="392" text-anchor="middle" class="chalk muted" style="font-size:12px">Vedic Period</text>
+
+  <!-- Mahajanapadas ~600 BCE -->
+  <line x1="360" y1="230" x2="360" y2="140" stroke="#ffb74d" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="360" cy="250" r="8" fill="#ffb74d" stroke="#ff9800" stroke-width="1.5"/>
+  <rect x="300" y="100" width="120" height="42" fill="rgba(255,183,77,0.12)" stroke="#ffb74d" stroke-width="1.5" rx="6"/>
+  <text x="360" y="118" text-anchor="middle" class="chalk muted" style="fill:#ffb74d;font-size:12px">~600 BCE</text>
+  <text x="360" y="134" text-anchor="middle" class="chalk muted" style="fill:#ffb74d;font-size:12px">Mahajanapadas</text>
+
+  <!-- Maurya Empire ~322 BCE -->
+  <line x1="460" y1="270" x2="460" y2="360" stroke="#ce93d8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="460" cy="250" r="8" fill="#ce93d8" stroke="#ba68c8" stroke-width="1.5"/>
+  <rect x="400" y="358" width="120" height="42" fill="rgba(206,147,216,0.12)" stroke="#ce93d8" stroke-width="1.5" rx="6"/>
+  <text x="460" y="376" text-anchor="middle" class="chalk muted" style="fill:#ce93d8;font-size:12px">~322 BCE</text>
+  <text x="460" y="392" text-anchor="middle" class="chalk muted" style="fill:#ce93d8;font-size:12px">Maurya Empire</text>
+
+  <!-- Gupta Empire ~320 CE -->
+  <line x1="560" y1="230" x2="560" y2="140" stroke="#80deea" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="560" cy="250" r="8" fill="#80deea" stroke="#4dd0e1" stroke-width="1.5"/>
+  <rect x="500" y="100" width="120" height="42" fill="rgba(128,222,234,0.12)" stroke="#80deea" stroke-width="1.5" rx="6"/>
+  <text x="560" y="118" text-anchor="middle" class="chalk muted" style="fill:#80deea;font-size:12px">~320 CE</text>
+  <text x="560" y="134" text-anchor="middle" class="chalk muted" style="fill:#80deea;font-size:12px">Gupta Empire</text>
+
+  <!-- Medieval ~700 CE -->
+  <line x1="650" y1="270" x2="650" y2="360" stroke="#ef9a9a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="650" cy="250" r="8" fill="#ef9a9a" stroke="#e57373" stroke-width="1.5"/>
+  <rect x="590" y="358" width="120" height="42" fill="rgba(239,154,154,0.12)" stroke="#ef9a9a" stroke-width="1.5" rx="6"/>
+  <text x="650" y="376" text-anchor="middle" class="chalk muted" style="fill:#ef9a9a;font-size:12px">~700 CE</text>
+  <text x="650" y="392" text-anchor="middle" class="chalk muted" style="fill:#ef9a9a;font-size:12px">Medieval India</text>
+
+  <!-- BCE vs CE explanation -->
+  <g transform="translate(60,434)">
+    <rect x="0" y="0" width="680" height="46" class="highlight" rx="8"/>
+    <text x="340" y="18" text-anchor="middle" class="chalk label">BCE (Before Common Era) ← Year 0 → CE (Common Era)</text>
+    <text x="340" y="38" text-anchor="middle" class="chalk muted">BCE numbers get smaller towards Year 0 | CE numbers get larger from Year 0</text>
+  </g>
+</svg>

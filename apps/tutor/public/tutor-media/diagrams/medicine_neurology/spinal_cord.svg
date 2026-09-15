@@ -1,0 +1,23 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cross section outline -->
+  <path d="M 50 140 Q 50 40, 200 40 Q 350 40, 350 140 Q 350 240, 200 240 Q 50 240, 50 140 Z"
+    fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
+
+  <!-- Gray matter (butterfly shape) -->
+  <path d="M 160 140 Q 180 120, 200 120 Q 220 120, 240 140 Q 240 160, 200 160 Q 180 160, 160 140 
+           M 160 140 L 140 110 Q 130 110, 120 120 Q 110 130, 110 140 Q 110 150, 120 160 Q 130 170, 140 170 L 160 140
+           M 240 140 L 260 110 Q 270 110, 280 120 Q 290 130, 290 140 Q 290 150, 280 160 Q 270 170, 260 170 L 240 140"
+    fill="none" stroke="#93c5fd" stroke-width="1.5" />
+
+  <!-- Nerve roots -->
+  <path d="M 110 140 L 40 120 M 110 140 L 40 160" stroke="#fca5a5" stroke-width="1.5" opacity="0.6" />
+  <path d="M 290 140 L 360 120 M 290 140 L 360 160" stroke="#fca5a5" stroke-width="1.5" opacity="0.6" />
+
+  <!-- Labels -->
+  <text x="200" y="105" font-size="9" fill="#93c5fd" text-anchor="middle">Gray Matter</text>
+  <text x="200" y="185" font-size="9" fill="rgba(255,255,255,0.3)" text-anchor="middle">White Matter</text>
+  <text x="40" y="110" font-size="8" fill="#fca5a5" text-anchor="end">Dorsal Root</text>
+  <text x="40" y="175" font-size="8" fill="#fca5a5" text-anchor="end">Ventral Root</text>
+
+  <text x="200" y="268" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">Spinal Cord Cross-Section</text>
+</svg>

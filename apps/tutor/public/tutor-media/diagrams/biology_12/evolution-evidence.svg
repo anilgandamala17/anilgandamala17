@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Evidences of Evolution</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Homologous vs Analogous -->
+  <g transform="translate(100, 150)">
+    <!-- Homologous Organs -->
+    <g transform="translate(0, 0)">
+      <text x="125" y="-20" fill="#86efac" font-size="20" font-weight="bold" text-anchor="middle">Homologous Organs</text>
+      <rect x="0" y="0" width="250" height="250" rx="10" fill="rgba(134,239,172,0.05)" stroke="#86efac" stroke-width="1.5"/>
+      <g transform="translate(25, 40)" fill="#f8fafc" font-size="14">
+        <text x="0" y="20">■ Same Origin/Structure</text>
+        <text x="0" y="50">■ Different Functions</text>
+        <text x="0" y="100" fill="#fef08a" font-weight="bold">Example: Divergent Evolution</text>
+        <text x="20" y="130">- Human Arm</text>
+        <text x="20" y="150">- Bat Wing</text>
+        <text x="20" y="170">- Cheetah Forelimb</text>
+      </g>
+    </g>
+
+    <!-- Analogous Organs -->
+    <g transform="translate(350, 0)">
+      <text x="125" y="-20" fill="#f472b6" font-size="20" font-weight="bold" text-anchor="middle">Analogous Organs</text>
+      <rect x="0" y="0" width="250" height="250" rx="10" fill="rgba(244,114,182,0.05)" stroke="#f472b6" stroke-width="1.5"/>
+      <g transform="translate(25, 40)" fill="#f8fafc" font-size="14">
+        <text x="0" y="20">■ Different Origin/Structure</text>
+        <text x="0" y="50">■ Same Functions</text>
+        <text x="0" y="100" fill="#fef08a" font-weight="bold">Example: Convergent Evolution</text>
+        <text x="20" y="130">- Bird Wing &amp; Butterfly Wing</text>
+        <text x="20" y="150">- Eye of Octopus &amp; Mammal</text>
+        <text x="20" y="170">- Sweet Potato &amp; Potato</text>
+      </g>
+    </g>
+  </g>
+
+  <rect x="150" y="470" width="500" height="80" rx="15" fill="rgba(255,255,255,0.03)" stroke="#fef08a" stroke-width="1"/>
+  <text x="400" y="505" fill="#fef08a" text-anchor="middle" font-weight="bold" font-size="18">"Evolution is a stochastic process based on chance events."</text>
+  <text x="400" y="530" fill="#f8fafc" text-anchor="middle" font-size="14">Biogeographical, Embryological, and Paleontological evidences.</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Biology Grade 12</text>
+</svg>

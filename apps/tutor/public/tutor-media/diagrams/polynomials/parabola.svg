@@ -1,0 +1,63 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .axis { stroke: #94a3b8; stroke-width: 1; }
+      .graph { fill: none; stroke: #3b82f6; stroke-width: 2; }
+      .zero { fill: #ef4444; stroke: #fff; }
+      .grid { stroke: #334155; stroke-width: 0.5; stroke-dasharray: 2,2; }
+    </style>
+  </defs>
+  
+  <rect width="400" height="300" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">POLYNOMIAL: y = x² - 4</text>
+
+  <!-- Grid -->
+  <g transform="translate(200, 150)">
+    <!-- Horizontal Grid -->
+    <line x1="-150" y1="-100" x2="150" y2="-100" class="grid" />
+    <line x1="-150" y1="-50" x2="150" y2="-50" class="grid" />
+    <line x1="-150" y1="50" x2="150" y2="50" class="grid" />
+    <line x1="-150" y1="100" x2="150" y2="100" class="grid" />
+    
+    <!-- Vertical Grid -->
+    <line x1="-100" y1="-120" x2="-100" y2="120" class="grid" />
+    <line x1="-50" y1="-120" x2="-50" y2="120" class="grid" />
+    <line x1="50" y1="-120" x2="50" y2="120" class="grid" />
+    <line x1="100" y1="-120" x2="100" y2="120" class="grid" />
+
+    <!-- Axes -->
+    <line x1="-180" y1="0" x2="180" y2="0" class="axis" marker-end="url(#arrowhead)" />
+    <line x1="0" y1="120" x2="0" y2="-120" class="axis" marker-end="url(#arrowhead)" />
+    
+    <text x="170" y="15" fontSize="10">x</text>
+    <text x="5" y="-110" fontSize="10">y</text>
+    
+    <!-- Parabola: y = x^2 - 4 (scaled: x*25, y*12.5 to fit) -->
+    <!-- Points: (-2,0), (0,-4), (2,0) -->
+    <!-- Screen coords: (0,0) is center. x=2 -> 50px. y=-4 -> 50px down (positive y) -->
+    <path d="M -70 -110 Q 0 200 70 -110" class="graph" />
+    
+    <!-- Zeroes -->
+    <circle cx="-50" cy="0" r="4" class="zero" />
+    <text x="-50" y="15" fontSize="10" text-anchor="middle">-2</text>
+    
+    <circle cx="50" cy="0" r="4" class="zero" />
+    <text x="50" y="15" fontSize="10" text-anchor="middle">2</text>
+    
+    <!-- Vertex -->
+    <circle cx="0" cy="100" r="4" fill="#fbbf24" stroke="none"/>
+    <text x="10" y="100" fontSize="10" fill="#fbbf24">Vertex (0, -4)</text>
+
+  </g>
+  
+  <text x="280" y="280" class="label" fill="#ef4444">Zeroes: Points where graph cuts X-axis</text>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#94a3b8" />
+    </marker>
+  </defs>
+</svg>

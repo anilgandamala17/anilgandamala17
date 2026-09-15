@@ -1,0 +1,34 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 13px; font-weight: bold; }
+      .formula { fill: #fcd34d; font-size: 14px; font-family: 'Courier New', monospace; font-weight: bold; }
+      .box { fill: rgba(31, 41, 55, 0.8); stroke: #60a5fa; stroke-width: 1.5; rx: 8; }
+      .real-part { fill: #4ade80; }
+      .imag-part { fill: #60a5fa; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Operations on Complex Numbers</text>
+    
+    <text x="200" y="50" text-anchor="middle" class="label" fill="#94a3b8">Let z₁ = a + bi and z₂ = c + di</text>
+    
+    <!-- Addition -->
+    <g transform="translate(25, 70)">
+      <rect x="0" y="0" width="350" height="60" class="box" />
+      <text x="15" y="25" class="label">ADDITION:</text>
+      <text x="100" y="40" class="formula">z₁ + z₂ = (<tspan class="real-part">a+c</tspan>) + (<tspan class="imag-part">b+d</tspan>)i</text>
+    </g>
+
+    <!-- Multiplication -->
+    <g transform="translate(25, 145)">
+      <rect x="0" y="0" width="350" height="85" class="box" stroke="#f87171" />
+      <text x="15" y="25" class="label" fill="#f87171">MULTIPLICATION:</text>
+      <text x="40" y="50" class="formula" font-size="12">z₁·z₂ = (a+bi)(c+di)</text>
+      <text x="40" y="75" class="formula" font-size="12">    = (<tspan class="real-part">ac-bd</tspan>) + (<tspan class="imag-part">ad+bc</tspan>)i</text>
+    </g>
+
+    <text x="200" y="250" text-anchor="middle" fill="#93c5fd" font-size="10" font-style="italic">Combine "Real with Real" and "Imaginary with Imaginary"</text>
+  </g>
+</svg>

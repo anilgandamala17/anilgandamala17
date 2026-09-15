@@ -1,0 +1,59 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <g id="mem-part-overview" data-mito-part="overview" class="mito-layer">
+    <text x="400" y="50" font-family="Georgia, serif" font-size="28" fill="#fef08a" text-anchor="middle" font-weight="bold">Fluid Mosaic Model: Cell Membrane</text>
+    <path d="M 230,60 L 570,60" stroke="#fef08a" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.3" />
+    <text x="400" y="400" font-family="Arial" font-size="16" fill="#fef08a" text-anchor="middle" font-weight="bold">Selective Permeability</text>
+    <text x="400" y="420" font-family="Arial" font-size="12" fill="#f8fafc" text-anchor="middle" opacity="0.6">Movement of ions &amp; molecules</text>
+  </g>
+
+  <g transform="translate(100, 150)">
+    <defs>
+      <g id="lipid">
+        <circle cx="0" cy="0" r="8" fill="none" stroke="#fef08a" stroke-width="1.5" />
+        <path d="M -3,8 L -3,25 M 3,8 L 3,25" stroke="#f8fafc" stroke-width="1" opacity="0.6" />
+      </g>
+      <g id="lipid-inv">
+        <circle cx="0" cy="100" r="8" fill="none" stroke="#fef08a" stroke-width="1.5" />
+        <path d="M -3,92 L -3,75 M 3,92 L 3,75" stroke="#f8fafc" stroke-width="1" opacity="0.6" />
+      </g>
+    </defs>
+
+    <g id="mem-part-bilayer" data-mito-part="bilayer" class="mito-layer">
+      <use href="#lipid" x="0" y="0" />
+      <use href="#lipid" x="20" y="0" />
+      <use href="#lipid" x="40" y="0" />
+      <use href="#lipid" x="60" y="0" />
+      <use href="#lipid" x="140" y="0" />
+      <use href="#lipid" x="160" y="0" />
+      <use href="#lipid" x="240" y="0" />
+      <use href="#lipid" x="260" y="0" />
+      <use href="#lipid" x="280" y="0" />
+      <use href="#lipid" x="460" y="0" />
+      <use href="#lipid" x="480" y="0" />
+      <use href="#lipid" x="500" y="0" />
+      <use href="#lipid-inv" x="0" y="0" />
+      <use href="#lipid-inv" x="20" y="0" />
+      <use href="#lipid-inv" x="40" y="0" />
+      <use href="#lipid-inv" x="140" y="0" />
+      <use href="#lipid-inv" x="160" y="0" />
+      <use href="#lipid-inv" x="240" y="0" />
+      <use href="#lipid-inv" x="260" y="0" />
+      <use href="#lipid-inv" x="280" y="0" />
+      <use href="#lipid-inv" x="460" y="0" />
+      <use href="#lipid-inv" x="480" y="0" />
+      <use href="#lipid-inv" x="500" y="0" />
+      <text x="-40" y="20" font-family="Georgia, serif" font-size="12" fill="#fef08a" transform="rotate(-90, -40, 20)">Hydrophilic Head</text>
+      <text x="-40" y="80" font-family="Georgia, serif" font-size="12" fill="#f8fafc" transform="rotate(-90, -40, 80)">Hydrophobic Tail</text>
+    </g>
+
+    <g id="mem-part-integral" data-mito-part="integral" class="mito-layer">
+      <rect x="80" y="-10" width="40" height="120" rx="15" fill="none" stroke="#93c5fd" stroke-width="3" />
+      <text x="100" y="140" font-family="Georgia, serif" font-size="14" fill="#93c5fd" text-anchor="middle" font-weight="bold">Integral Protein</text>
+    </g>
+
+    <g id="mem-part-peripheral" data-mito-part="peripheral" class="mito-layer">
+      <path d="M 320,10 C 340,-30 380,-30 400,10" fill="none" stroke="#fca5a5" stroke-width="3" />
+      <text x="360" y="-30" font-family="Georgia, serif" font-size="14" fill="#fca5a5" text-anchor="middle" font-weight="bold">Peripheral Protein</text>
+    </g>
+  </g>
+</svg>

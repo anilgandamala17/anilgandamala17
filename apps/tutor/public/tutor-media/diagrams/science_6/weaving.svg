@@ -1,0 +1,47 @@
+<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+<rect width="800" height="600" fill="#1a3a2a"/>
+
+<rect x="0" y="0" width="800" height="58" fill="#0d2418" opacity="0.9"/>
+<text x="400" y="39" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Weaving: Yarn to Fabric</text>
+<rect x="20" y="65" width="760" height="52" fill="#0d2418" rx="6" opacity="1"/>
+<text x="400" y="86" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Weaving = interlacing two sets of yarn at right angles</text>
+<text x="400" y="108" font-family="'Segoe UI',sans-serif" font-size="14" fill="#81c784" text-anchor="middle" font-weight="normal">Warp threads (vertical) + Weft threads (horizontal) = Fabric</text>
+<rect x="20" y="124" width="370" height="130" fill="#1e4a30" rx="8"/>
+<text x="205" y="148" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Warp Threads</text>
+<text x="205" y="168" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Run lengthwise on the loom</text>
+<text x="205" y="186" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Stay fixed (stationary)</text>
+<text x="205" y="204" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Vertical threads</text>
+<rect x="410" y="124" width="370" height="130" fill="#1e4a30" rx="8"/>
+<text x="595" y="148" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Weft Threads</text>
+<text x="595" y="168" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Run crosswise through warp</text>
+<text x="595" y="186" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Passed over & under warp</text>
+<text x="595" y="204" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Horizontal threads</text>
+<rect x="20" y="262" width="370" height="120" fill="#1e4a30" rx="8"/>
+<text x="205" y="286" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Handloom</text>
+<text x="205" y="306" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Manual weaving by artisans</text>
+<text x="205" y="324" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Traditional craft of India</text>
+<text x="205" y="342" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Silk sarees, Khadi cloth</text>
+<rect x="410" y="262" width="370" height="120" fill="#1e4a30" rx="8"/>
+<text x="595" y="286" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Powerloom</text>
+<text x="595" y="306" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Machine-driven weaving</text>
+<text x="595" y="324" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Mass production, faster</text>
+<text x="595" y="342" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Used in factories</text>
+<rect x="20" y="390" width="240" height="110" fill="#1e4a30" rx="8"/>
+<text x="140" y="414" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Knitting</text>
+<text x="140" y="434" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Single yarn looped</text>
+<text x="140" y="452" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Sweaters, socks, caps</text>
+<text x="140" y="470" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Stretchy fabric</text>
+<rect x="280" y="390" width="240" height="110" fill="#1e4a30" rx="8"/>
+<text x="400" y="414" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">History</text>
+<text x="400" y="434" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Ancient craft worldwide</text>
+<text x="400" y="452" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Indus Valley Civilisation</text>
+<text x="400" y="470" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">India = major textile hub</text>
+<rect x="540" y="390" width="240" height="110" fill="#1e4a30" rx="8"/>
+<text x="660" y="414" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Fabric Types</text>
+<text x="660" y="434" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Cotton: lightweight</text>
+<text x="660" y="452" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Wool: warm & thick</text>
+<text x="660" y="470" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Silk: smooth & shiny</text>
+<text x="400" y="527" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">Fibre → Yarn (Spinning) → Fabric (Weaving/Knitting) → Cloth</text>
+<text x="400" y="552" font-family="'Segoe UI',sans-serif" font-size="13" fill="#81c784" text-anchor="middle" font-weight="normal">Ginning → Combing → Spinning → Weaving → Finishing</text>
+
+</svg>

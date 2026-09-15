@@ -1,0 +1,44 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- NO BACKGROUND RECT -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="28" fill="#fef08a" text-anchor="middle" font-weight="bold">Root Systems & Regions</text>
+  <path d="M 300,60 L 500,60" stroke="#fef08a" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3" />
+
+  <!-- Tap Root vs Fibrous Root -->
+  <g transform="translate(150, 100)">
+    <!-- Tap Root -->
+    <g transform="translate(0, 0)">
+      <path d="M 0,0 L 0,150 L 5,145 L -5,145 Z" fill="none" stroke="#fef08a" stroke-width="4" />
+      <path d="M 0,30 L 30,50 M 0,70 L -30,90" stroke="#fef08a" stroke-width="1.5" opacity="0.6" />
+      <text x="0" y="180" font-family="Georgia, serif" font-size="18" fill="#fef08a" text-anchor="middle" font-weight="bold">Tap Root</text>
+      <text x="0" y="200" font-family="Arial" font-size="12" fill="#f8fafc" text-anchor="middle" opacity="0.7">(e.g., Mustard)</text>
+    </g>
+
+    <!-- Fibrous Root -->
+    <g transform="translate(200, 0)">
+      <path d="M -20,0 L -30,120 M 0,0 L 0,140 M 20,0 L 30,120" stroke="#86efac" stroke-width="1.5" />
+      <text x="5" y="180" font-family="Georgia, serif" font-size="18" fill="#86efac" text-anchor="middle" font-weight="bold">Fibrous Root</text>
+      <text x="5" y="200" font-family="Arial" font-size="12" fill="#f8fafc" text-anchor="middle" opacity="0.7">(e.g., Wheat)</text>
+    </g>
+  </g>
+
+  <!-- Regions of the Root -->
+  <g transform="translate(600, 100)">
+    <path d="M 0,0 L 0,220" stroke="#f8fafc" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.3" />
+    
+    <!-- Maturation -->
+    <text x="15" y="30" font-family="Georgia, serif" font-size="14" fill="#fef08a" font-weight="bold">Region of Maturation</text>
+    <text x="15" y="45" font-family="Arial" font-size="11" fill="#f8fafc" opacity="0.7">Root hairs present</text>
+    
+    <!-- Elongation -->
+    <text x="15" y="100" font-family="Georgia, serif" font-size="14" fill="#f8fafc" font-weight="bold">Region of Elongation</text>
+    <text x="15" y="115" font-family="Arial" font-size="11" fill="#f8fafc" opacity="0.7">Rapid growth in length</text>
+    
+    <!-- Meristematic -->
+    <text x="15" y="170" font-family="Georgia, serif" font-size="14" fill="#86efac" font-weight="bold">Region of Meristematic Activity</text>
+    <text x="15" y="185" font-family="Arial" font-size="11" fill="#f8fafc" opacity="0.7">Zone of cell division</text>
+
+    <!-- Root Cap -->
+    <path d="M -10,210 Q 0,230 10,210" fill="none" stroke="#fca5a5" stroke-width="3" />
+    <text x="15" y="225" font-family="Georgia, serif" font-size="14" fill="#fca5a5" font-weight="bold">Root Cap</text>
+  </g>
+</svg>

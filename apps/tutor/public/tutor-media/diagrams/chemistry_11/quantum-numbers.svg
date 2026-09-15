@@ -1,0 +1,49 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 13px; font-weight: bold; }
+      .box { fill: rgba(30, 58, 138, 0.8); stroke: #60a5fa; stroke-width: 1.5; rx: 6; }
+      .highlight { fill: #fcd34d; font-weight: bold; }
+      .symbol { fill: #93c5fd; font-style: italic; font-weight: bold; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Quantum Numbers & Atomic Orbitals</text>
+    
+    <rect x="20" y="45" width="360" height="200" class="box" />
+    
+    <!-- Table Headers -->
+    <text x="40" y="70" class="label">Number</text>
+    <text x="120" y="70" class="label">Symbol</text>
+    <text x="200" y="70" class="label">Values</text>
+    <text x="300" y="70" class="label">Meaning</text>
+    <line x1="20" y1="80" x2="380" y2="80" stroke="#60a5fa" stroke-width="0.5" />
+
+    <!-- Principal -->
+    <text x="40" y="105" fill="#ffffff" font-size="11">Principal</text>
+    <text x="135" y="105" class="symbol">n</text>
+    <text x="200" y="105" fill="#fca5a5" font-size="11">1, 2, 3...</text>
+    <text x="300" y="105" fill="#94a3b8" font-size="10">Size/Energy</text>
+
+    <!-- Azimuthal -->
+    <text x="40" y="140" fill="#ffffff" font-size="11">Azimuthal</text>
+    <text x="135" y="140" class="symbol">l</text>
+    <text x="200" y="140" fill="#fca5a5" font-size="11">0 to (n-1)</text>
+    <text x="300" y="140" fill="#94a3b8" font-size="10">Shape (s,p,d,f)</text>
+
+    <!-- Magnetic -->
+    <text x="40" y="175" fill="#ffffff" font-size="11">Magnetic</text>
+    <text x="135" y="175" class="symbol">mₗ</text>
+    <text x="200" y="175" fill="#fca5a5" font-size="11">-l to +l</text>
+    <text x="300" y="175" fill="#94a3b8" font-size="10">Orientation</text>
+
+    <!-- Spin -->
+    <text x="40" y="210" fill="#ffffff" font-size="11">Spin</text>
+    <text x="135" y="210" class="symbol">mₛ</text>
+    <text x="200" y="210" fill="#fca5a5" font-size="11">+½, -½</text>
+    <text x="300" y="210" fill="#94a3b8" font-size="10">Electron Spin</text>
+
+    <text x="200" y="265" text-anchor="middle" fill="#fcd34d" font-size="12">Defines unique state of an electron</text>
+  </g>
+</svg>

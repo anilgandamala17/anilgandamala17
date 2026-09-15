@@ -1,0 +1,33 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 13px; font-weight: bold; }
+      .desc { fill: #93c5fd; font-size: 10px; font-style: italic; }
+      .box { fill: #1e3a8a; stroke: #60a5fa; stroke-width: 1.5; rx: 8; }
+      .carbon-box { fill: #1a1a1a; stroke: #4ade80; stroke-width: 2; rx: 4; }
+      .mass-unit { fill: #fca5a5; font-size: 14px; font-weight: bold; }
+      .connector { stroke: #94a3b8; stroke-width: 1; stroke-dasharray: 4; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Concept of Atomic Mass (1 amu)</text>
+    
+    <!-- Carbon-12 Atom Representation -->
+    <rect x="140" y="50" width="120" height="120" class="carbon-box" />
+    <text x="200" y="110" text-anchor="middle" fill="#4ade80" font-size="24" font-weight="bold">¹²C</text>
+    <text x="200" y="135" text-anchor="middle" fill="#4ade80" font-size="10">Carbon-12 Isotope</text>
+
+    <!-- 1/12th Slice Illustration -->
+    <path d="M 200 110 L 260 110 A 60 60 0 0 1 251.96 140 Z" fill="#fca5a5" stroke="#ef4444" stroke-width="1" />
+    <text x="270" y="130" class="mass-unit">1 amu</text>
+    
+    <!-- Formula Box -->
+    <rect x="50" y="190" width="300" height="60" class="box" />
+    <text x="200" y="215" text-anchor="middle" class="label">1 amu = 1/12 × Mass of ${^12}C$ Atom</text>
+    <text x="200" y="235" text-anchor="middle" class="desc">≈ 1.66056 × 10⁻²⁴ g</text>
+
+    <line x1="230" y1="130" x2="200" y2="190" class="connector" />
+    <circle cx="230" cy="130" r="3" fill="#fca5a5" />
+  </g>
+</svg>

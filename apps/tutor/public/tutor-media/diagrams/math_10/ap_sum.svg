@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#0d2818}
+      .title{fill:#f0e68c;font-size:14px;font-weight:bold}
+      .sub{fill:#aad4ff;font-size:10px}
+      .label{fill:#e0ffe0;font-size:11px}
+      .hl{fill:#7fffd4;font-size:13px;font-weight:bold}
+      .box{fill:#1a3a20;stroke:#4ade80;stroke-width:1.2}
+      .bar{fill:#ff9f43;opacity:0.85}
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="18" text-anchor="middle" class="title">Sum of n Terms of an AP</text>
+  <text x="210" y="30" text-anchor="middle" class="sub">Sₙ = n/2 × [2a + (n−1)d]  =  n/2 × (a + l)  where l = last term</text>
+
+  <!-- Formulas box -->
+  <rect x="10" y="38" width="400" height="38" rx="6" fill="#1a4030" stroke="#ffd700" stroke-width="1.5"/>
+  <text x="210" y="54" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">Sₙ = n/2 [2a + (n−1)d]</text>
+  <text x="210" y="70" text-anchor="middle" fill="#7fffd4" font-size="12">Alternative:  Sₙ = n/2 × (First term + Last term)</text>
+
+  <!-- Gauss trick visualization -->
+  <rect x="10" y="84" width="400" height="64" rx="5" class="box"/>
+  <text x="210" y="100" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">Gauss's Pairing Trick (Proof Visualization)</text>
+  <!-- Forward sequence -->
+  <text x="20" y="118" fill="#ff9f43" font-size="11">S =  1  +  2  +  3  + ··· + (n−1)  +  n</text>
+  <!-- Reverse -->
+  <text x="20" y="134" fill="#7fffd4" font-size="11">S =  n  + (n−1) + ··· +  3  +  2  +  1</text>
+  <!-- Sum line -->
+  <line x1="18" y1="138" x2="406" y2="138" stroke="#4ade80" stroke-width="1"/>
+  <text x="20" y="150" fill="#ffd700" font-size="10">2S = (1+n) + (2+n−1) + ··· n pairs of (n+1)</text>
+  <text x="370" y="150" text-anchor="end" fill="#ff9f43" font-size="10" font-weight="bold">S = n(n+1)/2</text>
+
+  <!-- Bar chart visual for S10 (AP 1,2,3,...10) -->
+  <text x="210" y="168" text-anchor="middle" fill="#f0e68c" font-size="10" font-weight="bold">Visual: Sum of 1+2+...+10 = 55</text>
+  <!-- Bars: AP 1 to 10, each bar height proportional -->
+  <g>
+    <rect x="20" y="219" width="16" height="10" class="bar"/>   <text x="28" y="238" text-anchor="middle" fill="#aad4ff" font-size="7">1</text>
+    <rect x="38" y="213" width="16" height="16" class="bar"/>   <text x="46" y="238" text-anchor="middle" fill="#aad4ff" font-size="7">2</text>
+    <rect x="56" y="207" width="16" height="22" class="bar"/>   <text x="64" y="238" text-anchor="middle" fill="#aad4ff" font-size="7">3</text>
+    <rect x="74" y="201" width="16" height="28" class="bar"/>   <text x="82" y="238" text-anchor="middle" fill="#aad4ff" font-size="7">4</text>
+    <rect x="92" y="195" width="16" height="34" class="bar"/>   <text x="100" y="238" text-anchor="middle" fill="#aad4ff" font-size="7">5</text>
+    <rect x="110" y="189" width="16" height="40" class="bar"/>  <text x="118" y="238" text-anchor="middle" fill="#aad4ff" font-size="7">6</text>
+    <rect x="128" y="183" width="16" height="46" class="bar"/>  <text x="136" y="238" text-anchor="middle" fill="#aad4ff" font-size="7">7</text>
+    <rect x="146" y="177" width="16" height="52" class="bar"/>  <text x="154" y="238" text-anchor="middle" fill="#aad4ff" font-size="7">8</text>
+    <rect x="164" y="171" width="16" height="58" class="bar"/>  <text x="172" y="238" text-anchor="middle" fill="#aad4ff" font-size="7">9</text>
+    <rect x="182" y="165" width="16" height="64" class="bar"/>  <text x="190" y="238" text-anchor="middle" fill="#aad4ff" font-size="7">10</text>
+  </g>
+  <line x1="18" y1="229" x2="204" y2="229" stroke="#4ade80" stroke-width="1"/>
+  <text x="130" y="248" text-anchor="middle" fill="#ffd700" font-size="9">S₁₀ = 10/2 × (1+10) = 55</text>
+
+  <!-- Worked examples -->
+  <rect x="215" y="170" width="195" height="125" rx="5" fill="#1a2a3a" stroke="#aad4ff" stroke-width="1"/>
+  <text x="312" y="186" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">Worked Examples</text>
+  <text x="222" y="202" fill="#ffd700" font-size="10">AP: 3, 7, 11, ... n=15 terms</text>
+  <text x="222" y="216" fill="#e0ffe0" font-size="10">a=3, d=4</text>
+  <text x="222" y="230" fill="#e0ffe0" font-size="10">S₁₅ = 15/2[2×3+14×4]</text>
+  <text x="222" y="244" fill="#e0ffe0" font-size="10">     = 15/2[6+56] = 15/2×62</text>
+  <text x="222" y="258" fill="#7fffd4" font-size="10" font-weight="bold">     = 465</text>
+  <line x1="222" y1="263" x2="404" y2="263" stroke="#4ade80" stroke-width="0.5"/>
+  <text x="222" y="277" fill="#ffd700" font-size="10">Sum of first 50 naturals:</text>
+  <text x="222" y="289" fill="#ff9f43" font-size="10" font-weight="bold">S = 50×51/2 = 1275</text>
+  </g>
+</svg>

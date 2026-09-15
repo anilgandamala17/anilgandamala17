@@ -1,0 +1,68 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#0d2818}
+      .title{fill:#f0e68c;font-size:14px;font-weight:bold}
+      .sub{fill:#aad4ff;font-size:10px}
+      .label{fill:#e0ffe0;font-size:11px}
+      .hl{fill:#7fffd4;font-size:13px;font-weight:bold}
+      .box{fill:#1a3a20;stroke:#4ade80;stroke-width:1.2}
+      .arrow{stroke:#ff9f43;stroke-width:2;fill:none}
+      .xline{stroke:#ff6b6b;stroke-width:2}
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="210" y="20" text-anchor="middle" class="title">Cross-Multiplication Method</text>
+  <text x="210" y="32" text-anchor="middle" class="sub">Solving: a₁x + b₁y + c₁ = 0  and  a₂x + b₂y + c₂ = 0</text>
+
+  <!-- Main formula -->
+  <rect x="10" y="40" width="400" height="35" rx="6" fill="#1a4030" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="210" y="54" text-anchor="middle" fill="#7fffd4" font-size="11" font-weight="bold">x/(b₁c₂ − b₂c₁) = y/(c₁a₂ − c₂a₁) = 1/(a₁b₂ − a₂b₁)</text>
+  <text x="210" y="68" text-anchor="middle" fill="#ffd700" font-size="10">∴ x = (b₁c₂ − b₂c₁)/(a₁b₂ − a₂b₁)    y = (c₁a₂ − c₂a₁)/(a₁b₂ − a₂b₁)</text>
+
+  <!-- Cross diagram -->
+  <text x="210" y="95" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">The Cross Pattern (Memory Aid)</text>
+
+  <!-- Row 1 labels -->
+  <text x="80" y="115" text-anchor="middle" fill="#ff9f43" font-size="14" font-weight="bold">b₁</text>
+  <text x="150" y="115" text-anchor="middle" fill="#ff9f43" font-size="14" font-weight="bold">c₁</text>
+  <text x="220" y="115" text-anchor="middle" fill="#ff9f43" font-size="14" font-weight="bold">a₁</text>
+  <text x="290" y="115" text-anchor="middle" fill="#ff9f43" font-size="14" font-weight="bold">b₁</text>
+  <!-- Row 2 labels -->
+  <text x="80" y="148" text-anchor="middle" fill="#7fffd4" font-size="14" font-weight="bold">b₂</text>
+  <text x="150" y="148" text-anchor="middle" fill="#7fffd4" font-size="14" font-weight="bold">c₂</text>
+  <text x="220" y="148" text-anchor="middle" fill="#7fffd4" font-size="14" font-weight="bold">a₂</text>
+  <text x="290" y="148" text-anchor="middle" fill="#7fffd4" font-size="14" font-weight="bold">b₂</text>
+
+  <!-- Cross arrows for x -->
+  <line x1="88" y1="118" x2="142" y2="143" class="arrow"/>
+  <line x1="88" y1="143" x2="142" y2="118" class="xline" stroke-dasharray="none"/>
+  <text x="115" y="140" text-anchor="middle" fill="#ffd700" font-size="9">→ x</text>
+
+  <!-- Cross arrows for y -->
+  <line x1="158" y1="118" x2="212" y2="143" class="arrow"/>
+  <line x1="158" y1="143" x2="212" y2="118" class="xline"/>
+  <text x="185" y="140" text-anchor="middle" fill="#ffd700" font-size="9">→ y</text>
+
+  <!-- Cross arrows for D -->
+  <line x1="228" y1="118" x2="282" y2="143" class="arrow"/>
+  <line x1="228" y1="143" x2="282" y2="118" class="xline"/>
+  <text x="255" y="140" text-anchor="middle" fill="#ffd700" font-size="9">→ D</text>
+
+  <!-- Labels beneath -->
+  <text x="115" y="165" text-anchor="middle" fill="#e0ffe0" font-size="9">b₁c₂ − b₂c₁</text>
+  <text x="185" y="165" text-anchor="middle" fill="#e0ffe0" font-size="9">c₁a₂ − c₂a₁</text>
+  <text x="255" y="165" text-anchor="middle" fill="#e0ffe0" font-size="9">a₁b₂ − a₂b₁</text>
+
+  <!-- Worked example -->
+  <rect x="10" y="178" width="400" height="115" rx="5" class="box"/>
+  <text x="210" y="194" text-anchor="middle" fill="#f0e68c" font-size="11" font-weight="bold">Worked Example</text>
+  <text x="20" y="210" fill="#ffd700" font-size="10">Solve: 2x + 3y − 9 = 0  and  x + 2y − 5 = 0</text>
+  <text x="20" y="224" fill="#aad4ff" font-size="10">a₁=2, b₁=3, c₁=−9,   a₂=1, b₂=2, c₂=−5</text>
+  <line x1="20" y1="230" x2="406" y2="230" stroke="#4ade80" stroke-width="0.5"/>
+  <text x="20" y="244" fill="#e0ffe0" font-size="10">x = (b₁c₂−b₂c₁)/(a₁b₂−a₂b₁) = (3×(−5) − 2×(−9))/(2×2 − 1×3)</text>
+  <text x="20" y="258" fill="#e0ffe0" font-size="10">   = (−15 + 18)/(4 − 3) = 3/1 = 3</text>
+  <text x="20" y="272" fill="#e0ffe0" font-size="10">y = (c₁a₂−c₂a₁)/(a₁b₂−a₂b₁) = ((−9)×1 − (−5)×2)/1 = (−9+10)/1 = 1</text>
+  <text x="210" y="286" text-anchor="middle" fill="#ff9f43" font-size="12" font-weight="bold">∴ x = 3, y = 1  ✓</text>
+  </g>
+</svg>

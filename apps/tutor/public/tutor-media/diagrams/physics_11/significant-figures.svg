@@ -1,0 +1,39 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .num { fill: #ffffff; font-size: 24px; font-family: monospace; font-weight: bold; }
+      .highlight { fill: #86efac; }
+      .ignore { fill: #94a3b8; }
+      .rule { fill: #93c5fd; font-size: 10px; }
+      .box { fill: #1a3a20; stroke: #4ade80; stroke-width: 1; rx: 4; }
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Significant Figures Rules</text>
+    
+    <!-- Rule 1 -->
+    <rect x="20" y="50" width="360" height="50" class="box" />
+    <text x="40" y="85" class="num">
+      <tspan class="highlight">2.008</tspan>
+    </text>
+    <text x="140" y="75" class="rule">Non-zero digits and zeros between</text>
+    <text x="140" y="90" class="rule">them are significant. (4 Sig Figs)</text>
+
+    <!-- Rule 2 -->
+    <rect x="20" y="110" width="360" height="50" class="box" />
+    <text x="40" y="145" class="num">
+      <tspan class="ignore">0.00</tspan><tspan class="highlight">52</tspan>
+    </text>
+    <text x="140" y="135" class="rule">Leading zeros are NOT significant.</text>
+    <text x="140" y="150" class="rule">(2 Sig Figs)</text>
+
+    <!-- Rule 3 -->
+    <rect x="20" y="170" width="360" height="50" class="box" />
+    <text x="40" y="205" class="num">
+      <tspan class="highlight">12.00</tspan>
+    </text>
+    <text x="140" y="195" class="rule">Trailing zeros after decimal point</text>
+    <text x="140" y="210" class="rule">ARE significant. (4 Sig Figs)</text>
+  </g>
+</svg>

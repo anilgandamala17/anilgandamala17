@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Equations — Word Problems</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Convert real-world problems into algebraic equations to find unknown values</text>
+
+<rect x="20" y="80" width="370" height="115" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="103" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">5-Step Problem Solving Method</text>
+<text x="205" y="125" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">1. READ: Understand what is given &amp; what to find</text>
+<text x="205" y="143" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">2. ASSIGN: Let the unknown = x (or other variable)</text>
+<text x="205" y="161" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">3. FORM: Write the equation from conditions given</text>
+<text x="205" y="179" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">4. SOLVE: Find the value of unknown</text>
+<text x="205" y="187" font-family="'Segoe UI',sans-serif" font-size="11" fill="#ffd54f" text-anchor="middle">5. CHECK: Verify answer satisfies original conditions</text>
+
+<rect x="410" y="80" width="370" height="115" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="103" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Common Word Problem Clues</text>
+<text x="595" y="123" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">"is" / "equals" / "gives" → = sign</text>
+<text x="595" y="141" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">"more than" / "added to" → +</text>
+<text x="595" y="159" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">"less than" / "reduced by" → −</text>
+<text x="595" y="177" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">"times" / "product" → ×</text>
+<text x="595" y="187" font-family="'Segoe UI',sans-serif" font-size="11" fill="#ffd54f" text-anchor="middle">"per" / "each" / "quotient" → ÷</text>
+
+<line x1="20" y1="208" x2="780" y2="208" stroke="#86efac" stroke-width="1"/>
+
+<rect x="20" y="220" width="370" height="145" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="243" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Age Problem</text>
+<text x="205" y="263" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Ravi is 4 times as old as his son.</text>
+<text x="205" y="281" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">After 5 years, Ravi will be 3× son's age.</text>
+<text x="205" y="301" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Let son's age = x → Ravi = 4x</text>
+<text x="205" y="319" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">After 5 yr: 4x+5 = 3(x+5)</text>
+<text x="205" y="337" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">4x + 5 = 3x + 15 → x = 10</text>
+<text x="205" y="356" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Son = 10 yrs, Ravi = 40 yrs</text>
+
+<rect x="410" y="220" width="370" height="145" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="243" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Number Problem</text>
+<text x="595" y="263" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Sum of 3 consecutive odd numbers = 51</text>
+<text x="595" y="283" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Let 1st = x, 2nd = x+2, 3rd = x+4</text>
+<text x="595" y="301" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">x + x+2 + x+4 = 51</text>
+<text x="595" y="319" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">3x + 6 = 51 → 3x = 45 → x = 15</text>
+<text x="595" y="340" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Numbers: 15, 17, 19</text>
+
+<rect x="20" y="374" width="370" height="135" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="395" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Geometry Problem</text>
+<text x="205" y="415" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Perimeter of rectangle = 44 cm</text>
+<text x="205" y="435" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Length = 3 × breadth</text>
+<text x="205" y="455" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Let breadth = b, length = 3b</text>
+<text x="205" y="473" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">2(3b + b) = 44 → 8b = 44 → b = 5.5</text>
+<text x="205" y="493" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Breadth = 5.5 cm, Length = 16.5 cm</text>
+
+<rect x="410" y="374" width="370" height="135" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="395" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">Money / Fraction Problem</text>
+<text x="595" y="415" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">1/3 of a number + 1/4 of it = 35</text>
+<text x="595" y="435" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Let number = x</text>
+<text x="595" y="453" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">x/3 + x/4 = 35</text>
+<text x="595" y="471" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">4x/12 + 3x/12 = 35 → 7x/12 = 35</text>
+<text x="595" y="491" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">x = 60</text>
+
+<text x="400" y="545" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Key: form equation → solve → verify with original problem statement | UNITS must match</text>
+</svg>

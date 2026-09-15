@@ -1,0 +1,46 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Synthetic Fibres and Plastics</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Polymer = many units (monomers) joined together</text>
+
+<rect x="25" y="85" width="235" height="230" fill="none" stroke="#ffd54f" stroke-width="2" rx="10"/>
+<text x="142" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Types of Fibres</text>
+<text x="142" y="135" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Rayon (Artificial Silk)</text>
+<text x="142" y="150" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">From wood pulp</text>
+<text x="142" y="175" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Nylon (Strongest)</text>
+<text x="142" y="190" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">First fully synthetic</text>
+<text x="142" y="215" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Polyester</text>
+<text x="142" y="230" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Terylene, PET</text>
+<text x="142" y="255" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Acrylic (Artificial Wool)</text>
+<text x="142" y="270" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Cheap alternative to wool</text>
+
+<rect x="282" y="85" width="492" height="230" fill="none" stroke="#86efac" stroke-width="2" rx="10"/>
+<text x="528" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Classification of Plastics</text>
+
+<rect x="300" y="125" width="220" height="175" fill="none" stroke="rgba(134,239,172,0.3)" stroke-width="1.5" rx="8"/>
+<text x="410" y="150" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">Thermoplastics</text>
+<path d="M340,210 Q410,160 480,210 Q410,260 340,210" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="410" y="175" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Can be melted &amp; remolded</text>
+<text x="410" y="195" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Ex: Polythene, PVC</text>
+<text x="410" y="280" font-family="'Segoe UI',sans-serif" font-size="11" fill="#86efac" text-anchor="middle">Used for toys, containers</text>
+
+<rect x="535" y="125" width="220" height="175" fill="none" stroke="rgba(134,239,172,0.3)" stroke-width="1.5" rx="8"/>
+<text x="645" y="150" font-family="'Segoe UI',sans-serif" font-size="14" fill="#f48fb1" text-anchor="middle" font-weight="bold">Thermosetting</text>
+<rect x="615" y="175" width="60" height="60" fill="none" stroke="#fff" stroke-width="1.5"/>
+<text x="645" y="175" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Once set, cannot be remolded</text>
+<text x="645" y="195" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Ex: Bakelite, Melamine</text>
+<text x="645" y="280" font-family="'Segoe UI',sans-serif" font-size="11" fill="#f48fb1" text-anchor="middle">Handles, electrical switches</text>
+
+<line x1="20" y1="335" x2="780" y2="335" stroke="#86efac" stroke-width="1"/>
+
+<rect x="25" y="350" width="750" height="150" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="10"/>
+<text x="400" y="375" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Properties of Plastics</text>
+<text x="100" y="410" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="start">1. Non-reactive: Do not rust like iron</text>
+<text x="100" y="435" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="start">2. Light, Strong, and Durable</text>
+<text x="100" y="460" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="start">3. Poor conductors of heat &amp; electricity</text>
+<text x="500" y="410" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="start">Melamine: Flame resistant</text>
+<text x="500" y="435" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="start">Teflon: Non-stick coating</text>
+<text x="500" y="475" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="start">Plastic = Polymer | Monomer = Small unit</text>
+
+<text x="400" y="540" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">Nylon is stronger than a steel wire of same thickness!</text>
+</svg>

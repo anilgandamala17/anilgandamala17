@@ -1,0 +1,41 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 13px; font-weight: bold; }
+      .axis { stroke: #94a3b8; stroke-width: 2; }
+      .profile-exo { stroke: #f87171; stroke-width: 3; fill: none; }
+      .profile-endo { stroke: #60a5fa; stroke-width: 3; fill: none; }
+      .energy-lvl { stroke: #94a3b8; stroke-width: 1; stroke-dasharray: 4; }
+      .sub-label { fill: #fcd34d; font-size: 11px; text-anchor: middle; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Enthalpy Profiles (ΔH)</text>
+    
+    <!-- Exothermic -->
+    <g transform="translate(0, 50)">
+      <line x1="20" y1="120" x2="20" y2="20" class="axis" marker-end="url(#arrowhead)" />
+      <line x1="20" y1="120" x2="160" y2="120" class="axis" marker-end="url(#arrowhead)" />
+      <text x="15" y="15" fill="#94a3b8" font-size="9" transform="rotate(-90, 15, 15)">Enthalpy (H)</text>
+      
+      <path d="M 20,60 L 60,60 Q 90,20 120,90 L 160,90" class="profile-exo" />
+      <text x="40" y="55" class="label" font-size="9">Reactants</text>
+      <text x="140" y="105" class="label" font-size="9">Products</text>
+      <text x="90" y="140" class="sub-label">Exothermic (ΔH &lt; 0)</text>
+      <text x="170" y="75" fill="#f87171" font-size="10">Heat Released</text>
+    </g>
+
+    <!-- Endothermic -->
+    <g transform="translate(210, 50)">
+      <line x1="20" y1="120" x2="20" y2="20" class="axis" marker-end="url(#arrowhead)" />
+      <line x1="20" y1="120" x2="160" y2="120" class="axis" marker-end="url(#arrowhead)" />
+      
+      <path d="M 20,90 L 60,90 Q 90,20 120,60 L 160,60" class="profile-endo" />
+      <text x="40" y="105" class="label" font-size="9">Reactants</text>
+      <text x="140" y="55" class="label" font-size="9">Products</text>
+      <text x="90" y="140" class="sub-label">Endothermic (ΔH &gt; 0)</text>
+      <text x="170" y="75" fill="#60a5fa" font-size="10">Heat Absorbed</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">States of Matter</text>
+
+  <!-- Solid -->
+  <rect x="15" y="55" width="240" height="280" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#86efac" stroke-width="2"/>
+  <text x="135" y="78" text-anchor="middle" fill="#86efac" font-size="15" font-family="Georgia,serif" font-weight="bold">SOLID</text>
+  <!-- Particle grid -->
+  <g fill="#86efac">
+    <circle cx="70" cy="120" r="12"/><circle cx="110" cy="120" r="12"/><circle cx="150" cy="120" r="12"/><circle cx="190" cy="120" r="12"/>
+    <circle cx="70" cy="155" r="12"/><circle cx="110" cy="155" r="12"/><circle cx="150" cy="155" r="12"/><circle cx="190" cy="155" r="12"/>
+    <circle cx="70" cy="190" r="12"/><circle cx="110" cy="190" r="12"/><circle cx="150" cy="190" r="12"/><circle cx="190" cy="190" r="12"/>
+    <circle cx="70" cy="225" r="12"/><circle cx="110" cy="225" r="12"/><circle cx="150" cy="225" r="12"/><circle cx="190" cy="225" r="12"/>
+  </g>
+  <text x="135" y="260" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Fixed positions</text>
+  <text x="135" y="278" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Definite shape &amp; volume</text>
+  <text x="135" y="296" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Particles vibrate only</text>
+  <text x="135" y="314" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">High density, incompressible</text>
+
+  <!-- Liquid -->
+  <rect x="267" y="55" width="240" height="280" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#38bdf8" stroke-width="2"/>
+  <text x="387" y="78" text-anchor="middle" fill="#38bdf8" font-size="15" font-family="Georgia,serif" font-weight="bold">LIQUID</text>
+  <!-- Scattered particles in cluster -->
+  <g fill="#38bdf8">
+    <circle cx="310" cy="130" r="12"/><circle cx="348" cy="115" r="12"/><circle cx="388" cy="125" r="12"/><circle cx="425" cy="112" r="12"/>
+    <circle cx="320" cy="165" r="12"/><circle cx="360" cy="158" r="12"/><circle cx="400" cy="168" r="12"/>
+    <circle cx="305" cy="200" r="12"/><circle cx="348" cy="195" r="12"/><circle cx="388" cy="206" r="12"/><circle cx="430" cy="193" r="12"/>
+    <circle cx="320" cy="235" r="12"/><circle cx="360" cy="228" r="12"/><circle cx="400" cy="238" r="12"/>
+  </g>
+  <text x="387" y="260" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Random, close arrangement</text>
+  <text x="387" y="278" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Definite volume, no shape</text>
+  <text x="387" y="296" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Particles slide &amp; flow</text>
+  <text x="387" y="314" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Med. density, takes container shape</text>
+
+  <!-- Gas -->
+  <rect x="519" y="55" width="265" height="280" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#fde68a" stroke-width="2"/>
+  <text x="651" y="78" text-anchor="middle" fill="#fde68a" font-size="15" font-family="Georgia,serif" font-weight="bold">GAS</text>
+  <!-- Very spread out particles -->
+  <g fill="#fde68a">
+    <circle cx="560" cy="120" r="10"/><circle cx="640" cy="100" r="10"/><circle cx="720" cy="115" r="10"/>
+    <circle cx="545" cy="170" r="10"/><circle cx="620" cy="165" r="10"/><circle cx="710" cy="175" r="10"/>
+    <circle cx="565" cy="220" r="10"/><circle cx="655" cy="210" r="10"/><circle cx="740" cy="225" r="10"/>
+    <circle cx="578" cy="265" r="10"/><circle cx="680" cy="255" r="10"/>
+    <!-- velocity arrows -->
+    <line x1="570" y1="120" x2="590" y2="108" stroke="#fde68a" stroke-width="1.5"/>
+    <line x1="645" y1="100" x2="665" y2="115" stroke="#fde68a" stroke-width="1.5"/>
+    <line x1="548" y1="175" x2="530" y2="188" stroke="#fde68a" stroke-width="1.5"/>
+  </g>
+  <text x="651" y="260" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Far apart, random motion</text>
+  <text x="651" y="278" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">No definite shape or volume</text>
+  <text x="651" y="296" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">High kinetic energy</text>
+  <text x="651" y="314" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Low density, compressible</text>
+
+  <!-- Bottom: property comparison -->
+  <rect x="15" y="348" width="769" height="140" rx="12" fill="#1a3a2a" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="400" y="371" text-anchor="middle" fill="#a3e635" font-size="14" font-family="Georgia,serif" font-weight="bold">Property Comparison</text>
+  <!-- Table -->
+  <g font-size="11" font-family="Georgia,serif" text-anchor="middle">
+    <text x="140" y="393" fill="#fde68a" font-weight="bold">Property</text>
+    <text x="330" y="393" fill="#86efac" font-weight="bold">Solid</text>
+    <text x="490" y="393" fill="#38bdf8" font-weight="bold">Liquid</text>
+    <text x="650" y="393" fill="#fde68a" font-weight="bold">Gas</text>
+    <line x1="20" y1="400" x2="779" y2="400" stroke="#334155" stroke-width="1"/>
+    <text x="140" y="418" fill="#d4d4d8">Shape</text><text x="330" y="418" fill="#d4d4d8">Fixed</text><text x="490" y="418" fill="#d4d4d8">Container</text><text x="650" y="418" fill="#d4d4d8">Container</text>
+    <text x="140" y="436" fill="#d4d4d8">Volume</text><text x="330" y="436" fill="#d4d4d8">Fixed</text><text x="490" y="436" fill="#d4d4d8">Fixed</text><text x="650" y="436" fill="#d4d4d8">Not Fixed</text>
+    <text x="140" y="454" fill="#d4d4d8">Compressibility</text><text x="330" y="454" fill="#d4d4d8">None</text><text x="490" y="454" fill="#d4d4d8">Negligible</text><text x="650" y="454" fill="#d4d4d8">High</text>
+    <text x="140" y="472" fill="#d4d4d8">Interparticle space</text><text x="330" y="472" fill="#d4d4d8">Minimum</text><text x="490" y="472" fill="#d4d4d8">Medium</text><text x="650" y="472" fill="#d4d4d8">Maximum</text>
+  </g>
+</svg>

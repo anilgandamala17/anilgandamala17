@@ -1,0 +1,21 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+    </style>
+  </defs>
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">THEME: COURAGE</text>
+  
+  <!-- Shield Icon -->
+  <path d="M 150 60 L 250 60 L 250 140 Q 200 180 150 140 Z" fill="none" stroke="#fbbf24" stroke-width="3" />
+  <path d="M 200 60 L 200 160" stroke="#fbbf24" stroke-width="2" />
+  
+  <text x="200" y="100" text-anchor="middle" font-size="10">Overcoming Fear</text>
+  <text x="200" y="120" text-anchor="middle" font-size="10">Taking Action</text>
+
+  <rect x="100" y="200" width="200" height="40" fill="#334155" rx="4" />
+  <text x="200" y="225" text-anchor="middle" fill="#94a3b8">"Fear is not the absence of courage..."</text>
+</svg>

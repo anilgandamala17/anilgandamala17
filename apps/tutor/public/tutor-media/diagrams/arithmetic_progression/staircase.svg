@@ -1,0 +1,55 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+      text { font-family: 'Roboto Mono', monospace; fill: #e2e8f0; }
+      .title { font-size: 14px; font-weight: bold; fill: #fbbf24; }
+      .step { fill: #3b82f6; stroke: #fff; opacity: 0.9; }
+      .diff { stroke: #ef4444; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#ef4444" />
+    </marker>
+  </defs>
+  
+  <rect width="400" height="280" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">ARITHMETIC PROGRESSION (AP)</text>
+
+  <g transform="translate(40, 240) scale(1, -1)">
+    <!-- Term 1: a -->
+    <rect x="0" y="0" width="40" height="40" class="step" />
+    
+    <!-- Term 2: a + d -->
+    <rect x="60" y="0" width="40" height="70" class="step" />
+    
+    <!-- Term 3: a + 2d -->
+    <rect x="120" y="0" width="40" height="100" class="step" />
+    
+    <!-- Term 4: a + 3d -->
+    <rect x="180" y="0" width="40" height="130" class="step" />
+    
+    <!-- Term n -->
+    <rect x="280" y="0" width="40" height="190" class="step" fill-opacity="0.5" stroke-dasharray="4,4"/>
+  </g>
+  
+  <!-- Labels (In standard coord system) -->
+  <g transform="translate(40, 260)">
+    <text x="20" y="0" text-anchor="middle" fontSize="12">a</text>
+    <text x="80" y="0" text-anchor="middle" fontSize="12">a+d</text>
+    <text x="140" y="0" text-anchor="middle" fontSize="12">a+2d</text>
+    <text x="200" y="0" text-anchor="middle" fontSize="12">a+3d</text>
+    <text x="300" y="0" text-anchor="middle" fontSize="12">a+(n-1)d</text>
+    
+    <text x="250" y="-100" fontSize="18" fill="#94a3b8">...</text>
+  </g>
+
+  <!-- Difference Marker -->
+  <g transform="translate(100, 150)">
+    <line x1="0" y1="0" x2="0" y2="-30" class="diff" />
+    <text x="5" y="-15" fontSize="12" fill="#ef4444">d (Common Difference)</text>
+  </g>
+  
+  <text x="20" y="60" fontSize="12" fill="#fbbf24">General Term: an = a + (n-1)d</text>
+  <text x="20" y="80" fontSize="12" fill="#3b82f6">Sum: Sn = n/2 [2a + (n-1)d]</text>
+
+</svg>

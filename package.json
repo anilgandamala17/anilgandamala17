@@ -1,0 +1,19 @@
+{
+  "name": "aira-ai-tutor-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Frontend-only AIra extraction (Landing + Tutor). No backend servers.",
+  "scripts": {
+    "install:all": "npm install --prefix apps/landing && npm install --prefix apps/tutor --legacy-peer-deps && npm install",
+    "dev": "node scripts/start-dev.mjs",
+    "dev:landing": "npm run dev --prefix apps/landing",
+    "dev:tutor": "npm run dev --prefix apps/tutor",
+    "probe": "node scripts/probe-debug.mjs",
+    "build": "npm run build --prefix apps/landing && npm run build --prefix apps/tutor",
+    "build:landing": "npm run build --prefix apps/landing",
+    "build:tutor": "npm run build --prefix apps/tutor"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

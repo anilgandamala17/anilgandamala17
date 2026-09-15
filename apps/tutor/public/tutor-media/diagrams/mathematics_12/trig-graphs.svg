@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f8fafc" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Inverse Trig Graphs</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Sin^-1 x Curve -->
+  <g transform="translate(150, 300)">
+    <text x="0" y="-180" fill="#86efac" text-anchor="middle" font-weight="bold">y = sin⁻¹x</text>
+    <!-- Axes -->
+    <line x1="-120" y1="0" x2="120" y2="0" stroke="#f8fafc" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <line x1="0" y1="-150" x2="0" y2="150" stroke="#f8fafc" stroke-width="1" marker-end="url(#arrowhead)"/>
+    
+    <!-- Domain ticks -->
+    <line x1="-100" y1="-5" x2="-100" y2="5" stroke="#f8fafc"/>
+    <text x="-100" y="20" fill="#f8fafc" font-size="12" text-anchor="middle">-1</text>
+    <line x1="100" y1="-5" x2="100" y2="5" stroke="#f8fafc"/>
+    <text x="100" y="20" fill="#f8fafc" font-size="12" text-anchor="middle">1</text>
+    
+    <!-- Range ticks -->
+    <text x="-35" y="-100" fill="#fef08a" font-size="12">π/2</text>
+    <text x="-35" y="100" fill="#fef08a" font-size="12">-π/2</text>
+    
+    <!-- The Arc -->
+    <path d="M 100 -100 C 50 -100 20 -20 0 0 C -20 20 -50 100 -100 100" fill="none" stroke="#86efac" stroke-width="3"/>
+    <circle cx="100" cy="-100" r="4" fill="#86efac"/>
+    <circle cx="-100" cy="100" r="4" fill="#86efac"/>
+  </g>
+
+  <!-- Cos^-1 x Curve -->
+  <g transform="translate(550, 300)">
+    <text x="0" y="-180" fill="#60a5fa" text-anchor="middle" font-weight="bold">y = cos⁻¹x</text>
+    <!-- Axes -->
+    <line x1="-120" y1="120" x2="120" y2="120" stroke="#f8fafc" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <line x1="0" y1="-150" x2="0" y2="150" stroke="#f8fafc" stroke-width="1" marker-end="url(#arrowhead)"/>
+    
+    <!-- Range ticks -->
+    <text x="-30" y="-120" fill="#fef08a" font-size="12">π</text>
+    <text x="-30" y="0" fill="#fef08a" font-size="12">π/2</text>
+    <text x="-30" y="140" fill="#fef08a" font-size="12">0</text>
+    
+    <!-- The Arc -->
+    <path d="M -100 -120 C -50 -120 -20 -30 0 0 C 20 30 50 120 100 120" fill="none" stroke="#60a5fa" stroke-width="3"/>
+    <circle cx="-100" cy="-120" r="4" fill="#60a5fa"/>
+    <circle cx="100" cy="120" r="4" fill="#60a5fa"/>
+  </g>
+
+  <rect x="200" y="480" width="400" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="#86efac" stroke-width="1"/>
+  <text x="400" y="520" fill="#86efac" text-anchor="middle" font-size="18">Mirrored across y = x line of standard trig functions.</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Math Grade 12</text>
+</svg>

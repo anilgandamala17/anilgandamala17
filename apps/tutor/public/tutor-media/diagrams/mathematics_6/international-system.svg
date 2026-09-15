@@ -1,0 +1,37 @@
+<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+<rect width="800" height="600" fill="#1a3a2a"/>
+
+<rect x="0" y="0" width="800" height="58" fill="#0d2418" opacity="0.9"/>
+<text x="400" y="39" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">International Number System</text>
+<rect x="20" y="65" width="760" height="48" fill="#0d2418" rx="6" opacity="1"/>
+<text x="400" y="82" font-family="'Segoe UI',sans-serif" font-size="14" fill="#81c784" text-anchor="middle" font-weight="normal">Periods separate at every 3 digits from the right</text>
+<text x="400" y="102" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="normal">Billions | Millions | Thousands | Ones</text>
+<rect x="20" y="120" width="370" height="130" fill="#1e4a30" rx="8"/>
+<text x="205" y="144" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Ones Period</text>
+<text x="205" y="164" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Units, Tens, Hundreds</text>
+<text x="205" y="182" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Rightmost 3 digits</text>
+<text x="205" y="200" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">e.g. ...451</text>
+<rect x="410" y="120" width="370" height="130" fill="#1e4a30" rx="8"/>
+<text x="595" y="144" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Thousands Period</text>
+<text x="595" y="164" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Thousands, Ten-Thousands,</text>
+<text x="595" y="182" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Hundred-Thousands</text>
+<text x="595" y="200" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">e.g. ...23,000</text>
+<rect x="20" y="258" width="370" height="130" fill="#1e4a30" rx="8"/>
+<text x="205" y="282" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Millions Period</text>
+<text x="205" y="302" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Millions, Ten-Millions,</text>
+<text x="205" y="320" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Hundred-Millions</text>
+<text x="205" y="338" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">e.g. ...56,000,000</text>
+<rect x="410" y="258" width="370" height="130" fill="#1e4a30" rx="8"/>
+<text x="595" y="282" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">Billions Period</text>
+<text x="595" y="302" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">1,000,000,000 and above</text>
+<text x="595" y="320" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Hundred-Billions = 10¹¹</text>
+<text x="595" y="338" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">e.g. 7,000,000,000</text>
+<rect x="20" y="396" width="760" height="52" fill="#0d2418" rx="6" opacity="1"/>
+<text x="400" y="416" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Indian vs International</text>
+<text x="400" y="440" font-family="'Segoe UI',sans-serif" font-size="13" fill="#81c784" text-anchor="middle" font-weight="normal">1 Lakh = 100 Thousand | 10 Lakhs = 1 Million | 1 Crore = 10 Million</text>
+<rect x="20" y="456" width="760" height="55" fill="#1e4a30" rx="6" opacity="1"/>
+<text x="400" y="477" font-family="'Segoe UI',sans-serif" font-size="18" fill="#ffd54f" text-anchor="middle" font-weight="bold">Example: 75,623,451 (International)</text>
+<text x="400" y="500" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e8f5e9" text-anchor="middle" font-weight="normal">Seventy-five million, six hundred twenty-three thousand, four hundred fifty-one</text>
+<text x="400" y="525" font-family="'Segoe UI',sans-serif" font-size="13" fill="#81c784" text-anchor="middle" font-weight="normal">Indian equivalent: 7,56,23,451</text>
+
+</svg>

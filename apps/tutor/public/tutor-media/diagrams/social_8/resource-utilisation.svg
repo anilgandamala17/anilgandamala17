@@ -1,0 +1,43 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Resource Utilisation &amp; Development</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">How humans transform natural things into valuable resources</text>
+
+<rect x="25" y="85" width="235" height="230" fill="none" stroke="#ffd54f" stroke-width="2" rx="10"/>
+<text x="142" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Natural → Human Made</text>
+<text x="142" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Iron Ore → Bridges / Rails</text>
+<text x="142" y="180" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Wood → Furniture / Paper</text>
+<text x="142" y="210" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Petroleum → Plastics / Fuel</text>
+<text x="142" y="240" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Sand / Silica → Glass / Chips</text>
+<text x="142" y="295" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Technology is a Human Made resource</text>
+
+<rect x="282" y="85" width="235" height="230" fill="none" stroke="#86efac" stroke-width="2" rx="10"/>
+<text x="400" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Conservation Efforts</text>
+<text x="400" y="150" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Resource Conservation</text>
+<text x="400" y="170" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Using resources carefully</text>
+<text x="400" y="185" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Give it time to get renewed</text>
+
+<text x="400" y="230" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Balancing the Need</text>
+<text x="400" y="250" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Development vs Conservation</text>
+<text x="400" y="295" font-family="'Segoe UI',sans-serif" font-size="11" fill="#86efac" text-anchor="middle">Sustainability is the key!</text>
+
+<rect x="540" y="85" width="235" height="230" fill="none" stroke="#f48fb1" stroke-width="2" rx="10"/>
+<text x="657" y="110" font-family="'Segoe UI',sans-serif" font-size="15" fill="#f48fb1" text-anchor="middle" font-weight="bold">HRD (Human Capital)</text>
+<text x="657" y="145" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Education &amp; Health</text>
+<text x="657" y="170" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Most important factors</text>
+<text x="657" y="200" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Knowledge / Skill</text>
+<text x="657" y="225" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Create more resources</text>
+<text x="657" y="260" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle">Technology</text>
+<text x="657" y="285" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Tools created by human brain</text>
+
+<line x1="20" y1="335" x2="780" y2="335" stroke="#fb923c" stroke-width="1"/>
+
+<rect x="25" y="350" width="750" height="200" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="10"/>
+<text x="400" y="375" font-family="'Segoe UI',sans-serif" font-size="16" fill="#fb923c" text-anchor="middle" font-weight="bold">Sustainability Checklist</text>
+<text x="100" y="410" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="start">1. Reduce consumption and reuse when possible</text>
+<text x="100" y="440" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="start">2. Conserve the earth's vitality and diversity</text>
+<text x="100" y="470" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="start">3. Minimize depletion of natural resources</text>
+<text x="100" y="500" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="start">4. Change personal attitude and practices toward nature</text>
+
+<text x="400" y="565" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Resource = Utility + Value (Commercial / Ethical / Aesthetic)</text>
+</svg>

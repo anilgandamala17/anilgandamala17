@@ -1,0 +1,32 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#fcfcfd"/>
+  
+  <!-- Bloom's Taxonomy Pyramid -->
+  <path d="M400 50L700 550H100L400 50Z" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+  
+  <!-- Layers -->
+  <path d="M370 100H430" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M340 200H460" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M310 300H490" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M280 400H520" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M250 500H550" stroke="#94a3b8" stroke-width="2"/>
+  
+  <!-- Labels -->
+  <text x="400" y="85" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="14" font-weight="bold">CREATE</text>
+  <text x="400" y="185" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="14" font-weight="bold">EVALUATE</text>
+  <text x="400" y="285" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="14" font-weight="bold">ANALYZE</text>
+  <text x="400" y="385" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="14" font-weight="bold">APPLY</text>
+  <text x="400" y="485" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="14" font-weight="bold">UNDERSTAND</text>
+  <text x="400" y="580" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="14" font-weight="bold">REMEMBER</text>
+  
+  <!-- Side Icons/Markers -->
+  <circle cx="150" cy="150" r="30" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="150" y="155" text-anchor="middle" fill="#1e40af" font-family="Arial" font-size="10" font-weight="bold">ENGAGE</text>
+  
+  <circle cx="650" cy="150" r="30" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="650" y="155" text-anchor="middle" fill="#166534" font-family="Arial" font-size="10" font-weight="bold">REFLECT</text>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="20" font-weight="bold">Pedagogical Structure & Bloom's Taxonomy</text>
+</svg>

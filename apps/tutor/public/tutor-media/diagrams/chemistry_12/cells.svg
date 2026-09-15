@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fef08a" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Electrochemical (Galvanic) Cell</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Left Container (Anode) -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="50" width="180" height="200" rx="5" fill="rgba(56, 189, 248, 0.1)" stroke="#f8fafc" stroke-width="2"/>
+    <rect x="70" y="20" width="40" height="180" fill="#94a3b8" stroke="#f8fafc"/>
+    <text x="90" y="220" fill="#fef08a" text-anchor="middle" font-weight="bold">Anode (-)</text>
+    <text x="90" y="240" fill="#f8fafc" text-anchor="middle" font-size="14">Zn → Zn²⁺ + 2e⁻</text>
+    <text x="90" y="270" fill="#60a5fa" text-anchor="middle" font-size="12">ZnSO₄ Solution</text>
+  </g>
+
+  <!-- Right Container (Cathode) -->
+  <g transform="translate(450, 150)">
+    <rect x="0" y="50" width="180" height="200" rx="5" fill="rgba(244, 114, 182, 0.1)" stroke="#f8fafc" stroke-width="2"/>
+    <rect x="70" y="20" width="40" height="180" fill="#b45309" stroke="#f8fafc"/>
+    <text x="90" y="220" fill="#fef08a" text-anchor="middle" font-weight="bold">Cathode (+)</text>
+    <text x="90" y="240" fill="#f8fafc" text-anchor="middle" font-size="14">Cu²⁺ + 2e⁻ → Cu</text>
+    <text x="90" y="270" fill="#f472b6" text-anchor="middle" font-size="12">CuSO₄ Solution</text>
+  </g>
+
+  <!-- Salt Bridge -->
+  <path d="M 230 200 L 230 130 Q 230 100 365 100 Q 500 100 500 130 L 500 200" fill="none" stroke="#fef08a" stroke-width="20" opacity="0.4"/>
+  <text x="365" y="90" fill="#fef08a" text-anchor="middle" font-size="14">Salt Bridge (KNO₃)</text>
+
+  <!-- External Circuit -->
+  <g>
+    <path d="M 190 150 L 190 80 L 320 80" fill="none" stroke="#f8fafc" stroke-width="2"/>
+    <path d="M 410 80 L 540 80 L 540 150" fill="none" stroke="#f8fafc" stroke-width="2"/>
+    <circle cx="365" cy="80" r="25" fill="rgba(255,255,255,0.05)" stroke="#86efac" stroke-width="2"/>
+    <text x="365" y="87" fill="#86efac" text-anchor="middle" font-weight="bold">V</text>
+    
+    <!-- Electron flow -->
+    <line x1="200" y1="60" x2="300" y2="60" stroke="#fef08a" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="250" y="50" fill="#fef08a" font-size="14">e⁻ flow →</text>
+  </g>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Chemistry Grade 12</text>
+</svg>

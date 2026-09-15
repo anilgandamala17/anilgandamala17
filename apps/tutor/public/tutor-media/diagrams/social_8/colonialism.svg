@@ -1,0 +1,33 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Colonialism &amp; Subjugation</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#f48fb1" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle">When the subjugation of one country by another leads to political, economic, social and cultural changes</text>
+
+<rect x="25" y="85" width="750" height="200" fill="none" stroke="rgba(244,143,177,0.3)" stroke-width="2" rx="10"/>
+<text x="400" y="115" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Impact of Colonialism in India</text>
+
+<text x="100" y="150" font-family="'Segoe UI',sans-serif" font-size="14" fill="#fff" text-anchor="start">1. Administrative Changes: Establishment of police, courts &amp; civil services</text>
+<text x="100" y="180" font-family="'Segoe UI',sans-serif" font-size="14" fill="#fff" text-anchor="start">2. Identity &amp; Culture: Changes in tastes, values and customs</text>
+<text x="100" y="210" font-family="'Segoe UI',sans-serif" font-size="14" fill="#fff" text-anchor="start">3. Economic Drain: Collection of revenue, forcing crops like indigo/opium</text>
+<text x="100" y="240" font-family="'Segoe UI',sans-serif" font-size="14" fill="#fff" text-anchor="start">4. Social Restructuring: Creation of new cities, displacement of tribals</text>
+
+<line x1="20" y1="310" x2="780" y2="310" stroke="#86efac" stroke-width="1"/>
+
+<rect x="25" y="330" width="370" height="230" fill="none" stroke="rgba(134,239,172,0.3)" stroke-width="1.5" rx="8"/>
+<text x="210" y="355" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Economic Policies</text>
+<text x="60" y="390" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="start">• Revenue Systems (Zamindari, Mahalwari)</text>
+<text x="60" y="420" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="start">• Trade Monopoly of East India Company</text>
+<text x="60" y="450" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="start">• De-industrialisation (Handicrafts decline)</text>
+<text x="60" y="480" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="start">• Resource Extraction for British Industries</text>
+<text x="210" y="520" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Led to frequent famines and poverty</text>
+
+<rect x="405" y="330" width="370" height="230" fill="none" stroke="rgba(134,239,172,0.3)" stroke-width="1.5" rx="8"/>
+<text x="590" y="355" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Cultural &amp; Social Change</text>
+<text x="440" y="390" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="start">• Introduction of English Education</text>
+<text x="440" y="420" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="start">• Spread of Christianity &amp; Missionary work</text>
+<text x="440" y="450" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="start">• Influence on Art, Architecture &amp; Music</text>
+<text x="440" y="480" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="start">• Change in laws &amp; traditions (Social Reforms)</text>
+<text x="590" y="520" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Resentment led to Resistance &amp; Nationalism</text>
+
+<text x="400" y="575" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">Historical periods in India are often defined by the nature of foreign influence and rule.</text>
+</svg>

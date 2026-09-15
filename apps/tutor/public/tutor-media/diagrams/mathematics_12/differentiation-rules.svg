@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Rules of Differentiation</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Differentiation Rules Grid -->
+  <g transform="translate(100, 120)">
+    <!-- Rule 1: Power Rule -->
+    <rect x="0" y="0" width="280" height="180" rx="10" fill="rgba(134,239,172,0.05)" stroke="#86efac" stroke-width="1.5"/>
+    <text x="20" y="40" fill="#86efac" font-weight="bold">1. Power Rule</text>
+    <text x="140" y="100" fill="#fef08a" text-anchor="middle" font-family="'Times New Roman', serif" font-size="32" font-style="italic">
+       d/dx (xⁿ) = n · xⁿ⁻¹
+    </text>
+    <text x="140" y="140" fill="#f8fafc" text-anchor="middle" font-size="14">Example: d/dx(x³) = 3x²</text>
+
+    <!-- Rule 2: Product Rule -->
+    <rect x="320" y="0" width="300" height="180" rx="10" fill="rgba(96, 165, 250, 0.05)" stroke="#60a5fa" stroke-width="1.5"/>
+    <text x="340" y="40" fill="#60a5fa" font-weight="bold">2. Product Rule (uv)</text>
+    <text x="470" y="100" fill="#fef08a" text-anchor="middle" font-family="'Times New Roman', serif" font-size="28" font-style="italic">
+       (uv)' = u'v + uv'
+    </text>
+    <text x="470" y="140" fill="#f8fafc" text-anchor="middle" font-size="14">Diff. first, keep second + reverse</text>
+
+    <!-- Rule 3: Quotient Rule -->
+    <rect x="0" y="220" width="600" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="#fef08a" stroke-width="2"/>
+    <text x="20" y="260" fill="#fef08a" font-weight="bold">3. Quotient Rule (u/v)</text>
+    <text x="300" y="320" fill="#fef08a" text-anchor="middle" font-family="'Times New Roman', serif" font-size="36" font-style="italic">
+       (u/v)' = <tspan dy="-10">u'v - uv'</tspan><tspan x="300" dy="25">——————</tspan><tspan x="300" dy="30">v²</tspan>
+    </text>
+  </g>
+
+  <rect x="150" y="530" width="500" height="40" rx="10" fill="rgba(248, 250, 252, 0.05)" stroke="#f8fafc" stroke-width="0.5"/>
+  <text x="400" y="555" fill="#f8fafc" text-anchor="middle" font-size="16">Derivative represents the Slope of a Tangent.</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Math Grade 12</text>
+</svg>

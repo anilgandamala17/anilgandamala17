@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fef08a" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Gel Electrophoresis</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Electrophoresis Tank -->
+  <g transform="translate(200, 120)">
+    <!-- Tank -->
+    <rect x="0" y="0" width="400" height="350" rx="10" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="3"/>
+    
+    <!-- Agarose Gel -->
+    <rect x="50" y="50" width="300" height="250" fill="rgba(255,255,255,0.05)" stroke="#f8fafc" stroke-width="1" stroke-dasharray="5,2"/>
+    <text x="200" y="40" fill="#f8fafc" text-anchor="middle" font-size="14">Agarose Gel Matrix</text>
+    
+    <!-- Wells -->
+    <rect x="70" y="60" width="30" height="20" fill="#0d2b1a" stroke="#86efac"/>
+    <rect x="130" y="60" width="30" height="20" fill="#0d2b1a" stroke="#86efac"/>
+    <rect x="190" y="60" width="30" height="20" fill="#0d2b1a" stroke="#86efac"/>
+    <text x="130" y="55" fill="#86efac" font-size="10">Wells</text>
+    
+    <!-- Charge/Direction -->
+    <text x="-30" y="75" fill="#f87171" font-weight="bold">-</text>
+    <text x="-30" y="285" fill="#86efac" font-weight="bold">+</text>
+    <line x1="-25" y1="90" x2="-25" y2="270" stroke="#fef08a" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="-90" y="180" fill="#fef08a" transform="rotate(-90 -90 180)" text-anchor="middle">DNA Migration</text>
+    
+    <!-- DNA Bands (Separated by size) -->
+    <g opacity="0.8">
+      <!-- Lane 1 -->
+      <rect x="70" y="120" width="30" height="5" fill="#fef08a"/> <text x="105" y="125" fill="#fef08a" font-size="10">Largest</text>
+      <rect x="70" y="180" width="30" height="5" fill="#fef08a"/>
+      <rect x="70" y="250" width="30" height="5" fill="#fef08a"/> <text x="105" y="255" fill="#fef08a" font-size="10">Smallest</text>
+      <!-- Lane 2 -->
+      <rect x="130" y="150" width="30" height="5" fill="#86efac"/>
+      <rect x="130" y="220" width="30" height="5" fill="#86efac"/>
+    </g>
+  </g>
+
+  <!-- Theory -->
+  <rect x="150" y="500" width="500" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="#86efac" stroke-width="1"/>
+  <text x="400" y="535" fill="#f8fafc" text-anchor="middle">DNA is negatively charged; moves towards the positive anode (+).</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Biology Grade 12</text>
+</svg>

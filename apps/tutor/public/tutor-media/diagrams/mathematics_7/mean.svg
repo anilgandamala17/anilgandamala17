@@ -1,0 +1,56 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Mean (Arithmetic Average)</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+
+<text x="400" y="80" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle">Mean = Sum of all observations ÷ Number of observations</text>
+<rect x="100" y="90" width="600" height="54" fill="none" stroke="#ffd54f" stroke-width="1.5" rx="8"/>
+<text x="400" y="118" font-family="'Segoe UI',sans-serif" font-size="22" fill="#ffd54f" text-anchor="middle" font-weight="bold">Mean = Σx ÷ n</text>
+<text x="400" y="137" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle">Σ = sum of | x = each value | n = total number of values</text>
+
+<rect x="20" y="158" width="370" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="181" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Worked Example</text>
+<text x="205" y="203" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Scores: 72, 85, 90, 68, 75</text>
+<text x="205" y="223" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Step 1: Sum = 72+85+90+68+75 = 390</text>
+<text x="205" y="243" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Step 2: n = 5</text>
+<text x="205" y="263" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">Mean = 390 ÷ 5 = 78</text>
+<text x="205" y="279" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">Average score is 78</text>
+
+<rect x="410" y="158" width="370" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="181" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Steps to Find Mean</text>
+<text x="595" y="203" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">1. List all observations</text>
+<text x="595" y="223" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">2. Add all values (Sum = Σx)</text>
+<text x="595" y="243" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3. Count total values (n)</text>
+<text x="595" y="263" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">4. Divide: Mean = Σx ÷ n</text>
+<text x="595" y="279" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">5. Include units in your answer</text>
+
+<line x1="20" y1="303" x2="780" y2="303" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="328" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Properties and Applications of Mean</text>
+
+<rect x="20" y="340" width="235" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="137" y="362" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Real-life Uses</text>
+<text x="137" y="383" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Class average marks</text>
+<text x="137" y="403" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Average rainfall</text>
+<text x="137" y="423" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Average temperature</text>
+<text x="137" y="443" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Average speed/income</text>
+<text x="137" y="461" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Best for symmetric data</text>
+
+<rect x="283" y="340" width="234" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="362" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Effect of Outliers</text>
+<text x="400" y="383" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Data: 10, 12, 11, 13, 100</text>
+<text x="400" y="403" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Mean = 146/5 = 29.2</text>
+<text x="400" y="423" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle">Extreme value shifts mean!</text>
+<text x="400" y="443" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">CEO salary vs workers</text>
+<text x="400" y="461" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Use median for skewed data</text>
+
+<rect x="545" y="340" width="235" height="130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="662" y="362" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">Key Properties</text>
+<text x="662" y="383" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Sum = Mean × n</text>
+<text x="662" y="403" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">If one value is added:</text>
+<text x="662" y="423" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">new mean can be found</text>
+<text x="662" y="443" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Missing value = Mean×n − Σrest</text>
+<text x="662" y="461" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Mean is always between min &amp; max</text>
+
+<text x="400" y="502" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">Practice: Find mean of 12, 15, 18, 20, 10</text>
+<text x="400" y="530" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle">Answer: (12+15+18+20+10) ÷ 5 = 75 ÷ 5 = 15</text>
+<text x="400" y="558" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Mean is the most commonly used measure of central tendency</text>
+</svg>

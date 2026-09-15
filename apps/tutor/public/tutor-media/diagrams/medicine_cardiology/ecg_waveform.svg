@@ -1,0 +1,41 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- ECG Grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+    <pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#smallGrid)" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Baseline -->
+  <line x1="0" y1="180" x2="400" y2="180" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+
+  <!-- ECG Waveform (P-QRS-T) -->
+  <path d="M 20 180 
+           L 60 180 
+           Q 75 160, 90 180 
+           L 110 180 
+           L 115 190 
+           L 130 60 
+           L 145 210 
+           L 155 180 
+           L 180 180 
+           Q 210 140, 240 180 
+           L 280 180" 
+    fill="none" stroke="#fef08a" stroke-width="2.5" />
+
+  <!-- Labels -->
+  <text x="75" y="155" font-size="10" fill="#93c5fd" text-anchor="middle" font-weight="bold">P</text>
+  <text x="130" y="50" font-size="10" fill="#fca5a5" text-anchor="middle" font-weight="bold">QRS</text>
+  <text x="210" y="135" font-size="10" fill="#86efac" text-anchor="middle" font-weight="bold">T</text>
+
+  <!-- Explanation arrows -->
+  <path d="M 130 220 L 130 240" stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#arrow)" />
+  <text x="130" y="255" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle">Ventricular Depolarization</text>
+
+  <text x="200" y="268" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">ECG Waveform — Sinus Rhythm</text>
+</svg>

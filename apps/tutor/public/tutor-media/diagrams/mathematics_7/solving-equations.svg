@@ -1,0 +1,48 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Solving Simple Equations</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="78" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle">An equation has an = sign. Goal: find value of the variable that makes it TRUE</text>
+<rect x="100" y="86" width="600" height="40" fill="none" stroke="#ffd54f" stroke-width="1.5" rx="6"/>
+<text x="400" y="111" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Balance Method: Whatever you do to one side, do to the other side</text>
+
+<rect x="20" y="138" width="370" height="118" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="161" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Transposition Method</text>
+<text x="205" y="183" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Move term to other side</text>
+<text x="205" y="203" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Sign changes when moved</text>
+<text x="205" y="223" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">+ becomes − | × becomes ÷</text>
+<text x="205" y="247" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">2x + 5 = 13 → 2x = 13−5 → x = 4</text>
+
+<rect x="410" y="138" width="370" height="118" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="161" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Trial and Error Method</text>
+<text x="595" y="183" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Substitute values for variable</text>
+<text x="595" y="203" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Check which value satisfies</text>
+<text x="595" y="223" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">x + 3 = 7 → try x=4: 4+3=7 ✓</text>
+<text x="595" y="247" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">Good for simple equations only</text>
+
+<line x1="20" y1="270" x2="780" y2="270" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="295" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Step-by-Step Examples</text>
+
+<rect x="20" y="307" width="370" height="148" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="205" y="330" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Example 1</text>
+<text x="205" y="352" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Solve: 3x − 5 = 13</text>
+<text x="205" y="373" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Step 1: 3x = 13 + 5 = 18</text>
+<text x="205" y="394" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Step 2: x = 18 ÷ 3 = 6</text>
+<text x="205" y="415" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">x = 6</text>
+<text x="205" y="440" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Verify: 3(6) − 5 = 18 − 5 = 13 ✓</text>
+<text x="205" y="449" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Substituting back confirms the answer</text>
+
+<rect x="410" y="307" width="370" height="148" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="595" y="330" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">Example 2</text>
+<text x="595" y="352" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Solve: 2x/3 = 8</text>
+<text x="595" y="373" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Step 1: 2x = 8 × 3 = 24</text>
+<text x="595" y="394" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Step 2: x = 24 ÷ 2 = 12</text>
+<text x="595" y="415" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">x = 12</text>
+<text x="595" y="440" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Verify: 2(12)/3 = 24/3 = 8 ✓</text>
+<text x="595" y="449" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Multiply both sides by denominator first</text>
+
+<line x1="20" y1="468" x2="780" y2="468" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="492" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Golden Rules of Equations</text>
+<text x="400" y="517" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Add or subtract the SAME number on both sides</text>
+<text x="400" y="540" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Multiply or divide by the SAME non-zero number on both sides</text>
+<text x="400" y="563" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Always VERIFY your answer by substituting back into the original equation</text>
+</svg>

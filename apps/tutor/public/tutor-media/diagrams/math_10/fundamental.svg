@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .bg{fill:#0d2818}
+      .title{fill:#f0e68c;font-size:15px;font-weight:bold}
+      .label{fill:#e0ffe0;font-size:11px}
+      .num{fill:#7fffd4;font-size:13px;font-weight:bold}
+      .prime{fill:#ff9f43;font-size:12px;font-weight:bold}
+      .line{stroke:#4ade80;stroke-width:1.5;fill:none}
+      .box{fill:#1a4030;stroke:#4ade80;stroke-width:1.2;rx:6}
+      .sub{fill:#aad4ff;font-size:10px}
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <!-- Title -->
+  <text x="210" y="26" text-anchor="middle" class="title">Fundamental Theorem of Arithmetic</text>
+  <text x="210" y="42" text-anchor="middle" class="sub">Every integer &gt; 1 is either prime or a unique product of primes</text>
+
+  <!-- Factor tree for 360 -->
+  <text x="210" y="72" text-anchor="middle" class="num">360</text>
+  <!-- Level 1 -->
+  <line x1="210" y1="78" x2="155" y2="108" class="line"/>
+  <line x1="210" y1="78" x2="265" y2="108" class="line"/>
+  <text x="155" y="122" text-anchor="middle" class="num">2</text>
+  <text x="265" y="122" text-anchor="middle" class="num">180</text>
+  <circle cx="155" cy="117" r="14" fill="none" stroke="#ff9f43" stroke-width="1.5"/>
+  <text x="155" y="121" text-anchor="middle" class="prime">2</text>
+  <!-- Level 2 -->
+  <line x1="265" y1="128" x2="230" y2="155" class="line"/>
+  <line x1="265" y1="128" x2="300" y2="155" class="line"/>
+  <circle cx="230" cy="162" r="14" fill="none" stroke="#ff9f43" stroke-width="1.5"/>
+  <text x="230" y="166" text-anchor="middle" class="prime">2</text>
+  <text x="300" y="166" text-anchor="middle" class="num">90</text>
+  <!-- Level 3 -->
+  <line x1="300" y1="172" x2="275" y2="196" class="line"/>
+  <line x1="300" y1="172" x2="325" y2="196" class="line"/>
+  <circle cx="275" cy="203" r="14" fill="none" stroke="#ff9f43" stroke-width="1.5"/>
+  <text x="275" y="207" text-anchor="middle" class="prime">2</text>
+  <text x="325" y="203" text-anchor="middle" class="num">45</text>
+  <!-- Level 4 -->
+  <line x1="325" y1="210" x2="308" y2="233" class="line"/>
+  <line x1="325" y1="210" x2="342" y2="233" class="line"/>
+  <circle cx="308" cy="240" r="14" fill="none" stroke="#ff9f43" stroke-width="1.5"/>
+  <text x="308" y="244" text-anchor="middle" class="prime">5</text>
+  <circle cx="342" cy="240" r="14" fill="none" stroke="#ff9f43" stroke-width="1.5"/>
+  <text x="342" y="244" text-anchor="middle" class="prime">9→3²</text>
+
+  <!-- Result box -->
+  <rect x="10" y="200" width="130" height="85" fill="#1a4030" stroke="#4ade80" stroke-width="1.2" rx="6"/>
+  <text x="75" y="220" text-anchor="middle" fill="#f0e68c" font-size="12" font-weight="bold">Prime Factorization</text>
+  <text x="75" y="238" text-anchor="middle" fill="#7fffd4" font-size="13">360 = 2³ × 3² × 5</text>
+  <text x="75" y="256" text-anchor="middle" fill="#e0ffe0" font-size="10">UNIQUE decomposition</text>
+  <text x="75" y="272" text-anchor="middle" fill="#aad4ff" font-size="10">LCM × HCF = a × b</text>
+
+  <!-- Theorem label -->
+  <text x="75" y="292" text-anchor="middle" fill="#ff9f43" font-size="9">HCF(a,b) × LCM(a,b) = a × b</text>
+  </g>
+</svg>

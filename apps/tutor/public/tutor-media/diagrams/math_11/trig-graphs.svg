@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 11px; font-weight: bold; }
+      .axis { stroke: #94a3b8; stroke-width: 1.5; }
+      .grid { stroke: #334155; stroke-width: 0.5; stroke-dasharray: 2; }
+      .sine { stroke: #60a5fa; stroke-width: 2.5; fill: none; }
+      .cosine { stroke: #f87171; stroke-width: 2.5; fill: none; stroke-dasharray: 4; }
+      .sub-label { fill: #fcd34d; font-size: 10px; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">Trigonometric Graphs (0 to 2π)</text>
+    
+    <g transform="translate(40, 130)">
+      <!-- Grid -->
+      <line x1="0" y1="-60" x2="320" y2="-60" class="grid" />
+      <line x1="0" y1="60" x2="320" y2="60" class="grid" />
+      <line x1="80" y1="-70" x2="80" y2="70" class="grid" /> <!-- pi/2 -->
+      <line x1="160" y1="-70" x2="160" y2="70" class="grid" /> <!-- pi -->
+      <line x1="240" y1="-70" x2="240" y2="70" class="grid" /> <!-- 3pi/2 -->
+      
+      <!-- Axes -->
+      <line x1="0" y1="0" x2="340" y2="0" class="axis" marker-end="url(#arrowhead)" />
+      <line x1="0" y1="70" x2="0" y2="-70" class="axis" marker-end="url(#arrowhead)" />
+      
+      <!-- Sine Wave: sin(0)=0, sin(pi/2)=1, sin(pi)=0, sin(3pi/2)=-1, sin(2pi)=0 -->
+      <path d="M 0,0 Q 40,-80 80,-60 T 160,0 T 240,60 T 320,0" class="sine" />
+      
+      <!-- Cosine Wave: cos(0)=1, cos(pi/2)=0, cos(pi)=-1, cos(3pi/2)=0, cos(2pi)=1 -->
+      <path d="M 0,-60 Q 40,-60 80,0 T 160,60 T 240,0 T 320,-60" class="cosine" />
+
+      <!-- Labels -->
+      <text x="345" y="5" class="label" font-size="10">x</text>
+      <text x="5" y="-75" class="label" font-size="10">y</text>
+      
+      <text x="80" y="15" class="sub-label" text-anchor="middle">π/2</text>
+      <text x="160" y="15" class="sub-label" text-anchor="middle">π</text>
+      <text x="240" y="15" class="sub-label" text-anchor="middle">3π/2</text>
+      <text x="320" y="15" class="sub-label" text-anchor="middle">2π</text>
+      
+      <text x="-15" y="-55" class="sub-label" text-anchor="end">1</text>
+      <text x="-15" y="65" class="sub-label" text-anchor="end">-1</text>
+      
+      <text x="200" y="-80" fill="#60a5fa" font-size="12" font-weight="bold">y = sin x</text>
+      <text x="200" y="-100" fill="#f87171" font-size="12" font-weight="bold">y = cos x</text>
+    </g>
+  </g>
+</svg>

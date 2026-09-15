@@ -1,0 +1,51 @@
+<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+<rect width="800" height="600" fill="#1a3a2a"/>
+
+<rect x="0" y="0" width="800" height="58" fill="#0d2418" opacity="0.9"/>
+<text x="400" y="39" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Knowing Our Numbers: Large Numbers</text>
+<rect x="20" y="65" width="760" height="88" fill="#0d2418" rx="6" opacity="1"/>
+<text x="400" y="86" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Place Value Chart</text>
+<rect x="24" y="100" width="88" height="44" fill="#1e4a30" rx="4" opacity="1"/>
+<text x="68" y="126" font-family="'Segoe UI',sans-serif" font-size="11" fill="#81c784" text-anchor="middle">Crores</text>
+<rect x="118" y="100" width="88" height="44" fill="#1e4a30" rx="4" opacity="1"/>
+<text x="162" y="126" font-family="'Segoe UI',sans-serif" font-size="11" fill="#81c784" text-anchor="middle">Ten Lakhs</text>
+<rect x="212" y="100" width="88" height="44" fill="#1e4a30" rx="4" opacity="1"/>
+<text x="256" y="126" font-family="'Segoe UI',sans-serif" font-size="11" fill="#81c784" text-anchor="middle">Lakhs</text>
+<rect x="306" y="100" width="88" height="44" fill="#1e4a30" rx="4" opacity="1"/>
+<text x="350" y="126" font-family="'Segoe UI',sans-serif" font-size="11" fill="#81c784" text-anchor="middle">Ten Thou.</text>
+<rect x="400" y="100" width="88" height="44" fill="#1e4a30" rx="4" opacity="1"/>
+<text x="444" y="126" font-family="'Segoe UI',sans-serif" font-size="11" fill="#81c784" text-anchor="middle">Thousands</text>
+<rect x="494" y="100" width="88" height="44" fill="#1e4a30" rx="4" opacity="1"/>
+<text x="538" y="126" font-family="'Segoe UI',sans-serif" font-size="11" fill="#81c784" text-anchor="middle">Hundreds</text>
+<rect x="588" y="100" width="88" height="44" fill="#1e4a30" rx="4" opacity="1"/>
+<text x="632" y="126" font-family="'Segoe UI',sans-serif" font-size="11" fill="#81c784" text-anchor="middle">Tens</text>
+<rect x="682" y="100" width="88" height="44" fill="#1e4a30" rx="4" opacity="1"/>
+<text x="726" y="126" font-family="'Segoe UI',sans-serif" font-size="11" fill="#81c784" text-anchor="middle">Units</text>
+<rect x="20" y="162" width="370" height="130" fill="#1e4a30" rx="8"/>
+<text x="205" y="186" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">1,000 — One Thousand</text>
+<text x="205" y="206" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">= 10 Hundreds</text>
+<text x="205" y="224" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">= 100 Tens</text>
+<text x="205" y="242" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">= 1000 Units</text>
+<rect x="410" y="162" width="370" height="130" fill="#1e4a30" rx="8"/>
+<text x="595" y="186" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">1,00,000 — One Lakh</text>
+<text x="595" y="206" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">= 100 Thousands</text>
+<text x="595" y="224" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">= 10 Ten-Thousands</text>
+<text x="595" y="242" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Used in Indian system</text>
+<rect x="20" y="300" width="370" height="130" fill="#1e4a30" rx="8"/>
+<text x="205" y="324" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">10,00,000 — Ten Lakh</text>
+<text x="205" y="344" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">= 10 Lakhs</text>
+<text x="205" y="362" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">= 1 Million (International)</text>
+<text x="205" y="380" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Common in finance</text>
+<rect x="410" y="300" width="370" height="130" fill="#1e4a30" rx="8"/>
+<text x="595" y="324" font-family="'Segoe UI',sans-serif" font-size="16" fill="#81c784" text-anchor="middle" font-weight="bold">1,00,00,000 — One Crore</text>
+<text x="595" y="344" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">= 100 Lakhs</text>
+<text x="595" y="362" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">= 10 Million (International)</text>
+<text x="595" y="380" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle">Used for large sums</text>
+<rect x="20" y="438" width="760" height="52" fill="#0d2418" rx="6" opacity="1"/>
+<text x="400" y="458" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Reading large numbers: Use commas</text>
+<text x="400" y="482" font-family="'Segoe UI',sans-serif" font-size="11" fill="#81c784" text-anchor="middle" font-weight="normal">Indian: 1,23,45,678 → One crore, twenty-three lakh, forty-five thousand, six hundred seventy-eight</text>
+<rect x="20" y="498" width="760" height="50" fill="#1e4a30" rx="6" opacity="1"/>
+<text x="400" y="520" font-family="'Segoe UI',sans-serif" font-size="13" fill="#e8f5e9" text-anchor="middle" font-weight="normal">Estimation: Rounding to nearest 10, 100, 1000 makes calculation easier</text>
+<text x="400" y="542" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="normal">e.g. 4,78,534 ≈ 5,00,000 (rounding to nearest lakh)</text>
+
+</svg>

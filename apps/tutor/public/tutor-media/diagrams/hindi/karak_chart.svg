@@ -1,0 +1,66 @@
+<svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:wght@400;700&display=swap');
+      text { font-family: 'Tiro Devanagari Hindi', sans-serif; fill: #e2e8f0; }
+      .title { font-size: 18px; font-weight: bold; fill: #fbbf24; }
+      .row-bg { fill: #334155; opacity: 0.5; }
+      .header { font-size: 14px; font-weight: bold; fill: #94a3b8; }
+      .cell { font-size: 14px; }
+      .marker { fill: #fbbf24; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <rect width="500" height="350" fill="#1a3a2a" />
+  <text x="20" y="30" class="title">HINDI KARAK (कारक) CHART</text>
+
+  <!-- Headers -->
+  <text x="30" y="60" class="header">Karak (Case)</text>
+  <text x="180" y="60" class="header">Chinh (Marker)</text>
+  <text x="320" y="60" class="header">Meaning / Use</text>
+
+  <!-- Row 1: Karta -->
+  <rect x="20" y="70" width="460" height="30" class="row-bg" />
+  <text x="30" y="90" class="cell">Karta (कर्ता)</text>
+  <text x="180" y="90" class="cell marker">Ne (ने)</text>
+  <text x="320" y="90" class="cell">Doer of Action</text>
+
+  <!-- Row 2: Karma -->
+  <text x="30" y="120" class="cell">Karma (कर्म)</text>
+  <text x="180" y="120" class="cell marker">Ko (को)</text>
+  <text x="320" y="120" class="cell">Object of Action</text>
+
+  <!-- Row 3: Karan -->
+  <rect x="20" y="130" width="460" height="30" class="row-bg" />
+  <text x="30" y="150" class="cell">Karan (करण)</text>
+  <text x="180" y="150" class="cell marker">Se, Dwara (से, द्वारा)</text>
+  <text x="320" y="150" class="cell">Instrument / Medium</text>
+
+  <!-- Row 4: Sampradan -->
+  <text x="30" y="180" class="cell">Sampradan (संप्रदान)</text>
+  <text x="180" y="180" class="cell marker">Ko, Ke Liye (को, के लिए)</text>
+  <text x="320" y="180" class="cell">For whom/what</text>
+
+  <!-- Row 5: Apadan -->
+  <rect x="20" y="190" width="460" height="30" class="row-bg" />
+  <text x="30" y="210" class="cell">Apadan (अपादान)</text>
+  <text x="180" y="210" class="cell marker">Se (से)</text>
+  <text x="320" y="210" class="cell">Separation (comparison)</text>
+
+  <!-- Row 6: Sambandh -->
+  <text x="30" y="240" class="cell">Sambandh (संबंध)</text>
+  <text x="180" y="240" class="cell marker">Ka, Ki, Ke (का, की, के)</text>
+  <text x="320" y="240" class="cell">Relationship / Possession</text>
+
+   <!-- Row 7: Adhikaran -->
+  <rect x="20" y="250" width="460" height="30" class="row-bg" />
+  <text x="30" y="270" class="cell">Adhikaran (अधिकरण)</text>
+  <text x="180" y="270" class="cell marker">Mein, Par (में, पर)</text>
+  <text x="320" y="270" class="cell">Locative (In, On)</text>
+
+    <!-- Row 8: Sambodhan -->
+  <text x="30" y="300" class="cell">Sambodhan (संबोधन)</text>
+  <text x="180" y="300" class="cell marker">Hey, Oh (हे, अरे)</text>
+  <text x="320" y="300" class="cell">Addressing someone</text>
+
+</svg>

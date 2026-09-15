@@ -1,0 +1,21 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nucleus -->
+  <circle cx="200" cy="140" r="15" fill="#fca5a5" />
+  <text x="200" y="145" font-size="8" fill="#000" text-anchor="middle" font-weight="bold">P+</text>
+
+  <!-- Electron Shells -->
+  <circle cx="200" cy="140" r="50" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+  <circle cx="200" cy="140" r="90" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="4,2" />
+
+  <!-- Electrons -->
+  <circle cx="250" cy="140" r="4" fill="#93c5fd" />
+  <circle cx="150" cy="140" r="4" fill="#93c5fd" />
+  <circle cx="200" cy="50" r="4" fill="#86efac" />
+
+  <!-- Labels -->
+  <text x="200" y="120" font-size="9" fill="#fca5a5" text-anchor="middle">Nucleus (Protons/Neutrons)</text>
+  <text x="255" y="135" font-size="8" fill="#93c5fd">Electron (e-)</text>
+  <text x="200" y="40" font-size="8" fill="#86efac" text-anchor="middle">Valence Shell</text>
+
+  <text x="200" y="268" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">Atomic Structure — Bohr Model</text>
+</svg>

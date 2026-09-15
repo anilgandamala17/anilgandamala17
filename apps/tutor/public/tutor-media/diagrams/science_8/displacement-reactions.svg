@@ -1,0 +1,49 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Displacement Reactions in Detail</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">A chemical reaction where a more reactive metal replaces a less reactive metal from its salt solution</text>
+
+<!-- Beaker A -->
+<rect x="50" y="100" width="150" height="180" fill="rgba(66,165,245,0.2)" stroke="#fff" stroke-width="2"/>
+<path d="M50,140 Q125,130 200,140" fill="none" stroke="#42a5f5" stroke-width="1.5"/>
+<text x="125" y="125" font-family="'Segoe UI',sans-serif" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">Beaker A</text>
+<text x="125" y="220" font-family="'Segoe UI',sans-serif" font-size="11" fill="#fff" text-anchor="middle">CuSO₄ + Zn</text>
+<rect x="110" y="240" width="30" height="30" fill="#9e9e9e" stroke="#fff"/>
+<text x="125" y="300" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Result: Colorless</text>
+<text x="125" y="315" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Zn displaces Cu</text>
+
+<!-- Beaker B -->
+<rect x="250" y="100" width="150" height="180" fill="rgba(66,165,245,0.2)" stroke="#fff" stroke-width="2"/>
+<path d="M250,140 Q325,130 400,140" fill="none" stroke="#42a5f5" stroke-width="1.5"/>
+<text x="325" y="125" font-family="'Segoe UI',sans-serif" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">Beaker B</text>
+<text x="325" y="220" font-family="'Segoe UI',sans-serif" font-size="11" fill="#fff" text-anchor="middle">CuSO₄ + Fe</text>
+<rect x="310" y="240" width="30" height="30" fill="#795548" stroke="#fff"/>
+<text x="325" y="300" font-family="'Segoe UI',sans-serif" font-size="12" fill="#86efac" text-anchor="middle">Result: Greenish</text>
+<text x="325" y="315" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Fe displaces Cu</text>
+
+<!-- Beaker C (No Reaction) -->
+<rect x="450" y="100" width="150" height="180" fill="rgba(134,239,172,0.1)" stroke="#fff" stroke-width="2"/>
+<path d="M450,140 Q525,130 600,140" fill="none" stroke="#86efac" stroke-width="1.5"/>
+<text x="525" y="125" font-family="'Segoe UI',sans-serif" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">Beaker C</text>
+<text x="525" y="220" font-family="'Segoe UI',sans-serif" font-size="11" fill="#fff" text-anchor="middle">ZnSO₄ + Cu</text>
+<rect x="510" y="240" width="30" height="30" fill="#ff7043" stroke="#fff"/>
+<text x="525" y="300" font-family="'Segoe UI',sans-serif" font-size="12" fill="#f48fb1" text-anchor="middle">NO REACTION</text>
+<text x="525" y="315" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Cu cannot displace Zn</text>
+
+<!-- Beaker D (No Reaction) -->
+<rect x="630" y="100" width="120" height="180" fill="rgba(134,239,172,0.1)" stroke="#fff" stroke-width="2"/>
+<text x="690" y="125" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle">Beaker D / E</text>
+<text x="690" y="220" font-family="'Segoe UI',sans-serif" font-size="10" fill="#fff" text-anchor="middle">FeSO₄ + Cu</text>
+<text x="690" y="300" font-family="'Segoe UI',sans-serif" font-size="12" fill="#f48fb1" text-anchor="middle">No Change</text>
+
+<line x1="20" y1="345" x2="780" y2="345" stroke="#f48fb1" stroke-width="1"/>
+<text x="400" y="370" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Key Principle of Reactivity</text>
+<text x="400" y="405" font-family="'Segoe UI',sans-serif" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">Stronger (More Reactive) replaces Weaker (Less Reactive)</text>
+<text x="400" y="435" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle">Zinc &gt; Iron &gt; Copper</text>
+
+<rect x="100" y="460" width="600" height="100" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" rx="10"/>
+<text x="400" y="485" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle" font-weight="bold">Observations</text>
+<text x="120" y="510" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="start">• Beaker A: Zn replaces Cu from Blue CuSO₄ → Colorless ZnSO₄</text>
+<text x="120" y="535" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="start">• Beaker B: Fe replaces Cu from Blue CuSO₄ → Greenish FeSO₄</text>
+<text x="120" y="560" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="start">• Others: No change because less reactive metal cannot displace more reactive one.</text>
+</svg>

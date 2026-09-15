@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Chalkboard Aesthetic: Transparent Background -->
+  <!-- Integrated Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="32" fill="#fef08a" text-anchor="middle" font-weight="bold">Determinant Properties</text>
+  <line x1="100" y1="70" x2="700" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- High-Fidelity Diagram Area -->
+  <rect x="150" y="120" width="500" height="350" rx="15" fill="rgba(56, 189, 248, 0.2)" stroke="#86efac" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <!-- Topic-Specific Symbols/Placeholder -->
+  <text x="400" y="300" font-family="Georgia, serif" font-size="24" fill="#f8fafc" text-anchor="middle" opacity="0.7">[ MATHEMATICS_12 Visual: Determinant Properties ]</text>
+  
+  <!-- Detailed Labels (Standard Requirement) -->
+  <g font-family="Arial, sans-serif" font-size="14" fill="#f8fafc">
+    <text x="170" y="150">■ Primary Component</text>
+    <text x="170" y="180">■ Secondary Element</text>
+    <text x="170" y="210">■ Interaction Zone</text>
+    <text x="170" y="240">■ Theoretical Output</text>
+  </g>
+
+  <!-- Formula/Key (for STEM topics) -->
+  <rect x="200" y="480" width="400" height="60" rx="10" fill="rgba(255,255,255,0.05)" stroke="#fef08a" stroke-width="1"/>
+  <text x="400" y="515" font-family="'Times New Roman', serif" font-style="italic" font-size="20" fill="#fef08a" text-anchor="middle">Key Conceptual representation of Determinant Properties</text>
+  
+  <!-- IAra Branding -->
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026</text>
+</svg>

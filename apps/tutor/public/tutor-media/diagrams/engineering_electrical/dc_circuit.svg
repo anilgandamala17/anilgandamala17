@@ -1,0 +1,35 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowDC" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#fef08a" />
+    </marker>
+  </defs>
+
+  <!-- Circuit loop -->
+  <rect x="80" y="70" width="240" height="140" rx="4" fill="none" stroke="rgba(255,255,255,0.30)" stroke-width="2" />
+
+  <!-- Battery (left side) -->
+  <line x1="80" y1="110" x2="80" y2="130" stroke="#fef08a" stroke-width="4" />
+  <line x1="70" y1="110" x2="90" y2="110" stroke="#fef08a" stroke-width="3" />
+  <line x1="75" y1="130" x2="85" y2="130" stroke="#fef08a" stroke-width="2" />
+  <text x="55" y="125" font-size="9" fill="#fef08a" text-anchor="middle" font-weight="bold">V</text>
+  <text x="55" y="137" font-size="7" fill="rgba(255,255,255,0.30)" text-anchor="middle">(battery)</text>
+
+  <!-- Resistor (top) -->
+  <path d="M 160 70 L 165 58 L 172 82 L 179 58 L 186 82 L 193 58 L 200 70"
+    fill="none" stroke="#fca5a5" stroke-width="2" />
+  <text x="180" y="50" font-size="9" fill="#fca5a5" text-anchor="middle" font-weight="bold">R (Ω)</text>
+  <text x="180" y="42" font-size="7" fill="rgba(255,255,255,0.30)" text-anchor="middle">(resistor)</text>
+
+  <!-- Current direction arrows -->
+  <line x1="200" y1="70" x2="300" y2="70" stroke="#fef08a" stroke-width="1.5" marker-end="url(#arrowDC)" />
+  <line x1="300" y1="70" x2="320" y2="70" stroke="#fef08a" stroke-width="1.5" />
+  <line x1="80" y1="210" x2="180" y2="210" stroke="#fef08a" stroke-width="1.5" marker-end="url(#arrowDC)" />
+  <text x="200" y="225" font-size="8" fill="#fef08a" text-anchor="middle">I (current direction)</text>
+
+  <!-- Ohm's Law -->
+  <text x="200" y="150" font-size="16" fill="#fef08a" text-anchor="middle" font-weight="bold">V = I × R</text>
+  <text x="200" y="165" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="middle">Ohm's Law</text>
+
+  <text x="200" y="268" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">DC Circuit Schematic</text>
+</svg>

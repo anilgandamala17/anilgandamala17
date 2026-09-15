@@ -1,0 +1,63 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Nutrition in Ruminants</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<rect x="80" y="63" width="640" height="42" fill="none" stroke="#ffd54f" stroke-width="1.5" rx="6"/>
+<text x="400" y="82" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">Ruminants = Animals that re-chew swallowed food (cud chewing)</text>
+<text x="400" y="100" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle">Examples: Cow, Buffalo, Deer, Goat, Sheep, Camel, Giraffe</text>
+
+<text x="400" y="130" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">The 4-Chambered Stomach</text>
+
+<rect x="20" y="140" width="185" height="140" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="112" y="163" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">1. Rumen</text>
+<text x="112" y="183" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Largest chamber</text>
+<text x="112" y="201" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Stores food temporarily</text>
+<text x="112" y="219" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Microbes ferment cellulose</text>
+<text x="112" y="237" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Softens food with water</text>
+<text x="112" y="270" font-family="'Segoe UI',sans-serif" font-size="11" fill="#ffd54f" text-anchor="middle">Food becomes BOLUS (cud)</text>
+
+<rect x="215" y="140" width="185" height="140" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="307" y="163" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">2. Reticulum</text>
+<text x="307" y="183" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Honeycomb-like walls</text>
+<text x="307" y="201" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Forms food into balls</text>
+<text x="307" y="219" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Sends cud back to mouth</text>
+<text x="307" y="237" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">For re-chewing (rumination)</text>
+<text x="307" y="270" font-family="'Segoe UI',sans-serif" font-size="11" fill="#ffd54f" text-anchor="middle">Cud = regurgitated food</text>
+
+<rect x="410" y="140" width="185" height="140" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="502" y="163" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">3. Omasum</text>
+<text x="502" y="183" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Many leaf-like folds</text>
+<text x="502" y="201" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Absorbs water from food</text>
+<text x="502" y="219" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Further grinds re-chewed food</text>
+<text x="502" y="237" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Water removal stage</text>
+<text x="502" y="270" font-family="'Segoe UI',sans-serif" font-size="11" fill="#ffd54f" text-anchor="middle">Makes food more concentrated</text>
+
+<rect x="605" y="140" width="175" height="140" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="692" y="163" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="middle" font-weight="bold">4. Abomasum</text>
+<text x="692" y="183" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">True/real stomach</text>
+<text x="692" y="201" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Produces digestive enzymes</text>
+<text x="692" y="219" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">HCl + pepsin like humans</text>
+<text x="692" y="237" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Final protein digestion</text>
+<text x="692" y="270" font-family="'Segoe UI',sans-serif" font-size="11" fill="#ffd54f" text-anchor="middle">Works like human stomach</text>
+
+<!-- Arrows between chambers -->
+<line x1="205" y1="210" x2="215" y2="210" stroke="#86efac" stroke-width="1.5"/>
+<polygon points="215,210 208,206 208,214" fill="#86efac"/>
+<line x1="400" y1="210" x2="410" y2="210" stroke="#86efac" stroke-width="1.5"/>
+<polygon points="410,210 403,206 403,214" fill="#86efac"/>
+<line x1="595" y1="210" x2="605" y2="210" stroke="#86efac" stroke-width="1.5"/>
+<polygon points="605,210 598,206 598,214" fill="#86efac"/>
+
+<line x1="20" y1="295" x2="780" y2="295" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="320" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Cud Chewing Process (Rumination)</text>
+
+<rect x="20" y="332" width="760" height="90" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="356" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">1. Animal eats grass quickly → swallowed into Rumen for softening</text>
+<text x="400" y="378" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">2. Cud (bolus) regurgitated back to mouth for thorough re-chewing</text>
+<text x="400" y="400" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">3. Re-swallowed → Omasum → Abomasum for complete final digestion</text>
+<text x="400" y="413" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Microbes in rumen break down cellulose from grass — impossible for humans!</text>
+
+<text x="400" y="455" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">Advantage: Can eat huge amounts quickly → chew cud safely while resting</text>
+<text x="400" y="480" font-family="'Segoe UI',sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">Cellulose digestion gives energy from plant cell walls — unavailable to humans</text>
+<text x="400" y="520" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Cellulose = structural carbohydrate in plant cell walls | Humans lack cellulase enzyme</text>
+<text x="400" y="550" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Pseudo-ruminants: Horse, Rabbit (hindgut fermenters, different system)</text>
+</svg>

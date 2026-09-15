@@ -1,0 +1,38 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .node { fill: #1e293b; stroke: #4ade80; stroke-width: 1.5; rx: 15; }
+      .node-text { fill: #ffffff; font-size: 10px; font-weight: bold; }
+      .arrow { stroke: #fca5a5; stroke-width: 2; fill: none; marker-end: url(#arr); }
+    </style>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#fca5a5"/>
+    </marker>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">The Scientific Method</text>
+    
+    <rect x="140" y="45" width="120" height="30" class="node" />
+    <text x="200" y="64" text-anchor="middle" class="node-text">Observation</text>
+    
+    <path d="M 200 75 L 200 95" class="arrow" />
+    
+    <rect x="140" y="95" width="120" height="30" class="node" />
+    <text x="200" y="114" text-anchor="middle" class="node-text">Hypothesis</text>
+    
+    <path d="M 200 125 L 200 145" class="arrow" />
+    
+    <rect x="140" y="145" width="120" height="30" class="node" />
+    <text x="200" y="164" text-anchor="middle" class="node-text">Experimentation</text>
+    
+    <path d="M 200 175 L 200 195" class="arrow" />
+    
+    <rect x="140" y="195" width="120" height="30" class="node" />
+    <text x="200" y="214" text-anchor="middle" class="node-text">Theories/Laws</text>
+    
+    <!-- Loop back -->
+    <path d="M 140 210 Q 80 210 80 60 L 140 60" class="arrow" stroke-dasharray="4" />
+    <text x="85" y="130" transform="rotate(-90, 85, 130)" font-size="8" fill="#93c5fd">Refinement</text>
+  </g>
+</svg>

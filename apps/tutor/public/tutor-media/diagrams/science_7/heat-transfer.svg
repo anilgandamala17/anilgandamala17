@@ -1,0 +1,57 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="40" font-family="'Segoe UI',sans-serif" font-size="26" fill="#ffd54f" text-anchor="middle" font-weight="bold">Transfer of Heat</text>
+<line x1="20" y1="55" x2="780" y2="55" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="76" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle">Heat always flows from HOTTER bodies to COOLER bodies — never the other way</text>
+
+<text x="137" y="105" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Conduction</text>
+<rect x="20" y="112" width="230" height="230" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="135" y="135" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Heat through solids</text>
+<text x="135" y="155" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Molecules vibrate → pass energy</text>
+<text x="135" y="175" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">No bulk movement of material</text>
+<!-- Metal bar demo -->
+<rect x="50" y="190" width="170" height="20" fill="none" stroke="#86efac" stroke-width="1.5" rx="3"/>
+<text x="55" y="204" font-family="'Segoe UI',sans-serif" font-size="11" fill="#f48fb1">🔥Hot</text>
+<text x="155" y="204" font-family="'Segoe UI',sans-serif" font-size="11" fill="#80d8ff">Cool→</text>
+<text x="135" y="230" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Metal rod, cooking utensils</text>
+<text x="135" y="248" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Conductors: metals (iron, copper)</text>
+<text x="135" y="268" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Insulators: wood, plastic, rubber</text>
+<text x="135" y="288" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Poor: liquids and gases</text>
+<text x="135" y="305" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Air is a poor conductor</text>
+<text x="135" y="334" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">(hence woollen clothes are warm)</text>
+
+<text x="400" y="105" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Convection</text>
+<rect x="280" y="112" width="235" height="230" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="397" y="135" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Heat through fluids (liquids/gases)</text>
+<text x="397" y="155" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Hot fluid rises → cool fluid sinks</text>
+<text x="397" y="175" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Bulk movement — convection current</text>
+<!-- Arrows for convection -->
+<ellipse cx="397" cy="235" rx="60" ry="50" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="370" y="202" font-family="'Segoe UI',sans-serif" font-size="11" fill="#f48fb1">↑hot</text>
+<text x="410" y="270" font-family="'Segoe UI',sans-serif" font-size="11" fill="#80d8ff">cool↓</text>
+<text x="397" y="300" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Sea breeze, radiators</text>
+<text x="397" y="318" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Boiling water, wind formation</text>
+<text x="397" y="334" font-family="'Segoe UI',sans-serif" font-size="11" fill="#ffd54f" text-anchor="middle">Not in solids</text>
+
+<text x="660" y="105" font-family="'Segoe UI',sans-serif" font-size="17" fill="#ffd54f" text-anchor="middle" font-weight="bold">Radiation</text>
+<rect x="540" y="112" width="240" height="230" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="660" y="135" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Heat as electromagnetic waves</text>
+<text x="660" y="155" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">NO medium required</text>
+<text x="660" y="175" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Can travel through vacuum</text>
+<text x="660" y="195" font-family="'Segoe UI',sans-serif" font-size="13" fill="#ffd54f" text-anchor="middle">☀ → Earth (space!)</text>
+<text x="660" y="220" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Dark surfaces: absorb more</text>
+<text x="660" y="240" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Light surfaces: reflect more</text>
+<text x="660" y="260" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Best radiator: rough black surface</text>
+<text x="660" y="280" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Best reflector: shiny white surface</text>
+<text x="660" y="300" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Radiant heaters, sun's warmth</text>
+<text x="660" y="318" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">Infrared waves (heat rays)</text>
+<text x="660" y="334" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Fastest mode of heat transfer</text>
+
+<line x1="20" y1="356" x2="780" y2="356" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+<text x="400" y="380" font-family="'Segoe UI',sans-serif" font-size="16" fill="#ffd54f" text-anchor="middle" font-weight="bold">Real-Life Applications</text>
+<rect x="20" y="392" width="760" height="95" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" rx="8"/>
+<text x="400" y="415" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Conduction: cooking pots, iron boxes, thermometers, blacksmith work</text>
+<text x="400" y="437" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Convection: ventilation systems, refrigerator cooling, sea/land breeze, hot air balloons</text>
+<text x="400" y="459" font-family="'Segoe UI',sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Radiation: solar cooker (dark inner surface), white clothes in summer, thermos flask (vacuum prevents all 3)</text>
+<text x="400" y="472" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Thermos / Dewar flask: reflects radiation, has vacuum against conduction &amp; convection</text>
+<text x="400" y="520" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.55)" text-anchor="middle">Heat energy unit: Joule (J) | Temperature: °Celsius or Kelvin | Heat always = natural flow from high to low temperature</text>
+</svg>

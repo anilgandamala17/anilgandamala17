@@ -1,0 +1,19 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Funnel Shape -->
+  <polygon points="50,40 350,40 250,220 150,220" fill="none" stroke="rgba(255,255,255,0.30)" stroke-width="2" />
+  <line x1="83" y1="100" x2="317" y2="100" stroke="rgba(255,255,255,0.30)" stroke-width="1" />
+  <line x1="117" y1="160" x2="283" y2="160" stroke="rgba(255,255,255,0.30)" stroke-width="1" />
+
+  <!-- Funnel Stages -->
+  <text x="200" y="75" font-size="10" fill="#93c5fd" text-anchor="middle" font-weight="bold">AWARENESS (Traffic)</text>
+  <text x="200" y="135" font-size="10" fill="#fef08a" text-anchor="middle" font-weight="bold">CONSIDERATION (Leads)</text>
+  <text x="200" y="195" font-size="10" fill="#86efac" text-anchor="middle" font-weight="bold">CONVERSION (Sales)</text>
+
+  <!-- Side Labels -->
+  <text x="360" y="75" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="start">Keywords / Ads</text>
+  <text x="360" y="135" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="start">Content / Email</text>
+  <text x="360" y="195" font-size="8" fill="rgba(255,255,255,0.30)" text-anchor="start">Checkouts</text>
+
+  <!-- Title -->
+  <text x="200" y="268" font-size="12" fill="#86efac" text-anchor="middle" font-weight="bold">Marketing Funnel — SEO Strategy</text>
+</svg>

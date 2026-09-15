@@ -1,0 +1,53 @@
+<svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="38" font-family="'Segoe UI',sans-serif" font-size="24" fill="#ffd54f" text-anchor="middle" font-weight="bold">Key Features of the Indian Constitution</text>
+<line x1="20" y1="52" x2="780" y2="52" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="70" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle">Adopted on 26th Jan 1950 | Longest written constitution in the world</text>
+
+<rect x="25" y="90" width="235" height="420" fill="none" stroke="#ffd54f" stroke-width="2" rx="10"/>
+<text x="142" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">I. Federalism</text>
+<text x="40" y="150" font-family="'Segoe UI',sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="start">More than one level of Govt.</text>
+<text x="50" y="180" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="start">• Central Govt.</text>
+<text x="50" y="210" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="start">• State Govt.</text>
+<text x="50" y="240" font-family="'Segoe UI',sans-serif" font-size="14" fill="#86efac" text-anchor="start">• Panchayati Raj</text>
+<text x="142" y="280" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">Distributes power between layers</text>
+
+<text x="142" y="325" font-family="'Segoe UI',sans-serif" font-size="14" fill="#ffd54f" text-anchor="middle" font-weight="bold">II. Parliamentary Govt.</text>
+<text x="40" y="355" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.9)" text-anchor="start">Representatives elected by people</text>
+<text x="40" y="380" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="start">Universal Adult Suffrage:</text>
+<text x="40" y="405" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">Every citizen ≥ 18 can vote</text>
+<text x="142" y="445" font-family="'Segoe UI',sans-serif" font-size="12" fill="#f48fb1" text-anchor="middle" font-weight="bold">III. Secularism</text>
+<text x="142" y="475" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">State does not promote any religion</text>
+
+<rect x="282" y="90" width="492" height="420" fill="none" stroke="#86efac" stroke-width="2" rx="10"/>
+<text x="528" y="115" font-family="'Segoe UI',sans-serif" font-size="15" fill="#86efac" text-anchor="middle" font-weight="bold">IV. Separation of Powers</text>
+
+<rect x="300" y="140" width="140" height="80" fill="rgba(134,239,172,0.1)" stroke="#86efac" stroke-width="1.5" rx="5"/>
+<text x="370" y="175" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">Legislature</text>
+<text x="370" y="200" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Elected Reps (Make Laws)</text>
+
+<rect x="460" y="140" width="140" height="80" fill="rgba(255,213,79,0.1)" stroke="#ffd54f" stroke-width="1.5" rx="5"/>
+<text x="530" y="175" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">Executive</text>
+<text x="530" y="200" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Team implementing laws</text>
+
+<rect x="620" y="140" width="140" height="80" fill="rgba(244,143,177,0.1)" stroke="#f48fb1" stroke-width="1.5" rx="5"/>
+<text x="690" y="175" font-family="'Segoe UI',sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">Judiciary</text>
+<text x="690" y="200" font-family="'Segoe UI',sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">System of Courts</text>
+
+<line x1="300" y1="240" x2="760" y2="240" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+<text x="528" y="270" font-family="'Segoe UI',sans-serif" font-size="15" fill="#ffd54f" text-anchor="middle" font-weight="bold">V. Fundamental Rights</text>
+<text x="320" y="305" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">1. Right to Equality</text>
+<text x="320" y="330" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">2. Right to Freedom</text>
+<text x="320" y="355" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">3. Right against Exploitation</text>
+<text x="550" y="305" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">4. Freedom of Religion</text>
+<text x="550" y="330" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">5. Cultural &amp; Educational Rights</text>
+<text x="550" y="355" font-family="'Segoe UI',sans-serif" font-size="12" fill="#fff" text-anchor="start">6. Constitutional Remedies</text>
+
+<text x="528" y="405" font-family="'Segoe UI',sans-serif" font-size="13" fill="#86efac" text-anchor="middle" font-weight="bold">"The Conscience of the Indian Constitution"</text>
+<text x="528" y="430" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Protects citizens from arbitrary power of state</text>
+
+<rect x="300" y="455" width="460" height="40" fill="none" stroke="#f48fb1" stroke-width="1" rx="5"/>
+<text x="530" y="480" font-family="'Segoe UI',sans-serif" font-size="13" fill="#f48fb1" text-anchor="middle">Directive Principles of State Policy (Social/Economic Reform)</text>
+
+<text x="400" y="555" font-family="'Segoe UI',sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">Dr. B.R. Ambedkar: Father of the Indian Constitution</text>
+<text x="400" y="580" font-family="'Segoe UI',sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">Constituent Assembly (1946) represented all sections of society.</text>
+</svg>

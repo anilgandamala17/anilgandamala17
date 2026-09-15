@@ -1,0 +1,43 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- NO BACKGROUND RECT -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="28" fill="#fef08a" text-anchor="middle" font-weight="bold">Animal Kingdom: Basis of Classification</text>
+  <path d="M 230,60 L 570,60" stroke="#fef08a" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.4" />
+
+  <!-- Classification Levels -->
+  <g transform="translate(150, 100)">
+    <!-- Level of Organisation -->
+    <g transform="translate(0, 0)">
+      <circle cx="15" cy="15" r="5" fill="#fef08a" />
+      <text x="30" y="20" font-family="Georgia, serif" font-size="18" fill="#fef08a" font-weight="bold">Levels of Organisation</text>
+      <text x="50" y="45" font-family="Arial" font-size="14" fill="#f8fafc" opacity="0.8">Cellular, Tissue, Organ, Organ System</text>
+    </g>
+
+    <!-- Symmetry -->
+    <g transform="translate(0, 80)">
+      <circle cx="15" cy="15" r="5" fill="#fef08a" />
+      <text x="30" y="20" font-family="Georgia, serif" font-size="18" fill="#fef08a" font-weight="bold">Symmetry</text>
+      <text x="50" y="45" font-family="Arial" font-size="14" fill="#f8fafc" opacity="0.8">Asymmetrical, Radial, Bilateral</text>
+      <!-- Visual hint -->
+      <circle cx="450" cy="-10" r="30" fill="none" stroke="#f8fafc" stroke-width="1" stroke-dasharray="4,2" opacity="0.3" />
+      <line x1="420" y1="-10" x2="480" y2="-10" stroke="#f8fafc" stroke-width="1" opacity="0.3" />
+      <line x1="450" y1="-40" x2="450" y2="20" stroke="#f8fafc" stroke-width="1" opacity="0.3" />
+    </g>
+
+    <!-- Germ Layers -->
+    <g transform="translate(0, 160)">
+      <circle cx="15" cy="15" r="5" fill="#fef08a" />
+      <text x="30" y="20" font-family="Georgia, serif" font-size="18" fill="#fef08a" font-weight="bold">Germ Layers</text>
+      <text x="50" y="45" font-family="Arial" font-size="14" fill="#f8fafc" opacity="0.8">Diploblastic (2), Triploblastic (3)</text>
+    </g>
+
+    <!-- Coelom -->
+    <g transform="translate(0, 240)">
+      <circle cx="15" cy="15" r="5" fill="#fef08a" />
+      <text x="30" y="20" font-family="Georgia, serif" font-size="18" fill="#fef08a" font-weight="bold">Coelom (Body Cavity)</text>
+      <text x="50" y="45" font-family="Arial" font-size="14" fill="#f8fafc" opacity="0.8">Acoelomates, Pseudocoelomates, Coelomates</text>
+    </g>
+  </g>
+
+  <!-- Footnote -->
+  <text x="400" y="420" font-family="Arial" font-size="14" fill="#fef08a" text-anchor="middle" font-style="italic">Essential for identifying relationships between phyla</text>
+</svg>

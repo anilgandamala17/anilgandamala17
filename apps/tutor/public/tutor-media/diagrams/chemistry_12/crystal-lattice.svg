@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Crystal Lattice Structure</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- 3D Unit Cell (BCC/FCC Style) -->
+  <g transform="translate(400, 300)">
+    <!-- Back wireframe -->
+    <rect x="-100" y="-100" width="200" height="200" fill="none" stroke="rgba(248, 250, 252, 0.2)" stroke-width="2" transform="translate(40, -40)"/>
+    
+    <!-- Connecting lines -->
+    <line x1="-100" y1="-100" x2="-60" y2="-140" stroke="rgba(248, 250, 252, 0.2)" stroke-width="2" />
+    <line x1="100" y1="-100" x2="140" y2="-140" stroke="rgba(248, 250, 252, 0.2)" stroke-width="2" />
+    <line x1="-100" y1="100" x2="-60" y2="60" stroke="rgba(248, 250, 252, 0.2)" stroke-width="2" />
+    <line x1="100" y1="100" x2="140" y2="60" stroke="rgba(248, 250, 252, 0.2)" stroke-width="2" />
+    
+    <!-- Front wireframe -->
+    <rect x="-100" y="-100" width="200" height="200" fill="rgba(134, 239, 172, 0.05)" stroke="#86efac" stroke-width="3"/>
+    
+    <!-- Lattice Points (Atoms) -->
+    <!-- Front Corners -->
+    <circle cx="-100" cy="-100" r="12" fill="#fef08a" opacity="0.9"/>
+    <circle cx="100" cy="-100" r="12" fill="#fef08a" opacity="0.9"/>
+    <circle cx="-100" cy="100" r="12" fill="#fef08a" opacity="0.9"/>
+    <circle cx="100" cy="100" r="12" fill="#fef08a" opacity="0.9"/>
+    <!-- Back Corners -->
+    <circle cx="-60" cy="-140" r="10" fill="#fef08a" opacity="0.5"/>
+    <circle cx="140" cy="-140" r="10" fill="#fef08a" opacity="0.5"/>
+    <circle cx="-60" cy="60" r="10" fill="#fef08a" opacity="0.5"/>
+    <circle cx="140" cy="60" r="10" fill="#fef08a" opacity="0.5"/>
+    
+    <!-- Body Center Atom (BCC) -->
+    <circle cx="20" cy="-20" r="15" fill="#86efac" stroke="#fef08a" stroke-width="1"/>
+    <text x="20" y="-45" fill="#86efac" text-anchor="middle" font-size="14">Body Center</text>
+  </g>
+
+  <!-- Labels -->
+  <g transform="translate(100, 450)" font-family="Arial, sans-serif" font-size="16" fill="#f8fafc">
+    <text x="0" y="0">■ Lattice Point: Position of Atom/Ion</text>
+    <text x="0" y="30">■ Unit Cell: Smallest repeating unit</text>
+    <text x="0" y="60">■ Coordination Number: Neighbors touch</text>
+  </g>
+  
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Chemistry Grade 12</text>
+</svg>

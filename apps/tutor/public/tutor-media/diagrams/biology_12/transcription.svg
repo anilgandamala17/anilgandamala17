@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f472b6" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Transcription (In Nucleus)</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Transcription Bubble -->
+  <g transform="translate(100, 100)">
+    <!-- DNA Strands -->
+    <path d="M 0 150 L 200 150 Q 300 50 400 150 L 600 150" fill="none" stroke="#60a5fa" stroke-width="4" opacity="0.4"/>
+    <path d="M 0 250 L 200 250 Q 300 350 400 250 L 600 250" fill="none" stroke="#60a5fa" stroke-width="4" opacity="0.4"/>
+    
+    <!-- RNA Polymerase -->
+    <ellipse cx="300" cy="200" rx="100" ry="70" fill="rgba(134,239,172,0.1)" stroke="#86efac" stroke-width="3" stroke-dasharray="5,2"/>
+    <text x="300" y="280" fill="#86efac" font-weight="bold" text-anchor="middle">RNA Polymerase</text>
+    
+    <!-- mRNA Synthesis -->
+    <path d="M 350 230 L 500 350" fill="none" stroke="#f472b6" stroke-width="5" marker-end="url(#arrowhead)"/>
+    <text x="510" y="370" fill="#f472b6" font-weight="bold">mRNA Transcript</text>
+    <text x="360" y="220" fill="#f472b6" font-size="12">Growing Chain</text>
+  </g>
+
+  <rect x="150" y="480" width="500" height="80" rx="15" fill="rgba(255,255,255,0.03)" stroke="#fef08a" stroke-width="1.5"/>
+  <text x="400" y="515" fill="#fef08a" text-anchor="middle" font-size="20">DNA → mRNA (Transcription)</text>
+  <text x="400" y="545" fill="#f8fafc" text-anchor="middle" font-size="14">Occurs in the 5' to 3' direction using the template strand.</text>
+
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Biology Grade 12</text>
+</svg>

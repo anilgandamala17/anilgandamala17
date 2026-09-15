@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="none"/>
+  <text x="400" y="36" text-anchor="middle" fill="#f0fdf4" font-size="22" font-family="Georgia,serif" font-weight="bold">Real Numbers — The Number Hierarchy</text>
+
+  <!-- Nested set diagram -->
+  <ellipse cx="400" cy="270" rx="370" ry="210" fill="#1a3a2a" fill-opacity="0.7" stroke="#86efac" stroke-width="2"/>
+  <text x="400" y="68" text-anchor="middle" fill="#86efac" font-size="14" font-family="Georgia,serif" font-weight="bold">ℝ  Real Numbers</text>
+
+  <ellipse cx="320" cy="290" rx="280" ry="160" fill="#1a4a3a" fill-opacity="0.7" stroke="#fde68a" stroke-width="2"/>
+  <text x="110" y="155" fill="#fde68a" font-size="13" font-family="Georgia,serif" font-weight="bold">ℚ  Rational:</text>
+  <text x="110" y="173" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">p/q, q≠0</text>
+
+  <ellipse cx="280" cy="310" rx="200" ry="120" fill="#1a5040" fill-opacity="0.7" stroke="#a3e635" stroke-width="2"/>
+  <text x="130" y="210" fill="#a3e635" font-size="13" font-family="Georgia,serif" font-weight="bold">ℤ  Integers</text>
+  <text x="130" y="228" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">…,-2,-1,0,1,2,…</text>
+
+  <ellipse cx="265" cy="325" rx="135" ry="82" fill="#1a5a48" fill-opacity="0.7" stroke="#38bdf8" stroke-width="2"/>
+  <text x="170" y="280" fill="#38bdf8" font-size="12" font-family="Georgia,serif" font-weight="bold">ℤ⁺ Whole</text>
+  <text x="170" y="296" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">0,1,2,3,…</text>
+
+  <ellipse cx="255" cy="338" rx="78" ry="50" fill="#1a6050" fill-opacity="0.7" stroke="#f472b6" stroke-width="2"/>
+  <text x="221" y="333" text-anchor="middle" fill="#f9a8d4" font-size="12" font-family="Georgia,serif" font-weight="bold">ℕ Natural</text>
+  <text x="221" y="350" text-anchor="middle" fill="#d4d4d8" font-size="10" font-family="Georgia,serif">1,2,3,…</text>
+
+  <!-- Irrational label -->
+  <text x="620" y="220" text-anchor="middle" fill="#fbbf24" font-size="15" font-family="Georgia,serif" font-weight="bold">Irrational</text>
+  <text x="620" y="240" text-anchor="middle" fill="#fde68a" font-size="13" font-family="Georgia,serif">ℝ \ ℚ</text>
+  <text x="620" y="264" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">√2, √3, π, e</text>
+  <text x="620" y="282" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">Non-terminating,</text>
+  <text x="620" y="298" text-anchor="middle" fill="#d4d4d8" font-size="11" font-family="Georgia,serif">non-repeating decimals</text>
+  <line x1="560" y1="255" x2="520" y2="255" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Number line -->
+  <line x1="60" y1="455" x2="740" y2="455" stroke="#86efac" stroke-width="2"/>
+  <polygon points="740,451 748,455 740,459" fill="#86efac"/>
+  <polygon points="60,459 52,455 60,451" fill="#86efac"/>
+  <text x="400" y="490" text-anchor="middle" fill="#86efac" font-size="12" font-family="Georgia,serif">← ℝ spans every point on the number line →</text>
+  <!-- tick marks -->
+  <line x1="200" y1="450" x2="200" y2="462" stroke="#f9a8d4" stroke-width="2"/><text x="200" y="476" text-anchor="middle" fill="#f9a8d4" font-size="11">-√2</text>
+  <line x1="310" y1="450" x2="310" y2="462" stroke="#38bdf8" stroke-width="2"/><text x="310" y="476" text-anchor="middle" fill="#38bdf8" font-size="11">0</text>
+  <line x1="400" y1="450" x2="400" y2="462" stroke="#a3e635" stroke-width="2"/><text x="400" y="476" text-anchor="middle" fill="#a3e635" font-size="11">1</text>
+  <line x1="490" y1="450" x2="490" y2="462" stroke="#fde68a" stroke-width="2"/><text x="490" y="476" text-anchor="middle" fill="#fde68a" font-size="11">π</text>
+  <line x1="590" y1="450" x2="590" y2="462" stroke="#f472b6" stroke-width="2"/><text x="590" y="476" text-anchor="middle" fill="#f472b6" font-size="11">√7</text>
+</svg>

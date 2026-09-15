@@ -1,0 +1,42 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 18px; font-weight: bold; }
+      .label { fill: #ffffff; font-size: 14px; font-weight: bold; }
+      .formula { fill: #fcd34d; font-size: 18px; font-family: 'Courier New', monospace; font-weight: bold; }
+      .box { fill: rgba(30, 58, 138, 0.8); stroke: #60a5fa; stroke-width: 1.5; rx: 12; }
+      .power-box { fill: rgba(15, 23, 42, 0.6); stroke: #4ade80; stroke-width: 1; rx: 4; }
+      .desc { fill: #93c5fd; font-size: 10px; font-style: italic; }
+    </style>
+  </defs>
+  <g transform="translate(75, 10) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">The Imaginary Unit (i)</text>
+    
+    <!-- Definition -->
+    <rect x="50" y="50" width="300" height="60" class="box" />
+    <text x="200" y="85" text-anchor="middle" class="formula">i = √-1  ⇒  i² = -1</text>
+    <text x="200" y="100" text-anchor="middle" class="desc">Euler's notation for square root of negative unity</text>
+
+    <!-- Powers of i table -->
+    <g transform="translate(80, 130)">
+      <text x="120" y="0" text-anchor="middle" class="label">Powers of i (Cycle of 4)</text>
+      
+      <rect x="0" y="15" width="50" height="40" class="power-box" />
+      <text x="25" y="40" text-anchor="middle" fill="#4ade80" font-weight="bold">i¹ = i</text>
+      
+      <rect x="60" y="15" width="50" height="40" class="power-box" />
+      <text x="85" y="40" text-anchor="middle" fill="#fcd34d" font-weight="bold">i² = -1</text>
+      
+      <rect x="120" y="15" width="50" height="40" class="power-box" />
+      <text x="145" y="40" text-anchor="middle" fill="#f87171" font-weight="bold">i³ = -i</text>
+      
+      <rect x="180" y="15" width="50" height="40" class="power-box" />
+      <text x="205" y="40" text-anchor="middle" fill="#60a5fa" font-weight="bold">i⁴ = 1</text>
+      
+      <path d="M 235,35 Q 260,35 260,10 T 235,-15" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowhead)" />
+      <text x="240" y="50" fill="#93c5fd" font-size="9">Cycles every 4th power</text>
+    </g>
+
+    <text x="200" y="230" text-anchor="middle" fill="#ffffff" font-size="11">Complex Number: <tspan fill="#fcd34d">z = a + bi</tspan></text>
+  </g>
+</svg>

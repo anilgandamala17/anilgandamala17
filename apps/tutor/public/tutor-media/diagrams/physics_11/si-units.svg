@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .title { fill: #fef08a; font-size: 16px; font-weight: bold; }
+      .header { fill: #86efac; font-size: 11px; font-weight: bold; }
+      .cell-text { fill: #ffffff; font-size: 10px; }
+      .cell-bg { fill: #1a3a20; stroke: #4ade80; stroke-width: 0.5; }
+    </style>
+  </defs>
+  <g transform="translate(75, -5) scale(1.55)">
+    <text x="200" y="25" text-anchor="middle" class="title">SI Base Units</text>
+    
+    <!-- Table Header -->
+    <rect x="20" y="45" width="120" height="25" class="cell-bg" />
+    <text x="80" y="62" text-anchor="middle" class="header">Quantity</text>
+    <rect x="140" y="45" width="80" height="25" class="cell-bg" />
+    <text x="180" y="62" text-anchor="middle" class="header">Unit</text>
+    <rect x="220" y="45" width="60" height="25" class="cell-bg" />
+    <text x="250" y="62" text-anchor="middle" class="header">Sym.</text>
+
+    <!-- Rows -->
+    <rect x="20" y="70" width="120" height="20" class="cell-bg" />
+    <text x="30" y="84" class="cell-text">Length</text>
+    <rect x="140" y="70" width="80" height="20" class="cell-bg" />
+    <text x="150" y="84" class="cell-text">meter</text>
+    <rect x="220" y="70" width="60" height="20" class="cell-bg" />
+    <text x="250" y="84" text-anchor="middle" class="cell-text">m</text>
+
+    <rect x="20" y="90" width="120" height="20" class="cell-bg" />
+    <text x="30" y="104" class="cell-text">Mass</text>
+    <rect x="140" y="90" width="80" height="20" class="cell-bg" />
+    <text x="150" y="104" class="cell-text">kilogram</text>
+    <rect x="220" y="90" width="60" height="20" class="cell-bg" />
+    <text x="250" y="104" text-anchor="middle" class="cell-text">kg</text>
+
+    <rect x="20" y="110" width="120" height="20" class="cell-bg" />
+    <text x="30" y="124" class="cell-text">Time</text>
+    <rect x="140" y="110" width="80" height="20" class="cell-bg" />
+    <text x="150" y="124" class="cell-text">second</text>
+    <rect x="220" y="110" width="60" height="20" class="cell-bg" />
+    <text x="250" y="124" text-anchor="middle" class="cell-text">s</text>
+
+    <rect x="20" y="130" width="120" height="20" class="cell-bg" />
+    <text x="30" y="144" class="cell-text">Temperature</text>
+    <rect x="140" y="130" width="80" height="20" class="cell-bg" />
+    <text x="150" y="144" class="cell-text">kelvin</text>
+    <rect x="220" y="130" width="60" height="20" class="cell-bg" />
+    <text x="250" y="144" text-anchor="middle" class="cell-text">K</text>
+    
+    <text x="200" y="170" text-anchor="middle" font-size="9" fill="#93c5fd">+ Ampere (A), Candela (cd), Mole (mol)</text>
+  </g>
+</svg>

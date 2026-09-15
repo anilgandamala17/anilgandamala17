@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Header -->
+  <text x="400" y="50" font-family="Georgia, serif" font-size="36" fill="#fef08a" text-anchor="middle" font-weight="bold">Mendel's Laws (Punnett Square)</text>
+  <line x1="150" y1="70" x2="650" y2="70" stroke="#fef08a" stroke-width="2" stroke-dasharray="10,5" opacity="0.5"/>
+
+  <!-- Punnett Square -->
+  <g transform="translate(250, 150)">
+    <!-- Main Grid -->
+    <rect x="0" y="0" width="300" height="300" fill="rgba(255,255,255,0.03)" stroke="#86efac" stroke-width="2"/>
+    <line x1="0" y1="150" x2="300" y2="150" stroke="#86efac" stroke-width="2"/>
+    <line x1="150" y1="0" x2="150" y2="300" stroke="#86efac" stroke-width="2"/>
+    
+    <!-- Parent Gametes -->
+    <text x="75" y="-30" fill="#fef08a" text-anchor="middle" font-weight="bold" font-size="24">T</text>
+    <text x="225" y="-30" fill="#fef08a" text-anchor="middle" font-weight="bold" font-size="24">t</text>
+    <text x="-40" y="75" fill="#fef08a" text-anchor="middle" font-weight="bold" font-size="24">T</text>
+    <text x="-40" y="225" fill="#fef08a" text-anchor="middle" font-weight="bold" font-size="24">t</text>
+    
+    <!-- Offspring Genotypes -->
+    <g font-family="'Times New Roman', serif" font-size="48" font-weight="bold" text-anchor="middle">
+      <text x="75" y="90" fill="#86efac">TT</text>
+      <text x="225" y="90" fill="#fef08a">Tt</text>
+      <text x="75" y="240" fill="#fef08a">Tt</text>
+      <text x="225" y="240" fill="#f87171">tt</text>
+    </g>
+  </g>
+
+  <!-- Legend / Ratios -->
+  <g transform="translate(100, 480)" font-family="Arial, sans-serif" font-size="18">
+    <text x="0" y="0" fill="#86efac">Genotypic Ratio: 1 (TT) : 2 (Tt) : 1 (tt)</text>
+    <text x="0" y="30" fill="#fef08a">Phenotypic Ratio: 3 (Tall) : 1 (Dwarf)</text>
+    <text x="450" y="0" fill="#f8fafc" font-style="italic">Law of Segregation</text>
+    <text x="450" y="30" fill="#f8fafc" font-style="italic">Law of Dominance</text>
+  </g>
+  
+  <text x="780" y="580" font-family="Arial, sans-serif" font-size="12" fill="#f8fafc" text-anchor="end" opacity="0.3">IAra Academy © 2026 | Biology Grade 12</text>
+</svg>
