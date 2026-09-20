@@ -14,7 +14,7 @@ export function CoursePattern({
 
   return (
     <svg
-      className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.07]"
+      className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.045]"
       aria-hidden
     >
       <defs>

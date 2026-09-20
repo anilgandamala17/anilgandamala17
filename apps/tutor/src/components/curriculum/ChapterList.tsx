@@ -1,273 +1,13 @@
-import {
-  ChevronDown,
-  Play,
-  CheckCircle2,
-  Clock,
-  BookOpen,
-  ArrowRight,
-  Layers,
-  Heart,
-} from 'lucide-react';
-import { useId, useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { BookOpen, Layers } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 import { useCurriculumStore } from '../../stores/curriculumStore';
-import { studentRoutes } from '../../utils/routes';
-import type { Chapter, Topic } from '../../types';
 import { getGradeById, getSubjectById } from '../../data/schoolCurriculum';
-import { analytics } from '../../services/analyticsService';
+import { ChapterCard } from './ChapterCard';
+import { resolveSubjectPattern } from './SubjectCardPattern';
 import './curriculum.css';
 
 interface ChapterListProps {
   onTopicSelect?: (topicId: string) => void;
-}
-
-type Difficulty = 'beginner' | 'intermediate' | 'advanced';
-
-const DIFFICULTY_META: Record<Difficulty, { label: string; bg: string; fg: string; border: string }> = {
-  beginner: {
-    label: 'Beginner',
-    bg: 'rgba(16,185,129,0.10)',
-    fg: '#047857',
-    border: 'rgba(16,185,129,0.22)',
-  },
-  intermediate: {
-    label: 'Intermediate',
-    bg: 'rgba(245,158,11,0.10)',
-    fg: '#b45309',
-    border: 'rgba(245,158,11,0.24)',
-  },
-  advanced: {
-    label: 'Advanced',
-    bg: 'rgba(244,63,94,0.10)',
-    fg: '#be123c',
-    border: 'rgba(244,63,94,0.22)',
-  },
-};
-
-function resolveDifficulty(value?: string): Difficulty {
-  if (value === 'intermediate' || value === 'advanced' || value === 'beginner') return value;
-  return 'beginner';
-}
-
-function TopicItem({
-  topic,
-  gradeId,
-  subjectId,
-  accent,
-  index,
-  isCompleted,
-  onSelect,
-}: {
-  topic: Topic;
-  gradeId: string;
-  subjectId: string;
-  accent: string;
-  index: number;
-  isCompleted: boolean;
-  onSelect: () => void;
-}) {
-  const navigate = useNavigate();
-  const liked = useCurriculumStore((s) => s.likedTopicIds.includes(topic.id));
-  const toggleTopicLike = useCurriculumStore((s) => s.toggleTopicLike);
-  const difficulty = resolveDifficulty(topic.difficulty);
-  const diff = DIFFICULTY_META[difficulty];
-  const topicIndex = String(index + 1).padStart(2, '0');
-
-  const handleClick = () => {
-    analytics.topicSelected({ topicId: topic.id, classId: gradeId, subjectId });
-    navigate(`${studentRoutes.learn(topic.id)}?grade=${gradeId}&subject=${subjectId}`);
-    onSelect();
-  };
-
-  return (
-    <div className="curr-topic-card group relative" style={{ ['--topic-accent' as string]: accent }}>
-      <button
-        type="button"
-        onClick={handleClick}
-        className="curr-topic-card__hit"
-        aria-label={`${isCompleted ? 'Review' : 'Start lesson'} ${topic.name}`}
-      />
-      {/* Mobile / compact: horizontal row */}
-      <div className="curr-topic-card__row">
-        <span
-          className={`curr-topic-card__icon ${isCompleted ? 'is-done' : ''}`}
-          aria-hidden
-        >
-          {isCompleted ? <CheckCircle2 className="h-[18px] w-[18px]" /> : <Play className="ml-0.5 h-[17px] w-[17px]" />}
-        </span>
-
-        <div className="curr-topic-card__body">
-          <div className="curr-topic-card__meta">
-            <span className="curr-topic-card__index">Topic {topicIndex}</span>
-            <span
-              className="curr-topic-card__diff"
-              style={{ background: diff.bg, color: diff.fg, borderColor: diff.border }}
-            >
-              {diff.label}
-            </span>
-            <button
-              type="button"
-              className={`curr-topic-card__like ${liked ? 'is-liked' : ''}`}
-              aria-label={liked ? 'Unlike lesson' : 'Like lesson'}
-              aria-pressed={liked}
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleTopicLike(topic.id);
-              }}
-            >
-              <Heart className="h-3.5 w-3.5" fill={liked ? 'currentColor' : 'none'} />
-            </button>
-          </div>
-
-          <h4 className="curr-topic-card__title">{topic.name}</h4>
-
-          {topic.description ? (
-            <p className="curr-topic-card__desc">{topic.description}</p>
-          ) : null}
-
-          <div className="curr-topic-card__footer">
-            <span className="curr-topic-card__duration">
-              <Clock className="h-3.5 w-3.5 shrink-0 opacity-70" />
-              {topic.duration || '30 min'}
-            </span>
-            <span className="curr-topic-card__cta">
-              {isCompleted ? 'Review' : 'Start lesson'}
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ChapterAccordion({
-  chapter,
-  gradeId,
-  subjectId,
-  accent,
-  completedTopics,
-  defaultOpen = false,
-  onTopicSelect,
-}: {
-  chapter: Chapter;
-  gradeId: string;
-  subjectId: string;
-  accent: string;
-  completedTopics: string[];
-  defaultOpen?: boolean;
-  onTopicSelect: (topicId: string) => void;
-}) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-  const panelId = useId();
-  const completedCount = chapter.topics.filter((t) => completedTopics.includes(t.id)).length;
-  const total = chapter.topics.length;
-  const progress = total > 0 ? Math.round((completedCount / total) * 100) : 0;
-  const isChapterComplete = total > 0 && completedCount === total;
-  const chapterLabel = String(chapter.chapterNumber).padStart(2, '0');
-
-  return (
-    <article
-      className={`curr-chapter ${isOpen ? 'is-open' : ''}`}
-      style={{ ['--chapter-accent' as string]: accent }}
-    >
-      <button
-        type="button"
-        aria-expanded={isOpen}
-        aria-controls={panelId}
-        onClick={() => {
-          const next = !isOpen;
-          setIsOpen(next);
-          if (next) {
-            analytics.chapterSelected(gradeId, subjectId, chapter.id);
-          }
-        }}
-        className="curr-chapter__header"
-      >
-        <span className="curr-chapter__toggle" aria-hidden>
-          <ChevronDown className="curr-chapter__chevron h-5 w-5" />
-        </span>
-
-        <div className="curr-chapter__main">
-          <div className="curr-chapter__badges">
-            <span className={`curr-chapter__badge ${isChapterComplete ? 'is-done' : ''}`}>
-              Chapter {chapterLabel}
-            </span>
-            {isChapterComplete ? (
-              <span className="curr-chapter__mastered">
-                <CheckCircle2 className="h-3 w-3" />
-                Mastered
-              </span>
-            ) : null}
-          </div>
-
-          <h3 className="curr-chapter__title">{chapter.name}</h3>
-
-          {chapter.description ? (
-            <p className="curr-chapter__desc">{chapter.description}</p>
-          ) : null}
-
-          <div className="curr-chapter__mobile-progress">
-            <span>
-              {completedCount}/{total} topics
-            </span>
-            <span className="curr-chapter__mobile-bar" aria-hidden>
-              <span style={{ width: `${progress}%` }} />
-            </span>
-            <span className="tabular-nums">{progress}%</span>
-          </div>
-        </div>
-
-        <div className="curr-chapter__stats" aria-label={`${completedCount} of ${total} topics mastered`}>
-          <div className="curr-chapter__stats-value">
-            <strong>{completedCount}</strong>
-            <span>/ {total}</span>
-          </div>
-          <span className="curr-chapter__stats-label">Topics mastered</span>
-        </div>
-      </button>
-
-      <div className="curr-chapter__progress" aria-hidden>
-        <span style={{ width: `${progress}%` }} />
-      </div>
-
-      <div
-        id={panelId}
-        className="curr-chapter__panel"
-        style={{
-          gridTemplateRows: isOpen ? '1fr' : '0fr',
-          opacity: isOpen ? 1 : 0,
-        }}
-      >
-        <div className="curr-chapter__panel-clip">
-          <div className="curr-chapter__panel-inner">
-            <div className="curr-chapter__panel-head">
-              <p>Lessons in this chapter</p>
-              <span>
-                {total} {total === 1 ? 'topic' : 'topics'}
-              </span>
-            </div>
-
-            <div className="curr-topic-grid">
-              {chapter.topics.map((topic, i) => (
-                <TopicItem
-                  key={topic.id}
-                  topic={topic}
-                  gradeId={gradeId}
-                  subjectId={subjectId}
-                  accent={accent}
-                  index={i}
-                  isCompleted={completedTopics.includes(topic.id)}
-                  onSelect={() => onTopicSelect(topic.id)}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-  );
 }
 
 function SubjectHeader({
@@ -392,6 +132,7 @@ export default function ChapterList({ onTopicSelect }: ChapterListProps) {
   const completedTopics = progress?.completedTopics || [];
   const totalTopics = subject.chapters.reduce((sum, ch) => sum + (ch.topics?.length || 0), 0);
   const accent = subject.color || '#0ea5e9';
+  const patternKind = resolveSubjectPattern(subject.id, subject.name);
 
   if (subject.chapters.length === 0 || totalTopics === 0) {
     return (
@@ -427,7 +168,7 @@ export default function ChapterList({ onTopicSelect }: ChapterListProps) {
 
       <div className="curr-chapter-stack">
         {subject.chapters.map((chapter, idx) => (
-          <ChapterAccordion
+          <ChapterCard
             key={chapter.id}
             chapter={chapter}
             gradeId={grade.id}
@@ -436,6 +177,7 @@ export default function ChapterList({ onTopicSelect }: ChapterListProps) {
             completedTopics={completedTopics}
             defaultOpen={idx === 0}
             onTopicSelect={(topicId) => onTopicSelect?.(topicId)}
+            patternKind={patternKind}
           />
         ))}
       </div>
