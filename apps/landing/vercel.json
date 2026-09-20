@@ -3,43 +3,43 @@
   "rewrites": [
     {
       "source": "/tutor-assets/:path*",
-      "destination": "https://aira-ai-tutor-frontend.vercel.app/tutor-assets/:path*"
+      "destination": "https://ai-ra-app.vercel.app/tutor-assets/:path*"
     },
     {
       "source": "/tutor-media/:path*",
-      "destination": "https://aira-ai-tutor-frontend.vercel.app/tutor-media/:path*"
+      "destination": "https://ai-ra-app.vercel.app/tutor-media/:path*"
     },
     {
       "source": "/theme-boot.js",
-      "destination": "https://aira-ai-tutor-frontend.vercel.app/theme-boot.js"
+      "destination": "https://ai-ra-app.vercel.app/theme-boot.js"
     },
     {
       "source": "/student",
-      "destination": "https://aira-ai-tutor-frontend.vercel.app/student"
+      "destination": "https://ai-ra-app.vercel.app/student"
     },
     {
       "source": "/student/:path*",
-      "destination": "https://aira-ai-tutor-frontend.vercel.app/student/:path*"
+      "destination": "https://ai-ra-app.vercel.app/student/:path*"
     },
     {
       "source": "/teacher",
-      "destination": "https://aira-ai-tutor-frontend.vercel.app/teacher"
+      "destination": "https://ai-ra-app.vercel.app/teacher"
     },
     {
       "source": "/teacher/:path*",
-      "destination": "https://aira-ai-tutor-frontend.vercel.app/teacher/:path*"
+      "destination": "https://ai-ra-app.vercel.app/teacher/:path*"
     },
     {
       "source": "/admin",
-      "destination": "https://aira-ai-tutor-frontend.vercel.app/admin"
+      "destination": "https://ai-ra-app.vercel.app/admin"
     },
     {
       "source": "/admin/:path*",
-      "destination": "https://aira-ai-tutor-frontend.vercel.app/admin/:path*"
+      "destination": "https://ai-ra-app.vercel.app/admin/:path*"
     },
     {
       "source": "/dev/:path*",
-      "destination": "https://aira-ai-tutor-frontend.vercel.app/dev/:path*"
+      "destination": "https://ai-ra-app.vercel.app/dev/:path*"
     }
   ]
 }

@@ -180,7 +180,7 @@ export function classifyConcept(
 }
 
 export function classifyChapterFallback(
-  subjectId: string,
+  _subjectId: string,
   chapterName: string,
 ): ClassifiedConcept | null {
   const chapter = chapterName.toLowerCase();

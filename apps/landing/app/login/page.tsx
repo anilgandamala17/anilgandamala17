@@ -16,7 +16,7 @@ import {
 import { logOut, resolveRoleForRedirect, signInWithEmail, reloadCurrentUser, retryWelcomeEmailIfPending } from '@/lib/firebase/auth'
 import { useAuth } from '@/components/auth-provider'
 import { LOGIN_INTENT_COPY, portalHrefForIntent } from '@/lib/site'
-import { resolvePostAuthPath, normalizeAppRole, type AppRole } from '@/lib/auth-redirect'
+import { resolvePostAuthPath } from '@/lib/auth-redirect'
 import { navigateAfterAuth } from '@/lib/navigation'
 import { checkEmailQuality } from '@/lib/email-quality'
 import {
@@ -59,7 +59,6 @@ function LoginPageContent() {
   const [mounted, setMounted] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [role, setRole] = useState<AppRole>(() => readRoleHint() ?? 'student')
   const [error, setError] = useState<string | null>(null)
 
   const goAfterAuth = async (uid: string, opts?: { retryWelcome?: boolean; user?: typeof user }) => {
@@ -147,10 +146,10 @@ function LoginPageContent() {
    */
   useEffect(() => {
     if (!mounted || externalPortal) return
-    writeRoleHint(normalizeAppRole(role) === 'admin' ? 'student' : normalizeAppRole(role))
+    const hint = readRoleHint() ?? 'student'
     const href = resolvePostAuthPath({
       redirect: redirectParam,
-      role: normalizeAppRole(role) === 'admin' ? 'student' : normalizeAppRole(role),
+      role: hint === 'admin' ? 'student' : hint,
     })
     const link = document.createElement('link')
     link.rel = 'prefetch'
@@ -158,7 +157,7 @@ function LoginPageContent() {
     link.href = href
     document.head.appendChild(link)
     return () => link.remove()
-  }, [mounted, externalPortal, redirectParam, role])
+  }, [mounted, externalPortal, redirectParam])
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault()
@@ -172,10 +171,7 @@ function LoginPageContent() {
 
     setLoading(true)
     try {
-      const selectedRole =
-        normalizeAppRole(role) === 'admin' ? 'student' : normalizeAppRole(role)
-      writeRoleHint(selectedRole)
-      const cred = await signInWithEmail(emailCheck.email, password, selectedRole)
+      const cred = await signInWithEmail(emailCheck.email, password)
       await goAfterAuth(cred.user.uid, {
         retryWelcome: true,
         user: cred.user,
@@ -221,26 +217,6 @@ function LoginPageContent() {
             autoComplete="email"
             className={authInputClassName}
           />
-        </div>
-
-        <div className="space-y-1.5">
-          <Label htmlFor="role" className={authLabelClassName}>
-            I am a
-          </Label>
-          <select
-            id="role"
-            value={role === 'admin' ? 'student' : role}
-            onChange={(e) => {
-              const next = normalizeAppRole(e.target.value)
-              setRole(next)
-              writeRoleHint(next === 'admin' ? 'student' : next)
-            }}
-            className={authInputClassName}
-            required
-          >
-            <option value="student">Student</option>
-            <option value="teacher">Teacher</option>
-          </select>
         </div>
 
         <div className="space-y-1.5">
@@ -311,7 +287,6 @@ function LoginPageContent() {
       <SocialLogin
         onError={setError}
         onSignedIn={async (uid) => {
-          writeRoleHint(normalizeAppRole(role) === 'admin' ? 'student' : normalizeAppRole(role))
           await goAfterAuth(uid)
         }}
       />
@@ -328,7 +303,7 @@ function LoginPageContent() {
           })()}
           className="font-medium text-primary underline-offset-4 hover:underline"
         >
-          Create one now
+          Create account
         </Link>
       </p>
 
