@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { persist, createJSONStorage, type StateStorage } from 'zustand/middleware';
 
 export type CompetitiveAttemptMode = 'standard' | 'pyq' | 'mock' | 'weekly' | 'quiz';
 
@@ -25,10 +25,90 @@ export interface CompetitiveAttempt {
 }
 
 interface CompetitiveAnalyticsState {
+    /** Owner of the in-memory `attempts` slice (auth user id or guest). */
+    ownerId: string | null;
     attempts: CompetitiveAttempt[];
-    recordAttempt: (attempt: Omit<CompetitiveAttempt, 'id' | 'completedAt' | 'accuracy'> & { accuracy?: number }) => void;
+    /** Bind store to the signed-in user so curriculum + competitive share the same personal history. */
+    bindUser: (userId: string | null) => void;
+    recordAttempt: (
+        attempt: Omit<CompetitiveAttempt, 'id' | 'completedAt' | 'accuracy'> & { accuracy?: number },
+    ) => void;
     clearAttempts: () => void;
 }
+
+const LEGACY_KEY = 'aira-competitive-analytics';
+const KEY_PREFIX = 'aira-competitive-analytics:v2:';
+
+function storageKeyFor(ownerId: string | null): string {
+    return `${KEY_PREFIX}${ownerId?.trim() || 'guest'}`;
+}
+
+function readAttemptsFromKey(key: string): CompetitiveAttempt[] {
+    try {
+        const raw = localStorage.getItem(key);
+        if (!raw) return [];
+        const parsed = JSON.parse(raw) as {
+            state?: { attempts?: CompetitiveAttempt[] };
+            attempts?: CompetitiveAttempt[];
+        };
+        const list = parsed?.state?.attempts ?? parsed?.attempts;
+        return Array.isArray(list) ? list : [];
+    } catch {
+        return [];
+    }
+}
+
+function writeAttemptsToKey(key: string, attempts: CompetitiveAttempt[]) {
+    try {
+        localStorage.setItem(key, JSON.stringify({ state: { attempts }, version: 2 }));
+    } catch {
+        /* quota / private mode */
+    }
+}
+
+/** Migrate pre-user-scoped blob into the current owner's key once. */
+function migrateLegacyIfNeeded(ownerId: string | null): CompetitiveAttempt[] {
+    const key = storageKeyFor(ownerId);
+    const existing = readAttemptsFromKey(key);
+    if (existing.length) return existing;
+    const legacy = readAttemptsFromKey(LEGACY_KEY);
+    // Also handle zustand persist envelope under LEGACY_KEY
+    if (!legacy.length) {
+        try {
+            const raw = localStorage.getItem(LEGACY_KEY);
+            if (raw) {
+                const parsed = JSON.parse(raw) as { state?: { attempts?: CompetitiveAttempt[] } };
+                if (Array.isArray(parsed?.state?.attempts) && parsed.state.attempts.length) {
+                    writeAttemptsToKey(key, parsed.state.attempts);
+                    return parsed.state.attempts;
+                }
+            }
+        } catch {
+            /* ignore */
+        }
+        return [];
+    }
+    writeAttemptsToKey(key, legacy);
+    return legacy;
+}
+
+let activeOwnerId: string | null = null;
+
+const scopedStorage: StateStorage = {
+    getItem: (name) => {
+        void name;
+        const key = storageKeyFor(activeOwnerId);
+        return localStorage.getItem(key);
+    },
+    setItem: (name, value) => {
+        void name;
+        localStorage.setItem(storageKeyFor(activeOwnerId), value);
+    },
+    removeItem: (name) => {
+        void name;
+        localStorage.removeItem(storageKeyFor(activeOwnerId));
+    },
+};
 
 function readinessFromAttempts(attempts: CompetitiveAttempt[]): number {
     if (!attempts.length) return 0;
@@ -91,7 +171,12 @@ export function computeCompetitiveInsights(attempts: CompetitiveAttempt[]) {
         attemptCount: attempts.length,
         avgSpeed,
         readiness: readinessFromAttempts(attempts),
-        rankPrediction: readinessFromAttempts(attempts) >= 75 ? 'Top 15%' : readinessFromAttempts(attempts) >= 55 ? 'Top 40%' : 'Building pace',
+        rankPrediction:
+            readinessFromAttempts(attempts) >= 75
+                ? 'Top 15%'
+                : readinessFromAttempts(attempts) >= 55
+                  ? 'Top 40%'
+                  : 'Building pace',
         weak,
         strong,
         subjectStats,
@@ -103,6 +188,7 @@ export function computeCompetitiveInsights(attempts: CompetitiveAttempt[]) {
         })),
         trend,
         recommendations: buildRecommendations(weak, overallAccuracy, attempts.length),
+        recentAttempts: attempts.slice(0, 5),
     };
 }
 
@@ -133,8 +219,16 @@ function buildRecommendations(
 
 export const useCompetitiveStore = create<CompetitiveAnalyticsState>()(
     persist(
-        (set) => ({
+        (set, get) => ({
+            ownerId: null,
             attempts: [],
+            bindUser: (userId) => {
+                const nextId = userId?.trim() || null;
+                if (get().ownerId === nextId && activeOwnerId === nextId) return;
+                activeOwnerId = nextId;
+                const attempts = migrateLegacyIfNeeded(nextId);
+                set({ ownerId: nextId, attempts });
+            },
             recordAttempt: (raw) => {
                 const total = Math.max(1, raw.total);
                 const accuracy = raw.accuracy ?? Math.round((raw.score / total) * 100);
@@ -144,10 +238,23 @@ export const useCompetitiveStore = create<CompetitiveAnalyticsState>()(
                     id: `att-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
                     completedAt: new Date().toISOString(),
                 };
-                set((s) => ({ attempts: [attempt, ...s.attempts].slice(0, 120) }));
+                set((s) => {
+                    const attempts = [attempt, ...s.attempts].slice(0, 120);
+                    writeAttemptsToKey(storageKeyFor(s.ownerId ?? activeOwnerId), attempts);
+                    return { attempts };
+                });
             },
-            clearAttempts: () => set({ attempts: [] }),
+            clearAttempts: () => {
+                const owner = get().ownerId ?? activeOwnerId;
+                writeAttemptsToKey(storageKeyFor(owner), []);
+                set({ attempts: [] });
+            },
         }),
-        { name: 'aira-competitive-analytics', version: 1 },
+        {
+            name: LEGACY_KEY,
+            version: 2,
+            storage: createJSONStorage(() => scopedStorage),
+            partialize: (s) => ({ attempts: s.attempts, ownerId: s.ownerId }),
+        },
     ),
 );

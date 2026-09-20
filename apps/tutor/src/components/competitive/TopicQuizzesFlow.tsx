@@ -10,6 +10,7 @@ import { PremiumMetricCard, PremiumSelectionCard } from './CompetitiveCards';
 import { toast } from '../../stores/toastStore';
 import { loadQuizDraft, saveQuizDraft, clearQuizDraft, type QuizDraft } from '../../lib/competitiveRoute';
 import { analytics } from '../../services/analyticsService';
+import { useCompetitiveStore } from '../../stores/competitiveStore';
 
 type QuizStep = 'subject' | 'chapter' | 'solving' | 'result';
 const QUIZ_FLOW = 'quiz' as const;
@@ -20,6 +21,7 @@ function normalizeQuizStep(value: string | null): QuizStep {
 
 export default function TopicQuizzesFlow() {
     const [searchParams, setSearchParams] = useSearchParams();
+    const recordAttempt = useCompetitiveStore((s) => s.recordAttempt);
 
     // Defaulting to Class 12 Science for Competitive Topic Quizzes
     const defaultGrade = schoolGrades.find(g => g.id === 'grade-12-science') || schoolGrades[0];
@@ -188,7 +190,20 @@ export default function TopicQuizzesFlow() {
             timeSpentSeconds: timer,
             flowType: QUIZ_FLOW,
         });
-    }, [step, selectedSubject, selectedChapter, questions, userAnswers, timer]);
+        recordAttempt({
+            examId: `quiz_${selectedChapter.id}`,
+            examName: `Topic Quiz · ${selectedChapter.name}`,
+            subjectId: selectedSubject.id,
+            subjectName: selectedSubject.name,
+            mode: 'quiz',
+            score: correct,
+            correctCount: correct,
+            incorrectCount: incorrect,
+            netScore: correct * 4 - incorrect,
+            total: questions.length,
+            timeSeconds: timer,
+        });
+    }, [step, selectedSubject, selectedChapter, questions, userAnswers, timer, recordAttempt]);
 
     const resetQuiz = useCallback(() => {
         setQuestions([]);

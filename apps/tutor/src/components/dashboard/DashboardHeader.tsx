@@ -31,7 +31,7 @@ function IconBtn({
       onClick={onClick}
       aria-label={label}
       title={label}
-      className="relative group p-2 rounded-xl transition-colors"
+      className="relative group p-2.5 min-w-[44px] min-h-[44px] rounded-xl transition-colors inline-flex items-center justify-center"
       style={{ color: 'var(--dash-text-2)', transitionDuration: 'var(--dash-hover-ms)' }}
       onMouseEnter={(e) => {
         e.currentTarget.style.background = danger
@@ -73,8 +73,8 @@ export default function DashboardHeader({
       }}
     >
       <div
-        className="max-w-[1200px] mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-3"
-        style={{ borderBottom: '1px solid var(--dash-border)' }}
+        className="mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-3"
+        style={{ maxWidth: 'var(--dash-max-w)', borderBottom: '1px solid var(--dash-border)' }}
       >
         <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
           <Link

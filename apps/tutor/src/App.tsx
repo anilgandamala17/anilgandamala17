@@ -4,6 +4,7 @@ import { MotionConfig } from 'framer-motion';
 import { useAuthStore } from './stores/authStore';
 import { useSettingsStore } from './stores/settingsStore';
 import { useTeachingStore } from './stores/teachingStore';
+import { useCompetitiveStore } from './stores/competitiveStore';
 import { changeLanguage } from './i18n';
 import ErrorBoundary from './components/common/ErrorBoundary';
 import FullPageLoader from './components/common/FullPageLoader';
@@ -150,6 +151,11 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
     const pathRole = getRoleFromPath(location.pathname);
     redirectToLandingVerifyEmail(loginReturnPathForRole(pathRole));
   }, [authReady, isAuthenticated, verificationCheckDone, isDemo, isGuest, location.pathname]);
+
+  useEffect(() => {
+    if (!authReady) return;
+    useCompetitiveStore.getState().bindUser(user?.id ?? null);
+  }, [authReady, user?.id]);
 
   useEffect(() => {
     const onPageShow = (event: PageTransitionEvent) => {

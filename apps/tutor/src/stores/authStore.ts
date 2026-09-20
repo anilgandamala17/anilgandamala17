@@ -4,6 +4,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { User, AuthState, AppRole } from '../types';
 import { useCurriculumStore } from './curriculumStore';
+import { useCompetitiveStore } from './competitiveStore';
 import { normalizeAppRole } from '../lib/authSession';
 import { clearRoleHint, readRoleHint, writeRoleHint } from '../lib/sessionHints';
 import { analytics } from '../services/analyticsService';
@@ -353,6 +354,7 @@ export const useAuthStore = create<AuthStore>()(
         clearDemoSession();
         analytics.logout();
         useCurriculumStore.getState().clearSelection();
+        useCompetitiveStore.getState().bindUser(null);
         clearRoleHint();
         set({
           user: null,

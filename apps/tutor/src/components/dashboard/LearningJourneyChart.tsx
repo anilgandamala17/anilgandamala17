@@ -27,6 +27,14 @@ function buildPath(points: JourneyPoint[]) {
   return d;
 }
 
+/** Remap journey points (authored for 180h viewBox) into a shorter chart. */
+function slimPoints(points: JourneyPoint[], height = 120): JourneyPoint[] {
+  return points.map((p) => ({
+    ...p,
+    y: 12 + ((p.y - 20) / 140) * (height - 24),
+  }));
+}
+
 export default function LearningJourneyChart({
   points,
   growthPct,
@@ -37,11 +45,13 @@ export default function LearningJourneyChart({
 }: LearningJourneyChartProps) {
   const reduced = useReducedMotion();
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
-  const chartPath = useMemo(() => buildPath(points), [points]);
+  const chartH = 120;
+  const slim = useMemo(() => slimPoints(points, chartH), [points]);
+  const chartPath = useMemo(() => buildPath(slim), [slim]);
   const areaPath = useMemo(() => {
-    if (!points.length) return '';
-    return `${chartPath} L ${points[points.length - 1].x} 180 L ${points[0].x} 180 Z`;
-  }, [chartPath, points]);
+    if (!slim.length) return '';
+    return `${chartPath} L ${slim[slim.length - 1].x} ${chartH} L ${slim[0].x} ${chartH} Z`;
+  }, [chartPath, slim]);
 
   const ranges: { key: RangeKey; label: string }[] = [
     { key: '7d', label: '7d' },
@@ -50,8 +60,8 @@ export default function LearningJourneyChart({
   ];
 
   return (
-    <div className="dash-card flex flex-col" style={{ background: 'var(--dash-grad-chart)' }}>
-      <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+    <div className="dash-card dash-card--analytics flex flex-col h-full">
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
         <div>
           <h2 className="dash-section-title flex items-center gap-2">
             <span
@@ -60,29 +70,29 @@ export default function LearningJourneyChart({
             >
               <TrendingUp className="w-3.5 h-3.5" style={{ color: 'var(--dash-brand)' }} />
             </span>
-            Learning journey
+            Learning activity
           </h2>
-          <p className="text-[11px] mt-0.5" style={{ color: 'var(--dash-text-3)' }}>
-            Study hours · {rangeLabel}
-          </p>
+          <p className="dash-type-caption mt-0.5">Study hours · {rangeLabel}</p>
         </div>
         <div className="flex items-center gap-2 flex-wrap justify-end">
           {onRangeChange && (
             <div
-              className="inline-flex rounded-xl p-0.5 border"
-              style={{ background: 'rgba(255,255,255,0.7)', borderColor: 'var(--dash-border)' }}
+              className="inline-flex rounded-lg p-0.5 border"
+              style={{ background: 'var(--dash-surface-1)', borderColor: 'var(--dash-border)' }}
+              role="group"
+              aria-label="Chart range"
             >
               {ranges.map((r) => (
                 <button
                   key={r.key}
                   type="button"
                   onClick={() => onRangeChange(r.key)}
-                  className="px-2.5 h-7 rounded-lg text-[11px] font-semibold transition-colors"
+                  className="px-2.5 h-8 min-h-[32px] rounded-md text-[11px] font-semibold transition-colors"
                   style={{
                     background: range === r.key ? 'var(--dash-grad-brand)' : 'transparent',
                     color: range === r.key ? '#fff' : 'var(--dash-text-3)',
-                    boxShadow: range === r.key ? '0 4px 12px rgba(79,70,229,0.25)' : undefined,
                   }}
+                  aria-pressed={range === r.key}
                 >
                   {r.label}
                 </button>
@@ -91,16 +101,8 @@ export default function LearningJourneyChart({
           )}
           {hasActivity ? (
             <span
-              className="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-full"
-              style={{
-                background: growthPct >= 0 ? 'rgba(16,185,129,0.12)' : 'rgba(244,63,94,0.12)',
-                color: growthPct >= 0 ? '#059669' : '#e11d48',
-              }}
+              className={`dash-badge ${growthPct >= 0 ? 'dash-badge--success' : 'dash-badge--warning'}`}
             >
-              <span
-                className="w-1.5 h-1.5 rounded-full"
-                style={{ background: growthPct >= 0 ? '#10b981' : '#f43f5e' }}
-              />
               {growthPct >= 0 ? '+' : ''}
               {growthPct}% vs last week
             </span>
@@ -108,11 +110,16 @@ export default function LearningJourneyChart({
         </div>
       </div>
 
-      <div className="h-40 sm:h-48 w-full relative flex-1 min-h-[10rem]">
+      <div className="h-28 sm:h-32 w-full relative flex-1 min-h-[7rem]">
         {hasActivity ? (
           <>
-            <svg viewBox="0 0 700 180" preserveAspectRatio="none" className="w-full h-full overflow-visible">
-              {[0, 60, 120, 180].map((y) => (
+            <svg
+              viewBox={`0 0 700 ${chartH}`}
+              preserveAspectRatio="none"
+              className="w-full h-full overflow-visible"
+              aria-hidden
+            >
+              {[0, chartH / 2, chartH].map((y) => (
                 <line
                   key={y}
                   x1="0"
@@ -125,27 +132,27 @@ export default function LearningJourneyChart({
               ))}
               <motion.path
                 d={areaPath}
-                fill="url(#journeyFillEnterprise)"
+                fill="url(#journeyFillSlim)"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: reduced ? 0 : 0.35 }}
+                transition={{ delay: reduced ? 0 : 0.25 }}
               />
               <motion.path
                 d={chartPath}
                 fill="none"
-                stroke="url(#journeyStrokeEnterprise)"
-                strokeWidth="3"
+                stroke="url(#journeyStrokeSlim)"
+                strokeWidth="2.5"
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
-                transition={{ duration: reduced ? 0 : 1.2, ease: 'easeOut' }}
+                transition={{ duration: reduced ? 0 : 1, ease: 'easeOut' }}
               />
-              {points.map((p, i) => (
+              {slim.map((p, i) => (
                 <circle
                   key={i}
                   cx={p.x}
                   cy={p.y}
-                  r={hoverIdx === i ? 6 : 4}
+                  r={hoverIdx === i ? 5 : 3.5}
                   fill="var(--dash-brand)"
                   stroke="var(--dash-surface-0)"
                   strokeWidth="2"
@@ -155,34 +162,34 @@ export default function LearningJourneyChart({
                 />
               ))}
               <defs>
-                <linearGradient id="journeyStrokeEnterprise" x1="0%" y1="0%" x2="100%" y2="0%">
+                <linearGradient id="journeyStrokeSlim" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#0ea5e9" />
-                  <stop offset="100%" stopColor="#4f46e5" />
+                  <stop offset="100%" stopColor="#2563eb" />
                 </linearGradient>
-                <linearGradient id="journeyFillEnterprise" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#6366f1" stopOpacity="0.28" />
-                  <stop offset="100%" stopColor="#6366f1" stopOpacity="0" />
+                <linearGradient id="journeyFillSlim" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#2563eb" stopOpacity="0.2" />
+                  <stop offset="100%" stopColor="#2563eb" stopOpacity="0" />
                 </linearGradient>
               </defs>
             </svg>
-            {hoverIdx !== null && points[hoverIdx] && (
+            {hoverIdx !== null && slim[hoverIdx] && (
               <div
-                className="absolute pointer-events-none px-2.5 py-1.5 rounded-lg text-[11px] font-semibold shadow-lg z-10"
+                className="absolute pointer-events-none px-2 py-1 rounded-md text-[11px] font-semibold shadow-lg z-10"
                 style={{
-                  left: `${(points[hoverIdx].x / 700) * 100}%`,
-                  top: `${(points[hoverIdx].y / 180) * 100}%`,
+                  left: `${(slim[hoverIdx].x / 700) * 100}%`,
+                  top: `${(slim[hoverIdx].y / chartH) * 100}%`,
                   transform: 'translate(-50%, -130%)',
                   background: 'var(--dash-surface-ink)',
                   color: 'var(--dash-text-inv)',
                 }}
               >
-                {points[hoverIdx].label}: {points[hoverIdx].hours}h
+                {slim[hoverIdx].label}: {slim[hoverIdx].hours}h
               </div>
             )}
           </>
         ) : (
-          <div className="dash-empty-state h-full">
-            <Activity className="w-6 h-6" style={{ color: 'var(--dash-brand-2)' }} />
+          <div className="dash-empty-state h-full py-4">
+            <Activity className="w-5 h-5" style={{ color: 'var(--dash-brand-2)' }} />
             <p className="dash-empty-state__title">No study hours yet</p>
             <p className="dash-empty-state__body">
               Finish your first lesson and this chart will fill with your study time for {rangeLabel}.

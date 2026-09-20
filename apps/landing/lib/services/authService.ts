@@ -17,6 +17,8 @@ export {
   signInWithGoogle,
   signInWithApple,
   signInWithMicrosoft,
+  signInWithPhone,
+  sendPhoneOtp,
   logOut,
   resetPassword,
   resolveRoleForRedirect,

@@ -199,6 +199,50 @@ export async function signInWithApple(): Promise<MockUserCredential> {
   return mockOAuth('apple')
 }
 
+/**
+ * Demo phone auth: any valid-looking number + any 6-digit OTP succeeds.
+ * FUTURE BACKEND: Firebase Phone Auth / SMS OTP verification.
+ */
+export async function signInWithPhone(
+  phone: string,
+  otp: string,
+): Promise<MockUserCredential> {
+  const digits = phone.replace(/\D/g, '')
+  if (digits.length < 10) {
+    throw new Error('Enter a valid phone number with at least 10 digits.')
+  }
+  const code = otp.replace(/\D/g, '')
+  if (code.length !== 6) {
+    throw new Error('Enter the 6-digit verification code.')
+  }
+  analytics.loginStarted('phone')
+  const last4 = digits.slice(-4)
+  const email = `demo.phone.${last4}@aira.local`
+  const hinted = readRoleHint()
+  const role = hinted === 'teacher' ? 'teacher' : 'student'
+  await mockAdapter.login({ email, password: 'phone-otp', role })
+  return persistLogin({
+    email,
+    displayName: `Phone ···${last4}`,
+    role,
+    providerId: 'phone',
+    method: 'phone',
+    isNew: false,
+  })
+}
+
+/** Demo: pretend an SMS OTP was sent (no network). */
+export async function sendPhoneOtp(phone: string): Promise<void> {
+  const digits = phone.replace(/\D/g, '')
+  if (digits.length < 10) {
+    throw new Error('Enter a valid phone number with at least 10 digits.')
+  }
+  // FRONTEND-ONLY: no backend/Firebase — see EXTRACTION_REPORT.md
+  console.info(
+    '[auth] FRONTEND-ONLY: phone OTP stubbed (Demo mode — use any 6-digit code)',
+  )
+}
+
 export async function resetPassword(email: string): Promise<void> {
   assertEmailQuality(email)
   // FRONTEND-ONLY: no backend/Firebase — see EXTRACTION_REPORT.md

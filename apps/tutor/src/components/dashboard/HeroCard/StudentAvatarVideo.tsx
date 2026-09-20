@@ -3,24 +3,28 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 const ASSET_BASE = '/tutor-media/assets/mascot';
 
+/** Same asset set as production elite dashboard companion. */
 const SOURCES = {
+  mp4: `${ASSET_BASE}/student-avatar-loop-fallback.mp4`,
   webm: `${ASSET_BASE}/student-avatar-loop.webm`,
-  mp4: `${ASSET_BASE}/student-avatar-loop.mp4`,
-  mp4Fallback: `${ASSET_BASE}/student-avatar-loop-fallback.mp4`,
   poster: `${ASSET_BASE}/student-avatar-poster.png`,
 } as const;
 
 type StudentAvatarVideoProps = {
   readiness?: number;
   className?: string;
+  /** Compact welcome uses ~120–148px; default matches prior hero sizing. */
+  size?: 'default' | 'compact';
 };
 
 /**
- * Orbit-center floating student companion.
- * Prefers a chroma-keyed canvas loop (premium floating look); falls back to a
- * visible muted video / poster when canvas or playback fails.
+ * Orbit-center floating student — exact elite dashboard rendering:
+ * hidden muted loop → chroma-key canvas cutout; soft multiply poster while loading.
  */
-export default function StudentAvatarVideo({ className = '' }: StudentAvatarVideoProps) {
+export default function StudentAvatarVideo({
+  className = '',
+  size = 'default',
+}: StudentAvatarVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reduced = useReducedMotion();
@@ -78,7 +82,7 @@ export default function StudentAvatarVideo({ className = '' }: StudentAvatarVide
     } else {
       const tryPlay = () => {
         void video.play().catch(() => {
-          /* autoplay may be blocked; poster stays visible */
+          /* autoplay blocked — poster remains */
         });
       };
       if (video.readyState >= 2) tryPlay();
@@ -106,7 +110,7 @@ export default function StudentAvatarVideo({ className = '' }: StudentAvatarVide
     }
   }, [reduced]);
 
-  // Chroma-key white plate onto canvas for the floating cutout look.
+  // Knock out near-white plate → floating cutout (matches elite production).
   useEffect(() => {
     const video = videoRef.current;
     const canvas = canvasRef.current;
@@ -151,7 +155,9 @@ export default function StudentAvatarVideo({ className = '' }: StudentAvatarVide
         const min = Math.min(r, g, b);
         const nearGray = max - min < 28;
         if (nearGray && min > 200) data[i + 3] = 0;
-        else if (nearGray && min > 175) data[i + 3] = Math.min(data[i + 3], Math.round(((220 - min) / 45) * 255));
+        else if (nearGray && min > 175) {
+          data[i + 3] = Math.min(data[i + 3], Math.round(((220 - min) / 45) * 255));
+        }
       }
       ctx.putImageData(frame, 0, 0);
     };
@@ -175,23 +181,27 @@ export default function StudentAvatarVideo({ className = '' }: StudentAvatarVide
     };
   }, [failed, reduced, ready]);
 
-  const showCanvas = ready && !failed && !reduced;
+  const showCanvas = ready && !failed;
+  const sizeClass =
+    size === 'compact'
+      ? 'max-w-[112px] sm:max-w-[124px] md:max-w-[136px]'
+      : 'max-w-[148px] sm:max-w-[156px] md:max-w-[164px]';
 
   return (
     <div
-      className={`dash-avatar-frame relative mx-auto w-full max-w-[200px] sm:max-w-[220px] md:max-w-[240px] aspect-square ${className}`.trim()}
+      className={`dash-avatar-frame relative mx-auto w-full aspect-square ${sizeClass} ${className}`.trim()}
       role="img"
       aria-label="Animated student learning companion"
     >
       <div
-        className="absolute inset-[14%] rounded-full pointer-events-none"
+        className="absolute inset-[18%] rounded-full pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle, rgba(14,165,233,0.16) 0%, rgba(79,70,229,0.06) 50%, transparent 72%)',
+            'radial-gradient(circle, rgba(14,165,233,0.14) 0%, rgba(79,70,229,0.05) 50%, transparent 72%)',
         }}
       />
 
-      {/* Always-visible poster until canvas/video is ready (no multiply — stays readable). */}
+      {/* Soft multiply poster while the cutout warms up — same as elite. */}
       <motion.img
         src={SOURCES.poster}
         alt=""
@@ -200,10 +210,15 @@ export default function StudentAvatarVideo({ className = '' }: StudentAvatarVide
         initial={{ opacity: 1 }}
         animate={{ opacity: showCanvas ? 0 : 1 }}
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        style={{ zIndex: 1 }}
+        style={{
+          zIndex: 1,
+          mixBlendMode: 'multiply',
+          filter: showCanvas ? 'none' : 'blur(6px) saturate(1.05)',
+        }}
         draggable={false}
       />
 
+      {/* Decode/play only — never painted as a white plate. */}
       <video
         ref={videoRef}
         autoPlay={!reduced}
@@ -213,18 +228,19 @@ export default function StudentAvatarVideo({ className = '' }: StudentAvatarVide
         preload="auto"
         aria-hidden
         tabIndex={-1}
-        poster={SOURCES.poster}
         onError={() => setFailed(true)}
-        className={
-          showCanvas
-            ? 'absolute left-0 top-0 h-px w-px opacity-0 pointer-events-none'
-            : 'dash-avatar-video absolute inset-0 h-full w-full object-cover'
-        }
-        style={showCanvas ? undefined : { zIndex: 2 }}
+        style={{
+          position: 'absolute',
+          width: 1,
+          height: 1,
+          opacity: 0,
+          pointerEvents: 'none',
+          left: 0,
+          top: 0,
+        }}
       >
-        <source src={SOURCES.webm} type="video/webm" />
         <source src={SOURCES.mp4} type="video/mp4" />
-        <source src={SOURCES.mp4Fallback} type="video/mp4" />
+        <source src={SOURCES.webm} type="video/webm" />
       </video>
 
       {!failed && (
@@ -232,12 +248,13 @@ export default function StudentAvatarVideo({ className = '' }: StudentAvatarVide
           ref={canvasRef}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
           style={{
-            zIndex: 3,
+            zIndex: 2,
             visibility: showCanvas ? 'visible' : 'hidden',
             background: 'transparent',
             width: '88%',
             height: 'auto',
             maxHeight: '92%',
+            filter: 'drop-shadow(0 10px 14px rgba(15, 23, 42, 0.18))',
           }}
         />
       )}
@@ -247,7 +264,7 @@ export default function StudentAvatarVideo({ className = '' }: StudentAvatarVide
           src={SOURCES.poster}
           alt="Student companion"
           className="absolute inset-0 m-auto w-[86%] h-[86%] object-contain"
-          style={{ zIndex: 2 }}
+          style={{ zIndex: 2, mixBlendMode: 'multiply' }}
           draggable={false}
         />
       )}

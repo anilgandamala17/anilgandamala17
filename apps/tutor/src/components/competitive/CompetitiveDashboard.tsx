@@ -16,6 +16,8 @@ import {
 } from 'lucide-react';
 import { FLOW_PARAMS, SECTION_PARAM, normalizeSection } from '../../lib/competitiveRoute';
 import { analytics } from '../../services/analyticsService';
+import { useAuthStore } from '../../stores/authStore';
+import { useCompetitiveStore } from '../../stores/competitiveStore';
 
 const ExamFlow = lazy(() => import('./ExamFlow'));
 const TopicQuizzesFlow = lazy(() => import('./TopicQuizzesFlow'));
@@ -45,6 +47,12 @@ export default function CompetitiveDashboard() {
     const [searchParams, setSearchParams] = useSearchParams();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isExamActive, setIsExamActive] = useState(false);
+    const userId = useAuthStore((s) => s.user?.id ?? null);
+    const bindCompetitiveUser = useCompetitiveStore((s) => s.bindUser);
+
+    useEffect(() => {
+        bindCompetitiveUser(userId);
+    }, [userId, bindCompetitiveUser]);
 
     // The active section lives in the URL so refresh, deep links and the browser
     // back button all resolve to the screen the student was actually on.

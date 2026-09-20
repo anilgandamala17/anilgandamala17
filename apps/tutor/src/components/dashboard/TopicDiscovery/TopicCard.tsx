@@ -42,10 +42,10 @@ export default function TopicCard({ topic, index, onStart }: TopicCardProps) {
       whileHover={{ y: -3 }}
       whileTap={{ scale: 0.985 }}
       transition={{ delay: Math.min(index * 0.03, 0.24), duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative text-left flex flex-col h-full min-h-[196px] sm:min-h-[208px] rounded-[18px] border p-4 sm:p-5 overflow-hidden focus-within:outline focus-within:outline-2 focus-within:outline-offset-2"
+      className="group relative text-left flex flex-col h-full min-h-[168px] sm:min-h-[176px] rounded-[14px] border p-3.5 sm:p-4 overflow-hidden focus-within:outline focus-within:outline-2 focus-within:outline-offset-2"
       style={{
-        background: `linear-gradient(165deg, ${color}14 0%, #ffffff 36%, var(--dash-surface-0) 100%)`,
-        borderColor: `${color}24`,
+        background: `color-mix(in srgb, ${color} 8%, var(--dash-surface-0))`,
+        borderColor: 'var(--dash-border)',
         boxShadow: 'var(--dash-shadow-1)',
         outlineColor: color,
       }}

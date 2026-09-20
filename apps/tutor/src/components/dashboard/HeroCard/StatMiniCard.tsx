@@ -12,12 +12,12 @@ type StatMiniCardProps = {
 
 const TONE: Record<
   StatMiniCardProps['tone'],
-  { color: string; grad: string }
+  { color: string; bg: string }
 > = {
-  sky: { color: '#0ea5e9', grad: 'linear-gradient(160deg, #e0f2fe 0%, #ffffff 70%)' },
-  amber: { color: '#f59e0b', grad: 'linear-gradient(160deg, #fef3c7 0%, #ffffff 70%)' },
-  rose: { color: '#f43f5e', grad: 'linear-gradient(160deg, #ffe4e6 0%, #ffffff 70%)' },
-  teal: { color: '#14b8a6', grad: 'linear-gradient(160deg, #ccfbf1 0%, #ffffff 70%)' },
+  sky: { color: '#0ea5e9', bg: 'var(--dash-surface-1)' },
+  amber: { color: '#f59e0b', bg: 'var(--dash-surface-1)' },
+  rose: { color: '#f43f5e', bg: 'var(--dash-surface-1)' },
+  teal: { color: '#14b8a6', bg: 'var(--dash-surface-1)' },
 };
 
 function MiniSpark({ data, color }: { data: number[]; color: string }) {
@@ -57,7 +57,7 @@ export default function StatMiniCard({
   emptyHint,
 }: StatMiniCardProps) {
   const reduced = useReducedMotion();
-  const { color, grad } = TONE[tone];
+  const { color, bg } = TONE[tone];
   const Comp: typeof motion.button | typeof motion.div = onClick ? motion.button : motion.div;
   const isZeroish = value === '0' || value === '0h' || value === '0%' || value === '0d';
 
@@ -68,13 +68,12 @@ export default function StatMiniCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: reduced ? 0 : 0.35 + delay, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       whileHover={onClick ? { y: -2 } : undefined}
-      className={`rounded-[14px] border text-left px-3 py-2.5 w-full ${
+      className={`rounded-[12px] border text-left px-2.5 py-2 w-full min-h-[44px] ${
         onClick ? 'cursor-pointer' : ''
       }`}
       style={{
-        background: grad,
-        borderColor: `${color}33`,
-        boxShadow: `0 6px 16px ${color}14`,
+        background: bg,
+        borderColor: 'var(--dash-border)',
       }}
     >
       <div className="flex items-center gap-1.5 mb-0.5">

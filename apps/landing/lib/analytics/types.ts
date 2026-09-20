@@ -2,7 +2,7 @@
  * Shared AIra analytics event names — keep in sync with Tutor analyticsTypes.ts
  */
 
-export type AuthMethod = 'email' | 'google' | 'apple' | 'microsoft' | 'unknown'
+export type AuthMethod = 'email' | 'google' | 'apple' | 'microsoft' | 'phone' | 'unknown'
 
 export type ApiEndpointName =
   | 'lesson_content'

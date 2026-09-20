@@ -338,6 +338,52 @@ export function useDashboardInsights(range: JourneyRange = '7d') {
           ) / 10
         : 0;
 
+    // Subject mastery: only subjects with scored topic data (never fabricate)
+    const subjectMastery = subjectList
+      .filter((s) => s.scoreCount > 0)
+      .map((s) => ({
+        id: s.id,
+        name: s.name,
+        accuracy: s.avgScore,
+        topicCount: s.scoreCount,
+      }))
+      .sort((a, b) => b.accuracy - a.accuracy);
+
+    // Strengths / focus areas only when enough scored sessions exist
+    const enoughScored = scored.length >= 3;
+    const strengths = enoughScored
+      ? [...subjectList]
+          .filter((s) => s.avgScore >= 70 && s.scoreCount > 0)
+          .sort((a, b) => b.avgScore - a.avgScore)
+          .slice(0, 3)
+          .map((s) => ({
+            id: s.id,
+            name: s.name,
+            accuracy: s.avgScore,
+            topicCount: s.scoreCount,
+          }))
+      : [];
+    const focusAreas = enoughScored
+      ? [...subjectList]
+          .filter((s) => s.scoreCount > 0 && s.avgScore > 0 && s.avgScore < 70)
+          .sort((a, b) => a.avgScore - b.avgScore)
+          .slice(0, 3)
+          .map((s) => ({
+            id: s.id,
+            name: s.name,
+            accuracy: s.avgScore,
+            topicCount: s.scoreCount,
+          }))
+      : [];
+
+    // Last session timestamp for continue-learning meta
+    const lastSessionAt =
+      sessions.length > 0
+        ? [...sessions].sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          )[0]?.date
+        : undefined;
+
     return {
       metrics,
       readiness,
@@ -347,7 +393,11 @@ export function useDashboardInsights(range: JourneyRange = '7d') {
       journeyPoints: labeledPoints,
       strength,
       focus,
+      subjectMastery,
+      strengths,
+      focusAreas,
       nextTopic,
+      lastSessionAt,
       peerPercentile,
       weeklyQuizBars,
       recentSessions,
@@ -358,6 +408,7 @@ export function useDashboardInsights(range: JourneyRange = '7d') {
       allTopics,
       efficiencyMinPerQ,
       hasActivity: sessions.length > 0 || completedCount > 0,
+      scoredSessionCount: scored.length,
       range,
       rangeLabel: range === '7d' ? 'last 7 days' : range === '30d' ? 'last 30 days' : 'all time',
     };
