@@ -123,7 +123,7 @@ export default function CompetitivePreparationCard({
               className="dash-btn dash-btn--primary dash-btn--sm"
               onClick={onOpenAnalytics}
             >
-              View performance
+              View competitive dashboard
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
             <button type="button" className="dash-btn dash-btn--ghost dash-btn--sm" onClick={onStart}>

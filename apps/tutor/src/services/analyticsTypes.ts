@@ -124,7 +124,6 @@ export type CompetitiveSectionId =
   | 'questionary'
   | 'pyqs'
   | 'mock'
-  | 'performance'
 
 export type CompetitiveFlowType = 'standard' | 'pyq' | 'mock' | 'weekly' | 'quiz'
 

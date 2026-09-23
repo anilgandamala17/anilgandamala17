@@ -10,6 +10,7 @@ import { COMPETITIVE_EXAMS } from '../data/mockData';
 import type { Question } from '../data/competitiveQuestions';
 import { EXAM_GENERATION_VERSION } from '../data/competitive/generationVersion';
 
+/** Active hub sections (Analytics removed — lives on /student/dashboard?mode=competitive). */
 export const COMPETITIVE_SECTIONS = [
     'exams',
     'weekly',
@@ -17,10 +18,12 @@ export const COMPETITIVE_SECTIONS = [
     'questionary',
     'pyqs',
     'mock',
-    'performance',
 ] as const;
 
 export type CompetitiveSection = (typeof COMPETITIVE_SECTIONS)[number];
+
+/** Legacy analytics section — redirect callers to the unified dashboard. */
+export const LEGACY_PERFORMANCE_SECTION = 'performance';
 
 export const SECTION_PARAM = 'section';
 
@@ -37,10 +40,29 @@ export const FLOW_PARAMS = [
     'q',
 ] as const;
 
+export function isLegacyPerformanceSection(value: string | null): boolean {
+    return value === LEGACY_PERFORMANCE_SECTION;
+}
+
 export function normalizeSection(value: string | null): CompetitiveSection {
+    if (isLegacyPerformanceSection(value)) return 'exams';
     return COMPETITIVE_SECTIONS.includes(value as CompetitiveSection)
         ? (value as CompetitiveSection)
         : 'exams';
+}
+
+/** Map an exam draft flowType to the competitive hub `section` query value. */
+export function flowTypeToSection(flowType: string): CompetitiveSection {
+    switch (flowType) {
+        case 'pyq':
+            return 'pyqs';
+        case 'mock':
+            return 'mock';
+        case 'weekly':
+            return 'weekly';
+        default:
+            return 'exams';
+    }
 }
 
 export function findExam(examId: string | null): Exam | null {
@@ -238,6 +260,34 @@ export function clearExamDraft(
         sessionStorage.removeItem(legacyDraftKey(flowType));
     } catch {
         /* ignore */
+    }
+}
+
+/**
+ * Scan sessionStorage for the most recently saved usable exam draft.
+ * Used by the Competitive dashboard "Continue preparation" card.
+ */
+export function findLatestExamDraft(): ExamDraft | null {
+    try {
+        let best: ExamDraft | null = null;
+        for (let i = 0; i < sessionStorage.length; i++) {
+            const key = sessionStorage.key(i);
+            if (!key || !key.startsWith('aira-exam-draft:')) continue;
+            const raw = sessionStorage.getItem(key);
+            if (!raw) continue;
+            let parsed: ExamDraft;
+            try {
+                parsed = JSON.parse(raw) as ExamDraft;
+            } catch {
+                continue;
+            }
+            if (!isUsableDraft(parsed)) continue;
+            if (Date.now() - parsed.savedAt > DRAFT_MAX_AGE_MS) continue;
+            if (!best || parsed.savedAt > best.savedAt) best = parsed;
+        }
+        return best;
+    } catch {
+        return null;
     }
 }
 

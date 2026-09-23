@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Trophy } from 'lucide-react';
 import { studentRoutes } from '../utils/routes';
 import PageTransition from '../components/common/PageTransition';
-import CompetitiveDashboard from '../components/competitive/CompetitiveDashboard';
+import CompetitiveHub from '../components/competitive/CompetitiveHub';
 import AiraLogo from '../components/brand/AiraLogo';
 import SignOutButton from '../components/common/SignOutButton';
 
@@ -56,7 +56,7 @@ export default function StudentCompetitivePage() {
           </header>
 
           <main className="min-h-0 flex-1 overflow-hidden">
-            <CompetitiveDashboard />
+            <CompetitiveHub />
           </main>
         </div>
       </div>
