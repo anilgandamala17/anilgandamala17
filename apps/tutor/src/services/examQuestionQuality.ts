@@ -192,8 +192,16 @@ export function clampCorrectAnswer(value: unknown): number {
   return Math.min(3, Math.max(0, Math.round(n)));
 }
 
-/** Practice length: official papers can be 80–100 Q; AI quality collapses past ~30. */
-export function resolvePaperLength(officialCount: number, mode: 'mock' | 'pyq' | 'standard'): number {
+/** Practice length: official papers can be 80–100 Q; AI quality collapses past ~30.
+ *  Full CBT papers (`paperScope: 'full'`) use the official subject count uncapped. */
+export function resolvePaperLength(
+  officialCount: number,
+  mode: 'mock' | 'pyq' | 'standard',
+  paperScope: 'subject' | 'full' = 'subject',
+): number {
+  if (paperScope === 'full') {
+    return Math.max(1, officialCount);
+  }
   const cap = mode === 'mock' ? 18 : 30;
   return Math.max(1, Math.min(officialCount, cap));
 }

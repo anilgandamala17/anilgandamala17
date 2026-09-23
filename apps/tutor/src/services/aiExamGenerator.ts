@@ -43,6 +43,8 @@ export interface AIExamPaperParams {
   count: number;
   examYear: string;
   mode?: 'mock' | 'pyq';
+  /** When 'full', callers pass uncapped official counts (see resolvePaperLength). */
+  paperScope?: 'subject' | 'full';
 }
 
 interface RawExamQuestion {

@@ -16,6 +16,11 @@ export interface Question {
     examYear: string;
     subjectId: string;
     subjectName: string;
+    /** Stable 1-based index within a full multi-subject paper. */
+    questionNumber?: number;
+    /** Optional stem diagram / figure URLs from source data (never fabricated). */
+    imageUrl?: string;
+    imageUrls?: string[];
     /** Internal validation metadata — not shown in exam UI */
     examId?: string;
     topicId?: string;

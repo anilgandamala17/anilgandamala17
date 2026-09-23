@@ -74,11 +74,16 @@ export function normalizeExamStep(value: string | null): ExamFlowStep {
 
 /* ── Live exam session persistence ───────────────────────────────────────── */
 
+export type ExamDraftScope = 'full' | 'subject';
+
+/** v3 full-paper drafts + legacy v2 subject drafts (read for migration). */
 export interface ExamDraft {
-    version: 2;
+    version: 2 | 3;
     flowType: string;
     examId: string;
+    /** Required for subject-scoped sessions; 'full' for combined papers. */
     subjectId: string;
+    scope?: ExamDraftScope;
     paperYear?: string;
     step: 'solving' | 'result';
     questions: Question[];
@@ -91,8 +96,12 @@ export interface ExamDraft {
     notes: Record<number, string>;
     timer: number;
     elapsedSeconds: number;
+    /** Palette filter only — never resets answers/timer. */
+    subjectFilter?: string | null;
     savedAt: number;
 }
+
+export const FULL_PAPER_SUBJECT_ID = 'full';
 
 /** Sessions older than this are treated as abandoned. */
 const DRAFT_MAX_AGE_MS = 6 * 60 * 60 * 1000;
@@ -110,6 +119,11 @@ function draftKey(
     return `${base}:${examId}:${subjectId}:${range}:${EXAM_GENERATION_VERSION}`;
 }
 
+function fullDraftKey(flowType: string, examId: string, paperYear?: string): string {
+    const yearPart = paperYear || 'all';
+    return `aira-exam-draft:${flowType}:${examId}:full:${yearPart}:${EXAM_GENERATION_VERSION}`;
+}
+
 /** Exported for offline cache-isolation tests. */
 export function examDraftCacheKey(
     flowType: string,
@@ -117,6 +131,9 @@ export function examDraftCacheKey(
     subjectId: string,
     paperYear?: string,
 ): string {
+    if (subjectId === FULL_PAPER_SUBJECT_ID) {
+        return fullDraftKey(flowType, examId, paperYear);
+    }
     return draftKey(flowType, examId, subjectId, undefined, paperYear);
 }
 
@@ -124,10 +141,34 @@ function legacyDraftKey(flowType: string): string {
     return `aira-exam-draft:${flowType}`;
 }
 
+function isUsableDraft(parsed: ExamDraft): boolean {
+    return (
+        (parsed.version === 2 || parsed.version === 3) &&
+        Array.isArray(parsed.questions) &&
+        parsed.questions.length > 0
+    );
+}
+
 export function saveExamDraft(draft: ExamDraft): void {
     try {
-        const key = draftKey(draft.flowType, draft.examId, draft.subjectId, undefined, draft.paperYear);
-        sessionStorage.setItem(key, JSON.stringify(draft));
+        const scope = draft.scope ?? (draft.subjectId === FULL_PAPER_SUBJECT_ID ? 'full' : 'subject');
+        const normalized: ExamDraft = {
+            ...draft,
+            version: 3,
+            scope,
+            subjectId: scope === 'full' ? FULL_PAPER_SUBJECT_ID : draft.subjectId,
+        };
+        const key =
+            scope === 'full'
+                ? fullDraftKey(normalized.flowType, normalized.examId, normalized.paperYear)
+                : draftKey(
+                      normalized.flowType,
+                      normalized.examId,
+                      normalized.subjectId,
+                      undefined,
+                      normalized.paperYear,
+                  );
+        sessionStorage.setItem(key, JSON.stringify(normalized));
         sessionStorage.removeItem(legacyDraftKey(draft.flowType));
     } catch {
         /* storage full or unavailable — drafts are best effort */
@@ -141,8 +182,13 @@ export function loadExamDraft(
     paperYear?: string,
 ): ExamDraft | null {
     try {
+        const isFull =
+            !subjectId || subjectId === FULL_PAPER_SUBJECT_ID || subjectId === 'all';
         const keys = [
-            examId && subjectId ? draftKey(flowType, examId, subjectId, undefined, paperYear) : null,
+            examId && isFull ? fullDraftKey(flowType, examId, paperYear) : null,
+            examId && subjectId && !isFull
+                ? draftKey(flowType, examId, subjectId, undefined, paperYear)
+                : null,
             legacyDraftKey(flowType),
         ].filter(Boolean) as string[];
 
@@ -150,11 +196,17 @@ export function loadExamDraft(
             const raw = sessionStorage.getItem(key);
             if (!raw) continue;
             const parsed = JSON.parse(raw) as ExamDraft;
-            if (parsed?.version !== 2 || !Array.isArray(parsed.questions) || !parsed.questions.length) {
+            if (!isUsableDraft(parsed)) continue;
+            if (examId && parsed.examId !== examId) continue;
+            if (
+                subjectId &&
+                !isFull &&
+                parsed.subjectId &&
+                parsed.subjectId !== subjectId &&
+                parsed.subjectId !== FULL_PAPER_SUBJECT_ID
+            ) {
                 continue;
             }
-            if (examId && parsed.examId !== examId) continue;
-            if (subjectId && parsed.subjectId !== subjectId) continue;
             if (paperYear && parsed.paperYear && parsed.paperYear !== paperYear) continue;
             if (Date.now() - parsed.savedAt > DRAFT_MAX_AGE_MS) {
                 clearExamDraft(flowType, examId, subjectId, paperYear);
@@ -175,8 +227,13 @@ export function clearExamDraft(
     paperYear?: string,
 ): void {
     try {
-        if (examId && subjectId) {
-            sessionStorage.removeItem(draftKey(flowType, examId, subjectId, undefined, paperYear));
+        if (examId) {
+            sessionStorage.removeItem(fullDraftKey(flowType, examId, paperYear));
+            if (subjectId && subjectId !== FULL_PAPER_SUBJECT_ID) {
+                sessionStorage.removeItem(
+                    draftKey(flowType, examId, subjectId, undefined, paperYear),
+                );
+            }
         }
         sessionStorage.removeItem(legacyDraftKey(flowType));
     } catch {

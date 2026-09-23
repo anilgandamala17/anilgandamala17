@@ -19,12 +19,16 @@ import {
     X,
 } from 'lucide-react';
 import type { Question } from '../../data/competitiveQuestions';
-import type { Exam } from '../../data/mockData';
+import type { Exam, ExamSubject } from '../../data/mockData';
 import { EXAM_THEMES } from '../../data/examThemes';
 
 export interface LiveExamPanelProps {
     exam: Exam;
     subjectName: string;
+    subjects?: ExamSubject[];
+    subjectFilter?: string | null;
+    onSubjectFilterChange?: (subjectId: string | null) => void;
+    isFullPaper?: boolean;
     questions: Question[];
     currentQuestionIndex: number;
     userAnswers: number[];
@@ -136,6 +140,10 @@ function ExamPaletteTimer() {
 function LiveExamPanel({
     exam,
     subjectName,
+    subjects = [],
+    subjectFilter = null,
+    onSubjectFilterChange,
+    isFullPaper = false,
     questions,
     currentQuestionIndex,
     userAnswers,
@@ -180,6 +188,22 @@ function LiveExamPanel({
         () => visitedQuestions.filter(Boolean).length,
         [visitedQuestions],
     );
+
+    const paletteIndices = useMemo(() => {
+        if (!subjectFilter) return questions.map((_, i) => i);
+        return questions
+            .map((question, i) => (question.subjectId === subjectFilter ? i : -1))
+            .filter((i) => i >= 0);
+    }, [questions, subjectFilter]);
+
+    const stemImages = useMemo(() => {
+        if (!q) return [] as string[];
+        const urls = [...(q.imageUrls || [])];
+        if (q.imageUrl) urls.unshift(q.imageUrl);
+        return [...new Set(urls.filter(Boolean))];
+    }, [q]);
+
+    const displayNumber = q?.questionNumber ?? safeIndex + 1;
 
     useEffect(() => {
         const onFs = () => setFullscreen(Boolean(document.fullscreenElement));
@@ -239,16 +263,43 @@ function LiveExamPanel({
                 <PaletteStat value={questions.length - answeredCount} label="Remaining" tone="remaining" />
             </div>
 
+            {isFullPaper && subjects.length > 0 && onSubjectFilterChange ? (
+                <div className="exam-palette__filter">
+                    <label htmlFor="exam-subject-filter" className="sr-only">
+                        Filter questions by subject
+                    </label>
+                    <select
+                        id="exam-subject-filter"
+                        value={subjectFilter ?? ''}
+                        onChange={(e) =>
+                            onSubjectFilterChange(e.target.value ? e.target.value : null)
+                        }
+                        className="exam-palette__filter-select"
+                    >
+                        <option value="">All Subjects</option>
+                        {subjects.map((s) => (
+                            <option key={s.id} value={s.id}>
+                                {s.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+            ) : null}
+
             <div className="exam-palette__heading">
                 <div>
                     <p>Question navigator</p>
-                    <span>{visitedCount} of {questions.length} visited</span>
+                    <span>
+                        {subjectFilter
+                            ? `${paletteIndices.length} in filter · ${visitedCount} visited overall`
+                            : `${visitedCount} of ${questions.length} visited`}
+                    </span>
                 </div>
                 <Grid3X3 className="h-4 w-4" />
             </div>
 
-            <div className="exam-palette__grid custom-scrollbar">
-                {questions.map((_, i) => {
+            <div className="exam-palette__grid custom-scrollbar" role="listbox" aria-label="Question palette">
+                {paletteIndices.map((i) => {
                     const isAnswered = userAnswers[i] !== -1;
                     const isMarked = markedForReview[i];
                     const isVisited = visitedQuestions[i];
@@ -258,6 +309,7 @@ function LiveExamPanel({
                     else if (isAnswered) state = 'answered';
                     else if (isMarked) state = 'marked';
                     else if (isVisited) state = 'visited';
+                    const num = questions[i]?.questionNumber ?? i + 1;
 
                     return (
                         <button
@@ -270,10 +322,10 @@ function LiveExamPanel({
                             className={`exam-palette__question exam-palette__question--${state} ${
                                 isCurrent ? 'exam-palette__question--current' : ''
                             }`}
-                            aria-label={`Question ${i + 1}, ${state.replace('-', ' ')}`}
+                            aria-label={`Question ${num}, ${state.replace('-', ' ')}`}
                             aria-current={isCurrent ? 'step' : undefined}
                         >
-                            {i + 1}
+                            {num}
                             {bookmarked[i] && <span className="exam-palette__bookmark" />}
                         </button>
                     );
@@ -281,10 +333,11 @@ function LiveExamPanel({
             </div>
 
             <div className="exam-palette__legend">
-                <LegendDot className="border border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-800" label="Not visited" />
-                <LegendDot className="bg-rose-500" label="Visited" />
+                <LegendDot className="border border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-800" label="Unanswered" />
                 <LegendDot className="bg-emerald-500" label="Answered" />
                 <LegendDot className="bg-violet-500" label="Marked" />
+                <LegendDot className="exam-legend-answered-marked" label="Answered + marked" />
+                <LegendDot className="ring-2 ring-orange-500 bg-orange-100 dark:bg-orange-900/40" label="Current" />
             </div>
 
             <div className="exam-palette__autosave">
@@ -319,7 +372,10 @@ function LiveExamPanel({
                         </span>
                         <div className="min-w-0">
                             <p>{exam.name}</p>
-                            <span>{subjectName} · Live assessment</span>
+                            <span>
+                                {isFullPaper ? 'Full paper' : subjectName}
+                                {q.subjectName && isFullPaper ? ` · ${q.subjectName}` : ''} · Live assessment
+                            </span>
                         </div>
                     </div>
 
@@ -358,8 +414,11 @@ function LiveExamPanel({
 
                 <div className="exam-question-meta">
                     <div className="flex min-w-0 flex-wrap items-center gap-2">
-                        <span className="exam-question-number">Question {safeIndex + 1}</span>
+                        <span className="exam-question-number">Question {displayNumber}</span>
                         <span className="exam-meta-chip">{q.difficulty}</span>
+                        {q.subjectName ? (
+                            <span className="exam-meta-chip">{q.subjectName}</span>
+                        ) : null}
                         <span className="exam-meta-chip hidden sm:inline-flex">~{estMinutes} min</span>
                         {q.examYear && <span className="exam-meta-chip exam-meta-chip--pyq">PYQ {q.examYear}</span>}
                     </div>
@@ -370,7 +429,7 @@ function LiveExamPanel({
                 </div>
 
                 <div className="exam-mobile-question-strip lg:hidden">
-                    {questions.map((_, i) => (
+                    {paletteIndices.map((i) => (
                         <button
                             key={i}
                             type="button"
@@ -379,7 +438,7 @@ function LiveExamPanel({
                                 userAnswers[i] !== -1 ? 'is-answered' : ''
                             }`}
                         >
-                            {i + 1}
+                            {questions[i]?.questionNumber ?? i + 1}
                         </button>
                     ))}
                 </div>
@@ -388,9 +447,16 @@ function LiveExamPanel({
                     <div className="exam-question-content">
                         <div className="exam-question-copy">
                             <p className="exam-question-copy__index">
-                                Q{safeIndex + 1} of {questions.length}
+                                Q{displayNumber} of {questions.length}
                             </p>
                             <h2>{q.text}</h2>
+                            {stemImages.length > 0 ? (
+                                <div className="exam-stem-images">
+                                    {stemImages.map((src) => (
+                                        <StemImage key={src} src={src} />
+                                    ))}
+                                </div>
+                            ) : null}
                         </div>
 
                         <div className="exam-options">
@@ -513,6 +579,28 @@ function LiveExamPanel({
             </AnimatePresence>
         </div>
         </ExamTimeProvider>
+    );
+}
+
+function StemImage({ src }: { src: string }) {
+    const [status, setStatus] = useState<'loading' | 'ok' | 'error'>('loading');
+    return (
+        <figure className="exam-stem-image">
+            {status === 'loading' ? <div className="exam-stem-image__skeleton" aria-hidden /> : null}
+            {status !== 'error' ? (
+                <img
+                    src={src}
+                    alt="Question figure"
+                    loading="lazy"
+                    decoding="async"
+                    className={status === 'ok' ? 'is-visible' : 'is-hidden'}
+                    onLoad={() => setStatus('ok')}
+                    onError={() => setStatus('error')}
+                />
+            ) : (
+                <figcaption className="exam-stem-image__fallback">Figure unavailable</figcaption>
+            )}
+        </figure>
     );
 }
 

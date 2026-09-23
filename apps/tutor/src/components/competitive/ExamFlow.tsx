@@ -5,6 +5,7 @@ import { COMPETITIVE_EXAMS, Exam, ExamSubject, Paper } from '../../data/mockData
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { Question } from '../../data/competitiveQuestions';
 import { aiExamGenerator, resolvePaperLength } from '../../services/aiExamGenerator';
+import { buildFullExamSession } from '../../services/buildFullExamSession';
 import { CompetitiveExamGenerationError } from '../../services/competitiveExamApi';
 import { EXAM_THEMES } from '../../data/examThemes';
 import ExamCard from './ExamCard';
@@ -19,6 +20,7 @@ import {
     findExam,
     findPaper,
     findSubject,
+    FULL_PAPER_SUBJECT_ID,
     loadExamDraft,
     normalizeExamStep,
     saveExamDraft,
@@ -60,6 +62,11 @@ export default function ExamFlow({
     }, []);
     const paperFlow = flowType === 'pyq' || (flowType === 'weekly' && weeklySession?.mode === 'pyq');
     const mockFlow = flowType === 'mock' || (flowType === 'weekly' && weeklySession?.mode === 'mock');
+
+    /** Weekly windows with a fixed subject stay single-subject; everything else is a full CBT paper. */
+    const useFullPaper =
+        !(flowType === 'weekly' && Boolean(weeklySession?.subjectId)) &&
+        (flowType === 'standard' || flowType === 'pyq' || flowType === 'mock' || flowType === 'weekly');
 
     /**
      * The flow is addressed entirely by the URL, so a refresh or a back button
@@ -119,12 +126,23 @@ export default function ExamFlow({
         const examId = params.get('exam') ?? undefined;
         const subjectId = params.get('subject') ?? undefined;
         const paperYear = params.get('paper') ?? undefined;
+        const preferFull = !subjectId || subjectId === FULL_PAPER_SUBJECT_ID;
         const draft =
             urlStep === 'solving' || urlStep === 'result'
-                ? loadExamDraft(flowType, examId, subjectId, paperYear)
+                ? loadExamDraft(
+                      flowType,
+                      examId,
+                      preferFull ? FULL_PAPER_SUBJECT_ID : subjectId,
+                      paperYear,
+                  ) ?? (preferFull ? null : loadExamDraft(flowType, examId, subjectId, paperYear))
                 : null;
-        initialDraftRef.current =
-            draft && draft.examId === examId && draft.subjectId === subjectId ? draft : null;
+        const draftOk =
+            draft &&
+            draft.examId === examId &&
+            (preferFull
+                ? draft.scope === 'full' || draft.subjectId === FULL_PAPER_SUBJECT_ID
+                : draft.subjectId === subjectId);
+        initialDraftRef.current = draftOk ? draft : null;
     }
     const initialDraft = initialDraftRef.current;
 
@@ -157,10 +175,19 @@ export default function ExamFlow({
     const [timer, setTimer] = useState(() => initialDraft?.timer ?? 0);
     const [elapsedSeconds, setElapsedSeconds] = useState(() => initialDraft?.elapsedSeconds ?? 0);
     const [isGenerating, setIsGenerating] = useState(false);
+    const [generationLabel, setGenerationLabel] = useState<string | null>(null);
     const [integrityOpen, setIntegrityOpen] = useState(false);
-    const pendingStartRef = useRef<{ exam: Exam; subject: ExamSubject; paper: Paper | null } | null>(null);
+    const pendingStartRef = useRef<{
+        exam: Exam;
+        subject: ExamSubject | null;
+        paper: Paper | null;
+        full: boolean;
+    } | null>(null);
     const [explainBuildingId, setExplainBuildingId] = useState<string | null>(null);
     const [reviewFilter, setReviewFilter] = useState<'all' | 'correct' | 'incorrect' | 'unattempted'>('all');
+    const [subjectFilter, setSubjectFilter] = useState<string | null>(
+        () => initialDraft?.subjectFilter ?? null,
+    );
     const timerRef = useRef(timer);
     const elapsedRef = useRef(elapsedSeconds);
     timerRef.current = timer;
@@ -202,24 +229,58 @@ export default function ExamFlow({
     /**
      * Repairs URLs that cannot be rendered — a hand-edited link, a stale
      * bookmark, or a resumed tab whose exam draft has expired.
+     * Never bounce Available/PYQ/Mock into Choose Your Subjects.
      */
     useEffect(() => {
         if (isGenerating) return;
+
+        // Legacy bookmarks: skip Choose Subjects for full-paper flows
+        if (step === 'subject' && useFullPaper) {
+            if (!selectedExam) {
+                goToStep('exam', {}, { replace: true });
+                return;
+            }
+            if (paperFlow || mockFlow) {
+                goToStep('paper', { exam: selectedExam.id, subject: null }, { replace: true });
+            } else {
+                // Available exams: stay on catalog — user re-selects to start full paper
+                goToStep('exam', { exam: null, subject: null, paper: null }, { replace: true });
+            }
+            return;
+        }
 
         if (step === 'subject' && !selectedExam) {
             goToStep('exam', {}, { replace: true });
             return;
         }
-        if (step === 'paper' && (!selectedExam || !selectedSubject || flowType === 'standard')) {
-            goToStep(selectedExam ? 'subject' : 'exam', {}, { replace: true });
+        if (step === 'paper' && !selectedExam) {
+            goToStep('exam', {}, { replace: true });
+            return;
+        }
+        if (step === 'paper' && flowType === 'standard') {
+            goToStep(selectedExam ? 'exam' : 'exam', {}, { replace: true });
             return;
         }
         if ((step === 'solving' || step === 'result') && questions.length === 0) {
             if (!selectedExam) goToStep('exam', {}, { replace: true });
-            else if (!selectedSubject) goToStep('subject', {}, { replace: true });
+            else if (useFullPaper && (paperFlow || mockFlow))
+                goToStep('paper', { exam: selectedExam.id, subject: null }, { replace: true });
+            else if (useFullPaper) goToStep('exam', {}, { replace: true });
+            else if (!selectedSubject) goToStep('exam', {}, { replace: true });
             else goToStep(paperFlow ? 'paper' : 'subject', {}, { replace: true });
         }
-    }, [step, selectedExam, selectedSubject, questions.length, isGenerating, flowType, paperFlow, goToStep]);
+    }, [
+        step,
+        selectedExam,
+        selectedSubject,
+        questions.length,
+        isGenerating,
+        flowType,
+        paperFlow,
+        mockFlow,
+        useFullPaper,
+        goToStep,
+    ]);
 
     const handleTimeTick = useCallback((remaining: number, elapsed: number) => {
         timerRef.current = remaining;
@@ -230,12 +291,14 @@ export default function ExamFlow({
         const exam = selectedExamRef.current;
         const subject = selectedSubjectRef.current;
         const qs = questionsRef.current;
-        if (!exam || !subject || !qs.length) return;
+        if (!exam || !qs.length) return;
+        const full = useFullPaper || !subject;
         saveExamDraft({
-            version: 2,
+            version: 3,
+            scope: full ? 'full' : 'subject',
             flowType: flowTypeRef.current,
             examId: exam.id,
-            subjectId: subject.id,
+            subjectId: full ? FULL_PAPER_SUBJECT_ID : subject!.id,
             paperYear: selectedPaperRef.current ? String(selectedPaperRef.current.year) : undefined,
             step: 'solving',
             questions: qs,
@@ -248,9 +311,10 @@ export default function ExamFlow({
             notes: notesRef.current,
             timer: timerRef.current,
             elapsedSeconds: elapsedRef.current,
+            subjectFilter,
             savedAt: Date.now(),
         });
-    }, []);
+    }, [useFullPaper, subjectFilter]);
 
     // A reload mid-paper would silently discard the attempt without a prompt.
     useEffect(() => {
@@ -284,14 +348,15 @@ export default function ExamFlow({
 
     // Autosave draft while solving (immediate on change + periodic for timer ticks).
     useEffect(() => {
-        if (step !== 'solving' || !selectedExam || !selectedSubject || !questions.length) return;
+        if (step !== 'solving' || !selectedExam || !questions.length) return;
+        if (!useFullPaper && !selectedSubject) return;
         persistExamDraft();
         const intervalHandle = window.setInterval(persistExamDraft, 5000);
         return () => window.clearInterval(intervalHandle);
     }, [
         step,
-        selectedExam?.id,
-        selectedSubject?.id,
+        selectedExam,
+        selectedSubject,
         questions.length,
         currentQuestionIndex,
         userAnswers,
@@ -301,13 +366,16 @@ export default function ExamFlow({
         eliminated,
         notes,
         selectedPaper,
+        subjectFilter,
+        useFullPaper,
         persistExamDraft,
     ]);
 
     // Persist attempt once when results open
     useEffect(() => {
-        if (step !== 'result' || !selectedExam || !selectedSubject || recordedRef.current) return;
+        if (step !== 'result' || !selectedExam || recordedRef.current) return;
         if (!questions.length) return;
+        if (!useFullPaper && !selectedSubject) return;
         recordedRef.current = true;
         let correctCount = 0;
         let incorrectCount = 0;
@@ -317,11 +385,13 @@ export default function ExamFlow({
             else incorrectCount += 1;
         });
         const netScore = correctCount * 4 - incorrectCount;
+        const subjectId = useFullPaper ? FULL_PAPER_SUBJECT_ID : selectedSubject!.id;
+        const subjectName = useFullPaper ? 'Full examination' : selectedSubject!.name;
         recordAttempt({
             examId: selectedExam.id,
             examName: selectedExam.name,
-            subjectId: selectedSubject.id,
-            subjectName: selectedSubject.name,
+            subjectId,
+            subjectName,
             mode:
                 flowType === 'weekly'
                     ? 'weekly'
@@ -344,7 +414,7 @@ export default function ExamFlow({
         });
         analytics.testCompleted({
             examId: selectedExam.id,
-            subjectId: selectedSubject.id,
+            subjectId,
             score: netScore,
             totalQuestions: questions.length,
             correctAnswers: correctCount,
@@ -356,13 +426,12 @@ export default function ExamFlow({
                 Math.max(0, selectedExam.timeMinutes * 60 - (timerRef.current || timer)),
             flowType,
         });
-        // Keep the draft, flipped to `result`, so reloading the scorecard still
-        // has the paper and answers needed to render the review.
         saveExamDraft({
-            version: 2,
+            version: 3,
+            scope: useFullPaper ? 'full' : 'subject',
             flowType,
             examId: selectedExam.id,
-            subjectId: selectedSubject.id,
+            subjectId,
             paperYear: selectedPaper ? String(selectedPaper.year) : undefined,
             step: 'result',
             questions,
@@ -375,6 +444,7 @@ export default function ExamFlow({
             notes,
             timer: timerRef.current,
             elapsedSeconds: elapsedRef.current,
+            subjectFilter,
             savedAt: Date.now(),
         });
     }, [
@@ -394,6 +464,8 @@ export default function ExamFlow({
         timer,
         flowType,
         recordAttempt,
+        useFullPaper,
+        subjectFilter,
     ]);
 
     const resetExam = useCallback(() => {
@@ -409,14 +481,15 @@ export default function ExamFlow({
         setTimer(0);
         setElapsedSeconds(0);
         setReviewFilter('all');
+        setSubjectFilter(null);
         recordedRef.current = false;
         clearExamDraft(
             flowType,
             selectedExam?.id,
-            selectedSubject?.id,
+            useFullPaper ? FULL_PAPER_SUBJECT_ID : selectedSubject?.id,
             selectedPaper ? String(selectedPaper.year) : undefined,
         );
-    }, [flowType, selectedExam?.id, selectedSubject?.id, selectedPaper]);
+    }, [flowType, selectedExam?.id, selectedSubject?.id, selectedPaper, useFullPaper]);
 
     const exitToSelection = useCallback(() => {
         if (step === 'solving' && selectedExam) {
@@ -442,10 +515,12 @@ export default function ExamFlow({
             );
             return;
         }
-        if (flowType === 'pyq' && selectedSubject) goToStep('paper', { paper: null });
-        else if (selectedExam) goToStep('subject', { paper: null });
-        else goToStep('exam');
-    }, [flowType, goToStep, resetExam, selectedExam, selectedSubject, updateFlowParams]);
+        if ((flowType === 'pyq' || flowType === 'mock') && selectedExam) {
+            goToStep('paper', { exam: selectedExam.id, subject: null, paper: null });
+        } else {
+            goToStep('exam');
+        }
+    }, [flowType, goToStep, resetExam, selectedExam, step, updateFlowParams]);
 
     const handleBack = () => {
         if (step === 'result') {
@@ -455,7 +530,7 @@ export default function ExamFlow({
             if (confirmQuit) exitToSelection();
         } else if (step === 'paper') {
             if (flowType === 'weekly' && weeklySession?.subjectId) exitToSelection();
-            else goToStep('subject', { paper: null });
+            else goToStep('exam', { subject: null, paper: null });
         } else if (step === 'subject') {
             if (flowType === 'weekly' && weeklySession?.examId) exitToSelection();
             else goToStep('exam');
@@ -464,6 +539,14 @@ export default function ExamFlow({
 
     const handleExamSelect = (exam: Exam) => {
         analytics.examSelected(exam.id, exam.name);
+        if (useFullPaper && (flowType === 'standard' || (flowType === 'weekly' && !weeklySession?.subjectId && mockFlow))) {
+            requestStartFullExam(exam, null);
+            return;
+        }
+        if (useFullPaper && (paperFlow || mockFlow)) {
+            goToStep('paper', { exam: exam.id, subject: null, paper: null });
+            return;
+        }
         goToStep('subject', { exam: exam.id, subject: null, paper: null });
     };
 
@@ -475,8 +558,9 @@ export default function ExamFlow({
     const applyQuestionsAndStartSolving = (
         finalQuestions: Question[],
         exam: Exam,
-        subject: ExamSubject,
+        subject: ExamSubject | null,
         paper: Paper | null,
+        full: boolean,
     ) => {
         setQuestions(finalQuestions);
         setUserAnswers(new Array(finalQuestions.length).fill(-1));
@@ -487,19 +571,28 @@ export default function ExamFlow({
         setBookmarked(new Array(finalQuestions.length).fill(false));
         setEliminated({});
         setNotes({});
+        setSubjectFilter(null);
         setElapsedSeconds(0);
         recordedRef.current = false;
-        // Subject-scoped time: proportional share of full paper, minimum 20 minutes
-        const share = Math.max(
-            20 * 60,
-            Math.round((exam.timeMinutes * 60 * (finalQuestions.length || 1)) / Math.max(1, exam.subjects.reduce((s, sub) => s + sub.questionsCount, 0))),
-        );
-        setTimer(share);
+
+        const durationSeconds = full
+            ? Math.max(20 * 60, exam.timeMinutes * 60)
+            : Math.max(
+                  20 * 60,
+                  Math.round(
+                      (exam.timeMinutes * 60 * (finalQuestions.length || 1)) /
+                          Math.max(1, exam.subjects.reduce((s, sub) => s + sub.questionsCount, 0)),
+                  ),
+              );
+        setTimer(durationSeconds);
+
+        const subjectId = full ? FULL_PAPER_SUBJECT_ID : subject!.id;
         saveExamDraft({
-            version: 2,
+            version: 3,
+            scope: full ? 'full' : 'subject',
             flowType,
             examId: exam.id,
-            subjectId: subject.id,
+            subjectId,
             paperYear: paper ? String(paper.year) : undefined,
             step: 'solving',
             questions: finalQuestions,
@@ -510,25 +603,84 @@ export default function ExamFlow({
             bookmarked: new Array(finalQuestions.length).fill(false),
             eliminated: {},
             notes: {},
-            timer: share,
+            timer: durationSeconds,
             elapsedSeconds: 0,
+            subjectFilter: null,
             savedAt: Date.now(),
         });
         goToStep('solving', {
             exam: exam.id,
-            subject: subject.id,
+            subject: full ? null : subject!.id,
             paper: paper ? String(paper.year) : null,
         });
         analytics.testStarted({
             examId: exam.id,
-            subjectId: subject.id,
-            testId: paper ? `${exam.id}-${subject.id}-${paper.year}` : `${exam.id}-${subject.id}`,
+            subjectId,
+            testId: paper
+                ? `${exam.id}-${subjectId}-${paper.year}`
+                : `${exam.id}-${subjectId}`,
             totalQuestions: finalQuestions.length,
             flowType,
         });
     };
 
-    /** Full AI exam generation: syllabus-aligned, batched, fresh session each call. */
+    /** Full multi-subject CBT paper. */
+    const generateAndStartFullExam = async (exam: Exam, paperOverride?: Paper | null) => {
+        if (flowType === 'weekly') {
+            if (!weeklySession || !isSessionLive(weeklySession)) {
+                window.alert('This weekly exam window has closed.');
+                exitToSelection();
+                return;
+            }
+        }
+        const generationId = ++generationIdRef.current;
+        setIsGenerating(true);
+        setGenerationLabel('Preparing full examination…');
+        try {
+            const year = resolveExamYear(exam, paperOverride !== undefined ? paperOverride : selectedPaper);
+            const mode = paperFlow ? 'pyq' : mockFlow ? 'mock' : 'standard';
+            const finalQuestions = await buildFullExamSession({
+                exam,
+                examYear: year,
+                mode,
+                shouldContinue: () =>
+                    isMountedRef.current && generationId === generationIdRef.current,
+                onProgress: (p) => {
+                    setGenerationLabel(
+                        p.phase === 'fallback'
+                            ? `Loading ${p.subjectName} (offline)…`
+                            : `Building ${p.subjectName} (${p.subjectIndex + 1}/${p.subjectTotal})…`,
+                    );
+                },
+            });
+            if (!isMountedRef.current || generationId !== generationIdRef.current) return;
+            if (!finalQuestions.length) {
+                weeklyAutoStartedRef.current = false;
+                toast.error('Could not build a full examination. Please try again.');
+                return;
+            }
+            applyQuestionsAndStartSolving(
+                finalQuestions,
+                exam,
+                null,
+                paperOverride !== undefined ? paperOverride : selectedPaper,
+                true,
+            );
+        } catch (error) {
+            console.error('Failed to generate full exam:', error);
+            if (isMountedRef.current && generationId === generationIdRef.current) {
+                weeklyAutoStartedRef.current = false;
+                toast.error('Could not generate the full examination. Please try again.');
+            }
+        } finally {
+            if (isMountedRef.current && generationId === generationIdRef.current) {
+                setIsGenerating(false);
+                setGenerationLabel(null);
+            }
+        }
+    };
+
+    /** Single-subject generation (weekly subject-scoped windows only). */
     const generateAndStartExam = async (exam: Exam, subject: ExamSubject, paperOverride?: Paper | null) => {
         if (flowType === 'weekly') {
             if (!weeklySession || !isSessionLive(weeklySession)) {
@@ -539,6 +691,7 @@ export default function ExamFlow({
         }
         const generationId = ++generationIdRef.current;
         setIsGenerating(true);
+        setGenerationLabel(`Building ${subject.name}…`);
         try {
             const year = resolveExamYear(exam, paperOverride !== undefined ? paperOverride : selectedPaper);
             const count = resolvePaperLength(
@@ -565,6 +718,7 @@ export default function ExamFlow({
                 exam,
                 subject,
                 paperOverride !== undefined ? paperOverride : selectedPaper,
+                false,
             );
         } catch (error) {
             console.error('Failed to generate exam questions:', error);
@@ -582,12 +736,18 @@ export default function ExamFlow({
         } finally {
             if (isMountedRef.current && generationId === generationIdRef.current) {
                 setIsGenerating(false);
+                setGenerationLabel(null);
             }
         }
     };
 
+    const requestStartFullExam = (exam: Exam, paper: Paper | null) => {
+        pendingStartRef.current = { exam, subject: null, paper, full: true };
+        setIntegrityOpen(true);
+    };
+
     const requestStartExam = (exam: Exam, subject: ExamSubject, paper: Paper | null) => {
-        pendingStartRef.current = { exam, subject, paper };
+        pendingStartRef.current = { exam, subject, paper, full: false };
         setIntegrityOpen(true);
     };
 
@@ -602,7 +762,11 @@ export default function ExamFlow({
         pendingStartRef.current = null;
         setIntegrityOpen(false);
         if (!pending) return;
-        void generateAndStartExam(pending.exam, pending.subject, pending.paper);
+        if (pending.full) {
+            void generateAndStartFullExam(pending.exam, pending.paper);
+        } else if (pending.subject) {
+            void generateAndStartExam(pending.exam, pending.subject, pending.paper);
+        }
     };
 
     useEffect(() => {
@@ -636,19 +800,23 @@ export default function ExamFlow({
 
     const handleSubjectSelect = async (subject: ExamSubject) => {
         if (!selectedExam || isGenerating) return;
-        // Standard + weekly mock start immediately; PYQ / mock catalog still pick a year paper
-        if (flowType === 'standard' || (flowType === 'weekly' && weeklySession?.mode === 'mock')) {
+        // Only weekly subject-scoped windows still use Choose Subject
+        if (flowType === 'weekly' && weeklySession?.mode === 'mock') {
             updateFlowParams({ subject: subject.id, paper: null }, { replace: true });
             requestStartExam(selectedExam, subject, null);
-        } else {
+        } else if (flowType === 'weekly') {
             goToStep('paper', { subject: subject.id, paper: null });
         }
     };
 
     const handlePaperSelect = (paper: Paper) => {
-        if (isGenerating) return;
+        if (isGenerating || !selectedExam) return;
         updateFlowParams({ paper: String(paper.year) }, { replace: true });
-        if (selectedExam && selectedSubject) {
+        if (useFullPaper) {
+            requestStartFullExam(selectedExam, paper);
+            return;
+        }
+        if (selectedSubject) {
             requestStartExam(selectedExam, selectedSubject, paper);
         }
     };
@@ -687,16 +855,16 @@ export default function ExamFlow({
         });
     }, [showExplanation]);
 
+    const currentQuestionId = questions[currentQuestionIndex]?.id;
     useEffect(() => {
         if (step !== 'solving' || !selectedExam) return;
-        const q = questions[currentQuestionIndex];
         analytics.questionViewed({
             examId: selectedExam.id,
             questionNumber: currentQuestionIndex + 1,
-            questionId: q?.id,
+            questionId: currentQuestionId,
             flowType,
         });
-    }, [step, selectedExam?.id, currentQuestionIndex, questions[currentQuestionIndex]?.id, flowType]);
+    }, [step, selectedExam, currentQuestionIndex, currentQuestionId, flowType]);
 
     const navigateToQuestion = useCallback((index: number) => {
         setCurrentQuestionIndex(index);
@@ -847,9 +1015,12 @@ export default function ExamFlow({
                             <div className="absolute inset-0 border-4 border-orange-600 dark:border-orange-400 rounded-full border-t-transparent animate-spin" />
                             <BrainCircuit className="w-8 h-8 text-orange-600 dark:text-orange-400 animate-pulse" />
                         </div>
-                        <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">Generating AI Exam...</h3>
+                        <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">
+                            {useFullPaper ? 'Building full examination…' : 'Generating AI Exam…'}
+                        </h3>
                         <p className="text-sm font-medium text-gray-500 dark:text-slate-400 max-w-sm text-center">
-                            Crafting high-quality, perfectly aligned questions for a fresh practice experience.
+                            {generationLabel ||
+                                'Crafting high-quality, syllabus-aligned questions for a fresh practice experience.'}
                         </p>
                     </motion.div>
                 )}
@@ -1032,8 +1203,8 @@ export default function ExamFlow({
                     </motion.div>
                 )}
 
-                {/* Step 2: Subject Selection */}
-                {step === 'subject' && selectedExam && (
+                {/* Step 2: Subject Selection — weekly subject-scoped only */}
+                {step === 'subject' && selectedExam && !useFullPaper && (
                     <motion.div
                         key="subject"
                         initial={{ opacity: 0, y: 30 }}
@@ -1125,7 +1296,9 @@ export default function ExamFlow({
                                         <span className="text-xs font-black uppercase tracking-[0.2em] text-slate-400">Question Repository</span>
                                     </div>
                                     <h2 className="text-4xl font-black text-gray-900 dark:text-white tracking-tighter mb-3">Previous Year Papers</h2>
-                                    <p className="text-lg text-slate-500 dark:text-slate-400 font-medium">Authentic {selectedExam.name} papers curated to simulate the real examination environment.</p>
+                                    <p className="text-lg text-slate-500 dark:text-slate-400 font-medium">
+                                        Select a year to open the complete {selectedExam.name} examination with all subjects in one session.
+                                    </p>
                                 </div>
                                 <div className="flex bg-slate-50 dark:bg-slate-800/80 p-6 rounded-[2.5rem] border border-slate-200/50 dark:border-slate-700/50 gap-8">
                                     <div className="text-center">
@@ -1165,7 +1338,7 @@ export default function ExamFlow({
                 )}
 
                 {/* Step 5: Live examination panel */}
-                {step === 'solving' && questions.length > 0 && selectedExam && selectedSubject && (
+                {step === 'solving' && questions.length > 0 && selectedExam && (useFullPaper || selectedSubject) && (
                     <motion.div
                         key="solving"
                         initial={{ opacity: 0, scale: 0.985 }}
@@ -1174,7 +1347,13 @@ export default function ExamFlow({
                     >
                         <LiveExamPanel
                             exam={selectedExam}
-                            subjectName={selectedSubject.name}
+                            subjectName={
+                                useFullPaper ? 'Full examination' : selectedSubject?.name || 'Subject'
+                            }
+                            subjects={selectedExam.subjects}
+                            subjectFilter={subjectFilter}
+                            onSubjectFilterChange={setSubjectFilter}
+                            isFullPaper={useFullPaper}
                             questions={questions}
                             currentQuestionIndex={currentQuestionIndex}
                             userAnswers={userAnswers}
@@ -1218,7 +1397,11 @@ export default function ExamFlow({
                                 </div>
                                 <div className="exam-result-hero__identity">
                                     <span>{selectedExam?.name || 'Session'}</span>
-                                    <span>{selectedSubject?.name || 'Subject'}</span>
+                                    <span>
+                                        {useFullPaper
+                                            ? 'Full examination'
+                                            : selectedSubject?.name || 'Subject'}
+                                    </span>
                                     {selectedPaper?.year && <span>{selectedPaper.year}</span>}
                                 </div>
                             </header>
@@ -1293,13 +1476,20 @@ export default function ExamFlow({
                                     type="button"
                                     disabled={isGenerating}
                                     onClick={() => {
-                                        if (!selectedExam || !selectedSubject) return;
+                                        if (!selectedExam) return;
                                         resetExam();
-                                        requestStartExam(
-                                            selectedExam,
-                                            selectedSubject,
-                                            paperFlow ? selectedPaper : null,
-                                        );
+                                        if (useFullPaper) {
+                                            requestStartFullExam(
+                                                selectedExam,
+                                                paperFlow || mockFlow ? selectedPaper : null,
+                                            );
+                                        } else if (selectedSubject) {
+                                            requestStartExam(
+                                                selectedExam,
+                                                selectedSubject,
+                                                paperFlow ? selectedPaper : null,
+                                            );
+                                        }
                                     }}
                                     className="exam-result-actions__primary"
                                 >
