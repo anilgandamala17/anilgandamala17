@@ -20,7 +20,12 @@ import {
 import { useCurriculumStore } from '../../stores/curriculumStore';
 import type { SchoolSubject } from '../../types';
 import { useSearchParams } from 'react-router-dom';
-import { getGradeById } from '../../data/schoolCurriculum';
+import { getGradeById, getSubjectsForGradeStream } from '../../data/schoolCurriculum';
+import {
+    isSeniorGrade,
+    normalizeStream,
+    streamDisplayName,
+} from '../../data/seniorStreams';
 
 interface SubjectGridProps {
     onSubjectSelect?: (subjectId: string) => void;
@@ -49,7 +54,7 @@ const iconMap: Record<string, React.ReactNode> = {
 // Subject IDs from schoolCurriculum.ts:
 //   Middle (6-8):   english, hindi, mathematics, science, social-science, computer
 //   Secondary (9-10): english, hindi, mathematics, science, social-science, it
-//   Senior (11-12): physics, chemistry, mathematics, biology, english, computer-science
+//   Senior (11-12): english, mathematics, physics, chemistry, biology (stream-filtered; no CS)
 // ============================================================
 const SUBJECT_IMAGES: Record<string, string> = {
 
@@ -99,7 +104,6 @@ const SUBJECT_IMAGES: Record<string, string> = {
     'g11_physics':        'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&q=90&w=800', // Newton's cradle / physics
     'g11_chemistry':      'https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&q=90&w=800', // chemistry apparatus
     'g11_biology':        '/tutor-media/images/subjects/biology-g11.png',
-    'g11_computer-science':'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=90&w=800',
 
     // ─── GRADE 12 ─────────────────────────────────────────────────────────────
     'g12_english':        'https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=90&w=800', // reading book
@@ -107,7 +111,6 @@ const SUBJECT_IMAGES: Record<string, string> = {
     'g12_physics':        'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=90&w=800', // electronics / electromagnetism
     'g12_chemistry':      'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=90&w=800', // chemical glassware
     'g12_biology':        'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=90&w=800', // biology microscope
-    'g12_computer-science':'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&q=90&w=800',
 };
 
 // Fallback images per subject ID (no grade prefix)
@@ -122,7 +125,6 @@ const SUBJECT_FALLBACK: Record<string, string> = {
     'physics':         'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&q=90&w=800', // Newton's cradle
     'chemistry':       'https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&q=90&w=800', // chemistry apparatus
     'biology':         'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=90&w=800', // biology microscope
-    'computer-science':'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=90&w=800', // coding
 };
 
 const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=90&w=800';
@@ -256,10 +258,16 @@ export default function SubjectGrid({ onSubjectSelect }: SubjectGridProps) {
     const progressMap = useCurriculumStore((s) => s.progressMap);
     const [searchParams] = useSearchParams();
     const gradeId = searchParams.get('grade');
+    const stream = normalizeStream(searchParams.get('stream'));
 
     const grade = gradeId ? getGradeById(gradeId) : null;
 
     if (!grade) return null;
+
+    const subjects =
+        isSeniorGrade(grade.id) && stream
+            ? getSubjectsForGradeStream(grade.id, stream)
+            : grade.subjects;
 
     const handleSubjectClick = (subjectId: string) => {
         if (onSubjectSelect) {
@@ -269,12 +277,15 @@ export default function SubjectGrid({ onSubjectSelect }: SubjectGridProps) {
 
     const getProgress = (subjectId: string) => progressMap[`${grade.id}-${subjectId}`] || null;
 
+    const titleSuffix =
+        isSeniorGrade(grade.id) && stream ? ` · ${streamDisplayName(stream)}` : '';
+
     return (
         <div className="space-y-8">
             {/* Header */}
             <div>
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
-                    {grade.name} Subjects
+                    {grade.name} Subjects{titleSuffix}
                 </h2>
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
                     <div className="px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-[10px] font-bold uppercase tracking-wider">
@@ -288,7 +299,7 @@ export default function SubjectGrid({ onSubjectSelect }: SubjectGridProps) {
 
             {/* Subject grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-6">
-                {grade.subjects.map((subject) => {
+                {subjects.map((subject) => {
                     const progress = getProgress(subject.id);
                     return (
                         <div key={subject.id} className="h-full w-full">

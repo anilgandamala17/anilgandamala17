@@ -106,6 +106,7 @@ export default function CompetitiveHub() {
     const selectSection = useCallback(
         (sectionId: (typeof SIDEBAR_ITEMS)[number]['id']) => {
             setIsMobileMenuOpen(false);
+            setIsExamActive(false);
             if (sectionId === activeSection) return;
             setSearchParams((prev) => {
                 const next = new URLSearchParams(prev);
@@ -288,35 +289,48 @@ export default function CompetitiveHub() {
                         : 'overflow-y-auto pb-8'
                 }`}
             >
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={activeSection}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.28 }}
-                        className={`w-full max-w-none ${
-                            activeSection === 'questionary' ? 'flex h-full min-h-0 flex-col' : 'min-h-full'
-                        }`}
-                    >
-                        <Suspense fallback={<SectionFallback />}>
-                            {activeSection === 'exams' && (
-                                <ExamFlow onExamStateChange={setIsExamActive} isDashboardView flowType="standard" />
-                            )}
-                            {activeSection === 'pyqs' && (
-                                <ExamFlow onExamStateChange={setIsExamActive} isDashboardView flowType="pyq" />
-                            )}
-                            {activeSection === 'mock' && (
-                                <ExamFlow onExamStateChange={setIsExamActive} isDashboardView flowType="mock" />
-                            )}
-                            {activeSection === 'weekly' && (
-                                <WeeklyTestsFlow onExamStateChange={setIsExamActive} />
-                            )}
-                            {activeSection === 'quizzes' && <TopicQuizzesFlow />}
-                            {activeSection === 'questionary' && <QuestionaryExplanationFlow />}
-                        </Suspense>
-                    </motion.div>
-                </AnimatePresence>
+                {/*
+                  Do NOT use AnimatePresence mode="wait" + opacity around lazy/Suspense —
+                  SPA section swaps can leave the entering pane stuck at opacity 0 until refresh.
+                */}
+                <div
+                    key={activeSection}
+                    className={`w-full max-w-none ${
+                        activeSection === 'questionary' ? 'flex h-full min-h-0 flex-col' : 'min-h-full'
+                    }`}
+                >
+                    <Suspense fallback={<SectionFallback />}>
+                        {activeSection === 'exams' && (
+                            <ExamFlow
+                                onExamStateChange={setIsExamActive}
+                                isDashboardView
+                                flowType="standard"
+                                isActive
+                            />
+                        )}
+                        {activeSection === 'pyqs' && (
+                            <ExamFlow
+                                onExamStateChange={setIsExamActive}
+                                isDashboardView
+                                flowType="pyq"
+                                isActive
+                            />
+                        )}
+                        {activeSection === 'mock' && (
+                            <ExamFlow
+                                onExamStateChange={setIsExamActive}
+                                isDashboardView
+                                flowType="mock"
+                                isActive
+                            />
+                        )}
+                        {activeSection === 'weekly' && (
+                            <WeeklyTestsFlow onExamStateChange={setIsExamActive} />
+                        )}
+                        {activeSection === 'quizzes' && <TopicQuizzesFlow />}
+                        {activeSection === 'questionary' && <QuestionaryExplanationFlow />}
+                    </Suspense>
+                </div>
             </div>
         </div>
     );

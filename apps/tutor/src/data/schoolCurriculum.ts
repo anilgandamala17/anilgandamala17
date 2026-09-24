@@ -1,4 +1,8 @@
 import type { SchoolGrade, SchoolSubject, Chapter, Topic } from '../types';
+import {
+    filterSubjectsForStream,
+    type SeniorStreamId,
+} from './seniorStreams';
 
 // ============================================
 // SUBJECT TEMPLATES FOR EACH GRADE LEVEL
@@ -112,6 +116,22 @@ const createSecondarySubjects = (gradeNumber: number): SchoolSubject[] => [
 // Senior Secondary Science Stream (Classes 11-12)
 const createSeniorScienceSubjects = (gradeNumber: number): SchoolSubject[] => [
     {
+        id: 'english',
+        name: 'English',
+        icon: 'book-open',
+        color: '#FF5E7E',
+        description: 'English literature and writing',
+        chapters: createEnglishChapters(gradeNumber)
+    },
+    {
+        id: 'mathematics',
+        name: 'Mathematics',
+        icon: 'calculator',
+        color: '#2C8CFF',
+        description: 'Calculus, algebra, and coordinate geometry',
+        chapters: createMathChapters(gradeNumber)
+    },
+    {
         id: 'physics',
         name: 'Physics',
         icon: 'atom',
@@ -128,14 +148,6 @@ const createSeniorScienceSubjects = (gradeNumber: number): SchoolSubject[] => [
         chapters: createChemistryChapters(gradeNumber)
     },
     {
-        id: 'mathematics',
-        name: 'Mathematics',
-        icon: 'calculator',
-        color: '#2C8CFF',
-        description: 'Calculus, algebra, and coordinate geometry',
-        chapters: createMathChapters(gradeNumber)
-    },
-    {
         id: 'biology',
         name: 'Biology',
         icon: 'dna',
@@ -143,22 +155,6 @@ const createSeniorScienceSubjects = (gradeNumber: number): SchoolSubject[] => [
         description: 'Botany, zoology, and human physiology',
         chapters: createBiologyChapters(gradeNumber)
     },
-    {
-        id: 'english',
-        name: 'English',
-        icon: 'book-open',
-        color: '#FF5E7E',
-        description: 'English literature and writing',
-        chapters: createEnglishChapters(gradeNumber)
-    },
-    {
-        id: 'computer-science',
-        name: 'Computer Science',
-        icon: 'code',
-        color: '#00C2D1',
-        description: 'Programming, data structures, and algorithms',
-        chapters: createCSChapters(gradeNumber)
-    }
 ];
 
 // ============================================
@@ -451,24 +447,6 @@ function createBiologyChapters(gradeNumber: number): Chapter[] {
     return chapters[gradeNumber] || [];
 }
 
-function createCSChapters(gradeNumber: number): Chapter[] {
-    const chapters: Record<number, Chapter[]> = {
-        11: [
-            { id: 'cs-11-1', name: 'Computer Systems', chapterNumber: 1, topics: createTopics(['Hardware', 'Software', 'Operating Systems'], 'cs-11-1') },
-            { id: 'cs-11-2', name: 'Python Basics', chapterNumber: 2, topics: createTopics(['Data Types', 'Operators', 'Conditionals', 'Loops'], 'cs-11-2') },
-            { id: 'cs-11-3', name: 'Algorithms', chapterNumber: 3, topics: createTopics(['Flowcharts', 'Pseudocode', 'Sorting'], 'cs-11-3') },
-            { id: 'cs-11-4', name: 'Control Structures', chapterNumber: 4, topics: createTopics(['Conditionals', 'Loops', 'Jump Statements'], 'cs-11-4') },
-        ],
-        12: [
-            { id: 'cs-12-1', name: 'Functions', chapterNumber: 1, topics: createTopics(['Definition', 'Arguments', 'Recursion'], 'cs-12-1') },
-            { id: 'cs-12-2', name: 'Data Structures', chapterNumber: 2, topics: createTopics(['Lists', 'Tuples', 'Dictionaries', 'Stacks'], 'cs-12-2') },
-            { id: 'cs-12-3', name: 'File Handling', chapterNumber: 3, topics: createTopics(['Text Files', 'Binary Files', 'CSV'], 'cs-12-3') },
-            { id: 'cs-12-4', name: 'SQL', chapterNumber: 4, topics: createTopics(['DDL', 'DML', 'Queries', 'Joins'], 'cs-12-4') },
-        ],
-    };
-    return chapters[gradeNumber] || [];
-}
-
 const DEVANAGARI_TOPIC_SLUGS: Record<string, string> = {
     'कविता': 'kavita',
     'तुकबंदी': 'tukbandi',
@@ -577,23 +555,23 @@ export const schoolGrades: SchoolGrade[] = [
     },
     {
         id: 'grade-11-science',
-        name: 'Grade 11 (Science)',
+        name: 'Class 11',
         gradeNumber: 11,
         level: 'senior-secondary',
         image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=90&w=800', // Science lab / chemistry
         ageGroup: '16-17',
-        description: 'Advanced science and mathematics stream',
+        description: 'Choose MPC or BiPC, then explore your subjects',
         color: '#FF9E2C',
         subjects: createSeniorScienceSubjects(11)
     },
     {
         id: 'grade-12-science',
-        name: 'Grade 12 (Science)',
+        name: 'Class 12',
         gradeNumber: 12,
         level: 'senior-secondary',
         image: 'https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?auto=format&fit=crop&q=90&w=800', // Students solving exam problem
         ageGroup: '17-18',
-        description: 'Completion of senior secondary school',
+        description: 'Choose MPC or BiPC, then explore your subjects',
         color: '#FF9E2C',
         subjects: createSeniorScienceSubjects(12)
     }
@@ -610,6 +588,15 @@ export const getGradeById = (gradeId: string): SchoolGrade | undefined => {
 export const getSubjectById = (gradeId: string, subjectId: string): SchoolSubject | undefined => {
     const grade = getGradeById(gradeId);
     return grade?.subjects.find(s => s.id === subjectId);
+};
+
+export const getSubjectsForGradeStream = (
+    gradeId: string,
+    stream: SeniorStreamId,
+): SchoolSubject[] => {
+    const grade = getGradeById(gradeId);
+    if (!grade) return [];
+    return filterSubjectsForStream(grade.subjects, stream);
 };
 
 export const getChapterById = (gradeId: string, subjectId: string, chapterId: string): Chapter | undefined => {

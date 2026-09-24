@@ -38,6 +38,8 @@ interface ExamFlowProps {
     onExamStateChange?: (isActive: boolean) => void;
     flowType?: 'standard' | 'pyq' | 'mock' | 'weekly';
     weeklySession?: WeeklyExamSession | null;
+    /** When false, skip URL writes (exiting / inactive pane). Default true. */
+    isActive?: boolean;
 }
 
 export default function ExamFlow({
@@ -45,6 +47,7 @@ export default function ExamFlow({
     onExamStateChange,
     flowType = 'standard',
     weeklySession = null,
+    isActive = true,
 }: ExamFlowProps = {}) {
     const navigate = useNavigate();
     const location = useLocation();
@@ -85,6 +88,7 @@ export default function ExamFlow({
 
     const updateFlowParams = useCallback(
         (updates: Record<string, string | null>, options: { replace?: boolean } = {}) => {
+            if (!isActive) return;
             setSearchParams(
                 (prev) => {
                     const next = new URLSearchParams(prev);
@@ -97,7 +101,7 @@ export default function ExamFlow({
                 { replace: options.replace ?? false },
             );
         },
-        [setSearchParams],
+        [setSearchParams, isActive],
     );
 
     const goToStep = useCallback(
@@ -218,7 +222,7 @@ export default function ExamFlow({
     eliminatedRef.current = eliminated;
     notesRef.current = notes;
 
-    // Hook to inform parent (CompetitiveDashboard) when we enter/exit exam mode
+    // Hook to inform parent (CompetitiveHub) when we enter/exit exam mode
     useEffect(() => {
         onExamStateChange?.(step === 'solving' || step === 'result');
     }, [step, onExamStateChange]);
@@ -232,6 +236,7 @@ export default function ExamFlow({
      * Never bounce Available/PYQ/Mock into Choose Your Subjects.
      */
     useEffect(() => {
+        if (!isActive) return;
         if (isGenerating) return;
 
         // Legacy bookmarks: skip Choose Subjects for full-paper flows
@@ -280,6 +285,7 @@ export default function ExamFlow({
         mockFlow,
         useFullPaper,
         goToStep,
+        isActive,
     ]);
 
     const handleTimeTick = useCallback((remaining: number, elapsed: number) => {
