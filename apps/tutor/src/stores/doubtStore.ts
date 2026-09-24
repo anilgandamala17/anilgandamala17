@@ -1,11 +1,11 @@
 import { create } from 'zustand';
-import type { Doubt, DoubtResolution, QuizQuestion } from '../types';
-import { memoryService } from '../services/memoryService';
-import { aiService } from '../services/aiService';
+import type { Doubt, DoubtResolution, QuizQuestion } from '@/types';
+import { memoryService } from '@/services/memoryService';
+import { aiService } from '@/services/aiService';
 import { useDocumentStore } from './documentStore';
-import { useTeachingStore } from './teachingStore';
-import { findTopicInfo } from '../utils/topicUtils';
-import { analytics } from '../services/analyticsService';
+import { useTeachingStore } from '@/features/teaching/stores/teachingStore';
+import { findTopicInfo } from '@/utils/topicUtils';
+import { analytics } from '@/services/analyticsService';
 
 interface DoubtStore {
     doubts: Doubt[];

@@ -1,8 +1,8 @@
 import { TopicAnalysis } from './topicAnalyzer';
-import type { VisualRegistryEntry } from '../data/visualRegistry';
-import { collectDiagramLookupKeys } from '../data/visualLookup';
-import { ImageAnalysis } from '../types';
-import { prepareDataUrlForVisionApi } from '../utils/imageVision';
+import type { VisualRegistryEntry } from '@/data/visualRegistry';
+import { collectDiagramLookupKeys } from '@/data/visualLookup';
+import { ImageAnalysis } from '@/types';
+import { prepareDataUrlForVisionApi } from '@/utils/imageVision';
 import {
     assertCleanExtractedQuestion,
     extractExamJsonObject,
@@ -11,7 +11,7 @@ import {
     sanitizeOptionText,
     splitStemAndOptions,
     stripModelThinking,
-} from '../utils/examText';
+} from '@/utils/examText';
 import { mockAdapter } from './adapters/mockAdapter';
 
 /**

@@ -9,7 +9,7 @@
  * Otherwise → reject with warning.
  */
 
-import { VisualRegistryEntry } from '../data/visualRegistry';
+import { VisualRegistryEntry } from '@/data/visualRegistry';
 
 // ─── Domain keyword vocabulary ────────────────────────────────────────────────
 

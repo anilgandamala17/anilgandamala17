@@ -1,4 +1,4 @@
-import type { TeachingStep } from '../../types';
+import type { TeachingStep } from '@/types';
 
 const CHL = '8_chloroplast_c.8_chloroplast_d';
 const PRO = '8_prokaryotic_cell_c.8_prokaryotic_cell_d';

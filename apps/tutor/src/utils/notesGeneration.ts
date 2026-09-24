@@ -4,7 +4,7 @@ import type {
     NoteDiagramType,
     NoteSection,
     NotesGenerationContext,
-} from '../types';
+} from '@/types';
 
 const DIAGRAM_TYPES: NoteDiagramType[] = ['process', 'hierarchy', 'cycle', 'compare', 'concept-map'];
 

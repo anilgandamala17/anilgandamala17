@@ -1,7 +1,7 @@
 import { motion, HTMLMotionProps } from 'framer-motion';
 import { ReactNode, forwardRef, ComponentPropsWithoutRef } from 'react';
-import { transitions } from '../../utils/animations';
-import { useSettingsStore } from '../../stores/settingsStore';
+import { transitions } from '@/utils/animations';
+import { useSettingsStore } from '@/stores/settingsStore';
 
 interface AnimatedCardProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
     children: ReactNode;

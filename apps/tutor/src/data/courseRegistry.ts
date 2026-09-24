@@ -1,4 +1,4 @@
-import { TeachingStep } from '../types';
+import { TeachingStep } from '@/types';
 import { defaultSteps } from './courses/defaultCourse';
 import { mitochondriaGrade11Steps } from './courses/mitochondriaGrade11';
 import {
@@ -15,14 +15,14 @@ import {
     biology12FertilizationSteps,
     biology12SexualReproductionSteps,
 } from './courses/biology12ReproductionSync';
-import { generateComprehensiveCourse } from '../services/contentGenerator';
+import { generateComprehensiveCourse } from '@/services/contentGenerator';
 import {
     fetchCachedLessonDetailed,
     cachedSegmentsToSpokenContent,
     type CacheFetchFailureReason,
-} from '../services/cachedLessonService';
-import type { CachedLessonPayload } from '../types/contentPipeline';
-import { USE_CACHED_CURRICULUM, normalizeTeachingStyle } from '../types/contentPipeline';
+} from '@/services/cachedLessonService';
+import type { CachedLessonPayload } from '@/types/contentPipeline';
+import { USE_CACHED_CURRICULUM, normalizeTeachingStyle } from '@/types/contentPipeline';
 import { getVisualsForTopic } from './visualRegistry';
 import { isVideoOnlyTopic } from './curriculumVideoResources';
 import { coerceTtsLanguage, isEnglishTtsLanguage } from '../constants/ttsLanguages';

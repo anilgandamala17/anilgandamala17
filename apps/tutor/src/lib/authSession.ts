@@ -1,7 +1,7 @@
 // FRONTEND-ONLY: no backend/Firebase — see EXTRACTION_REPORT.md
 
-import type { AppRole, User } from '../types';
-import { studentRoutes, teacherRoutes, adminRoutes } from '../utils/routes';
+import type { AppRole, User } from '@/types';
+import { studentRoutes, teacherRoutes, adminRoutes } from '@/utils/routes';
 import { readDemoSession } from './demoSession';
 
 export function normalizeAppRole(role: unknown): AppRole {

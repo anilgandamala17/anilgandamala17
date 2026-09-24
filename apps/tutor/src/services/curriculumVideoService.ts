@@ -16,7 +16,7 @@ import {
   isVideoOnlyTopic,
   type CurriculumVideoAudioTrack,
   type CurriculumVideoResource,
-} from '../data/curriculumVideoResources'
+} from '@/data/curriculumVideoResources'
 import { isEnglishTtsLanguage, type TtsLanguageCode } from '../constants/ttsLanguages'
 
 export type { CurriculumVideoResource, CurriculumVideoAudioTrack, VideoLanguageDto, VideoTranslateDto }

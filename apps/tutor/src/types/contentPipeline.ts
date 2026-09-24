@@ -67,7 +67,7 @@ export interface CachedLessonPayload {
   teachingStyle: TeachingStyle
   contentVersion: number
   cacheKey?: string
-  steps: import('../types').TeachingStep[]
+  steps: import('@/types').TeachingStep[]
   segments: CachedTeachingSegment[]
   greetingTemplate: string
   visualRegistry?: VisualRegistrySnapshot

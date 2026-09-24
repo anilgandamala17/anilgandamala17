@@ -2,9 +2,9 @@
 /**
  * Local-only student learning sync. Never imports or calls Firestore.
  */
-import type { CurriculumProgress, SessionAnalytics } from '../types';
-import { useAnalyticsStore } from '../stores/analyticsStore';
-import { useCurriculumStore } from '../stores/curriculumStore';
+import type { CurriculumProgress, SessionAnalytics } from '@/types';
+import { useAnalyticsStore } from '@/stores/analyticsStore';
+import { useCurriculumStore } from '@/features/curriculum/stores/curriculumStore';
 import {
   beginRemoteLearningApply,
   endRemoteLearningApply,

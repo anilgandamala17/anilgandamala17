@@ -10,8 +10,8 @@
  * or stale hint only costs a slower redirect.
  */
 
-import type { AppRole } from '../types';
-import { studentRoutes } from '../utils/routes';
+import type { AppRole } from '@/types';
+import { studentRoutes } from '@/utils/routes';
 
 const ROLE_KEY = 'aira:role';
 const STUDENT_HOME_KEY = 'aira:student-home';

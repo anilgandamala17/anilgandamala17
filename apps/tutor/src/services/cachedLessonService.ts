@@ -5,8 +5,8 @@
  * NOW: mockAdapter (cache miss → curated local scripts in courseRegistry)
  */
 
-import type { CachedLessonPayload, TeachingStyle } from '../types/contentPipeline'
-import { normalizeTeachingStyle } from '../types/contentPipeline'
+import type { CachedLessonPayload, TeachingStyle } from '@/types/contentPipeline'
+import { normalizeTeachingStyle } from '@/types/contentPipeline'
 import { mockAdapter } from './adapters/mockAdapter'
 
 const memoryCache = new Map<string, CachedLessonPayload>()

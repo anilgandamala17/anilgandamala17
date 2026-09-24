@@ -1,7 +1,7 @@
 ﻿import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { Document, Packer, Paragraph, HeadingLevel, AlignmentType, ImageRun, TextRun } from 'docx';
-import type { GeneratedNote, Flashcard, GeneratedSummary } from '../types';
+import type { GeneratedNote, Flashcard, GeneratedSummary } from '@/types';
 
 const NOTES_PAPER = '#f7f0dc';
 

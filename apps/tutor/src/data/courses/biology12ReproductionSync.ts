@@ -1,4 +1,4 @@
-import type { TeachingStep } from '../../types';
+import type { TeachingStep } from '@/types';
 
 /** Registry diagram keys — must match visualRegistry concept_id.diagram_id (not topic_id). */
 const SR = '1_sexual_reproduction_c.1_sexual_reproduction_d';

@@ -1,5 +1,5 @@
-import { analytics } from '../services/analyticsService'
-import type { ApiEndpointName } from '../services/analyticsTypes'
+import { analytics } from '@/services/analyticsService'
+import type { ApiEndpointName } from '@/services/analyticsTypes'
 
 /** Timed fetch that reports api_performance without logging URLs or bodies. */
 export async function timedFetch(

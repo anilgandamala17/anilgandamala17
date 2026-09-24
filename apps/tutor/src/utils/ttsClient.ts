@@ -5,7 +5,7 @@
  * NOW: mockAdapter.fetchTtsAudio → callers use browser SpeechSynthesis
  */
 
-import { mockAdapter } from '../services/adapters/mockAdapter'
+import { mockAdapter } from '@/services/adapters/mockAdapter'
 
 export type TtsFetchOptions = {
   text: string

@@ -1,4 +1,4 @@
-import { getFirstActiveDiagramId } from '../data/visualRegistry';
+import { getFirstActiveDiagramId } from '@/data/visualRegistry';
 
 function countVisualMarkers(text: string): number {
     return (text.match(/\[VISUAL:/g) || []).length;

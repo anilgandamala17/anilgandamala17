@@ -1,5 +1,5 @@
 import { LogOut } from 'lucide-react';
-import { useSignOut } from '../../hooks/useSignOut';
+import { useSignOut } from '@/hooks/useSignOut';
 
 type SignOutButtonProps = {
     className?: string;

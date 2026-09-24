@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { AppSettings, SettingsTemplate } from '../types';
+import type { AppSettings, SettingsTemplate } from '@/types';
 import {
     DEFAULT_TTS_LANGUAGE,
     coerceTtsLanguage,

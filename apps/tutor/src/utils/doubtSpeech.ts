@@ -4,7 +4,7 @@
  * spoken while the lesson audio stays paused at its exact position.
  * Backend /api/tts → Sarvam client → browser speechSynthesis.
  */
-import { aiService } from '../services/aiService';
+import { aiService } from '@/services/aiService';
 import { forEachSarvamWavChunk } from './sarvamAudio';
 import { fetchTtsAudioBlob } from './ttsClient';
 import { pickBestHumanVoice } from './voice';

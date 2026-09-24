@@ -4,9 +4,9 @@ import type {
     Achievement,
     SessionAnalytics,
     ProgressMetrics
-} from '../types';
-import { notifyStudentLearningChanged } from '../services/studentLearningNotify';
-import { useCurriculumStore } from './curriculumStore';
+} from '@/types';
+import { notifyStudentLearningChanged } from '@/services/studentLearningNotify';
+import { useCurriculumStore } from '@/features/curriculum/stores/curriculumStore';
 
 const MAX_STORED_SESSIONS = 80;
 

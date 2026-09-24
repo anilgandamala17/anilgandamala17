@@ -1,4 +1,4 @@
-import type { TeachingStep } from '../../types';
+import type { TeachingStep } from '@/types';
 
 const MEND = '2_mendelism_c.2_mendelism_d';
 const DNA = '2_dna_structure_c.2_dna_structure_d';

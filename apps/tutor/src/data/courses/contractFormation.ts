@@ -1,4 +1,4 @@
-import { TeachingStep } from '../../types';
+import { TeachingStep } from '@/types';
 
 export const contractFormationSteps: TeachingStep[] = [
     {

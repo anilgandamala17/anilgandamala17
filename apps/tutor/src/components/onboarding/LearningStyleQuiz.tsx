@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Brain, Ear, Eye, Hand, ArrowRight, LucideIcon } from 'lucide-react';
-import { useUserStore } from '../../stores/userStore';
-import type { LearningStyle } from '../../types';
+import { useUserStore } from '@/stores/userStore';
+import type { LearningStyle } from '@/types';
 
 type StyleDimension = 'visual' | 'auditory' | 'kinesthetic';
 

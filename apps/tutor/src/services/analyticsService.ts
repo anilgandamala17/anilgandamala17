@@ -3,7 +3,7 @@
  * No-network analytics stub — same exports as the former Firebase Analytics service.
  * Console debug only; never calls Google / Firebase network APIs.
  */
-import { useSettingsStore } from '../stores/settingsStore'
+import { useSettingsStore } from '@/stores/settingsStore'
 import {
   AnalyticsEvents,
   sanitizeAnalyticsParams,

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { useAuthStore } from '../stores/authStore';
-import { redirectAfterSignOut } from '../lib/authSession';
+import { useAuthStore } from '@/stores/authStore';
+import { redirectAfterSignOut } from '@/lib/authSession';
 
 /** Clear Firebase session and navigate to the marketing landing page. */
 export function useSignOut() {

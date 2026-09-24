@@ -1,4 +1,4 @@
-import type { TeachingStep } from '../../types';
+import type { TeachingStep } from '@/types';
 
 /** Registry diagram key for narration markers — must match visualRegistry concept + diagram ids. */
 const D = '8_mitochondria_c.8_mitochondria_d';

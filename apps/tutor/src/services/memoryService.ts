@@ -1,5 +1,5 @@
-import type { MemoryEntry, UserProfile, Doubt, TeachingSession } from '../types';
-import { useUserStore } from '../stores/userStore';
+import type { MemoryEntry, UserProfile, Doubt, TeachingSession } from '@/types';
+import { useUserStore } from '@/stores/userStore';
 
 /**
  * Service to manage AI memories and context propagation

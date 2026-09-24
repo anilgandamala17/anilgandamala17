@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
-import { useSettingsStore } from '../../stores/settingsStore';
-import { transitions, pageVariants as defaultPageVariants, fadeVariants, slideUpVariants } from '../../utils/animations';
+import { useSettingsStore } from '@/stores/settingsStore';
+import { transitions, pageVariants as defaultPageVariants, fadeVariants, slideUpVariants } from '@/utils/animations';
 
 type TransitionType = 'default' | 'fade' | 'slide' | 'none';
 

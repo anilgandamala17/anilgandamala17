@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { extractTextFromFile } from '../utils/documentParser';
+import { extractTextFromFile } from '@/utils/documentParser';
 
 export type DocumentStatus = 'idle' | 'processing' | 'ready' | 'error';
 

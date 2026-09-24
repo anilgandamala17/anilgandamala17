@@ -9,7 +9,7 @@
  *   Every marker in registry → must be referenced in speech.
  */
 
-import { getVisualsForTopic, VisualRegistryEntry } from '../data/visualRegistry';
+import { getVisualsForTopic, VisualRegistryEntry } from '@/data/visualRegistry';
 
 // ─── Marker Extraction ────────────────────────────────────────────────────────
 

@@ -2,9 +2,9 @@
 import { Component, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
-import { useAuthStore } from '../../stores/authStore';
-import { getRoutesForRole } from '../../utils/routes';
-import { getLandingLoginUrl } from '../../lib/authSession';
+import { useAuthStore } from '@/stores/authStore';
+import { getRoutesForRole } from '@/utils/routes';
+import { getLandingLoginUrl } from '@/lib/authSession';
 
 interface Props {
     children: ReactNode;

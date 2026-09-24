@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useShallow } from 'zustand/react/shallow';
-import { useAuthStore } from '../stores/authStore';
-import { startStudentLearningSync, stopStudentLearningSync } from '../services/studentLearningSync';
+import { useAuthStore } from '@/stores/authStore';
+import { startStudentLearningSync, stopStudentLearningSync } from '@/services/studentLearningSync';
 
 /** Keep curriculum dashboard progress/likes live for the signed-in student. */
 export function useStudentLearningSync(): void {

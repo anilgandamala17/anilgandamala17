@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useSettingsStore } from '../../stores/settingsStore';
+import { useSettingsStore } from '@/stores/settingsStore';
 
 interface FullPageLoaderProps {
     message?: string;

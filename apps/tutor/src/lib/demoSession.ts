@@ -3,7 +3,7 @@
  * Shared demo session key with Landing (same origin via Next rewrite / proxy).
  */
 
-import type { AppRole, User } from '../types';
+import type { AppRole, User } from '@/types';
 
 export const DEMO_SESSION_KEY = 'aira:demo-session';
 export const DEMO_SESSION_EVENT = 'aira:demo-session-changed';

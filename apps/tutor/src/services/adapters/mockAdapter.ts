@@ -6,11 +6,11 @@
  * through this adapter — pages/components must never call `/api/*` directly.
  */
 
-import type { Question } from '../../data/competitiveQuestions'
-import { generateContentFallbackQuestions } from '../../data/examContentFallbacks'
-import { buildExamSlotPlan } from '../examSlotPlan'
-import type { CachedLessonPayload, ContentStatus, TeachingStyle } from '../../types/contentPipeline'
-import { TEACHING_STYLES, normalizeTeachingStyle } from '../../types/contentPipeline'
+import type { Question } from '@/features/competitive/data/competitiveQuestions'
+import { generateContentFallbackQuestions } from '@/features/competitive/data/examContentFallbacks'
+import { buildExamSlotPlan } from '@/features/competitive/services/examSlotPlan'
+import type { CachedLessonPayload, ContentStatus, TeachingStyle } from '@/types/contentPipeline'
+import { TEACHING_STYLES, normalizeTeachingStyle } from '@/types/contentPipeline'
 import type { AdminAnalyticsReport } from '../adminAnalyticsTypes'
 import {
   getPublishedVideoById,
@@ -19,7 +19,7 @@ import {
   type CurriculumVideoAudioTrack,
   type CurriculumVideoResource,
   type VideoAudioTrackStatus,
-} from '../../data/curriculumVideoResources'
+} from '@/data/curriculumVideoResources'
 import {
   coerceTtsLanguage,
   isEnglishTtsLanguage,

@@ -1,5 +1,5 @@
-import { BoardVisualType, VisualConcept, ConceptDiagram } from '../types';
-import { AcademicDomain } from '../services/topicAnalyzer';
+import { BoardVisualType, VisualConcept, ConceptDiagram } from '@/types';
+import { AcademicDomain } from '@/services/topicAnalyzer';
 
 /**
  * Authoritative Topic-Based Visual Registry

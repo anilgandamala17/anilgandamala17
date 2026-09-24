@@ -1,4 +1,4 @@
-import { VisualRegistryEntry, getVisualsForTopic } from '../data/visualRegistry';
+import { VisualRegistryEntry, getVisualsForTopic } from '@/data/visualRegistry';
 import { diagramAssetUrl } from './diagramAssetUrl';
 
 export interface PreloadResult {

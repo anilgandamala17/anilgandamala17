@@ -1,7 +1,7 @@
 import { create } from 'zustand';
-import type { GeneratedNote, MindMap, MindMapNode, Flashcard, GeneratedSummary, ImageAnalysis, NotesGenerationContext } from '../types';
+import type { GeneratedNote, MindMap, MindMapNode, Flashcard, GeneratedSummary, ImageAnalysis, NotesGenerationContext } from '@/types';
 import { toast } from './toastStore';
-import { aiService } from '../services/aiService';
+import { aiService } from '@/services/aiService';
 
 
 interface ResourceStore {
@@ -51,8 +51,8 @@ import {
     generateMockFlashcards, 
     generateMockSummary,
     createFlashcard 
-} from '../utils/generators';
-import { attachMeta, buildNotesPrompt, parseNotesAiResponse } from '../utils/notesGeneration';
+} from '@/utils/generators';
+import { attachMeta, buildNotesPrompt, parseNotesAiResponse } from '@/utils/notesGeneration';
 
 // Increased context limits for better AI grounding (BUG-002)
 const MAX_CONTEXT_CHARS = 14000;

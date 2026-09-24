@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { UserProfile, LearningStyle, LearningPreferences, Profession, MemoryEntry } from '../types';
+import type { UserProfile, LearningStyle, LearningPreferences, Profession, MemoryEntry } from '@/types';
 
 interface UserStore {
     profile: UserProfile | null;

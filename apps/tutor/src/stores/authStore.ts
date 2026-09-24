@@ -2,12 +2,12 @@
 
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { User, AuthState, AppRole } from '../types';
-import { useCurriculumStore } from './curriculumStore';
-import { useCompetitiveStore } from './competitiveStore';
-import { normalizeAppRole } from '../lib/authSession';
-import { clearRoleHint, readRoleHint, writeRoleHint } from '../lib/sessionHints';
-import { analytics } from '../services/analyticsService';
+import type { User, AuthState, AppRole } from '@/types';
+import { useCurriculumStore } from '@/features/curriculum/stores/curriculumStore';
+import { useCompetitiveStore } from '@/features/competitive/stores/competitiveStore';
+import { normalizeAppRole } from '@/lib/authSession';
+import { clearRoleHint, readRoleHint, writeRoleHint } from '@/lib/sessionHints';
+import { analytics } from '@/services/analyticsService';
 import {
   clearDemoSession,
   createDemoSession,
@@ -15,7 +15,7 @@ import {
   readDemoSession,
   writeDemoSession,
   type DemoSession,
-} from '../lib/demoSession';
+} from '@/lib/demoSession';
 
 function normalizeEmailAppRole(role?: AppRole): AppRole {
   return normalizeAppRole(role);

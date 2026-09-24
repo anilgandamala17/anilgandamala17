@@ -3,7 +3,7 @@
  * All localhost/origin resolution lives here — do not scatter hardcoded URLs.
  */
 import { writeStudentHomeHint } from './sessionHints'
-import { studentRoutes, teacherRoutes, adminRoutes } from '../utils/routes'
+import { studentRoutes, teacherRoutes, adminRoutes } from '@/utils/routes'
 import { getLandingLoginUrl, getLandingOrigin, TUTOR_STANDALONE_PORTS } from './authSession'
 
 export type StudentMode = 'curriculum' | 'competitive' | 'dashboard'

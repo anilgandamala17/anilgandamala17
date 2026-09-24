@@ -1,6 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { healthEndpointPlugin } from './vite-health-plugin'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 /**
  * FRONTEND-ONLY extraction:
@@ -10,6 +14,11 @@ import { healthEndpointPlugin } from './vite-health-plugin'
 export default defineConfig({
   plugins: [react(), healthEndpointPlugin()],
   appType: 'spa',
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
   optimizeDeps: {
     include: ['pdfjs-dist', 'mammoth'],
   },

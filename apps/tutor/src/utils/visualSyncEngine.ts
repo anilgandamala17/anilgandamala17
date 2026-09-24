@@ -4,7 +4,7 @@
  * between "what the AI is saying" and "which visual state to show".
  */
 
-import type { TeachingStep, TeachingSession } from '../types';
+import type { TeachingStep, TeachingSession } from '@/types';
 
 // ─── 7. GREEN BOARD BEHAVIOR (platform standard) ─────────────────────────────
 export const GREEN_BOARD_PADDING_PX = 32;
@@ -39,7 +39,7 @@ export function emitVisualMarker(marker: string) {
     const trimmed = (marker || '').trim();
     if (!trimmed) return;
     try {
-        void import('../services/analyticsService').then((mod) => {
+        void import('@/services/analyticsService').then((mod) => {
             const { topicId, segmentIndex } = mod.getAnalyticsLessonContext();
             if (!trimmed || trimmed.toLowerCase() === 'none') {
                 mod.analytics.visualSyncError(topicId, 'missing_target', segmentIndex);

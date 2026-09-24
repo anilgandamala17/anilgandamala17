@@ -1,6 +1,6 @@
-import { professions } from '../data/professions';
-import { schoolGrades } from '../data/schoolCurriculum';
-import type { Topic } from '../types';
+import { professions } from '@/data/professions';
+import { schoolGrades } from '@/features/curriculum/data/schoolCurriculum';
+import type { Topic } from '@/types';
 
 export interface TopicContext {
     topic: Topic | { id: string; name: string } | null;

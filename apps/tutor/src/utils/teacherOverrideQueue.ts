@@ -7,7 +7,7 @@
  * Flow: teacher_upload → review_queue → admin_approve → registry_insert
  */
 
-import { registerVisualEntry, VisualRegistryEntry, VisualDifficulty } from '../data/visualRegistry';
+import { registerVisualEntry, VisualRegistryEntry, VisualDifficulty } from '@/data/visualRegistry';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 

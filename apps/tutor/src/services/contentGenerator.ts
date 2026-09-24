@@ -1,10 +1,10 @@
-import type { TeachingStep } from '../types';
+import type { TeachingStep } from '@/types';
 import { analyzeTopic, type TopicAnalysis } from './topicAnalyzer';
 import { memoryService } from './memoryService';
-import { useUserStore } from '../stores/userStore';
+import { useUserStore } from '@/stores/userStore';
 import { aiService, GeneratedContent } from './aiService';
-import { collectDiagramLookupKeys, getVisualsForTopic } from '../data/visualRegistry';
-import { injectCurriculumVisualMarkers } from '../utils/curriculumVisualSync';
+import { collectDiagramLookupKeys, getVisualsForTopic } from '@/data/visualRegistry';
+import { injectCurriculumVisualMarkers } from '@/utils/curriculumVisualSync';
 
 /**
  * Generates comprehensive teaching steps for a topic

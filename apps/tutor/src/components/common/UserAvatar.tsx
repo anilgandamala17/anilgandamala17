@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { User } from '../../types';
+import type { User } from '@/types';
 
 /**
  * Profile picture shared across the tutor app.

@@ -1,4 +1,4 @@
-import type { GeneratedNote, MindMap, MindMapNode, Flashcard, GeneratedSummary, NotesGenerationContext } from '../types';
+import type { GeneratedNote, MindMap, MindMapNode, Flashcard, GeneratedSummary, NotesGenerationContext } from '@/types';
 import { buildFallbackDiagram } from './notesGeneration';
 
 /**

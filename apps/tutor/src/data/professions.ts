@@ -1,4 +1,4 @@
-import { Profession } from '../types';
+import { Profession } from '@/types';
 
 
 export const professions: Profession[] = [
