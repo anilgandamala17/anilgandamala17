@@ -2,8 +2,8 @@ import { ButtonHTMLAttributes, forwardRef, ReactNode } from 'react';
 import { motion, MotionProps } from 'framer-motion';
 
 interface AccessibleButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof MotionProps> {
-    variant?: 'primary' | 'secondary' | 'danger' | 'ghost';
-    size?: 'sm' | 'md' | 'lg';
+    variant?: 'primary' | 'secondary' | 'danger' | 'ghost' | 'link';
+    size?: 'sm' | 'md' | 'lg' | 'icon';
     isLoading?: boolean;
     fullWidth?: boolean;
     motionProps?: MotionProps;
@@ -11,7 +11,7 @@ interface AccessibleButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElem
 }
 
 /**
- * Accessible button component with proper ARIA attributes and keyboard support
+ * Accessible button — AIra brand tokens (primary blue, not purple/pink).
  */
 const AccessibleButton = forwardRef<HTMLButtonElement, AccessibleButtonProps>(
     (
@@ -24,23 +24,29 @@ const AccessibleButton = forwardRef<HTMLButtonElement, AccessibleButtonProps>(
             disabled,
             className = '',
             motionProps,
+            type = 'button',
             ...props
         },
         ref
     ) => {
-        const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
-        
+        const baseClasses =
+            'inline-flex items-center justify-center gap-2 font-semibold rounded-[var(--radius-sm)] transition-colors focus:outline-none focus-visible:shadow-[var(--focus-ring)] disabled:opacity-50 disabled:cursor-not-allowed';
+
         const variantClasses = {
-            primary: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90 focus:ring-purple-500',
-            secondary: 'bg-white dark:bg-slate-900/60 text-gray-700 dark:text-slate-200 border border-gray-300 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 focus:ring-gray-500',
-            danger: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500',
-            ghost: 'text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800 focus:ring-gray-500',
+            primary:
+                'bg-[var(--color-primary)] text-[var(--color-primary-foreground)] hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-active)]',
+            secondary:
+                'bg-[var(--color-surface)] text-[var(--color-text)] border border-[var(--color-border)] hover:bg-[var(--color-surface-muted)] hover:border-[var(--color-border-strong)]',
+            danger: 'bg-[var(--color-error)] text-white hover:brightness-95 focus-visible:shadow-[0_0_0_2px_var(--color-surface),0_0_0_4px_var(--color-error)]',
+            ghost: 'text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-muted)] hover:text-[var(--color-text)]',
+            link: 'text-[var(--color-primary)] underline-offset-4 hover:underline min-h-0 px-0 py-0',
         };
 
         const sizeClasses = {
-            sm: 'px-3 py-1.5 text-sm',
-            md: 'px-4 py-2 text-base',
-            lg: 'px-6 py-3 text-lg',
+            sm: 'min-h-[var(--control-h-sm)] px-3 text-sm',
+            md: 'min-h-[var(--control-h-md)] px-4 text-sm',
+            lg: 'min-h-[var(--control-h-lg)] px-6 text-base',
+            icon: 'size-[var(--control-h-md)] p-0',
         };
 
         const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${fullWidth ? 'w-full' : ''} ${className}`;
@@ -48,6 +54,7 @@ const AccessibleButton = forwardRef<HTMLButtonElement, AccessibleButtonProps>(
         const button = (
             <button
                 ref={ref}
+                type={type}
                 className={classes}
                 disabled={disabled || isLoading}
                 aria-busy={isLoading}
@@ -57,7 +64,7 @@ const AccessibleButton = forwardRef<HTMLButtonElement, AccessibleButtonProps>(
                 {isLoading ? (
                     <>
                         <svg
-                            className="animate-spin -ml-1 mr-2 h-4 w-4"
+                            className="animate-spin -ml-0.5 h-4 w-4"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
@@ -77,7 +84,7 @@ const AccessibleButton = forwardRef<HTMLButtonElement, AccessibleButtonProps>(
                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                             />
                         </svg>
-                        Loading...
+                        <span>Loading…</span>
                     </>
                 ) : (
                     children

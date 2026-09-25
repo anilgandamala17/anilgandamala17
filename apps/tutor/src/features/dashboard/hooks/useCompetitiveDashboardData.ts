@@ -85,7 +85,7 @@ function draftToContinue(draft: ExamDraft): CompetitiveContinueSession {
   const section = flowTypeToSection(draft.flowType);
   const params = new URLSearchParams();
   params.set('section', section);
-  params.set('step', 'solving');
+  params.set('step', draft.step === 'result' ? 'result' : 'solving');
   params.set('exam', draft.examId);
   if (draft.paperYear) params.set('paper', draft.paperYear);
   if (draft.scope !== 'full' && draft.subjectId && draft.subjectId !== 'full') {

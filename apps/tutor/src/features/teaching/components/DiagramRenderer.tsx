@@ -100,7 +100,15 @@ const DiagramRenderer: React.FC<DiagramRendererProps> = ({
             return;
         }
 
-        const url = diagramAssetUrl(svg_path);
+        let url: string;
+        try {
+            url = diagramAssetUrl(svg_path);
+        } catch (err) {
+            console.error('[DiagramRenderer] Invalid diagram path:', svg_path, err);
+            setLoadState('error');
+            setSvgContent(null);
+            return;
+        }
         let cancelled = false;
         const ac = new AbortController();
 

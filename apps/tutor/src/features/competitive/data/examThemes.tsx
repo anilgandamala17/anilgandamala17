@@ -118,19 +118,19 @@ export const EXAM_THEMES: Record<string, ExamTheme> = {
 };
 
 export const EXAM_IMAGES: Record<string, string> = {
-    'jee-main': '/tutor-media/images/exams/jee-main.png', 
-    'jee-advanced': 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop', 
-    'neet': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop', 
-    'eamcet': 'https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?q=80&w=800&auto=format&fit=crop',
-    'polycet': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop', 
-    'ntse': 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop', 
-    'gate': 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop', 
-    'rjc-cet': 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop', 
+    'jee-main': '/tutor-media/images/exams/jee-main.png',
+    'jee-advanced': '/tutor-media/images/exams/jee-main.png',
+    'neet': '/tutor-media/images/subjects/biology.png',
+    'eamcet': '/tutor-media/images/exams/jee-main.png',
+    'polycet': '/tutor-media/images/subjects/science.png',
+    'ntse': '/tutor-media/images/grades/grade_secondary_school.png',
+    'gate': '/tutor-media/images/subjects/mathematics.png',
+    'rjc-cet': '/tutor-media/images/grades/grade_senior_secondary_school.png',
     'sainik': '/tutor-media/images/exams/sainik.png',
     'navodaya': '/tutor-media/images/exams/navodaya.png',
     'kv': '/tutor-media/images/exams/kv.png',
     'emrs': '/tutor-media/images/exams/emrs.png',
-    'nmms': 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop',
-    'olympiad': 'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop',
-    'rgukt-iiit': 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop'
+    'nmms': '/tutor-media/images/grades/grade_middle_school.png',
+    'olympiad': '/tutor-media/images/subjects/mathematics.png',
+    'rgukt-iiit': '/tutor-media/images/subjects/computer-science.png',
 };

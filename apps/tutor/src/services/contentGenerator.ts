@@ -17,7 +17,8 @@ export async function generateComprehensiveCourse(
     subjectArea?: string,
     chapterName?: string,
     gradeName?: string,
-    targetLanguage?: string
+    targetLanguage?: string,
+    options?: { allowRuntimeAi?: boolean },
 ): Promise<TeachingStep[]> {
     // Analyze the topic
     const analysis = analyzeTopic(topicId, topicName, description, subjectArea, chapterName, gradeName);
@@ -25,18 +26,20 @@ export async function generateComprehensiveCourse(
     // Fetch authoritative visual structures
     const registryEntry = getVisualsForTopic(topicId);
 
-    // Try to fetch dynamic AI content first (bounded wait — fall back to local templates).
+    // Runtime AI is opt-in. Local topic templates always work without it.
     const AI_CONTENT_TIMEOUT_MS = 2500;
     let aiContent: GeneratedContent | null = null;
-    try {
-        aiContent = await Promise.race([
-            aiService.generateTopicContent(analysis, registryEntry, targetLanguage),
-            new Promise<null>((resolve) => {
-                setTimeout(() => resolve(null), AI_CONTENT_TIMEOUT_MS);
-            }),
-        ]);
-    } catch {
-        aiContent = null;
+    if (options?.allowRuntimeAi) {
+        try {
+            aiContent = await Promise.race([
+                aiService.generateTopicContent(analysis, registryEntry, targetLanguage),
+                new Promise<null>((resolve) => {
+                    setTimeout(() => resolve(null), AI_CONTENT_TIMEOUT_MS);
+                }),
+            ]);
+        } catch {
+            aiContent = null;
+        }
     }
 
     // Generate steps based on analysis

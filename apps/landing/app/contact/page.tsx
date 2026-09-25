@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Header } from '@/components/header'
 import { SectionEyebrow } from '@/components/section-eyebrow'
-import { CTAS } from '@/lib/site'
+import { CTAS, CONTACT_INBOX } from '@/lib/site'
 import { ContactForm } from '@/components/contact-form'
 
 export const metadata: Metadata = {
@@ -41,12 +41,11 @@ export default function ContactPage() {
                 <li>
                   <span className="font-medium text-foreground">Email:</span>{' '}
                   <a
-                    href="mailto:hello@aira.example"
+                    href={`mailto:${CONTACT_INBOX}`}
                     className="font-semibold text-primary underline-offset-4 hover:underline"
                   >
-                    hello@aira.example
+                    {CONTACT_INBOX}
                   </a>
-                  <span className="ml-1 text-xs text-warning">(placeholder — replace with real address)</span>
                 </li>
               </ul>
             </div>

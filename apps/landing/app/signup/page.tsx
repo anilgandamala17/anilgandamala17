@@ -52,7 +52,8 @@ function SignupPageContent() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [dob, setDob] = useState('')
-  const [role, setRole] = useState<AppRole>('student')
+  /** Public signup is student-only — teacher/admin accounts are provisioned, not self-serve. */
+  const role: AppRole = 'student'
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
@@ -168,22 +169,6 @@ function SignupPageContent() {
             autoComplete="email"
             className={authInputClassName}
           />
-        </div>
-
-        <div className="space-y-1.5">
-          <Label htmlFor="role" className={authLabelClassName}>
-            I am a
-          </Label>
-          <select
-            id="role"
-            value={role}
-            onChange={(e) => setRole(normalizeAppRole(e.target.value))}
-            className={authInputClassName}
-            required
-          >
-            <option value="student">Student</option>
-            <option value="teacher">Teacher</option>
-          </select>
         </div>
 
         <div className="space-y-1.5">

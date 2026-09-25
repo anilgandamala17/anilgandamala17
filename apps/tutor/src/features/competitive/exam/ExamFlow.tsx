@@ -1,6 +1,13 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, ArrowLeft, FileText, Brain, Target, CheckCircle, XCircle, RefreshCw, Trophy, Calendar, BrainCircuit, Clock, Sparkles, Loader2, ShieldCheck } from 'lucide-react';
+import {
+    ChevronRight,
+    ArrowLeft,
+    FileText,
+    Calendar,
+    BrainCircuit,
+    ShieldCheck,
+} from 'lucide-react';
 import { COMPETITIVE_EXAMS, Exam, ExamSubject, Paper } from '@/data/mockData';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { Question } from '@/features/competitive/data/competitiveQuestions';
@@ -10,8 +17,13 @@ import { CompetitiveExamGenerationError } from '@/features/competitive/services/
 import { EXAM_THEMES } from '@/features/competitive/data/examThemes';
 import ExamCard from '@/features/competitive/components/ExamCard';
 import LiveExamPanel from './LiveExamPanel';
+import ExamSubmitDialog, { type SubmitDialogMode } from './ExamSubmitDialog';
+import ExamPrepGate from './ExamPrepGate';
+import ExamResultReport from './ExamResultReport';
+import { getExamConfig } from './examConfig';
+import { useExamSecurity } from './useExamSecurity';
 import { useCompetitiveStore } from '@/features/competitive/stores/competitiveStore';
-import { PremiumMetricCard, PremiumSelectionCard } from '@/features/competitive/components/CompetitiveCards';
+import { PremiumSelectionCard } from '@/features/competitive/components/CompetitiveCards';
 import type { WeeklyExamSession } from '@/types/weeklyExam';
 import { isSessionLive } from '@/features/competitive/services/weeklyExamSchedule';
 import { toast } from '@/stores/toastStore';
@@ -31,7 +43,6 @@ import {
 import type { CompetitiveQuestion } from '@/features/competitive/utils/competitiveTeaching';
 import { analytics } from '@/services/analyticsService';
 import { studentRoutes } from '@/utils/routes';
-
 
 interface ExamFlowProps {
     isDashboardView?: boolean;
@@ -65,6 +76,8 @@ export default function ExamFlow({
     }, []);
     const paperFlow = flowType === 'pyq' || (flowType === 'weekly' && weeklySession?.mode === 'pyq');
     const mockFlow = flowType === 'mock' || (flowType === 'weekly' && weeklySession?.mode === 'mock');
+    /** P4/P5 proctoring (instructions, system checks, fullscreen monitoring) — Available Exams only. */
+    const isProctoredAvailableExam = flowType === 'standard';
 
     /** Weekly windows with a fixed subject stay single-subject; everything else is a full CBT paper. */
     const useFullPaper =
@@ -192,6 +205,9 @@ export default function ExamFlow({
     const [subjectFilter, setSubjectFilter] = useState<string | null>(
         () => initialDraft?.subjectFilter ?? null,
     );
+    const [submitDialogMode, setSubmitDialogMode] = useState<SubmitDialogMode>(null);
+    const [isSubmittingExam, setIsSubmittingExam] = useState(false);
+    const submitLockRef = useRef(false);
     const timerRef = useRef(timer);
     const elapsedRef = useRef(elapsedSeconds);
     timerRef.current = timer;
@@ -227,8 +243,47 @@ export default function ExamFlow({
         onExamStateChange?.(step === 'solving' || step === 'result');
     }, [step, onExamStateChange]);
 
+    // Non-proctored sections must never stay on Available-Exams prep steps (stale URLs / section switch).
+    useEffect(() => {
+        if (isProctoredAvailableExam) return;
+        if (step !== 'instructions' && step !== 'system-check') return;
+        goToStep('exam', {}, { replace: true });
+    }, [isProctoredAvailableExam, step, goToStep]);
+
     // Leaving the section entirely must release the immersive layout.
     useEffect(() => () => onExamStateChange?.(false), [onExamStateChange]);
+
+    // Browser Back during an active exam — confirm before discarding (BrowserRouter has no useBlocker).
+    useEffect(() => {
+        if (step !== 'solving' || isSubmittingExam) return;
+        window.history.pushState({ airaExamGuard: true }, '');
+        const onPopState = () => {
+            if (submitLockRef.current) return;
+            const confirmQuit = window.confirm(
+                'Leave this exam? Your answers for this attempt will be discarded.',
+            );
+            if (confirmQuit) {
+                clearExamDraft(
+                    flowTypeRef.current,
+                    selectedExamRef.current?.id,
+                    useFullPaper
+                        ? FULL_PAPER_SUBJECT_ID
+                        : selectedSubjectRef.current?.id,
+                    selectedPaperRef.current
+                        ? String(selectedPaperRef.current.year)
+                        : undefined,
+                );
+                recordedRef.current = false;
+                setQuestions([]);
+                setSubmitDialogMode(null);
+                goToStep('exam', {}, { replace: true });
+            } else {
+                window.history.pushState({ airaExamGuard: true }, '');
+            }
+        };
+        window.addEventListener('popstate', onPopState);
+        return () => window.removeEventListener('popstate', onPopState);
+    }, [step, isSubmittingExam, goToStep, useFullPaper]);
 
     /**
      * Repairs URLs that cannot be rendered — a hand-edited link, a stale
@@ -266,6 +321,18 @@ export default function ExamFlow({
             goToStep(selectedExam ? 'exam' : 'exam', {}, { replace: true });
             return;
         }
+
+        // Submitted attempt must not re-open as live solving via stale URL / history.
+        if (step === 'solving' && initialDraft?.step === 'result' && questions.length > 0) {
+            recordedRef.current = true;
+            goToStep('result', {}, { replace: true });
+            return;
+        }
+        if (step === 'solving' && recordedRef.current && questions.length > 0) {
+            goToStep('result', {}, { replace: true });
+            return;
+        }
+
         if ((step === 'solving' || step === 'result') && questions.length === 0) {
             if (!selectedExam) goToStep('exam', {}, { replace: true });
             else if (useFullPaper && (paperFlow || mockFlow))
@@ -286,6 +353,7 @@ export default function ExamFlow({
         useFullPaper,
         goToStep,
         isActive,
+        initialDraft?.step,
     ]);
 
     const handleTimeTick = useCallback((remaining: number, elapsed: number) => {
@@ -352,6 +420,44 @@ export default function ExamFlow({
         goToStep('result');
     }, [goToStep]);
 
+    /** Single entry for timer / manual / security auto-submit — one lock, one navigation. */
+    const submitOnce = useCallback(() => {
+        if (submitLockRef.current) return;
+        submitLockRef.current = true;
+        setIsSubmittingExam(true);
+        setSubmitDialogMode(null);
+        const exam = selectedExamRef.current;
+        const subject = selectedSubjectRef.current;
+        const qs = questionsRef.current;
+        if (exam && qs.length) {
+            const full = useFullPaper || !subject;
+            saveExamDraft({
+                version: 3,
+                scope: full ? 'full' : 'subject',
+                flowType: flowTypeRef.current,
+                examId: exam.id,
+                subjectId: full ? FULL_PAPER_SUBJECT_ID : subject!.id,
+                paperYear: selectedPaperRef.current
+                    ? String(selectedPaperRef.current.year)
+                    : undefined,
+                step: 'result',
+                questions: qs,
+                currentQuestionIndex: currentQuestionIndexRef.current,
+                userAnswers: userAnswersRef.current,
+                visitedQuestions: visitedQuestionsRef.current,
+                markedForReview: markedForReviewRef.current,
+                bookmarked: bookmarkedRef.current,
+                eliminated: eliminatedRef.current,
+                notes: notesRef.current,
+                timer: timerRef.current,
+                elapsedSeconds: elapsedRef.current,
+                subjectFilter,
+                savedAt: Date.now(),
+            });
+        }
+        flushClockAndSubmit();
+    }, [flushClockAndSubmit, subjectFilter, useFullPaper]);
+
     // Autosave draft while solving (immediate on change + periodic for timer ticks).
     useEffect(() => {
         if (step !== 'solving' || !selectedExam || !questions.length) return;
@@ -390,9 +496,12 @@ export default function ExamFlow({
             if (questions[idx] && ans === questions[idx].correctAnswer) correctCount += 1;
             else incorrectCount += 1;
         });
-        const netScore = correctCount * 4 - incorrectCount;
+        const marking = getExamConfig(selectedExam).markingScheme;
+        const netScore =
+            correctCount * marking.correctMarks + incorrectCount * marking.incorrectMarks;
         const subjectId = useFullPaper ? FULL_PAPER_SUBJECT_ID : selectedSubject!.id;
         const subjectName = useFullPaper ? 'Full examination' : selectedSubject!.name;
+        const durationSeconds = getExamConfig(selectedExam).durationMinutes * 60;
         recordAttempt({
             examId: selectedExam.id,
             examName: selectedExam.name,
@@ -411,7 +520,10 @@ export default function ExamFlow({
             incorrectCount,
             netScore,
             total: questions.length,
-            timeSeconds: elapsedRef.current || elapsedSeconds || Math.max(0, (selectedExam.timeMinutes * 60) - (timerRef.current || timer)),
+            timeSeconds:
+                elapsedRef.current ||
+                elapsedSeconds ||
+                Math.max(0, durationSeconds - (timerRef.current || timer)),
             paperYear: selectedPaper ? String(selectedPaper.year) : undefined,
         });
         let skipped = 0;
@@ -429,7 +541,7 @@ export default function ExamFlow({
             timeSpentSeconds:
                 elapsedRef.current ||
                 elapsedSeconds ||
-                Math.max(0, selectedExam.timeMinutes * 60 - (timerRef.current || timer)),
+                Math.max(0, durationSeconds - (timerRef.current || timer)),
             flowType,
         });
         saveExamDraft({
@@ -545,7 +657,13 @@ export default function ExamFlow({
 
     const handleExamSelect = (exam: Exam) => {
         analytics.examSelected(exam.id, exam.name);
-        if (useFullPaper && (flowType === 'standard' || (flowType === 'weekly' && !weeklySession?.subjectId && mockFlow))) {
+        // Available Exams only: instructions → system checks → start
+        if (isProctoredAvailableExam) {
+            goToStep('instructions', { exam: exam.id, subject: null, paper: null });
+            return;
+        }
+        // Year Practice / Mock / Weekly: original practice start path (no P4 gate)
+        if (useFullPaper && flowType === 'weekly' && !weeklySession?.subjectId && mockFlow) {
             requestStartFullExam(exam, null);
             return;
         }
@@ -554,6 +672,19 @@ export default function ExamFlow({
             return;
         }
         goToStep('subject', { exam: exam.id, subject: null, paper: null });
+    };
+
+    const proceedAfterSystemChecks = () => {
+        if (!selectedExam) return;
+        if (useFullPaper && (flowType === 'standard' || (flowType === 'weekly' && !weeklySession?.subjectId && mockFlow))) {
+            requestStartFullExam(selectedExam, null);
+            return;
+        }
+        if (useFullPaper && (paperFlow || mockFlow)) {
+            goToStep('paper', { exam: selectedExam.id, subject: null, paper: null });
+            return;
+        }
+        goToStep('subject', { exam: selectedExam.id, subject: null, paper: null });
     };
 
     const resolveExamYear = (exam: Exam, paper: Paper | null | undefined) => {
@@ -581,12 +712,14 @@ export default function ExamFlow({
         setElapsedSeconds(0);
         recordedRef.current = false;
 
+        const config = getExamConfig(exam);
+        const fullDuration = Math.max(20 * 60, config.durationMinutes * 60);
         const durationSeconds = full
-            ? Math.max(20 * 60, exam.timeMinutes * 60)
+            ? fullDuration
             : Math.max(
                   20 * 60,
                   Math.round(
-                      (exam.timeMinutes * 60 * (finalQuestions.length || 1)) /
+                      (fullDuration * (finalQuestions.length || 1)) /
                           Math.max(1, exam.subjects.reduce((s, sub) => s + sub.questionsCount, 0)),
                   ),
               );
@@ -909,9 +1042,28 @@ export default function ExamFlow({
     }, []);
 
     const handleSubmitExam = useCallback(() => {
-        if (!window.confirm('Submit this exam? You cannot change answers after submitting.')) return;
-        flushClockAndSubmit();
-    }, [flushClockAndSubmit]);
+        if (submitLockRef.current || isSubmittingExam) return;
+        const unanswered = userAnswersRef.current.filter((a) => a < 0 || a === undefined).length;
+        if (unanswered === 0) setSubmitDialogMode('all-attempted');
+        else setSubmitDialogMode('has-unanswered');
+    }, [isSubmittingExam]);
+
+    const confirmAndSubmitExam = useCallback(() => {
+        submitOnce();
+    }, [submitOnce]);
+
+    const reviewUnansweredQuestions = useCallback(() => {
+        setSubmitDialogMode(null);
+        const idx = userAnswersRef.current.findIndex((a) => a < 0 || a === undefined);
+        if (idx >= 0) {
+            setCurrentQuestionIndex(idx);
+            setVisitedQuestions((visited) => {
+                const next = [...visited];
+                next[idx] = true;
+                return next;
+            });
+        }
+    }, []);
 
     const handleMarkAndNext = useCallback(() => {
         const idx = currentQuestionIndexRef.current;
@@ -941,20 +1093,6 @@ export default function ExamFlow({
                 return next;
             });
         }
-    }, []);
-
-    const handleToggleBookmark = useCallback(() => {
-        const idx = currentQuestionIndexRef.current;
-        setBookmarked((prev) => {
-            const next = [...prev];
-            next[idx] = !next[idx];
-            return next;
-        });
-    }, []);
-
-    const handleNoteChange = useCallback((text: string) => {
-        const idx = currentQuestionIndexRef.current;
-        setNotes((prev) => ({ ...prev, [idx]: text }));
     }, []);
 
     const formatTime = (seconds: number) => {
@@ -989,10 +1127,24 @@ export default function ExamFlow({
     const attemptPercent = questions.length
         ? Math.round((attemptedCount / questions.length) * 100)
         : 0;
-    const rawScore = correctCount * 4 - incorrectCount;
-    const maxScore = questions.length * 4;
+
+    const examConfig = useMemo(
+        () => (selectedExam ? getExamConfig(selectedExam) : null),
+        [selectedExam],
+    );
+
+    const markingScheme = examConfig?.markingScheme ?? {
+        correctMarks: 4,
+        incorrectMarks: -1,
+        unansweredMarks: 0,
+        negativeMarking: true,
+    };
+    const rawScore =
+        correctCount * markingScheme.correctMarks + incorrectCount * markingScheme.incorrectMarks;
+    const maxScore = questions.length * markingScheme.correctMarks;
     const timeTakenSeconds =
-        elapsedSeconds || Math.max(0, (selectedExam?.timeMinutes || 0) * 60 - timer);
+        elapsedSeconds ||
+        Math.max(0, (examConfig?.durationMinutes || selectedExam?.timeMinutes || 0) * 60 - timer);
     const reviewItems = questions
         .map((question, index) => {
             const answer = userAnswers[index];
@@ -1005,6 +1157,51 @@ export default function ExamFlow({
             return { question, index, status };
         })
         .filter((item) => reviewFilter === 'all' || item.status === reviewFilter);
+
+    const security = useExamSecurity({
+        enabled:
+            isProctoredAvailableExam &&
+            step === 'solving' &&
+            questions.length > 0 &&
+            !isSubmittingExam,
+        policy: examConfig?.security ?? {
+            cameraRequired: false,
+            microphoneRequired: false,
+            fullscreenRequired: true,
+            tabMonitoringEnabled: true,
+            maxSecurityViolations: 2,
+        },
+        onAutoSubmit: () => {
+            submitOnce();
+        },
+        suppressViolations: Boolean(submitDialogMode) || integrityOpen || isSubmittingExam,
+    });
+
+    useEffect(() => {
+        if (!isProctoredAvailableExam) return;
+        if (step !== 'solving' || !examConfig?.security.fullscreenRequired) return;
+        void security.requestFullscreen();
+        // Enter fullscreen once when solving begins
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isProctoredAvailableExam, step, selectedExam?.id]);
+
+    useEffect(() => {
+        if (step === 'result') {
+            submitLockRef.current = false;
+            setIsSubmittingExam(false);
+        }
+    }, [step]);
+
+    useEffect(() => {
+        if (!isProctoredAvailableExam || !security.warningOpen) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key !== 'Escape') return;
+            e.preventDefault();
+            security.dismissWarning();
+        };
+        document.addEventListener('keydown', onKey);
+        return () => document.removeEventListener('keydown', onKey);
+    }, [isProctoredAvailableExam, security.warningOpen, security.dismissWarning]);
 
     return (
         <div className={`relative w-full ${isDashboardView && step === 'solving' ? 'min-h-0' : ''}`}>
@@ -1172,7 +1369,7 @@ export default function ExamFlow({
                                     : flowType === 'mock'
                                       ? 'Full-length mocks'
                                       : flowType === 'pyq'
-                                        ? 'Previous year papers'
+                                        ? 'Year-pattern practice'
                                         : 'Available exams'}
                             </h2>
                             <p className="text-lg text-slate-500 dark:text-slate-400 font-medium">
@@ -1180,9 +1377,9 @@ export default function ExamFlow({
                                     ? weeklySession?.title ||
                                       'Complete the published weekend assessment while the live window is open.'
                                     : flowType === 'mock'
-                                      ? 'Timed simulation papers with exam-style pressure and negative marking.'
+                                      ? 'Timed simulation papers with exam-style pressure and practice marking.'
                                       : flowType === 'pyq'
-                                        ? 'Authentic year-tagged papers to master recurring patterns.'
+                                        ? 'Year-tagged practice papers generated in exam pattern — not official archived PYQs.'
                                         : 'Choose your target examination — each card carries a distinct identity and syllabus path.'}
                             </p>
                         </div>
@@ -1199,7 +1396,7 @@ export default function ExamFlow({
                                             : flowType === 'mock'
                                               ? 'Mock'
                                               : flowType === 'pyq'
-                                                ? 'PYQ'
+                                                ? 'Year'
                                                 : undefined
                                     }
                                     onSelect={handleExamSelect}
@@ -1207,6 +1404,25 @@ export default function ExamFlow({
                             ))}
                         </div>
                     </motion.div>
+                )}
+
+                {/* Phase 4 — Exam instructions & system checks (Available Exams only) */}
+                {isProctoredAvailableExam &&
+                    (step === 'instructions' || step === 'system-check') &&
+                    selectedExam && (
+                    <ExamPrepGate
+                        config={getExamConfig(selectedExam)}
+                        stage={step === 'instructions' ? 'instructions' : 'system-check'}
+                        onBack={() =>
+                            step === 'system-check'
+                                ? goToStep('instructions', { exam: selectedExam.id })
+                                : goToStep('exam')
+                        }
+                        onContinueToChecks={() =>
+                            goToStep('system-check', { exam: selectedExam.id })
+                        }
+                        onStartExamination={proceedAfterSystemChecks}
+                    />
                 )}
 
                 {/* Step 2: Subject Selection — weekly subject-scoped only */}
@@ -1230,30 +1446,30 @@ export default function ExamFlow({
                                 const theme = EXAM_THEMES[selectedExam.id] || EXAM_THEMES['gate'];
                                 
                                 const SUBJECT_IMAGES: Record<string, string> = {
-                                    'phy': 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?q=80&w=800&auto=format&fit=crop',
-                                    'physics': 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?q=80&w=800&auto=format&fit=crop',
+                                    'phy': '/tutor-media/images/subjects/physics.png',
+                                    'physics': '/tutor-media/images/subjects/physics.png',
                                     'chem': '/tutor-media/images/subjects/chemistry.png',
                                     'chemistry': '/tutor-media/images/subjects/chemistry.png',
-                                    'math': 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800&auto=format&fit=crop',
-                                    'mathematics': 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800&auto=format&fit=crop',
+                                    'math': '/tutor-media/images/subjects/mathematics.png',
+                                    'mathematics': '/tutor-media/images/subjects/mathematics.png',
                                     'bot': '/tutor-media/images/subjects/botany.png',
                                     'botany': '/tutor-media/images/subjects/botany.png',
-                                    'zoo': 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop',
-                                    'zoology': 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop',
-                                    'mat': 'https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?q=80&w=800&auto=format&fit=crop',
-                                    'sat-sci': 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop',
-                                    'sat-sst': 'https://images.unsplash.com/photo-1447069387366-2a3b0638ca3d?q=80&w=800&auto=format&fit=crop',
-                                    'sat-math': 'https://images.unsplash.com/photo-1454165833767-027ffea9e778?q=80&w=800&auto=format&fit=crop',
-                                    'sci': 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop',
-                                    'eng': 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop',
-                                    'english': 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop',
-                                    'intel': 'https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=800&auto=format&fit=crop', // Intelligence/puzzle
-                                    'gk': 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=800&auto=format&fit=crop', // General Knowledge/Globe
-                                    'arith': 'https://images.unsplash.com/photo-1518133835878-5a93cc3f89e5?q=80&w=800&auto=format&fit=crop', // Arithmetic/Calculator
-                                    'hin': 'https://images.unsplash.com/photo-1546422904-90eab23c3d7e?q=80&w=800&auto=format&fit=crop', // Hindi/Culture
-                                    'sst': 'https://images.unsplash.com/photo-1447069387366-2a3b0638ca3d?q=80&w=800&auto=format&fit=crop', // Social Science/History
-                                    'lang': 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop', // Language
-                                    'default': 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop'
+                                    'zoo': '/tutor-media/images/subjects/biology.png',
+                                    'zoology': '/tutor-media/images/subjects/biology.png',
+                                    'mat': '/tutor-media/images/subjects/mathematics.png',
+                                    'sat-sci': '/tutor-media/images/subjects/science.png',
+                                    'sat-sst': '/tutor-media/images/subjects/social-science.png',
+                                    'sat-math': '/tutor-media/images/subjects/mathematics.png',
+                                    'sci': '/tutor-media/images/subjects/science.png',
+                                    'eng': '/tutor-media/images/subjects/english.png',
+                                    'english': '/tutor-media/images/subjects/english.png',
+                                    'intel': '/tutor-media/images/subjects/mathematics.png',
+                                    'gk': '/tutor-media/images/subjects/social-science.png',
+                                    'arith': '/tutor-media/images/subjects/mathematics.png',
+                                    'hin': '/tutor-media/images/subjects/hindi.png',
+                                    'sst': '/tutor-media/images/subjects/social-science.png',
+                                    'lang': '/tutor-media/images/subjects/english.png',
+                                    'default': '/tutor-media/images/subjects/science.png',
                                 };
                                 const bgUrl = SUBJECT_IMAGES[subject.id.trim().toLowerCase()] || SUBJECT_IMAGES[subject.name.trim().toLowerCase()] || SUBJECT_IMAGES['default'];
 
@@ -1301,9 +1517,19 @@ export default function ExamFlow({
                                         </div>
                                         <span className="text-xs font-black uppercase tracking-[0.2em] text-slate-400">Question Repository</span>
                                     </div>
-                                    <h2 className="text-4xl font-black text-gray-900 dark:text-white tracking-tighter mb-3">Previous Year Papers</h2>
+                                    <h2 className="text-4xl font-black text-gray-900 dark:text-white tracking-tighter mb-3">
+                                        {mockFlow
+                                            ? 'Mock practice papers'
+                                            : paperFlow
+                                              ? 'Year-pattern practice'
+                                              : 'Practice papers'}
+                                    </h2>
                                     <p className="text-lg text-slate-500 dark:text-slate-400 font-medium">
-                                        Select a year to open the complete {selectedExam.name} examination with all subjects in one session.
+                                        {mockFlow
+                                            ? `Select a year-tagged mock set for a full ${selectedExam.name} simulation. Questions are practice-generated in exam pattern.`
+                                            : paperFlow
+                                              ? `Select a year to open a ${selectedExam.name} practice paper. These are year-pattern drills — not official archived previous-year papers.`
+                                              : `Select a paper to open a complete ${selectedExam.name} practice session with all subjects.`}
                                     </p>
                                 </div>
                                 <div className="flex bg-slate-50 dark:bg-slate-800/80 p-6 rounded-[2.5rem] border border-slate-200/50 dark:border-slate-700/50 gap-8">
@@ -1327,14 +1553,14 @@ export default function ExamFlow({
                                     <PremiumSelectionCard
                                         key={`${paper.year}-${paper.shift || '1'}`}
                                         title={String(paper.year)}
-                                        eyebrow="Previous year paper"
-                                        description={`${selectedExam.name} official-pattern archive for timed simulation.`}
+                                        eyebrow={mockFlow ? 'Mock practice set' : 'Year-pattern practice'}
+                                        description={`${selectedExam.name} timed practice paper (${paper.name}).`}
                                         meta={`Shift ${paper.shift || '1'} · ${selectedExam.timeMinutes} minutes`}
                                         icon={<Calendar className="h-5 w-5" />}
                                         accent={theme.color}
                                         index={i}
                                         compact
-                                        badge="PYQ"
+                                        badge={mockFlow ? 'Mock' : 'Practice'}
                                         onClick={() => handlePaperSelect(paper)}
                                     />
                                 );
@@ -1360,6 +1586,8 @@ export default function ExamFlow({
                             subjectFilter={subjectFilter}
                             onSubjectFilterChange={setSubjectFilter}
                             isFullPaper={useFullPaper}
+                            correctMarks={markingScheme.correctMarks}
+                            incorrectMarks={markingScheme.incorrectMarks}
                             questions={questions}
                             currentQuestionIndex={currentQuestionIndex}
                             userAnswers={userAnswers}
@@ -1377,332 +1605,162 @@ export default function ExamFlow({
                             onMarkAndNext={handleMarkAndNext}
                             onPrevious={handlePrevious}
                             onSubmit={handleSubmitExam}
-                            onToggleBookmark={handleToggleBookmark}
-                            onNoteChange={handleNoteChange}
                             onTimeTick={handleTimeTick}
-                            onTimeExpired={flushClockAndSubmit}
+                            onTimeExpired={submitOnce}
                         />
                     </motion.div>
                 )}
 
                 {/* Step 6: Result Screen */}
                 {step === 'result' && (
-                    <div className="space-y-8 opacity-100 transition-all duration-500">
-                        <section
-                            className="exam-result-hero"
-                            style={{ '--result-accent': activeTheme.color } as React.CSSProperties}
-                        >
-                            <div className="exam-result-hero__glow" />
-                            <header className="exam-result-hero__header">
-                                <div className="exam-result-hero__status">
-                                    <span><Trophy className="h-4 w-4" /></span>
-                                    <div>
-                                        <p>Assessment completed</p>
-                                        <h2>Performance report</h2>
-                                    </div>
-                                </div>
-                                <div className="exam-result-hero__identity">
-                                    <span>{selectedExam?.name || 'Session'}</span>
-                                    <span>
-                                        {useFullPaper
-                                            ? 'Full examination'
-                                            : selectedSubject?.name || 'Subject'}
-                                    </span>
-                                    {selectedPaper?.year && <span>{selectedPaper.year}</span>}
-                                </div>
-                            </header>
-
-                            <div className="exam-result-hero__body">
-                                <motion.div
-                                    className="exam-score-dial"
-                                    initial={{ opacity: 0, scale: 0.82 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ type: 'spring', stiffness: 180, damping: 20 }}
-                                    style={{
-                                        background: `conic-gradient(${activeTheme.color} ${accuracyPercent * 3.6}deg, color-mix(in srgb, ${activeTheme.color} 10%, transparent) 0deg)`,
-                                    }}
-                                >
-                                    <div className="exam-score-dial__inner">
-                                        <span>Net score</span>
-                                        <strong>{rawScore}</strong>
-                                        <small>out of {maxScore}</small>
-                                    </div>
-                                </motion.div>
-
-                                <div className="exam-result-summary">
-                                    <p className="exam-result-summary__eyebrow">AIra assessment intelligence</p>
-                                    <h3>
-                                        {accuracyPercent >= 80
-                                            ? 'Excellent command of this test.'
-                                            : accuracyPercent >= 60
-                                              ? 'Strong attempt with clear room to advance.'
-                                              : 'A useful baseline for your next focused revision.'}
-                                    </h3>
-                                    <p className="exam-result-summary__copy">
-                                        You attempted {attemptedCount} of {questions.length} questions with {accuracyPercent}% overall accuracy.
-                                        Review the answer analysis below to strengthen weak concepts.
-                                    </p>
-                                    <div className="exam-result-breakdown">
-                                        <div><span className="is-correct"><CheckCircle className="h-4 w-4" /></span><strong>{correctCount}</strong><small>Correct</small></div>
-                                        <div><span className="is-wrong"><XCircle className="h-4 w-4" /></span><strong>{incorrectCount}</strong><small>Incorrect</small></div>
-                                        <div><span className="is-skipped"><FileText className="h-4 w-4" /></span><strong>{unattemptedCount}</strong><small>Unattempted</small></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="exam-result-metrics">
-                                <PremiumMetricCard
-                                    icon={<Target className="h-5 w-5" />}
-                                    value={`${accuracyPercent}%`}
-                                    label="Overall accuracy"
-                                    accent="#059669"
-                                    detail={`${correctCount} correct answers`}
-                                />
-                                <PremiumMetricCard
-                                    icon={<CheckCircle className="h-5 w-5" />}
-                                    value={`${attemptPercent}%`}
-                                    label="Attempt rate"
-                                    accent={activeTheme.color}
-                                    detail={`${attemptedCount} of ${questions.length} attempted`}
-                                />
-                                <PremiumMetricCard
-                                    icon={<Clock className="h-5 w-5" />}
-                                    value={formatTime(timeTakenSeconds)}
-                                    label="Time invested"
-                                    accent="#2563eb"
-                                    detail={`${questions.length ? Math.round(timeTakenSeconds / questions.length) : 0}s average per question`}
-                                />
-                            </div>
-
-                            <div className="exam-result-actions">
-                                <button type="button" onClick={exitToSelection} className="exam-result-actions__secondary">
-                                    <ArrowLeft className="h-4 w-4" /> Choose another test
-                                </button>
-                                <button
-                                    type="button"
-                                    disabled={isGenerating}
-                                    onClick={() => {
-                                        if (!selectedExam) return;
-                                        resetExam();
-                                        if (useFullPaper) {
-                                            requestStartFullExam(
-                                                selectedExam,
-                                                paperFlow || mockFlow ? selectedPaper : null,
-                                            );
-                                        } else if (selectedSubject) {
-                                            requestStartExam(
-                                                selectedExam,
-                                                selectedSubject,
-                                                paperFlow ? selectedPaper : null,
-                                            );
-                                        }
-                                    }}
-                                    className="exam-result-actions__primary"
-                                >
-                                    <RefreshCw className={`h-4 w-4 ${isGenerating ? 'animate-spin' : ''}`} />
-                                    {isGenerating ? 'Generating…' : 'Retake assessment'}
-                                </button>
-                            </div>
-                        </section>
-
-                        {/* Detailed Answer Sheet Section */}
-                        <section className="answer-review-section">
-                            <header className="answer-review-header">
-                                <div className="answer-review-header__copy">
-                                    <span><FileText className="h-5 w-5" /></span>
-                                    <div>
-                                        <p>Response analysis</p>
-                                        <h3>Answer review</h3>
-                                        <small>Compare every response and study the reasoning behind the correct answer.</small>
-                                    </div>
-                                </div>
-                                <div className="answer-review-filters" role="tablist" aria-label="Filter reviewed answers">
-                                    {([
-                                        ['all', 'All', questions.length],
-                                        ['correct', 'Correct', correctCount],
-                                        ['incorrect', 'Incorrect', incorrectCount],
-                                        ['unattempted', 'Skipped', unattemptedCount],
-                                    ] as const).map(([value, label, count]) => (
-                                        <button
-                                            key={value}
-                                            type="button"
-                                            role="tab"
-                                            aria-selected={reviewFilter === value}
-                                            onClick={() => setReviewFilter(value)}
-                                            className={reviewFilter === value ? 'is-active' : ''}
-                                        >
-                                            <span>{label}</span>
-                                            <strong>{count}</strong>
-                                        </button>
-                                    ))}
-                                </div>
-                            </header>
-
-                            <AnimatePresence mode="popLayout">
-                                <div className="answer-review-list">
-                                    {reviewItems.map(({ question: q, index: idx, status }, position) => {
-                                        const explanationSteps = (q.explanation || '')
-                                            .split('\n')
-                                            .map((item) => item.trim())
-                                            .filter(Boolean);
-                                        const stepsToRender = explanationSteps.length
-                                            ? explanationSteps
-                                            : ['Review the core concept and compare each option before selecting the final answer.'];
-                                        const selectedAnswer = userAnswers[idx];
-
-                                        return (
-                                            <motion.article
-                                                layout
-                                                key={q.id}
-                                                initial={{ opacity: 0, y: 18 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0, scale: 0.98 }}
-                                                transition={{ delay: Math.min(position * 0.045, 0.25), type: 'spring', damping: 24 }}
-                                                className={`answer-review-card answer-review-card--${status}`}
-                                            >
-                                                <div className="answer-review-card__rail" />
-                                                <header className="answer-review-card__header">
-                                                    <div className="answer-review-card__labels">
-                                                        <span className="answer-review-card__number">Question {idx + 1}</span>
-                                                        <span className={`answer-review-card__status answer-review-card__status--${status}`}>
-                                                            {status === 'correct' ? <CheckCircle className="h-3.5 w-3.5" /> : status === 'incorrect' ? <XCircle className="h-3.5 w-3.5" /> : <FileText className="h-3.5 w-3.5" />}
-                                                            {status === 'correct' ? 'Correct' : status === 'incorrect' ? 'Incorrect' : 'Unattempted'}
-                                                        </span>
-                                                        <span className="answer-review-card__difficulty">{q.difficulty}</span>
-                                                    </div>
-                                                    <span className="answer-review-card__marks">
-                                                        {status === 'correct' ? '+4 marks' : status === 'incorrect' ? '−1 mark' : '0 marks'}
-                                                    </span>
-                                                </header>
-
-                                                <div className="answer-review-card__question">
-                                                    <p>{q.subjectName || selectedSubject?.name} · {q.topic}</p>
-                                                    <h4>{q.text}</h4>
-                                                </div>
-
-                                                <div className="answer-comparison">
-                                                    <div className={`answer-comparison__item answer-comparison__item--${status}`}>
-                                                        <div className="answer-comparison__label">
-                                                            <span>Your response</span>
-                                                            <small>{status === 'correct' ? 'Matched' : status === 'incorrect' ? 'Needs review' : 'Not answered'}</small>
-                                                        </div>
-                                                        <div className="answer-comparison__answer">
-                                                            <strong>{selectedAnswer !== -1 ? String.fromCharCode(65 + selectedAnswer) : '—'}</strong>
-                                                            <span>{
-                                                                selectedAnswer >= 0 && selectedAnswer < q.options.length
-                                                                    ? q.options[selectedAnswer]
-                                                                    : 'No option selected'
-                                                            }</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="answer-comparison__item answer-comparison__item--solution">
-                                                        <div className="answer-comparison__label">
-                                                            <span>Correct answer</span>
-                                                            <small>Verified solution</small>
-                                                        </div>
-                                                        <div className="answer-comparison__answer">
-                                                            <strong>{
-                                                                typeof q.correctAnswer === 'number' && q.correctAnswer >= 0
-                                                                    ? String.fromCharCode(65 + q.correctAnswer)
-                                                                    : '—'
-                                                            }</strong>
-                                                            <span>{
-                                                                typeof q.correctAnswer === 'number' &&
-                                                                q.correctAnswer >= 0 &&
-                                                                q.correctAnswer < q.options.length
-                                                                    ? q.options[q.correctAnswer]
-                                                                    : '—'
-                                                            }</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div className="answer-explanation">
-                                                    <header className="answer-explanation__header">
-                                                        <span style={{ backgroundColor: activeTheme.color }}><Brain className="h-5 w-5" /></span>
-                                                        <div>
-                                                            <p style={{ color: activeTheme.color }}>Expert explanation</p>
-                                                            <h5>Understand the reasoning</h5>
-                                                        </div>
-                                                        <span className="answer-explanation__step-count">{stepsToRender.length} steps</span>
-                                                    </header>
-
-                                                    <div className="answer-explanation__steps">
-                                                        {stepsToRender.map((stepText, stepIndex) => (
-                                                            <div key={`${q.id}-step-${stepIndex}`} className="answer-explanation__step">
-                                                                <span style={{ color: activeTheme.color, borderColor: `${activeTheme.color}35` }}>
-                                                                    {stepIndex + 1}
-                                                                </span>
-                                                                <p>{stepText}</p>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-
-                                                    <footer className="answer-explanation__footer">
-                                                        <div>
-                                                            <Sparkles className="h-4 w-4" style={{ color: activeTheme.color }} />
-                                                            <span>Need a lecturer-style walkthrough?</span>
-                                                        </div>
-                                                        <button
-                                                            type="button"
-                                                            disabled={explainBuildingId === q.id}
-                                                            onClick={async () => {
-                                                                if (explainBuildingId) return;
-                                                                const { icon: _icon, ...serializableTheme } = activeTheme;
-                                                                void _icon;
-                                                                setExplainBuildingId(q.id);
-                                                                try {
-                                                                    const { generateAITeachingSteps, areValidTeachingSteps } = await import('@/features/competitive/utils/competitiveTeaching');
-                                                                    const competitiveQuestion = q as unknown as CompetitiveQuestion;
-                                                                    const teachingSteps = await generateAITeachingSteps(
-                                                                        competitiveQuestion,
-                                                                        selectedExam?.name,
-                                                                        userAnswers[idx],
-                                                                    );
-                                                                    if (!areValidTeachingSteps(teachingSteps)) {
-                                                                        throw new Error('Could not build the AI explanation.');
-                                                                    }
-                                                                    const payload = {
-                                                                        competitiveQuestion: q,
-                                                                        theme: serializableTheme,
-                                                                        userAnswer: userAnswers[idx],
-                                                                        examName: selectedExam?.name,
-                                                                        returnTo: `${location.pathname}${location.search}`,
-                                                                        teachingSteps,
-                                                                    };
-                                                                    saveExplainPayload(payload);
-                                                                    navigate(studentRoutes.competitiveExplain, { state: payload });
-                                                                } catch (err) {
-                                                                    toast.error(
-                                                                        err instanceof Error
-                                                                            ? err.message
-                                                                            : 'Could not build the AI explanation. Please try again.',
-                                                                    );
-                                                                } finally {
-                                                                    setExplainBuildingId(null);
-                                                                }
-                                                            }}
-                                                            style={{ backgroundColor: activeTheme.color }}
-                                                        >
-                                                            {explainBuildingId === q.id ? (
-                                                                <Loader2 className="h-4 w-4 animate-spin" />
-                                                            ) : (
-                                                                <Sparkles className="h-4 w-4" />
-                                                            )}
-                                                            {explainBuildingId === q.id ? 'Building explanation…' : 'Explain with AI'}
-                                                            {explainBuildingId !== q.id && <ChevronRight className="h-4 w-4" />}
-                                                        </button>
-                                                    </footer>
-                                                </div>
-                                            </motion.article>
-                                        );
-                                    })}
-                                </div>
-                            </AnimatePresence>
-                        </section>
-                    </div>
+                    <ExamResultReport
+                        accentColor={activeTheme.color}
+                        examName={selectedExam?.name || 'Session'}
+                        scopeLabel={
+                            useFullPaper
+                                ? 'Full examination'
+                                : selectedSubject?.name || 'Subject'
+                        }
+                        paperYear={selectedPaper?.year}
+                        rawScore={rawScore}
+                        maxScore={maxScore}
+                        accuracyPercent={accuracyPercent}
+                        attemptPercent={attemptPercent}
+                        correctCount={correctCount}
+                        incorrectCount={incorrectCount}
+                        unattemptedCount={unattemptedCount}
+                        attemptedCount={attemptedCount}
+                        questionCount={questions.length}
+                        timeTakenSeconds={timeTakenSeconds}
+                        formatTime={formatTime}
+                        markingScheme={markingScheme}
+                        reviewFilter={reviewFilter}
+                        onReviewFilterChange={setReviewFilter}
+                        reviewItems={reviewItems}
+                        userAnswers={userAnswers}
+                        subjectFallbackName={selectedSubject?.name}
+                        explainBuildingId={explainBuildingId}
+                        isGenerating={isGenerating}
+                        onExit={exitToSelection}
+                        onRetake={() => {
+                            if (!selectedExam) return;
+                            resetExam();
+                            if (useFullPaper) {
+                                requestStartFullExam(
+                                    selectedExam,
+                                    paperFlow || mockFlow ? selectedPaper : null,
+                                );
+                            } else if (selectedSubject) {
+                                requestStartExam(
+                                    selectedExam,
+                                    selectedSubject,
+                                    paperFlow ? selectedPaper : null,
+                                );
+                            }
+                        }}
+                        onExplainWithAI={async (q, idx) => {
+                            if (explainBuildingId) return;
+                            const { icon: _icon, ...serializableTheme } = activeTheme;
+                            void _icon;
+                            setExplainBuildingId(q.id);
+                            try {
+                                const { generateAITeachingSteps, areValidTeachingSteps } = await import(
+                                    '@/features/competitive/utils/competitiveTeaching'
+                                );
+                                const competitiveQuestion = q as unknown as CompetitiveQuestion;
+                                const teachingSteps = await generateAITeachingSteps(
+                                    competitiveQuestion,
+                                    selectedExam?.name,
+                                    userAnswers[idx],
+                                );
+                                if (!areValidTeachingSteps(teachingSteps)) {
+                                    throw new Error('Could not build the AI explanation.');
+                                }
+                                const payload = {
+                                    competitiveQuestion: q,
+                                    theme: serializableTheme,
+                                    userAnswer: userAnswers[idx],
+                                    examName: selectedExam?.name,
+                                    returnTo: `${location.pathname}${location.search}`,
+                                    teachingSteps,
+                                };
+                                saveExplainPayload(payload);
+                                navigate(studentRoutes.competitiveExplain, { state: payload });
+                            } catch (err) {
+                                toast.error(
+                                    err instanceof Error
+                                        ? err.message
+                                        : 'Could not build the AI explanation. Please try again.',
+                                );
+                            } finally {
+                                setExplainBuildingId(null);
+                            }
+                        }}
+                    />
                 )}
             </div>
+
+            <ExamSubmitDialog
+                mode={submitDialogMode}
+                unansweredCount={userAnswers.filter((a) => a < 0 || a === undefined).length}
+                totalQuestions={questions.length}
+                answeredCount={userAnswers.filter((a) => a >= 0).length}
+                submitting={isSubmittingExam}
+                onCancel={() => {
+                    if (isSubmittingExam) return;
+                    setSubmitDialogMode(null);
+                }}
+                onReviewUnanswered={reviewUnansweredQuestions}
+                onSubmitAnyway={() => setSubmitDialogMode('final-confirm')}
+                onConfirmSubmit={confirmAndSubmitExam}
+            />
+
+            {isProctoredAvailableExam && security.warningOpen && !security.autoSubmitted ? (
+                <div
+                    className="fixed inset-0 z-[90] flex items-end justify-center bg-slate-950/60 p-3 backdrop-blur-sm sm:items-center sm:p-4"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="exam-security-warning-title"
+                    aria-describedby="exam-security-warning-body"
+                >
+                    <div className="max-h-[min(90dvh,28rem)] w-full max-w-md overflow-y-auto rounded-2xl border border-amber-200 bg-white p-5 shadow-2xl dark:border-amber-900/40 dark:bg-slate-900">
+                        <h2 id="exam-security-warning-title" className="text-lg font-black text-slate-900 dark:text-white">
+                            Exam Warning
+                        </h2>
+                        <p
+                            id="exam-security-warning-body"
+                            className="mt-2 whitespace-pre-line text-sm text-slate-600 dark:text-slate-300"
+                        >
+                            {security.warningMessage}
+                        </p>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                security.dismissWarning();
+                                void security.requestFullscreen();
+                            }}
+                            className="mt-4 min-h-11 w-full rounded-xl bg-orange-600 py-2.5 text-sm font-bold text-white hover:bg-orange-700"
+                        >
+                            Return to Exam
+                        </button>
+                    </div>
+                </div>
+            ) : null}
+
+            {isProctoredAvailableExam &&
+            security.needsFullscreenReturn &&
+            step === 'solving' &&
+            !security.warningOpen ? (
+                <div className="exam-fullscreen-return fixed inset-x-0 bottom-[calc(4.75rem+env(safe-area-inset-bottom,0px))] z-[85] mx-auto flex max-w-md justify-center px-3 lg:bottom-4">
+                    <button
+                        type="button"
+                        onClick={() => void security.requestFullscreen()}
+                        className="min-h-11 rounded-xl bg-slate-900 px-4 py-3 text-sm font-bold text-white shadow-lg dark:bg-orange-600"
+                    >
+                        Return to fullscreen
+                    </button>
+                </div>
+            ) : null}
 
             {/* Diagnostic Helper (Removed from user view since fixed) */}
         </div>

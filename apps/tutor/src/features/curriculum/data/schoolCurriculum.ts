@@ -503,7 +503,7 @@ export const schoolGrades: SchoolGrade[] = [
         name: 'Grade 6',
         gradeNumber: 6,
         level: 'middle',
-        image: 'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=90&w=800&sat=100', // Colorful notebooks and pens
+        image: '/tutor-media/images/grades/grade_6_students.png',
         ageGroup: '11-12',
         description: 'Foundation for middle school academics',
         color: '#2C8CFF',
@@ -514,7 +514,7 @@ export const schoolGrades: SchoolGrade[] = [
         name: 'Grade 7',
         gradeNumber: 7,
         level: 'middle',
-        image: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&q=90&w=800&sat=80', // Student writing/studying
+        image: '/tutor-media/images/grades/grade_7_students.png',
         ageGroup: '12-13',
         description: 'Intermediate middle school concepts',
         color: '#2C8CFF',
@@ -525,7 +525,7 @@ export const schoolGrades: SchoolGrade[] = [
         name: 'Grade 8',
         gradeNumber: 8,
         level: 'middle',
-        image: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&q=90&w=800', // Students in bright classroom
+        image: '/tutor-media/images/grades/grade_8_students.png',
         ageGroup: '13-14',
         description: 'Advanced middle school and high school prep',
         color: '#2C8CFF',
@@ -536,7 +536,7 @@ export const schoolGrades: SchoolGrade[] = [
         name: 'Grade 9',
         gradeNumber: 9,
         level: 'secondary',
-        image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=90&w=800', // Students in a study environment
+        image: '/tutor-media/images/grades/grade_9_students.png',
         ageGroup: '14-15',
         description: 'Beginning of secondary school journey',
         color: '#8A4FFF',
@@ -547,7 +547,7 @@ export const schoolGrades: SchoolGrade[] = [
         name: 'Grade 10',
         gradeNumber: 10,
         level: 'secondary',
-        image: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=90&w=800', // Students focusing in an academic setting
+        image: '/tutor-media/images/grades/grade_10_students.png',
         ageGroup: '15-16',
         description: 'Preparation for board examinations',
         color: '#8A4FFF',
@@ -558,7 +558,7 @@ export const schoolGrades: SchoolGrade[] = [
         name: 'Class 11',
         gradeNumber: 11,
         level: 'senior-secondary',
-        image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=90&w=800', // Science lab / chemistry
+        image: '/tutor-media/images/grades/grade_11_students.png',
         ageGroup: '16-17',
         description: 'Choose MPC or BiPC, then explore your subjects',
         color: '#FF9E2C',
@@ -569,7 +569,7 @@ export const schoolGrades: SchoolGrade[] = [
         name: 'Class 12',
         gradeNumber: 12,
         level: 'senior-secondary',
-        image: 'https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?auto=format&fit=crop&q=90&w=800', // Students solving exam problem
+        image: '/tutor-media/images/grades/grade_12_students.png',
         ageGroup: '17-18',
         description: 'Choose MPC or BiPC, then explore your subjects',
         color: '#FF9E2C',

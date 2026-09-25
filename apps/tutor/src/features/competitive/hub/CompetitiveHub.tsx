@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
     LayoutDashboard,
     Calendar,
-    BookOpen,
     Clock,
     Target,
     Menu,
@@ -25,7 +24,6 @@ import { useCompetitiveStore } from '@/features/competitive/stores/competitiveSt
 import { studentRoutes } from '@/utils/routes';
 
 const ExamFlow = lazy(() => import('@/features/competitive/exam/ExamFlow'));
-const TopicQuizzesFlow = lazy(() => import('@/features/competitive/quiz/TopicQuizzesFlow'));
 const QuestionaryExplanationFlow = lazy(() => import('@/features/competitive/ai-explanation/QuestionaryExplanationFlow'));
 const WeeklyTestsFlow = lazy(() => import('@/features/competitive/weekly/WeeklyTestsFlow'));
 
@@ -40,9 +38,8 @@ function SectionFallback() {
 const SIDEBAR_ITEMS = [
     { id: 'exams', label: 'Available Exams', icon: LayoutDashboard, hint: 'Catalog' },
     { id: 'weekly', label: 'Weekly Tests', icon: Calendar, hint: 'Rhythm' },
-    { id: 'quizzes', label: 'Topic Quizzes', icon: BookOpen, hint: 'Drill' },
     { id: 'questionary', label: 'AI Explanation', icon: BrainCircuit, hint: 'Lecture' },
-    { id: 'pyqs', label: 'Previous Years', icon: Clock, hint: 'PYQ' },
+    { id: 'pyqs', label: 'Year Practice', icon: Clock, hint: 'By year' },
     { id: 'mock', label: 'Mock Tests', icon: Target, hint: 'Simulate' },
 ] as const;
 
@@ -50,11 +47,23 @@ const SIDEBAR_ITEMS = [
  * Competitive Mode hub — exam-taking workflows only.
  * Analytics overview lives on /student/dashboard?mode=competitive.
  */
-export default function CompetitiveHub() {
+type CompetitiveHubProps = {
+    onExamActiveChange?: (active: boolean) => void;
+};
+
+export default function CompetitiveHub({ onExamActiveChange }: CompetitiveHubProps = {}) {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isExamActive, setIsExamActive] = useState(false);
+
+    const handleExamActiveChange = useCallback(
+        (active: boolean) => {
+            setIsExamActive(active);
+            onExamActiveChange?.(active);
+        },
+        [onExamActiveChange],
+    );
     const userId = useAuthStore((s) => s.user?.id ?? null);
     const bindCompetitiveUser = useCompetitiveStore((s) => s.bindUser);
 
@@ -106,7 +115,7 @@ export default function CompetitiveHub() {
     const selectSection = useCallback(
         (sectionId: (typeof SIDEBAR_ITEMS)[number]['id']) => {
             setIsMobileMenuOpen(false);
-            setIsExamActive(false);
+            handleExamActiveChange(false);
             if (sectionId === activeSection) return;
             setSearchParams((prev) => {
                 const next = new URLSearchParams(prev);
@@ -115,7 +124,7 @@ export default function CompetitiveHub() {
                 return next;
             });
         },
-        [activeSection, setSearchParams],
+        [activeSection, setSearchParams, handleExamActiveChange],
     );
 
     const active = SIDEBAR_ITEMS.find((i) => i.id === activeSection) || SIDEBAR_ITEMS[0];
@@ -302,7 +311,7 @@ export default function CompetitiveHub() {
                     <Suspense fallback={<SectionFallback />}>
                         {activeSection === 'exams' && (
                             <ExamFlow
-                                onExamStateChange={setIsExamActive}
+                                onExamStateChange={handleExamActiveChange}
                                 isDashboardView
                                 flowType="standard"
                                 isActive
@@ -310,7 +319,7 @@ export default function CompetitiveHub() {
                         )}
                         {activeSection === 'pyqs' && (
                             <ExamFlow
-                                onExamStateChange={setIsExamActive}
+                                onExamStateChange={handleExamActiveChange}
                                 isDashboardView
                                 flowType="pyq"
                                 isActive
@@ -318,16 +327,15 @@ export default function CompetitiveHub() {
                         )}
                         {activeSection === 'mock' && (
                             <ExamFlow
-                                onExamStateChange={setIsExamActive}
+                                onExamStateChange={handleExamActiveChange}
                                 isDashboardView
                                 flowType="mock"
                                 isActive
                             />
                         )}
                         {activeSection === 'weekly' && (
-                            <WeeklyTestsFlow onExamStateChange={setIsExamActive} />
+                            <WeeklyTestsFlow onExamStateChange={handleExamActiveChange} />
                         )}
-                        {activeSection === 'quizzes' && <TopicQuizzesFlow />}
                         {activeSection === 'questionary' && <QuestionaryExplanationFlow />}
                     </Suspense>
                 </div>

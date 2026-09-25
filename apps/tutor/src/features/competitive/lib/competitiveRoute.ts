@@ -14,7 +14,6 @@ import { EXAM_GENERATION_VERSION } from '@/features/competitive/data/competitive
 export const COMPETITIVE_SECTIONS = [
     'exams',
     'weekly',
-    'quizzes',
     'questionary',
     'pyqs',
     'mock',
@@ -24,6 +23,9 @@ export type CompetitiveSection = (typeof COMPETITIVE_SECTIONS)[number];
 
 /** Legacy analytics section — redirect callers to the unified dashboard. */
 export const LEGACY_PERFORMANCE_SECTION = 'performance';
+
+/** Legacy Topic Quizzes hub section — removed; redirect to exams catalog. */
+export const LEGACY_QUIZZES_SECTION = 'quizzes';
 
 export const SECTION_PARAM = 'section';
 
@@ -44,8 +46,12 @@ export function isLegacyPerformanceSection(value: string | null): boolean {
     return value === LEGACY_PERFORMANCE_SECTION;
 }
 
+export function isLegacyQuizzesSection(value: string | null): boolean {
+    return value === LEGACY_QUIZZES_SECTION;
+}
+
 export function normalizeSection(value: string | null): CompetitiveSection {
-    if (isLegacyPerformanceSection(value)) return 'exams';
+    if (isLegacyPerformanceSection(value) || isLegacyQuizzesSection(value)) return 'exams';
     return COMPETITIVE_SECTIONS.includes(value as CompetitiveSection)
         ? (value as CompetitiveSection)
         : 'exams';
@@ -80,10 +86,19 @@ export function findPaper(exam: Exam | null, year: string | null): Paper | null 
     return exam.papers.find((paper) => String(paper.year) === year) ?? null;
 }
 
-export type ExamFlowStep = 'exam' | 'subject' | 'paper' | 'solving' | 'result';
+export type ExamFlowStep =
+    | 'exam'
+    | 'instructions'
+    | 'system-check'
+    | 'subject'
+    | 'paper'
+    | 'solving'
+    | 'result';
 
 export function normalizeExamStep(value: string | null): ExamFlowStep {
     switch (value) {
+        case 'instructions':
+        case 'system-check':
         case 'subject':
         case 'paper':
         case 'solving':

@@ -23,7 +23,11 @@ export default function TopicDiscovery({
   onStart,
 }: TopicDiscoveryProps) {
   return (
-    <section className="dash-card dash-card--flush overflow-hidden" aria-label="Browse lessons">
+    <section
+      className="dash-surface-support overflow-hidden"
+      style={{ padding: 0 }}
+      aria-label="Browse lessons"
+    >
       <div
         className="px-4 sm:px-5 pt-4 sm:pt-5 pb-3"
         style={{ borderBottom: '1px solid var(--dash-border)' }}

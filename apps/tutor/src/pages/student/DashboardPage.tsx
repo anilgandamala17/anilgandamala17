@@ -16,37 +16,26 @@ import DashboardModeSwitcher, {
   type DashboardMode,
 } from '@/features/dashboard/components/DashboardModeSwitcher';
 import CurriculumModeDashboard from '@/features/dashboard/components/CurriculumModeDashboard';
+import {
+  DASHBOARD_MODE_PARAM,
+  isCanonicalDashboardModeParam,
+  parseDashboardMode,
+} from '@/features/dashboard/lib/dashboardMode';
 
 const CompetitiveModeDashboard = lazy(
   () => import('@/features/dashboard/components/CompetitiveModeDashboard'),
 );
 
-const MODE_PARAM = 'mode';
-
-function parseMode(raw: string | null): DashboardMode {
-  return raw === 'competitive' ? 'competitive' : 'curriculum';
-}
-
 function ModeFallback() {
   return (
-    <div className="space-y-4 animate-pulse" aria-busy="true" aria-label="Loading dashboard">
-      <div
-        className="h-28 rounded-2xl"
-        style={{ background: 'var(--dash-surface-1)' }}
-      />
+    <div className="dash-stack" aria-busy="true" aria-label="Loading competitive dashboard">
+      <div className="dash-skeleton h-28 rounded-[var(--dash-radius-lg)]" />
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {[0, 1, 2, 3].map((i) => (
-          <div
-            key={i}
-            className="h-20 rounded-xl"
-            style={{ background: 'var(--dash-surface-1)' }}
-          />
+          <div key={i} className="dash-skeleton h-20 rounded-[var(--dash-radius-sm)]" />
         ))}
       </div>
-      <div
-        className="h-40 rounded-2xl"
-        style={{ background: 'var(--dash-surface-1)' }}
-      />
+      <div className="dash-skeleton h-40 rounded-[var(--dash-radius-lg)]" />
     </div>
   );
 }
@@ -67,15 +56,29 @@ export default function DashboardPage() {
   const bindCompetitiveUser = useCompetitiveStore((s) => s.bindUser);
   const insights = useDashboardInsights('7d');
 
-  const mode = parseMode(searchParams.get(MODE_PARAM));
+  const mode = parseDashboardMode(searchParams.get(DASHBOARD_MODE_PARAM));
+
+  // Canonicalize invalid ?mode= values so refresh/share URLs stay valid.
+  useEffect(() => {
+    const raw = searchParams.get(DASHBOARD_MODE_PARAM);
+    if (isCanonicalDashboardModeParam(raw)) return;
+    setSearchParams(
+      (prev) => {
+        const p = new URLSearchParams(prev);
+        p.delete(DASHBOARD_MODE_PARAM);
+        return p;
+      },
+      { replace: true },
+    );
+  }, [searchParams, setSearchParams]);
 
   const setMode = useCallback(
     (next: DashboardMode) => {
       setSearchParams(
         (prev) => {
           const p = new URLSearchParams(prev);
-          if (next === 'curriculum') p.delete(MODE_PARAM);
-          else p.set(MODE_PARAM, next);
+          if (next === 'curriculum') p.delete(DASHBOARD_MODE_PARAM);
+          else p.set(DASHBOARD_MODE_PARAM, next);
           return p;
         },
         { replace: true },
@@ -107,12 +110,12 @@ export default function DashboardPage() {
 
   return (
     <div className="dash-shell relative">
-      <div className="pointer-events-none fixed inset-0 overflow-hidden opacity-60">
+      <div className="pointer-events-none fixed inset-0 overflow-hidden opacity-50" aria-hidden>
         <div
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(700px 380px at 8% -8%, var(--dash-brand-glow), transparent), radial-gradient(560px 320px at 92% 0%, var(--dash-brand-soft), transparent)',
+              'radial-gradient(640px 340px at 6% -6%, var(--dash-brand-glow), transparent), radial-gradient(480px 280px at 94% 0%, var(--dash-brand-soft), transparent)',
           }}
         />
       </div>
@@ -139,7 +142,7 @@ export default function DashboardPage() {
 
         <main className="flex-1 w-full" id="main-content" tabIndex={-1}>
           <PageTransition className="mx-auto px-4 sm:px-6 py-4 sm:py-5 md:py-6 pb-24 sm:pb-20 w-full max-w-[var(--dash-max-w)]">
-            <div style={{ marginBottom: 'var(--dash-section-gap)' }}>
+            <div className="mb-4 sm:mb-5">
               <DashboardModeSwitcher value={mode} onChange={setMode} />
             </div>
 

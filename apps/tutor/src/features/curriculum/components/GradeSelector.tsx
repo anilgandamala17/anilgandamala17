@@ -167,15 +167,15 @@ export default function GradeSelector({ onGradeSelect }: GradeSelectorProps) {
         <div className="grade-select__hero-copy">
           <p className="grade-select__eyebrow">
             <Compass className="h-3.5 w-3.5" strokeWidth={2.4} />
-            Learning atlas
+            Curriculum
           </p>
           <h1 className="grade-select__title">
             Select your
             <span className="grade-select__title-accent"> class</span>
           </h1>
           <p className="grade-select__lede">
-            A structured path from middle school to senior secondary — pick your grade and step into
-            subjects built for how you learn.
+            Choose your class to explore subjects, chapters, and topics. Classes 11 and 12 include
+            MPC and BiPC stream selection.
           </p>
 
           <div className="grade-select__path" aria-hidden>
@@ -190,12 +190,9 @@ export default function GradeSelector({ onGradeSelect }: GradeSelectorProps) {
         </div>
 
         <div className="grade-select__hero-panel" aria-hidden>
-          <div className="grade-select__hero-orb grade-select__hero-orb--a" />
-          <div className="grade-select__hero-orb grade-select__hero-orb--b" />
-          <div className="grade-select__hero-grid" />
           <p className="grade-select__hero-kicker">Classes</p>
           <p className="grade-select__hero-range">6 – 12</p>
-          <p className="grade-select__hero-note">Seven pathways · CBSE-aligned depth</p>
+          <p className="grade-select__hero-note">Pick a class · then subjects · then learn</p>
         </div>
       </motion.header>
 

@@ -63,7 +63,7 @@ export default function LearningInsightsCard({
   const hasData = strengths.length > 0 || focusAreas.length > 0;
 
   return (
-    <section className="dash-card dash-card--analytics h-full flex flex-col" aria-label="Learning insights">
+    <section className="dash-surface-support h-full flex flex-col" aria-label="Learning insights">
       <div className="dash-section-head mb-3">
         <div className="flex items-center gap-2">
           <span

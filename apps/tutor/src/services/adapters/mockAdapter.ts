@@ -37,7 +37,9 @@ export type AnalyticsDatePreset =
 
 const DEMO_LAG_MS = 180
 
+/** Artificial lag only in local demo/dev — never delay production student paths. */
 async function demoDelay(ms = DEMO_LAG_MS): Promise<void> {
+  if (!import.meta.env.DEV) return
   await new Promise((r) => setTimeout(r, ms))
 }
 

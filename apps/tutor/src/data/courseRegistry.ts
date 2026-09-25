@@ -1,5 +1,4 @@
 import { TeachingStep } from '@/types';
-import { defaultSteps } from './courses/defaultCourse';
 import { mitochondriaGrade11Steps } from './courses/mitochondriaGrade11';
 import {
     biology11CellMembraneSteps,
@@ -23,7 +22,6 @@ import {
 } from '@/services/cachedLessonService';
 import type { CachedLessonPayload } from '@/types/contentPipeline';
 import { USE_CACHED_CURRICULUM, normalizeTeachingStyle } from '@/types/contentPipeline';
-import { getVisualsForTopic } from './visualRegistry';
 import { isVideoOnlyTopic } from './curriculumVideoResources';
 import { coerceTtsLanguage, isEnglishTtsLanguage } from '../constants/ttsLanguages';
 
@@ -47,9 +45,9 @@ const CURATED_TOPICS: Record<string, TeachingStep[]> = {
     'bio-12-2-dna-structure': biology12DnaStructureSteps,
 };
 
-/** Kill-switch: only skip runtime AI when explicitly set to 'false'. */
-function isRuntimeAiAllowed(): boolean {
-    return import.meta.env.VITE_ALLOW_RUNTIME_AI !== 'false';
+/** Opt-in: runtime AI only when VITE_ALLOW_RUNTIME_AI is explicitly 'true'. */
+export function isRuntimeAiAllowed(): boolean {
+    return import.meta.env.VITE_ALLOW_RUNTIME_AI === 'true';
 }
 
 function logSilentFallback(
@@ -61,7 +59,12 @@ function logSilentFallback(
     console.info(`[courseRegistry] Cache not READY (${reason}) — using ${source} content for ${topicId}`);
 }
 
-async function tryGenerateAiCourse(
+/**
+ * Build teachable steps for any curriculum topic.
+ * Uses local topic-analysis templates always; network AI only when opted in.
+ * Does not require a visual-registry hit — teaching still opens with diagram canvas fallback.
+ */
+async function tryGenerateTeachableCourse(
     topicId: string,
     topicName: string | undefined,
     description: string | undefined,
@@ -72,13 +75,14 @@ async function tryGenerateAiCourse(
     style: string,
     reason: CacheFetchFailureReason,
 ): Promise<CourseContentResult | null> {
-    if (!topicName || !isRuntimeAiAllowed()) return null;
-    if (!getVisualsForTopic(topicId)) return null;
+    if (!topicName?.trim()) return null;
 
-    const cacheKey = `${topicId}:${language}:${style}`;
+    const allowRuntimeAi = isRuntimeAiAllowed();
+    const source: CourseContentResult['source'] = allowRuntimeAi ? 'ai' : 'default';
+    const cacheKey = `${topicId}:${language}:${style}:${source}`;
     if (generatedCourseCache.has(cacheKey)) {
-        logSilentFallback(topicId, reason, 'ai');
-        return { steps: generatedCourseCache.get(cacheKey)!, source: 'ai', cacheFallbackReason: reason };
+        logSilentFallback(topicId, reason, source);
+        return { steps: generatedCourseCache.get(cacheKey)!, source, cacheFallbackReason: reason };
     }
 
     try {
@@ -90,14 +94,15 @@ async function tryGenerateAiCourse(
             chapterName,
             gradeName,
             language,
+            { allowRuntimeAi },
         );
         if (generatedSteps?.length) {
             generatedCourseCache.set(cacheKey, generatedSteps);
-            logSilentFallback(topicId, reason, 'ai');
-            return { steps: generatedSteps, source: 'ai', cacheFallbackReason: reason };
+            logSilentFallback(topicId, reason, source);
+            return { steps: generatedSteps, source, cacheFallbackReason: reason };
         }
     } catch (error) {
-        console.error(`[courseRegistry] AI generation failed for ${topicId}:`, error);
+        console.error(`[courseRegistry] Course generation failed for ${topicId}:`, error);
     }
     return null;
 }
@@ -105,11 +110,12 @@ async function tryGenerateAiCourse(
 function lastResortDefault(topicId: string, reason: CacheFetchFailureReason): CourseContentResult {
     if (import.meta.env.DEV && CURATED_TOPICS[topicId]) {
         console.error(
-            `[courseRegistry] BUG: curated topic ${topicId} fell through to defaultSteps — check routing/topicId`,
+            `[courseRegistry] BUG: curated topic ${topicId} fell through to empty last resort — check routing/topicId`,
         );
     }
     logSilentFallback(topicId, reason, 'default');
-    return { steps: defaultSteps, source: 'default', cacheFallbackReason: reason };
+    // Only when topicName was missing so we could not build templates.
+    return { steps: [], source: 'default', cacheFallbackReason: reason };
 }
 
 /**
@@ -149,8 +155,8 @@ export const getCourseContent = async (
     }
     const englishCurated = curatedIfEnglish(language, curated);
 
-    const tryAi = (reason: CacheFetchFailureReason) =>
-        tryGenerateAiCourse(
+    const tryGenerated = (reason: CacheFetchFailureReason) =>
+        tryGenerateTeachableCourse(
             topicId, topicName, description, subjectArea, chapterName, gradeName, language, style, reason,
         );
 
@@ -189,8 +195,8 @@ export const getCourseContent = async (
                     return { steps: englishCurated, source: 'curated', cacheFallbackReason: reason };
                 }
                 if (cached.status === 'FAILED') {
-                    const ai = await tryAi('not-ready');
-                    if (ai) return ai;
+                    const generated = await tryGenerated('not-ready');
+                    if (generated) return generated;
                     return {
                         steps: [],
                         cachedLesson: cached,
@@ -198,22 +204,22 @@ export const getCourseContent = async (
                         cacheFallbackReason: 'not-ready',
                     };
                 }
-                const ai = await tryAi('not-ready');
-                if (ai) return ai;
+                const generated = await tryGenerated('not-ready');
+                if (generated) return generated;
             } else if (englishCurated) {
                 logSilentFallback(topicId, reason, 'curated');
                 return { steps: englishCurated, source: 'curated', cacheFallbackReason: reason };
             } else {
-                const ai = await tryAi(reason);
-                if (ai) return ai;
+                const generated = await tryGenerated(reason);
+                if (generated) return generated;
             }
         } catch {
             if (englishCurated) {
                 logSilentFallback(topicId, 'network-error', 'curated');
                 return { steps: englishCurated, source: 'curated', cacheFallbackReason: 'network-error' };
             }
-            const ai = await tryAi('network-error');
-            if (ai) return ai;
+            const generated = await tryGenerated('network-error');
+            if (generated) return generated;
         }
     }
 
@@ -222,11 +228,11 @@ export const getCourseContent = async (
         return { steps: englishCurated, source: 'curated' };
     }
 
-    // 3. Runtime AI for registry topics (required path for Indic)
-    const ai = await tryAi('cache-miss');
-    if (ai) return ai;
+    // 3. Local topic templates (optional runtime AI enhancement when opted in)
+    const generated = await tryGenerated('cache-miss');
+    if (generated) return generated;
 
-    // 4. Last resort placeholder only
+    // 4. Empty only when topicName was unavailable
     return lastResortDefault(topicId, 'cache-miss');
 };
 

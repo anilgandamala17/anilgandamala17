@@ -4,6 +4,7 @@ import { useCurriculumStore } from '@/features/curriculum/stores/curriculumStore
 import { getGradeById, getSubjectById } from '@/features/curriculum/data/schoolCurriculum';
 import { ChapterCard } from './ChapterCard';
 import { resolveSubjectPattern } from './SubjectCardPattern';
+import EmptyState from '@/components/common/EmptyState';
 import './curriculum.css';
 
 interface ChapterListProps {
@@ -56,43 +57,51 @@ function SubjectHeader({
         </div>
 
         <div className="curr-subject__progress">
-          <div className="curr-subject__ring" aria-hidden>
-            <svg width={ringSize} height={ringSize} viewBox={`0 0 ${ringSize} ${ringSize}`}>
-              <circle
-                cx={ringSize / 2}
-                cy={ringSize / 2}
-                r={radius}
-                fill="none"
-                stroke="rgba(15,23,42,0.07)"
-                strokeWidth={stroke}
-              />
-              <circle
-                cx={ringSize / 2}
-                cy={ringSize / 2}
-                r={radius}
-                fill="none"
-                stroke={color}
-                strokeWidth={stroke}
-                strokeLinecap="round"
-                strokeDasharray={circumference}
-                strokeDashoffset={offset}
-                transform={`rotate(-90 ${ringSize / 2} ${ringSize / 2})`}
-                style={{ transition: 'stroke-dashoffset 700ms ease' }}
-              />
-            </svg>
-            <span style={{ color }}>{clamped}%</span>
-          </div>
+          {clamped > 0 ? (
+            <>
+              <div className="curr-subject__ring" aria-hidden>
+                <svg width={ringSize} height={ringSize} viewBox={`0 0 ${ringSize} ${ringSize}`}>
+                  <circle
+                    cx={ringSize / 2}
+                    cy={ringSize / 2}
+                    r={radius}
+                    fill="none"
+                    stroke="rgba(15,23,42,0.07)"
+                    strokeWidth={stroke}
+                  />
+                  <circle
+                    cx={ringSize / 2}
+                    cy={ringSize / 2}
+                    r={radius}
+                    fill="none"
+                    stroke={color}
+                    strokeWidth={stroke}
+                    strokeLinecap="round"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={offset}
+                    transform={`rotate(-90 ${ringSize / 2} ${ringSize / 2})`}
+                    style={{ transition: 'stroke-dashoffset 700ms ease' }}
+                  />
+                </svg>
+                <span style={{ color }}>{clamped}%</span>
+              </div>
 
-          <div className="curr-subject__progress-copy">
-            <p className="curr-subject__percent-mobile" style={{ color }}>
-              {clamped}
-              <small>%</small>
-            </p>
-            <p className="curr-subject__progress-label">Course completed</p>
-            <div className="curr-subject__bar-mobile" aria-hidden>
-              <span style={{ width: `${clamped}%`, background: color }} />
+              <div className="curr-subject__progress-copy">
+                <p className="curr-subject__percent-mobile" style={{ color }}>
+                  {clamped}
+                  <small>%</small>
+                </p>
+                <p className="curr-subject__progress-label">Course completed</p>
+                <div className="curr-subject__bar-mobile" aria-hidden>
+                  <span style={{ width: `${clamped}%`, background: color }} />
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="curr-subject__progress-copy">
+              <p className="curr-subject__progress-label">Not started yet — pick a chapter below</p>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </header>
@@ -110,21 +119,13 @@ export default function ChapterList({ onTopicSelect }: ChapterListProps) {
 
   if (!grade || !subject) {
     return (
-      <div className="curr-empty">
-        <span style={{ background: 'rgba(14,165,233,0.12)', color: '#0284c7' }}>
-          <BookOpen className="h-6 w-6" />
-        </span>
-        <h3>Subject not found</h3>
-        <p>This curriculum link is invalid or out of date. Pick a grade and subject to continue.</p>
-        <button
-          type="button"
-          className="mt-4 inline-flex h-10 items-center justify-center rounded-xl px-4 text-sm font-semibold text-white"
-          style={{ background: '#0ea5e9' }}
-          onClick={() => setSearchParams(gradeId ? { grade: gradeId } : {})}
-        >
-          {gradeId ? 'Back to subjects' : 'Back to grades'}
-        </button>
-      </div>
+      <EmptyState
+        icon={<BookOpen className="h-6 w-6" />}
+        title="Subject not found"
+        description="This curriculum link is invalid or out of date. Pick a grade and subject to continue."
+        actionLabel={gradeId ? 'Back to subjects' : 'Back to classes'}
+        onAction={() => setSearchParams(gradeId ? { grade: gradeId } : {})}
+      />
     );
   }
 
@@ -136,13 +137,18 @@ export default function ChapterList({ onTopicSelect }: ChapterListProps) {
 
   if (subject.chapters.length === 0 || totalTopics === 0) {
     return (
-      <div className="curr-empty">
-        <span style={{ background: `${accent}16`, color: accent }}>
-          <BookOpen className="h-6 w-6" />
-        </span>
-        <h3>Topics coming soon</h3>
-        <p>We&apos;re preparing the curriculum for {subject.name}. Check back shortly.</p>
-      </div>
+      <EmptyState
+        icon={<BookOpen className="h-6 w-6" />}
+        title="Topics coming soon"
+        description={`We're preparing the curriculum for ${subject.name}. Check back shortly.`}
+        actionLabel="Back to subjects"
+        onAction={() => {
+          const next: Record<string, string> = { grade: grade.id };
+          const stream = searchParams.get('stream');
+          if (stream) next.stream = stream;
+          setSearchParams(next);
+        }}
+      />
     );
   }
 

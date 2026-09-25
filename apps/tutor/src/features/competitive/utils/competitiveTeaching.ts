@@ -37,10 +37,18 @@ Write every "speech" field as the SAME warm, natural human classroom teacher (fo
 - Conversational and clear — never flat, sleepy, robotic, or overly formal.
 - Short sentences. Plain words. Natural pauses via commas and periods.
 - Emphasize key terms once, then keep moving. No filler ("um", "basically", "you know").
-- Sound like one continuous lecture across all 8 steps (same persona, same energy).
+- Sound like one continuous lecture across all 3 cards (same persona, same energy).
 - Write speech the way a real tutor would speak aloud — not like a script reader.
 - End each step with a crisp forward hook into the next idea when natural.
 - Never invent multiple-choice options in speech unless real options were provided.`;
+
+/** Keep each card's content unique — no repeated explanations across steps. */
+const NO_REPEAT_ACROSS_CARDS = `--- NO REPEAT ACROSS CARDS (CRITICAL) ---
+- Each idea appears in exactly ONE card. Do not restate the same reasoning, answer announcement, or tip in another card.
+- Concept Introduction: frame the concept and stem only. Do NOT walk options letter-by-letter, do NOT give the full worked solution, do NOT list exam tips or memory hooks.
+- Option Analysis & Common Analysis (when present): per-option why-correct/why-wrong + classic traps only. Do NOT re-derive the full solution or repeat concept framing.
+- Solution, Exam Tips & Real-World Context: worked solution + shortcuts/exam tips + memory/real-world link in clear internal sections. Do NOT re-analyze every option letter; do NOT add a separate Summary or Next Practice section.
+- NEVER include cards titled "Answer Announcement", "Summary", "Next Practice", or "Summary & Next Practice".`;
 
 export interface AITeachingStep {
     id: number;
@@ -90,9 +98,9 @@ function speechForTeachingStep(title: string, content: string, rawSpeech: string
 
 /** True when steps are real lecture cards with enough depth (not highlights / one-liners). */
 export function areValidTeachingSteps(steps: unknown): steps is AITeachingStep[] {
-    if (!Array.isArray(steps) || steps.length < MIN_LECTURE_STEPS) return false;
+    if (!Array.isArray(steps) || steps.length !== MIN_LECTURE_STEPS) return false;
     const good = steps.filter(isTeachingStepLike).length;
-    return good >= Math.ceil(steps.length * 0.6) && good >= MIN_LECTURE_STEPS;
+    return good >= Math.ceil(MIN_LECTURE_STEPS * 0.6) && good >= MIN_LECTURE_STEPS;
 }
 
 function normalizeTeachingSteps(rawSteps: unknown[]): AITeachingStep[] {
@@ -103,16 +111,24 @@ function normalizeTeachingSteps(rawSteps: unknown[]): AITeachingStep[] {
         answer: '✅',
         insight: '💡',
     };
-    const valid = filterValidTeachingSteps<Record<string, unknown>>(rawSteps);
+    const bannedTitle =
+        /answer\s*announcement|summary\s*&\s*next\s*practice|^\s*summary\s*$|^\s*next\s*practice\s*$/i;
+    const valid = filterValidTeachingSteps<Record<string, unknown>>(rawSteps)
+        .filter((s) => !bannedTitle.test(String(s.title || '')))
+        .slice(0, MIN_LECTURE_STEPS);
     return valid.map((s, idx) => {
+        const title = String(s.title || `Step ${idx + 1}`).trim();
         const visualRaw = typeof s.visualType === 'string' ? s.visualType : 'concept';
-        const visualType = (VALID_VISUAL_TYPES.has(visualRaw) ? visualRaw : 'concept') as AITeachingStep['visualType'];
+        let visualType = (VALID_VISUAL_TYPES.has(visualRaw) ? visualRaw : 'concept') as AITeachingStep['visualType'];
+        const titleLower = title.toLowerCase();
+        if (/option analysis|common analysis|key insights/.test(titleLower)) visualType = 'insight';
+        else if (/solution|exam tips|real-world|real world/.test(titleLower)) visualType = 'solution';
+        else if (/concept introduction|concept framing/.test(titleLower)) visualType = 'concept';
         const highlights = Array.isArray(s.highlights)
             ? s.highlights.map((h) => String(h)).filter(Boolean)
             : [];
         const content = String(s.content || '').trim();
         const rawSpeech = String(s.speech || '').trim();
-        const title = String(s.title || `Step ${idx + 1}`).trim();
         const speech = speechForTeachingStep(title, content, rawSpeech);
         return {
             id: typeof s.id === 'number' && Number.isFinite(s.id) ? s.id : idx + 1,
@@ -134,14 +150,17 @@ function optionLetter(index: number): string {
 
 function optionAnalysisQualityRules(optionCount: number): string {
     const letters = Array.from({ length: optionCount }, (_, i) => optionLetter(i)).join(', ');
-    return `--- OPTION ANALYSIS (CRITICAL — EXAMINER GRADE) ---
-- Step titled "Option Analysis" MUST include one markdown bullet for EVERY real option letter: ${letters}.
+    return `--- OPTION ANALYSIS & COMMON ANALYSIS (CRITICAL — EXAMINER GRADE) ---
+- Step titled "Option Analysis & Common Analysis" MUST include:
+  (1) one markdown bullet for EVERY real option letter: ${letters};
+  (2) a short "### Common Analysis" section with 2–4 classic traps for this question type.
 - Do not invent extra letters. Do not skip a listed letter. Do not write "A is correct, others are wrong".
 - CORRECT option: 3–5 complete sentences. Quote the exact option text. Name the principle that makes it true. Show how it matches THIS stem. End with one quick check.
 - EACH WRONG option: 3–5 complete sentences. Quote that option's exact text. Explain why it fails THIS stem. Name the misconception the examiner designed it to catch. End with how to eliminate it in under 10 seconds.
 - Never use "incorrect", "wrong", or "distractor" as the entire reason.
 - If the student picked a wrong option, that bullet must explain why it felt tempting.
-- Option Analysis "speech" must narrate EVERY letter in full spoken prose (typically 120–200 words). No markdown. Do not summarize or skip letters.`;
+- Common Analysis must NOT repeat the same sentences already used in the option bullets.
+- This card's "speech" must narrate EVERY letter plus the traps (typically 140–220 words). No markdown. Do not skip letters.`;
 }
 
 function buildOptionAnalysisContentTemplate(
@@ -163,7 +182,7 @@ function buildOptionAnalysisContentTemplate(
                 : '';
         return `- **Option ${letter}** (${text}): INCORRECT. Write 3-5 complete sentences. Quote this option. Explain why it fails THIS stem. Name the misconception it was designed to catch.${tempting} End with how to eliminate it in under 10 seconds.`;
     });
-    return `## Deconstructing the options\\n\\n${bullets.join('\\n\\n')}`;
+    return `## Deconstructing the options\\n\\n${bullets.join('\\n\\n')}\\n\\n### Common Analysis\\n\\n- [Trap 1 — name the misconception and how to spot it in under 10 seconds]\\n- [Trap 2]\\n- [Trap 3]`;
 }
 
 function buildStaticOptionAnalysis(
@@ -198,7 +217,7 @@ function buildStaticOptionAnalysis(
             : '';
         return `- **Option ${letter}** (${text}): This is incorrect for this stem. The wording "${text}" does not satisfy the governing ${question.topic} condition the question is testing.${student} Examiners plant this kind of distractor to catch ${trap}. Eliminate it in under ten seconds by asking whether this option would still hold if the stem's key constraint changed — if yes, it is not locked to the question.`;
     });
-    const content = `## Deconstructing the options\n\n${lines.join('\n\n')}\n\n### Examiner note\nName the slip each wrong option was built from — wrong formula, missed condition, or last-step haste — and elimination becomes faster next time.`;
+    const content = `## Deconstructing the options\n\n${lines.join('\n\n')}\n\n### Common Analysis\n\n- Jumping to an option before naming the governing principle for **${question.topic}**.\n- Mixing similar-looking formulas or definitions that look like ${question.topic} but answer a different question.\n- Sign, unit, or limiting-case slips in the last step — eliminate by asking whether the option survives if the stem's key constraint changes.`;
     const speech = stripSpeechForTts(speechFromOptionAnalysis(content));
     return { content, speech };
 }
@@ -277,7 +296,8 @@ export async function generateAITeachingSteps(
 ${hasOptions ? optionAnalysisQualityRules(question.options.length) : '- This is an OPEN question: do not invent Option A/B/C/D or an Option Analysis step.'}
 - Every "speech" field must be spoken prose only: no markdown, no ## headings, no **bold**, no bullet symbols.
 - Speech must teach the same ideas as content, in a warm clear teacher voice (${wordCountGuidance}).
-- Never invent options or change the stem. Plain readable math only (no LaTeX).`;
+- Never invent options or change the stem. Plain readable math only (no LaTeX).
+${NO_REPEAT_ACROSS_CARDS}`;
 
     const freeformSharedHeader = `You are an expert competitive exam professor teaching a Class 10–12 student in a classroom. The student asked a FREE-FORM question (typed and/or extracted from an image).
 Your tone: energetic, warm, crystal-clear, and perfectly paced. Prefer short sentences and plain words. Define jargon the first time you use it.
@@ -314,8 +334,8 @@ ${knownKey ? `Known correct index (0-based) from source: ${question.correctAnswe
 
 --- FREE-FORM MCQ DIRECTIVE (CRITICAL) ---
 - Stay locked to the stem and the REAL options above — they were OCR'd from the student's photo/text.
-- Announce the correct choice (letter + exact option text) and explain why.
-- Option Analysis must be examiner-grade: a full why-correct writeup AND a full why-wrong writeup for every listed letter (not a brief "distractor" label).
+- Option Analysis & Common Analysis must be examiner-grade: a full why-correct writeup AND a full why-wrong writeup for every listed letter, plus a Common Analysis section (not a brief "distractor" label).
+- Do NOT create an "Answer Announcement", "Summary", or "Next Practice" card — the UI highlights the correct option on Concept Introduction.
 - Student-understandable language; never invent extra choices beyond the list.
 - In content and speech, use plain readable math only (no LaTeX).
 
@@ -324,7 +344,7 @@ ${freeformSpeechBlock}
 --- DYNAMIC VISUAL HIGHLIGHTS ---
 Identify 2-5 key equations, terms, or option letters for the "highlights" array.
 
-Generate exactly 8 steps in JSON format:
+Generate exactly 3 steps in JSON format:
 
 [
   {
@@ -332,71 +352,26 @@ Generate exactly 8 steps in JSON format:
     "title": "Concept Introduction",
     "subtitle": "What this question is really about",
     "visualType": "concept",
-    "content": "## Framing the idea\\n\\n[Name the core concept in 2-3 sentences. Explain why it matters for this exact question.]",
-    "speech": "[Open like a lecturer for ${wordCountGuidance}: name the concept and what you will teach.]",
+    "content": "## Framing the idea\\n\\n[Name the core concept in 2-3 sentences. Explain why it matters for this exact question. Do NOT walk options or give the full solution.]",
+    "speech": "[Open like a lecturer for ${wordCountGuidance}: name the concept and what you will teach. Spoken prose only.]",
     "highlights": []
   },
   {
     "id": 2,
-    "title": "Answer Announcement",
-    "subtitle": "The correct option",
-    "visualType": "answer",
-    "content": "## Solution\\n\\nThe correct option is **Option X**: [exact option text].\\n\\n[2-3 sentences explaining why this matches the stem.]",
-    "speech": "[Announce the correct letter and text clearly, then one reason why — spoken prose only.]",
+    "title": "Option Analysis & Common Analysis",
+    "subtitle": "Why each choice is right or wrong + traps",
+    "visualType": "insight",
+    "content": "${buildOptionAnalysisContentTemplate(question.options, knownKey ? question.correctAnswer : -1, userAnswer)}",
+    "speech": "[Walk every real option letter in order, then name the classic traps. Spoken prose only. Cover ALL letters — do not skip. Typically 140-220 words.]",
     "highlights": []
   },
   {
     "id": 3,
-    "title": "Step-by-step Solution",
-    "subtitle": "Derivation / reasoning path",
+    "title": "Solution, Exam Tips & Real-World Context",
+    "subtitle": "Worked path + speed + retention",
     "visualType": "solution",
-    "content": "## Worked solution\\n\\n1. [...]\\n2. [...]\\n3. [...]\\n4. [Arrive at the correct option with reasoning.]",
-    "speech": "[Walk through each numbered step aloud at a measured pace — full reasoning, not a summary.]",
-    "highlights": []
-  },
-  {
-    "id": 4,
-    "title": "Option Analysis",
-    "subtitle": "Why each choice is right or wrong",
-    "visualType": "insight",
-    "content": "${buildOptionAnalysisContentTemplate(question.options, knownKey ? question.correctAnswer : -1, userAnswer)}",
-    "speech": "[Walk every real option letter in order. For the correct option, explain why it is right in full. For each wrong option, say why it fails this stem, what misconception it targets, and how to cut it in under ten seconds. Spoken prose only. Cover ALL letters — do not skip. Typically 120-200 words.]",
-    "highlights": []
-  },
-  {
-    "id": 5,
-    "title": "Common Mistakes",
-    "subtitle": "Traps to avoid",
-    "visualType": "insight",
-    "content": "## Frequent errors\\n\\n- [Mistake 1]\\n- [Mistake 2]\\n- [Mistake 3]",
-    "speech": "[List classic mistakes with a coaching tone.]",
-    "highlights": []
-  },
-  {
-    "id": 6,
-    "title": "Shortcuts & Exam Tips",
-    "subtitle": "Speed under pressure",
-    "visualType": "insight",
-    "content": "## Tricks & strategy\\n\\n- **Shortcut**: [...]\\n- **Elimination**: [...]\\n- **Time box**: [...]",
-    "speech": "[Share a practical tip useful in a timed paper.]",
-    "highlights": []
-  },
-  {
-    "id": 7,
-    "title": "Memory & Real-world Link",
-    "subtitle": "Retention + analogy",
-    "visualType": "concept",
-    "content": "## Stick the concept\\n\\n- **Memory hook**: [...]\\n- **Analogy**: [...]",
-    "speech": "[Give a memorable hook and analogy when natural.]",
-    "highlights": []
-  },
-  {
-    "id": 8,
-    "title": "Summary & Next Practice",
-    "subtitle": "Close the loop",
-    "visualType": "answer",
-    "content": "## Takeaways\\n\\n1. [...]\\n2. [...]\\n3. [...]\\n\\n**Follow-up**: suggest one related practice idea.",
-    "speech": "[Summarize crisply and end with one practice suggestion.]",
+    "content": "## Step-by-step Solution\\n\\n1. [...]\\n2. [...]\\n3. [...]\\n4. [Arrive at the correct option with reasoning.]\\n\\n## Shortcuts & Exam Tips\\n\\n- **Shortcut**: [...]\\n- **Elimination**: [...]\\n- **Time box**: [...]\\n\\n## Memory & Real-world Link\\n\\n- **Memory hook**: [...]\\n- **Analogy**: [...]",
+    "speech": "[Walk the solution, then one exam tip and one memory hook — do not re-analyze every option. Spoken prose only.]",
     "highlights": []
   }
 ]
@@ -408,9 +383,10 @@ Question type: OPEN (no multiple-choice options were provided).
 
 --- FREE-FORM OPEN DIRECTIVE (CRITICAL) ---
 - Stay locked to the student's exact question above.
-- Teach process → then state the FINAL ANSWER clearly.
+- Teach process → then state the FINAL ANSWER clearly inside the Solution card.
 - DO NOT invent Option A/B/C/D or any fake MCQ choices.
 - DO NOT say "the correct option is…".
+- DO NOT create "Answer Announcement", "Summary", or "Next Practice" cards.
 - If numerical, show units and a quick check. If conceptual, give a crisp definition + worked example when helpful.
 - Student-understandable: analogies when helpful; no dense jargon walls.
 - Write formulas in PLAIN READABLE text only (no LaTeX).
@@ -420,7 +396,7 @@ ${freeformSpeechBlock}
 --- DYNAMIC VISUAL HIGHLIGHTS ---
 Identify 2-5 key equations, terms, or phrases for the "highlights" array.
 
-Generate exactly 8 steps in JSON format (Goal / Solution / Answer — no option analysis):
+Generate exactly 3 steps in JSON format (no option analysis):
 
 [
   {
@@ -428,71 +404,26 @@ Generate exactly 8 steps in JSON format (Goal / Solution / Answer — no option 
     "title": "Concept Introduction",
     "subtitle": "What this question is really about",
     "visualType": "concept",
-    "content": "## Framing the idea\\n\\n[Name the core concept in 2-3 sentences. Explain why it matters for this exact question.]",
+    "content": "## Framing the idea\\n\\n[Name the core concept in 2-3 sentences. Explain why it matters for this exact question. Do NOT give the full solution yet.]",
     "speech": "[Open like a lecturer for ${wordCountGuidance}: name the concept and what you will teach.]",
     "highlights": []
   },
   {
     "id": 2,
-    "title": "Goal & Approach",
-    "subtitle": "How we will tackle it",
-    "visualType": "formula",
-    "content": "## Plan\\n\\n[State what a complete answer looks like and the method you will use.]",
-    "speech": "[Set expectations for the walkthrough.]",
+    "title": "Key Insights & Common Analysis",
+    "subtitle": "Why this works + traps to avoid",
+    "visualType": "insight",
+    "content": "## Deeper understanding\\n\\n[Explain the why behind the method; call out subtle points.]\\n\\n### Common Analysis\\n\\n- [Mistake 1]\\n- [Mistake 2]\\n- [Mistake 3]",
+    "speech": "[Highlight the insight that makes the solution click, then classic traps.]",
     "highlights": []
   },
   {
     "id": 3,
-    "title": "Step-by-step Solution",
-    "subtitle": "Derivation / reasoning path",
+    "title": "Solution, Exam Tips & Real-World Context",
+    "subtitle": "Worked path + speed + retention",
     "visualType": "solution",
-    "content": "## Worked solution\\n\\n[Numbered steps with equations or logic.]",
-    "speech": "[Walk through each step aloud at a measured pace.]",
-    "highlights": []
-  },
-  {
-    "id": 4,
-    "title": "Final Answer",
-    "subtitle": "Clear result",
-    "visualType": "answer",
-    "content": "## Answer\\n\\n**Final answer:** [state clearly].\\n\\n[Brief justification / check.]",
-    "speech": "[Announce the final answer clearly, then a one-line check.]",
-    "highlights": []
-  },
-  {
-    "id": 5,
-    "title": "Key Insights",
-    "subtitle": "Why this works",
-    "visualType": "insight",
-    "content": "## Deeper understanding\\n\\n[Explain the why behind the method; call out subtle points.]",
-    "speech": "[Highlight the insight that makes the solution click.]",
-    "highlights": []
-  },
-  {
-    "id": 6,
-    "title": "Common Mistakes",
-    "subtitle": "Traps to avoid",
-    "visualType": "insight",
-    "content": "## Frequent errors\\n\\n- [Mistake 1]\\n- [Mistake 2]\\n- [Mistake 3]",
-    "speech": "[List classic mistakes with a coaching tone.]",
-    "highlights": []
-  },
-  {
-    "id": 7,
-    "title": "Shortcuts & Exam Tips",
-    "subtitle": "Speed under pressure",
-    "visualType": "insight",
-    "content": "## Tricks & strategy\\n\\n- **Shortcut**: [...]\\n- **Check**: [...]\\n- **Time box**: [...]",
-    "speech": "[Share a practical tip useful in a timed paper.]",
-    "highlights": []
-  },
-  {
-    "id": 8,
-    "title": "Summary & Next Practice",
-    "subtitle": "Close the loop",
-    "visualType": "concept",
-    "content": "## Takeaways\\n\\n1. [...]\\n2. [...]\\n3. [...]\\n\\n**Follow-up**: suggest one related practice idea.",
-    "speech": "[Summarize crisply and end with one practice suggestion.]",
+    "content": "## Step-by-step Solution\\n\\n[Numbered steps with equations or logic.]\\n\\n**Final answer:** [state clearly].\\n\\n## Shortcuts & Exam Tips\\n\\n- **Shortcut**: [...]\\n- **Check**: [...]\\n- **Time box**: [...]\\n\\n## Memory & Real-world Link\\n\\n- **Memory hook**: [...]\\n- **Analogy**: [...]",
+    "speech": "[Walk through each step, announce the final answer, then one tip and one memory hook.]",
     "highlights": []
   }
 ]
@@ -565,7 +496,7 @@ Bank explanation hint (expand — do not paste alone as a step): ${JSON.stringif
 --- DYNAMIC VISUAL HIGHLIGHTS ---
 Identify 2-5 key mathematical equations, chemical names, vocabulary terms, or option labels that appear in the explanation, and return them in the "highlights" array. These will be highlighted on the virtual blackboard as you explain.
 
-Generate exactly 8 steps in JSON format — teach like a premium classroom lecture, not an answer key:
+Generate exactly 3 steps in JSON format — teach like a premium classroom lecture, not an answer key:
 
 [
   {
@@ -573,87 +504,30 @@ Generate exactly 8 steps in JSON format — teach like a premium classroom lectu
     "title": "Concept Introduction",
     "subtitle": "What this question is really testing",
     "visualType": "concept",
-    "content": "## Framing the idea\\n\\n[Introduce the core concept/topic before touching options. Define the key idea in 3-5 sentences with exam context.]",
+    "content": "## Framing the idea\\n\\n[Introduce the core concept/topic before touching options. Define the key idea in 3-5 sentences with exam context. Do NOT walk options letter-by-letter or give the full worked solution.]",
     "speech": "[Open like a lecturer for ${wordCountGuidance}: name the concept, why it matters in ${examName || 'this exam'}, and what skill is being tested. Spoken prose only.]",
     "highlights": ["${question.topic}"]
   },
   {
     "id": 2,
-    "title": "Answer Announcement",
-    "subtitle": "Reviewing the result",
-    "visualType": "answer",
-    "content": "## ${hasUserAnswer ? (isUserCorrect ? 'Correct' : 'Learning opportunity') : 'Solution'}\\n\\n${
-      bankKnownKey
-        ? `The correct option is **Option ${String.fromCharCode(65 + question.correctAnswer)}**: ${formatExamMath(question.options[question.correctAnswer])}.\\n\\n`
-        : bankHasOptions
-          ? 'State the correct option letter and text after reasoning.\\n\\n'
-          : '**Final answer:** [state clearly].\\n\\n'
-    }${
-      hasUserAnswer
-        ? (isUserCorrect
-            ? 'Strong work — reinforce the method so it sticks under timed pressure.'
-            : `You chose Option ${userSelectedLabel}. We will diagnose the trap and rebuild the correct path.`)
-        : 'We will derive this carefully so the method transfers to similar questions.'
-    }",
-    "speech": "[Announce the correct ${bankHasOptions ? 'option' : 'answer'} clearly. ${hasUserAnswer && !isUserCorrect ? `Address why Option ${userSelectedLabel} felt tempting.` : 'Acknowledge difficulty and set expectations for the walkthrough.'}]",
-    "highlights": [${bankKnownKey ? `"Option ${String.fromCharCode(65 + question.correctAnswer)}"` : ''}]
-  },
-  {
-    "id": 3,
-    "title": "Step-by-step Solution",
-    "subtitle": "Derivation / reasoning path",
-    "visualType": "solution",
-    "content": "## Worked solution\\n\\n1. [First reasoning step with equation or logic]\\n2. [Next step]\\n3. [Next step]\\n4. [Show how the correct ${bankHasOptions ? 'option' : 'answer'} follows]\\n\\n[Closing check in 1-2 sentences.]",
-    "speech": "[Walk through each numbered step aloud at a measured pace (${wordCountGuidance}). Emphasize pivots where students usually slip. Spoken prose only.]",
-    "highlights": []
-  },
-  {
-    "id": 4,
-    "title": "${bankHasOptions ? 'Option Analysis' : 'Key Insights'}",
-    "subtitle": "${bankHasOptions ? 'Why each choice is right or wrong' : 'Why this works'}",
+    "title": "${bankHasOptions ? 'Option Analysis & Common Analysis' : 'Key Insights & Common Analysis'}",
+    "subtitle": "${bankHasOptions ? 'Why each choice is right or wrong + traps' : 'Why this works + traps to avoid'}",
     "visualType": "insight",
     "content": "${
       bankHasOptions
         ? buildOptionAnalysisContentTemplate(question.options, bankKnownKey ? question.correctAnswer : -1, userAnswer)
-        : '## Deeper understanding\\n\\n[Explain the why behind the method; call out subtle points.]'
+        : '## Deeper understanding\\n\\n[Explain the why behind the method; call out subtle points.]\\n\\n### Common Analysis\\n\\n- [Mistake 1]\\n- [Mistake 2]\\n- [Mistake 3]'
     }",
-    "speech": "[${bankHasOptions ? 'Walk every real option letter in order. For the correct option, explain why it is right in full. For each wrong option, say why it fails this stem, what misconception it targets, and how to cut it in under ten seconds. Spoken prose only. Cover ALL letters — do not skip. Typically 120-200 words.' : 'Highlight the insight that makes the solution click.'}]",
+    "speech": "[${bankHasOptions ? 'Walk every real option letter in order. For the correct option, explain why it is right in full. For each wrong option, say why it fails this stem, what misconception it targets, and how to cut it in under ten seconds. Then name classic traps. Spoken prose only. Cover ALL letters — do not skip. Typically 140-220 words.' : 'Highlight the insight that makes the solution click, then classic traps.'}]",
     "highlights": []
   },
   {
-    "id": 5,
-    "title": "Common Mistakes",
-    "subtitle": "Traps to avoid in the hall",
-    "visualType": "insight",
-    "content": "## Frequent errors\\n\\n- [Mistake 1]\\n- [Mistake 2]\\n- [Mistake 3]\\n\\nHow to spot them in under 10 seconds.",
-    "speech": "[List the classic mistakes for this question type with a coaching tone.]",
-    "highlights": []
-  },
-  {
-    "id": 6,
-    "title": "Shortcuts & Exam Tips",
-    "subtitle": "Speed under pressure",
-    "visualType": "insight",
-    "content": "## Tricks & strategy\\n\\n- **Shortcut**: [when applicable]\\n- **Elimination tip**: [...]\\n- **Time box**: target seconds for this difficulty",
-    "speech": "[Share a practical shortcut or elimination order useful in a timed paper.]",
-    "highlights": []
-  },
-  {
-    "id": 7,
-    "title": "Memory & Real-world Link",
-    "subtitle": "Retention + analogy",
-    "visualType": "concept",
-    "content": "## Stick the concept\\n\\n- **Mnemonic / memory hook**: [...]\\n- **Analogy**: [relatable real-world picture when it helps]\\n- **Alternative method**: [second valid approach if one exists]",
-    "speech": "[Give a memorable hook and, if natural, a real-world analogy. Mention an alternate method when useful.]",
-    "highlights": []
-  },
-  {
-    "id": 8,
-    "title": "Summary & Next Practice",
-    "subtitle": "Close the loop",
-    "visualType": "answer",
-    "content": "## Takeaways\\n\\n1. [Key takeaway]\\n2. [Key takeaway]\\n3. [Key takeaway]\\n\\n**Follow-up practice**: suggest one related topic or question pattern to attempt next.",
-    "speech": "[Summarize crisply and end with one concrete practice suggestion plus encouragement.]",
+    "id": 3,
+    "title": "Solution, Exam Tips & Real-World Context",
+    "subtitle": "Worked path + speed + retention",
+    "visualType": "solution",
+    "content": "## Step-by-step Solution\\n\\n1. [First reasoning step with equation or logic]\\n2. [Next step]\\n3. [Next step]\\n4. [Show how the correct ${bankHasOptions ? 'option' : 'answer'} follows]\\n\\n[Closing check in 1-2 sentences.]\\n\\n## Shortcuts & Exam Tips\\n\\n- **Shortcut**: [when applicable]\\n- **Elimination tip**: [...]\\n- **Time box**: target seconds for this difficulty\\n\\n## Memory & Real-world Link\\n\\n- **Mnemonic / memory hook**: [...]\\n- **Analogy**: [relatable real-world picture when it helps]\\n- **Alternative method**: [second valid approach if one exists]",
+    "speech": "[Walk through the numbered solution (${wordCountGuidance}), then one exam tip and one memory hook. Do not re-analyze every option letter. Spoken prose only.]",
     "highlights": []
   }
 ]
@@ -674,19 +548,26 @@ Return ONLY the raw JSON array (no markdown backticks, no extra text):`;
     };
 
     const buildRepairPrompt = (priorRaw: string) => `You previously produced a thin or invalid lecture for this exam question.
-Rewrite a COMPLETE detailed 8-step JSON teaching lecture. Expand every step — no one-liners.
+Rewrite a COMPLETE detailed 3-step JSON teaching lecture. Expand every step — no one-liners.
+Do NOT include "Answer Announcement", "Summary", "Next Practice", or "Summary & Next Practice" cards.
 ${hasOptions ? `
-OPTION ANALYSIS MUST BE REWRITTEN IN FULL:
-- Title must be "Option Analysis".
+OPTION ANALYSIS & COMMON ANALYSIS MUST BE REWRITTEN IN FULL:
+- Title must be "Option Analysis & Common Analysis".
 - Include a markdown bullet for every real letter with 3-5 sentences each.
 - Correct option: why it is right (principle + match to this stem + check).
 - Each wrong option: why it fails this stem, the misconception it was designed to catch, and a 10-second elimination.
+- Add a "### Common Analysis" section with 2–4 classic traps (do not copy-paste the option bullets).
 - Do not write only "incorrect" or "distractor".
 Real options:
 ${optionsBlock}
 ${knownKey ? `Correct letter: ${optionLetter(question.correctAnswer)}` : 'Determine the correct letter from reasoning.'}
 ${hasUserAnswer && !isUserCorrect ? `Student picked Option ${userSelectedLabel} — explain why that trap felt tempting.` : ''}
-` : 'OPEN question — no MCQ options and no Option Analysis step.'}
+` : 'OPEN question — no MCQ options and no Option Analysis step. Use "Key Insights & Common Analysis" as step 2.'}
+
+Required titles (in order):
+1. "Concept Introduction"
+2. "${hasOptions ? 'Option Analysis & Common Analysis' : 'Key Insights & Common Analysis'}"
+3. "Solution, Exam Tips & Real-World Context"
 
 Question stem:
 """
@@ -697,12 +578,12 @@ ${hasUserAnswer ? `Student picked: Option ${userSelectedLabel}` : ''}
 
 ${lectureQualityRules}
 ${COMPETITIVE_EXPLAIN_SPEECH_STYLE}
-Speech length: ${wordCountGuidance} per step. Option Analysis speech must cover every letter (120-200 words).
+Speech length: ${wordCountGuidance} per step. Option analysis speech must cover every letter (140-220 words).
 
 Prior draft (improve; do not copy thin stubs):
 ${priorRaw.slice(0, 3500)}
 
-Return ONLY the raw JSON array of 8 teaching step objects with title, subtitle, visualType, content, speech, highlights.`;
+Return ONLY the raw JSON array of 3 teaching step objects with title, subtitle, visualType, content, speech, highlights.`;
 
     try {
         let raw = await aiService.callAI(prompt, 3, 1000, { temperature: 0.35 });
@@ -721,49 +602,44 @@ Return ONLY the raw JSON array of 8 teaching step objects with title, subtitle, 
             return [
                 {
                     id: 1, icon: '🧠', visualType: 'concept',
-                    title: 'Understanding your question',
+                    title: 'Concept Introduction',
                     subtitle: 'What you asked',
-                    content: `## Your question\n\n${question.text}${
-                        hasOpts
-                            ? `\n\n### Options\n${question.options.map((o, i) => `- **${String.fromCharCode(65 + i)}.** ${o}`).join('\n')}`
-                            : ''
-                    }\n\nWe'll break this into a clear teaching walkthrough. Review the stem carefully, name the core concept, and rebuild the method step by step so the idea sticks under exam pressure.`,
+                    content: `## Your question\n\n${question.text}\n\nWe'll break this into a clear teaching walkthrough. Review the stem carefully, name the core concept, and rebuild the method step by step so the idea sticks under exam pressure.`,
                     speech: stripSpeechForTts(
                         `Great question. ${question.text.slice(0, 160)}. Stay with me — we'll break it down clearly, step by step, with the same care a classroom teacher would use.`,
                     ),
                     highlights: [],
                 },
-                {
-                    id: 2, icon: '⚙️', visualType: 'solution',
-                    title: hasOpts ? 'How to approach the MCQ' : 'How to approach it',
-                    subtitle: 'Method outline',
-                    content: hasOpts
-                        ? `## Approach\n\n1. Read the stem carefully and underline knowns and unknowns.\n2. Recall the governing definition, law, or formula for this topic.\n3. Evaluate each real option against that rule with a short reason.\n4. Pick the matching choice, eliminate distractors, and do a quick consistency check.`
-                        : `## Approach\n\n1. Identify the topic and list knowns and unknowns.\n2. Recall the governing definition, law, or formula.\n3. Work step-by-step toward the asked result with clear intermediate checks.\n4. State the final answer clearly with units if needed (no invented multiple-choice options).`,
-                    speech: stripSpeechForTts(
-                        hasOpts
-                            ? `Here's the plan. Name the topic, apply the core rule, then test each given option with confidence and cut the distractors cleanly.`
-                            : `Here's the plan. Name the topic, apply the core rule step by step, then lock in a clear final answer with a quick check.`,
-                    ),
-                    highlights: [],
-                },
                 ...(optionBreakdown
                     ? [{
-                        id: 3, icon: '💡', visualType: 'insight' as const,
-                        title: 'Option Analysis',
-                        subtitle: 'Why each choice is right or wrong',
+                        id: 2, icon: '💡', visualType: 'insight' as const,
+                        title: 'Option Analysis & Common Analysis',
+                        subtitle: 'Why each choice is right or wrong + traps',
                         content: optionBreakdown.content,
                         speech: optionBreakdown.speech,
                         highlights: ['Option Analysis'],
                     }]
-                    : []),
+                    : [{
+                        id: 2, icon: '💡', visualType: 'insight' as const,
+                        title: 'Key Insights & Common Analysis',
+                        subtitle: 'Why this works + traps to avoid',
+                        content: `## Approach\n\n1. Identify the topic and list knowns and unknowns.\n2. Recall the governing definition, law, or formula.\n3. Watch for classic traps: skipped conditions, mixed formulas, and last-step slips.\n\n### Common Analysis\n\n- Naming the principle too late.\n- Mixing look-alike definitions.\n- Skipping a consistency check.`,
+                        speech: stripSpeechForTts(
+                            `Name the topic, apply the core rule, and watch for classic traps so distractors lose their power.`,
+                        ),
+                        highlights: [],
+                    }]),
                 {
-                    id: optionBreakdown ? 4 : 3, icon: '💡', visualType: 'insight',
-                    title: 'Try again shortly',
-                    subtitle: 'AI teacher unavailable',
-                    content: `## Next step\n\nThe live AI lecture could not be generated just now. Tap back and resubmit your question, or rephrase it more specifically so we can rebuild a full classroom-style walkthrough with concept, solution, and exam tips.`,
+                    id: 3, icon: '⚙️', visualType: 'solution',
+                    title: 'Solution, Exam Tips & Real-World Context',
+                    subtitle: 'Worked path + speed + retention',
+                    content: hasOpts
+                        ? `## Step-by-step Solution\n\n1. Read the stem carefully and underline knowns and unknowns.\n2. Recall the governing definition, law, or formula for this topic.\n3. Apply it cleanly and confirm the matching choice.\n4. Do a quick consistency check.\n\n## Shortcuts & Exam Tips\n\n- Spot the topic from stem keywords before calculating.\n- Eliminate options that break an obvious condition.\n- Keep a tight time box on sticky algebra.\n\n## Memory & Real-world Link\n\n- Memory hook: name the rule first, then compute.\n- The live AI lecture could not be fully generated — tap back and resubmit for a richer walkthrough.`
+                        : `## Step-by-step Solution\n\n1. Identify the topic and list knowns and unknowns.\n2. Recall the governing definition, law, or formula.\n3. Work step-by-step toward the asked result.\n4. State the final answer clearly with units if needed.\n\n## Shortcuts & Exam Tips\n\n- Write one governing equation before calculating.\n- Check units and edge cases.\n\n## Memory & Real-world Link\n\n- Memory hook: principle first, then algebra.\n- The live AI lecture could not be fully generated — tap back and resubmit for a richer walkthrough.`,
                     speech: stripSpeechForTts(
-                        `The live explanation isn't ready yet. Go back and ask again in a moment — you've got this, and a fuller lecture will be worth the short wait.`,
+                        hasOpts
+                            ? `Here's the plan. Name the topic, apply the core rule, confirm the matching choice, and keep one exam tip in mind for speed.`
+                            : `Here's the plan. Name the topic, apply the core rule step by step, lock in a clear final answer, and keep one tip for next time.`,
                     ),
                     highlights: [],
                 },
@@ -786,9 +662,6 @@ function buildStaticSteps(
         question.correctAnswer < question.options.length;
     const correct = knownKey ? question.options[question.correctAnswer] : '';
     const correctLabel = knownKey ? String.fromCharCode(65 + question.correctAnswer) : '';
-    const hasUserAnswer = userAnswer !== undefined && userAnswer !== null && userAnswer !== -1;
-    const isUserCorrect = hasUserAnswer && knownKey && userAnswer === question.correctAnswer;
-    const userSelectedLabel = hasUserAnswer ? String.fromCharCode(65 + userAnswer!) : 'None';
     const stem = formatExamMath(question.text);
     const bankExplain = (question.explanation || '').trim();
     const explainBody =
@@ -812,31 +685,24 @@ function buildStaticSteps(
         return [
             step({
                 id: 1, icon: '🧠', visualType: 'concept',
-                title: 'Concept framing',
+                title: 'Concept Introduction',
                 subtitle: 'What this question tests',
                 content: `## Understanding the ask\n\n**Topic:** ${question.topic} (${question.subjectName})\n\n### Question\n${stem}\n\n### What to notice\nName the concept first, then decide what a complete answer must include (value, units, definition, or short proof). This keeps the walkthrough exam-ready.`,
                 speech: `Let's frame this clearly. The topic is ${question.topic}. I'll read the question with you, name the idea being tested, then solve it step by step so the method sticks.`,
             }),
             step({
-                id: 2, icon: '⚙️', visualType: 'solution',
-                title: 'Worked solution',
-                subtitle: 'Process first',
-                content: `## Step-by-step solution\n\n${explainBody}\n\n### Method checklist\n1. List knowns and unknowns from the stem.\n2. Recall the governing definition, law, or formula.\n3. Carry the reasoning in small steps — no skipped algebra or logic.\n4. State the final result and do a quick sanity check.`,
-                speech: `Stay with the method. Start from the knowns, apply the core principle for ${question.topic}, and move cleanly to the answer with a quick check at the end.`,
+                id: 2, icon: '💡', visualType: 'insight',
+                title: 'Key Insights & Common Analysis',
+                subtitle: 'Why this works + traps to avoid',
+                content: `## Deeper understanding\n\n${explainBody}\n\n### Common Analysis\n\n- Jumping into algebra before naming the governing principle.\n- Mixing similar-looking formulas or definitions.\n- Losing marks on units, signs, or extreme cases.\n\n### 10-second fix\nAsk: what law or definition must be true here? Then rebuild from that rule.`,
+                speech: `Key insight for ${question.topic}: name the principle first. Classic traps are mixed formulas and last-step slips — catch them by checking units and edge cases.`,
             }),
             step({
-                id: 3, icon: '✅', visualType: 'answer',
-                title: 'Final answer & check',
-                subtitle: 'Lock it in',
-                content: `## Answer\n\nReview the worked reasoning above and write the final result clearly${bankExplain ? ` — guided by: ${bankExplain}` : ''}.\n\n### Quick check\n- Does the answer match what the stem asked?\n- Units and signs consistent?\n- Would a similar ${examName || 'exam'} question use the same first step?`,
-                speech: `Now lock the final answer. Check units and edge cases, then write it with confidence. That same first step will help on similar ${examName || 'exam'} questions.`,
-            }),
-            step({
-                id: 4, icon: '💡', visualType: 'insight',
-                title: 'Exam tips',
-                subtitle: 'Speed under pressure',
-                content: `## Strategies for ${question.topic}\n\n- Identify the principle before calculating.\n- Watch units, signs, and extreme cases.\n- If stuck, write one governing equation and rebuild from there.\n- Practice 3–5 near variants to build speed for ${examName || 'the exam'}.`,
-                speech: `Exam tip for ${question.topic}: name the principle first, watch units and signs, and practice a few close variants so the method becomes automatic.`,
+                id: 3, icon: '⚙️', visualType: 'solution',
+                title: 'Solution, Exam Tips & Real-World Context',
+                subtitle: 'Worked path + speed + retention',
+                content: `## Step-by-step Solution\n\n${explainBody}\n\n### Method checklist\n1. List knowns and unknowns from the stem.\n2. Recall the governing definition, law, or formula.\n3. Carry the reasoning in small steps — no skipped algebra or logic.\n4. State the final result and do a quick sanity check.\n\n## Shortcuts & Exam Tips\n\n- Identify the principle before calculating.\n- Watch units, signs, and extreme cases.\n- If stuck, write one governing equation and rebuild from there.\n\n## Memory & Real-world Link\n\n- Memory hook: "${question.topic} → first name the rule, then compute."\n- Why it matters: the same first step shows up across many ${question.subjectName} items in ${examName || 'competitive exams'}.`,
+                speech: `Stay with the method. Start from the knowns, apply the core principle for ${question.topic}, lock the answer with a quick check, and remember: name the rule before you compute.`,
             }),
         ];
     }
@@ -848,86 +714,27 @@ function buildStaticSteps(
             id: 1, icon: '🧠', visualType: 'concept',
             title: 'Concept Introduction',
             subtitle: 'What this question is really testing',
-            content: `## Framing ${question.topic}\n\nThis **${question.difficulty}** ${question.subjectName} question targets **${question.topic}** for ${examName || 'your exam'}.\n\n### Stem\n${stem}\n\n### Teaching goal\nBefore touching options, name the principle. Then we will announce the key, derive it carefully, and dismantle each distractor so the method transfers to similar questions.`,
-            speech: `Core idea time: ${question.topic}. This ${question.difficulty} ${question.subjectName} question is testing whether you can apply that idea under timed pressure. Stay with me — we'll announce the answer, then prove it step by step.`,
+            content: `## Framing ${question.topic}\n\nThis **${question.difficulty}** ${question.subjectName} question targets **${question.topic}** for ${examName || 'your exam'}.\n\n### Stem\n${stem}\n\n### Teaching goal\nBefore walking options or the full derivation, name the principle. The correct choice is highlighted on the board so we can focus on the idea being tested.`,
+            speech: `Core idea time: ${question.topic}. This ${question.difficulty} ${question.subjectName} question is testing whether you can apply that idea under timed pressure. Stay with me — next we dismantle every option, then prove the solution.`,
             highlights: [question.topic],
         }),
         step({
-            id: 2, icon: '✅', visualType: 'answer',
-            title: 'Answer Announcement',
-            subtitle: 'Reviewing the result',
-            content: `## ${hasUserAnswer ? (isUserCorrect ? 'Correct' : 'Learning opportunity') : 'Solution & result'}\n\n${
-                knownKey
-                    ? `The correct option is **Option ${correctLabel}**: ${formatExamMath(correct)}.\n\n`
-                    : 'Evaluate each option carefully against the core principle.\n\n'
-            }${
-                hasUserAnswer
-                    ? (isUserCorrect
-                        ? 'Strong work — you selected the right choice. We will still reinforce the method so it holds under exam timing.'
-                        : `You selected Option ${userSelectedLabel}. We will diagnose why that choice feels tempting, then rebuild the correct path.`)
-                    : 'We will derive this carefully so the method transfers to similar questions.'
-            }`,
-            speech: `Let's lock the target. ${
-                knownKey ? `The correct answer is Option ${correctLabel}: ${stripSpeechForTts(correct)}. ` : ''
-            }${
-                hasUserAnswer
-                    ? (isUserCorrect
-                        ? 'Well done — you got this right. '
-                        : `You picked Option ${userSelectedLabel}. We'll unpack the trap and rebuild the correct path. `)
-                    : ''
-            }Next, the full worked solution.`,
-            highlights: knownKey ? [`Option ${correctLabel}`] : [],
-        }),
-        step({
-            id: 3, icon: '⚙️', visualType: 'solution',
-            title: 'Step-by-step Solution',
-            subtitle: 'Derivation and validation',
-            content: `## Worked solution\n\n${explainBody}\n\n### Structured path\n1. Re-read the stem and mark knowns / unknowns.\n2. Recall the governing rule for **${question.topic}**.\n3. Apply it to this exact wording — keep intermediate steps visible.\n4. ${knownKey ? `Show why Option ${correctLabel} follows.` : 'Arrive at the matching choice.'}\n5. Quick check: units, signs, and whether the result answers what was asked.`,
-            speech: `Here's why this works. ${stripSpeechForTts(explainBody).slice(0, 280)} ${
-                knownKey ? `That locks in option ${correctLabel}.` : 'That locks the correct choice.'
-            } Notice the order: principle first, then algebra or logic, then the option.`,
-            highlights: correct ? [formatExamMath(correct)] : [question.topic],
-        }),
-        step({
-            id: 4, icon: '💡', visualType: 'insight',
-            title: 'Option Analysis',
-            subtitle: 'Why each choice is right or wrong',
+            id: 2, icon: '💡', visualType: 'insight',
+            title: 'Option Analysis & Common Analysis',
+            subtitle: 'Why each choice is right or wrong + traps',
             content: optionBreakdown.content,
             speech: optionBreakdown.speech,
             highlights: knownKey ? [`Option ${correctLabel}`] : ['Option Analysis'],
         }),
         step({
-            id: 5, icon: '💡', visualType: 'insight',
-            title: 'Common Mistakes',
-            subtitle: 'Traps to avoid in the hall',
-            content: `## Frequent errors on ${question.topic}\n\n- Jumping to an option before naming the governing principle.\n- Mixing similar-looking formulas or definitions.\n- Sign, unit, or limiting-case slips in the last step.\n- Stopping after one plausible option instead of verifying against the stem.\n\n### 10-second fix\nAsk: what law or definition must be true here? Then re-check the option that survived.`,
-            speech: `Classic mistakes for ${question.topic}: skipping the principle, mixing look-alike formulas, and losing marks on signs or units. Fix it in ten seconds by naming the rule first, then re-checking the survivor.`,
-        }),
-        step({
-            id: 6, icon: '📐', visualType: 'formula',
-            title: 'Shortcuts & Exam Tips',
-            subtitle: 'Speed under pressure',
-            content: `## Tricks for ${examName || 'this exam'}\n\n- **Shortcut**: Identify ${question.topic} from keywords in the stem before calculating.\n- **Elimination**: Discard options that violate an obvious condition (units, sign, limiting case).\n- **Time box**: Aim for a clean first pass; mark and return only if the algebra stalls.\n- **Transfer**: After this question, try one near variant with the same first step.`,
-            speech: `Exam tip: spot ${question.topic} from the stem keywords, eliminate options that break an obvious condition, and keep a tight time box so one sticky question doesn't steal the paper.`,
-            highlights: [question.topic],
-        }),
-        step({
-            id: 7, icon: '🧠', visualType: 'concept',
-            title: 'Memory & Real-world Link',
-            subtitle: 'Make it stick',
-            content: `## Stick the concept\n\n- **Memory hook**: "${question.topic} → first name the rule, then compute."\n- **Why it matters**: The same first step shows up across many ${question.subjectName} items in ${examName || 'competitive exams'}.\n- **Analogy**: Treat options like suspects — the governing law is your evidence filter; only one story survives.\n\n### Alternative check\nIf time allows, re-derive from definitions instead of memorized shortcuts to catch hidden assumptions.`,
-            speech: `Make it stick. For ${question.topic}, always name the rule before you compute. That habit transfers across ${question.subjectName} questions and keeps distractors from looking convincing.`,
-            highlights: [question.topic],
-        }),
-        step({
-            id: 8, icon: '✅', visualType: 'answer',
-            title: 'Summary & Next Practice',
-            subtitle: 'Close the loop',
-            content: `## Takeaways\n\n1. Concept first: **${question.topic}**.\n2. ${knownKey ? `Correct key: **Option ${correctLabel}** — ${formatExamMath(correct)}.` : 'Confirm the matching option with a full check.'}\n3. Eliminate distractors by the same governing rule — not by gut feel.\n\n**Follow-up practice**: Attempt 2–3 similar ${question.topic} questions under a timer, forcing yourself to write the principle before any calculation.`,
-            speech: `Summary: own ${question.topic}, ${
-                knownKey ? `remember option ${correctLabel}, ` : ''
-            }and eliminate with the same rule every time. Practice two or three close variants under a timer — you've got this.`,
-            highlights: knownKey ? [`Option ${correctLabel}`] : [question.topic],
+            id: 3, icon: '⚙️', visualType: 'solution',
+            title: 'Solution, Exam Tips & Real-World Context',
+            subtitle: 'Worked path + speed + retention',
+            content: `## Step-by-step Solution\n\n${explainBody}\n\n### Structured path\n1. Re-read the stem and mark knowns / unknowns.\n2. Recall the governing rule for **${question.topic}**.\n3. Apply it to this exact wording — keep intermediate steps visible.\n4. ${knownKey ? `Show why Option ${correctLabel} follows.` : 'Arrive at the matching choice.'}\n5. Quick check: units, signs, and whether the result answers what was asked.\n\n## Shortcuts & Exam Tips\n\n- **Shortcut**: Identify ${question.topic} from keywords in the stem before calculating.\n- **Elimination**: Discard options that violate an obvious condition (units, sign, limiting case).\n- **Time box**: Aim for a clean first pass; mark and return only if the algebra stalls.\n\n## Memory & Real-world Link\n\n- **Memory hook**: "${question.topic} → first name the rule, then compute."\n- **Why it matters**: The same first step shows up across many ${question.subjectName} items in ${examName || 'competitive exams'}.\n- **Analogy**: Treat options like suspects — the governing law is your evidence filter; only one story survives.`,
+            speech: `Here's why this works. ${stripSpeechForTts(explainBody).slice(0, 280)} ${
+                knownKey ? `That locks in option ${correctLabel}.` : 'That locks the correct choice.'
+            } Exam tip: spot ${question.topic} from the stem, eliminate broken options, and always name the rule before you compute.`,
+            highlights: correct ? [formatExamMath(correct)] : [question.topic],
         }),
     ];
 }

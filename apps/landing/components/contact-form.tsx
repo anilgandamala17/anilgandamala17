@@ -65,10 +65,15 @@ export function ContactForm() {
         role="status"
       >
         <h2 className="text-xl font-bold text-foreground">
-          Thanks — we got your message
+          Message saved for this demo session
         </h2>
         <p className="mt-2 text-muted-foreground">
-          Our team typically responds within one business day.
+          In this frontend demo build, your note is stored locally so we can show the flow.
+          For a real reply, email us at{' '}
+          <a className="underline" href="mailto:Contact@airaeds.com">
+            Contact@airaeds.com
+          </a>
+          .
         </p>
       </div>
     )
@@ -134,7 +139,7 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={loading}
-        className="h-11 rounded-[var(--radius-btn)] bg-accent text-accent-foreground hover:bg-accent/90"
+        className="h-11 rounded-[var(--radius-btn)] bg-primary text-primary-foreground hover:bg-[var(--primary-hover)]"
       >
         {loading ? 'Sending…' : 'Book a Demo'}
       </Button>

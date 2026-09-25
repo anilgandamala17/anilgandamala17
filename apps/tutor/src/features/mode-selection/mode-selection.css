@@ -4,17 +4,17 @@
    ========================================================= */
 
 .mode-selection {
-  /* Brand blue #2F5FFF scale */
-  --ms-brand-50: #eef3ff;
-  --ms-brand-100: #d9e4ff;
-  --ms-brand-200: #bcd0ff;
-  --ms-brand-300: #8eafff;
-  --ms-brand-400: #5984ff;
-  --ms-brand-500: #2f5fff;
-  --ms-brand-600: #1f47f0;
-  --ms-brand-700: #1838cd;
-  --ms-brand-800: #1830a5;
-  --ms-brand-900: #1a2e82;
+  /* Brand blue — aligned with AIra foundation #1d4ed8 */
+  --ms-brand-50: #eff6ff;
+  --ms-brand-100: #dbeafe;
+  --ms-brand-200: #bfdbfe;
+  --ms-brand-300: #93c5fd;
+  --ms-brand-400: #60a5fa;
+  --ms-brand-500: #1d4ed8;
+  --ms-brand-600: #1e40af;
+  --ms-brand-700: #1e3a8a;
+  --ms-brand-800: #1e3a8a;
+  --ms-brand-900: #172554;
 
   /* Curriculum emerald #0F9D58 */
   --ms-curr-50: #ecfdf5;
@@ -93,7 +93,7 @@
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 0% -10%, rgba(47, 95, 255, 0.12), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 0% -10%, rgba(29, 78, 216, 0.12), transparent 55%),
     radial-gradient(ellipse 50% 40% at 100% 0%, rgba(15, 157, 88, 0.08), transparent 50%),
     radial-gradient(ellipse 45% 35% at 85% 100%, rgba(245, 114, 47, 0.08), transparent 50%),
     var(--surface-page);
@@ -427,13 +427,14 @@
 
 .ms-btn--dashboard {
   color: #fff;
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  background: var(--ms-brand-500);
   border-color: transparent;
-  box-shadow: 0 6px 16px -8px rgba(124, 58, 237, 0.55);
+  box-shadow: 0 6px 16px -8px rgba(29, 78, 216, 0.45);
 }
 
 .ms-btn--dashboard:hover {
-  filter: brightness(1.06);
+  background: var(--ms-brand-600);
+  filter: none;
 }
 
 .ms-btn--dashboard:focus-visible {

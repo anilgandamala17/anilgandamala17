@@ -8,33 +8,32 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Primary gradient colors from mockup
+                // AIra brand blue — aligned with landing #1d4ed8
                 primary: {
-                    50: '#faf5ff',
-                    100: '#f3e8ff',
-                    200: '#e9d5ff',
-                    300: '#d8b4fe',
-                    400: '#c084fc',
-                    500: '#a855f7',
-                    600: '#9333ea',
-                    700: '#7c3aed',
-                    800: '#6b21a8',
-                    900: '#581c87',
+                    50: '#eff6ff',
+                    100: '#dbeafe',
+                    200: '#bfdbfe',
+                    300: '#93c5fd',
+                    400: '#60a5fa',
+                    500: '#3b82f6',
+                    600: '#2563eb',
+                    700: '#1d4ed8',
+                    800: '#1e40af',
+                    900: '#1e3a8a',
                 },
-                // Accent pink
+                // Teal accent — secondary brand (landing accent)
                 accent: {
-                    50: '#fdf2f8',
-                    100: '#fce7f3',
-                    200: '#fbcfe8',
-                    300: '#f9a8d4',
-                    400: '#f472b6',
-                    500: '#ec4899',
-                    600: '#db2777',
-                    700: '#be185d',
-                    800: '#9d174d',
-                    900: '#831843',
+                    50: '#f0fdfa',
+                    100: '#ccfbf1',
+                    200: '#99f6e4',
+                    300: '#5eead4',
+                    400: '#2dd4bf',
+                    500: '#14b8a6',
+                    600: '#0d9488',
+                    700: '#0f766e',
+                    800: '#115e59',
+                    900: '#134e4a',
                 },
-                // Sky blue for gradients
                 sky: {
                     50: '#f0f9ff',
                     100: '#e0f2fe',
@@ -47,33 +46,45 @@ export default {
                     800: '#075985',
                     900: '#0c4a6e',
                 },
-                // Surface colors
                 surface: {
                     50: '#fefefe',
-                    100: '#f8f7ff',
-                    200: '#f0eeff',
+                    100: '#f8fafc',
+                    200: '#f1f5f9',
                     glass: 'rgba(255, 255, 255, 0.15)',
                     'glass-dark': 'rgba(0, 0, 0, 0.1)',
-                }
+                },
             },
             fontFamily: {
-                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-                display: ['"Inter Tight"', 'Inter', 'system-ui', 'sans-serif'],
+                sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+                display: ['Sora', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            },
+            borderRadius: {
+                sm: 'var(--radius-sm, 0.5rem)',
+                DEFAULT: 'var(--radius-md, 0.75rem)',
+                md: 'var(--radius-md, 0.75rem)',
+                lg: 'var(--radius-lg, 1rem)',
+                xl: 'var(--radius-xl, 1.25rem)',
+            },
+            boxShadow: {
+                sm: 'var(--shadow-sm)',
+                DEFAULT: 'var(--shadow-md)',
+                md: 'var(--shadow-md)',
+                lg: 'var(--shadow-lg)',
+                glass: '0 8px 32px 0 rgba(15, 23, 42, 0.08)',
+                'glass-lg': '0 25px 50px -12px rgba(15, 23, 42, 0.12)',
+                soft: '0 4px 24px -1px rgba(0, 0, 0, 0.08)',
+                panel: '0 4px 24px -2px rgba(15, 23, 42, 0.08), 0 1.5px 8px -1px rgba(15, 23, 42, 0.04)',
+                nav: '0 2px 16px -2px rgba(15, 23, 42, 0.08)',
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-main': 'linear-gradient(135deg, #667eea 0%, #a855f7 25%, #ec4899 50%, #f9a8d4 75%, #7dd3fc 100%)',
-                'gradient-soft': 'linear-gradient(180deg, #c7d2fe 0%, #e9d5ff 50%, #fbcfe8 100%)',
-                'gradient-card': 'linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
+                'gradient-main': 'linear-gradient(135deg, #1d4ed8 0%, #0369a1 50%, #0f766e 100%)',
+                'gradient-soft': 'linear-gradient(180deg, #eff6ff 0%, #f0fdfa 100%)',
+                'gradient-card': 'linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)',
             },
-            boxShadow: {
-                'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
-                'glass-lg': '0 25px 50px -12px rgba(31, 38, 135, 0.25)',
-                'glow': '0 0 40px rgba(168, 85, 247, 0.4)',
-                'glow-sm': '0 0 20px rgba(168, 85, 247, 0.3)',
-                'soft': '0 4px 24px -1px rgba(0, 0, 0, 0.08)',
-                'panel': '0 4px 24px -2px rgba(120, 100, 160, 0.10), 0 1.5px 8px -1px rgba(120, 100, 160, 0.06)',
-                'nav': '0 2px 16px -2px rgba(120, 100, 160, 0.10)',
+            screens: {
+                xs: '480px',
+                '3xl': '1920px',
             },
             animation: {
                 'float': 'float 6s ease-in-out infinite',

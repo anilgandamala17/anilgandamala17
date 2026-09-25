@@ -3,12 +3,11 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { LucideIcon } from 'lucide-react';
 import {
-    ArrowLeft, ChevronLeft, ChevronRight, Volume2, VolumeX,
+    ArrowLeft, ChevronLeft, ChevronRight,
     CheckCircle2, BookOpen, BrainCircuit, Lightbulb,
-    FlaskConical, Calculator, Target, RefreshCw, Loader2,
+    FlaskConical, Calculator, Target, Loader2,
     PlayCircle, BarChart3, HelpCircle, XCircle, Settings2, Ruler
 } from 'lucide-react';
-import { useSpeech, unlockAudioContext } from '@/features/teaching/hooks/useSpeech';
 import { useTeachingStore } from '@/features/teaching/stores/teachingStore';
 import { studentRoutes } from '@/utils/routes';
 import SignOutButton from '@/components/common/SignOutButton';
@@ -27,25 +26,23 @@ import {
     areValidTeachingSteps,
     generateAITeachingSteps,
     questionHasOptions,
-    stripSpeechForTts,
 } from '@/features/competitive/utils/competitiveTeaching';
-
-/** Professional Indian female Sarvam v2 voice (manisha) for AI Explanation.
- *  forceEnable keeps speech on even if Accessibility TTS is off.
- *  Auto-arms when the lecture is ready; Listen/Replay restarts if the browser blocked autoplay.
- */
-const COMPETITIVE_EXPLAIN_TTS = {
-    forceEnable: true,
-    paceOverride: 0.98,
-    speakerOverride: 'manisha',
-    langOverride: 'en-IN',
-    preferNatural: true,
-} as const;
 
 interface ThemeConfig {
     color: string;
     bgColor: string;
     gradient: string;
+}
+
+/** Map lecture card titles to visual panels (Phase 6 three-card architecture). */
+function resolveVisualType(step: Pick<AITeachingStep, 'title' | 'visualType'>): AITeachingStep['visualType'] {
+    const t = String(step.title || '').toLowerCase();
+    if (/option analysis|common analysis|key insights/.test(t)) return 'insight';
+    if (/solution|exam tips|real-world|real world/.test(t)) return 'solution';
+    if (/concept introduction|concept framing|understanding your question|understanding the ask/.test(t)) {
+        return 'concept';
+    }
+    return step.visualType;
 }
 
 function stepIconFor(visualType: AITeachingStep['visualType'] | string): LucideIcon {
@@ -104,13 +101,23 @@ function QuestionStemCard({
     question,
     themeColor,
     label = 'The Question',
+    userAnswer,
+    highlightAnswers = false,
 }: {
     question: CompetitiveQuestion;
     themeColor: string;
     label?: string;
+    userAnswer?: number;
+    /** When true (Concept Introduction), mark correct/green and wrong selection/red. */
+    highlightAnswers?: boolean;
 }) {
     const hasOptions = questionHasOptions(question);
     const stem = formatExamMath(question.text);
+    const knownKey =
+        typeof question.correctAnswer === 'number' &&
+        question.correctAnswer >= 0 &&
+        question.correctAnswer < question.options.length;
+
     return (
         <div className="comp-surface-card p-5">
             <div className="mb-3 flex items-center gap-2">
@@ -124,21 +131,76 @@ function QuestionStemCard({
             </p>
             {hasOptions && (
                 <div className="mt-4 space-y-2">
-                    {question.options.map((opt, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
-                            <span className="w-5 h-5 rounded-md bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-black flex-shrink-0 mt-0.5">
-                                {String.fromCharCode(65 + i)}
-                            </span>
-                            <span>{formatExamMath(opt)}</span>
-                        </div>
-                    ))}
+                    {question.options.map((opt, i) => {
+                        if (!highlightAnswers) {
+                            return (
+                                <div key={i} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <span className="w-5 h-5 rounded-md bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-black flex-shrink-0 mt-0.5">
+                                        {String.fromCharCode(65 + i)}
+                                    </span>
+                                    <span>{formatExamMath(opt)}</span>
+                                </div>
+                            );
+                        }
+
+                        const isCorrect = knownKey && i === question.correctAnswer;
+                        const isUserSelected =
+                            userAnswer !== undefined && userAnswer !== null && userAnswer !== -1 && i === userAnswer;
+
+                        let rowClass = 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900';
+                        let badgeClass = 'bg-slate-100 dark:bg-slate-800 text-slate-500';
+                        let textClass = 'text-slate-600 dark:text-slate-400';
+                        if (isCorrect) {
+                            rowClass = 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/20';
+                            badgeClass = 'bg-emerald-500 text-white';
+                            textClass = 'text-emerald-800 dark:text-emerald-300';
+                        } else if (isUserSelected) {
+                            rowClass = 'border-rose-500 bg-rose-50 dark:bg-rose-950/20';
+                            badgeClass = 'bg-rose-500 text-white';
+                            textClass = 'text-rose-800 dark:text-rose-300';
+                        }
+
+                        return (
+                            <div
+                                key={i}
+                                className={`flex items-center gap-3 rounded-xl border-2 p-2.5 text-sm ${rowClass}`}
+                            >
+                                <span className={`w-7 h-7 rounded-lg flex items-center justify-center text-[11px] font-black flex-shrink-0 ${badgeClass}`}>
+                                    {String.fromCharCode(65 + i)}
+                                </span>
+                                <span className={`flex-1 font-semibold leading-snug ${textClass}`}>
+                                    {formatExamMath(opt)}
+                                </span>
+                                {isCorrect && (
+                                    <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wide text-emerald-600 dark:text-emerald-400 flex-shrink-0">
+                                        <CheckCircle2 className="w-3.5 h-3.5" />
+                                        Correct Answer
+                                    </span>
+                                )}
+                                {!isCorrect && isUserSelected && (
+                                    <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wide text-rose-600 dark:text-rose-400 flex-shrink-0">
+                                        <XCircle className="w-3.5 h-3.5" />
+                                        Your Answer
+                                    </span>
+                                )}
+                            </div>
+                        );
+                    })}
                 </div>
             )}
         </div>
     );
 }
 
-function ConceptVisual({ question, themeColor }: { question: CompetitiveQuestion; themeColor: string }) {
+function ConceptVisual({
+    question,
+    themeColor,
+    userAnswer,
+}: {
+    question: CompetitiveQuestion;
+    themeColor: string;
+    userAnswer?: number;
+}) {
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -149,6 +211,8 @@ function ConceptVisual({ question, themeColor }: { question: CompetitiveQuestion
                 question={question}
                 themeColor={themeColor}
                 label={question.examYear === 'Practice' ? 'Question from your ask' : 'The Question'}
+                userAnswer={userAnswer}
+                highlightAnswers={questionHasOptions(question)}
             />
             <div
                 className="comp-surface-card overflow-hidden"
@@ -297,15 +361,18 @@ const AnswerVisual = memo(function AnswerVisual({ question, userAnswer }: { ques
                         <p className={`flex-1 text-sm font-semibold ${textColor}`}>{formatExamMath(opt)}</p>
                         {isCorrect && (
                             <div className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 text-xs font-bold">
-                                <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-                                <span>Correct</span>
+                                <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" aria-hidden />
+                                <span>✓ Correct</span>
                             </div>
                         )}
                         {!isCorrect && isUserSelected && (
                             <div className="flex items-center gap-1 text-rose-600 dark:text-rose-400 text-xs font-bold">
-                                <XCircle className="w-5 h-5 text-rose-500 flex-shrink-0" />
-                                <span>Your Answer</span>
+                                <XCircle className="w-5 h-5 text-rose-500 flex-shrink-0" aria-hidden />
+                                <span>✕ Your answer — Incorrect</span>
                             </div>
+                        )}
+                        {!isCorrect && !isUserSelected && knownKey && userAnswer !== undefined && userAnswer !== -1 && (
+                            <span className="text-xs font-bold text-slate-400 dark:text-slate-500">Incorrect</span>
                         )}
                     </motion.div>
                 );
@@ -408,7 +475,7 @@ const OptionAnalysisVisual = memo(function OptionAnalysisVisual({
                                     {isCorrect && (
                                         <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
                                             <CheckCircle2 className="w-3.5 h-3.5" />
-                                            Correct
+                                            Correct Answer
                                         </span>
                                     )}
                                     {!isCorrect && isUserSelected && (
@@ -483,47 +550,6 @@ const ContentRenderer = memo(function ContentRenderer({ text, highlights, themeC
     );
 });
 
-function ExplainSpeechControls({
-    themeColor,
-    isMuted,
-    onToggleMute,
-}: {
-    themeColor: string;
-    isMuted: boolean;
-    onToggleMute: () => void;
-}) {
-    const isSpeaking = useTeachingStore((s) => s.isSpeaking);
-    return (
-        <>
-            <AnimatePresence>
-                {isSpeaking && (
-                    <div
-                        className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-white text-xs font-bold"
-                        style={{ backgroundColor: themeColor }}
-                    >
-                        <div className="flex items-center gap-1 h-3">
-                            <span className="block w-0.5 h-full bg-white rounded-full animate-voice-bar-1" />
-                            <span className="block w-0.5 h-full bg-white rounded-full animate-voice-bar-2" />
-                            <span className="block w-0.5 h-full bg-white rounded-full animate-voice-bar-3" />
-                        </div>
-                        <span className="ml-1">Speaking</span>
-                    </div>
-                )}
-            </AnimatePresence>
-            <button
-                onClick={onToggleMute}
-                className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex-shrink-0"
-                title={isMuted ? 'Unmute voice' : 'Mute voice'}
-            >
-                {isMuted
-                    ? <VolumeX className="w-4 h-4" />
-                    : <Volume2 className={`w-4 h-4 ${isSpeaking ? 'text-orange-500' : ''}`} />
-                }
-            </button>
-        </>
-    );
-}
-
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function CompetitiveTeachingPage() {
     const location = useLocation();
@@ -570,10 +596,6 @@ export default function CompetitiveTeachingPage() {
         () => !areValidTeachingSteps(preloadedSteps)
     );
     const [currentStep, setCurrentStep] = useState(0);
-    const [playbackTrigger, setPlaybackTrigger] = useState(0);
-    /** Gate TTS until lecture is ready / Listen — browsers may block autoplay after navigate. */
-    const [voiceArmed, setVoiceArmed] = useState(false);
-    const autoArmedForQuestionRef = useRef<string | null>(null);
     const stepsQuestionIdRef = useRef<string | null>(null);
     currentStepRef.current = currentStep;
     stepsRef.current = steps;
@@ -624,9 +646,6 @@ export default function CompetitiveTeachingPage() {
     // Reset step index when the question identity changes
     useEffect(() => {
         setCurrentStep(0);
-        setVoiceArmed(false);
-        setPlaybackTrigger(0);
-        autoArmedForQuestionRef.current = null;
         stepsQuestionIdRef.current = null;
         explanationStartedRef.current = false;
         explanationTerminalRef.current = false;
@@ -699,30 +718,8 @@ export default function CompetitiveTeachingPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- regenerate when question identity changes
     }, [question?.id, examName, userAnswer, preloadedSteps?.length]);
 
-    // Auto-start teacher voice once per question when the lecture is ready.
-    useEffect(() => {
-        if (isGenerating || !question?.id || steps.length === 0) return;
-        if (stepsQuestionIdRef.current !== question.id) return;
-        if (autoArmedForQuestionRef.current === question.id) return;
-        const firstSpeech = (steps[0]?.speech || steps[0]?.content || '').trim();
-        if (!firstSpeech) return;
-        autoArmedForQuestionRef.current = question.id;
-        setVoiceArmed(true);
-        setPlaybackTrigger((prev) => prev + 1);
-    }, [isGenerating, question?.id, steps]);
-
     const currentStepData = steps[currentStep];
-    const spokenForStep = currentStepData
-        ? (currentStepData.speech || stripSpeechForTts(currentStepData.content || '')).trim()
-        : '';
-
-    const { isMuted, setIsMuted } = useSpeech(
-        voiceArmed && currentStepData && spokenForStep
-            ? { id: `${question?.id || 'q'}-${currentStepData.id}`, spokenContent: spokenForStep }
-            : null,
-        playbackTrigger,
-        { ...COMPETITIVE_EXPLAIN_TTS, ignoreSession: true },
-    );
+    const activeVisualType = currentStepData ? resolveVisualType(currentStepData) : 'concept';
 
     const totalSteps = steps.length;
     const progressPct = totalSteps > 0 ? ((currentStep + 1) / totalSteps) * 100 : 0;
@@ -753,26 +750,22 @@ export default function CompetitiveTeachingPage() {
     };
 
     const walkthroughSteps = useMemo(() => {
-        if (!currentStepData || currentStepData.visualType !== 'solution') return [] as string[];
-        const parsed = getSolutionSteps(currentStepData.content);
-        if (parsed.length > 0) return parsed;
+        if (!currentStepData || activeVisualType !== 'solution') return [] as string[];
+        // Prefer the Step-by-step Solution section when the merged card has multiple ## sections
+        const content = currentStepData.content || '';
+        const solutionSection = content.match(
+            /##\s*Step-by-step Solution([\s\S]*?)(?=\n##\s|$)/i,
+        );
+        const parsed = getSolutionSteps(solutionSection ? solutionSection[1] : content);
+        if (parsed.length > 0) return parsed.slice(0, 6);
         return questionHasOptions(question)
             ? ['Identify the concept being tested', 'Apply the relevant formula or reasoning', 'Check each answer option', 'Eliminate wrong options', 'Confirm final answer']
             : ['Identify the concept being tested', 'List knowns and unknowns', 'Apply the relevant formula or reasoning', 'Arrive at the final answer', 'Check units and edge cases'];
-    }, [currentStepData, question]);
-
-    const armVoiceAndReplay = () => {
-        unlockAudioContext();
-        setVoiceArmed(true);
-        if (isMuted) setIsMuted(false);
-        // User gesture — reliable unlock if autoplay was blocked on navigate.
-        setPlaybackTrigger((prev) => prev + 1);
-    };
+    }, [currentStepData, activeVisualType, question]);
 
     const goToStep = (idx: number) => {
         const next = Math.max(0, Math.min(idx, Math.max(0, steps.length - 1)));
         setCurrentStep(next);
-        if (voiceArmed) setPlaybackTrigger((prev) => prev + 1);
     };
 
     // ── No question guard
@@ -844,7 +837,7 @@ export default function CompetitiveTeachingPage() {
 
                     {/* Animated dots */}
                     <div className="flex justify-center gap-2 mt-8">
-                        {['Concept', 'Solution', 'Strategy'].map((lbl, i) => (
+                        {['Concept', 'Analysis', 'Solution'].map((lbl, i) => (
                             <motion.div
                                 key={i}
                                 className="px-3 py-1.5 rounded-full text-xs font-bold text-white"
@@ -903,21 +896,6 @@ export default function CompetitiveTeachingPage() {
                         <span className="text-xs font-bold text-slate-600 dark:text-slate-300">{currentStep + 1} / {totalSteps}</span>
                     </div>
 
-                    <ExplainSpeechControls
-                        themeColor={theme.color}
-                        isMuted={isMuted}
-                        onToggleMute={() => {
-                            if (isMuted) {
-                                unlockAudioContext();
-                                setIsMuted(false);
-                                setVoiceArmed(true);
-                                setPlaybackTrigger((prev) => prev + 1);
-                            } else {
-                                setIsMuted(true);
-                                window.dispatchEvent(new CustomEvent('stop-speech'));
-                            }
-                        }}
-                    />
                     <SignOutButton />
                 </div>
             </header>
@@ -940,11 +918,15 @@ export default function CompetitiveTeachingPage() {
                         {steps.map((step, idx) => {
                             const isDone = idx < currentStep;
                             const isActive = idx === currentStep;
+                            const stepVisual = resolveVisualType(step);
                             return (
                                 <button
                                     key={step.id}
+                                    type="button"
                                     onClick={() => { goToStep(idx); }}
-                                    className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-200 flex-shrink-0 ${isActive
+                                    aria-current={isActive ? 'step' : undefined}
+                                    aria-label={`${step.title}${isDone ? ', completed' : isActive ? ', current step' : ''}`}
+                                    className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-200 flex-shrink-0 min-h-11 ${isActive
                                         ? 'text-white shadow-md'
                                         : isDone
                                             ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50'
@@ -953,13 +935,14 @@ export default function CompetitiveTeachingPage() {
                                     style={isActive ? { backgroundColor: theme.color, boxShadow: `0 4px 12px -2px ${theme.color}50` } : {}}
                                 >
                                     {isDone
-                                        ? <CheckCircle2 className="w-3 h-3" />
+                                        ? <CheckCircle2 className="w-3 h-3" aria-hidden />
                                         : (() => {
-                                            const StepIcon = stepIconFor(step.visualType);
-                                            return <StepIcon className="h-3 w-3" />;
+                                            const StepIcon = stepIconFor(stepVisual);
+                                            return <StepIcon className="h-3 w-3" aria-hidden />;
                                         })()
                                     }
                                     <span>{step.title}</span>
+                                    {isDone ? <span className="sr-only">Completed</span> : null}
                                 </button>
                             );
                         })}
@@ -989,7 +972,7 @@ export default function CompetitiveTeachingPage() {
                                     style={{ background: `linear-gradient(135deg, ${theme.color}, ${theme.color}cc)` }}
                                 >
                                     {(() => {
-                                        const StepIcon = stepIconFor(currentStepData.visualType);
+                                        const StepIcon = stepIconFor(activeVisualType);
                                         return <StepIcon className="h-6 w-6 sm:h-7 sm:w-7" />;
                                     })()}
                                 </motion.div>
@@ -1004,15 +987,6 @@ export default function CompetitiveTeachingPage() {
                                         {currentStepData.subtitle}
                                     </p>
                                 </div>
-
-                                {/* Replay / Listen — arms TTS on first tap (gesture-safe after async navigate) */}
-                                <button
-                                    onClick={armVoiceAndReplay}
-                                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-700 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex-shrink-0 mt-1"
-                                >
-                                    <RefreshCw className="w-3.5 h-3.5" />
-                                    <span>{voiceArmed ? 'Replay' : 'Listen'}</span>
-                                </button>
                             </div>
 
                             {/* Main 2-column layout on tablet+ */}
@@ -1027,10 +1001,10 @@ export default function CompetitiveTeachingPage() {
 
                                 {/* Right: Visual Aid (2/5 on large) */}
                                 <div className="lg:col-span-2 space-y-4">
-                                    {currentStepData.visualType === 'concept' && question && (
-                                        <ConceptVisual question={question} themeColor={theme.color} />
+                                    {activeVisualType === 'concept' && question && (
+                                        <ConceptVisual question={question} themeColor={theme.color} userAnswer={userAnswer} />
                                     )}
-                                    {currentStepData.visualType === 'formula' && (
+                                    {activeVisualType === 'formula' && (
                                         <>
                                             {question && (
                                                 <QuestionStemCard question={question} themeColor={theme.color} />
@@ -1038,7 +1012,7 @@ export default function CompetitiveTeachingPage() {
                                             <FormulaVisual content={currentStepData.content} themeColor={theme.color} highlights={currentStepData.highlights} />
                                         </>
                                     )}
-                                    {currentStepData.visualType === 'solution' && (
+                                    {activeVisualType === 'solution' && (
                                         <div className="space-y-3">
                                             <div className="flex items-center gap-2 px-1">
                                                 <FlaskConical className="w-4 h-4" style={{ color: theme.color }} />
@@ -1051,7 +1025,7 @@ export default function CompetitiveTeachingPage() {
                                             />
                                         </div>
                                     )}
-                                    {currentStepData.visualType === 'answer' && question && (
+                                    {activeVisualType === 'answer' && question && (
                                         <div className="space-y-3">
                                             <div className="flex items-center gap-2 px-1">
                                                 <BarChart3 className="w-4 h-4" style={{ color: theme.color }} />
@@ -1062,7 +1036,7 @@ export default function CompetitiveTeachingPage() {
                                             <AnswerVisual question={question} userAnswer={userAnswer} />
                                         </div>
                                     )}
-                                    {currentStepData.visualType === 'insight' && (
+                                    {activeVisualType === 'insight' && (
                                         question &&
                                         questionHasOptions(question) &&
                                         (isOptionAnalysisStepTitle(currentStepData.title) ||

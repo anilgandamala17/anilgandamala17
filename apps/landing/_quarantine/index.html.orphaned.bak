@@ -1197,7 +1197,7 @@
         </div>
         <div class="form-group">
           <label for="sarvamKeyInput">Sarvam AI API Key (Optional)</label>
-          <input type="password" class="setup-input" id="sarvamKeyInput" placeholder="sk_1860..." value="sk_1860hahe_G592XZAtFS6CAnYhPtQaO0rh">
+          <input type="password" class="setup-input" id="sarvamKeyInput" placeholder="sk_1860..." value="">
         </div>
         <button class="setup-submit" id="saveSetupBtn">Save &amp; Start</button>
       </div>
@@ -1316,7 +1316,7 @@
     // CONSTANTS AND GLOBAL DEFAULTS
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     let CLAUDE_API_KEY  = localStorage.getItem('CLAUDE_API_KEY') || "";
-    let SARVAM_API_KEY  = localStorage.getItem('SARVAM_API_KEY') || "sk_1860hahe_G592XZAtFS6CAnYhPtQaO0rh";
+    let SARVAM_API_KEY  = localStorage.getItem('SARVAM_API_KEY') || "";
     let activeAudio     = null;
 
     let appState = "connecting"; // connecting | idle | listening | processing | speaking
@@ -1875,7 +1875,7 @@ Respond ONLY in this exact JSON format — no preamble, no markdown fences:
         CLAUDE_API_KEY = cKey;
         localStorage.setItem('CLAUDE_API_KEY', cKey);
         
-        SARVAM_API_KEY = sKey || "sk_1860hahe_G592XZAtFS6CAnYhPtQaO0rh";
+        SARVAM_API_KEY = sKey || "";
         localStorage.setItem('SARVAM_API_KEY', SARVAM_API_KEY);
         
         setupOverlay.style.display = 'none';
@@ -1902,7 +1902,7 @@ Respond ONLY in this exact JSON format — no preamble, no markdown fences:
       CLAUDE_API_KEY = cKey;
       localStorage.setItem('CLAUDE_API_KEY', cKey);
       
-      SARVAM_API_KEY = sKey || "sk_1860hahe_G592XZAtFS6CAnYhPtQaO0rh";
+      SARVAM_API_KEY = sKey || "";
       localStorage.setItem('SARVAM_API_KEY', SARVAM_API_KEY);
       
       settingsModal.style.display = 'none';

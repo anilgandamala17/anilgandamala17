@@ -185,13 +185,15 @@ export function LearningCourseCard({
                 variant={course.highlight.variant}
               />
             ) : null}
-            <span className="inline-flex items-center gap-1 rounded-full bg-white/95 px-2 py-0.5 text-[11px] font-semibold tabular-nums text-slate-700 ring-1 ring-slate-200/80">
-              <Star
-                className="size-3 fill-amber-400 text-amber-400"
-                aria-hidden
-              />
-              <span>{course.rating.toFixed(1)}</span>
-            </span>
+            {typeof course.rating === 'number' ? (
+              <span className="inline-flex items-center gap-1 rounded-full bg-white/95 px-2 py-0.5 text-[11px] font-semibold tabular-nums text-slate-700 ring-1 ring-slate-200/80">
+                <Star
+                  className="size-3 fill-amber-400 text-amber-400"
+                  aria-hidden
+                />
+                <span>{course.rating.toFixed(1)}</span>
+              </span>
+            ) : null}
           </div>
         </div>
 

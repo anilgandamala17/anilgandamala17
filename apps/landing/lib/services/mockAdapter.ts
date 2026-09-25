@@ -6,6 +6,8 @@
  * functions, never fetch('/api/...') directly.
  */
 
+import { PRO_MONTHLY_INR } from '@/lib/pricing'
+
 const DEMO_LAG_MS = 180
 
 async function demoDelay(ms = DEMO_LAG_MS): Promise<void> {
@@ -61,16 +63,39 @@ export const mockAdapter = {
    */
   async chat(userMessage: string): Promise<string> {
     await demoDelay(220)
-    const clipped =
-      userMessage.length > 160 ? `${userMessage.slice(0, 160)}…` : userMessage
+    const q = userMessage.trim().toLowerCase()
+
+    if (/pricing|price|cost|plan|subscription/.test(q)) {
+      return [
+        'AIra lists three plans on the Pricing page:',
+        '',
+        '• **Simple** — Free forever',
+        `• **Pro** — ₹${PRO_MONTHLY_INR} / month (placeholder pricing on the site)`,
+        '• **Enterprise** — Custom for schools',
+        '',
+        'Start free with Sign up, or Contact us for school / Enterprise needs.',
+      ].join('\n')
+    }
+
+    if (/homework|solve|equation|math problem|physics numerical/.test(q)) {
+      return [
+        'I can guide you to the right AIra experience for that.',
+        '',
+        '• School topic / chapter → **Curriculum Mode** → open the topic in **AI Tutor**',
+        '• Entrance MCQ / PYQ style → **Competitive Mode** → practice or **AI Explanation**',
+        '',
+        'Share your class (or exam) and subject, and I’ll point you to the best path.',
+      ].join('\n')
+    }
+
     return [
-      `Thanks for reaching out! I'm AIra's learning counselor.`,
-      ``,
-      `You said: “${clipped}”`,
-      ``,
-      `For school learning, sign in as a **Student**, pick a mode, then open Curriculum → a topic in the tutor. Teachers land on the teacher dashboard.`,
-      ``,
-      `Tell me your grade and goal and I can suggest a clear next step.`,
+      'Happy to help — here’s the AIra map in one glance:',
+      '',
+      '• **Curriculum Mode** — Classes 6–12, subjects, chapters, AI Tutor',
+      '• **Competitive Mode** — JEE, NEET & more · mocks, PYQs, quizzes, AI Explanation',
+      '• **Getting started** — Sign up → Mode Selection → pick a path',
+      '',
+      'Ask anything about features, exams, subjects, pricing, or how to start.',
     ].join('\n')
   },
 

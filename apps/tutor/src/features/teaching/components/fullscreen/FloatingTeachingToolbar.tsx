@@ -89,10 +89,10 @@ const FloatingTeachingToolbar = forwardRef<HTMLDivElement, FloatingTeachingToolb
           className="floating-teaching-toolbar__btn floating-teaching-toolbar__btn--doubt touch-target"
           onClick={onRaiseDoubt}
           disabled={isInDoubtMode}
-          aria-label="Raise Doubt"
+          aria-label="Ask AIra"
         >
           <HelpCircle className="w-4 h-4 shrink-0" />
-          <span className="hidden sm:inline">Raise Doubt</span>
+          <span className="hidden sm:inline">Ask AIra</span>
         </button>
 
         {showListeningControls && (

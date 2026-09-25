@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import type { GeneratedSummary } from '@/types';
 import { BookOpen, CheckCircle2, Link, Download, Share2, FileText } from 'lucide-react';
-import { ExportService } from '@/services/exportService';
 
 interface SummaryViewerProps {
     summary: GeneratedSummary;
@@ -9,10 +8,12 @@ interface SummaryViewerProps {
 
 export default function SummaryViewer({ summary }: SummaryViewerProps) {
     const handleDownloadPDF = async () => {
+        const { ExportService } = await import('@/services/exportService');
         await ExportService.exportSummaryToPDF(summary);
     };
 
     const handleDownloadDOCX = async () => {
+        const { ExportService } = await import('@/services/exportService');
         await ExportService.exportSummaryToDOCX(summary);
     };
 

@@ -13,6 +13,7 @@ import {
   redirectToLandingLogin,
   redirectToLandingVerifyEmail,
 } from '@/lib/authSession';
+import { shouldAutoElevateDemoRole } from '@/lib/demoRoleElevation';
 
 export function ProtectedRoute({ children }: { children: ReactNode }) {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
@@ -125,9 +126,15 @@ export function RoleGuard({
   const location = useLocation();
   const pathRole = getRoleFromPath(location.pathname);
 
-  const needsDemoSwitch = Boolean(
-    isDemo && pathRole && pathRole === allowedRole && role !== allowedRole,
-  );
+  // Production builds must not auto-elevate roles via URL. Demo role switching
+  // remains available in DEV (and via /dev/demo-roles for authenticated admins).
+  const needsDemoSwitch = shouldAutoElevateDemoRole({
+    isDev: import.meta.env.DEV,
+    isDemo,
+    pathRole,
+    allowedRole,
+    currentRole: role,
+  });
 
   useEffect(() => {
     if (!needsDemoSwitch || !pathRole) return;

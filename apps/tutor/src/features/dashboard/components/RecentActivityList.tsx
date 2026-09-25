@@ -13,7 +13,7 @@ export default function RecentActivityList({ items, onOpen, empty }: RecentActiv
   const list = items.slice(0, 5);
 
   return (
-    <section className="dash-card" aria-label="Recent activity">
+    <section className="dash-surface-support" aria-label="Recent activity">
       <div className="flex items-end justify-between gap-3 mb-3">
         <div>
           <p className="dash-eyebrow mb-0.5">Recent activity</p>

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, lazy, Suspense } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -11,7 +11,6 @@ import {
   Timer,
 } from 'lucide-react';
 import { COMPETITIVE_EXAMS } from '@/data/mockData';
-import ExamFlow from '@/features/competitive/exam/ExamFlow';
 import type { WeeklyExamSession } from '@/types/weeklyExam';
 import {
   formatWindowLabel,
@@ -20,6 +19,7 @@ import {
   listPublishedForWeek,
 } from '@/features/competitive/services/weeklyExamSchedule';
 
+const ExamFlow = lazy(() => import('@/features/competitive/exam/ExamFlow'));
 interface WeeklyTestsFlowProps {
   onExamStateChange?: (active: boolean) => void;
 }
@@ -269,15 +269,23 @@ export default function WeeklyTestsFlow({ onExamStateChange }: WeeklyTestsFlowPr
     !!activeSession && getSessionWindowState(activeSession, new Date(nowTick)) === 'live';
   if (weeklySessionId && activeSession && (sessionLive || keepExamOpen)) {
     return (
-      <ExamFlow
-        isDashboardView
-        onExamStateChange={(active) => {
-          if (active) setKeepExamOpen(true);
-          onExamStateChange?.(active);
-        }}
-        flowType="weekly"
-        weeklySession={activeSession}
-      />
+      <Suspense
+        fallback={
+          <div className="flex justify-center py-16 text-slate-400" aria-busy="true" aria-label="Loading exam">
+            <Loader2 className="h-7 w-7 animate-spin" />
+          </div>
+        }
+      >
+        <ExamFlow
+          isDashboardView
+          onExamStateChange={(active) => {
+            if (active) setKeepExamOpen(true);
+            onExamStateChange?.(active);
+          }}
+          flowType="weekly"
+          weeklySession={activeSession}
+        />
+      </Suspense>
     );
   }
 

@@ -1,5 +1,5 @@
 import React, { createContext, memo, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import {
     AlertTriangle,
     Clock,
@@ -8,7 +8,6 @@ import {
     Minimize2,
     ChevronLeft,
     ChevronRight,
-    Bookmark,
     CheckCircle2,
     Eraser,
     FileText,
@@ -21,6 +20,8 @@ import {
 import type { Question } from '@/features/competitive/data/competitiveQuestions';
 import type { Exam, ExamSubject } from '@/data/mockData';
 import { EXAM_THEMES } from '@/features/competitive/data/examThemes';
+import { formatExamMath } from '@/utils/examText';
+import { useDialogA11y } from '@/hooks/useDialogA11y';
 
 export interface LiveExamPanelProps {
     exam: Exam;
@@ -29,6 +30,8 @@ export interface LiveExamPanelProps {
     subjectFilter?: string | null;
     onSubjectFilterChange?: (subjectId: string | null) => void;
     isFullPaper?: boolean;
+    correctMarks?: number;
+    incorrectMarks?: number;
     questions: Question[];
     currentQuestionIndex: number;
     userAnswers: number[];
@@ -45,8 +48,6 @@ export interface LiveExamPanelProps {
     onMarkAndNext: () => void;
     onPrevious: () => void;
     onSubmit: () => void;
-    onToggleBookmark: () => void;
-    onNoteChange: (text: string) => void;
     onTimeTick?: (remaining: number, elapsed: number) => void;
     onTimeExpired?: () => void;
     elapsedSeconds?: number;
@@ -94,6 +95,10 @@ function ExamTimeProvider({
 
     useEffect(() => {
         const interval = setInterval(() => {
+            if (remainingRef.current <= 0) {
+                clearInterval(interval);
+                return;
+            }
             const next = remainingRef.current - 1;
             elapsedRef.current += 1;
             remainingRef.current = Math.max(0, next);
@@ -116,23 +121,42 @@ function ExamTimeProvider({
 
 function ExamMobileTimer() {
     const { remaining, isLowTime } = useContext(ExamTimeContext);
+    const label = isLowTime
+        ? `Exam timer, low time remaining: ${formatClock(remaining)}`
+        : `Exam timer: ${formatClock(remaining)} remaining`;
     return (
-        <div className={`exam-mobile-timer ${isLowTime ? 'exam-mobile-timer--low' : ''}`}>
-            <Clock className="h-3.5 w-3.5" />
-            <strong>{formatClock(remaining)}</strong>
+        <div
+            className={`exam-mobile-timer lg:hidden ${isLowTime ? 'exam-mobile-timer--low' : ''}`}
+            role="timer"
+            aria-live="polite"
+            aria-atomic="true"
+            aria-label={label}
+        >
+            {isLowTime ? <AlertTriangle className="h-3.5 w-3.5" aria-hidden /> : <Clock className="h-3.5 w-3.5" aria-hidden />}
+            <strong aria-hidden>{formatClock(remaining)}</strong>
+            {isLowTime ? <span className="sr-only">Low time</span> : null}
         </div>
     );
 }
 
 function ExamPaletteTimer() {
     const { remaining, isLowTime } = useContext(ExamTimeContext);
+    const label = isLowTime
+        ? `Exam timer, low time remaining: ${formatClock(remaining)}`
+        : `Exam timer: ${formatClock(remaining)} remaining`;
     return (
-        <div className={`exam-palette__timer ${isLowTime ? 'exam-palette__timer--low' : ''}`}>
+        <div
+            className={`exam-palette__timer ${isLowTime ? 'exam-palette__timer--low' : ''}`}
+            role="timer"
+            aria-live="polite"
+            aria-atomic="true"
+            aria-label={label}
+        >
             <div>
-                {isLowTime ? <AlertTriangle className="h-4 w-4" /> : <Clock className="h-4 w-4" />}
-                <span>Time remaining</span>
+                {isLowTime ? <AlertTriangle className="h-4 w-4" aria-hidden /> : <Clock className="h-4 w-4" aria-hidden />}
+                <span>{isLowTime ? 'Low time remaining' : 'Time remaining'}</span>
             </div>
-            <strong>{formatClock(remaining)}</strong>
+            <strong aria-hidden>{formatClock(remaining)}</strong>
         </div>
     );
 }
@@ -144,6 +168,8 @@ function LiveExamPanel({
     subjectFilter = null,
     onSubjectFilterChange,
     isFullPaper = false,
+    correctMarks = 4,
+    incorrectMarks = -1,
     questions,
     currentQuestionIndex,
     userAnswers,
@@ -151,7 +177,6 @@ function LiveExamPanel({
     markedForReview,
     timeLeftSeconds,
     bookmarked,
-    notes,
     onAnswerSelect,
     onNavigate,
     onClear,
@@ -159,8 +184,6 @@ function LiveExamPanel({
     onMarkAndNext,
     onPrevious,
     onSubmit,
-    onToggleBookmark,
-    onNoteChange,
     onTimeTick,
     onTimeExpired,
     elapsedSeconds = 0,
@@ -173,8 +196,13 @@ function LiveExamPanel({
     const q = questions[safeIndex];
     const panelRef = useRef<HTMLDivElement>(null);
     const [fullscreen, setFullscreen] = useState(false);
-    const [showNotes, setShowNotes] = useState(false);
     const [showPalette, setShowPalette] = useState(false);
+    const reduceMotion = useReducedMotion();
+    const drawerRef = useDialogA11y({
+        open: showPalette,
+        onClose: () => setShowPalette(false),
+    });
+    const isLastQuestion = questionCount > 0 && safeIndex === questionCount - 1;
 
     const answeredCount = useMemo(
         () => userAnswers.filter((a) => a !== -1).length,
@@ -240,11 +268,17 @@ function LiveExamPanel({
     }, [q?.options.length, onAnswerSelect, onSaveAndNext, onPrevious]);
 
     const toggleFullscreen = async () => {
-        const el = panelRef.current;
-        if (!el) return;
         try {
-            if (!document.fullscreenElement) await el.requestFullscreen();
-            else await document.exitFullscreen();
+            if (!document.fullscreenElement) {
+                const root = document.documentElement as HTMLElement & {
+                    requestFullscreen?: () => Promise<void>;
+                    webkitRequestFullscreen?: () => void;
+                };
+                if (root.requestFullscreen) await root.requestFullscreen();
+                else if (root.webkitRequestFullscreen) root.webkitRequestFullscreen();
+            } else {
+                await document.exitFullscreen();
+            }
         } catch {
             /* fullscreen may be blocked */
         }
@@ -345,8 +379,8 @@ function LiveExamPanel({
                 <span>Answers are auto-saved</span>
             </div>
 
-            <button type="button" onClick={onSubmit} className="exam-submit-button">
-                <Send className="h-4 w-4" />
+            <button type="button" onClick={onSubmit} className="exam-submit-button" aria-label="Review and submit test">
+                <Send className="h-4 w-4" aria-hidden />
                 Review & submit test
             </button>
         </>
@@ -371,8 +405,8 @@ function LiveExamPanel({
                             <FileText className="h-4 w-4" />
                         </span>
                         <div className="min-w-0">
-                            <p>{exam.name}</p>
-                            <span>
+                            <p title={exam.name}>{exam.name}</p>
+                            <span title={isFullPaper ? 'Full paper' : subjectName}>
                                 {isFullPaper ? 'Full paper' : subjectName}
                                 {q.subjectName && isFullPaper ? ` · ${q.subjectName}` : ''} · Live assessment
                             </span>
@@ -381,7 +415,7 @@ function LiveExamPanel({
 
                     <div className="exam-command-bar__status">
                         <span className="hidden sm:inline-flex">
-                            <ShieldCheck className="h-3.5 w-3.5" /> Secure session
+                            <ShieldCheck className="h-3.5 w-3.5" /> Practice session
                         </span>
                         <ExamMobileTimer />
                         <button
@@ -403,12 +437,12 @@ function LiveExamPanel({
                     </div>
                 </header>
 
-                <div className="exam-progress-track">
+                <div className="exam-progress-track" aria-hidden>
                     <motion.div
                         style={{ background: `linear-gradient(90deg, ${theme.color}, ${theme.color}bb)` }}
                         initial={false}
                         animate={{ width: `${((safeIndex + 1) / questions.length) * 100}%` }}
-                        transition={{ ease: 'easeOut', duration: 0.35 }}
+                        transition={reduceMotion ? { duration: 0 } : { ease: 'easeOut', duration: 0.35 }}
                     />
                 </div>
 
@@ -420,36 +454,52 @@ function LiveExamPanel({
                             <span className="exam-meta-chip">{q.subjectName}</span>
                         ) : null}
                         <span className="exam-meta-chip hidden sm:inline-flex">~{estMinutes} min</span>
-                        {q.examYear && <span className="exam-meta-chip exam-meta-chip--pyq">PYQ {q.examYear}</span>}
+                        {q.examYear && (
+                            <span className="exam-meta-chip exam-meta-chip--pyq">Year {q.examYear}</span>
+                        )}
                     </div>
-                    <div className="exam-marking-scheme">
-                        <span>+4 correct</span>
-                        <span>−1 incorrect</span>
+                    <div className="exam-marking-scheme" title="Exam marking scheme from ExamConfig">
+                        <span>Practice +{correctMarks}</span>
+                        <span>
+                            {incorrectMarks === 0
+                                ? '0 incorrect'
+                                : `${incorrectMarks} incorrect`}
+                        </span>
                     </div>
                 </div>
 
-                <div className="exam-mobile-question-strip lg:hidden">
-                    {paletteIndices.map((i) => (
-                        <button
-                            key={i}
-                            type="button"
-                            onClick={() => onNavigate(i)}
-                            className={`${i === safeIndex ? 'is-current' : ''} ${
-                                userAnswers[i] !== -1 ? 'is-answered' : ''
-                            }`}
-                        >
-                            {questions[i]?.questionNumber ?? i + 1}
-                        </button>
-                    ))}
+                <div className="exam-mobile-question-strip lg:hidden" role="navigation" aria-label="Question shortcuts">
+                    {paletteIndices.map((i) => {
+                        const num = questions[i]?.questionNumber ?? i + 1;
+                        const answered = userAnswers[i] !== -1;
+                        const current = i === safeIndex;
+                        const stateLabel = current
+                            ? 'current'
+                            : answered
+                              ? 'answered'
+                              : 'unanswered';
+                        return (
+                            <button
+                                key={i}
+                                type="button"
+                                onClick={() => onNavigate(i)}
+                                className={`${current ? 'is-current' : ''} ${answered ? 'is-answered' : ''}`}
+                                aria-label={`Question ${num}, ${stateLabel}`}
+                                aria-current={current ? 'true' : undefined}
+                            >
+                                {num}
+                            </button>
+                        );
+                    })}
                 </div>
 
                 <main className="exam-question-scroll custom-scrollbar">
                     <div className="exam-question-content">
                         <div className="exam-question-copy">
-                            <p className="exam-question-copy__index">
-                                Q{displayNumber} of {questions.length}
+                            <p className="exam-question-copy__index" id="exam-question-label">
+                                Question {displayNumber} of {questions.length}
                             </p>
-                            <h2>{q.text}</h2>
+                            <h2 className="exam-question-stem">{formatExamMath(q.text)}</h2>
                             {stemImages.length > 0 ? (
                                 <div className="exam-stem-images">
                                     {stemImages.map((src) => (
@@ -459,78 +509,76 @@ function LiveExamPanel({
                             ) : null}
                         </div>
 
-                        <div className="exam-options">
+                        <div
+                            className="exam-options"
+                            role="radiogroup"
+                            aria-labelledby="exam-question-label"
+                        >
                             {q.options.map((option, idx) => {
                                 const selected = userAnswers[safeIndex] === idx;
+                                const letter = String.fromCharCode(65 + idx);
+                                const optionText = formatExamMath(option);
                                 return (
                                     <motion.button
                                         key={idx}
                                         type="button"
+                                        role="radio"
+                                        aria-checked={selected}
+                                        aria-label={`Option ${letter}: ${optionText}`}
                                         onClick={() => onAnswerSelect(idx)}
-                                        whileTap={{ scale: 0.995 }}
+                                        whileTap={reduceMotion ? undefined : { scale: 0.995 }}
                                         className={`exam-option ${selected ? 'exam-option--selected' : ''}`}
                                     >
-                                        <span className="exam-option__letter">{String.fromCharCode(65 + idx)}</span>
-                                        <span className="exam-option__text">{option}</span>
-                                        {selected && <CheckCircle2 className="exam-option__check" />}
+                                        <span className="exam-option__letter" aria-hidden>
+                                            {letter}
+                                        </span>
+                                        <span className="exam-option__text">{optionText}</span>
+                                        {selected ? (
+                                            <>
+                                                <CheckCircle2 className="exam-option__check" aria-hidden />
+                                                <span className="sr-only">Selected</span>
+                                            </>
+                                        ) : null}
                                     </motion.button>
                                 );
                             })}
                         </div>
-
-                        <AnimatePresence initial={false}>
-                            {(showNotes || notes[safeIndex]) && (
-                                <motion.div
-                                    initial={{ opacity: 0, height: 0 }}
-                                    animate={{ opacity: 1, height: 'auto' }}
-                                    exit={{ opacity: 0, height: 0 }}
-                                    className="exam-notes"
-                                >
-                                    <label>
-                                        <FileText className="h-4 w-4" /> Private rough notes
-                                    </label>
-                                    <textarea
-                                        value={notes[safeIndex] || ''}
-                                        onChange={(e) => onNoteChange(e.target.value)}
-                                        rows={3}
-                                        placeholder="Write a formula, shortcut, or reminder…"
-                                    />
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
                     </div>
                 </main>
 
                 <footer className="exam-action-bar">
                     <div className="exam-action-bar__tools">
-                        <button type="button" onClick={onPrevious} disabled={safeIndex === 0}>
-                            <ChevronLeft className="h-4 w-4" /><span>Previous</span>
+                        <button type="button" onClick={onPrevious} disabled={safeIndex === 0} aria-label="Previous question">
+                            <ChevronLeft className="h-4 w-4" aria-hidden /><span>Previous</span>
                         </button>
-                        <button type="button" onClick={onMarkAndNext} className="is-mark">
-                            <Flag className="h-4 w-4" /><span>Mark & next</span>
+                        <button type="button" onClick={onMarkAndNext} className="is-mark" aria-label="Mark for review and go to next question">
+                            <Flag className="h-4 w-4" aria-hidden /><span>Mark & next</span>
                         </button>
-                        <button type="button" onClick={onClear}>
-                            <Eraser className="h-4 w-4" /><span>Clear</span>
+                        <button type="button" onClick={onClear} aria-label="Clear answer">
+                            <Eraser className="h-4 w-4" aria-hidden /><span>Clear</span>
                         </button>
                         <button
                             type="button"
-                            onClick={onToggleBookmark}
-                            className={bookmarked[safeIndex] ? 'is-bookmarked' : ''}
+                            onClick={onSubmit}
+                            className="exam-action-bar__review lg:hidden"
+                            aria-label="Review and submit test"
                         >
-                            <Bookmark className="h-4 w-4" /><span>Bookmark</span>
-                        </button>
-                        <button type="button" onClick={() => setShowNotes((v) => !v)}>
-                            <FileText className="h-4 w-4" /><span>Notes</span>
+                            <Send className="h-4 w-4" aria-hidden /><span>Review & Submit</span>
                         </button>
                     </div>
-                    <button type="button" onClick={onSaveAndNext} className="exam-primary-action">
-                        <span>{safeIndex === questions.length - 1 ? 'Save & review' : 'Save & next'}</span>
-                        <ChevronRight className="h-4 w-4" />
+                    <button
+                        type="button"
+                        onClick={onSaveAndNext}
+                        className="exam-primary-action"
+                        aria-label={isLastQuestion ? 'Save answer' : 'Save and go to next question'}
+                    >
+                        <span>{isLastQuestion ? 'Save' : 'Next'}</span>
+                        {!isLastQuestion ? <ChevronRight className="h-4 w-4" aria-hidden /> : null}
                     </button>
                 </footer>
             </section>
 
-            <aside className="exam-palette hidden lg:flex">
+            <aside className="exam-palette hidden lg:flex" aria-label="Exam sidebar">
                 <ExamPaletteTimer />
                 {palette}
             </aside>
@@ -538,10 +586,11 @@ function LiveExamPanel({
             <AnimatePresence>
                 {showPalette && (
                     <motion.div
+                        ref={drawerRef}
                         className="exam-mobile-drawer lg:hidden"
-                        initial={{ opacity: 0 }}
+                        initial={reduceMotion ? false : { opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+                        exit={reduceMotion ? undefined : { opacity: 0 }}
                         role="dialog"
                         aria-modal="true"
                         aria-label="Question palette"
@@ -553,10 +602,14 @@ function LiveExamPanel({
                             aria-label="Close question palette"
                         />
                         <motion.aside
-                            initial={{ y: '100%' }}
+                            initial={reduceMotion ? false : { y: '100%' }}
                             animate={{ y: 0 }}
-                            exit={{ y: '100%' }}
-                            transition={{ type: 'spring', damping: 28, stiffness: 260 }}
+                            exit={reduceMotion ? undefined : { y: '100%' }}
+                            transition={
+                                reduceMotion
+                                    ? { duration: 0 }
+                                    : { type: 'spring', damping: 28, stiffness: 260 }
+                            }
                             className="exam-mobile-drawer__sheet"
                         >
                             <div className="exam-mobile-drawer__handle" />

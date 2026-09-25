@@ -10,27 +10,22 @@ type DashboardModeSwitcherProps = {
 const MODES: Array<{
   id: DashboardMode;
   label: string;
-  shortLabel: string;
   icon: typeof BookOpen;
 }> = [
-  { id: 'curriculum', label: 'Curriculum Dashboard', shortLabel: 'Curriculum', icon: BookOpen },
-  { id: 'competitive', label: 'Competitive Dashboard', shortLabel: 'Competitive', icon: Trophy },
+  { id: 'curriculum', label: 'Curriculum', icon: BookOpen },
+  { id: 'competitive', label: 'Competitive', icon: Trophy },
 ];
 
 /**
- * Accessible segmented control for dashboard mode. Stays on /student/dashboard.
+ * Premium segmented control for dashboard mode.
+ * Stays on /student/dashboard — parent updates ?mode= via replace.
  */
 export default function DashboardModeSwitcher({ value, onChange }: DashboardModeSwitcherProps) {
   return (
     <div
       role="tablist"
       aria-label="Dashboard mode"
-      className="dash-mode-switcher flex w-full max-w-full overflow-x-auto overscroll-x-contain rounded-2xl border p-1 gap-1"
-      style={{
-        borderColor: 'var(--dash-border)',
-        background: 'var(--dash-surface-1)',
-        WebkitOverflowScrolling: 'touch',
-      }}
+      className="dash-mode-switcher"
     >
       {MODES.map((mode) => {
         const selected = value === mode.id;
@@ -60,26 +55,10 @@ export default function DashboardModeSwitcher({ value, onChange }: DashboardMode
                 onChange(next.id);
               }
             }}
-            className={`dash-mode-switcher__btn relative flex min-h-[44px] min-w-0 flex-1 items-center justify-center gap-2 rounded-xl px-3 py-2.5 text-sm font-bold transition-all whitespace-nowrap ${
-              selected
-                ? 'text-white shadow-sm'
-                : 'hover:opacity-90'
-            }`}
-            style={
-              selected
-                ? {
-                    background: 'var(--dash-brand)',
-                    color: '#fff',
-                  }
-                : {
-                    color: 'var(--dash-text-2)',
-                    background: 'transparent',
-                  }
-            }
+            className="dash-mode-switcher__btn"
           >
             <Icon className="h-4 w-4 shrink-0" aria-hidden />
-            <span className="hidden sm:inline truncate">{mode.label}</span>
-            <span className="sm:hidden truncate">{mode.shortLabel}</span>
+            <span className="truncate">{mode.label}</span>
           </button>
         );
       })}

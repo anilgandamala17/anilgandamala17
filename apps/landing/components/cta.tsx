@@ -1,102 +1,101 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import { ArrowRight, Check } from 'lucide-react'
 import { AuthEntryLink } from '@/components/auth-entry-link'
+import { BRAND, CTAS } from '@/lib/site'
 
 interface CTAProps {
   onPricingClick?: () => void
 }
 
+const TRUST_ITEMS = [
+  'No credit card required',
+  '14 days free access',
+  'Cancel anytime',
+] as const
+
 export function CTA({ onPricingClick }: CTAProps) {
   return (
-    <section className="py-12 md:py-24 bg-gradient-to-b from-purple-50/50 to-blue-50/50 relative overflow-hidden isolate">
-      {/* --- High Contrast Premium "Blueprint" Scaling for CTA --- */}
-      <div className="absolute inset-0 pointer-events-none z-0 select-none">
-        {/* Left blueprint technical rings (High contrast) */}
-        <svg
-          className="absolute top-[-20%] left-[-10%] w-[750px] h-[750px] opacity-[0.4] rotate-12"
-          viewBox="0 0 700 700"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+    <section
+      className="section-padding relative isolate overflow-hidden"
+      aria-labelledby="cta-heading"
+    >
+      {/* Soft page atmosphere — matches hero wash, not purple mesh */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background: `
+            radial-gradient(ellipse 70% 55% at 15% 40%, rgb(29 78 216 / 0.07), transparent 55%),
+            radial-gradient(ellipse 60% 50% at 90% 60%, rgb(15 118 110 / 0.06), transparent 50%),
+            linear-gradient(180deg, #f8fafc 0%, #eef2ff 55%, #f8fafc 100%)
+          `,
+        }}
+        aria-hidden
+      />
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div
+          className="relative overflow-hidden rounded-[var(--radius-card)] border border-white/10 shadow-[var(--shadow-lg)]"
+          style={{
+            background:
+              'linear-gradient(145deg, #0f172a 0%, #1e3a8a 48%, #0f766e 140%)',
+          }}
         >
-          <circle cx="350" cy="350" r="330" stroke="#4f46e5" strokeWidth="1.5" strokeDasharray="4 15" strokeOpacity="0.7" />
-          <circle cx="350" cy="350" r="260" stroke="#2563eb" strokeWidth="2" strokeDasharray="10 20" strokeOpacity="0.6" />
-          <circle cx="350" cy="20" r="6" fill="#4f46e5" fillOpacity="0.6" />
-        </svg>
+          {/* Restrained light accents — no blueprint clutter */}
+          <div
+            className="pointer-events-none absolute -left-24 top-1/2 size-[280px] -translate-y-1/2 rounded-full bg-primary/25 blur-3xl md:size-[360px]"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute -right-16 -top-20 size-[220px] rounded-full bg-accent/20 blur-3xl md:size-[300px]"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)',
+              backgroundSize: '28px 28px',
+            }}
+            aria-hidden
+          />
 
-        {/* Right blueprint technical rings (High contrast) */}
-        <svg
-          className="absolute bottom-[-10%] right-[-15%] w-[650px] h-[650px] opacity-[0.35] -rotate-12"
-          viewBox="0 0 600 600"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="300" cy="300" r="280" stroke="#2563eb" strokeWidth="2" strokeDasharray="3 15" strokeOpacity="0.7" />
-          <circle cx="300" cy="300" r="220" stroke="#4f46e5" strokeWidth="1.5" strokeDasharray="1 12" strokeOpacity="0.6" />
-        </svg>
-      </div>
-      <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-        <div className="relative rounded-2xl md:rounded-[3rem] overflow-hidden shadow-[0_48px_100px_-24px_rgba(49,46,129,0.3)] group/cta">
-          {/* Deep Multi-layered Mesh Gradient Background */}
-          <div className="absolute inset-0 bg-slate-950">
-            <div className="absolute inset-0 opacity-80 bg-gradient-to-br from-indigo-900 via-slate-950 to-indigo-950" />
-            {/* Animated Mesh Glows */}
-            <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-indigo-600/30 rounded-full blur-[100px] group-hover/cta:translate-x-12 transition-transform duration-1000" />
-            <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[100px] group-hover/cta:-translate-x-12 transition-transform duration-1000" />
-          </div>
-          
-          {/* Glassmorphic Layer - Subtle Grid Texture */}
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-               style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-
-          {/* Internal Blueprint Decorations */}
-          <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.15] scale-150 rotate-12 pointer-events-none" viewBox="0 0 1000 1000">
-            <circle cx="500" cy="500" r="450" stroke="white" strokeWidth="1" strokeDasharray="4 20" />
-            <circle cx="500" cy="500" r="350" stroke="white" strokeWidth="0.5" strokeDasharray="1 10" />
-          </svg>
-
-          {/* Content - Glass Container */}
-          <div className="relative px-5 md:px-16 py-10 md:py-28 text-center text-white isolate">
-            <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-[2px] -z-10" />
-            
-            <h2 className="text-2xl sm:text-4xl md:text-6xl font-extrabold mb-6 md:mb-8 tracking-tight leading-[1.1]">
-              Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">Transform</span> <br className="hidden md:block"/> Your Learning?
+          {/* Balanced panel: tighter on mobile, composed on desktop */}
+          <div className="relative mx-auto flex max-w-2xl flex-col items-center px-5 py-11 text-center sm:px-10 sm:py-14 md:max-w-3xl md:px-14 md:py-16">
+            <h2
+              id="cta-heading"
+              className="text-balance text-[1.65rem] font-bold leading-[1.18] tracking-tight text-white sm:text-4xl md:text-[2.625rem] md:leading-[1.12]"
+            >
+              Ready to transform your learning?
             </h2>
-            <p className="text-lg md:text-xl text-indigo-100/80 max-w-2xl mx-auto mb-12 font-medium leading-relaxed">
-              Join thousands of successful students who have achieved their goals with Aɪra. Start your free trial today and unlock your potential.
+
+            <p className="mt-3.5 max-w-lg text-pretty text-sm leading-relaxed text-slate-200/85 sm:mt-5 sm:text-base md:text-lg">
+              Join students who use {BRAND.name} for boards, JEE, and NEET.
+              Start free and unlock a tutor that adapts to you.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button
-                size="lg"
-                className="h-16 bg-white hover:bg-slate-50 text-indigo-950 font-bold px-10 rounded-2xl group/btn shadow-[0_20px_40px_-10px_rgba(255,255,255,0.2)] hover:shadow-[0_25px_50px_-12px_rgba(255,255,255,0.3)] transition-all duration-300 border-b-4 border-slate-200 hover:border-b-2 hover:translate-y-[2px]"
-                asChild
+            <div className="mt-7 flex w-full max-w-sm flex-col items-stretch gap-2.5 sm:mt-8 sm:max-w-none sm:flex-row sm:items-center sm:justify-center sm:gap-3">
+              <AuthEntryLink
+                href={CTAS.primary.href}
+                className="btn-primary h-11 w-full px-6 text-sm shadow-md shadow-black/20 sm:w-auto sm:min-w-[11rem]"
               >
-                <AuthEntryLink href="/signup">
-                  Start Free Trial
-                  <ArrowRight className="ml-3 w-6 h-6 group-hover/btn:translate-x-2 transition-transform" />
-                </AuthEntryLink>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
+                {CTAS.primary.label}
+                <ArrowRight className="size-4" aria-hidden />
+              </AuthEntryLink>
+              <button
+                type="button"
                 onClick={onPricingClick}
-                className="h-16 border-2 border-white/30 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 font-bold px-10 rounded-2xl transition-all duration-300 cursor-pointer"
+                className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[var(--radius-btn)] border border-white/25 bg-white/5 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto sm:min-w-[11rem]"
               >
                 View Pricing
-              </Button>
+              </button>
             </div>
 
-            <ul className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-white/10 pt-8 text-sm font-medium text-white/80">
-              {[
-                'No credit card required',
-                '14 days free access',
-                'Cancel anytime',
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-2">
+            <ul className="mt-7 flex w-full max-w-md flex-col items-center gap-2.5 border-t border-white/10 pt-5 text-xs font-medium text-slate-300/90 sm:mt-8 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-6 sm:gap-y-2 sm:pt-6 sm:text-sm">
+              {TRUST_ITEMS.map((item) => (
+                <li key={item} className="flex items-center gap-1.5">
                   <Check
-                    className="size-4 shrink-0 text-emerald-400"
+                    className="size-3.5 shrink-0 text-emerald-400 sm:size-4"
                     strokeWidth={2.5}
                     aria-hidden
                   />

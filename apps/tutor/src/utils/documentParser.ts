@@ -1,8 +1,15 @@
-import mammoth from 'mammoth';
-
 type PdfJsModule = typeof import('pdfjs-dist');
+type MammothModule = typeof import('mammoth');
 
 let pdfjsReady: Promise<PdfJsModule> | null = null;
+let mammothReady: Promise<MammothModule> | null = null;
+
+async function getMammoth(): Promise<MammothModule> {
+    if (!mammothReady) {
+        mammothReady = import('mammoth');
+    }
+    return mammothReady;
+}
 
 /**
  * Lazy-load pdfjs only when a PDF is uploaded.
@@ -85,6 +92,7 @@ async function extractPdfText(file: File): Promise<string> {
 
 async function extractDocxText(file: File): Promise<string> {
     try {
+        const mammoth = await getMammoth();
         const arrayBuffer = await file.arrayBuffer();
         const result = await mammoth.extractRawText({ arrayBuffer });
         return result.value.trim();

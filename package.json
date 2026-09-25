@@ -11,7 +11,12 @@
     "probe": "node scripts/probe-debug.mjs",
     "build": "npm run build --prefix apps/landing && npm run build --prefix apps/tutor",
     "build:landing": "npm run build --prefix apps/landing",
-    "build:tutor": "npm run build --prefix apps/tutor"
+    "build:tutor": "npm run build --prefix apps/tutor",
+    "test": "npm run test:unit --prefix apps/tutor",
+    "test:unit": "npm run test:unit --prefix apps/tutor",
+    "test:e2e": "npm run test:e2e --prefix apps/tutor",
+    "lint": "npm run lint --prefix apps/landing && npm run lint --prefix apps/tutor",
+    "typecheck": "npm run build --prefix apps/tutor --if-present"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"

@@ -74,9 +74,12 @@ export default function ForgotPasswordPage() {
       {sent ? (
         <div className="space-y-4" role="status">
           <p className="text-sm text-foreground">
-            If an account exists for{' '}
-            <span className="font-medium">{email}</span>, a reset link is on its
-            way. Check your inbox and spam folder.
+            Password reset email is not connected in this demo build. Sign in
+            with your demo account from the login page, or contact{' '}
+            <a className="underline" href="mailto:Contact@airaeds.com">
+              Contact@airaeds.com
+            </a>{' '}
+            for help.
           </p>
           <Link
             href="/login"

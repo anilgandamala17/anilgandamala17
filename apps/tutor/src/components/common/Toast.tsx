@@ -19,13 +19,15 @@ interface ToastProps {
 function ToastItem({ toast, onClose }: ToastProps) {
     useEffect(() => {
         if (toast.duration !== 0) {
+            // Errors stay longer so users can read recovery guidance
+            const defaultMs = toast.type === 'error' ? 8000 : 5000;
             const timer = setTimeout(() => {
                 onClose(toast.id);
-            }, toast.duration || 5000);
+            }, toast.duration || defaultMs);
 
             return () => clearTimeout(timer);
         }
-    }, [toast.id, toast.duration, onClose]);
+    }, [toast.id, toast.duration, toast.type, onClose]);
 
     const icons = {
         success: CheckCircle,
@@ -55,15 +57,15 @@ function ToastItem({ toast, onClose }: ToastProps) {
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
-            className={`flex items-start gap-3 p-4 rounded-lg border shadow-lg max-w-md ${colors[toast.type]}`}
+            className={`flex items-start gap-3 p-4 rounded-[var(--radius-sm)] border shadow-[var(--shadow-md)] max-w-md ${colors[toast.type]}`}
             role="alert"
-            aria-live="polite"
+            aria-live={toast.type === 'error' ? 'assertive' : 'polite'}
         >
             <Icon className={`w-5 h-5 flex-shrink-0 mt-0.5 ${iconColors[toast.type]}`} />
             <p className="flex-1 text-sm font-medium">{toast.message}</p>
             <button
                 onClick={() => onClose(toast.id)}
-                className="flex-shrink-0 text-gray-400 dark:text-slate-400 hover:text-gray-600 dark:hover:text-slate-200 transition-colors"
+                className="flex-shrink-0 text-gray-400 dark:text-slate-400 hover:text-gray-600 dark:hover:text-slate-200 transition-colors focus-visible:outline-none focus-visible:shadow-[var(--focus-ring)] rounded"
                 aria-label="Close notification"
             >
                 <X className="w-4 h-4" />

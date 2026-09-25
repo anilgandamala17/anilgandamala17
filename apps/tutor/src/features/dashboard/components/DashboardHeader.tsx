@@ -31,13 +31,13 @@ function IconBtn({
       onClick={onClick}
       aria-label={label}
       title={label}
-      className="relative group p-2.5 min-w-[44px] min-h-[44px] rounded-xl transition-colors inline-flex items-center justify-center"
-      style={{ color: 'var(--dash-text-2)', transitionDuration: 'var(--dash-hover-ms)' }}
+      className="relative p-2.5 min-w-[44px] min-h-[44px] rounded-[var(--dash-radius-sm)] transition-colors inline-flex items-center justify-center focus-visible:outline-none focus-visible:shadow-[var(--dash-focus-ring)]"
+      style={{ color: 'var(--dash-text-2)' }}
       onMouseEnter={(e) => {
         e.currentTarget.style.background = danger
-          ? 'rgba(244,63,94,0.1)'
+          ? 'var(--dash-error-soft)'
           : 'var(--dash-surface-1)';
-        e.currentTarget.style.color = danger ? '#e11d48' : 'var(--dash-text)';
+        e.currentTarget.style.color = danger ? 'var(--dash-error)' : 'var(--dash-text)';
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.background = 'transparent';
@@ -45,12 +45,6 @@ function IconBtn({
       }}
     >
       {children}
-      <span
-        className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md text-[10px] font-semibold opacity-0 group-hover:opacity-100 whitespace-nowrap z-50"
-        style={{ background: 'var(--dash-surface-ink)', color: 'var(--dash-text-inv)' }}
-      >
-        {label}
-      </span>
     </button>
   );
 }
@@ -63,33 +57,34 @@ export default function DashboardHeader({
   onProfile,
   onLogout,
 }: DashboardHeaderProps) {
+  const name = displayNameForUser(user);
+
   return (
     <header
       className="sticky top-0 z-50 safe-top backdrop-blur-xl"
       style={{
-        background: 'color-mix(in srgb, var(--dash-surface-0) 82%, transparent)',
-        borderBottom: '1px solid transparent',
-        borderImage: 'linear-gradient(90deg, var(--dash-brand), transparent 70%) 1',
+        background: 'color-mix(in srgb, var(--dash-surface-0) 88%, transparent)',
+        borderBottom: '1px solid var(--dash-border)',
       }}
     >
       <div
         className="mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-3"
-        style={{ maxWidth: 'var(--dash-max-w)', borderBottom: '1px solid var(--dash-border)' }}
+        style={{ maxWidth: 'var(--dash-max-w)' }}
       >
         <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
           <Link
             to={homeTo}
-            className="flex items-center shrink-0 group active:scale-95 transition-transform"
+            className="flex items-center shrink-0 focus-visible:outline-none focus-visible:shadow-[var(--dash-focus-ring)] rounded-[var(--dash-radius-sm)]"
             aria-label="Aɪra home"
             style={{ color: 'var(--dash-text)' }}
           >
             <AiraLogo
-              height={36}
-              className="gap-2.5"
+              height={34}
+              className="gap-2"
               wordmarkClassName="hidden sm:inline text-lg tracking-tight"
             />
           </Link>
-          <nav className="hidden sm:flex items-center text-[13px]">
+          <nav className="hidden sm:flex items-center text-[13px]" aria-label="Breadcrumb">
             <span style={{ color: 'var(--dash-text-3)', fontSize: 11, marginInline: 4 }}>/</span>
             <span className="font-semibold" style={{ color: 'var(--dash-text)' }}>
               Dashboard
@@ -104,21 +99,21 @@ export default function DashboardHeader({
             borderColor: 'var(--dash-border)',
           }}
         >
-          <span className="relative flex h-2 w-2">
+          <span className="relative flex h-2 w-2" aria-hidden>
             <span
-              className="absolute inline-flex h-full w-full rounded-full opacity-60 animate-ping"
+              className="absolute inline-flex h-full w-full rounded-full opacity-50 animate-ping"
               style={{
-                background: liveNow ? '#10b981' : 'var(--dash-brand-2)',
-                animationDuration: '2s',
+                background: liveNow ? 'var(--dash-success)' : 'var(--dash-brand)',
+                animationDuration: '2.4s',
               }}
             />
             <span
               className="relative inline-flex rounded-full h-2 w-2"
-              style={{ background: liveNow ? '#10b981' : 'var(--dash-brand-2)' }}
+              style={{ background: liveNow ? 'var(--dash-success)' : 'var(--dash-brand)' }}
             />
           </span>
           <span className="text-[11px] font-semibold" style={{ color: 'var(--dash-text-2)' }}>
-            {liveNow ? 'Live session active' : 'AIra learning online'}
+            {liveNow ? 'Live session active' : 'Ready to learn'}
           </span>
         </div>
 
@@ -126,11 +121,11 @@ export default function DashboardHeader({
           <IconBtn label="Refresh data" onClick={onRefresh}>
             <RefreshCw className="w-4 h-4" />
           </IconBtn>
-          <IconBtn label={`Profile — ${displayNameForUser(user)}`} onClick={onProfile}>
+          <IconBtn label={`Profile — ${name}`} onClick={onProfile}>
             <UserAvatar
               user={user}
               size={28}
-              className="ring-1"
+              className="ring-1 ring-[var(--dash-border)]"
               fallbackClassName="text-[10px]"
             />
           </IconBtn>

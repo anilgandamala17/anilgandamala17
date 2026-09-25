@@ -202,7 +202,7 @@ function buildRecommendations(
         return [
             'Start with a topic quiz in your weakest subject to establish a baseline.',
             'Take one timed mock this week to calibrate speed under pressure.',
-            'Review previous-year papers after each mock to spot recurring patterns.',
+            'Review year practice papers after each mock to spot recurring patterns.',
         ];
     }
     if (weak[0]) {

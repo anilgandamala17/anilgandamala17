@@ -1,7 +1,6 @@
 import { useState, useRef, useCallback } from 'react';
 import type { MindMap, MindMapNode } from '@/types';
 import { ZoomIn, ZoomOut, RotateCcw, Download } from 'lucide-react';
-import { ExportService } from '@/services/exportService';
 
 // ─── Canvas geometry ───────────────────────────────────────────────────────
 const W = 1100, H = 840;
@@ -141,7 +140,10 @@ export default function MindMapViewer({ mindMap }: { mindMap: MindMap }) {
     const onUp = useCallback(() => { dragging.current = false; }, []);
 
     const reset = () => { setZoom(1); setPan({ x: 0, y: 0 }); setActivePopupNode(null); };
-    const exportPng = () => ExportService.exportToPNG('mm-wrap', `${mindMap.topicName.replace(/\s+/g, '-')}-mindmap`);
+    const exportPng = async () => {
+        const { ExportService } = await import('@/services/exportService');
+        await ExportService.exportToPNG('mm-wrap', `${mindMap.topicName.replace(/\s+/g, '-')}-mindmap`);
+    };
 
     const central = mindMap.nodes[0];
     const layoutSeed = hashString(mindMap.topicName);

@@ -543,7 +543,9 @@ ${markerList}
                 parsedContent.coreConceptsContent[match[1]] = match[2].trim();
                 conceptCount++;
             }
-            console.log(`[aiService] Extracted ${conceptCount} core concepts safely.`);
+            if (import.meta.env.DEV) {
+                console.log(`[aiService] Extracted ${conceptCount} core concepts safely.`);
+            }
 
             // Fallback validation: if we only got partial parsing, but we have an intro or core concept, we consider it a success.
             if (!parsedContent.introductionContent && Object.keys(parsedContent.coreConceptsContent).length === 0) {

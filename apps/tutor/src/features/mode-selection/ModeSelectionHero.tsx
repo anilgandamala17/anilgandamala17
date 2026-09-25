@@ -157,6 +157,7 @@ export default function ModeSelectionHero() {
                 width={1920}
                 height={360}
                 decoding="async"
+                loading={index === 0 ? 'eager' : 'lazy'}
                 fetchPriority={index === 0 ? 'high' : 'auto'}
                 className="ms-hero__img"
                 data-slide={slide.id}

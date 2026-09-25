@@ -24,19 +24,19 @@ export const SENIOR_STREAMS: Record<SeniorStreamId, SeniorStreamDefinition> = {
     id: 'mpc',
     label: 'MPC',
     shortLabel: 'MPC',
-    tagline: 'Mathematics · Physics · Chemistry · English',
+    tagline: 'Analytical path for engineering and mathematics-focused careers',
     subjectIds: ['english', 'mathematics', 'physics', 'chemistry'],
     heroImage: '/tutor-media/images/streams/mpc-hero.png',
-    accent: '#2563eb',
+    accent: '#1d4ed8',
   },
   bipc: {
     id: 'bipc',
     label: 'BiPC',
     shortLabel: 'BiPC',
-    tagline: 'Biology · Physics · Chemistry · English',
+    tagline: 'Life sciences path for medical and biology-focused careers',
     subjectIds: ['english', 'biology', 'physics', 'chemistry'],
     heroImage: '/tutor-media/images/streams/bipc-hero.png',
-    accent: '#059669',
+    accent: '#0f9d58',
   },
 };
 

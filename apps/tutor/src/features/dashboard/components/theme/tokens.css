@@ -6,13 +6,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Sora:wght@600;700;800&display=swap');
 
 :root {
-  /* Brand accent — restrained, not purple-on-white */
-  --dash-brand: #2563eb;
-  --dash-brand-2: #0ea5e9;
-  --dash-brand-3: #0d9488;
-  --dash-brand-soft: rgba(37, 99, 235, 0.1);
-  --dash-brand-glow: rgba(14, 165, 233, 0.18);
-  --dash-grad-brand: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+  /* Brand accent — aligned with landing AIra primary #1d4ed8 */
+  --dash-brand: #1d4ed8;
+  --dash-brand-2: #0369a1;
+  --dash-brand-3: #0f766e;
+  --dash-brand-soft: rgba(29, 78, 216, 0.1);
+  --dash-brand-glow: rgba(3, 105, 161, 0.16);
+  --dash-grad-brand: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
   /* Neutral surfaces preferred over decorative pastels */
   --dash-grad-aurora: linear-gradient(160deg, #ffffff 0%, #f8fafc 100%);
   --dash-grad-ink: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
@@ -44,8 +44,8 @@
   --dash-success-soft: rgba(5, 150, 105, 0.12);
   --dash-warning: #d97706;
   --dash-warning-soft: rgba(217, 119, 6, 0.12);
-  --dash-error: #e11d48;
-  --dash-error-soft: rgba(225, 29, 72, 0.12);
+  --dash-error: #dc2626;
+  --dash-error-soft: rgba(220, 38, 38, 0.12);
   --dash-info: #0284c7;
   --dash-info-soft: rgba(2, 132, 199, 0.12);
 
@@ -275,6 +275,192 @@ html.dark,
 
 .dash-card--flush {
   padding: 0;
+}
+
+/* ——— Phase 3 surface hierarchy ——— */
+/* Level 1 — primary CTA surface (Continue Learning / Continue Preparation) */
+.dash-surface-primary {
+  position: relative;
+  overflow: hidden;
+  background: var(--dash-surface-0);
+  border: 1px solid var(--dash-border-strong);
+  border-radius: var(--dash-radius-lg);
+  box-shadow: var(--dash-shadow-2);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.dash-surface-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--dash-brand);
+  border-radius: var(--dash-radius-lg) 0 0 var(--dash-radius-lg);
+}
+
+html.dark .dash-surface-primary::before,
+[data-theme='dark'] .dash-surface-primary::before {
+  opacity: 0.9;
+}
+
+/* Competitive mode: scoped orange accent on primary rail only */
+.dash-panel--competitive .dash-surface-primary::before {
+  background: var(--mode-competitive, #f5722f);
+}
+
+.dash-panel--competitive {
+  --dash-comp-accent: var(--mode-competitive, #f5722f);
+  --dash-comp-accent-soft: var(--mode-competitive-soft, rgba(245, 114, 47, 0.12));
+}
+
+/* Level 2 — supporting surfaces */
+.dash-surface-support {
+  background: var(--dash-surface-0);
+  border: 1px solid var(--dash-border);
+  border-radius: var(--dash-radius-lg);
+  box-shadow: var(--dash-shadow-1);
+  padding: var(--dash-card-pad);
+}
+
+/* Level 3 — flat content (lists, quick actions) */
+.dash-surface-flat {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.dash-welcome {
+  padding: 0.25rem 0 0.5rem;
+}
+
+.dash-welcome__greeting {
+  font-family: var(--dash-font-display);
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--dash-text);
+  margin: 0;
+}
+
+.dash-welcome__sub {
+  margin: 0.35rem 0 0;
+  font-size: var(--dash-body);
+  line-height: 1.5;
+  color: var(--dash-text-2);
+  max-width: 36rem;
+}
+
+.dash-welcome__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .dash-welcome__stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.dash-welcome__stat {
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--dash-radius-sm);
+  background: var(--dash-surface-1);
+  border: 1px solid var(--dash-border);
+  min-width: 0;
+}
+
+.dash-welcome__stat-label {
+  font-size: var(--dash-label);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dash-text-3);
+  margin: 0 0 0.2rem;
+}
+
+.dash-welcome__stat-value {
+  font-family: var(--dash-font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dash-text);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.dash-welcome__stat-hint {
+  font-size: 0.6875rem;
+  color: var(--dash-text-3);
+  margin: 0.15rem 0 0;
+}
+
+/* Mode switcher — premium segmented control */
+.dash-mode-switcher {
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.875rem;
+  border: 1px solid var(--dash-border);
+  background: var(--dash-surface-1);
+}
+
+.dash-mode-switcher__btn {
+  position: relative;
+  flex: 1;
+  min-height: 44px;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.65rem;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background var(--dash-hover-ms) var(--dash-ease),
+    color var(--dash-hover-ms) var(--dash-ease),
+    box-shadow var(--dash-hover-ms) var(--dash-ease);
+}
+
+.dash-mode-switcher__btn:focus-visible {
+  outline: none;
+  box-shadow: var(--dash-focus-ring);
+  z-index: 1;
+}
+
+.dash-mode-switcher__btn[aria-selected='true'] {
+  background: var(--dash-brand);
+  color: #fff;
+  box-shadow: var(--dash-shadow-1);
+}
+
+.dash-mode-switcher__btn[aria-selected='false'] {
+  background: transparent;
+  color: var(--dash-text-2);
+}
+
+.dash-mode-switcher__btn[aria-selected='false']:hover {
+  color: var(--dash-text);
+  background: color-mix(in srgb, var(--dash-surface-0) 80%, transparent);
+}
+
+/* Section order helpers for mobile priority */
+.dash-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dash-section-gap);
+}
+
+.dash-stack > * {
+  margin-bottom: 0 !important;
 }
 
 /* Badge */

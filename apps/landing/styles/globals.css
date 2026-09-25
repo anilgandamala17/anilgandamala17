@@ -1,3 +1,8 @@
+/**
+ * DEPRECATED — not imported by the app.
+ * Active design tokens live in `apps/landing/app/globals.css`.
+ * Kept only to avoid breaking accidental local imports; do not extend.
+ */
 @import 'tailwindcss';
 @import 'tw-animate-css';
 

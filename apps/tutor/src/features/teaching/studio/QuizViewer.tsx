@@ -525,7 +525,7 @@ export default function QuizViewer({
                         'Could not load AI-generated questions — showing offline practice questions for this topic.';
                     if (/no ai api keys|api key missing|not configured/i.test(msg)) {
                         hint +=
-                            ' Set VITE_OPENROUTER_API_KEY, VITE_MISTRAL_API_KEY, VITE_DEEPSEEK_API_KEY, or VITE_SARVAM_API_KEY in Vercel → Settings → Environment Variables, then redeploy.';
+                            ' AI quiz generation needs a server-side provider. This demo build uses offline practice questions until a backend is connected.';
                     } else {
                         hint += ' Tap "New quiz" to retry.';
                     }

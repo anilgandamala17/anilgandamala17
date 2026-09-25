@@ -26,8 +26,8 @@ interface FooterProps {
 export function Footer({ onContactClick }: FooterProps) {
   return (
     <footer className="relative overflow-hidden bg-slate-950 pt-24 pb-12 text-white">
-      <div className="pointer-events-none absolute top-0 left-1/4 -z-0 h-[600px] w-[600px] rounded-full bg-purple-900/10 blur-[120px]" />
-      <div className="pointer-events-none absolute right-1/4 bottom-0 -z-0 h-[500px] w-[500px] rounded-full bg-blue-900/10 blur-[120px]" />
+      <div className="pointer-events-none absolute top-0 left-1/4 -z-0 h-[600px] w-[600px] rounded-full bg-blue-900/10 blur-[120px]" />
+      <div className="pointer-events-none absolute right-1/4 bottom-0 -z-0 h-[500px] w-[500px] rounded-full bg-teal-900/10 blur-[120px]" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-4 md:px-6">
         <div className="mb-20 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">

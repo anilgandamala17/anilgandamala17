@@ -52,7 +52,8 @@ export interface LearningCourse {
   name: string
   subtitle?: string
   icon: LucideIcon
-  rating: number
+  /** Omit until verified ratings exist */
+  rating?: number
   /** Outcome / proof line — omit if unavailable (never show TBD) */
   proofStat?: string
   topics: string[]
@@ -151,8 +152,8 @@ const HUM_ORANGE: CourseAccent = {
 }
 
 /**
- * All proofStat / momentum / metrics values below are SAMPLE PLACEHOLDERS
- * for design — replace with verified analytics before marketing claims.
+ * Marketing proofStat / momentum / ratings intentionally omitted until verified.
+ * Metrics remain catalog descriptors (lesson/quiz counts), not outcome claims.
  */
 export const schoolCourses: SchoolCourse[] = [
   {
@@ -164,11 +165,8 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'all',
     secondaryTag: 'All Boards',
     icon: Calculator,
-    rating: 4.9,
-    proofStat: 'Avg. 18% grade improvement',
     topics: ['Integers & Fractions', 'Algebra Basics', 'Geometry', 'Data Handling'],
     highlight: { label: 'Most Popular in Class 8', variant: 'popular' },
-    momentum: '500+ started this week',
     metrics: [
       { kind: 'target', label: '96 lessons' },
       { kind: 'zap', label: '32 quizzes' },
@@ -186,8 +184,6 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'all',
     secondaryTag: 'All Boards',
     icon: Microscope,
-    rating: 4.8,
-    proofStat: '91% finish weekly lab challenges',
     topics: ['Living World', 'Matter & Materials', 'Motion & Force', 'Environment'],
     metrics: [
       { kind: 'target', label: '84 lessons' },
@@ -206,8 +202,6 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'all',
     secondaryTag: 'All Boards',
     icon: BookOpen,
-    rating: 4.7,
-    proofStat: 'Avg. 2 grade levels of reading growth',
     topics: ['Comprehension', 'Grammar Essentials', 'Creative Writing', 'Vocabulary'],
     metrics: [
       { kind: 'target', label: '72 lessons' },
@@ -226,8 +220,6 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'all',
     secondaryTag: 'All Boards',
     icon: Globe2,
-    rating: 4.8,
-    proofStat: '88% improved retention in mock tests',
     topics: ['Ancient History', 'Our Earth', 'Local Government', 'Maps & Globes'],
     metrics: [
       { kind: 'target', label: '68 lessons' },
@@ -246,11 +238,8 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'all',
     secondaryTag: 'All Boards',
     icon: Calculator,
-    rating: 4.9,
-    proofStat: 'Avg. 22% higher board mock scores',
     topics: ['Polynomials', 'Coordinate Geometry', 'Trigonometry', 'Statistics'],
     highlight: { label: 'Most Popular in Class 10', variant: 'popular' },
-    momentum: 'Trending among Class 10',
     metrics: [
       { kind: 'target', label: '120 lessons' },
       { kind: 'zap', label: '45 quizzes' },
@@ -268,8 +257,6 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'all',
     secondaryTag: 'All Boards',
     icon: Microscope,
-    rating: 4.8,
-    proofStat: '92% report stronger exam confidence',
     topics: ['Light & Electricity', 'Chemical Reactions', 'Life Processes', 'Natural Resources'],
     metrics: [
       { kind: 'target', label: '110 lessons' },
@@ -288,8 +275,6 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'all',
     secondaryTag: 'All Boards',
     icon: BookOpen,
-    rating: 4.7,
-    proofStat: 'Avg. +1.4 bands on writing rubrics',
     topics: ['Prose & Poetry', 'Writing Skills', 'Grammar Mastery', 'Unseen Passages'],
     metrics: [
       { kind: 'target', label: '90 lessons' },
@@ -308,8 +293,6 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'all',
     secondaryTag: 'All Boards',
     icon: Globe2,
-    rating: 4.8,
-    proofStat: '85% score higher on map & source skills',
     topics: ['Nationalism', 'Resources', 'Democracy', 'Development'],
     metrics: [
       { kind: 'target', label: '98 lessons' },
@@ -328,8 +311,6 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'all',
     secondaryTag: 'All Boards',
     icon: Calculator,
-    rating: 4.9,
-    proofStat: 'Avg. 15% lift on entrance mock ranks',
     topics: ['Calculus', 'Vectors', 'Probability', 'Linear Programming'],
     metrics: [
       { kind: 'target', label: '140 lessons' },
@@ -348,11 +329,8 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'all',
     secondaryTag: 'All Boards',
     icon: Atom,
-    rating: 4.9,
-    proofStat: '89% clear numerical problem sets faster',
     topics: ['Mechanics', 'Electrodynamics', 'Optics', 'Modern Physics'],
     highlight: { label: 'Most Popular in Class 12', variant: 'popular' },
-    momentum: 'Trending for JEE prep',
     metrics: [
       { kind: 'target', label: '128 lessons' },
       { kind: 'trophy', label: '40 numerical drills' },
@@ -370,8 +348,6 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'cbse',
     secondaryTag: 'CBSE',
     icon: FlaskConical,
-    rating: 4.7,
-    proofStat: 'Avg. 19% better organic reaction recall',
     topics: ['Atomic Structure', 'Organic Reactions', 'Equilibrium', 'Electrochemistry'],
     metrics: [
       { kind: 'target', label: '116 lessons' },
@@ -390,8 +366,6 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'all',
     secondaryTag: 'All Boards',
     icon: Dna,
-    rating: 4.9,
-    proofStat: '93% feel ready for diagram-heavy papers',
     topics: ['Cell Biology', 'Genetics', 'Human Physiology', 'Ecology'],
     metrics: [
       { kind: 'target', label: '124 lessons' },
@@ -410,8 +384,6 @@ export const schoolCourses: SchoolCourse[] = [
     board: 'icse',
     secondaryTag: 'ICSE',
     icon: BookOpen,
-    rating: 4.7,
-    proofStat: 'Avg. 27% faster long-answer drafting',
     topics: ['Flamingo & Vistas', 'Writing Section', 'Reading Skills', 'Literary Devices'],
     metrics: [
       { kind: 'target', label: '64 lessons' },
@@ -509,8 +481,7 @@ const PRO_ROSE: CourseAccent = {
 }
 
 /**
- * Professional proofStat values are SAMPLE PLACEHOLDERS — not verified
- * salary / hiring outcomes. Replace before external claims.
+ * Professional outcome claims omitted until verified.
  */
 export const professionalCourses: ProfessionalCourse[] = [
   {
@@ -522,11 +493,8 @@ export const professionalCourses: ProfessionalCourse[] = [
     format: 'self-paced',
     secondaryTag: 'Self-Paced',
     icon: Layout,
-    rating: 4.8,
-    proofStat: 'Avg. 24% salary increase after completion',
     topics: ['HTML & CSS', 'JavaScript', 'React', 'APIs & Deploy'],
     highlight: { label: 'Top Rated', variant: 'top-rated' },
-    momentum: 'High demand this quarter',
     metrics: [
       { kind: 'target', label: '86 lessons' },
       { kind: 'zap', label: '18 projects' },
@@ -545,8 +513,6 @@ export const professionalCourses: ProfessionalCourse[] = [
     format: 'live-cohort',
     secondaryTag: 'Live Cohort',
     icon: Terminal,
-    rating: 4.9,
-    proofStat: '71% ship a portfolio app in 12 weeks',
     topics: ['Kotlin / Swift basics', 'UI Patterns', 'State & Data', 'Store Release'],
     metrics: [
       { kind: 'target', label: '74 lessons' },
@@ -566,8 +532,6 @@ export const professionalCourses: ProfessionalCourse[] = [
     format: 'self-paced',
     secondaryTag: 'Self-Paced',
     icon: Briefcase,
-    rating: 4.8,
-    proofStat: 'Industry-recognized certificate included',
     topics: ['User Research', 'Wireframes', 'Design Systems', 'Usability Tests'],
     highlight: { label: 'Industry Choice', variant: 'industry' },
     metrics: [
@@ -588,11 +552,8 @@ export const professionalCourses: ProfessionalCourse[] = [
     format: 'certification',
     secondaryTag: 'Certification',
     icon: Cpu,
-    rating: 4.9,
-    proofStat: '68% hired into AI roles within 3 months',
     topics: ['Python for ML', 'Neural Nets', 'LLM Apps', 'MLOps Basics'],
     highlight: { label: 'Top Rated', variant: 'top-rated' },
-    momentum: 'Fastest-growing track',
     metrics: [
       { kind: 'target', label: '102 lessons' },
       { kind: 'trophy', label: '14 labs' },
@@ -611,8 +572,6 @@ export const professionalCourses: ProfessionalCourse[] = [
     format: 'self-paced',
     secondaryTag: 'Self-Paced',
     icon: Database,
-    rating: 4.9,
-    proofStat: 'Avg. 31% faster insight-to-dashboard cycle',
     topics: ['SQL & ETL', 'Statistics', 'Visualization', 'Predictive Models'],
     metrics: [
       { kind: 'target', label: '94 lessons' },
@@ -632,8 +591,6 @@ export const professionalCourses: ProfessionalCourse[] = [
     format: 'certification',
     secondaryTag: 'Certification',
     icon: Shield,
-    rating: 4.7,
-    proofStat: '82% pass first practice security exam',
     topics: ['Network Security', 'Threat Modeling', 'IAM', 'Incident Response'],
     highlight: { label: 'Industry Choice', variant: 'industry' },
     metrics: [

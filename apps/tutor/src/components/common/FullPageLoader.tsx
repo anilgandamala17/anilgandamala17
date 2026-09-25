@@ -32,7 +32,7 @@ export default function FullPageLoader({ message = 'Loading', stage }: FullPageL
         <div
             className="relative min-h-screen overflow-hidden flex items-center justify-center dark:bg-slate-950"
             style={{
-                background: 'linear-gradient(165deg, #faf9fc 0%, #f3f0f8 42%, #ece8f4 100%)',
+                background: 'linear-gradient(165deg, var(--color-background, #f8fafc) 0%, #eff6ff 50%, #f0fdfa 100%)',
             }}
             role="status"
             aria-live="polite"
@@ -42,11 +42,11 @@ export default function FullPageLoader({ message = 'Loading', stage }: FullPageL
                 <>
                     <div
                         className="pointer-events-none absolute top-[18%] left-[22%] h-72 w-72 rounded-full opacity-40 blur-3xl"
-                        style={{ background: 'radial-gradient(circle, rgba(168, 85, 247, 0.35) 0%, transparent 70%)' }}
+                        style={{ background: 'radial-gradient(circle, rgba(29, 78, 216, 0.28) 0%, transparent 70%)' }}
                     />
                     <div
                         className="pointer-events-none absolute bottom-[20%] right-[18%] h-64 w-64 rounded-full opacity-35 blur-3xl"
-                        style={{ background: 'radial-gradient(circle, rgba(236, 72, 153, 0.28) 0%, transparent 70%)' }}
+                        style={{ background: 'radial-gradient(circle, rgba(15, 118, 110, 0.22) 0%, transparent 70%)' }}
                     />
                 </>
             )}
@@ -71,10 +71,10 @@ export default function FullPageLoader({ message = 'Loading', stage }: FullPageL
                     }
                 >
                     <div
-                        className="relative flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-[1.15rem] shadow-[0_12px_40px_-8px_rgba(124,58,237,0.45),0_4px_14px_-4px_rgba(236,72,153,0.25)]"
+                        className="relative flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-[1.15rem] shadow-[0_12px_40px_-8px_rgba(29,78,216,0.4),0_4px_14px_-4px_rgba(15,118,110,0.2)]"
                         style={{
                             transform: 'rotate(-10deg)',
-                            background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 48%, #7c3aed 100%)',
+                            background: 'linear-gradient(135deg, var(--color-primary, #1d4ed8) 0%, var(--color-accent, #0f766e) 100%)',
                         }}
                     >
                         <motion.div
@@ -91,24 +91,23 @@ export default function FullPageLoader({ message = 'Loading', stage }: FullPageL
                     </div>
                     <div
                         className="absolute -bottom-3 left-1/2 h-3 w-12 -translate-x-1/2 rounded-full opacity-30 blur-md"
-                        style={{ background: 'linear-gradient(90deg, transparent, #a855f7, transparent)' }}
+                        style={{ background: 'linear-gradient(90deg, transparent, var(--color-primary, #1d4ed8), transparent)' }}
                         aria-hidden
                     />
                 </motion.div>
 
-                {/* Indeterminate progress bar */}
-                <div className="h-1 w-36 overflow-hidden rounded-full bg-violet-100 dark:bg-slate-800">
+                <div className="h-1 w-36 overflow-hidden rounded-full bg-[var(--color-primary-subtle,#eff6ff)] dark:bg-slate-800">
                     {!reduceAnimations ? (
                         <motion.div
                             className="h-full w-1/2 rounded-full"
-                            style={{ background: 'linear-gradient(90deg, #ec4899, #a855f7)' }}
+                            style={{ background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))' }}
                             animate={{ x: ['-100%', '200%'] }}
                             transition={{ duration: 1.1, repeat: Infinity, ease: 'easeInOut' }}
                         />
                     ) : (
                         <div
                             className="h-full w-1/2 rounded-full"
-                            style={{ background: 'linear-gradient(90deg, #ec4899, #a855f7)' }}
+                            style={{ background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))' }}
                         />
                     )}
                 </div>
@@ -143,7 +142,7 @@ export default function FullPageLoader({ message = 'Loading', stage }: FullPageL
                     </div>
                     ) : null}
                     {stage ? (
-                        <p className="text-xs font-medium text-violet-600/80 dark:text-violet-300/70">{stage}</p>
+                        <p className="text-xs font-medium text-[var(--color-primary)]/80 dark:text-blue-300/70">{stage}</p>
                     ) : null}
                 </div>
             </motion.div>

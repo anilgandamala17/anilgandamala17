@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef, useMemo, lazy, Suspense } from 'react';
+import { useState, useEffect, useRef, useMemo, lazy, Suspense, useCallback } from 'react';
 import { createPortal } from 'react-dom';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useShallow } from 'zustand/react/shallow';
 import { useTeachingStore } from '@/features/teaching/stores/teachingStore';
@@ -29,9 +29,23 @@ import FullscreenBoardScaler from '@/features/teaching/components/fullscreen/Ful
 import TeachingSettingsPopover from '@/features/teaching/components/fullscreen/TeachingSettingsPopover';
 import DoubtDrawer from '@/features/teaching/components/fullscreen/DoubtDrawer';
 import LessonContentGate from '@/features/teaching/components/LessonContentGate';
+import TeachingHeader from '@/features/teaching/components/TeachingHeader';
+import ChatAttachMenu from '@/features/teaching/components/ChatAttachMenu';
+import LessonCompletionPanel from '@/features/teaching/components/LessonCompletionPanel';
 import FullPageLoader from '@/components/common/FullPageLoader';
 import type { ChatMessage, Topic } from '@/types';
 import type { FeaturedToolItem, StudioToolId, ToolItem } from '@/components/StudioPanel';
+import {
+    STREAM_PARAM,
+    normalizeStream,
+    streamDisplayName,
+    isSeniorGrade,
+} from '@/features/curriculum/data/seniorStreams';
+import {
+    getTeachingLayoutFlags,
+    teachingPanelFlexRatio,
+    type TeachingLayoutMode,
+} from '@/features/teaching/layout/teachingLayoutMode';
 
 type StudioTabId = StudioToolId;
 
@@ -63,9 +77,9 @@ function getSpeechRecognitionCtor(): (new () => SpeechRecognitionLike) | null {
     return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null;
 }
 import {
-    ChevronLeft, ChevronRight, Square, Maximize2, Minimize2, Settings, HelpCircle,
+    ChevronLeft, ChevronRight, Square, Maximize2, Minimize2, HelpCircle,
     FileText, CreditCard, Sparkles, Loader2, MessageCircle, Layers,
-    Map as LucideMap, ArrowUp, Volume2, VolumeX, Home, Mic, PlayCircle, GraduationCap
+    Map as LucideMap, ArrowUp, Volume2, Mic, PlayCircle, GraduationCap
 } from 'lucide-react';
 import { speakDoubtText, stopDoubtSpeech } from '@/utils/doubtSpeech';
 import { UserAvatar, displayNameForUser } from '@/components/common/UserAvatar';
@@ -80,15 +94,13 @@ import ChatMessageBubble, { ChatThinkingIndicator } from '@/features/teaching/co
 import { normalizeChatContent } from '@/utils/chatFormat';
 const DiagramCanvas = lazy(() => import('@/features/teaching/components/DiagramCanvas'));
 const CurriculumVideoPlayer = lazy(() => import('@/features/teaching/components/CurriculumVideoPlayer'));
-import Breadcrumbs, { BreadcrumbItem } from '@/components/common/Breadcrumbs';
-import SignOutButton from '@/components/common/SignOutButton';
 import EmojiMascot from '@/components/mascot/EmojiMascot';
 import { findTopicInfo } from '@/utils/topicUtils';
 import { GREEN_BOARD_FADE_DURATION_MS, subscribeToVisualMarkers } from '@/utils/visualSyncEngine';
 import { getFirstActiveDiagramId, getVisualsForTopic, parseDiagramMarkerKey } from '@/data/visualRegistry';
 import { coerceTtsLanguage } from '@/constants/ttsLanguages';
 import { getTopicVideoResource, isVideoOnlyTopic } from '@/services/curriculumVideoService';
-import { isImageLikeFile } from '@/utils/imageVision';
+import { isImageLikeFile, getChatUploadRejection } from '@/utils/imageVision';
 
 async function extractUploadedText(file: File): Promise<string> {
     const { extractTextFromFile } = await import('@/utils/documentParser');
@@ -97,6 +109,8 @@ async function extractUploadedText(file: File): Promise<string> {
 
 export default function TeachingPage() {
     const { topicId } = useParams();
+    const [searchParams] = useSearchParams();
+    const urlStream = normalizeStream(searchParams.get(STREAM_PARAM));
     const isVideoOnlyLesson = isVideoOnlyTopic(topicId);
     const navigate = useNavigate();
     const [activeModal, setActiveModal] = useState<'none' | 'settings' | 'profile'>('none');
@@ -112,6 +126,7 @@ export default function TeachingPage() {
         enterDoubtMode,
         exitDoubtMode,
         resolveDoubt,
+        goToStep,
     } = useTeachingStore(useShallow(state => ({
         currentSession: state.currentSession,
         currentStep: state.currentStep,
@@ -123,8 +138,9 @@ export default function TeachingPage() {
         enterDoubtMode: state.enterDoubtMode,
         exitDoubtMode: state.exitDoubtMode,
         resolveDoubt: state.resolveDoubt,
+        goToStep: state.goToStep,
     })));
-    const { user, role } = useAuthStore(useShallow(state => ({ user: state.user, role: state.role })));
+    const { user } = useAuthStore(useShallow(state => ({ user: state.user })));
 
     const {
         notes,
@@ -205,6 +221,35 @@ export default function TeachingPage() {
         topicContext.type === 'competitive' ? 'competitive' : 'curriculum',
     );
     const goStudentHome = () => navigate(studentHomePath);
+
+    const buildCurriculumHref = useCallback(
+        (opts?: { includeSubject?: boolean }) => {
+            const ctx = findTopicInfo(topicId);
+            if (ctx.type !== 'curriculum' || !ctx.gradeId) return studentRoutes.curriculum;
+            const params = new URLSearchParams({ grade: ctx.gradeId });
+            if (urlStream && isSeniorGrade(ctx.gradeId)) {
+                params.set(STREAM_PARAM, urlStream);
+            }
+            if (opts?.includeSubject !== false && ctx.subjectId) {
+                params.set('subject', ctx.subjectId);
+            }
+            return `${studentRoutes.curriculum}?${params.toString()}`;
+        },
+        [topicId, urlStream],
+    );
+
+    const goBackToCurriculum = useCallback(() => {
+        navigate(buildCurriculumHref({ includeSubject: true }));
+    }, [navigate, buildCurriculumHref]);
+
+    const lessonProgressPercent = useTeachingStore((s) =>
+        s.currentSession ? Math.round(s.getProgress()) : 0,
+    );
+    const lessonComplete =
+        Boolean(currentSession) &&
+        (currentSession?.totalSteps ?? 0) > 0 &&
+        lessonProgressPercent >= 100;
+
     const { profile } = useUserStore(useShallow(state => ({ profile: state.profile })));
     // Get user's profession and sub-profession for contextual teaching
 
@@ -240,7 +285,6 @@ export default function TeachingPage() {
     const [inputMessage, setInputMessage] = useState('');
     // Chat file upload state
     const [uploadedChatFiles, setUploadedChatFiles] = useState<Array<{ name: string; dataUrl?: string; type: string }>>([]);
-    const chatFileInputRef = useRef<HTMLInputElement>(null);
     // Studio Panel viewer state
     const [studioInViewer, setStudioInViewer] = useState(false);
     // Hard Rule 15 — activeDiagramId drives DiagramCanvas; optional sub-part for SVG sync (e.g. mitochondria)
@@ -249,9 +293,24 @@ export default function TeachingPage() {
     const [lastUserAction, setLastUserAction] = useState<string | null>(null);
     const timeoutRefs = useRef<ReturnType<typeof setTimeout>[]>([]);
     const isMountedRef = useRef(true);
-    const [isMobile, setIsMobile] = useState(false);
-    /** Tablet range (768–1023px) where the three panels stack in a scrolling column. */
-    const [isStacked, setIsStacked] = useState(false);
+    /** Monotonic id so a newer chat send ignores stale stream updates from an older request. */
+    const chatRequestSeqRef = useRef(0);
+    const initialLayout =
+        typeof window !== 'undefined'
+            ? getTeachingLayoutFlags(window.innerWidth, window.innerHeight)
+            : null;
+    const [isMobile, setIsMobile] = useState(() => initialLayout?.isPhone ?? false);
+    /** Compact workspace: phone or tablet portrait (Chat | Teaching | Studio tabs). */
+    const [isCompactLayout, setIsCompactLayout] = useState(
+        () => initialLayout?.isCompactLayout ?? false,
+    );
+    const [isMultiPanel, setIsMultiPanel] = useState(() => initialLayout?.isMultiPanel ?? true);
+    const [layoutMode, setLayoutMode] = useState<TeachingLayoutMode>(
+        () => initialLayout?.mode ?? 'desktop',
+    );
+    const [isTabletLandscape, setIsTabletLandscape] = useState(
+        () => initialLayout?.isTabletLandscape ?? false,
+    );
 
     // Mobile panel + layout state (needed before doubt/fullscreen handlers)
     const [mobilePanel, setMobilePanel] = useState<'home' | 'teach' | 'studio'>('teach');
@@ -719,7 +778,7 @@ export default function TeachingPage() {
 
         // Open the chat panel (same teacher turns to the student — no page change)
         if (!isImmersiveFullscreen) {
-            if (isMobile) {
+            if (isCompactLayout) {
                 setMobilePanel('home');
             } else {
                 setCenterMaximized(false);
@@ -799,7 +858,7 @@ export default function TeachingPage() {
             content: 'Doubt resolved — resuming the lesson right where we left off.',
             timestamp: new Date().toISOString(),
         }]);
-        if (!isImmersiveFullscreen && isMobile) setMobilePanel('teach');
+        if (!isImmersiveFullscreen && isCompactLayout) setMobilePanel('teach');
         unlockAudioContext();
         resume();
     };
@@ -899,18 +958,21 @@ export default function TeachingPage() {
     const sessionSummaries = summaries.filter(s => s.sessionId === sessionId);
 
     /**
-     * Stacked panels lay out in a column, so these ratios would size height instead of
-     * width and squash each panel to a sliver (hiding footers like the quiz Next button).
-     * Stacked panels keep their natural height and the container scrolls instead.
+     * Multi-panel flex ratios. Compact layouts hide inactive panels via display, not flex.
      */
     const panelFlex = (hidden: boolean, maximized: boolean, ratio: string) => {
         if (hidden) return '0 0 0px';
         if (maximized) return '1 1 100%';
-        return isStacked ? '0 0 auto' : ratio;
+        return ratio;
     };
-    const stackedPanelStyle: React.CSSProperties = isStacked
-        ? { minHeight: 'min(80vh, 640px)', flexShrink: 0 }
-        : { minHeight: 0 };
+    const chatFlexRatio = teachingPanelFlexRatio('chat', layoutMode);
+    const teachFlexRatio = teachingPanelFlexRatio(
+        'teach',
+        layoutMode,
+    );
+    const studioFlexRatio = teachingPanelFlexRatio('studio', layoutMode);
+    const teachFlexWhenStudioHidden = layoutMode === 'tablet-landscape' ? '2.8 1 0%' : '75 75 0%';
+    const sideFlexWhenCenterHidden = layoutMode === 'tablet-landscape' ? '1.2 1 0%' : '75 75 0%';
 
     const studioFeaturedTool = useMemo<FeaturedToolItem>(() => {
         const { answered, total } = quizProgress;
@@ -1124,6 +1186,67 @@ export default function TeachingPage() {
 
 
 
+    const processChatFiles = useCallback(async (files: File[]) => {
+        for (const file of files) {
+            const rejection = getChatUploadRejection(file);
+            if (rejection) {
+                toast.error(rejection);
+                continue;
+            }
+            if (isImageLikeFile(file)) {
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    setUploadedChatFiles((prev) => [
+                        ...prev,
+                        {
+                            name: file.name,
+                            dataUrl: ev.target?.result as string,
+                            type: file.type || 'image/jpeg',
+                        },
+                    ]);
+                };
+                reader.onerror = () => {
+                    toast.error(`Could not read image: ${file.name}`);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                try {
+                    setUploadedChatFiles((prev) => [...prev, { name: file.name, type: file.type }]);
+
+                    const extractedText = await extractUploadedText(file);
+                    const text =
+                        extractedText.trim().length > 0
+                            ? extractedText
+                            : '[No extractable text in this document.]';
+
+                    let assigned = false;
+                    setUploadedChatFiles((prev) =>
+                        prev.map((f) => {
+                            if (!assigned && f.name === file.name && f.dataUrl === undefined) {
+                                assigned = true;
+                                return { ...f, dataUrl: text };
+                            }
+                            return f;
+                        }),
+                    );
+                } catch (err) {
+                    console.error(`Failed to parse ${file.name}:`, err);
+                    toast.error(`Could not read text from ${file.name}`);
+                    let removed = false;
+                    setUploadedChatFiles((prev) =>
+                        prev.filter((f) => {
+                            if (!removed && f.name === file.name && f.dataUrl === undefined) {
+                                removed = true;
+                                return false;
+                            }
+                            return true;
+                        }),
+                    );
+                }
+            }
+        }
+    }, []);
+
     const handleSendMessage = async (overrideText?: string) => {
         const outgoingText = (overrideText ?? inputMessage).trim();
         if (!outgoingText && uploadedChatFiles.length === 0) return;
@@ -1171,6 +1294,7 @@ export default function TeachingPage() {
         setInputMessage('');
         setUploadedChatFiles([]);
         setIsChatLoading(true);
+        const requestSeq = ++chatRequestSeqRef.current;
 
         const aiMessageId = (Date.now() + 1).toString();
         const placeholderAi: ChatMessage = {
@@ -1183,13 +1307,14 @@ export default function TeachingPage() {
         setChatMessages(prev => [...prev, placeholderAi]);
 
         const updateStream = (_delta: string, full: string) => {
-            if (!isMountedRef.current) return;
+            if (!isMountedRef.current || requestSeq !== chatRequestSeqRef.current) return;
             setChatMessages(prev => prev.map(m =>
                 m.id === aiMessageId ? { ...m, content: full } : m
             ));
         };
 
         const finalizeAiMessage = (rawText: string) => {
+            if (requestSeq !== chatRequestSeqRef.current) return '';
             const finalContent = normalizeChatContent(rawText);
             setChatMessages(prev => prev.map(m =>
                 m.id === aiMessageId
@@ -1267,7 +1392,7 @@ export default function TeachingPage() {
                 }, updateStream);
             }
 
-            if (!isMountedRef.current) return;
+            if (!isMountedRef.current || requestSeq !== chatRequestSeqRef.current) return;
 
             let finalContent: string;
             if (aiText.includes('still loading') || aiText.includes('still being processed')) {
@@ -1284,7 +1409,7 @@ export default function TeachingPage() {
                 });
             }
         } catch (err) {
-            if (!isMountedRef.current) return;
+            if (!isMountedRef.current || requestSeq !== chatRequestSeqRef.current) return;
             console.warn('[TeachingPage] Chat request failed:', err);
             const fallbackText = `Sorry, I had trouble connecting to the AI service. Please try again in a moment!`;
             finalizeAiMessage(fallbackText);
@@ -1296,7 +1421,9 @@ export default function TeachingPage() {
                 });
             }
         } finally {
-            if (isMountedRef.current) setIsChatLoading(false);
+            if (isMountedRef.current && requestSeq === chatRequestSeqRef.current) {
+                setIsChatLoading(false);
+            }
         }
     };
 
@@ -1312,33 +1439,40 @@ export default function TeachingPage() {
         };
     }, []);
 
-    // Track mobile viewport
+    // Track teaching layout mode (mobile / tablet portrait|landscape / desktop)
     useEffect(() => {
-        const checkMobile = () => {
-            const mobile = window.innerWidth < 768; // md breakpoint
-            setIsMobile(mobile);
-            // md → lg: panels stack vertically, so width ratios must not drive height.
-            setIsStacked(!mobile && window.innerWidth < 1024);
-            // Prefer immersive body class for scroll lock; only lock body on mobile when not immersive
+        const applyLayout = () => {
+            const flags = getTeachingLayoutFlags(window.innerWidth, window.innerHeight);
+            setIsMobile(flags.isPhone);
+            setIsCompactLayout(flags.isCompactLayout);
+            setIsMultiPanel(flags.isMultiPanel);
+            setLayoutMode(flags.mode);
+            setIsTabletLandscape(flags.isTabletLandscape);
+            document.documentElement.dataset.teachingLayout = flags.mode;
+
+            // Prefer immersive body class for scroll lock; only lock body on phone when not immersive
             if (document.body.classList.contains('immersive-teaching-active')) {
                 document.body.style.overflow = 'hidden';
-            } else if (mobile) {
+            } else if (flags.isPhone) {
                 document.body.style.overflow = 'hidden';
             } else {
                 document.body.style.overflow = '';
             }
         };
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
+        applyLayout();
+        window.addEventListener('resize', applyLayout);
+        window.addEventListener('orientationchange', applyLayout);
         return () => {
-            window.removeEventListener('resize', checkMobile);
+            window.removeEventListener('resize', applyLayout);
+            window.removeEventListener('orientationchange', applyLayout);
             document.body.style.overflow = '';
+            delete document.documentElement.dataset.teachingLayout;
         };
     }, []);
 
-    // Mobile: keep panel defaults; immersive mode works on all viewports
+    // Compact layouts: keep panel defaults; immersive mode works on all viewports
     useEffect(() => {
-        if (!isMobile) return;
+        if (!isCompactLayout) return;
         setCenterMaximized(false);
         setRightMaximized(false);
         setChatMaximized(false);
@@ -1347,7 +1481,7 @@ export default function TeachingPage() {
             setRightPanelVisible(true);
             setChatPanelVisible(true);
         }
-    }, [isMobile, isImmersiveFullscreen]);
+    }, [isCompactLayout, isImmersiveFullscreen]);
 
 
 
@@ -1541,133 +1675,65 @@ export default function TeachingPage() {
 
     return (
         <div
-            className={`flex flex-col overflow-hidden w-full ${isMobile ? 'fixed inset-0 min-h-[100dvh]' : 'h-screen min-h-[100dvh]'}`}
+            className={`teaching-page-shell flex flex-col overflow-hidden w-full ${isMobile ? 'fixed inset-0 min-h-[100dvh]' : 'h-screen min-h-[100dvh]'}`}
+            data-teaching-layout={layoutMode}
             style={{
                 background: `linear-gradient(135deg, var(--teaching-page-gradient-start) 0%, var(--teaching-page-gradient-end) 100%)`,
             }}
         >
-            <header
-                className={`flex items-center justify-between sticky top-0 z-50 shrink-0 border-b border-transparent safe-top ${isImmersiveFullscreen ? 'hidden' : ''}`}
-                style={{
-                    height: 'clamp(48px, 10vh, 64px)',
-                    paddingLeft: 'max(var(--teaching-content-padding-x), var(--safe-left))',
-                    paddingRight: 'max(var(--teaching-content-padding-x), var(--safe-right))',
-                    background: 'var(--teaching-header-bg)',
-                    backdropFilter: 'saturate(180%) blur(12px)',
-                    WebkitBackdropFilter: 'saturate(180%) blur(12px)',
+            <TeachingHeader
+                className={isImmersiveFullscreen ? 'hidden' : ''}
+                subjectLabel={topicContext.subjectName || topicContext.streamName || 'AIra'}
+                streamLabel={
+                    urlStream && topicContext.gradeId && isSeniorGrade(topicContext.gradeId)
+                        ? streamDisplayName(urlStream)
+                        : null
+                }
+                topicLabel={currentSession?.topicName || topicContext.topic?.name || 'Lesson'}
+                chapterLabel={topicContext.chapterName}
+                currentStep={currentStep}
+                totalSteps={currentSession?.totalSteps || 1}
+                progressPercent={lessonProgressPercent}
+                isMuted={isMuted}
+                onBack={topicContext.type === 'curriculum' ? goBackToCurriculum : goStudentHome}
+                onToggleMute={() => {
+                    if (isMuted) {
+                        unlockAudioContext();
+                    } else {
+                        if (typeof window !== 'undefined' && window.speechSynthesis) {
+                            window.speechSynthesis.cancel();
+                        }
+                        stopDoubtSpeech();
+                        setDoubtSpeaking(false);
+                    }
+                    setIsMuted((m) => !m);
                 }}
-            >
-                <div className="flex items-center justify-between gap-4 flex-1 min-w-0">
-                    <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-                        <button
-                            type="button"
-                            onClick={goStudentHome}
-                            className="touch-target p-2 rounded-xl text-[var(--teaching-panel-text)] hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors sm:hidden flex items-center justify-center min-w-[44px] min-h-[44px]"
-                            aria-label="Home"
-                        >
-                            <Home className="w-5 h-5 text-gray-600 dark:text-gray-300" />
-                        </button>
-                        <button
-                            type="button"
-                            onClick={goStudentHome}
-                            className="shrink-0 cursor-pointer hidden sm:flex items-center justify-center w-9 h-9 rounded-xl hover:bg-purple-100 dark:hover:bg-slate-800 text-purple-600 dark:text-purple-400 transition-all active:scale-95"
-                            aria-label="Home"
-                            title="Go to Dashboard"
-                        >
-                            <Home className="w-5 h-5" />
-                        </button>
-                        <Breadcrumbs
-                            role={role}
-                            homePath={studentHomePath}
-                            items={((): BreadcrumbItem[] => {
-                                const ctx = findTopicInfo(topicId);
-                                const items: BreadcrumbItem[] = [];
-                                if (ctx.type === 'curriculum') {
-                                    items.push({
-                                        label: 'Curriculum',
-                                        onClick: () => navigate(studentRoutes.curriculum)
-                                    });
-                                    if (ctx.streamName && ctx.gradeId) {
-                                        items.push({
-                                            label: ctx.streamName,
-                                            onClick: () =>
-                                                navigate(
-                                                    `${studentRoutes.curriculum}?grade=${encodeURIComponent(ctx.gradeId!)}`,
-                                                ),
-                                        });
-                                    }
-                                    if (ctx.subjectName && ctx.gradeId && ctx.subjectId) {
-                                        items.push({
-                                            label: ctx.subjectName,
-                                            onClick: () =>
-                                                navigate(
-                                                    `${studentRoutes.curriculum}?grade=${encodeURIComponent(ctx.gradeId!)}&subject=${encodeURIComponent(ctx.subjectId!)}`,
-                                                ),
-                                        });
-                                    }
-                                    if (ctx.topic) items.push({ label: ctx.topic.name });
-                                } else {
-                                    if (ctx.streamName) items.push({ label: ctx.streamName });
-                                    if (ctx.subjectName) items.push({ label: ctx.subjectName });
-                                    if (ctx.topic) items.push({ label: ctx.topic.name });
-                                }
-                                return items;
-                            })()}
-                            className="hidden sm:flex"
+                onSettings={() => setActiveModal('settings')}
+                profileSlot={
+                    <button
+                        type="button"
+                        onClick={() => setActiveModal('profile')}
+                        className="touch-target min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center hover:opacity-90 transition-opacity shrink-0 cursor-pointer"
+                        aria-label={`Profile — ${displayNameForUser(user)}`}
+                        title={displayNameForUser(user)}
+                    >
+                        <UserAvatar
+                            user={user}
+                            size={36}
+                            className="ring-1 ring-black/5 dark:ring-white/10"
+                            fallbackStyle={{ backgroundColor: 'var(--teaching-avatar-red)' }}
                         />
-                    </div>
+                    </button>
+                }
+            />
 
-                    <div className="flex items-center gap-1 sm:gap-2 shrink-0">
-                        <button
-                            type="button"
-                            onClick={() => {
-                                if (isMuted) {
-                                    unlockAudioContext();
-                                } else {
-                                    if (typeof window !== 'undefined' && window.speechSynthesis) {
-                                        window.speechSynthesis.cancel();
-                                    }
-                                    stopDoubtSpeech();
-                                    setDoubtSpeaking(false);
-                                }
-                                setIsMuted((m) => !m);
-                            }}
-                            className="touch-target p-2 rounded-xl text-[var(--teaching-panel-text)] hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors flex items-center justify-center min-w-[44px] min-h-[44px]"
-                            aria-label={isMuted ? 'Unmute' : 'Mute'}
-                            title={isMuted ? 'Unmute' : 'Mute'}
-                        >
-                            {isMuted ? <VolumeX className="w-5 h-5 text-red-500" /> : <Volume2 className="w-5 h-5 text-green-600" />}
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => setActiveModal('settings')}
-                            className="touch-target p-2 rounded-xl text-[var(--teaching-panel-text)] hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors flex items-center justify-center min-w-[44px] min-h-[44px]"
-                            aria-label="Settings"
-                            title="Settings"
-                        >
-                            <Settings className="w-5 h-5 shrink-0" />
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => setActiveModal('profile')}
-                            className="touch-target min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center hover:opacity-90 transition-opacity shrink-0 ml-1 cursor-pointer"
-                            aria-label={`Profile — ${displayNameForUser(user)}`}
-                            title={displayNameForUser(user)}
-                        >
-                            <UserAvatar
-                                user={user}
-                                size={36}
-                                className="ring-1 ring-black/5 dark:ring-white/10"
-                                fallbackStyle={{ backgroundColor: 'var(--teaching-avatar-red)' }}
-                            />
-                        </button>
-                        <SignOutButton className="touch-target p-2 rounded-xl transition-colors hover:bg-white/50 dark:hover:bg-slate-800/50 flex items-center justify-center min-w-[44px] min-h-[44px]" />
-                    </div>
-                </div>
-            </header>
-
-            {/* Mobile Panel Tabs — single-column switching, touch-friendly */}
-            <div className={`md:hidden flex bg-white/70 dark:bg-slate-900/80 z-20 relative safe-x padding-safe-top ${isImmersiveFullscreen ? 'hidden' : ''}`} style={{ paddingBottom: 'var(--space-xs)' }}>
+            {/* Compact panel tabs — phone + tablet portrait (single active panel) */}
+            <div
+                role="tablist"
+                aria-label="Teaching workspace panels"
+                className={`${isCompactLayout && !isImmersiveFullscreen ? 'flex' : 'hidden'} teaching-compact-tabs bg-white/70 dark:bg-slate-900/80 z-20 relative safe-x padding-safe-top`}
+                style={{ paddingBottom: 'var(--space-xs)' }}
+            >
                 {[
                     { id: 'home', icon: MessageCircle, label: 'Chat' },
                     { id: 'teach', icon: Sparkles, label: 'Teaching' },
@@ -1675,28 +1741,34 @@ export default function TeachingPage() {
                 ].map((panel) => (
                     <button
                         key={panel.id}
+                        type="button"
+                        role="tab"
                         onClick={() => setMobilePanel(panel.id as typeof mobilePanel)}
                         className={`flex-1 py-3 flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium transition-all min-h-[48px] rounded-xl touch-manipulation ${mobilePanel === panel.id
-                            ? 'text-purple-700 dark:text-purple-300 bg-white dark:bg-slate-800 shadow-sm'
+                            ? 'text-[var(--teaching-accent)] bg-white dark:bg-slate-800 shadow-sm'
                             : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
                             }`}
                         aria-label={`Switch to ${panel.label} panel`}
-                        aria-pressed={mobilePanel === panel.id}
+                        aria-selected={mobilePanel === panel.id}
                     >
-                        <panel.icon className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                        <panel.icon className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" aria-hidden />
                         <span>{panel.label}</span>
                     </button>
                 ))}
             </div>
 
             <main
-                className={`flex-1 flex flex-col min-h-0 w-full ${isMobile ? 'min-h-[50vh]' : ''}`}
+                className={`flex-1 flex flex-col min-h-0 w-full ${isCompactLayout ? 'min-h-[50vh]' : ''}`}
                 style={{ overflow: 'hidden' }}
             >
                 <motion.div
                     layout
-                    className={`flex-1 w-full flex overflow-y-auto overflow-x-hidden lg:overflow-hidden relative min-h-0 ${isMobile ? 'flex-col' : 'lg:flex-row flex-col items-stretch'}`}
-                    animate={isMobile ? {} : {
+                    className={`teaching-workspace flex-1 w-full flex overflow-x-hidden relative min-h-0 ${
+                        isCompactLayout
+                            ? 'flex-col overflow-hidden'
+                            : 'flex-row overflow-hidden items-stretch'
+                    }`}
+                    animate={isCompactLayout ? {} : {
                         paddingTop: (centerMaximized || rightMaximized || chatMaximized || isImmersiveFullscreen) ? 0 : 'var(--teaching-content-margin-y)',
                         paddingBottom: (centerMaximized || rightMaximized || chatMaximized || isImmersiveFullscreen) ? 0 : 'var(--teaching-content-margin-y)',
                         paddingLeft: (centerMaximized || rightMaximized || chatMaximized || isImmersiveFullscreen) ? 0 : 'max(var(--teaching-content-padding-x), var(--safe-left))',
@@ -1704,16 +1776,16 @@ export default function TeachingPage() {
                         gap: (centerMaximized || rightMaximized || chatMaximized || isImmersiveFullscreen) ? 0 : 'var(--teaching-panels-gap)',
                         background: (centerMaximized || rightMaximized || chatMaximized || isImmersiveFullscreen) ? 'var(--teaching-panel-bg)' : 'transparent',
                     }}
-                    style={isMobile ? { minHeight: 0, paddingLeft: 'var(--safe-left)', paddingRight: 'var(--safe-right)' } : {
+                    style={isCompactLayout ? { minHeight: 0, paddingLeft: 'var(--safe-left)', paddingRight: 'var(--safe-right)' } : {
                         height: '100%',
                         minHeight: 0,
                         position: 'relative',
                     }}
                     transition={{ type: 'spring', damping: 28, stiffness: 300 }}
                 >
-                    {/* Collapsed Chat Panel Expander (desktop/tablet only) */}
+                    {/* Collapsed Chat Panel Expander (multi-panel only) */}
                     <AnimatePresence mode="popLayout">
-                        {!isMobile && !chatPanelVisible && !chatMaximized && !centerMaximized && !rightMaximized && !isImmersiveFullscreen && (
+                        {isMultiPanel && !chatPanelVisible && !chatMaximized && !centerMaximized && !rightMaximized && !isImmersiveFullscreen && (
                             <motion.div
                                 layout
                                 initial={{ opacity: 0, width: 0 }}
@@ -1746,7 +1818,7 @@ export default function TeachingPage() {
                         {/* Panel Header — centered title with minimize / maximize controls */}
                         {!immersiveDoubtOpen && (
                         <div
-                            className="hidden md:flex items-center justify-center shrink-0 border-b bg-transparent relative"
+                            className={`${isCompactLayout ? 'hidden' : 'flex'} items-center justify-center shrink-0 border-b bg-transparent relative`}
                             style={{
                                 minHeight: chatMaximized ? '56px' : 'clamp(48px, 8vh, 60px)',
                                 height: chatMaximized ? '56px' : 'clamp(48px, 8vh, 60px)',
@@ -1762,7 +1834,7 @@ export default function TeachingPage() {
                             {chatMaximized && (
                                 <h2 className="text-base font-medium text-[var(--teaching-panel-text)]" style={{ letterSpacing: '0.01em' }}>Chat Panel</h2>
                             )}
-                            {!isMobile && (
+                            {isMultiPanel && (
                                 <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1">
                                     {!chatMaximized && (
                                         <motion.button
@@ -1817,8 +1889,8 @@ export default function TeachingPage() {
                                     className="shrink-0 overflow-hidden border-b"
                                     style={{ borderColor: 'var(--teaching-panel-divider)' }}
                                 >
-                                    <div className="flex items-center justify-between gap-2 px-3 py-2 bg-purple-50 dark:bg-purple-900/30">
-                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-purple-700 dark:text-purple-300 min-w-0">
+                                    <div className="flex items-center justify-between gap-2 px-3 py-2" style={{ background: 'color-mix(in srgb, var(--teaching-accent, #1d4ed8) 10%, transparent)' }}>
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold min-w-0" style={{ color: 'var(--teaching-accent, #1d4ed8)' }}>
                                             {doubtSpeaking ? (
                                                 <button
                                                     type="button"
@@ -1827,7 +1899,7 @@ export default function TeachingPage() {
                                                     title="Stop the teacher's voice"
                                                     aria-label="Stop speaking"
                                                 >
-                                                    <Volume2 className="w-4 h-4 shrink-0 animate-pulse text-purple-600 dark:text-purple-300" />
+                                                    <Volume2 className="w-4 h-4 shrink-0 animate-pulse" style={{ color: 'var(--teaching-accent)' }} />
                                                     <span className="truncate">Aɪra is speaking...</span>
                                                 </button>
                                             ) : isListening ? (
@@ -1913,7 +1985,15 @@ export default function TeachingPage() {
                             {uploadedChatFiles.length > 0 && (
                                 <div className="flex flex-wrap gap-1.5 mb-2">
                                     {uploadedChatFiles.map((f, i) => (
-                                        <div key={i} className="flex items-center gap-1 bg-purple-50 border border-purple-200 rounded-lg px-2 py-1 text-xs text-purple-700 max-w-[140px]">
+                                        <div
+                                            key={i}
+                                            className="flex items-center gap-1 rounded-lg border px-2 py-1 text-xs max-w-[140px]"
+                                            style={{
+                                                background: 'color-mix(in srgb, var(--teaching-accent, #1d4ed8) 10%, transparent)',
+                                                borderColor: 'color-mix(in srgb, var(--teaching-accent, #1d4ed8) 28%, transparent)',
+                                                color: 'var(--teaching-accent, #1d4ed8)',
+                                            }}
+                                        >
                                             {f.type.startsWith('image/') && f.dataUrl
                                                 ? <img src={f.dataUrl} alt={f.name} className="w-5 h-5 rounded object-cover shrink-0" />
                                                 : <FileText className="w-3.5 h-3.5 shrink-0" />
@@ -1922,7 +2002,7 @@ export default function TeachingPage() {
                                             <button
                                                 type="button"
                                                 onClick={() => setUploadedChatFiles(prev => prev.filter((_, idx) => idx !== i))}
-                                                className="text-purple-400 hover:text-purple-700 shrink-0 ml-0.5"
+                                                className="shrink-0 ml-0.5 opacity-70 hover:opacity-100"
                                                 aria-label="Remove file"
                                             >✕</button>
                                         </div>
@@ -1930,106 +2010,31 @@ export default function TeachingPage() {
                                 </div>
                             )}
                             <div
-                                className="flex items-center gap-2 rounded-2xl border px-3 transition-all focus-within:border-purple-400 focus-within:ring-2 focus-within:ring-purple-200/60"
+                                className="flex items-center gap-2 rounded-2xl border px-3 transition-all focus-within:border-[var(--teaching-accent)] focus-within:shadow-[var(--dash-focus-ring)]"
                                 style={{
-                                    background: 'var(--teaching-panel-bg-alt, #f6f5fa)',
+                                    background: 'var(--teaching-panel-bg-alt, #f8fafc)',
                                     borderColor: isChatLoading ? 'var(--teaching-accent)' : 'var(--teaching-panel-divider)',
                                     minHeight: '48px',
                                 }}
                             >
-                                {/* Hidden file input */}
-                                <input
-                                    ref={chatFileInputRef}
-                                    type="file"
-                                    accept="image/*,.pdf,.doc,.docx,.txt"
-                                    multiple
-                                    className="hidden"
-                                    onChange={async (e) => {
-                                        const files = Array.from(e.target.files || []);
-                                        for (const file of files) {
-                                            if (isImageLikeFile(file)) {
-                                                const reader = new FileReader();
-                                                reader.onload = (ev) => {
-                                                    setUploadedChatFiles(prev => [...prev, {
-                                                        name: file.name,
-                                                        dataUrl: ev.target?.result as string,
-                                                        type: file.type || 'image/jpeg',
-                                                    }]);
-                                                };
-                                                reader.onerror = () => {
-                                                    toast.error(`Could not read image: ${file.name}`);
-                                                };
-                                                reader.readAsDataURL(file);
-                                            } else {
-                                                try {
-                                                    setUploadedChatFiles(prev => [...prev, { name: file.name, type: file.type }]);
-
-                                                    const extractedText = await extractUploadedText(file);
-                                                    const text =
-                                                        extractedText.trim().length > 0
-                                                            ? extractedText
-                                                            : '[No extractable text in this document.]';
-
-                                                    let assigned = false;
-                                                    setUploadedChatFiles(prev =>
-                                                        prev.map((f) => {
-                                                            if (
-                                                                !assigned &&
-                                                                f.name === file.name &&
-                                                                f.dataUrl === undefined
-                                                            ) {
-                                                                assigned = true;
-                                                                return { ...f, dataUrl: text };
-                                                            }
-                                                            return f;
-                                                        })
-                                                    );
-                                                } catch (err) {
-                                                    console.error(`Failed to parse ${file.name}:`, err);
-                                                    toast.error(`Could not read text from ${file.name}`);
-                                                    let removed = false;
-                                                    setUploadedChatFiles((prev) =>
-                                                        prev.filter((f) => {
-                                                            if (
-                                                                !removed &&
-                                                                f.name === file.name &&
-                                                                f.dataUrl === undefined
-                                                            ) {
-                                                                removed = true;
-                                                                return false;
-                                                            }
-                                                            return true;
-                                                        })
-                                                    );
-                                                }
-                                            }
-                                        }
-                                        // Reset input so same file can be selected again
-                                        e.target.value = '';
+                                <ChatAttachMenu
+                                    disabled={isChatLoading}
+                                    onFilesSelected={(files) => {
+                                        void processChatFiles(files);
+                                    }}
+                                    onImageCaptured={(file) => {
+                                        setUploadedChatFiles((prev) => [...prev, file]);
                                     }}
                                 />
-                                {/* Upload button */}
-                                <button
-                                    type="button"
-                                    onClick={() => chatFileInputRef.current?.click()}
-                                    disabled={isChatLoading}
-                                    className="shrink-0 flex items-center justify-center rounded-full w-8 h-8 text-gray-400 hover:text-purple-500 hover:bg-purple-50 transition-all disabled:opacity-40"
-                                    title="Attach image or document"
-                                    aria-label="Attach file"
-                                >
-                                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.41 17.41A2 2 0 0 1 6.59 14.59L15.78 5.4" />
-                                    </svg>
-                                </button>
                                 {/* Voice input (mic) */}
                                 {!isVideoOnlyLesson && (
                                 <button
                                     type="button"
                                     onClick={() => (isListening ? stopListening() : startListening())}
                                     disabled={isChatLoading}
-                                    className={`shrink-0 flex items-center justify-center rounded-full w-8 h-8 transition-all disabled:opacity-40 ${isListening
+                                    className={`shrink-0 flex items-center justify-center rounded-full w-9 h-9 min-w-[36px] min-h-[36px] transition-all disabled:opacity-40 ${isListening
                                         ? 'text-red-500 bg-red-50 dark:bg-red-900/30 animate-pulse'
-                                        : 'text-gray-400 hover:text-purple-500 hover:bg-purple-50'
+                                        : 'text-gray-400 hover:text-[var(--teaching-accent)] hover:bg-[color-mix(in_srgb,var(--teaching-accent)_12%,transparent)]'
                                         }`}
                                     title={isListening ? 'Stop voice input' : 'Speak your question'}
                                     aria-label={isListening ? 'Stop voice input' : 'Start voice input'}
@@ -2044,7 +2049,7 @@ export default function TeachingPage() {
                                     value={inputMessage}
                                     onChange={(e) => setInputMessage(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && !isChatLoading && !attachmentStillLoading && handleSendMessage()}
-                                    placeholder={isListening ? 'Listening... speak your doubt' : isChatLoading ? 'AI is thinking...' : isInDoubtMode ? 'Ask your doubt — speak or type...' : 'Ask anything or attach a file...'}
+                                    placeholder={isListening ? 'Listening… speak now' : isChatLoading ? 'AIra is thinking…' : isInDoubtMode ? 'Ask AIra about this topic…' : 'Ask AIra about this topic…'}
                                     disabled={isChatLoading}
                                     className="flex-1 min-w-0 bg-transparent border-none outline-none focus:ring-0 text-sm placeholder:text-gray-400 dark:placeholder:text-slate-500 py-2 disabled:cursor-wait"
                                     style={{ color: 'var(--teaching-panel-text)' }}
@@ -2058,7 +2063,7 @@ export default function TeachingPage() {
                                     style={{
                                         width: 36,
                                         height: 36,
-                                        background: 'var(--teaching-accent, #7c3aed)',
+                                        background: 'var(--teaching-accent)',
                                     }}
                                     aria-label="Send message"
                                 >
@@ -2073,11 +2078,11 @@ export default function TeachingPage() {
                                     type="button"
                                     onClick={() => (isTeacherMode ? deactivateTeacherMode() : activateTeacherMode())}
                                     disabled={!currentSession}
-                                    className={`shrink-0 flex items-center justify-center rounded-full transition-all active:scale-90 hover:scale-110 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 ${isTeacherMode ? 'ring-2 ring-purple-300' : ''}`}
+                                    className={`shrink-0 flex items-center justify-center rounded-full transition-all active:scale-90 hover:scale-110 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 ${isTeacherMode ? 'ring-2 ring-blue-300' : ''}`}
                                     style={{
                                         width: 36,
                                         height: 36,
-                                        background: 'linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)',
+                                        background: 'linear-gradient(135deg, var(--teaching-accent) 0%, var(--teaching-accent-hover) 100%)',
                                         boxShadow: isTeacherMode ? '0 0 14px rgba(124, 58, 237, 0.65)' : '0 2px 8px rgba(124, 58, 237, 0.3)',
                                     }}
                                     title={isTeacherMode ? 'Voice Teaching Mode is ON — click to stop' : 'Interactive AI Teacher'}
@@ -2101,17 +2106,17 @@ export default function TeachingPage() {
                     return (
                     <motion.div
                         layout
-                        initial={isMobile ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
-                        animate={isMobile ? { opacity: mobilePanel === 'home' ? 1 : 0 } : {
+                        initial={isCompactLayout ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
+                        animate={isCompactLayout ? { opacity: mobilePanel === 'home' ? 1 : 0 } : {
                             opacity: ((centerMaximized || rightMaximized || isImmersiveFullscreen) && !chatMaximized) ? 0 : 1,
-                            flex: panelFlex((centerMaximized || rightMaximized || isImmersiveFullscreen) && !chatMaximized, chatMaximized, '23 23 0%'),
+                            flex: panelFlex((centerMaximized || rightMaximized || isImmersiveFullscreen) && !chatMaximized, chatMaximized, chatFlexRatio),
                             borderRadius: chatMaximized ? 0 : 'var(--teaching-panel-radius)',
                             boxShadow: chatMaximized ? 'none' : 'var(--teaching-panel-shadow)',
                         }}
-                        exit={isMobile ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
+                        exit={isCompactLayout ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
                         transition={{ type: 'spring', damping: 28, stiffness: 300, duration: reduceAnimations ? 0 : 0.35 }}
-                        className={`${isMobile ? 'absolute inset-0 w-full h-full' : 'relative min-w-0'} flex flex-col z-30 lg:z-auto order-2 lg:order-1 ${mobilePanel === 'home' ? 'flex' : 'hidden lg:flex md:flex'}`}
-                        style={isMobile ? {
+                        className={`${isCompactLayout ? 'absolute inset-0 w-full h-full' : 'relative min-w-0'} flex flex-col z-30 order-2 ${isMultiPanel ? 'lg:order-1' : ''}`}
+                        style={isCompactLayout ? {
                             display: mobilePanel === 'home' ? 'flex' : 'none',
                             pointerEvents: mobilePanel === 'home' ? 'auto' : 'none'
                         } : {
@@ -2119,7 +2124,8 @@ export default function TeachingPage() {
                             overflow: 'hidden',
                             alignSelf: 'stretch',
                             padding: 0,
-                            ...stackedPanelStyle,
+                            minHeight: 0,
+                            minWidth: isTabletLandscape ? 180 : 0,
                         }}
                     >
                         {chatPanelBody}
@@ -2136,16 +2142,16 @@ export default function TeachingPage() {
                             <motion.div
                                 ref={immersiveOverlayRef}
                                 layout
-                                initial={isMobile ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
-                                animate={isMobile ? { opacity: mobilePanel === 'teach' ? 1 : 0 } : {
+                                initial={isCompactLayout ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
+                                animate={isCompactLayout ? { opacity: mobilePanel === 'teach' ? 1 : 0 } : {
                                     opacity: (rightMaximized || chatMaximized) && !isImmersiveFullscreen ? 0 : 1,
-                                    flex: isImmersiveFullscreen ? '0 0 0px' : panelFlex(rightMaximized || chatMaximized, centerMaximized, rightPanelVisible ? '55 55 0%' : '75 75 0%'),
+                                    flex: isImmersiveFullscreen ? '0 0 0px' : panelFlex(rightMaximized || chatMaximized, centerMaximized, rightPanelVisible ? teachFlexRatio : teachFlexWhenStudioHidden),
                                     borderRadius: isImmersiveFullscreen || centerMaximized ? 0 : 20,
                                     boxShadow: isImmersiveFullscreen || centerMaximized ? 'none' : '0 1px 3px rgba(0,0,0,0.04)',
                                 }}
-                                exit={isMobile ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
+                                exit={isCompactLayout ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
                                 transition={{ type: 'spring', damping: 28, stiffness: 300, duration: reduceAnimations ? 0 : 0.35 }}
-                                className={`${isMobile ? 'absolute inset-0 w-full h-full' : 'relative min-w-0'} flex flex-col order-1 lg:order-2 ${mobilePanel === 'teach' ? 'flex' : 'hidden lg:flex md:flex'} ${isImmersiveFullscreen ? 'immersive-teaching-overlay' : ''} ${immersiveDoubtOpen ? 'immersive-doubt-open' : ''}`}
+                                className={`${isCompactLayout ? 'absolute inset-0 w-full h-full' : 'relative min-w-0'} flex flex-col order-1 ${isMultiPanel ? 'lg:order-2' : ''} ${isImmersiveFullscreen ? 'immersive-teaching-overlay' : ''} ${immersiveDoubtOpen ? 'immersive-doubt-open' : ''}`}
                                 style={isImmersiveFullscreen ? {
                                     position: 'fixed',
                                     inset: 0,
@@ -2154,22 +2160,23 @@ export default function TeachingPage() {
                                     height: '100%',
                                     display: 'flex',
                                     pointerEvents: 'auto',
-                                } : isMobile ? {
+                                } : isCompactLayout ? {
                                     display: mobilePanel === 'teach' ? 'flex' : 'none',
                                     pointerEvents: mobilePanel === 'teach' ? 'auto' : 'none'
                                 } : {
                                     background: 'var(--teaching-panel-bg)',
                                     overflow: 'hidden',
                                     position: 'relative',
-                                    height: isStacked ? 'auto' : '100%',
+                                    height: '100%',
                                     alignSelf: 'stretch',
-                                    ...stackedPanelStyle,
+                                    minHeight: 0,
+                                    minWidth: isTabletLandscape ? 400 : 0,
                                 }}
                             >
-                                {/* Panel Header — hidden in immersive mode (floating toolbar replaces it) */}
+                                {/* Panel Header — multi-panel only (floating toolbar replaces it in immersive) */}
                                 {!isImmersiveFullscreen && (
                                 <motion.div
-                                    className="hidden md:flex items-center justify-center shrink-0 border-b bg-transparent relative"
+                                    className={`${isCompactLayout ? 'hidden' : 'flex'} items-center justify-center shrink-0 border-b bg-transparent relative`}
                                     style={{
                                         height: centerMaximized ? '56px' : '60px',
                                         borderColor: 'var(--teaching-panel-divider)',
@@ -2214,8 +2221,8 @@ export default function TeachingPage() {
                                 )}
 
                                 {/* Mobile fullscreen toggle */}
-                                {isMobile && !isImmersiveFullscreen && (
-                                    <div className="flex md:hidden justify-end px-3 py-2 shrink-0">
+                                {isCompactLayout && !isImmersiveFullscreen && (
+                                    <div className="flex justify-end px-3 py-2 shrink-0 teaching-compact-fs">
                                         <button
                                             type="button"
                                             onClick={handleEnterImmersive}
@@ -2273,14 +2280,14 @@ export default function TeachingPage() {
                                                     onClick={() => handleRaiseDoubt()}
                                                     disabled={isInDoubtMode || !currentSession}
                                                     className={`touch-target px-4 sm:px-5 h-[40px] rounded-full flex items-center justify-center gap-2 font-bold text-sm transition-all shadow-sm active:scale-95 ${!isInDoubtMode && currentSession
-                                                        ? 'bg-purple-100 hover:bg-purple-200 text-purple-700 dark:bg-purple-900/40 dark:hover:bg-purple-900/60 dark:text-purple-300'
+                                                        ? 'bg-[color-mix(in_srgb,var(--teaching-accent)_14%,transparent)] hover:bg-[color-mix(in_srgb,var(--teaching-accent)_22%,transparent)] text-[var(--teaching-accent)]'
                                                         : 'bg-gray-100 text-gray-400 dark:bg-slate-800 dark:text-slate-500 cursor-not-allowed opacity-60'
                                                         }`}
-                                                    aria-label="Raise Doubt"
+                                                    aria-label="Ask AIra"
                                                     title="Pause the lesson and ask the AI teacher"
                                                 >
                                                     <HelpCircle className="w-4 h-4 shrink-0" />
-                                                    <span className="hidden sm:inline">{isInDoubtMode ? 'Doubt Mode' : 'Raise Doubt'}</span>
+                                                    <span className="hidden sm:inline">{isInDoubtMode ? 'Asking AIra' : 'Ask AIra'}</span>
                                                 </button>
 
                                                 {!isVideoOnlyLesson && (
@@ -2437,7 +2444,7 @@ export default function TeachingPage() {
                                                 }}
                                             >
                                                 <div className="text-center flex-1 flex items-center justify-center">
-                                                    <div className="w-12 h-12 border-[6px] border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+                                                    <div className="w-12 h-12 border-[6px] border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                                                 </div>
                                             </motion.div>
                                         ) : (
@@ -2455,7 +2462,18 @@ export default function TeachingPage() {
                                                 }}
                                             >
                                                 <motion.div
-                                                    className="teaching-board flex flex-col relative overflow-hidden cursor-pointer"
+                                                    role="button"
+                                                    tabIndex={0}
+                                                    aria-label={
+                                                        isVideoOnlyLesson
+                                                            ? 'Teaching board'
+                                                            : isSpeaking || isFetchingAudio
+                                                              ? 'Pause teacher speech'
+                                                              : isPaused
+                                                                ? 'Resume teacher speech'
+                                                                : 'Start teacher speech'
+                                                    }
+                                                    className={`teaching-board flex flex-col relative overflow-hidden ${isVideoOnlyLesson ? '' : 'cursor-pointer'}`}
                                                     onClick={() => {
                                                         if (isImmersiveFullscreen) {
                                                             showControls();
@@ -2479,6 +2497,12 @@ export default function TeachingPage() {
                                                             setPlaybackTrigger(prev => prev + 1);
                                                         }
                                                     }}
+                                                    onKeyDown={(e) => {
+                                                        if (isVideoOnlyLesson) return;
+                                                        if (e.key !== 'Enter' && e.key !== ' ') return;
+                                                        e.preventDefault();
+                                                        (e.currentTarget as HTMLElement).click();
+                                                    }}
                                                     style={{
                                                         borderRadius: isImmersiveFullscreen && isMobile ? 8 : isImmersiveFullscreen || centerMaximized ? 16 : 'var(--teaching-board-radius)',
                                                         boxShadow: isImmersiveFullscreen || centerMaximized ? '0 12px 48px -12px rgba(0,0,0,0.22), 0 0 0 1px rgba(0,0,0,0.04)' : '0 12px 40px -8px rgba(0,0,0,0.15)',
@@ -2495,8 +2519,8 @@ export default function TeachingPage() {
                                                                 if (!currentStepData || !topicId) return null;
                                                                 const boardFallback = (
                                                                     <div className="w-full h-full flex flex-col items-center justify-center bg-slate-900/50 rounded-2xl">
-                                                                        <Loader2 className="w-8 h-8 text-purple-500 animate-spin mb-4" />
-                                                                        <p className="text-sm text-slate-300 font-medium">Loading Interactive Visuals...</p>
+                                                                        <Loader2 className="w-8 h-8 text-[var(--teaching-accent,#1d4ed8)] animate-spin mb-4" />
+                                                                        <p className="text-sm text-slate-300 font-medium">Loading visuals…</p>
                                                                     </div>
                                                                 );
 
@@ -2537,8 +2561,17 @@ export default function TeachingPage() {
                                                                 if (!visualsEntry) {
                                                                     console.error(`Visual Registry Integrity Violation: No entry for ${topicId}. Blocking render.`);
                                                                     return (
-                                                                        <div className="flex flex-col items-center justify-center p-8 text-center">
-                                                                            <p className="text-white/60 font-medium italic">High-fidelity visual content is strictly required by Rule 1. This topic is currently restricted.</p>
+                                                                        <div className="flex flex-col items-center justify-center p-8 text-center gap-3">
+                                                                            <p className="text-white/80 font-medium text-sm max-w-sm">
+                                                                                A matching diagram isn&apos;t available for this step yet. You can keep learning from the teacher&apos;s explanation.
+                                                                            </p>
+                                                                            <button
+                                                                                type="button"
+                                                                                onClick={goBackToCurriculum}
+                                                                                className="min-h-[40px] rounded-lg px-4 text-xs font-bold text-white/90 border border-white/25 hover:bg-white/10"
+                                                                            >
+                                                                                Back to curriculum
+                                                                            </button>
                                                                         </div>
                                                                     );
                                                                 }
@@ -2625,6 +2658,30 @@ export default function TeachingPage() {
                                         )}
                                     </AnimatePresence>
                                     </FullscreenBoardScaler>
+
+                                    {!isImmersiveFullscreen && lessonComplete && currentSession ? (
+                                        <div className="shrink-0 px-3 pb-3 sm:px-4 sm:pb-4">
+                                            <LessonCompletionPanel
+                                                topicName={currentSession.topicName}
+                                                showPractice
+                                                onPractice={() => {
+                                                    setMobilePanel('studio');
+                                                    setActiveStudioTab('quiz');
+                                                    setStudioInViewer(true);
+                                                }}
+                                                onReview={() => {
+                                                    goToStep(0);
+                                                    setPlaybackTrigger((n) => n + 1);
+                                                }}
+                                                onExit={
+                                                    topicContext.type === 'curriculum'
+                                                        ? goBackToCurriculum
+                                                        : goStudentHome
+                                                }
+                                            />
+                                        </div>
+                                    ) : null}
+
                                     {isImmersiveFullscreen && showCaptions && !isInDoubtMode && currentStepData && !isVideoOnlyLesson && (
                                         <div className="teaching-immersive-captions" aria-live="polite">
                                             <p className="teaching-immersive-captions__title">
@@ -2650,8 +2707,12 @@ export default function TeachingPage() {
                                         >
                                             <div className="flex flex-col min-h-0 flex-1 h-full overflow-hidden">
                                                 <div
-                                                    className="shrink-0 flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-purple-700 dark:text-purple-300 border-b"
-                                                    style={{ borderColor: 'var(--teaching-panel-divider)', background: 'rgba(168, 85, 247, 0.08)' }}
+                                                    className="shrink-0 flex items-center gap-1.5 px-3 py-2 text-xs font-semibold border-b"
+                                                    style={{
+                                                        borderColor: 'var(--teaching-panel-divider)',
+                                                        background: 'color-mix(in srgb, var(--teaching-accent, #1d4ed8) 10%, transparent)',
+                                                        color: 'var(--teaching-accent, #1d4ed8)',
+                                                    }}
                                                 >
                                                     {doubtSpeaking ? (
                                                         <button
@@ -2701,7 +2762,7 @@ export default function TeachingPage() {
                                                     }}
                                                 >
                                                     <div
-                                                        className="flex items-center gap-2 rounded-2xl border px-3 transition-all focus-within:border-purple-400 focus-within:ring-2 focus-within:ring-purple-200/60"
+                                                        className="flex items-center gap-2 rounded-2xl border px-3 transition-all focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-200/60"
                                                         style={{
                                                             background: 'var(--teaching-panel-bg-alt, #f6f5fa)',
                                                             borderColor: isChatLoading ? 'var(--teaching-accent)' : 'var(--teaching-panel-divider)',
@@ -2715,7 +2776,7 @@ export default function TeachingPage() {
                                                             disabled={isChatLoading}
                                                             className={`shrink-0 flex items-center justify-center rounded-full w-8 h-8 transition-all disabled:opacity-40 ${isListening
                                                                 ? 'text-red-500 bg-red-50 dark:bg-red-900/30 animate-pulse'
-                                                                : 'text-gray-400 hover:text-purple-500 hover:bg-purple-50'
+                                                                : 'text-gray-400 hover:text-blue-600 hover:bg-blue-50'
                                                                 }`}
                                                             aria-label={isListening ? 'Stop voice input' : 'Start voice input'}
                                                         >
@@ -2741,7 +2802,7 @@ export default function TeachingPage() {
                                                             style={{
                                                                 width: 36,
                                                                 height: 36,
-                                                                background: 'var(--teaching-accent, #7c3aed)',
+                                                                background: 'var(--teaching-accent)',
                                                             }}
                                                             aria-label="Send message"
                                                         >
@@ -2755,11 +2816,11 @@ export default function TeachingPage() {
                                                             type="button"
                                                             onClick={() => (isTeacherMode ? deactivateTeacherMode() : activateTeacherMode())}
                                                             disabled={!currentSession}
-                                                            className={`shrink-0 flex items-center justify-center rounded-full transition-all active:scale-90 hover:scale-110 disabled:opacity-40 ${isTeacherMode ? 'ring-2 ring-purple-300' : ''}`}
+                                                            className={`shrink-0 flex items-center justify-center rounded-full transition-all active:scale-90 hover:scale-110 disabled:opacity-40 ${isTeacherMode ? 'ring-2 ring-blue-300' : ''}`}
                                                             style={{
                                                                 width: 36,
                                                                 height: 36,
-                                                                background: 'linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)',
+                                                                background: 'linear-gradient(135deg, var(--teaching-accent) 0%, var(--teaching-accent-hover) 100%)',
                                                             }}
                                                             aria-label={isTeacherMode ? 'Stop Interactive AI Teacher' : 'Start Interactive AI Teacher'}
                                                             aria-pressed={isTeacherMode}
@@ -2784,7 +2845,7 @@ export default function TeachingPage() {
                                             exit={{ opacity: 0, scale: 0.9, y: 20 }}
                                             className="absolute bottom-32 left-1/2 -translate-x-1/2 px-6 py-3 bg-gray-900/90 text-white rounded-2xl shadow-2xl backdrop-blur-md flex items-center gap-3 z-50 pointer-events-none border border-white/10"
                                         >
-                                            <div className="w-2 h-2 rounded-full bg-purple-500 animate-ping" />
+                                            <div className="w-2 h-2 rounded-full bg-blue-500 animate-ping" />
                                             <span className="text-sm font-bold capitalize">{lastUserAction.replace('-', ' ')}</span>
                                         </motion.div>
                                     )}
@@ -2795,7 +2856,7 @@ export default function TeachingPage() {
 
                     {/* Collapsed Panel Expanders (desktop/tablet only) — hidden when Studio is maximized */}
                     <AnimatePresence mode="popLayout">
-                        {!isMobile && !centerPanelVisible && !centerMaximized && !rightMaximized && !chatMaximized && !isImmersiveFullscreen && (
+                        {isMultiPanel && !centerPanelVisible && !centerMaximized && !rightMaximized && !chatMaximized && !isImmersiveFullscreen && (
                             <motion.div
                                 layout
                                 initial={{ opacity: 0, width: 0 }}
@@ -2824,29 +2885,30 @@ export default function TeachingPage() {
                         {rightPanelVisible && (
                             <motion.div
                                 layout
-                                initial={isMobile ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
-                                animate={isMobile ? { opacity: mobilePanel === 'studio' ? 1 : 0 } : { 
+                                initial={isCompactLayout ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
+                                animate={isCompactLayout ? { opacity: mobilePanel === 'studio' ? 1 : 0 } : { 
                                     opacity: (centerMaximized || chatMaximized || isImmersiveFullscreen) ? 0 : 1,
-                                    flex: panelFlex(centerMaximized || chatMaximized || isImmersiveFullscreen, rightMaximized, centerPanelVisible ? '22 22 0%' : '75 75 0%'),
+                                    flex: panelFlex(centerMaximized || chatMaximized || isImmersiveFullscreen, rightMaximized, centerPanelVisible ? studioFlexRatio : sideFlexWhenCenterHidden),
                                     borderRadius: rightMaximized ? 0 : 20,
                                     boxShadow: rightMaximized ? 'none' : 'var(--teaching-panel-shadow)',
                                 }}
-                                exit={isMobile ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
+                                exit={isCompactLayout ? { opacity: 0 } : { opacity: 0, flex: '0 0 0px' }}
                                 transition={{ type: 'spring', damping: 28, stiffness: 300, duration: reduceAnimations ? 0 : 0.3 }}
-                                className={`${isMobile ? 'absolute inset-0 w-full h-full' : 'relative min-w-0'} flex flex-col z-30 lg:z-auto order-3 ${mobilePanel === 'studio' ? 'flex' : 'hidden lg:flex md:flex'}`}
-                                style={isMobile ? {
+                                className={`${isCompactLayout ? 'absolute inset-0 w-full h-full' : 'relative min-w-0'} flex flex-col z-30 order-3`}
+                                style={isCompactLayout ? {
                                     display: mobilePanel === 'studio' ? 'flex' : 'none',
                                     pointerEvents: mobilePanel === 'studio' ? 'auto' : 'none'
                                 } : {
                                     background: 'var(--teaching-panel-bg)',
                                     overflow: 'hidden',
                                     alignSelf: 'stretch',
-                                    ...stackedPanelStyle,
+                                    minHeight: 0,
+                                    minWidth: isTabletLandscape ? 180 : 0,
                                 }}
                             >
                                 {/* Panel Header — centered title; relative so maximize button positions correctly */}
                                 <div
-                                    className="hidden md:flex items-center justify-center shrink-0 border-b bg-transparent relative"
+                                    className={`${isCompactLayout ? 'hidden' : 'flex'} items-center justify-center shrink-0 border-b bg-transparent relative`}
                                     style={{
                                         height: rightMaximized ? '56px' : '60px',
                                         borderColor: 'var(--teaching-panel-divider)',
@@ -2858,7 +2920,7 @@ export default function TeachingPage() {
                                     {!rightMaximized && (
                                         <h2 className="text-[19px] font-medium text-[var(--teaching-panel-text)]" style={{ letterSpacing: '0.01em' }}>Studio Panel</h2>
                                     )}
-                                    {!isMobile && (
+                                    {isMultiPanel && (
                                         <div className="absolute right-4 top-1/2 -translate-y-1/2">
                                             <motion.button
                                                 type="button"
@@ -2913,7 +2975,7 @@ export default function TeachingPage() {
 
                                             {/* Viewer Content — scroll only inside the tool viewer, keep footers reachable */}
                                             <div className="flex-1 min-h-0 overflow-hidden flex flex-col p-0 sm:p-0">
-                                                <Suspense fallback={<div className="flex h-full items-center justify-center p-8"><Loader2 className="w-8 h-8 animate-spin text-purple-500" /></div>}>
+                                                <Suspense fallback={<div className="flex h-full items-center justify-center p-8"><Loader2 className="w-8 h-8 animate-spin text-blue-500" /></div>}>
                                                     {activeStudioTab === 'notes' && sessionNotes.length > 0 && (
                                                         <div className="flex-1 min-h-0 overflow-y-auto p-4 sm:p-6 custom-scrollbar">
                                                             <NotesViewer note={sessionNotes[sessionNotes.length - 1]} />
@@ -2988,7 +3050,7 @@ export default function TeachingPage() {
 
                     {/* Collapsed Right Panel Expander (desktop/tablet only) — hidden when teaching is maximized */}
                     <AnimatePresence>
-                        {!isMobile && !rightPanelVisible && !rightMaximized && !centerMaximized && !chatMaximized && !isImmersiveFullscreen && (
+                        {isMultiPanel && !rightPanelVisible && !rightMaximized && !centerMaximized && !chatMaximized && !isImmersiveFullscreen && (
                             <motion.div
                                 layout
                                 initial={{ opacity: 0, width: 0 }}
@@ -3055,7 +3117,7 @@ export default function TeachingPage() {
             {activeModal === 'settings' && (() => {
                 const settingsModal = (
                     <div className="absolute inset-0 z-[200] bg-white dark:bg-slate-950 overflow-y-auto w-full h-full flex flex-col">
-                        <Suspense fallback={<div className="flex-1 flex items-center justify-center"><Loader2 className="w-10 h-10 animate-spin text-purple-600" /></div>}>
+                        <Suspense fallback={<div className="flex-1 flex items-center justify-center"><Loader2 className="w-10 h-10 animate-spin text-blue-600" /></div>}>
                             <SettingsPage onClose={() => setActiveModal('none')} />
                         </Suspense>
                     </div>
@@ -3065,7 +3127,7 @@ export default function TeachingPage() {
                 }
                 return (
                     <div className="fixed inset-0 z-[200] bg-white dark:bg-slate-950 overflow-y-auto w-full h-full flex flex-col">
-                        <Suspense fallback={<div className="flex-1 flex items-center justify-center"><Loader2 className="w-10 h-10 animate-spin text-purple-600" /></div>}>
+                        <Suspense fallback={<div className="flex-1 flex items-center justify-center"><Loader2 className="w-10 h-10 animate-spin text-blue-600" /></div>}>
                             <SettingsPage onClose={() => setActiveModal('none')} />
                         </Suspense>
                     </div>
@@ -3076,7 +3138,7 @@ export default function TeachingPage() {
                     className="fixed inset-0 z-[200] bg-white dark:bg-slate-950 overflow-y-auto overscroll-contain w-full h-full flex flex-col"
                     style={{ WebkitOverflowScrolling: 'touch' }}
                 >
-                    <Suspense fallback={<div className="flex-1 flex items-center justify-center"><Loader2 className="w-10 h-10 animate-spin text-purple-600" /></div>}>
+                    <Suspense fallback={<div className="flex-1 flex items-center justify-center"><Loader2 className="w-10 h-10 animate-spin text-blue-600" /></div>}>
                         <ProfilePage onClose={() => setActiveModal('none')} />
                     </Suspense>
                 </div>

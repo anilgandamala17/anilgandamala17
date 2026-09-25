@@ -112,8 +112,8 @@ export async function signUpWithEmail(input: SignUpInput): Promise<MockUserCrede
   void input.password
   void input.dateOfBirth
   analytics.signupStarted('email')
-  const role =
-    normalizeAppRole(input.role) === 'admin' ? 'student' : normalizeAppRole(input.role)
+  // Public self-serve signup is student-only (teacher/admin are provisioned).
+  const role: AppRole = 'student'
   await mockAdapter.signup({
     name: input.name.trim(),
     email,

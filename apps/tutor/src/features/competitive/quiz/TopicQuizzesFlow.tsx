@@ -394,15 +394,15 @@ export default function TopicQuizzesFlow() {
                             {defaultGrade.subjects.map((subject, i) => {
                                 // High-quality educational images tailored for each core subject
                                 const SUBJECT_IMAGES: Record<string, string> = {
-                                    'physics': 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?q=80&w=800&auto=format&fit=crop',
+                                    'physics': '/tutor-media/images/subjects/physics.png',
                                     'chemistry': '/tutor-media/images/subjects/chemistry.png',
-                                    'mathematics': 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800&auto=format&fit=crop',
-                                    'biology': 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop',
-                                    'english': 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop',
-                                    'science': 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop',
-                                    'social science': 'https://images.unsplash.com/photo-1447069387366-2a3b0638ca3d?q=80&w=800&auto=format&fit=crop',
-                                    'hindi': 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop',
-                                    'default': 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop'
+                                    'mathematics': '/tutor-media/images/subjects/mathematics.png',
+                                    'biology': '/tutor-media/images/subjects/biology.png',
+                                    'english': '/tutor-media/images/subjects/english.png',
+                                    'science': '/tutor-media/images/subjects/science.png',
+                                    'social science': '/tutor-media/images/subjects/social-science.png',
+                                    'hindi': '/tutor-media/images/subjects/hindi.png',
+                                    'default': '/tutor-media/images/subjects/science.png',
                                 };
                                 
                                 const bgUrl = SUBJECT_IMAGES[subject.name.trim().toLowerCase()] || SUBJECT_IMAGES[subject.id.trim().toLowerCase()] || SUBJECT_IMAGES['default'];
@@ -621,7 +621,7 @@ export default function TopicQuizzesFlow() {
                                 value={String(calculateScore().total)}
                                 icon={<BrainCircuit className="h-5 w-5" />}
                                 accent={selectedSubject?.color || '#4f46e5'}
-                                detail="+4 / −1 marking"
+                                detail="Practice marking +4 / −1"
                             />
                         </div>
 

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, GraduationCap, Crosshair } from 'lucide-react';
+import { Sparkles, GraduationCap, Crosshair, ChevronRight } from 'lucide-react';
 import { useAuthStore } from '@/stores/authStore';
 import { useShallow } from 'zustand/react/shallow';
 import { displayNameForUser } from '@/components/common/UserAvatar';
@@ -17,7 +17,6 @@ import ContinueLearningCard from './ContinueLearningCard';
 import LearningJourneyChart from './LearningJourneyChart';
 import SubjectMasteryCard from './SubjectMasteryCard';
 import LearningInsightsCard from './LearningInsightsCard';
-import CompetitivePreparationCard from './CompetitivePreparationCard';
 import RecentActivityList from './RecentActivityList';
 import { dedupeRecentMissions } from './recentActivityUtils';
 import TopicDiscovery from './TopicDiscovery';
@@ -32,14 +31,15 @@ type CurriculumModeDashboardProps = {
 };
 
 /**
- * Existing curriculum dashboard body — preserved behavior, dash-* design system.
+ * Curriculum dashboard body — Phase 3 hierarchy.
+ * P1 Continue → P2 Journey/Mastery → P3 Insights → P4 Activity → P5 Discovery → P6 Quick access
  */
 export default function CurriculumModeDashboard({
   onOpenCompetitiveDashboard,
 }: CurriculumModeDashboardProps) {
   const navigate = useNavigate();
   const { user, role } = useAuthStore(
-    useShallow((s) => ({ user: s.user, role: s.role }))
+    useShallow((s) => ({ user: s.user, role: s.role })),
   );
   const routes = getRoutesForRole(role);
   const competitiveAttempts = useCompetitiveStore((s) => s.attempts);
@@ -50,7 +50,7 @@ export default function CurriculumModeDashboard({
 
   const competitiveInsights = useMemo(
     () => computeCompetitiveInsights(competitiveAttempts),
-    [competitiveAttempts]
+    [competitiveAttempts],
   );
 
   const learnerName = firstName(displayNameForUser(user));
@@ -83,7 +83,7 @@ export default function CurriculumModeDashboard({
         (t) =>
           (t.subject === activeCategory ||
             t.subjectId === activeCategory.toLowerCase().replace(/\s+/g, '-')) &&
-          matchesQuery(t)
+          matchesQuery(t),
       );
     }
     return base.slice(0, 8);
@@ -91,16 +91,16 @@ export default function CurriculumModeDashboard({
 
   const recentDeduped = useMemo(
     () => dedupeRecentMissions(insights.recentSessions),
-    [insights.recentSessions]
+    [insights.recentSessions],
   );
-
-  const weeklySpark = insights.metrics.weeklyHours;
 
   const handleStartTopic = (topicId: string) => {
     analytics.dashboardFeatureUsed('student_dashboard', 'start_topic');
     analytics.topicSelected({ topicId });
     const learnPath =
-      'learn' in routes ? (routes as typeof studentRoutes).learn(topicId) : studentRoutes.learn(topicId);
+      'learn' in routes
+        ? (routes as typeof studentRoutes).learn(topicId)
+        : studentRoutes.learn(topicId);
     navigate(learnPath);
   };
 
@@ -116,82 +116,68 @@ export default function CurriculumModeDashboard({
   };
 
   const welcomeDescription = !insights.hasActivity
-    ? 'Start a lesson and your study time, streak, and next topic will show up here as you learn.'
-    : 'Your study time, quiz accuracy, streak, and next recommended lesson update as you practice.';
-
-  const sectionGap = { marginBottom: 'var(--dash-section-gap)' } as const;
+    ? 'Continue where you left off and keep making progress — start a lesson to unlock your study insights.'
+    : 'Continue where you left off and keep making progress.';
 
   return (
     <div
       id="dash-panel-curriculum"
       role="tabpanel"
       aria-labelledby="dash-mode-curriculum"
+      className="dash-stack"
     >
-      <div style={sectionGap}>
-        <WelcomeOverview
-          learnerName={learnerName}
-          readiness={insights.readiness}
-          description={welcomeDescription}
-          orbitLabel={
-            insights.hasActivity
-              ? `${insights.metrics.totalHours}h studied`
-              : 'Ready when you are'
-          }
-          showGrowth={insights.hasActivity && insights.lastWeekMin > 0}
-          growthPct={insights.growthPct}
-          stats={[
-            {
-              label: 'Study time',
-              value: `${insights.metrics.totalHours}h`,
-              tone: 'sky',
-              sparkline: weeklySpark,
-              emptyHint: !insights.hasActivity ? 'Logs after first session' : undefined,
-            },
-            {
-              label: 'Accuracy',
-              value: `${insights.metrics.averageQuizScore}%`,
-              tone: 'amber',
-              sparkline: insights.weeklyQuizBars,
-              onClick: () => navigate(routes.profile),
-              emptyHint: !insights.hasActivity ? 'Unlocks with quizzes' : undefined,
-            },
-            {
-              label: 'Streak',
-              value: `${insights.metrics.streakDays}d`,
-              tone: 'rose',
-              sparkline: weeklySpark.map((h) => (h > 0 ? 1 : 0)),
-              emptyHint: !insights.hasActivity ? 'Study daily to build it' : undefined,
-            },
-            {
-              label: 'Completed',
-              value: `${insights.completedCount}`,
-              tone: 'teal',
-              emptyHint: !insights.hasActivity ? 'Finish a topic to count' : undefined,
-            },
-          ]}
-        />
-      </div>
+      {/* Welcome — compact context */}
+      <WelcomeOverview
+        learnerName={learnerName}
+        readiness={insights.readiness}
+        description={welcomeDescription}
+        showGrowth={insights.hasActivity && insights.lastWeekMin > 0}
+        growthPct={insights.growthPct}
+        stats={[
+          {
+            label: 'Study time',
+            value: insights.hasActivity ? `${insights.metrics.totalHours}h` : '—',
+            emptyHint: !insights.hasActivity ? 'After first session' : undefined,
+          },
+          {
+            label: 'Accuracy',
+            value: insights.hasActivity ? `${insights.metrics.averageQuizScore}%` : '—',
+            onClick: () => navigate(routes.profile),
+            emptyHint: !insights.hasActivity ? 'Unlocks with quizzes' : undefined,
+          },
+          {
+            label: 'Streak',
+            value: insights.hasActivity ? `${insights.metrics.streakDays}d` : '—',
+            emptyHint: !insights.hasActivity ? 'Study daily to build' : undefined,
+          },
+          {
+            label: 'Completed',
+            value: insights.hasActivity ? `${insights.completedCount}` : '—',
+            emptyHint: !insights.hasActivity ? 'Finish a topic' : undefined,
+          },
+        ]}
+      />
 
-      <div style={sectionGap}>
-        <ContinueLearningCard
-          title={insights.nextTopic?.name || 'Pick a lesson'}
-          subjectId={insights.nextTopic?.subjectId || 'mathematics'}
-          subjectName={insights.nextTopic?.subject}
-          difficulty={insights.nextTopic?.difficulty}
-          duration={insights.nextTopic?.duration}
-          inProgress={insights.nextTopic?.inProgress}
-          mastery={insights.nextTopic?.mastery}
-          lastSessionAt={insights.lastSessionAt}
-          empty={!insights.nextTopic}
-          onBrowse={openCurriculum}
-          onLaunch={() => {
-            if (insights.nextTopic) handleStartTopic(insights.nextTopic.id);
-            else openCurriculum();
-          }}
-        />
-      </div>
+      {/* P1 — Continue Learning */}
+      <ContinueLearningCard
+        title={insights.nextTopic?.name || 'Pick a lesson'}
+        subjectId={insights.nextTopic?.subjectId || 'mathematics'}
+        subjectName={insights.nextTopic?.subject}
+        difficulty={insights.nextTopic?.difficulty}
+        duration={insights.nextTopic?.duration}
+        inProgress={insights.nextTopic?.inProgress}
+        mastery={insights.nextTopic?.mastery}
+        lastSessionAt={insights.lastSessionAt}
+        empty={!insights.nextTopic}
+        onBrowse={openCurriculum}
+        onLaunch={() => {
+          if (insights.nextTopic) handleStartTopic(insights.nextTopic.id);
+          else openCurriculum();
+        }}
+      />
 
-      <div className="dash-grid-row" style={sectionGap}>
+      {/* P2 / P3 — Journey + Mastery */}
+      <div className="dash-grid-row">
         <div className="lg:col-span-7 min-w-0">
           <LearningJourneyChart
             points={insights.journeyPoints}
@@ -210,45 +196,76 @@ export default function CurriculumModeDashboard({
         </div>
       </div>
 
-      <div className="dash-grid-row" style={sectionGap}>
-        <div className="lg:col-span-6 min-w-0">
-          <LearningInsightsCard
-            strengths={insights.strengths}
-            focusAreas={insights.focusAreas}
-            empty={insights.strengths.length === 0 && insights.focusAreas.length === 0}
-          />
+      {/* Insights — actionable, full width */}
+      <LearningInsightsCard
+        strengths={insights.strengths}
+        focusAreas={insights.focusAreas}
+        empty={insights.strengths.length === 0 && insights.focusAreas.length === 0}
+      />
+
+      {/* Cross-mode bridge — flat secondary, not equal to Continue */}
+      <div
+        className="flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between rounded-[var(--dash-radius-md)] px-3.5 py-3 border"
+        style={{
+          borderColor: 'var(--dash-border)',
+          background: 'var(--dash-surface-1)',
+        }}
+      >
+        <div className="min-w-0">
+          <p className="text-sm font-semibold" style={{ color: 'var(--dash-text)' }}>
+            Preparing for competitive exams?
+          </p>
+          <p className="dash-type-caption mt-0.5">
+            {competitiveInsights.attemptCount > 0
+              ? `${competitiveInsights.overallAccuracy}% accuracy · ${competitiveInsights.attemptCount} attempts recorded`
+              : 'Switch modes to track mocks, year practice, and exam drafts.'}
+          </p>
         </div>
-        <div className="lg:col-span-6 min-w-0">
-          <CompetitivePreparationCard
-            insights={competitiveInsights}
-            onOpenAnalytics={() => {
+        <div className="flex flex-wrap gap-2 shrink-0">
+          <button
+            type="button"
+            className="dash-btn dash-btn--ghost dash-btn--sm"
+            onClick={() => {
               analytics.dashboardFeatureUsed('student_dashboard', 'open_competitive_analytics');
               onOpenCompetitiveDashboard();
             }}
-            onStart={openCompetitiveMode}
-          />
+          >
+            Competitive dashboard
+          </button>
+          <button
+            type="button"
+            className="dash-btn dash-btn--sm"
+            style={{
+              background: 'var(--dash-surface-0)',
+              color: 'var(--dash-text)',
+              border: '1px solid var(--dash-border)',
+            }}
+            onClick={openCompetitiveMode}
+          >
+            Open hub
+            <ChevronRight className="w-3.5 h-3.5" aria-hidden />
+          </button>
         </div>
       </div>
 
-      <div style={sectionGap}>
-        <RecentActivityList
-          items={recentDeduped}
-          onOpen={handleStartTopic}
-          empty={recentDeduped.length === 0}
-        />
-      </div>
+      {/* P4 — Recent activity */}
+      <RecentActivityList
+        items={recentDeduped}
+        onOpen={handleStartTopic}
+        empty={recentDeduped.length === 0}
+      />
 
-      <div style={sectionGap}>
-        <TopicDiscovery
-          searchQuery={searchQuery}
-          onSearch={setSearchQuery}
-          activeCategory={activeCategory}
-          onCategory={setActiveCategory}
-          topics={filteredTopics}
-          onStart={handleStartTopic}
-        />
-      </div>
+      {/* P5 — Topic discovery */}
+      <TopicDiscovery
+        searchQuery={searchQuery}
+        onSearch={setSearchQuery}
+        activeCategory={activeCategory}
+        onCategory={setActiveCategory}
+        topics={filteredTopics}
+        onStart={handleStartTopic}
+      />
 
+      {/* P6 — Quick access (visually secondary) */}
       <QuickAccess>
         {'modeSelection' in routes && (
           <ActionCard
@@ -260,7 +277,7 @@ export default function CurriculumModeDashboard({
                 ? 'Switch curriculum or competitive prep'
                 : 'Choose curriculum or competitive'
             }
-            accent="#0ea5e9"
+            accent="var(--dash-brand)"
           />
         )}
         {'curriculum' in routes && (
@@ -273,20 +290,20 @@ export default function CurriculumModeDashboard({
                 ? `${insights.completedCount} done · ${insights.inProgressCount} in progress`
                 : 'Browse topics — progress syncs as you study'
             }
-            accent="#0d9488"
+            accent="var(--mode-curriculum, #0f9d58)"
           />
         )}
         {'competitive' in routes && (
           <ActionCard
             onClick={openCompetitiveMode}
             icon={<Crosshair className="w-4 h-4" />}
-            title="Competitive"
+            title="Competitive hub"
             body={
               competitiveInsights.attemptCount > 0
                 ? `${competitiveInsights.overallAccuracy}% accuracy · ${competitiveInsights.attemptCount} attempts`
-                : 'Mocks and topic quizzes for exam prep'
+                : 'Mocks and year practice for exam prep'
             }
-            accent="#0284c7"
+            accent="var(--mode-competitive, #f5722f)"
           />
         )}
         <ProfileCard

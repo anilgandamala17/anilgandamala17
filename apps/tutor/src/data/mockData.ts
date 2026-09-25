@@ -24,7 +24,8 @@ const generatePapers = (): Paper[] => {
     return years.map((year, i) => ({
         id: `p-${year}`,
         year,
-        name: `${year} Previous Year Paper`,
+        // Practice sets tagged by year — not verified official archived papers
+        name: `${year} Practice Set`,
         shift: String((i % 2) + 1),
     }));
 };

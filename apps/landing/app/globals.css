@@ -29,8 +29,42 @@
   --primary: #1d4ed8;
   --primary-foreground: #f8fafc;
   --primary-muted: #eff6ff;
+  --primary-hover: #1e40af;
+  --primary-active: #1e3a8a;
+  --primary-soft: rgba(29, 78, 216, 0.12);
+  --primary-subtle: #eff6ff;
   --accent: #0f766e;
   --accent-foreground: #f0fdfa;
+
+  /* Semantic aliases (Phase 2 — cross-app parity with tutor foundation) */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-subtle: var(--primary-subtle);
+  --color-background: var(--background);
+  --color-surface: var(--card);
+  --color-surface-raised: var(--card);
+  --color-surface-muted: var(--muted);
+  --color-text: var(--foreground);
+  --color-text-secondary: var(--neutral-600);
+  --color-text-muted: var(--muted-foreground);
+  --color-text-disabled: var(--neutral-400);
+  --color-border: var(--border);
+  --color-border-strong: var(--neutral-300);
+  --color-success: var(--success);
+  --color-success-soft: rgba(5, 150, 105, 0.12);
+  --color-warning: var(--warning);
+  --color-warning-soft: rgba(217, 119, 6, 0.12);
+  --color-error: var(--error);
+  --color-error-soft: rgba(220, 38, 38, 0.12);
+  --color-info: #0284c7;
+  --color-info-soft: rgba(2, 132, 199, 0.12);
+
+  /* Mode accents (marketing reference — tutor owns product mode UI) */
+  --mode-curriculum: #0f9d58;
+  --mode-competitive: #f5722f;
+  --mode-teaching: #8e7cc3;
 
   /* Semantic */
   --success: #059669;
@@ -61,21 +95,31 @@
   --radius: 0.75rem;
   --radius-btn: 0.5rem;
   --radius-card: 0.75rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-full: 9999px;
 
   /* Shadow depths (3 max) */
   --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.05);
   --shadow-md: 0 4px 16px rgb(15 23 42 / 0.08);
   --shadow-lg: 0 12px 40px rgb(15 23 42 / 0.12);
+  --shadow-none: none;
 
-  /* Spacing scale */
+  /* Spacing scale (landing legacy cadence preserved; extended steps added) */
   --space-1: 0.25rem; /* 4 */
   --space-2: 0.5rem; /* 8 */
-  --space-3: 1rem; /* 16 */
+  --space-3: 1rem; /* 16 — legacy landing sections */
   --space-4: 1.5rem; /* 24 */
   --space-5: 2rem; /* 32 */
   --space-6: 3rem; /* 48 */
   --space-7: 4rem; /* 64 */
   --space-8: 6rem; /* 96 */
+  --space-9: 3rem; /* 48 alias for tutor parity */
+  --space-10: 4rem; /* 64 */
+  --space-11: 5rem; /* 80 */
+  --space-12: 6rem; /* 96 */
 
   /* Section rhythm */
   --section-py-mobile: 4rem; /* 64 */
@@ -109,6 +153,10 @@
   --primary: #3b82f6;
   --primary-foreground: #0f172a;
   --primary-muted: #1e3a8a;
+  --primary-hover: #60a5fa;
+  --primary-active: #93c5fd;
+  --primary-soft: rgba(59, 130, 246, 0.18);
+  --primary-subtle: #1e3a8a;
   --accent: #14b8a6;
   --accent-foreground: #042f2e;
   --secondary: #1e293b;
@@ -120,6 +168,10 @@
   --border: #334155;
   --input: #334155;
   --ring: #3b82f6;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #94a3b8;
+  --color-text-disabled: #64748b;
+  --color-border-strong: #475569;
   --sidebar: #1e293b;
   --sidebar-foreground: #f8fafc;
   --sidebar-primary: #3b82f6;
@@ -287,11 +339,46 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring;
+    @apply inline-flex items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-[var(--radius-btn)] border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring;
+    @apply inline-flex items-center justify-center gap-2 rounded-[var(--radius-btn)] border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-[var(--radius-btn)] px-5 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring;
+  }
+
+  /* Typography helpers (semantic ramp) */
+  .type-display {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .type-heading-xl {
+    font-size: clamp(1.5rem, 2.8vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .type-heading-lg {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .type-body {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .type-caption {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: var(--muted-foreground);
   }
 
   .gradient-text {

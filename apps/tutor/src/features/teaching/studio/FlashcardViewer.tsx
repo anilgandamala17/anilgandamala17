@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Flashcard } from '@/types';
 import { ChevronLeft, ChevronRight, RotateCcw, Check, X, Clock, Brain, Award, Download } from 'lucide-react';
-import { ExportService } from '@/services/exportService';
 
 interface FlashcardViewerProps {
     flashcards: Flashcard[];
@@ -151,6 +150,7 @@ export default function FlashcardViewer({ flashcards, topicName, onPerformanceUp
     }
 
     const handleDownloadPDF = async () => {
+        const { ExportService } = await import('@/services/exportService');
         await ExportService.exportFlashcardsToPDF(flashcards, topicName || 'Topic');
     };
 

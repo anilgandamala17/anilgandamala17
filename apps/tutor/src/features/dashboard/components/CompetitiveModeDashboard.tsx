@@ -11,8 +11,7 @@ import {
 import { useCompetitiveDashboardData } from '@/features/dashboard/hooks/useCompetitiveDashboardData';
 import { studentRoutes } from '@/utils/routes';
 import { analytics } from '@/services/analyticsService';
-
-const sectionGap = { marginBottom: 'var(--dash-section-gap)' } as const;
+import EmptyState from '@/components/common/EmptyState';
 
 function formatWhen(iso: string): string {
   const t = new Date(iso).getTime();
@@ -35,7 +34,7 @@ function MetricTile({
 }) {
   return (
     <div
-      className="rounded-xl px-3 py-3 border min-w-0"
+      className="rounded-[var(--dash-radius-sm)] px-3 py-3 border min-w-0"
       style={{ borderColor: 'var(--dash-border)', background: 'var(--dash-surface-1)' }}
     >
       <p className="dash-type-label mb-1">{label}</p>
@@ -49,8 +48,7 @@ function MetricTile({
 }
 
 /**
- * Competitive overview mode — Curriculum dash-* visual system.
- * Start/Continue navigates to /student/competitive for live practice.
+ * Competitive overview mode — same AIra shell, scoped orange accent on primary rail.
  */
 export default function CompetitiveModeDashboard() {
   const navigate = useNavigate();
@@ -66,145 +64,144 @@ export default function CompetitiveModeDashboard() {
       id="dash-panel-competitive"
       role="tabpanel"
       aria-labelledby="dash-mode-competitive"
+      className="dash-stack dash-panel--competitive"
     >
-      {/* Continue preparation */}
-      <div style={sectionGap}>
-        <section className="dash-card dash-card--elevated" aria-label="Continue preparation">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
-            <div
-              className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center shrink-0"
-              style={{
-                background: 'var(--dash-info-soft)',
-                color: 'var(--dash-info)',
-              }}
+      {/* P1 — Continue preparation */}
+      <section className="dash-surface-primary" aria-label="Continue preparation">
+        <div className="relative z-[1] flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
+          <div
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-[var(--dash-radius-sm)] flex items-center justify-center shrink-0"
+            style={{
+              background: 'var(--dash-comp-accent-soft, var(--dash-info-soft))',
+              color: 'var(--dash-comp-accent, var(--dash-info))',
+            }}
+          >
+            <Crosshair className="w-6 h-6" aria-hidden />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p
+              className="dash-eyebrow mb-1"
+              style={{ color: 'var(--dash-comp-accent, var(--dash-brand))' }}
             >
-              <Crosshair className="w-6 h-6" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="dash-eyebrow mb-1">Continue preparation</p>
-              {data.continueSession ? (
-                <>
-                  <h2 className="dash-type-h3 truncate">{data.continueSession.title}</h2>
-                  <p className="dash-type-caption mt-1">
-                    {data.continueSession.subjectLabel} · {data.continueSession.progressLabel}
-                  </p>
+              Continue preparation
+            </p>
+            {data.continueSession ? (
+              <>
+                <h2 className="dash-type-h2 truncate">{data.continueSession.title}</h2>
+                <p className="dash-type-caption mt-1">
+                  {data.continueSession.subjectLabel} · {data.continueSession.progressLabel}
+                </p>
+                <div
+                  className="mt-3 h-2 rounded-full overflow-hidden max-w-md"
+                  style={{ background: 'var(--dash-surface-2)' }}
+                  role="progressbar"
+                  aria-valuenow={data.continueSession.progressPct}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
                   <div
-                    className="mt-3 h-2 rounded-full overflow-hidden"
-                    style={{ background: 'var(--dash-surface-2)' }}
-                    role="progressbar"
-                    aria-valuenow={data.continueSession.progressPct}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  >
-                    <div
-                      className="h-full rounded-full transition-all"
-                      style={{
-                        width: `${data.continueSession.progressPct}%`,
-                        background: 'var(--dash-brand)',
-                      }}
-                    />
-                  </div>
-                </>
-              ) : (
-                <>
-                  <h2 className="dash-type-h3">No session in progress</h2>
-                  <p className="dash-type-caption mt-1">
-                    Start a full paper, mock, or previous-year exam to resume it here.
-                  </p>
-                </>
-              )}
-            </div>
-            <div className="flex flex-wrap gap-2 shrink-0">
-              {data.continueSession ? (
-                <button
-                  type="button"
-                  className="dash-btn dash-btn--primary"
-                  onClick={() => goHub(data.continueSession!.href)}
-                >
-                  Continue exam
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  className="dash-btn dash-btn--primary"
-                  onClick={() => goHub()}
-                >
-                  Start prep
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              )}
-            </div>
+                    className="h-full rounded-full transition-[width] duration-500 motion-reduce:transition-none"
+                    style={{
+                      width: `${data.continueSession.progressPct}%`,
+                      background: 'var(--dash-comp-accent, var(--dash-brand))',
+                    }}
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <h2 className="dash-type-h2">Ready for your next practice session?</h2>
+                <p className="dash-type-caption mt-1 max-w-lg">
+                  Choose an exam and start preparing. Unfinished papers will resume here.
+                </p>
+              </>
+            )}
           </div>
-        </section>
-      </div>
-
-      {/* Overview */}
-      <div style={sectionGap}>
-        <section className="dash-card" aria-label="Competitive overview">
-          <div className="dash-section-head">
-            <h2 className="dash-section-title">Competitive overview</h2>
-            <p className="dash-section-head__sub">From your recorded exam attempts</p>
-          </div>
-          {!data.hasActivity ? (
-            <div className="dash-empty-state">
-              <Trophy className="w-5 h-5" style={{ color: 'var(--dash-info)' }} />
-              <p className="dash-empty-state__title">No competitive exams attempted yet</p>
-              <p className="dash-empty-state__body">
-                Complete a mock, PYQ, or available exam to unlock overview metrics.
-              </p>
-              <button type="button" className="dash-btn dash-btn--primary dash-btn--sm mt-2" onClick={() => goHub()}>
-                Open competitive hub
-                <ChevronRight className="w-3.5 h-3.5" />
+          <div className="flex flex-wrap gap-2 shrink-0 w-full sm:w-auto">
+            {data.continueSession ? (
+              <button
+                type="button"
+                className="dash-btn dash-btn--primary w-full sm:w-auto"
+                onClick={() => goHub(data.continueSession!.href)}
+              >
+                Continue exam
+                <ChevronRight className="w-4 h-4" aria-hidden />
               </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
-              <MetricTile
-                label="Exams attempted"
-                value={
-                  data.overview.examsAttempted != null
-                    ? String(data.overview.examsAttempted)
-                    : null
-                }
-              />
-              <MetricTile
-                label="Completed"
-                value={
-                  data.overview.examsCompleted != null
-                    ? String(data.overview.examsCompleted)
-                    : null
-                }
-              />
-              <MetricTile
-                label="Practice tests"
-                value={
-                  data.overview.practiceTests != null
-                    ? String(data.overview.practiceTests)
-                    : null
-                }
-              />
-              <MetricTile
-                label="Average score"
-                value={
-                  data.overview.averageScore != null
-                    ? `${data.overview.averageScore}`
-                    : null
-                }
-                emptyHint="Not enough scored attempts"
-              />
-            </div>
-          )}
-        </section>
-      </div>
+            ) : (
+              <button
+                type="button"
+                className="dash-btn dash-btn--primary w-full sm:w-auto"
+                onClick={() => goHub()}
+              >
+                Start practice
+                <ChevronRight className="w-4 h-4" aria-hidden />
+              </button>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Overview stats — only meaningful when activity exists */}
+      <section className="dash-surface-support" aria-label="Competitive overview">
+        <div className="dash-section-head">
+          <h2 className="dash-section-title">Overview</h2>
+          <p className="dash-section-head__sub">From your recorded exam attempts</p>
+        </div>
+        {!data.hasActivity ? (
+          <EmptyState
+            title="No competitive exams attempted yet"
+            description="Complete a mock, year practice, or available exam to unlock overview metrics."
+            actionLabel="Open competitive hub"
+            onAction={() => goHub()}
+            icon={<Trophy className="w-6 h-6" />}
+            className="border-0 bg-transparent p-4"
+          />
+        ) : (
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
+            <MetricTile
+              label="Exams attempted"
+              value={
+                data.overview.examsAttempted != null
+                  ? String(data.overview.examsAttempted)
+                  : null
+              }
+            />
+            <MetricTile
+              label="Completed"
+              value={
+                data.overview.examsCompleted != null
+                  ? String(data.overview.examsCompleted)
+                  : null
+              }
+            />
+            <MetricTile
+              label="Practice tests"
+              value={
+                data.overview.practiceTests != null
+                  ? String(data.overview.practiceTests)
+                  : null
+              }
+            />
+            <MetricTile
+              label="Average score"
+              value={
+                data.overview.averageScore != null
+                  ? `${data.overview.averageScore}`
+                  : null
+              }
+              emptyHint="Not enough scored attempts"
+            />
+          </div>
+        )}
+      </section>
 
       {/* Performance + Exam progress */}
-      <div className="dash-grid-row" style={sectionGap}>
+      <div className="dash-grid-row">
         <div className="lg:col-span-6 min-w-0">
-          <section className="dash-card h-full" aria-label="Exam performance">
+          <section className="dash-surface-support h-full" aria-label="Exam performance">
             <div className="dash-section-head">
               <div className="flex items-center gap-2">
-                <Target className="w-4 h-4" style={{ color: 'var(--dash-brand)' }} />
+                <Target className="w-4 h-4" style={{ color: 'var(--dash-brand)' }} aria-hidden />
                 <h2 className="dash-section-title">Exam performance</h2>
               </div>
               <p className="dash-section-head__sub">Accuracy and question totals</p>
@@ -267,10 +264,7 @@ export default function CompetitiveModeDashboard() {
                   }
                 />
                 {data.performance.skipped != null ? (
-                  <MetricTile
-                    label="Skipped"
-                    value={String(data.performance.skipped)}
-                  />
+                  <MetricTile label="Skipped" value={String(data.performance.skipped)} />
                 ) : null}
               </div>
             )}
@@ -278,7 +272,7 @@ export default function CompetitiveModeDashboard() {
         </div>
 
         <div className="lg:col-span-6 min-w-0">
-          <section className="dash-card h-full" aria-label="Exam progress">
+          <section className="dash-surface-support h-full" aria-label="Exam progress">
             <div className="dash-section-head">
               <h2 className="dash-section-title">Exam progress</h2>
               <p className="dash-section-head__sub">Configured exams in your catalog</p>
@@ -293,7 +287,7 @@ export default function CompetitiveModeDashboard() {
                         `${studentRoutes.competitive}?section=exams&exam=${encodeURIComponent(exam.id)}`,
                       )
                     }
-                    className="w-full flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left border transition-colors hover:border-[var(--dash-brand)]"
+                    className="w-full flex items-center justify-between gap-3 rounded-[var(--dash-radius-sm)] px-3 py-2.5 text-left border transition-colors min-h-[44px] focus-visible:outline-none focus-visible:shadow-[var(--dash-focus-ring)] hover:border-[var(--dash-brand)]"
                     style={{
                       borderColor: 'var(--dash-border)',
                       background: 'var(--dash-surface-1)',
@@ -312,7 +306,10 @@ export default function CompetitiveModeDashboard() {
                           : 'Not attempted yet'}
                       </span>
                     </span>
-                    <span className="shrink-0 tabular-nums text-sm font-bold" style={{ color: 'var(--dash-text-2)' }}>
+                    <span
+                      className="shrink-0 tabular-nums text-sm font-bold"
+                      style={{ color: 'var(--dash-text-2)' }}
+                    >
                       {exam.accuracy != null ? `${exam.accuracy}%` : '—'}
                     </span>
                   </button>
@@ -324,98 +321,98 @@ export default function CompetitiveModeDashboard() {
       </div>
 
       {/* Subject performance */}
-      <div style={sectionGap}>
-        <section className="dash-card" aria-label="Subject performance">
-          <div className="dash-section-head">
-            <h2 className="dash-section-title">Subject performance</h2>
-            <p className="dash-section-head__sub">From subjects in your attempts</p>
+      <section className="dash-surface-support" aria-label="Subject performance">
+        <div className="dash-section-head">
+          <h2 className="dash-section-title">Subject performance</h2>
+          <p className="dash-section-head__sub">From subjects in your attempts</p>
+        </div>
+        {data.subjectPerformance.length === 0 ? (
+          <div className="dash-empty-state">
+            <p className="dash-empty-state__title">No subject data yet</p>
+            <p className="dash-empty-state__body">
+              Subject accuracy appears after you complete competitive attempts.
+            </p>
           </div>
-          {data.subjectPerformance.length === 0 ? (
-            <div className="dash-empty-state">
-              <p className="dash-empty-state__title">No subject data yet</p>
-              <p className="dash-empty-state__body">
-                Subject accuracy appears after you complete competitive attempts.
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-              {data.subjectPerformance.map((s) => (
-                <div
-                  key={s.id}
-                  className="rounded-xl px-3 py-3 border"
-                  style={{ borderColor: 'var(--dash-border)', background: 'var(--dash-surface-1)' }}
-                >
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {data.subjectPerformance.map((s) => (
+              <div
+                key={s.id}
+                className="rounded-[var(--dash-radius-sm)] px-3 py-3 border"
+                style={{ borderColor: 'var(--dash-border)', background: 'var(--dash-surface-1)' }}
+              >
+                <p className="font-bold text-sm truncate" style={{ color: 'var(--dash-text)' }}>
+                  {s.name}
+                </p>
+                <p className="dash-type-metric text-lg mt-1">
+                  {s.accuracy != null ? `${s.accuracy}%` : '—'}
+                </p>
+                <p className="dash-type-caption mt-0.5">
+                  {s.questions} question{s.questions === 1 ? '' : 's'}
+                  {s.avgSecondsPerQ != null ? ` · ${s.avgSecondsPerQ}s/q` : ''}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+
+      {/* Recent attempts — list, not BI table */}
+      <section className="dash-surface-support" aria-label="Recent attempts">
+        <div className="dash-section-head">
+          <div className="flex items-center gap-2">
+            <Clock className="w-4 h-4" style={{ color: 'var(--dash-text-3)' }} aria-hidden />
+            <h2 className="dash-section-title">Recent attempts</h2>
+          </div>
+        </div>
+        {data.recentAttempts.length === 0 ? (
+          <EmptyState
+            title="No attempts yet"
+            description="Finished exams will list here with score and accuracy."
+            actionLabel="Start practice"
+            onAction={() => goHub()}
+            className="border-0 bg-transparent p-4"
+          />
+        ) : (
+          <ul className="flex flex-col divide-y" style={{ borderColor: 'var(--dash-border)' }}>
+            {data.recentAttempts.map((a) => (
+              <li
+                key={a.id}
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 py-3 first:pt-0 last:pb-0"
+              >
+                <div className="min-w-0">
                   <p className="font-bold text-sm truncate" style={{ color: 'var(--dash-text)' }}>
-                    {s.name}
+                    {a.exam}
+                    {a.year ? ` · ${a.year}` : ''}
                   </p>
-                  <p className="dash-type-metric text-lg mt-1">
-                    {s.accuracy != null ? `${s.accuracy}%` : '—'}
-                  </p>
-                  <p className="dash-type-caption mt-0.5">
-                    {s.questions} question{s.questions === 1 ? '' : 's'}
-                    {s.avgSecondsPerQ != null ? ` · ${s.avgSecondsPerQ}s/q` : ''}
+                  <p className="dash-type-caption">
+                    {formatWhen(a.date)} · {a.mode} · {a.status}
                   </p>
                 </div>
-              ))}
-            </div>
-          )}
-        </section>
-      </div>
+                <div className="flex items-center gap-3 shrink-0 text-sm font-bold tabular-nums">
+                  <span style={{ color: 'var(--dash-text)' }}>{a.scoreLabel}</span>
+                  {a.accuracy != null ? (
+                    <span style={{ color: 'var(--dash-text-2)' }}>{a.accuracy}% acc</span>
+                  ) : null}
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
 
-      {/* Recent attempts */}
-      <div style={sectionGap}>
-        <section className="dash-card" aria-label="Recent attempts">
-          <div className="dash-section-head">
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" style={{ color: 'var(--dash-text-3)' }} />
-              <h2 className="dash-section-title">Recent attempts</h2>
-            </div>
-          </div>
-          {data.recentAttempts.length === 0 ? (
-            <div className="dash-empty-state">
-              <p className="dash-empty-state__title">No attempts yet</p>
-              <p className="dash-empty-state__body">Finished exams will list here with score and accuracy.</p>
-            </div>
-          ) : (
-            <ul className="flex flex-col gap-2">
-              {data.recentAttempts.map((a) => (
-                <li
-                  key={a.id}
-                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 rounded-xl px-3 py-3 border"
-                  style={{ borderColor: 'var(--dash-border)', background: 'var(--dash-surface-1)' }}
-                >
-                  <div className="min-w-0">
-                    <p className="font-bold text-sm truncate" style={{ color: 'var(--dash-text)' }}>
-                      {a.exam}
-                      {a.year ? ` · ${a.year}` : ''}
-                    </p>
-                    <p className="dash-type-caption">
-                      {formatWhen(a.date)} · {a.mode} · {a.status}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 shrink-0 text-sm font-bold tabular-nums">
-                    <span style={{ color: 'var(--dash-text)' }}>{a.scoreLabel}</span>
-                    {a.accuracy != null ? (
-                      <span style={{ color: 'var(--dash-text-2)' }}>{a.accuracy}% acc</span>
-                    ) : null}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-      </div>
-
-      {/* PYQ + Recommendations */}
-      <div className="dash-grid-row" style={sectionGap}>
+      {/* Year practice + Recommendations */}
+      <div className="dash-grid-row">
         <div className="lg:col-span-6 min-w-0">
-          <section className="dash-card h-full" aria-label="Previous year practice">
+          <section className="dash-surface-support h-full" aria-label="Year practice">
             <div className="dash-section-head">
               <div className="flex items-center gap-2">
-                <BookMarked className="w-4 h-4" style={{ color: 'var(--dash-brand)' }} />
-                <h2 className="dash-section-title">Previous-year practice</h2>
+                <BookMarked className="w-4 h-4" style={{ color: 'var(--dash-brand)' }} aria-hidden />
+                <h2 className="dash-section-title">Year practice</h2>
               </div>
-              <p className="dash-section-head__sub">Jump into PYQ papers</p>
+              <p className="dash-section-head__sub">
+                Year-tagged practice in exam pattern — not official archived papers
+              </p>
             </div>
             <ul className="flex flex-col gap-2">
               {data.pyqExams.map((exam) => (
@@ -423,7 +420,7 @@ export default function CompetitiveModeDashboard() {
                   <button
                     type="button"
                     onClick={() => goHub(exam.href)}
-                    className="w-full flex items-center justify-between gap-2 rounded-xl px-3 py-2.5 text-left border"
+                    className="w-full flex items-center justify-between gap-2 rounded-[var(--dash-radius-sm)] px-3 py-2.5 text-left border min-h-[44px] focus-visible:outline-none focus-visible:shadow-[var(--dash-focus-ring)]"
                     style={{
                       borderColor: 'var(--dash-border)',
                       background: 'var(--dash-surface-1)',
@@ -433,7 +430,11 @@ export default function CompetitiveModeDashboard() {
                       {exam.name}
                       {exam.latestYear ? ` · ${exam.latestYear}` : ''}
                     </span>
-                    <ChevronRight className="w-4 h-4 shrink-0" style={{ color: 'var(--dash-text-3)' }} />
+                    <ChevronRight
+                      className="w-4 h-4 shrink-0"
+                      style={{ color: 'var(--dash-text-3)' }}
+                      aria-hidden
+                    />
                   </button>
                 </li>
               ))}
@@ -442,43 +443,49 @@ export default function CompetitiveModeDashboard() {
         </div>
 
         <div className="lg:col-span-6 min-w-0">
-          <section className="dash-card h-full" aria-label="Recommended practice">
+          <section className="dash-surface-support h-full" aria-label="Recommended practice">
             <div className="dash-section-head">
               <div className="flex items-center gap-2">
-                <Lightbulb className="w-4 h-4" style={{ color: 'var(--dash-warning)' }} />
+                <Lightbulb className="w-4 h-4" style={{ color: 'var(--dash-warning)' }} aria-hidden />
                 <h2 className="dash-section-title">Recommended practice</h2>
               </div>
               <p className="dash-section-head__sub">Based on your attempt history</p>
             </div>
             {data.recommendations.length === 0 ? (
-              <div className="dash-empty-state">
-                <p className="dash-empty-state__title">No recommendations yet</p>
-              </div>
+              <EmptyState
+                title="No recommendations yet"
+                description="Complete a few attempts and AIra will suggest focused next steps."
+                actionLabel="Practice in hub"
+                onAction={() => goHub()}
+                className="border-0 bg-transparent p-4"
+              />
             ) : (
-              <ul className="flex flex-col gap-2 mb-3">
-                {data.recommendations.map((tip, i) => (
-                  <li
-                    key={`${i}-${tip.slice(0, 24)}`}
-                    className="rounded-xl px-3 py-2.5 text-sm border"
-                    style={{
-                      borderColor: 'var(--dash-border)',
-                      background: 'var(--dash-surface-1)',
-                      color: 'var(--dash-text-2)',
-                    }}
-                  >
-                    {tip}
-                  </li>
-                ))}
-              </ul>
+              <>
+                <ul className="flex flex-col gap-2 mb-3">
+                  {data.recommendations.map((tip, i) => (
+                    <li
+                      key={`${i}-${tip.slice(0, 24)}`}
+                      className="rounded-[var(--dash-radius-sm)] px-3 py-2.5 text-sm border"
+                      style={{
+                        borderColor: 'var(--dash-border)',
+                        background: 'var(--dash-surface-1)',
+                        color: 'var(--dash-text-2)',
+                      }}
+                    >
+                      {tip}
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  type="button"
+                  className="dash-btn dash-btn--primary dash-btn--sm"
+                  onClick={() => goHub()}
+                >
+                  Practice in competitive hub
+                  <ChevronRight className="w-3.5 h-3.5" aria-hidden />
+                </button>
+              </>
             )}
-            <button
-              type="button"
-              className="dash-btn dash-btn--primary dash-btn--sm"
-              onClick={() => goHub()}
-            >
-              Practice in competitive hub
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
           </section>
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function AssistantPage() {
   const openContact = () => setContactOpen(true)
 
   return (
-    <main className="flex h-screen w-screen flex-col overflow-hidden bg-background">
+    <main className="flex h-[100dvh] w-full max-w-full flex-col overflow-hidden bg-background">
       <Header />
       <div className="min-h-0 w-full flex-1 overflow-hidden bg-slate-950/20">
         <AiAssistant standalone={true} />

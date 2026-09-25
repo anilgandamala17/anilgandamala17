@@ -1,10 +1,11 @@
 import { ArrowRight, CheckCircle2, Clock, Heart } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useMemo, type CSSProperties } from 'react';
 import { useCurriculumStore } from '@/features/curriculum/stores/curriculumStore';
 import { studentRoutes } from '@/utils/routes';
 import type { Topic } from '@/types';
 import { analytics } from '@/services/analyticsService';
+import { STREAM_PARAM, normalizeStream } from '@/features/curriculum/data/seniorStreams';
 import {
   TopicVisual,
   resolveTopicVisual,
@@ -80,6 +81,8 @@ export function TopicCard({
   onSelect: () => void;
 }) {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const stream = normalizeStream(searchParams.get(STREAM_PARAM));
   const liked = useCurriculumStore((s) => s.likedTopicIds.includes(topic.id));
   const toggleTopicLike = useCurriculumStore((s) => s.toggleTopicLike);
   const difficulty = parseDifficulty(topic.difficulty);
@@ -111,9 +114,9 @@ export function TopicCard({
 
   const handleStart = () => {
     analytics.topicSelected({ topicId: topic.id, classId: gradeId, subjectId });
-    navigate(
-      `${studentRoutes.learn(topic.id)}?grade=${gradeId}&subject=${subjectId}`,
-    );
+    const params = new URLSearchParams({ grade: gradeId, subject: subjectId });
+    if (stream) params.set(STREAM_PARAM, stream);
+    navigate(`${studentRoutes.learn(topic.id)}?${params.toString()}`);
     onSelect();
   };
 

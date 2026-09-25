@@ -136,7 +136,7 @@ export function Header() {
               </Button>
               <Button
                 size="sm"
-                className="hidden rounded-[var(--radius-btn)] bg-accent text-accent-foreground hover:bg-accent/90 sm:inline-flex"
+                className="hidden rounded-[var(--radius-btn)] bg-primary text-primary-foreground hover:bg-[var(--primary-hover)] sm:inline-flex"
                 asChild
               >
                 <AuthEntryLink href={CTAS.primary.href}>{CTAS.primary.label}</AuthEntryLink>
@@ -224,7 +224,7 @@ export function Header() {
                     </AuthEntryLink>
                   </Button>
                   <Button
-                    className="rounded-[var(--radius-btn)] bg-accent text-accent-foreground hover:bg-accent/90"
+                    className="rounded-[var(--radius-btn)] bg-primary text-primary-foreground hover:bg-[var(--primary-hover)]"
                     asChild
                   >
                     <AuthEntryLink

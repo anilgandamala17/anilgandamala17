@@ -1,0 +1,65 @@
+name: AIra CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  tutor-unit:
+    name: Tutor unit + lint + build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/tutor
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: apps/tutor/package-lock.json
+      - run: npm ci --legacy-peer-deps
+      - run: npx tsc --noEmit
+      - run: npm run lint
+      - run: npm run test:unit
+      - run: npm run build
+
+  landing-build:
+    name: Landing lint + build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/landing
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: apps/landing/package-lock.json
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - run: npm run lint
+      - run: npm run build
+
+  tutor-e2e:
+    name: Tutor Playwright E2E
+    runs-on: ubuntu-latest
+    needs: [tutor-unit]
+    defaults:
+      run:
+        working-directory: apps/tutor
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: apps/tutor/package-lock.json
+      - run: npm ci --legacy-peer-deps
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test --project=chromium-desktop
+        env:
+          CI: 'true'

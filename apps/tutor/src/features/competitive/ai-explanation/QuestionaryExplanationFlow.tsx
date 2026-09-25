@@ -202,6 +202,53 @@ export default function QuestionaryExplanationFlow() {
 
     useEffect(() => () => stopCameraStream(), [stopCameraStream]);
 
+    /** Attach stream after the modal + <video> mount (avoids null videoRef race). */
+    useEffect(() => {
+        if (!cameraOpen || cameraPreview || cameraError) return;
+        let cancelled = false;
+        setCameraStarting(true);
+        stopCameraStream();
+        (async () => {
+            if (!navigator.mediaDevices?.getUserMedia) {
+                if (!cancelled) {
+                    setCameraStarting(false);
+                    setCameraError('Camera is not available in this browser.');
+                }
+                return;
+            }
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: { ideal: 'environment' } },
+                    audio: false,
+                });
+                if (cancelled) {
+                    stream.getTracks().forEach((t) => t.stop());
+                    return;
+                }
+                streamRef.current = stream;
+                if (videoRef.current) {
+                    videoRef.current.srcObject = stream;
+                    await videoRef.current.play().catch(() => undefined);
+                }
+                if (!cancelled) setCameraStarting(false);
+            } catch (err) {
+                if (cancelled) return;
+                setCameraStarting(false);
+                const name = err instanceof DOMException ? err.name : '';
+                if (name === 'NotAllowedError' || name === 'PermissionDeniedError') {
+                    setCameraError('Camera permission was denied.');
+                } else if (name === 'NotFoundError' || name === 'DevicesNotFoundError') {
+                    setCameraError('No camera device was found.');
+                } else {
+                    setCameraError('Could not open the camera. Try uploading a photo instead.');
+                }
+            }
+        })();
+        return () => {
+            cancelled = true;
+        };
+    }, [cameraOpen, cameraPreview, cameraError, stopCameraStream]);
+
     const onPickImage = (file: File | undefined) => {
         if (!file) return;
         if (!isImageLikeFile(file)) {
@@ -232,40 +279,13 @@ export default function QuestionaryExplanationFlow() {
         setAttachMenuOpen(false);
     };
 
-    const openCamera = async () => {
+    const openCamera = () => {
         setAttachMenuOpen(false);
-        setCameraOpen(true);
         setCameraPreview(null);
         setCameraError(null);
         setCameraStarting(true);
         stopCameraStream();
-        if (!navigator.mediaDevices?.getUserMedia) {
-            setCameraStarting(false);
-            setCameraError('Camera is not available in this browser.');
-            return;
-        }
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({
-                video: { facingMode: { ideal: 'environment' } },
-                audio: false,
-            });
-            streamRef.current = stream;
-            if (videoRef.current) {
-                videoRef.current.srcObject = stream;
-                await videoRef.current.play().catch(() => undefined);
-            }
-            setCameraStarting(false);
-        } catch (err) {
-            setCameraStarting(false);
-            const name = err instanceof DOMException ? err.name : '';
-            if (name === 'NotAllowedError' || name === 'PermissionDeniedError') {
-                setCameraError('Camera permission was denied.');
-            } else if (name === 'NotFoundError' || name === 'DevicesNotFoundError') {
-                setCameraError('No camera device was found.');
-            } else {
-                setCameraError('Could not open the camera. Try uploading a photo instead.');
-            }
-        }
+        setCameraOpen(true);
     };
 
     const capturePhoto = () => {
@@ -300,8 +320,11 @@ export default function QuestionaryExplanationFlow() {
     };
 
     const retakeCamera = () => {
+        setCameraError(null);
         setCameraPreview(null);
-        void openCamera();
+        setCameraStarting(true);
+        stopCameraStream();
+        // Keep cameraOpen true — effect re-attaches when preview clears.
     };
 
     const submitQuestion = useCallback(async () => {
@@ -561,7 +584,7 @@ export default function QuestionaryExplanationFlow() {
                                                     type="button"
                                                     role="menuitem"
                                                     className="flex w-full items-center gap-2 px-3 py-2.5 text-left text-sm font-semibold text-slate-700 hover:bg-orange-50 dark:text-slate-200 dark:hover:bg-orange-950/40"
-                                                    onClick={() => void openCamera()}
+                                                    onClick={() => openCamera()}
                                                 >
                                                     <Camera className="h-4 w-4 text-orange-500" />
                                                     Take Picture

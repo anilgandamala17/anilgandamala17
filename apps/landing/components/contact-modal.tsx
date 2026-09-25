@@ -8,7 +8,7 @@ import {
   DialogDescription,
   DialogTitle,
 } from '@/components/ui/dialog'
-import { CONTACT_INBOX } from '@/lib/site'
+import { CONTACT_INBOX, BRAND } from '@/lib/site'
 
 interface ContactModalProps {
   open: boolean
@@ -127,7 +127,7 @@ export function ContactModal({ open, onClose }: ContactModalProps) {
 
         {/* Footer info */}
         <div className="px-8 pb-8 pt-2 text-center">
-            <p className="text-white/20 text-[10px] uppercase font-black tracking-[0.2em]">Aɪra Education Technologies</p>
+            <p className="text-white/20 text-[10px] uppercase font-black tracking-[0.2em]">{BRAND.legalName}</p>
         </div>
       </div>
       </DialogContent>

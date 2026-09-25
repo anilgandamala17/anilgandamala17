@@ -1,6 +1,7 @@
-import { Suspense } from 'react';
+import { Suspense, type ReactNode } from 'react';
 import { Route, Navigate } from 'react-router-dom';
 import FullPageLoader from '@/components/common/FullPageLoader';
+import ErrorBoundary from '@/components/common/ErrorBoundary';
 import { ProtectedRoute, RoleGuard } from '@/routes/guards';
 import { homeForRole } from '@/lib/authSession';
 import {
@@ -15,6 +16,18 @@ import {
   TeachingPage,
 } from '@/routes/lazyPages';
 
+function StudentPage({ children }: { children: ReactNode }) {
+  return (
+    <Suspense fallback={<FullPageLoader message="Loading..." />}>
+      <ProtectedRoute>
+        <RoleGuard allowedRole="student">
+          <ErrorBoundary>{children}</ErrorBoundary>
+        </RoleGuard>
+      </ProtectedRoute>
+    </Suspense>
+  );
+}
+
 /** Student role route table — path strings must stay stable. */
 export function StudentRoutes() {
   return (
@@ -23,109 +36,73 @@ export function StudentRoutes() {
       <Route
         path="/student/mode-selection"
         element={
-          <Suspense fallback={<FullPageLoader message="Loading..." />}>
-            <ProtectedRoute>
-              <RoleGuard allowedRole="student">
-                <StudentModeSelectionPage />
-              </RoleGuard>
-            </ProtectedRoute>
-          </Suspense>
+          <StudentPage>
+            <StudentModeSelectionPage />
+          </StudentPage>
         }
       />
       <Route
         path="/student/competitive"
         element={
-          <Suspense fallback={<FullPageLoader message="Loading..." />}>
-            <ProtectedRoute>
-              <RoleGuard allowedRole="student">
-                <StudentCompetitivePage />
-              </RoleGuard>
-            </ProtectedRoute>
-          </Suspense>
+          <StudentPage>
+            <StudentCompetitivePage />
+          </StudentPage>
         }
       />
       <Route
         path="/student/onboarding"
         element={
-          <Suspense fallback={<FullPageLoader message="Loading..." />}>
-            <ProtectedRoute>
-              <RoleGuard allowedRole="student">
-                <OnboardingPage />
-              </RoleGuard>
-            </ProtectedRoute>
-          </Suspense>
+          <StudentPage>
+            <OnboardingPage />
+          </StudentPage>
         }
       />
       <Route
         path="/student/competitive-explain"
         element={
-          <Suspense fallback={<FullPageLoader message="Loading..." />}>
-            <ProtectedRoute>
-              <RoleGuard allowedRole="student">
-                <CompetitiveTeachingPage />
-              </RoleGuard>
-            </ProtectedRoute>
-          </Suspense>
+          <StudentPage>
+            <CompetitiveTeachingPage />
+          </StudentPage>
         }
       />
       <Route
         path="/student/learn/:topicId?"
         element={
-          <Suspense fallback={<FullPageLoader message="Loading..." />}>
-            <ProtectedRoute>
-              <RoleGuard allowedRole="student">
-                <TeachingPage />
-              </RoleGuard>
-            </ProtectedRoute>
-          </Suspense>
+          <StudentPage>
+            <TeachingPage />
+          </StudentPage>
         }
       />
       <Route
         path="/student/dashboard"
         element={
-          <Suspense fallback={<FullPageLoader message="Loading..." />}>
-            <ProtectedRoute>
-              <RoleGuard allowedRole="student">
-                <DashboardPage />
-              </RoleGuard>
-            </ProtectedRoute>
-          </Suspense>
+          <StudentPage>
+            <DashboardPage />
+          </StudentPage>
         }
       />
       <Route
         path="/student/curriculum"
         element={
-          <Suspense fallback={<FullPageLoader message="Loading..." />}>
-            <ProtectedRoute>
-              <RoleGuard allowedRole="student">
-                <CurriculumPage />
-              </RoleGuard>
-            </ProtectedRoute>
-          </Suspense>
+          <StudentPage>
+            <CurriculumPage />
+          </StudentPage>
         }
       />
       <Route
         path="/student/settings"
         element={
-          <Suspense fallback={<FullPageLoader message="Loading..." />}>
-            <ProtectedRoute>
-              <RoleGuard allowedRole="student">
-                <SettingsPage />
-              </RoleGuard>
-            </ProtectedRoute>
-          </Suspense>
+          <StudentPage>
+            <SettingsPage />
+          </StudentPage>
         }
       />
       <Route
         path="/student/profile"
         element={
-          <Suspense fallback={<FullPageLoader message="Loading..." />}>
-            <ProtectedRoute>
-              <RoleGuard allowedRole="student">
-                <ProfilePage />
-              </RoleGuard>
-            </ProtectedRoute>
-          </Suspense>
+          <StudentPage>
+            <ProfilePage />
+          </StudentPage>
         }
       />
     </>

@@ -20,7 +20,7 @@ export default function SubjectMasteryCard({ items, empty }: SubjectMasteryCardP
   const list = items.slice(0, 6);
 
   return (
-    <section className="dash-card dash-card--analytics h-full flex flex-col" aria-label="Subject mastery">
+    <section className="dash-surface-support h-full flex flex-col" aria-label="Subject mastery">
       <div className="dash-section-head mb-3">
         <div className="flex items-center gap-2">
           <span

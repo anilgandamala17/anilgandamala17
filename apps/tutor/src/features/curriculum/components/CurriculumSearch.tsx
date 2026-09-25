@@ -3,6 +3,13 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X, BookOpen, GraduationCap, ArrowRight, Layers } from 'lucide-react';
 import { schoolGrades } from '@/features/curriculum/data/schoolCurriculum';
+import {
+    STREAM_PARAM,
+    inferStreamFromSubject,
+    isSeniorGrade,
+    normalizeStream,
+    type SeniorStreamId,
+} from '@/features/curriculum/data/seniorStreams';
 import { studentRoutes } from '@/utils/routes';
 import type { SchoolGrade, SchoolSubject, Chapter, Topic } from '@/types';
 import { analytics } from '@/services/analyticsService';
@@ -21,16 +28,30 @@ type SearchResultItem = {
     subjectId?: string;
     chapterId?: string;
     topicId?: string;
+    /** Senior stream when known (inferred or from current URL context). */
+    stream?: SeniorStreamId;
     icon: React.ReactNode;
     color: string;
 };
+
+function resolveSearchStream(
+    gradeId: string,
+    subjectId: string | undefined,
+    urlStream: SeniorStreamId | null,
+): SeniorStreamId | undefined {
+    if (!isSeniorGrade(gradeId)) return undefined;
+    const inferred = inferStreamFromSubject(subjectId);
+    if (inferred) return inferred;
+    return urlStream ?? undefined;
+}
 
 export default function CurriculumSearch({ isOpen, onClose }: CurriculumSearchProps) {
     const [query, setQuery] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
     const focusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-    const [, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
+    const urlStream = normalizeStream(searchParams.get(STREAM_PARAM));
 
     useEffect(() => {
         if (isOpen) analytics.searchStarted('curriculum');
@@ -79,15 +100,18 @@ export default function CurriculumSearch({ isOpen, onClose }: CurriculumSearchPr
             }
 
             grade.subjects.forEach((subject: SchoolSubject) => {
+                const stream = resolveSearchStream(grade.id, subject.id, urlStream);
+
                 // 2. Check Subject Match
                 if (subject.name.toLowerCase().includes(lowerQuery)) {
                     results.push({
-                        id: subject.id,
+                        id: `${grade.id}-${subject.id}`,
                         type: 'subject',
                         title: subject.name,
                         subtitle: `${grade.name} • ${subject.description}`,
                         gradeId: grade.id,
                         subjectId: subject.id,
+                        stream,
                         icon: <BookOpen className="w-5 h-5 text-white" />,
                         color: subject.color
                     });
@@ -97,13 +121,14 @@ export default function CurriculumSearch({ isOpen, onClose }: CurriculumSearchPr
                     // 3. Check Chapter Match
                     if (chapter.name.toLowerCase().includes(lowerQuery)) {
                         results.push({
-                            id: chapter.id,
+                            id: `${grade.id}-${chapter.id}`,
                             type: 'chapter',
                             title: `Ch ${chapter.chapterNumber}: ${chapter.name}`,
                             subtitle: `${grade.name} • ${subject.name}`,
                             gradeId: grade.id,
                             subjectId: subject.id,
                             chapterId: chapter.id,
+                            stream,
                             icon: <Layers className="w-5 h-5 text-white" />,
                             color: subject.color
                         });
@@ -113,7 +138,7 @@ export default function CurriculumSearch({ isOpen, onClose }: CurriculumSearchPr
                         // 4. Check Topic Match
                         if (topic.name.toLowerCase().includes(lowerQuery)) {
                             results.push({
-                                id: topic.id,
+                                id: `${grade.id}-${topic.id}`,
                                 type: 'topic',
                                 title: topic.name,
                                 subtitle: `${grade.name} • ${subject.name} • Ch ${chapter.chapterNumber}`,
@@ -121,6 +146,7 @@ export default function CurriculumSearch({ isOpen, onClose }: CurriculumSearchPr
                                 subjectId: subject.id,
                                 chapterId: chapter.id,
                                 topicId: topic.id,
+                                stream,
                                 icon: <Search className="w-5 h-5 text-white" />,
                                 color: subject.color
                             });
@@ -132,7 +158,7 @@ export default function CurriculumSearch({ isOpen, onClose }: CurriculumSearchPr
 
         // Limit to top 20 results for performance
         return results.slice(0, 20);
-    }, [query]);
+    }, [query, urlStream]);
 
     useEffect(() => {
         if (!isOpen || query.trim().length < 2) return;
@@ -143,8 +169,12 @@ export default function CurriculumSearch({ isOpen, onClose }: CurriculumSearchPr
         }
     }, [isOpen, query, searchResults]);
 
-    // Handle Selection Routing
+    // Handle Selection Routing — always preserve senior stream when known
     const handleSelectResult = (result: SearchResultItem) => {
+        const stream =
+            result.stream ??
+            resolveSearchStream(result.gradeId, result.subjectId, urlStream);
+
         if (result.type === 'topic' && result.topicId) {
             analytics.topicSelected({
                 topicId: result.topicId,
@@ -153,14 +183,19 @@ export default function CurriculumSearch({ isOpen, onClose }: CurriculumSearchPr
             });
             const params = new URLSearchParams({ grade: result.gradeId });
             if (result.subjectId) params.set('subject', result.subjectId);
+            if (stream) params.set(STREAM_PARAM, stream);
             navigate(`${studentRoutes.learn(result.topicId)}?${params.toString()}`);
             onClose();
             setQuery('');
             return;
         }
+
         const params: Record<string, string> = { grade: result.gradeId };
         if (result.subjectId) {
             params.subject = result.subjectId;
+        }
+        if (stream) {
+            params[STREAM_PARAM] = stream;
         }
         setSearchParams(params);
         onClose();
@@ -226,8 +261,28 @@ export default function CurriculumSearch({ isOpen, onClose }: CurriculumSearchPr
                                     <p className="text-sm text-gray-400 dark:text-gray-500 mt-2">Find algebra, history, cells, or anything else.</p>
                                 </div>
                             ) : searchResults.length === 0 ? (
-                                <div className="flex flex-col items-center justify-center h-full text-center p-8 opacity-60">
-                                    <p className="text-gray-500 dark:text-gray-400 font-medium text-lg">No results found for "{query}"</p>
+                                <div className="flex flex-col items-center justify-center h-full text-center p-8">
+                                    <p
+                                        className="font-semibold text-lg"
+                                        style={{ color: 'var(--dash-text, #0f172a)' }}
+                                    >
+                                        No topics found
+                                    </p>
+                                    <p
+                                        className="mt-2 text-sm max-w-sm"
+                                        style={{ color: 'var(--dash-text-2, #475569)' }}
+                                    >
+                                        No results for &ldquo;{query}&rdquo;. Try another subject,
+                                        chapter, or search term.
+                                    </p>
+                                    <button
+                                        type="button"
+                                        className="mt-4 min-h-[44px] rounded-[var(--dash-radius-sm)] px-4 text-sm font-bold text-white"
+                                        style={{ background: 'var(--dash-brand, #1d4ed8)' }}
+                                        onClick={() => setQuery('')}
+                                    >
+                                        Clear search
+                                    </button>
                                 </div>
                             ) : (
                                 <div className="p-3">

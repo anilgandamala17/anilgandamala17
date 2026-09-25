@@ -4,7 +4,6 @@ import { BookOpen, Download, Printer, Star, Copy, Check, Layers } from 'lucide-r
 import { useMemo, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { ExportService } from '@/services/exportService';
 import { toast } from '@/stores/toastStore';
 import { NotesDiagram } from './NotesDiagram';
 
@@ -47,6 +46,7 @@ export default function NotesViewer({ note }: NotesViewerProps) {
 
     const handleDownloadPDF = async () => {
         try {
+            const { ExportService } = await import('@/services/exportService');
             await ExportService.exportNotesToPDF(note);
         } catch (err) {
             console.error(err);
@@ -56,6 +56,7 @@ export default function NotesViewer({ note }: NotesViewerProps) {
 
     const handleDownloadDOCX = async () => {
         try {
+            const { ExportService } = await import('@/services/exportService');
             await ExportService.exportNotesToDOCX(note);
         } catch (err) {
             console.error(err);

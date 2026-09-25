@@ -31,7 +31,7 @@ function relativeTime(iso?: string): string | null {
 }
 
 /**
- * Full-width P0 continue-learning card with progress bar and empty state.
+ * Level-1 primary surface — answers "What should I continue?"
  */
 export default function ContinueLearningCard({
   title,
@@ -52,13 +52,15 @@ export default function ContinueLearningCard({
   const when = relativeTime(lastSessionAt);
 
   return (
-    <section className="dash-card dash-card--elevated" aria-label="Continue learning">
-      <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
+    <section className="dash-surface-primary" aria-label="Continue learning">
+      <div className="relative z-[1] flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
         <div
-          className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center shrink-0"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-[var(--dash-radius-sm)] flex items-center justify-center shrink-0"
           style={{
-            background: `color-mix(in srgb, ${color} 16%, transparent)`,
-            color,
+            background: empty
+              ? 'var(--dash-brand-soft)'
+              : `color-mix(in srgb, ${color} 16%, transparent)`,
+            color: empty ? 'var(--dash-brand)' : color,
           }}
         >
           {empty ? <BookOpen className="w-6 h-6" /> : <Icon className="w-6 h-6" />}
@@ -66,13 +68,15 @@ export default function ContinueLearningCard({
 
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2 mb-1">
-            <p className="dash-eyebrow">Continue learning</p>
+            <p className="dash-eyebrow" style={{ color: 'var(--dash-brand)' }}>
+              Continue learning
+            </p>
             {!empty && inProgress ? (
               <span className="dash-badge dash-badge--info">In progress</span>
             ) : null}
             {!empty && when ? (
               <span className="inline-flex items-center gap-1 dash-type-caption">
-                <Clock className="w-3 h-3" />
+                <Clock className="w-3 h-3" aria-hidden />
                 Last session {when}
               </span>
             ) : null}
@@ -80,10 +84,9 @@ export default function ContinueLearningCard({
 
           {empty ? (
             <>
-              <h2 className="dash-type-h2">Pick your first lesson</h2>
+              <h2 className="dash-type-h2">Ready to start learning?</h2>
               <p className="dash-type-caption mt-1 max-w-lg">
-                Browse the curriculum to start a topic — your progress and next recommendation will
-                appear here.
+                Choose a subject and begin your first lesson. Your progress will appear here.
               </p>
             </>
           ) : (
@@ -95,7 +98,10 @@ export default function ContinueLearningCard({
               {pct > 0 || inProgress ? (
                 <div className="mt-3 max-w-md">
                   <div className="flex items-center justify-between gap-2 mb-1">
-                    <span className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: 'var(--dash-text-3)' }}>
+                    <span
+                      className="text-[10px] font-semibold uppercase tracking-wide"
+                      style={{ color: 'var(--dash-text-3)' }}
+                    >
                       Progress
                     </span>
                     <span className="text-[11px] font-bold tabular-nums" style={{ color }}>
@@ -112,7 +118,7 @@ export default function ContinueLearningCard({
                     aria-label="Topic progress"
                   >
                     <div
-                      className="h-full rounded-full transition-[width] duration-500"
+                      className="h-full rounded-full transition-[width] duration-500 motion-reduce:transition-none"
                       style={{
                         width: `${pct}%`,
                         background: color,
@@ -129,7 +135,7 @@ export default function ContinueLearningCard({
         <div className="flex flex-col sm:flex-row gap-2 shrink-0 w-full sm:w-auto">
           {empty && onBrowse ? (
             <button type="button" className="dash-btn dash-btn--ghost" onClick={onBrowse}>
-              Browse curriculum
+              Explore curriculum
             </button>
           ) : null}
           <button
@@ -138,7 +144,7 @@ export default function ContinueLearningCard({
             onClick={onLaunch}
           >
             {empty ? 'Start learning' : inProgress ? 'Resume' : 'Continue'}
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4" aria-hidden />
           </button>
         </div>
       </div>

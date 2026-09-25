@@ -60,7 +60,7 @@ export default function LearningJourneyChart({
   ];
 
   return (
-    <div className="dash-card dash-card--analytics flex flex-col h-full">
+    <div className="dash-surface-support flex flex-col h-full">
       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
         <div>
           <h2 className="dash-section-title flex items-center gap-2">

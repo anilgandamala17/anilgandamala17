@@ -8,10 +8,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const TUTOR_DEV =
   process.env.TUTOR_DEV_URL || 'http://127.0.0.1:5183'
 
-/** Enable tutor proxy in dev OR whenever TUTOR_DEV_URL is explicitly configured. */
-const enableTutorProxy =
-  process.env.NODE_ENV === 'development' ||
-  Boolean(process.env.TUTOR_DEV_URL?.trim())
+/** Enable tutor proxy only during local development (never in production builds). */
+const enableTutorProxy = process.env.NODE_ENV === 'development'
 
 /**
  * Proxy tutor SPA + Vite HMR through landing in local dev.
